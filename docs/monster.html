@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>怪物</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f4f4;
+      --panel: #ffffff;
+      --text: #101010;
+      --muted: #6a6a6a;
+      --line: #dddddd;
+      --line-strong: #bdbdbd;
+      --shadow: rgba(0, 0, 0, 0.06);
+      --black: #111111;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Noto Sans TC", "Segoe UI", sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, #ffffff 0%, #fafafa 18%, var(--bg) 100%);
+    }
+
+    .page {
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: 28px 18px 48px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 8px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(30px, 5vw, 56px);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+    }
+
+    .intro {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .home-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--text);
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.85);
+      white-space: nowrap;
+    }
+
+    .home-link:hover {
+      border-color: var(--line-strong);
+      background: #ffffff;
+    }
+
+    .status,
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: var(--panel);
+      box-shadow: 0 14px 40px var(--shadow);
+    }
+
+    .status {
+      margin: 0 0 16px;
+      padding: 12px 14px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .card {
+      padding: 18px;
+    }
+
+    .meta {
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .scroll-hint {
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      overflow-y: auto;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      scrollbar-gutter: stable both-edges;
+      max-width: 100%;
+    }
+
+    .table-wrap::-webkit-scrollbar {
+      height: 14px;
+      width: 14px;
+    }
+
+    .table-wrap::-webkit-scrollbar-track {
+      background: #efefef;
+      border-radius: 999px;
+    }
+
+    .table-wrap::-webkit-scrollbar-thumb {
+      background: #b5b5b5;
+      border: 3px solid #efefef;
+      border-radius: 999px;
+    }
+
+    .table-wrap::-webkit-scrollbar-thumb:hover {
+      background: #8f8f8f;
+    }
+
+    table {
+      width: max-content;
+      min-width: 1800px;
+      border-collapse: collapse;
+    }
+
+    thead {
+      background: var(--black);
+    }
+
+    th,
+    td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+      font-size: 13px;
+      line-height: 1.45;
+      white-space: nowrap;
+    }
+
+    th {
+      color: #ffffff;
+      background: var(--black);
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+
+    tbody tr:nth-child(even) {
+      background: #fcfcfc;
+    }
+
+    .name-cell {
+      font-weight: 600;
+    }
+
+    .empty {
+      color: #9a9a9a;
+    }
+
+    @media (max-width: 720px) {
+      .page {
+        padding: 20px 12px 36px;
+      }
+
+      .topbar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .home-link {
+        width: fit-content;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="topbar">
+      <div>
+        <span class="eyebrow">資料頁</span>
+        <h1>怪物</h1>
+        <p class="intro">這頁直接顯示 <code>monster.json</code> 的怪物資料。</p>
+      </div>
+      <a class="home-link" href="./index.html">返回索引</a>
+    </div>
+
+    <p id="status" class="status">載入怪物資料中...</p>
+
+    <div class="card">
+      <p id="meta" class="meta">尚未建立資料。</p>
+      <p class="scroll-hint">表格可左右捲動查看超出欄位。</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr id="table-head"></tr>
+          </thead>
+          <tbody id="table-body">
+            <tr><td class="empty">目前沒有資料</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const statusEl = document.getElementById("status");
+    const metaEl = document.getElementById("meta");
+    const tableHead = document.getElementById("table-head");
+    const tableBody = document.getElementById("table-body");
+
+    function escapeHtml(value) {
+      return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#39;");
+    }
+
+    function formatValue(value) {
+      if (value === null || value === undefined || value === "") {
+        return '<span class="empty">-</span>';
+      }
+      return escapeHtml(value);
+    }
+
+    function renderTable(keys, rows) {
+      if (!Array.isArray(keys) || keys.length === 0 || !Array.isArray(rows) || rows.length === 0) {
+        tableHead.innerHTML = "";
+        tableBody.innerHTML = '<tr><td class="empty">目前沒有資料</td></tr>';
+        return;
+      }
+
+      tableHead.innerHTML = keys.map((key) => `<th>${escapeHtml(key)}</th>`).join("");
+      tableBody.innerHTML = rows.map((row) => `
+        <tr>
+          ${keys.map((key, index) => {
+            const className = index === 0 ? "name-cell" : "";
+            return `<td class="${className}">${formatValue(row[key])}</td>`;
+          }).join("")}
+        </tr>
+      `).join("");
+    }
+
+    async function loadMonsters() {
+      try {
+        const response = await fetch("./物品資料/monster.json");
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}`);
+        }
+
+        const data = await response.json();
+        const keys = Array.isArray(data.keys) ? data.keys : [];
+        const rows = Array.isArray(data.monsters) ? data.monsters : [];
+
+        renderTable(keys, rows);
+        metaEl.textContent = `怪物資料 ${rows.length} 筆。`;
+        statusEl.textContent = "monster.json 已載入。";
+      } catch (error) {
+        statusEl.textContent = `讀取失敗：${error.message}`;
+        metaEl.textContent = "無法載入怪物資料。";
+      }
+    }
+
+    loadMonsters();
+  </script>
+</body>
+</html>

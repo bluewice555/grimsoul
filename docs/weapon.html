@@ -6,22 +6,17 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <title>Weapon Data</title>
+  <title>武器</title>
   <style>
     :root {
       color-scheme: light;
       --bg: #f7f7f7;
       --panel: #ffffff;
-      --panel-alt: #f1f1f1;
       --text: #111111;
       --muted: #666666;
       --line: #dddddd;
       --line-strong: #c7c7c7;
       --shadow: rgba(0, 0, 0, 0.06);
-      --fire: #111111;
-      --cold: #5c5c5c;
-      --pierce: #7a7a7a;
-      --reap: #2f2f2f;
     }
 
     * {
@@ -32,8 +27,7 @@
       margin: 0;
       font-family: "Segoe UI", "Noto Sans TC", sans-serif;
       color: var(--text);
-      background:
-        linear-gradient(180deg, #ffffff 0%, #fafafa 16%, var(--bg) 100%);
+      background: linear-gradient(180deg, #ffffff 0%, #fafafa 16%, var(--bg) 100%);
     }
 
     .page {
@@ -112,7 +106,7 @@
 
     table {
       width: 100%;
-      min-width: 1040px;
+      min-width: 1120px;
       border-collapse: collapse;
     }
 
@@ -127,7 +121,7 @@
       text-align: left;
       vertical-align: top;
       font-size: 14px;
-      line-height: 1.45;
+      line-height: 1.5;
     }
 
     th {
@@ -139,6 +133,7 @@
       font-size: 12px;
       letter-spacing: 0.08em;
       text-transform: uppercase;
+      white-space: nowrap;
     }
 
     tbody tr:nth-child(even) {
@@ -149,7 +144,7 @@
       background: #f3f3f3;
     }
 
-    .weapon {
+    .name-cell {
       font-weight: 600;
       white-space: nowrap;
     }
@@ -160,34 +155,19 @@
       white-space: nowrap;
     }
 
-    .chip {
-      display: inline-block;
-      padding: 3px 8px;
-      border-radius: 999px;
-      color: #ffffff;
-      font-size: 12px;
-      font-weight: 700;
-      white-space: nowrap;
-    }
-
-    .chip.fire {
-      background: var(--fire);
-    }
-
-    .chip.cold {
-      background: var(--cold);
-    }
-
-    .chip.pierce {
-      background: var(--pierce);
-    }
-
-    .chip.reap {
-      background: var(--reap);
-    }
-
     .empty {
       color: #909090;
+    }
+
+    .stack {
+      display: inline-flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .stack-key {
+      color: var(--muted);
+      font-size: 12px;
     }
 
     code {
@@ -214,32 +194,23 @@
   <main class="page">
     <div class="topbar">
       <div>
-        <span class="kicker">Data View</span>
-        <h1>Weapon Data</h1>
-        <p class="intro">Rendered from <code>./物品資料/武器.json</code>.</p>
+        <span class="kicker">資料頁</span>
+        <h1>武器</h1>
+        <p class="intro">依照 <code>武器.json</code> 的 <code>keys</code> 與 <code>items</code> 結構顯示資料。</p>
       </div>
-      <a class="home-link" href="./index.html">Back to Index</a>
+      <a class="home-link" href="./index.html">返回索引</a>
     </div>
 
-    <p id="status" class="status">Loading weapon data...</p>
+    <p id="status" class="status">載入武器資料中...</p>
 
     <div class="table-wrap">
       <table>
         <thead>
-          <tr>
-            <th>Weapon</th>
-            <th>Physical</th>
-            <th>Elemental</th>
-            <th>Speed</th>
-            <th>Range</th>
-            <th>Durability</th>
-            <th>Crafting</th>
-            <th>Special Effects</th>
-          </tr>
+          <tr id="table-head-row"></tr>
         </thead>
         <tbody id="weapon-table-body">
           <tr>
-            <td colspan="8" class="empty">Loading...</td>
+            <td class="empty">載入中...</td>
           </tr>
         </tbody>
       </table>
@@ -248,6 +219,7 @@
 
   <script>
     const statusEl = document.getElementById("status");
+    const tableHeadRow = document.getElementById("table-head-row");
     const tableBody = document.getElementById("weapon-table-body");
 
     function escapeHtml(value) {
@@ -259,43 +231,54 @@
         .replaceAll("'", "&#39;");
     }
 
+    function isNumericLike(value) {
+      return typeof value === "number";
+    }
+
     function formatValue(value) {
       if (value === null || value === undefined || value === "") {
         return '<span class="empty">-</span>';
       }
+
+      if (Array.isArray(value)) {
+        if (value.length === 0) {
+          return '<span class="empty">[]</span>';
+        }
+        return value.map((item) => formatValue(item)).join("<br>");
+      }
+
+      if (typeof value === "object") {
+        const entries = Object.entries(value);
+        if (entries.length === 0) {
+          return '<span class="empty">{}</span>';
+        }
+
+        return `<span class="stack">${entries.map(([key, nestedValue]) => `
+          <span><span class="stack-key">${escapeHtml(key)}：</span>${formatValue(nestedValue)}</span>
+        `).join("")}</span>`;
+      }
+
       return escapeHtml(value);
     }
 
-    function formatElemental(elemental) {
-      if (!elemental || elemental.value === null || elemental.value === undefined) {
-        return '<span class="empty">-</span>';
-      }
-
-      const type = String(elemental.type || "unknown");
-      const lowerType = type.toLowerCase();
-      const safeType = escapeHtml(type);
-      const safeValue = escapeHtml(elemental.value);
-      const chipClass = ["fire", "cold", "pierce", "reap"].includes(lowerType) ? lowerType : "fire";
-
-      return `<span class="chip ${chipClass}">${safeValue} ${safeType}</span>`;
-    }
-
-    function renderRows(items) {
+    function renderTable(keys, items) {
       if (!Array.isArray(items) || items.length === 0) {
-        tableBody.innerHTML = '<tr><td colspan="8" class="empty">No data</td></tr>';
+        tableHeadRow.innerHTML = "";
+        tableBody.innerHTML = '<tr><td class="empty">沒有資料</td></tr>';
         return;
       }
 
+      const displayKeys = Array.isArray(keys) && keys.length > 0 ? keys : Object.keys(items[0]);
+
+      tableHeadRow.innerHTML = displayKeys.map((key) => `<th>${escapeHtml(key)}</th>`).join("");
+
       tableBody.innerHTML = items.map((item) => `
         <tr>
-          <td class="weapon">${formatValue(item.weapon)}</td>
-          <td class="num">${formatValue(item.physical)}</td>
-          <td>${formatElemental(item.elemental)}</td>
-          <td class="num">${formatValue(item.speed)}</td>
-          <td class="num">${formatValue(item.range)}</td>
-          <td class="num">${formatValue(item.durability)}</td>
-          <td>${formatValue(item.crafting)}</td>
-          <td>${formatValue(item.special_effects)}</td>
+          ${displayKeys.map((key, index) => {
+            const value = item[key];
+            const className = index === 0 ? "name-cell" : (isNumericLike(value) ? "num" : "");
+            return `<td class="${className}">${formatValue(value)}</td>`;
+          }).join("")}
         </tr>
       `).join("");
     }
@@ -308,11 +291,15 @@
         }
 
         const data = await response.json();
-        renderRows(data.items);
-        statusEl.textContent = `Loaded ${Array.isArray(data.items) ? data.items.length : 0} weapons`;
+        const keys = Array.isArray(data.keys) ? data.keys : null;
+        const items = Array.isArray(data.items) ? data.items : data;
+
+        renderTable(keys, items);
+        statusEl.textContent = `已載入 ${Array.isArray(items) ? items.length : 0} 筆資料`;
       } catch (error) {
-        tableBody.innerHTML = `<tr><td colspan="8" class="empty">Failed to load: ${escapeHtml(error.message)}</td></tr>`;
-        statusEl.textContent = "Failed to load JSON data";
+        tableHeadRow.innerHTML = "";
+        tableBody.innerHTML = `<tr><td class="empty">載入失敗：${escapeHtml(error.message)}</td></tr>`;
+        statusEl.textContent = "讀取 JSON 失敗";
       }
     }
 
