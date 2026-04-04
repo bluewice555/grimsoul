@@ -3,21 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>武器資料</title>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>Weapon Data</title>
   <style>
     :root {
       color-scheme: light;
-      --bg: #f5f1e8;
-      --panel: #fffdfa;
-      --panel-strong: #f0e7d8;
-      --text: #2f2419;
-      --muted: #6e5a46;
-      --line: #d2c3ae;
-      --accent: #8b5e34;
-      --fire: #d5672b;
-      --cold: #2d7db8;
-      --pierce: #7c5fc4;
-      --reap: #3b7d44;
+      --bg: #f7f7f7;
+      --panel: #ffffff;
+      --panel-alt: #f1f1f1;
+      --text: #111111;
+      --muted: #666666;
+      --line: #dddddd;
+      --line-strong: #c7c7c7;
+      --shadow: rgba(0, 0, 0, 0.06);
+      --fire: #111111;
+      --cold: #5c5c5c;
+      --pierce: #7a7a7a;
+      --reap: #2f2f2f;
     }
 
     * {
@@ -27,57 +31,97 @@
     body {
       margin: 0;
       font-family: "Segoe UI", "Noto Sans TC", sans-serif;
-      background:
-        radial-gradient(circle at top, #fff7ea 0%, transparent 35%),
-        linear-gradient(180deg, #efe4d1 0%, var(--bg) 100%);
       color: var(--text);
+      background:
+        linear-gradient(180deg, #ffffff 0%, #fafafa 16%, var(--bg) 100%);
     }
 
     .page {
-      max-width: 1400px;
+      max-width: 1440px;
       margin: 0 auto;
-      padding: 32px 20px 48px;
+      padding: 28px 18px 44px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .kicker {
+      display: inline-block;
+      margin-bottom: 8px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
     }
 
     h1 {
-      margin: 0 0 8px;
-      font-size: clamp(28px, 4vw, 44px);
+      margin: 0;
+      font-size: clamp(30px, 5vw, 56px);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
     }
 
     .intro {
-      margin: 0 0 20px;
+      margin: 8px 0 0;
       color: var(--muted);
-      line-height: 1.6;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .home-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--text);
+      text-decoration: none;
+      white-space: nowrap;
+      background: rgba(255, 255, 255, 0.85);
+    }
+
+    .home-link:hover {
+      border-color: var(--line-strong);
+      background: #ffffff;
     }
 
     .status {
-      margin: 0 0 20px;
+      margin: 0 0 16px;
       padding: 12px 14px;
       border: 1px solid var(--line);
-      border-radius: 12px;
+      border-radius: 14px;
       background: var(--panel);
       color: var(--muted);
+      font-size: 14px;
     }
 
     .table-wrap {
       overflow: auto;
       border: 1px solid var(--line);
-      border-radius: 16px;
+      border-radius: 22px;
       background: var(--panel);
-      box-shadow: 0 14px 40px rgba(73, 49, 22, 0.08);
+      box-shadow: 0 14px 40px var(--shadow);
     }
 
     table {
       width: 100%;
+      min-width: 1040px;
       border-collapse: collapse;
-      min-width: 980px;
     }
 
     thead {
-      background: var(--panel-strong);
+      background: #0f0f0f;
     }
 
-    th, td {
+    th,
+    td {
       padding: 12px 14px;
       border-bottom: 1px solid var(--line);
       text-align: left;
@@ -90,15 +134,24 @@
       position: sticky;
       top: 0;
       z-index: 1;
-      font-size: 13px;
-      letter-spacing: 0.04em;
+      color: #ffffff;
+      background: #0f0f0f;
+      font-size: 12px;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--muted);
-      background: var(--panel-strong);
+    }
+
+    tbody tr:nth-child(even) {
+      background: #fcfcfc;
     }
 
     tbody tr:hover {
-      background: #fff7ee;
+      background: #f3f3f3;
+    }
+
+    .weapon {
+      font-weight: 600;
+      white-space: nowrap;
     }
 
     .num {
@@ -107,18 +160,13 @@
       white-space: nowrap;
     }
 
-    .weapon {
-      font-weight: 600;
-      white-space: nowrap;
-    }
-
     .chip {
       display: inline-block;
-      padding: 2px 8px;
+      padding: 3px 8px;
       border-radius: 999px;
+      color: #ffffff;
       font-size: 12px;
       font-weight: 700;
-      color: white;
       white-space: nowrap;
     }
 
@@ -139,15 +187,42 @@
     }
 
     .empty {
-      color: #9b8a78;
+      color: #909090;
+    }
+
+    code {
+      font-family: Consolas, "Courier New", monospace;
+    }
+
+    @media (max-width: 720px) {
+      .page {
+        padding: 20px 12px 36px;
+      }
+
+      .topbar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .home-link {
+        width: fit-content;
+      }
     }
   </style>
 </head>
 <body>
   <main class="page">
-    <h1>武器資料</h1>
-    <p class="intro">這個頁面會從 <code>物品資料/武器.json</code> 讀資料，並用表格呈現，方便後續把 Markdown 改成資料驅動。</p>
-    <p id="status" class="status">載入中...</p>
+    <div class="topbar">
+      <div>
+        <span class="kicker">Data View</span>
+        <h1>Weapon Data</h1>
+        <p class="intro">Rendered from <code>./物品資料/武器.json</code>.</p>
+      </div>
+      <a class="home-link" href="./index.html">Back to Index</a>
+    </div>
+
+    <p id="status" class="status">Loading weapon data...</p>
+
     <div class="table-wrap">
       <table>
         <thead>
@@ -164,7 +239,7 @@
         </thead>
         <tbody id="weapon-table-body">
           <tr>
-            <td colspan="8" class="empty">資料載入中...</td>
+            <td colspan="8" class="empty">Loading...</td>
           </tr>
         </tbody>
       </table>
@@ -200,14 +275,14 @@
       const lowerType = type.toLowerCase();
       const safeType = escapeHtml(type);
       const safeValue = escapeHtml(elemental.value);
-      const chipClass = ["fire", "cold", "pierce", "reap"].includes(lowerType) ? lowerType : "";
+      const chipClass = ["fire", "cold", "pierce", "reap"].includes(lowerType) ? lowerType : "fire";
 
       return `<span class="chip ${chipClass}">${safeValue} ${safeType}</span>`;
     }
 
     function renderRows(items) {
       if (!Array.isArray(items) || items.length === 0) {
-        tableBody.innerHTML = '<tr><td colspan="8" class="empty">沒有資料</td></tr>';
+        tableBody.innerHTML = '<tr><td colspan="8" class="empty">No data</td></tr>';
         return;
       }
 
@@ -234,10 +309,10 @@
 
         const data = await response.json();
         renderRows(data.items);
-        statusEl.textContent = `已載入 ${Array.isArray(data.items) ? data.items.length : 0} 筆武器資料`;
+        statusEl.textContent = `Loaded ${Array.isArray(data.items) ? data.items.length : 0} weapons`;
       } catch (error) {
-        tableBody.innerHTML = `<tr><td colspan="8" class="empty">載入失敗：${escapeHtml(error.message)}</td></tr>`;
-        statusEl.textContent = "讀取 JSON 失敗。若你是直接用瀏覽器開本機檔案，可能會被 fetch 的檔案權限限制擋住。";
+        tableBody.innerHTML = `<tr><td colspan="8" class="empty">Failed to load: ${escapeHtml(error.message)}</td></tr>`;
+        statusEl.textContent = "Failed to load JSON data";
       }
     }
 
