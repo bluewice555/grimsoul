@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>武器資料</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f5f1e8;
+      --panel: #fffdfa;
+      --panel-strong: #f0e7d8;
+      --text: #2f2419;
+      --muted: #6e5a46;
+      --line: #d2c3ae;
+      --accent: #8b5e34;
+      --fire: #d5672b;
+      --cold: #2d7db8;
+      --pierce: #7c5fc4;
+      --reap: #3b7d44;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Noto Sans TC", sans-serif;
+      background:
+        radial-gradient(circle at top, #fff7ea 0%, transparent 35%),
+        linear-gradient(180deg, #efe4d1 0%, var(--bg) 100%);
+      color: var(--text);
+    }
+
+    .page {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 32px 20px 48px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(28px, 4vw, 44px);
+    }
+
+    .intro {
+      margin: 0 0 20px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .status {
+      margin: 0 0 20px;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--panel);
+      color: var(--muted);
+    }
+
+    .table-wrap {
+      overflow: auto;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--panel);
+      box-shadow: 0 14px 40px rgba(73, 49, 22, 0.08);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 980px;
+    }
+
+    thead {
+      background: var(--panel-strong);
+    }
+
+    th, td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    th {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      font-size: 13px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--muted);
+      background: var(--panel-strong);
+    }
+
+    tbody tr:hover {
+      background: #fff7ee;
+    }
+
+    .num {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    .weapon {
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .chip {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      color: white;
+      white-space: nowrap;
+    }
+
+    .chip.fire {
+      background: var(--fire);
+    }
+
+    .chip.cold {
+      background: var(--cold);
+    }
+
+    .chip.pierce {
+      background: var(--pierce);
+    }
+
+    .chip.reap {
+      background: var(--reap);
+    }
+
+    .empty {
+      color: #9b8a78;
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <h1>武器資料</h1>
+    <p class="intro">這個頁面會從 <code>物品資料/武器.json</code> 讀資料，並用表格呈現，方便後續把 Markdown 改成資料驅動。</p>
+    <p id="status" class="status">載入中...</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Weapon</th>
+            <th>Physical</th>
+            <th>Elemental</th>
+            <th>Speed</th>
+            <th>Range</th>
+            <th>Durability</th>
+            <th>Crafting</th>
+            <th>Special Effects</th>
+          </tr>
+        </thead>
+        <tbody id="weapon-table-body">
+          <tr>
+            <td colspan="8" class="empty">資料載入中...</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <script>
+    const statusEl = document.getElementById("status");
+    const tableBody = document.getElementById("weapon-table-body");
+
+    function escapeHtml(value) {
+      return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#39;");
+    }
+
+    function formatValue(value) {
+      if (value === null || value === undefined || value === "") {
+        return '<span class="empty">-</span>';
+      }
+      return escapeHtml(value);
+    }
+
+    function formatElemental(elemental) {
+      if (!elemental || elemental.value === null || elemental.value === undefined) {
+        return '<span class="empty">-</span>';
+      }
+
+      const type = String(elemental.type || "unknown");
+      const lowerType = type.toLowerCase();
+      const safeType = escapeHtml(type);
+      const safeValue = escapeHtml(elemental.value);
+      const chipClass = ["fire", "cold", "pierce", "reap"].includes(lowerType) ? lowerType : "";
+
+      return `<span class="chip ${chipClass}">${safeValue} ${safeType}</span>`;
+    }
+
+    function renderRows(items) {
+      if (!Array.isArray(items) || items.length === 0) {
+        tableBody.innerHTML = '<tr><td colspan="8" class="empty">沒有資料</td></tr>';
+        return;
+      }
+
+      tableBody.innerHTML = items.map((item) => `
+        <tr>
+          <td class="weapon">${formatValue(item.weapon)}</td>
+          <td class="num">${formatValue(item.physical)}</td>
+          <td>${formatElemental(item.elemental)}</td>
+          <td class="num">${formatValue(item.speed)}</td>
+          <td class="num">${formatValue(item.range)}</td>
+          <td class="num">${formatValue(item.durability)}</td>
+          <td>${formatValue(item.crafting)}</td>
+          <td>${formatValue(item.special_effects)}</td>
+        </tr>
+      `).join("");
+    }
+
+    async function loadWeapons() {
+      try {
+        const response = await fetch("./物品資料/武器.json");
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}`);
+        }
+
+        const data = await response.json();
+        renderRows(data.items);
+        statusEl.textContent = `已載入 ${Array.isArray(data.items) ? data.items.length : 0} 筆武器資料`;
+      } catch (error) {
+        tableBody.innerHTML = `<tr><td colspan="8" class="empty">載入失敗：${escapeHtml(error.message)}</td></tr>`;
+        statusEl.textContent = "讀取 JSON 失敗。若你是直接用瀏覽器開本機檔案，可能會被 fetch 的檔案權限限制擋住。";
+      }
+    }
+
+    loadWeapons();
+  </script>
+</body>
+</html>
