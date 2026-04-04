@@ -196,7 +196,7 @@
       <div>
         <span class="kicker">資料頁</span>
         <h1>武器</h1>
-        <p class="intro">依照 <code>武器.json</code> 的 <code>keys</code> 與 <code>items</code> 結構顯示資料。</p>
+        <p class="intro">依照 <code>weapon.json</code> 的 <code>keys</code> 與 <code>items</code> 結構顯示資料。</p>
       </div>
       <a class="home-link" href="./index.html">返回索引</a>
     </div>
@@ -285,7 +285,7 @@
 
     async function loadWeapons() {
       try {
-        const response = await fetch("./物品資料/武器.json");
+        const response = await fetch("./物品資料/weapon.json", { cache: "no-store" });
         if (!response.ok) {
           throw new Error(`HTTP ${response.status}`);
         }
