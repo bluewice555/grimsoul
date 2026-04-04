@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>防具</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f3f3f0;
+      --panel: #ffffff;
+      --text: #111111;
+      --muted: #666666;
+      --line: #d9d9d4;
+      --line-strong: #b6b6af;
+      --accent: #111111;
+      --shadow: rgba(0, 0, 0, 0.05);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Noto Sans TC", "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(0, 0, 0, 0.04), transparent 26%),
+        linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: 28px 18px 56px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 10px;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3rem);
+      letter-spacing: 0.04em;
+      font-weight: 700;
+    }
+
+    .subtitle {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .back-link {
+      padding: 10px 14px;
+      border: 1px solid var(--line-strong);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.84);
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .sections {
+      display: grid;
+      gap: 18px;
+    }
+
+    .panel {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: 0 14px 40px var(--shadow);
+      overflow: hidden;
+    }
+
+    .panel-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 16px;
+      padding: 20px 22px 14px;
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(245, 245, 242, 0.92));
+    }
+
+    .panel-title {
+      margin: 0;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .panel-meta {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .status {
+      color: var(--muted);
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding: 0 0 2px;
+    }
+
+    .table-wrap::-webkit-scrollbar {
+      height: 12px;
+    }
+
+    .table-wrap::-webkit-scrollbar-track {
+      background: #ecece7;
+    }
+
+    .table-wrap::-webkit-scrollbar-thumb {
+      background: #b9b9b0;
+      border-radius: 999px;
+    }
+
+    table {
+      width: max-content;
+      min-width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    thead th {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      background: #151515;
+      color: #fafafa;
+      letter-spacing: 0.04em;
+    }
+
+    th,
+    td {
+      padding: 11px 14px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+      white-space: nowrap;
+    }
+
+    tbody tr:nth-child(even) {
+      background: rgba(0, 0, 0, 0.018);
+    }
+
+    tbody tr:hover {
+      background: rgba(0, 0, 0, 0.05);
+    }
+
+    .effects-list {
+      margin: 0;
+      padding-left: 18px;
+      white-space: normal;
+    }
+
+    .effects-list li + li {
+      margin-top: 4px;
+    }
+
+    .empty {
+      padding: 20px 22px 24px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 720px) {
+      .topbar,
+      .panel-head {
+        flex-direction: column;
+        align-items: start;
+      }
+
+      th,
+      td {
+        padding: 10px 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="topbar">
+      <div>
+        <span class="eyebrow">Data View</span>
+        <h1>防具</h1>
+        <p class="subtitle">套裝總覽、裝備明細、套裝效果</p>
+      </div>
+      <a class="back-link" href="./index.html">返回索引</a>
+    </div>
+
+    <div class="sections">
+      <section class="panel">
+        <div class="panel-head">
+          <div>
+            <h2 class="panel-title">套裝總覽</h2>
+            <p class="panel-meta">對應 `armor-sets.json`</p>
+          </div>
+          <div class="status" id="sets-status">載入中...</div>
+        </div>
+        <div class="table-wrap">
+          <table id="sets-table" hidden></table>
+        </div>
+        <div class="empty" id="sets-empty" hidden>沒有資料。</div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <div>
+            <h2 class="panel-title">裝備明細</h2>
+            <p class="panel-meta">對應 `armor-items.json`</p>
+          </div>
+          <div class="status" id="items-status">載入中...</div>
+        </div>
+        <div class="table-wrap">
+          <table id="items-table" hidden></table>
+        </div>
+        <div class="empty" id="items-empty" hidden>沒有資料。</div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <div>
+            <h2 class="panel-title">套裝效果</h2>
+            <p class="panel-meta">對應 `armor-set-effects.json`</p>
+          </div>
+          <div class="status" id="effects-status">載入中...</div>
+        </div>
+        <div class="table-wrap">
+          <table id="effects-table" hidden></table>
+        </div>
+        <div class="empty" id="effects-empty" hidden>沒有資料。</div>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    const DATASETS = [
+      {
+        url: "./物品資料/armor-sets.json",
+        tableId: "sets-table",
+        statusId: "sets-status",
+        emptyId: "sets-empty"
+      },
+      {
+        url: "./物品資料/armor-items.json",
+        tableId: "items-table",
+        statusId: "items-status",
+        emptyId: "items-empty"
+      },
+      {
+        url: "./物品資料/armor-set-effects.json",
+        tableId: "effects-table",
+        statusId: "effects-status",
+        emptyId: "effects-empty"
+      }
+    ];
+
+    function cellContent(value) {
+      if (Array.isArray(value)) {
+        const list = document.createElement("ul");
+        list.className = "effects-list";
+        value.forEach((item) => {
+          const li = document.createElement("li");
+          li.textContent = item || "-";
+          list.appendChild(li);
+        });
+        return list;
+      }
+
+      const span = document.createElement("span");
+      span.textContent = value === "" || value == null ? "-" : String(value);
+      return span;
+    }
+
+    function renderTable(table, keys, items) {
+      const thead = document.createElement("thead");
+      const headRow = document.createElement("tr");
+
+      keys.forEach((key) => {
+        const th = document.createElement("th");
+        th.textContent = key;
+        headRow.appendChild(th);
+      });
+
+      thead.appendChild(headRow);
+
+      const tbody = document.createElement("tbody");
+      items.forEach((item) => {
+        const row = document.createElement("tr");
+        keys.forEach((key) => {
+          const td = document.createElement("td");
+          td.appendChild(cellContent(item[key]));
+          row.appendChild(td);
+        });
+        tbody.appendChild(row);
+      });
+
+      table.replaceChildren(thead, tbody);
+      table.hidden = false;
+    }
+
+    async function loadDataset(config) {
+      const table = document.getElementById(config.tableId);
+      const status = document.getElementById(config.statusId);
+      const empty = document.getElementById(config.emptyId);
+
+      try {
+        const response = await fetch(config.url, { cache: "no-store" });
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}`);
+        }
+
+        const data = await response.json();
+        const keys = Array.isArray(data.keys) ? data.keys : [];
+        const items = Array.isArray(data.items) ? data.items : [];
+
+        if (!keys.length || !items.length) {
+          empty.hidden = false;
+          status.textContent = "0 筆";
+          return;
+        }
+
+        renderTable(table, keys, items);
+        status.textContent = `${items.length} 筆`;
+      } catch (error) {
+        empty.hidden = false;
+        empty.textContent = `載入失敗：${error.message}`;
+        status.textContent = "載入失敗";
+      }
+    }
+
+    Promise.all(DATASETS.map(loadDataset));
+  </script>
+</body>
+</html>
