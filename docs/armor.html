@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
@@ -6,7 +6,7 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <title>防具</title>
+  <title>?脣</title>
   <style>
     :root {
       color-scheme: light;
@@ -212,53 +212,53 @@
     <div class="topbar">
       <div>
         <span class="eyebrow">Data View</span>
-        <h1>防具</h1>
-        <p class="subtitle">套裝總覽、裝備明細、套裝效果</p>
+        <h1>?脣</h1>
+        <p class="subtitle">憟?蝮質汗????蝝啜?鋆???/p>
       </div>
-      <a class="back-link" href="./index.html">返回索引</a>
+      <a class="back-link" href="./index.html">餈?蝝Ｗ?</a>
     </div>
 
     <div class="sections">
       <section class="panel">
         <div class="panel-head">
           <div>
-            <h2 class="panel-title">套裝總覽</h2>
-            <p class="panel-meta">對應 `armor-sets.json`</p>
+            <h2 class="panel-title">憟?蝮質汗</h2>
+            <p class="panel-meta">撠? `armor-sets.json`</p>
           </div>
-          <div class="status" id="sets-status">載入中...</div>
+          <div class="status" id="sets-status">頛銝?..</div>
         </div>
         <div class="table-wrap">
           <table id="sets-table" hidden></table>
         </div>
-        <div class="empty" id="sets-empty" hidden>沒有資料。</div>
+        <div class="empty" id="sets-empty" hidden>瘝?鞈???/div>
       </section>
 
       <section class="panel">
         <div class="panel-head">
           <div>
-            <h2 class="panel-title">裝備明細</h2>
-            <p class="panel-meta">對應 `armor-items.json`</p>
+            <h2 class="panel-title">鋆??敦</h2>
+            <p class="panel-meta">撠? `armor-items.json`</p>
           </div>
-          <div class="status" id="items-status">載入中...</div>
+          <div class="status" id="items-status">頛銝?..</div>
         </div>
         <div class="table-wrap">
           <table id="items-table" hidden></table>
         </div>
-        <div class="empty" id="items-empty" hidden>沒有資料。</div>
+        <div class="empty" id="items-empty" hidden>瘝?鞈???/div>
       </section>
 
       <section class="panel">
         <div class="panel-head">
           <div>
-            <h2 class="panel-title">套裝效果</h2>
-            <p class="panel-meta">對應 `armor-set-effects.json`</p>
+            <h2 class="panel-title">憟???</h2>
+            <p class="panel-meta">撠? `armor-set-effects.json`</p>
           </div>
-          <div class="status" id="effects-status">載入中...</div>
+          <div class="status" id="effects-status">頛銝?..</div>
         </div>
         <div class="table-wrap">
           <table id="effects-table" hidden></table>
         </div>
-        <div class="empty" id="effects-empty" hidden>沒有資料。</div>
+        <div class="empty" id="effects-empty" hidden>瘝?鞈???/div>
       </section>
     </div>
   </div>
@@ -266,19 +266,19 @@
   <script>
     const DATASETS = [
       {
-        url: "./物品資料/armor-sets.json",
+        url: "./?拙?鞈?/armor-sets.json",
         tableId: "sets-table",
         statusId: "sets-status",
         emptyId: "sets-empty"
       },
       {
-        url: "./物品資料/armor-items.json",
+        url: "./?拙?鞈?/armor-items.json",
         tableId: "items-table",
         statusId: "items-status",
         emptyId: "items-empty"
       },
       {
-        url: "./物品資料/armor-set-effects.json",
+        url: "./?拙?鞈?/armor-set-effects.json",
         tableId: "effects-table",
         statusId: "effects-status",
         emptyId: "effects-empty"
@@ -346,16 +346,16 @@
 
         if (!keys.length || !items.length) {
           empty.hidden = false;
-          status.textContent = "0 筆";
+          status.textContent = "0 蝑?;
           return;
         }
 
         renderTable(table, keys, items);
-        status.textContent = `${items.length} 筆`;
+        status.textContent = `${items.length} 蝑;
       } catch (error) {
         empty.hidden = false;
-        empty.textContent = `載入失敗：${error.message}`;
-        status.textContent = "載入失敗";
+        empty.textContent = `頛憭望?嚗?{error.message}`;
+        status.textContent = "頛憭望?";
       }
     }
 
@@ -363,3 +363,4 @@
   </script>
 </body>
 </html>
+

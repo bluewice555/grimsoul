@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
@@ -6,7 +6,7 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <title>技能</title>
+  <title>???/title>
   <style>
     :root {
       color-scheme: light;
@@ -217,13 +217,13 @@
     <div class="topbar">
       <div>
         <span class="eyebrow">Data View</span>
-        <h1>技能</h1>
-        <p class="intro">顯示 <code>skill.json</code> 中的 7 大類技能資料。</p>
+        <h1>???/h1>
+        <p class="intro">憿舐內 <code>skill.json</code> 銝剔? 7 憭折???質???/p>
       </div>
-      <a class="home-link" href="./index.html">返回索引</a>
+      <a class="home-link" href="./index.html">餈?蝝Ｗ?</a>
     </div>
 
-    <p id="status" class="status">載入技能資料中...</p>
+    <p id="status" class="status">頛??質??葉...</p>
     <div id="sections" class="sections"></div>
   </main>
 
@@ -296,11 +296,11 @@
         <div class="section-head">
           <div>
             <h2 class="section-title">${escapeHtml(name)}</h2>
-            <p class="section-meta">分類資料</p>
+            <p class="section-meta">??鞈?</p>
           </div>
-          <div class="count">${items.length} 筆</div>
+          <div class="count">${items.length} 蝑?/div>
         </div>
-        ${hasRows ? renderTable(items) : '<div class="empty">目前沒有資料。</div>'}
+        ${hasRows ? renderTable(items) : '<div class="empty">?桀?瘝?鞈???/div>'}
       `;
 
       sectionsEl.appendChild(section);
@@ -308,7 +308,7 @@
 
     async function loadSkills() {
       try {
-        const response = await fetch("./物品資料/skill.json", { cache: "no-store" });
+        const response = await fetch("./?拙?鞈?/skill.json", { cache: "no-store" });
         if (!response.ok) {
           throw new Error(`HTTP ${response.status}`);
         }
@@ -320,9 +320,9 @@
           renderSection(name, value);
         });
 
-        statusEl.textContent = `已載入 ${Object.keys(data).length} 個分類`;
+        statusEl.textContent = `撌脰???${Object.keys(data).length} ??憿;
       } catch (error) {
-        statusEl.textContent = `讀取 JSON 失敗：${error.message}`;
+        statusEl.textContent = `霈??JSON 憭望?嚗?{error.message}`;
         sectionsEl.innerHTML = "";
       }
     }
@@ -331,3 +331,4 @@
   </script>
 </body>
 </html>
+

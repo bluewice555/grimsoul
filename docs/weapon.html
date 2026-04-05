@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
@@ -6,7 +6,7 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <title>武器</title>
+  <title>甇血</title>
   <style>
     :root {
       color-scheme: light;
@@ -194,14 +194,14 @@
   <main class="page">
     <div class="topbar">
       <div>
-        <span class="kicker">資料頁</span>
-        <h1>武器</h1>
-        <p class="intro">依照 <code>weapon.json</code> 的 <code>keys</code> 與 <code>items</code> 結構顯示資料。</p>
+        <span class="kicker">鞈???/span>
+        <h1>甇血</h1>
+        <p class="intro">靘 <code>weapon.json</code> ??<code>keys</code> ??<code>items</code> 蝯?憿舐內鞈???/p>
       </div>
-      <a class="home-link" href="./index.html">返回索引</a>
+      <a class="home-link" href="./index.html">餈?蝝Ｗ?</a>
     </div>
 
-    <p id="status" class="status">載入武器資料中...</p>
+    <p id="status" class="status">頛甇血鞈?銝?..</p>
 
     <div class="table-wrap">
       <table>
@@ -210,7 +210,7 @@
         </thead>
         <tbody id="weapon-table-body">
           <tr>
-            <td class="empty">載入中...</td>
+            <td class="empty">頛銝?..</td>
           </tr>
         </tbody>
       </table>
@@ -254,7 +254,7 @@
         }
 
         return `<span class="stack">${entries.map(([key, nestedValue]) => `
-          <span><span class="stack-key">${escapeHtml(key)}：</span>${formatValue(nestedValue)}</span>
+          <span><span class="stack-key">${escapeHtml(key)}嚗?/span>${formatValue(nestedValue)}</span>
         `).join("")}</span>`;
       }
 
@@ -264,7 +264,7 @@
     function renderTable(keys, items) {
       if (!Array.isArray(items) || items.length === 0) {
         tableHeadRow.innerHTML = "";
-        tableBody.innerHTML = '<tr><td class="empty">沒有資料</td></tr>';
+        tableBody.innerHTML = '<tr><td class="empty">瘝?鞈?</td></tr>';
         return;
       }
 
@@ -285,7 +285,7 @@
 
     async function loadWeapons() {
       try {
-        const response = await fetch("./物品資料/weapon.json", { cache: "no-store" });
+        const response = await fetch("./?拙?鞈?/weapon.json", { cache: "no-store" });
         if (!response.ok) {
           throw new Error(`HTTP ${response.status}`);
         }
@@ -295,11 +295,11 @@
         const items = Array.isArray(data.items) ? data.items : data;
 
         renderTable(keys, items);
-        statusEl.textContent = `已載入 ${Array.isArray(items) ? items.length : 0} 筆資料`;
+        statusEl.textContent = `撌脰???${Array.isArray(items) ? items.length : 0} 蝑??;
       } catch (error) {
         tableHeadRow.innerHTML = "";
-        tableBody.innerHTML = `<tr><td class="empty">載入失敗：${escapeHtml(error.message)}</td></tr>`;
-        statusEl.textContent = "讀取 JSON 失敗";
+        tableBody.innerHTML = `<tr><td class="empty">頛憭望?嚗?{escapeHtml(error.message)}</td></tr>`;
+        statusEl.textContent = "霈??JSON 憭望?";
       }
     }
 
@@ -307,3 +307,4 @@
   </script>
 </body>
 </html>
+

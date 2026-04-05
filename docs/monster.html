@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
@@ -6,7 +6,7 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <title>怪物</title>
+  <title>?芰</title>
   <style>
     :root {
       color-scheme: light;
@@ -211,25 +211,25 @@
   <main class="page">
     <div class="topbar">
       <div>
-        <span class="eyebrow">資料頁</span>
-        <h1>怪物</h1>
-        <p class="intro">這頁直接顯示 <code>monster.json</code> 的怪物資料。</p>
+        <span class="eyebrow">鞈???/span>
+        <h1>?芰</h1>
+        <p class="intro">???湔憿舐內 <code>monster.json</code> ?芰鞈???/p>
       </div>
-      <a class="home-link" href="./index.html">返回索引</a>
+      <a class="home-link" href="./index.html">餈?蝝Ｗ?</a>
     </div>
 
-    <p id="status" class="status">載入怪物資料中...</p>
+    <p id="status" class="status">頛?芰鞈?銝?..</p>
 
     <div class="card">
-      <p id="meta" class="meta">尚未建立資料。</p>
-      <p class="scroll-hint">表格可左右捲動查看超出欄位。</p>
+      <p id="meta" class="meta">撠撱箇?鞈???/p>
+      <p class="scroll-hint">銵冽?臬椰?單????箸?雿?/p>
       <div class="table-wrap">
         <table>
           <thead>
             <tr id="table-head"></tr>
           </thead>
           <tbody id="table-body">
-            <tr><td class="empty">目前沒有資料</td></tr>
+            <tr><td class="empty">?桀?瘝?鞈?</td></tr>
           </tbody>
         </table>
       </div>
@@ -261,7 +261,7 @@
     function renderTable(keys, rows) {
       if (!Array.isArray(keys) || keys.length === 0 || !Array.isArray(rows) || rows.length === 0) {
         tableHead.innerHTML = "";
-        tableBody.innerHTML = '<tr><td class="empty">目前沒有資料</td></tr>';
+        tableBody.innerHTML = '<tr><td class="empty">?桀?瘝?鞈?</td></tr>';
         return;
       }
 
@@ -278,7 +278,7 @@
 
     async function loadMonsters() {
       try {
-        const response = await fetch("./物品資料/monster.json");
+        const response = await fetch("./?拙?鞈?/monster.json");
         if (!response.ok) {
           throw new Error(`HTTP ${response.status}`);
         }
@@ -288,11 +288,11 @@
         const rows = Array.isArray(data.monsters) ? data.monsters : [];
 
         renderTable(keys, rows);
-        metaEl.textContent = `怪物資料 ${rows.length} 筆。`;
-        statusEl.textContent = "monster.json 已載入。";
+        metaEl.textContent = `?芰鞈? ${rows.length} 蝑;
+        statusEl.textContent = "monster.json 撌脰??乓?;
       } catch (error) {
-        statusEl.textContent = `讀取失敗：${error.message}`;
-        metaEl.textContent = "無法載入怪物資料。";
+        statusEl.textContent = `霈?仃??${error.message}`;
+        metaEl.textContent = "?⊥?頛?芰鞈???;
       }
     }
 
@@ -300,3 +300,4 @@
   </script>
 </body>
 </html>
+
