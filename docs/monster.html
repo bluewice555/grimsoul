@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
@@ -6,7 +6,7 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <title>?芰</title>
+  <title>怪物</title>
   <style>
     :root {
       color-scheme: light;
@@ -211,26 +211,22 @@
   <main class="page">
     <div class="topbar">
       <div>
-        <span class="eyebrow">鞈???/span>
-        <h1>?芰</h1>
-        <p class="intro">???湔憿舐內 <code>monster.json</code> ?芰鞈???/p>
+        <span class="eyebrow">資料檢視</span>
+        <h1>怪物</h1>
+        <p class="intro">顯示 <code>monster.json</code> 全部欄位。</p>
       </div>
-      <a class="home-link" href="./index.html">餈?蝝Ｗ?</a>
+      <a class="home-link" href="./index.html">回首頁</a>
     </div>
 
-    <p id="status" class="status">頛?芰鞈?銝?..</p>
+    <p id="status" class="status">載入中...</p>
 
     <div class="card">
-      <p id="meta" class="meta">撠撱箇?鞈???/p>
-      <p class="scroll-hint">銵冽?臬椰?單????箸?雿?/p>
+      <p id="meta" class="meta">資料來源：dataset/monster.json</p>
+      <p class="scroll-hint">可左右捲動查看所有欄位。</p>
       <div class="table-wrap">
         <table>
-          <thead>
-            <tr id="table-head"></tr>
-          </thead>
-          <tbody id="table-body">
-            <tr><td class="empty">?桀?瘝?鞈?</td></tr>
-          </tbody>
+          <thead><tr id="table-head"></tr></thead>
+          <tbody id="table-body"><tr><td class="empty">載入中...</td></tr></tbody>
         </table>
       </div>
     </div>
@@ -243,56 +239,37 @@
     const tableBody = document.getElementById("table-body");
 
     function escapeHtml(value) {
-      return String(value)
-        .replaceAll("&", "&amp;")
-        .replaceAll("<", "&lt;")
-        .replaceAll(">", "&gt;")
-        .replaceAll('"', "&quot;")
-        .replaceAll("'", "&#39;");
+      return String(value).replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;").replaceAll("'", "&#39;");
     }
 
     function formatValue(value) {
-      if (value === null || value === undefined || value === "") {
-        return '<span class="empty">-</span>';
-      }
+      if (value === null || value === undefined || value === "") return '<span class="empty">-</span>';
       return escapeHtml(value);
     }
 
     function renderTable(keys, rows) {
-      if (!Array.isArray(keys) || keys.length === 0 || !Array.isArray(rows) || rows.length === 0) {
+      if (!Array.isArray(keys) || !keys.length || !Array.isArray(rows) || !rows.length) {
         tableHead.innerHTML = "";
-        tableBody.innerHTML = '<tr><td class="empty">?桀?瘝?鞈?</td></tr>';
+        tableBody.innerHTML = '<tr><td class="empty">沒有資料</td></tr>';
         return;
       }
-
-      tableHead.innerHTML = keys.map((key) => `<th>${escapeHtml(key)}</th>`).join("");
-      tableBody.innerHTML = rows.map((row) => `
-        <tr>
-          ${keys.map((key, index) => {
-            const className = index === 0 ? "name-cell" : "";
-            return `<td class="${className}">${formatValue(row[key])}</td>`;
-          }).join("")}
-        </tr>
-      `).join("");
+      tableHead.innerHTML = keys.map((k) => `<th>${escapeHtml(k)}</th>`).join("");
+      tableBody.innerHTML = rows.map((row) => `<tr>${keys.map((k, i) => `<td class="${i === 0 ? "name-cell" : ""}">${formatValue(row[k])}</td>`).join("")}</tr>`).join("");
     }
 
     async function loadMonsters() {
       try {
-        const response = await fetch("./?拙?鞈?/monster.json");
-        if (!response.ok) {
-          throw new Error(`HTTP ${response.status}`);
-        }
-
+        const response = await fetch("./dataset/monster.json", { cache: "no-store" });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
         const data = await response.json();
         const keys = Array.isArray(data.keys) ? data.keys : [];
         const rows = Array.isArray(data.monsters) ? data.monsters : [];
-
         renderTable(keys, rows);
-        metaEl.textContent = `?芰鞈? ${rows.length} 蝑;
-        statusEl.textContent = "monster.json 撌脰??乓?;
+        metaEl.textContent = `筆數：${rows.length}`;
+        statusEl.textContent = "載入成功";
       } catch (error) {
-        statusEl.textContent = `霈?仃??${error.message}`;
-        metaEl.textContent = "?⊥?頛?芰鞈???;
+        statusEl.textContent = `載入失敗：${error.message}`;
+        metaEl.textContent = "請檢查 dataset/monster.json";
       }
     }
 
@@ -300,4 +277,3 @@
   </script>
 </body>
 </html>
-

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
@@ -6,7 +6,7 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <title>???/title>
+  <title>技能</title>
   <style>
     :root {
       color-scheme: light;
@@ -216,14 +216,14 @@
   <main class="page">
     <div class="topbar">
       <div>
-        <span class="eyebrow">Data View</span>
-        <h1>???/h1>
-        <p class="intro">憿舐內 <code>skill.json</code> 銝剔? 7 憭折???質???/p>
+        <span class="eyebrow">資料檢視</span>
+        <h1>技能</h1>
+        <p class="intro">顯示 skill.json 的分頁資料。</p>
       </div>
-      <a class="home-link" href="./index.html">餈?蝝Ｗ?</a>
+      <a class="home-link" href="./index.html">回首頁</a>
     </div>
 
-    <p id="status" class="status">頛??質??葉...</p>
+    <p id="status" class="status">載入中...</p>
     <div id="sections" class="sections"></div>
   </main>
 
@@ -241,15 +241,8 @@
     }
 
     function formatValue(value) {
-      if (value === null || value === undefined || value === "") {
-        return '<span class="empty">-</span>';
-      }
-      if (Array.isArray(value)) {
-        if (value.length === 0) {
-          return '<span class="empty">[]</span>';
-        }
-        return value.map((item) => escapeHtml(item)).join("<br>");
-      }
+      if (value === null || value === undefined || value === "") return '<span class="empty">-</span>';
+      if (Array.isArray(value)) return value.length ? value.map((item) => escapeHtml(item)).join("<br>") : '<span class="empty">[]</span>';
       return escapeHtml(value);
     }
 
@@ -260,69 +253,30 @@
 
     function renderTable(items) {
       const keys = inferKeys(items);
-      if (!keys.length) {
-        return "";
-      }
-
+      if (!keys.length) return "";
       const head = keys.map((key) => `<th>${escapeHtml(key)}</th>`).join("");
-      const body = items.map((item) => `
-        <tr>
-          ${keys.map((key) => {
-            const value = item[key];
-            const cls = typeof value === "number" ? "num" : "";
-            return `<td class="${cls}">${formatValue(value)}</td>`;
-          }).join("")}
-        </tr>
-      `).join("");
-
-      return `
-        <div class="table-wrap">
-          <table>
-            <thead><tr>${head}</tr></thead>
-            <tbody>${body}</tbody>
-          </table>
-        </div>
-      `;
+      const body = items.map((item) => `<tr>${keys.map((key) => `<td>${formatValue(item[key])}</td>`).join("")}</tr>`).join("");
+      return `<div class="table-wrap"><table><thead><tr>${head}</tr></thead><tbody>${body}</tbody></table></div>`;
     }
 
     function renderSection(name, value) {
       const section = document.createElement("section");
       section.className = "section";
-
       const items = Array.isArray(value) ? value : [];
-      const hasRows = items.length > 0;
-
-      section.innerHTML = `
-        <div class="section-head">
-          <div>
-            <h2 class="section-title">${escapeHtml(name)}</h2>
-            <p class="section-meta">??鞈?</p>
-          </div>
-          <div class="count">${items.length} 蝑?/div>
-        </div>
-        ${hasRows ? renderTable(items) : '<div class="empty">?桀?瘝?鞈???/div>'}
-      `;
-
+      section.innerHTML = `<div class="section-head"><div><h2 class="section-title">${escapeHtml(name)}</h2><p class="section-meta">資料表</p></div><div class="count">${items.length} 筆</div></div>${items.length ? renderTable(items) : '<div class="empty">沒有資料</div>'}`;
       sectionsEl.appendChild(section);
     }
 
     async function loadSkills() {
       try {
-        const response = await fetch("./?拙?鞈?/skill.json", { cache: "no-store" });
-        if (!response.ok) {
-          throw new Error(`HTTP ${response.status}`);
-        }
-
+        const response = await fetch("./dataset/skill.json", { cache: "no-store" });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
         const data = await response.json();
         sectionsEl.innerHTML = "";
-
-        Object.entries(data).forEach(([name, value]) => {
-          renderSection(name, value);
-        });
-
-        statusEl.textContent = `撌脰???${Object.keys(data).length} ??憿;
+        Object.entries(data).forEach(([name, value]) => renderSection(name, value));
+        statusEl.textContent = `已載入 ${Object.keys(data).length} 個分類`;
       } catch (error) {
-        statusEl.textContent = `霈??JSON 憭望?嚗?{error.message}`;
+        statusEl.textContent = `載入失敗：${error.message}`;
         sectionsEl.innerHTML = "";
       }
     }
@@ -331,4 +285,3 @@
   </script>
 </body>
 </html>
-

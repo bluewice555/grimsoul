@@ -6,7 +6,7 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <title>甇血</title>
+  <title>Weapons</title>
   <style>
     :root {
       color-scheme: light;
@@ -194,14 +194,9 @@
   <main class="page">
     <div class="topbar">
       <div>
-        <span class="kicker">鞈???/span>
-        <h1>甇血</h1>
-        <p class="intro">靘 <code>weapon.json</code> ??<code>keys</code> ??<code>items</code> 蝯?憿舐內鞈???/p>
-      </div>
-      <a class="home-link" href="./index.html">餈?蝝Ｗ?</a>
-    </div>
-
-    <p id="status" class="status">頛甇血鞈?銝?..</p>
+        <span class="kicker">資料檢視</span>
+        <h1>Weapons</h1>
+        <p class="intro">讀取並顯示 weapon.json 的 keys/items 資料。</p>
 
     <div class="table-wrap">
       <table>
@@ -210,7 +205,7 @@
         </thead>
         <tbody id="weapon-table-body">
           <tr>
-            <td class="empty">頛銝?..</td>
+            <td class="empty">載入中...</td>
           </tr>
         </tbody>
       </table>
@@ -221,90 +216,29 @@
     const statusEl = document.getElementById("status");
     const tableHeadRow = document.getElementById("table-head-row");
     const tableBody = document.getElementById("weapon-table-body");
+    const escapeHtml = (v) => String(v).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#39;");
 
-    function escapeHtml(value) {
-      return String(value)
-        .replaceAll("&", "&amp;")
-        .replaceAll("<", "&lt;")
-        .replaceAll(">", "&gt;")
-        .replaceAll('"', "&quot;")
-        .replaceAll("'", "&#39;");
+    function formatValue(v){
+      if(v===null||v===undefined||v==="") return '<span class="empty">-</span>';
+      if(Array.isArray(v)) return v.map(formatValue).join("<br>");
+      if(typeof v === "object") return Object.entries(v).map(([k,n])=>`<span><span class="stack-key">${escapeHtml(k)}: </span>${formatValue(n)}</span>`).join("<br>");
+      return escapeHtml(v);
     }
 
-    function isNumericLike(value) {
-      return typeof value === "number";
-    }
-
-    function formatValue(value) {
-      if (value === null || value === undefined || value === "") {
-        return '<span class="empty">-</span>';
-      }
-
-      if (Array.isArray(value)) {
-        if (value.length === 0) {
-          return '<span class="empty">[]</span>';
-        }
-        return value.map((item) => formatValue(item)).join("<br>");
-      }
-
-      if (typeof value === "object") {
-        const entries = Object.entries(value);
-        if (entries.length === 0) {
-          return '<span class="empty">{}</span>';
-        }
-
-        return `<span class="stack">${entries.map(([key, nestedValue]) => `
-          <span><span class="stack-key">${escapeHtml(key)}嚗?/span>${formatValue(nestedValue)}</span>
-        `).join("")}</span>`;
-      }
-
-      return escapeHtml(value);
-    }
-
-    function renderTable(keys, items) {
-      if (!Array.isArray(items) || items.length === 0) {
+    fetch("./dataset/weapon.json", { cache: "no-store" })
+      .then((r)=>{ if(!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
+      .then((data)=>{
+        const keys = Array.isArray(data.keys) ? data.keys : [];
+        const items = Array.isArray(data.items) ? data.items : [];
+        tableHeadRow.innerHTML = keys.map((k)=>`<th>${escapeHtml(k)}</th>`).join("");
+        tableBody.innerHTML = items.map((row)=>`<tr>${keys.map((k,i)=>`<td class="${i===0?"name-cell":""}">${formatValue(row[k])}</td>`).join("")}</tr>`).join("");
+        statusEl.textContent = `已載入 ${items.length} 筆資料`;
+      })
+      .catch((e)=>{
         tableHeadRow.innerHTML = "";
-        tableBody.innerHTML = '<tr><td class="empty">瘝?鞈?</td></tr>';
-        return;
-      }
-
-      const displayKeys = Array.isArray(keys) && keys.length > 0 ? keys : Object.keys(items[0]);
-
-      tableHeadRow.innerHTML = displayKeys.map((key) => `<th>${escapeHtml(key)}</th>`).join("");
-
-      tableBody.innerHTML = items.map((item) => `
-        <tr>
-          ${displayKeys.map((key, index) => {
-            const value = item[key];
-            const className = index === 0 ? "name-cell" : (isNumericLike(value) ? "num" : "");
-            return `<td class="${className}">${formatValue(value)}</td>`;
-          }).join("")}
-        </tr>
-      `).join("");
-    }
-
-    async function loadWeapons() {
-      try {
-        const response = await fetch("./?拙?鞈?/weapon.json", { cache: "no-store" });
-        if (!response.ok) {
-          throw new Error(`HTTP ${response.status}`);
-        }
-
-        const data = await response.json();
-        const keys = Array.isArray(data.keys) ? data.keys : null;
-        const items = Array.isArray(data.items) ? data.items : data;
-
-        renderTable(keys, items);
-        statusEl.textContent = `撌脰???${Array.isArray(items) ? items.length : 0} 蝑??;
-      } catch (error) {
-        tableHeadRow.innerHTML = "";
-        tableBody.innerHTML = `<tr><td class="empty">頛憭望?嚗?{escapeHtml(error.message)}</td></tr>`;
-        statusEl.textContent = "霈??JSON 憭望?";
-      }
-    }
-
-    loadWeapons();
+        tableBody.innerHTML = `<tr><td class="empty">載入失敗：${escapeHtml(e.message)}</td></tr>`;
+        statusEl.textContent = "JSON 載入失敗";
+      });
   </script>
 </body>
 </html>
-
