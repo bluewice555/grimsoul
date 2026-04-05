@@ -6,7 +6,7 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <title>怪物</title>
+  <title>怪物資料</title>
   <style>
     :root {
       color-scheme: light;
@@ -128,26 +128,6 @@
       max-width: 100%;
     }
 
-    .table-wrap::-webkit-scrollbar {
-      height: 14px;
-      width: 14px;
-    }
-
-    .table-wrap::-webkit-scrollbar-track {
-      background: #efefef;
-      border-radius: 999px;
-    }
-
-    .table-wrap::-webkit-scrollbar-thumb {
-      background: #b5b5b5;
-      border: 3px solid #efefef;
-      border-radius: 999px;
-    }
-
-    .table-wrap::-webkit-scrollbar-thumb:hover {
-      background: #8f8f8f;
-    }
-
     table {
       width: max-content;
       min-width: 1800px;
@@ -211,9 +191,9 @@
   <main class="page">
     <div class="topbar">
       <div>
-        <span class="eyebrow">資料檢視</span>
-        <h1>怪物</h1>
-        <p class="intro">顯示 <code>monster.json</code> 全部欄位。</p>
+        <span class="eyebrow">DATASET VIEWER</span>
+        <h1>怪物資料</h1>
+        <p class="intro">從 <code>dataset/monster.json</code> 讀取內容並顯示。</p>
       </div>
       <a class="home-link" href="./index.html">回首頁</a>
     </div>
@@ -221,8 +201,8 @@
     <p id="status" class="status">載入中...</p>
 
     <div class="card">
-      <p id="meta" class="meta">資料來源：dataset/monster.json</p>
-      <p class="scroll-hint">可左右捲動查看所有欄位。</p>
+      <p id="meta" class="meta">來源：dataset/monster.json</p>
+      <p class="scroll-hint">表格可水平與垂直捲動。</p>
       <div class="table-wrap">
         <table>
           <thead><tr id="table-head"></tr></thead>
@@ -239,22 +219,52 @@
     const tableBody = document.getElementById("table-body");
 
     function escapeHtml(value) {
-      return String(value).replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;").replaceAll("'", "&#39;");
+      return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#39;");
     }
 
     function formatValue(value) {
-      if (value === null || value === undefined || value === "") return '<span class="empty">-</span>';
+      if (value === null || value === undefined || value === "") {
+        return '<span class="empty">-</span>';
+      }
       return escapeHtml(value);
     }
 
+    function collectKeys(rows) {
+      const set = new Set();
+      for (const row of rows) {
+        Object.keys(row || {}).forEach((k) => set.add(k));
+      }
+      const preferred = [
+        "ID",
+        "Name",
+        "Enemy",
+        "Health",
+        "Armor (Est.)",
+        "DamageReduction(%)",
+        "Physical ATK",
+        "ElementalATK",
+        "Special Mechanic(s)Summary",
+        "Common Location(s)"
+      ];
+      const rest = [...set].filter((k) => !preferred.includes(k)).sort();
+      return preferred.filter((k) => set.has(k)).concat(rest);
+    }
+
     function renderTable(keys, rows) {
-      if (!Array.isArray(keys) || !keys.length || !Array.isArray(rows) || !rows.length) {
+      if (!Array.isArray(keys) || keys.length === 0 || !Array.isArray(rows) || rows.length === 0) {
         tableHead.innerHTML = "";
-        tableBody.innerHTML = '<tr><td class="empty">沒有資料</td></tr>';
+        tableBody.innerHTML = '<tr><td class="empty">沒有可顯示的資料。</td></tr>';
         return;
       }
       tableHead.innerHTML = keys.map((k) => `<th>${escapeHtml(k)}</th>`).join("");
-      tableBody.innerHTML = rows.map((row) => `<tr>${keys.map((k, i) => `<td class="${i === 0 ? "name-cell" : ""}">${formatValue(row[k])}</td>`).join("")}</tr>`).join("");
+      tableBody.innerHTML = rows
+        .map((row) => `<tr>${keys.map((k, i) => `<td class="${i <= 2 ? "name-cell" : ""}">${formatValue(row[k])}</td>`).join("")}</tr>`)
+        .join("");
     }
 
     async function loadMonsters() {
@@ -262,14 +272,16 @@
         const response = await fetch("./dataset/monster.json", { cache: "no-store" });
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
         const data = await response.json();
-        const keys = Array.isArray(data.keys) ? data.keys : [];
-        const rows = Array.isArray(data.monsters) ? data.monsters : [];
+
+        const rows = Array.isArray(data) ? data : [];
+        const keys = collectKeys(rows);
         renderTable(keys, rows);
-        metaEl.textContent = `筆數：${rows.length}`;
-        statusEl.textContent = "載入成功";
+
+        metaEl.textContent = `來源：dataset/monster.json，筆數：${rows.length}`;
+        statusEl.textContent = "載入完成";
       } catch (error) {
         statusEl.textContent = `載入失敗：${error.message}`;
-        metaEl.textContent = "請檢查 dataset/monster.json";
+        metaEl.textContent = "請確認 dataset/monster.json 可讀取";
       }
     }
 
