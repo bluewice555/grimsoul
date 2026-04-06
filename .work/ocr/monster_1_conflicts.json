@@ -1,0 +1,1966 @@
+[
+  {
+    "row": 1,
+    "id": "Aissa theGreat FosterMother",
+    "conflicts": [
+      {
+        "field": "Special Mechanic(s) Summary",
+        "easyocr": "Chance t0 instakili; Controlling chant; Cursed Ground: iraii (0 Pure); Heal (Piayer Death; 255 Healtn) Summons Night Guest (Health), 2 Skeletons (Periodic) and 2 Dire Bats (Death)",
+        "rapidocr": "Chance to instakil; Conlrolling chant; Cursed Ground: Trail(30 Pure); Heal(Player Death; 255 Health) Summons Night Guest (Health), 2 Skeletons (Periodic) and 2 Dire Bats (Death)"
+      }
+    ]
+  },
+  {
+    "row": 3,
+    "id": "",
+    "conflicts": [
+      {
+        "field": "ID",
+        "easyocr": "Aojus",
+        "rapidocr": "Atorus"
+      }
+    ]
+  },
+  {
+    "row": 4,
+    "id": "Auxiliary Jerzy (N, H, L)",
+    "conflicts": [
+      {
+        "field": "Armor (Est.)",
+        "easyocr": "10, 30,*40",
+        "rapidocr": "10,30,40"
+      },
+      {
+        "field": "Special Mechanic(s) Summary",
+        "easyocr": "Bestowal (Death); Invulnerability (Health, Cycle 2/2); Ranged attack; Siphon (15/25/35% Damage)",
+        "rapidocr": ""
+      }
+    ]
+  },
+  {
+    "row": 5,
+    "id": "Auxiliary Lothar (N, H, L)",
+    "conflicts": [
+      {
+        "field": "Elemental ATK",
+        "easyocr": "2,4 10 Fire",
+        "rapidocr": "2, 4, 10 Fire"
+      },
+      {
+        "field": "Special Mechanic(s) Summary",
+        "easyocr": "Bestowal (Death); Invulnerability (Health, Cycle 2/2); Ranged attack; Increased damage (<20% Health 21.3/1.4x)",
+        "rapidocr": "Bestowal (Death); Invulnerability (Health,Cycle 2/2);Ranged attack;Increased damage (<20% Health; 1.2/1.3/1.4x)"
+      }
+    ]
+  },
+  {
+    "row": 6,
+    "id": "Auxiliary Nigurot (N, H, L)",
+    "conflicts": [
+      {
+        "field": "Damage Reduction (%)",
+        "easyocr": "6.4+1.1 16.0+1.1,20.2+1.1",
+        "rapidocr": "6.4±1.1,16.0±1.1,20.2±1.1"
+      },
+      {
+        "field": "Elemental ATK",
+        "easyocr": "2,4 10 Fire",
+        "rapidocr": "2, 4, 10 Fire"
+      },
+      {
+        "field": "Special Mechanic(s) Summary",
+        "easyocr": "Bestowal (Death); Invulnerability (Health, Cycle 2/2); Ranged attack; Reflecting shield (20/25/30% Damage)",
+        "rapidocr": ""
+      }
+    ]
+  },
+  {
+    "row": 7,
+    "id": "Axe Thrower",
+    "conflicts": [
+      {
+        "field": "Armor (Est.)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Damage Reduction (%)",
+        "easyocr": "",
+        "rapidocr": "0"
+      }
+    ]
+  },
+  {
+    "row": 10,
+    "id": "Bear",
+    "conflicts": [
+      {
+        "field": "Physical ATK",
+        "easyocr": "",
+        "rapidocr": "8"
+      },
+      {
+        "field": "Common Location(s)",
+        "easyocr": "S1-S4; Virbjorn's Lair",
+        "rapidocr": "S1-S4; Virbjorm's Lair"
+      }
+    ]
+  },
+  {
+    "row": 11,
+    "id": "Black Knight",
+    "conflicts": [
+      {
+        "field": "Health",
+        "easyocr": "150 ,",
+        "rapidocr": "1150"
+      },
+      {
+        "field": "Common Location(s)",
+        "easyocr": "Forsaken 2 (N; Rare); Scarlet Hunt",
+        "rapidocr": "Forsaken2(N;Rare);ScarletHunt1"
+      }
+    ]
+  },
+  {
+    "row": 12,
+    "id": "Bloody Reaper",
+    "conflicts": [
+      {
+        "field": "Armor (Est.)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Physical ATK",
+        "easyocr": "",
+        "rapidocr": "57"
+      },
+      {
+        "field": "Special Mechanic(s) Summary",
+        "easyocr": "Chance to freeze; Fears and summons 2 Bloody Shadows (<75%, 50%, 25% Health) Invulnerability (Periodic) Siphon (S0% Damage)",
+        "rapidocr": "Chance to freeze;Fears and summons 2 Bloody Shadows (<75%,50%,25% Health): Invulnerability(Periodic);Siphon(50%Damage)"
+      },
+      {
+        "field": "Common Location(s)",
+        "easyocr": "Scarlet Hunt",
+        "rapidocr": "Scarlet Hunt 1"
+      }
+    ]
+  },
+  {
+    "row": 13,
+    "id": "Bloody Shadow",
+    "conflicts": [
+      {
+        "field": "Armor (Est.)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Damage Reduction (%)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Common Location(s)",
+        "easyocr": "Scarlet Hunt",
+        "rapidocr": "Scarlet Hunt 1"
+      }
+    ]
+  },
+  {
+    "row": 15,
+    "id": "",
+    "conflicts": [
+      {
+        "field": "ID",
+        "easyocr": "Char plain Fernana (N, H, L)",
+        "rapidocr": "Chaplain Fernana (N, H, L)"
+      },
+      {
+        "field": "Elemental ATK",
+        "easyocr": "2,4 10 Fire",
+        "rapidocr": "2, 4, 10 Fire"
+      }
+    ]
+  },
+  {
+    "row": 16,
+    "id": "Chaplain Girdsiny (N, H, L)",
+    "conflicts": [
+      {
+        "field": "Special Mechanic(s) Summary",
+        "easyocr": "Bestowal (Death); Invulnerability (Health, Cycle 2/2); Ranged attack Fire Column: AoE attack (20+25/10+60/10+175 Physical+Fire; Continuous)",
+        "rapidocr": "Bestowal (Death):Invulnerability (Health,Cycle 2/2):Ranged attack Fire Column:AoE altack (20+25/10+60/10+175 Physical+Fire;Continuous)"
+      }
+    ]
+  },
+  {
+    "row": 17,
+    "id": "Chaplain Nymphalis (N, H, L)",
+    "conflicts": [
+      {
+        "field": "Damage Reduction (%)",
+        "easyocr": "16.0+1.1, 6.4t1.1_ 20.2+1.1",
+        "rapidocr": "6.4±1.1,16.0±1.1,20.2±1.1"
+      },
+      {
+        "field": "Elemental ATK",
+        "easyocr": "10 Fire 2, 4,",
+        "rapidocr": "2, 4, 10 Fire"
+      },
+      {
+        "field": "Special Mechanic(s) Summary",
+        "easyocr": "Bestowal (Death); Invulnerability (Health, Cycle 212); Ranged attack; Slows attack speed",
+        "rapidocr": ""
+      }
+    ]
+  },
+  {
+    "row": 18,
+    "id": "",
+    "conflicts": [
+      {
+        "field": "ID",
+        "easyocr": "ruel Torturef",
+        "rapidocr": "Crue/Torturer"
+      }
+    ]
+  },
+  {
+    "row": 20,
+    "id": "Damned",
+    "conflicts": [
+      {
+        "field": "Health",
+        "easyocr": "",
+        "rapidocr": "90"
+      },
+      {
+        "field": "Armor (Est.)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Damage Reduction (%)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Physical ATK",
+        "easyocr": "",
+        "rapidocr": "9"
+      }
+    ]
+  },
+  {
+    "row": 21,
+    "id": "",
+    "conflicts": [
+      {
+        "field": "ID",
+        "easyocr": "Damned Ihnqusitov",
+        "rapidocr": "Damnedlnqustor"
+      }
+    ]
+  },
+  {
+    "row": 23,
+    "id": "Damned Squire",
+    "conflicts": [
+      {
+        "field": "Physical ATK",
+        "easyocr": "",
+        "rapidocr": "62"
+      },
+      {
+        "field": "Common Location(s)",
+        "easyocr": "Forsaken (N; Rare); Scarlet Hunt",
+        "rapidocr": "Forsaken 1(N;Rare);Scarlet Hunt 1"
+      }
+    ]
+  },
+  {
+    "row": 25,
+    "id": "",
+    "conflicts": [
+      {
+        "field": "ID",
+        "easyocr": "Damned Warriov",
+        "rapidocr": "Damned Wanior"
+      },
+      {
+        "field": "Special Mechanic(s) Summary",
+        "easyocr": "Blast: AoE attack (15 Physical 15 Bleed x 4 ticks)",
+        "rapidocr": "Blast:AoEattack(15 Physical+15 Bleed x4 ticks)"
+      }
+    ]
+  },
+  {
+    "row": 26,
+    "id": "",
+    "conflicts": [
+      {
+        "field": "ID",
+        "easyocr": "Damned Zealt",
+        "rapidocr": "DamnedZealot"
+      },
+      {
+        "field": "Physical ATK",
+        "easyocr": "",
+        "rapidocr": "45"
+      },
+      {
+        "field": "Special Mechanic(s) Summary",
+        "easyocr": "Cone: AoE attack (85 Physical) and slows attack speed",
+        "rapidocr": "Cone:AoE altack (85 Physical and slows attack speed"
+      }
+    ]
+  },
+  {
+    "row": 27,
+    "id": "Dark Guardian",
+    "conflicts": [
+      {
+        "field": "Armor (Est.)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Damage Reduction (%)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Physical ATK",
+        "easyocr": "",
+        "rapidocr": "8"
+      },
+      {
+        "field": "Special Mechanic(s) Summary",
+        "easyocr": "AoE attackt",
+        "rapidocr": "AoE attack*"
+      }
+    ]
+  },
+  {
+    "row": 28,
+    "id": "Dark Hunter",
+    "conflicts": [
+      {
+        "field": "Health",
+        "easyocr": "",
+        "rapidocr": "80"
+      },
+      {
+        "field": "Armor (Est.)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Damage Reduction (%)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Physical ATK",
+        "easyocr": "",
+        "rapidocr": "63"
+      },
+      {
+        "field": "Special Mechanic(s) Summary",
+        "easyocr": "Varying ranged attack (Armor penalty) Armor penetration (215 Physical)",
+        "rapidocr": "(esd l) uauad low: (ead wy) yne pauer bue"
+      }
+    ]
+  },
+  {
+    "row": 29,
+    "id": "Decay Bearer",
+    "conflicts": [
+      {
+        "field": "Armor (Est.)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Damage Reduction (%)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Special Mechanic(s) Summary",
+        "easyocr": "Explodes (Death; 50 Physical); Poison Cloud: AoE poison (Death; 5 Poison x 3 ticks; Continuous)",
+        "rapidocr": "Explodes(Death;50 Physicalj;Poison Cloud:AoE poison Death;5Poison x3 ticks;Continuous)"
+      }
+    ]
+  },
+  {
+    "row": 30,
+    "id": "Decay Cocoon",
+    "conflicts": [
+      {
+        "field": "Armor (Est.)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Special Mechanic(s) Summary",
+        "easyocr": "Summons Decay Rats (Other Decay Cocoon Death/Timer; Periodic); Summons nearby mobs (Attacked) Poison Cloud: AOE poison (Timer; 5 Poison x 3 ticks; Continuous)",
+        "rapidocr": "Summons Decay Rats(Other Decay Cocoon Death/Timer,Periodic);Summons nearby mobs(Attacked) Poison Cloud:AoEpoison(Timer;5Polsonx3ticks;Continuous)"
+      }
+    ]
+  },
+  {
+    "row": 31,
+    "id": "Decay Damned",
+    "conflicts": [
+      {
+        "field": "Armor (Est.)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Damage Reduction (%)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Common Location(s)",
+        "easyocr": "Forsaken and 2 (N; Rare); Scarlet Hunt 3 (Decay Cradle)",
+        "rapidocr": "Forsaken1and2(N;Rare);Scarlet Hunt3(DecayCradle)"
+      }
+    ]
+  },
+  {
+    "row": 32,
+    "id": "Decay Knight",
+    "conflicts": [
+      {
+        "field": "Common Location(s)",
+        "easyocr": "Forsaken and 2 (N; Rare); Scarlet Hunt 3 (Decay Cradle)",
+        "rapidocr": "Forsaken1and 2(N;Rare);Scarlet Hunt3(Decay Cradle)"
+      }
+    ]
+  },
+  {
+    "row": 33,
+    "id": "Decay Rat",
+    "conflicts": [
+      {
+        "field": "Armor (Est.)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Damage Reduction (%)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Physical ATK",
+        "easyocr": "",
+        "rapidocr": "5"
+      }
+    ]
+  },
+  {
+    "row": 34,
+    "id": "Decay Root",
+    "conflicts": [
+      {
+        "field": "Armor (Est.)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Damage Reduction (%)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Special Mechanic(s) Summary",
+        "easyocr": "Invulnerability 'Tethered to Decay Cocoons); Poison Cloud: AoE poison Timer; 5 Poison ticks; Continuous)",
+        "rapidocr": ""
+      }
+    ]
+  },
+  {
+    "row": 35,
+    "id": "Deer",
+    "conflicts": [
+      {
+        "field": "Armor (Est.)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Damage Reduction (%)",
+        "easyocr": "",
+        "rapidocr": "0"
+      }
+    ]
+  },
+  {
+    "row": 36,
+    "id": "Desecrator",
+    "conflicts": [
+      {
+        "field": "Common Location(s)",
+        "easyocr": "TC; Forsaken and 2 (N, H)",
+        "rapidocr": "TC;Forsaken 1 and 2(N,H)"
+      }
+    ]
+  },
+  {
+    "row": 37,
+    "id": "Dire Bat (1)",
+    "conflicts": [
+      {
+        "field": "Armor (Est.)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Damage Reduction (%)",
+        "easyocr": "",
+        "rapidocr": "0"
+      }
+    ]
+  },
+  {
+    "row": 38,
+    "id": "Dire Bat (2)",
+    "conflicts": [
+      {
+        "field": "Health",
+        "easyocr": "",
+        "rapidocr": "60"
+      },
+      {
+        "field": "Armor (Est.)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Damage Reduction (%)",
+        "easyocr": "",
+        "rapidocr": "0"
+      }
+    ]
+  },
+  {
+    "row": 40,
+    "id": "Doomed",
+    "conflicts": [
+      {
+        "field": "Armor (Est.)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Damage Reduction (%)",
+        "easyocr": "",
+        "rapidocr": "0"
+      }
+    ]
+  },
+  {
+    "row": 41,
+    "id": "",
+    "conflicts": [
+      {
+        "field": "ID",
+        "easyocr": "Elza",
+        "rapidocr": "E2za"
+      },
+      {
+        "field": "Armor (Est.)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Damage Reduction (%)",
+        "easyocr": "",
+        "rapidocr": "0"
+      }
+    ]
+  },
+  {
+    "row": 42,
+    "id": "Exile (1)",
+    "conflicts": [
+      {
+        "field": "Special Mechanic(s) Summary",
+        "easyocr": "May flee at low health",
+        "rapidocr": "May fee at low health"
+      },
+      {
+        "field": "Common Location(s)",
+        "easyocr": "Forsaken (N, H); S1-S5",
+        "rapidocr": "Forsaken 1 (N,H);S1-S5"
+      }
+    ]
+  },
+  {
+    "row": 43,
+    "id": "",
+    "conflicts": [
+      {
+        "field": "ID",
+        "easyocr": "Gxilbe",
+        "rapidocr": "Exle(2)"
+      },
+      {
+        "field": "Special Mechanic(s) Summary",
+        "easyocr": "Can heal slightly overtime; May flee at low health",
+        "rapidocr": "Canheal slightyovertime;Mayfeeat lowhealth"
+      }
+    ]
+  },
+  {
+    "row": 44,
+    "id": "Fanatic",
+    "conflicts": [
+      {
+        "field": "Armor (Est.)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Damage Reduction (%)",
+        "easyocr": "",
+        "rapidocr": "0"
+      }
+    ]
+  },
+  {
+    "row": 46,
+    "id": "",
+    "conflicts": [
+      {
+        "field": "ID",
+        "easyocr": "Fie Guardian",
+        "rapidocr": "FreCuardlan"
+      },
+      {
+        "field": "Damage Reduction (%)",
+        "easyocr": "92.4+0.",
+        "rapidocr": "92.4±0.7"
+      },
+      {
+        "field": "Physical ATK",
+        "easyocr": "",
+        "rapidocr": "65"
+      }
+    ]
+  },
+  {
+    "row": 47,
+    "id": "",
+    "conflicts": [
+      {
+        "field": "ID",
+        "easyocr": "Forgotten Soul",
+        "rapidocr": "Forgotien Soul"
+      },
+      {
+        "field": "Armor (Est.)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Damage Reduction (%)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Physical ATK",
+        "easyocr": "",
+        "rapidocr": "6"
+      },
+      {
+        "field": "Common Location(s)",
+        "easyocr": "Scarlet Hunt 4 & 10 (Vilgraw Ruins)",
+        "rapidocr": "Scartet Hunt 4&10 (Vilgraw Ruins)"
+      }
+    ]
+  },
+  {
+    "row": 48,
+    "id": "Forsaken",
+    "conflicts": [
+      {
+        "field": "Physical ATK",
+        "easyocr": "",
+        "rapidocr": "51"
+      }
+    ]
+  },
+  {
+    "row": 49,
+    "id": "Forsaken Hermit",
+    "conflicts": [
+      {
+        "field": "Common Location(s)",
+        "easyocr": "Forsaken Hermit's Hut S3 _",
+        "rapidocr": "Forsaken Hemit's Hut;S3"
+      }
+    ]
+  },
+  {
+    "row": 50,
+    "id": "",
+    "conflicts": [
+      {
+        "field": "ID",
+        "easyocr": "Furious Desecratov",
+        "rapidocr": "FuriousDesecrator"
+      },
+      {
+        "field": "Special Mechanic(s) Summary",
+        "easyocr": "Increased damage (<30% Health; Zx)",
+        "rapidocr": "Increased damage(<30% Health;2x)"
+      }
+    ]
+  },
+  {
+    "row": 51,
+    "id": "",
+    "conflicts": [
+      {
+        "field": "ID",
+        "easyocr": "Gatekeepev",
+        "rapidocr": "Gatekeeper"
+      },
+      {
+        "field": "Physical ATK",
+        "easyocr": "",
+        "rapidocr": "71"
+      }
+    ]
+  },
+  {
+    "row": 52,
+    "id": "",
+    "conflicts": [
+      {
+        "field": "ID",
+        "easyocr": "Giduur",
+        "rapidocr": "Gidur"
+      },
+      {
+        "field": "Special Mechanic(s) Summary",
+        "easyocr": "Chance to poison (10 Poison x 6 ticks); Increased damage <30% Health; Zx)",
+        "rapidocr": "Chance to poison(10Poison x6 ticks); Increased damage(<30% Health;2x)"
+      }
+    ]
+  },
+  {
+    "row": 54,
+    "id": "",
+    "conflicts": [
+      {
+        "field": "ID",
+        "easyocr": "Golund)",
+        "rapidocr": "Golund"
+      },
+      {
+        "field": "Physical ATK",
+        "easyocr": "",
+        "rapidocr": "60"
+      },
+      {
+        "field": "Special Mechanic(s) Summary",
+        "easyocr": "Blocks for 2 hits after taking 200-250 pre-mitigated damage; Increased damage (<30% Health; Zx)",
+        "rapidocr": "Blocksfor2hits aftertaking 200-250pre-mitigated damage;lncreaseddamage(<30%Health;2x)"
+      }
+    ]
+  },
+  {
+    "row": 55,
+    "id": "Greedy Hoarder",
+    "conflicts": [
+      {
+        "field": "Armor (Est.)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Damage Reduction (%)",
+        "easyocr": "",
+        "rapidocr": "0"
+      }
+    ]
+  },
+  {
+    "row": 56,
+    "id": "",
+    "conflicts": [
+      {
+        "field": "ID",
+        "easyocr": "Guard @tewolf(())",
+        "rapidocr": "GuardDirewol(t)"
+      }
+    ]
+  },
+  {
+    "row": 58,
+    "id": "",
+    "conflicts": [
+      {
+        "field": "ID",
+        "easyocr": "GurdDitewoli(3)",
+        "rapidocr": "Guard Drewolf (3)"
+      }
+    ]
+  },
+  {
+    "row": 59,
+    "id": "",
+    "conflicts": [
+      {
+        "field": "ID",
+        "easyocr": "Habcoldbane(,H4",
+        "rapidocr": "Hat Coldbane (N.H,L)"
+      },
+      {
+        "field": "Damage Reduction (%)",
+        "easyocr": "17.4+0.6,23.2+0.6, 60.0.0.6",
+        "rapidocr": "17.4±0.6,23.2±0.6,60.0±0.6"
+      },
+      {
+        "field": "Elemental ATK",
+        "easyocr": "1105.21k.65 Col",
+        "rapidocr": "10,21,65Cold"
+      },
+      {
+        "field": "Special Mechanic(s) Summary",
+        "easyocr": "Sweep: AoE attack (30+20/43+43/70+125 Physical+Cold); Chance to frostbite (5/7/10 Cold x 5 ticks) Invunerability and Ice Spikes: AoE attack (<85%, 60%, 259 Health; 30+20/43+43/70+125 Physical+Cold; 5/7/9 Times) Summons 1/2/2 Halt Shards",
+        "rapidocr": "Sweep:AoE attack (30+20/43+43/70+125Physical+Cold);Chance to frostbite(5/7/10 Cold x 5 ticks) Summons 1/2/2 Halt Shards"
+      }
+    ]
+  },
+  {
+    "row": 60,
+    "id": "Halt Shard (N, H, L)",
+    "conflicts": [
+      {
+        "field": "Health",
+        "easyocr": "50, 80_ 140",
+        "rapidocr": "50,80,140"
+      },
+      {
+        "field": "Armor (Est.)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Damage Reduction (%)",
+        "easyocr": "",
+        "rapidocr": "0"
+      }
+    ]
+  },
+  {
+    "row": 61,
+    "id": "",
+    "conflicts": [
+      {
+        "field": "ID",
+        "easyocr": "HaalRlague GodlsNameless GodKAAcolyie",
+        "rapidocr": "Harats/Plague God'sNameless GodsAcolte"
+      },
+      {
+        "field": "Armor (Est.)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Damage Reduction (%)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Physical ATK",
+        "easyocr": "44+Levell5",
+        "rapidocr": "44+Level/5"
+      }
+    ]
+  },
+  {
+    "row": 62,
+    "id": "",
+    "conflicts": [
+      {
+        "field": "ID",
+        "easyocr": "HardFielncamalen,4,4",
+        "rapidocr": "Hand Fre icamate (N,H.L)"
+      },
+      {
+        "field": "Special Mechanic(s) Summary",
+        "easyocr": "Chance to ignite (3/5/7 Fire X 5 ticks); Inheritance; Invulnerability (Health, Cycle 1/2); Teleports and stuns",
+        "rapidocr": "Chancetognite35/7Firex5tcks)IneritanceIvulerabiltyealthCycle1/2):elportsandsts"
+      }
+    ]
+  },
+  {
+    "row": 63,
+    "id": "Headhunter",
+    "conflicts": [
+      {
+        "field": "Armor (Est.)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Damage Reduction (%)",
+        "easyocr": "",
+        "rapidocr": "0"
+      }
+    ]
+  },
+  {
+    "row": 64,
+    "id": "Horde Leader",
+    "conflicts": [
+      {
+        "field": "Physical ATK",
+        "easyocr": "",
+        "rapidocr": "9"
+      }
+    ]
+  },
+  {
+    "row": 65,
+    "id": "Horde Spawn (1)",
+    "conflicts": [
+      {
+        "field": "Damage Reduction (%)",
+        "easyocr": "37.5+1,.3",
+        "rapidocr": "37.5±1.3"
+      }
+    ]
+  },
+  {
+    "row": 67,
+    "id": "",
+    "conflicts": [
+      {
+        "field": "ID",
+        "easyocr": "Ice Walker (1)",
+        "rapidocr": "lce Walker (1)"
+      },
+      {
+        "field": "Health",
+        "easyocr": "",
+        "rapidocr": "80"
+      },
+      {
+        "field": "Armor (Est.)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Damage Reduction (%)",
+        "easyocr": "",
+        "rapidocr": "0"
+      }
+    ]
+  },
+  {
+    "row": 68,
+    "id": "Ice Walker (2)",
+    "conflicts": [
+      {
+        "field": "Health",
+        "easyocr": "",
+        "rapidocr": "60"
+      },
+      {
+        "field": "Armor (Est.)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Damage Reduction (%)",
+        "easyocr": "",
+        "rapidocr": "0"
+      }
+    ]
+  },
+  {
+    "row": 69,
+    "id": "Inquisitor Antonio (N, H, L)",
+    "conflicts": [
+      {
+        "field": "Common Location(s)",
+        "easyocr": "Scarlet Hunt 6; Forgotten Temple",
+        "rapidocr": "ScarietHunt6;ForgottenTemple"
+      }
+    ]
+  },
+  {
+    "row": 70,
+    "id": "",
+    "conflicts": [
+      {
+        "field": "ID",
+        "easyocr": "Inquisitor Baxter (N, H, L)",
+        "rapidocr": "Inquisiltor Baxter (N, H, L)"
+      },
+      {
+        "field": "Damage Reduction (%)",
+        "easyocr": "6.4+1.1_ 16.0+1.1 20.2+1.1",
+        "rapidocr": "6.4±1.1,16.0±1.1,20.2±1.1"
+      },
+      {
+        "field": "Elemental ATK",
+        "easyocr": "2, 4 10 Fire",
+        "rapidocr": "2, 4, 10 Fire"
+      },
+      {
+        "field": "Special Mechanic(s) Summary",
+        "easyocr": "Bestowal (Death); Invulnerability (Health, Cycle 2/2); Ranged attack; Choking Hex: Trap (20+10/10+50/10+100 Physical Fire)",
+        "rapidocr": ""
+      }
+    ]
+  },
+  {
+    "row": 71,
+    "id": "Inquisitor Inotsky (N, H, L)",
+    "conflicts": [
+      {
+        "field": "Special Mechanic(s) Summary",
+        "easyocr": "Bestowal (Death); Invulnerability (Health, Cycle 2/2); Ranged attack; Blinding Hex: Trap (10+15/10+50/10+150 PhysicaltFire)",
+        "rapidocr": ""
+      }
+    ]
+  },
+  {
+    "row": 72,
+    "id": "Leper",
+    "conflicts": [
+      {
+        "field": "Armor (Est.)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Damage Reduction (%)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Physical ATK",
+        "easyocr": "",
+        "rapidocr": "6"
+      }
+    ]
+  },
+  {
+    "row": 73,
+    "id": "Leprous Soldier",
+    "conflicts": [
+      {
+        "field": "Common Location(s)",
+        "easyocr": "(N, H) Forsaken",
+        "rapidocr": "Forsaken 1 (N, H)"
+      }
+    ]
+  },
+  {
+    "row": 74,
+    "id": "",
+    "conflicts": [
+      {
+        "field": "ID",
+        "easyocr": "(eulenant Salllyy",
+        "rapidocr": "Leutenant Salty"
+      },
+      {
+        "field": "Armor (Est.)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Damage Reduction (%)",
+        "easyocr": "",
+        "rapidocr": "0"
+      }
+    ]
+  },
+  {
+    "row": 75,
+    "id": "Master Eisenborg (N, H)",
+    "conflicts": [
+      {
+        "field": "Special Mechanic(s) Summary",
+        "easyocr": "Smash: AoE attack (Center: 385/500 Physical; Outer: 105-165/130-210 Physical) Wave: AoE attack (240/300 Physical; 3 Times) <80%, 60%, 45%, 25% Health) Summons Atorus Golund_ Gidur and Yaron",
+        "rapidocr": "Smash:AoE attack(Center:385/500Physical;Ouler:105-165/130-210 Physical) Wave:AoE attack (240/300 Physical; 3 Times) Summons Atorus, Golund, Gldur and Yaron (<80%, 60%, 45%, 25% Health)"
+      }
+    ]
+  },
+  {
+    "row": 77,
+    "id": "Merchant (Flanged Mace)",
+    "conflicts": [
+      {
+        "field": "Damage Reduction (%)",
+        "easyocr": "45.8+0.",
+        "rapidocr": "45.8±0.7"
+      }
+    ]
+  },
+  {
+    "row": 78,
+    "id": "Merchant (Scimitar)",
+    "conflicts": [
+      {
+        "field": "Damage Reduction (%)",
+        "easyocr": "45.8+0.",
+        "rapidocr": "45.8±0.7"
+      }
+    ]
+  },
+  {
+    "row": 79,
+    "id": "Mourning Reaper's Shadow",
+    "conflicts": [
+      {
+        "field": "Special Mechanic(s) Summary",
+        "easyocr": "Heal (Lightning; 35-50 Health); Siphon (50% Damage)",
+        "rapidocr": "Heal(Lightning:35-50 Health);Siphon(50%Damage)"
+      }
+    ]
+  },
+  {
+    "row": 80,
+    "id": "Nameless Neophyte",
+    "conflicts": [
+      {
+        "field": "Health",
+        "easyocr": "",
+        "rapidocr": "90"
+      },
+      {
+        "field": "Armor (Est.)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Damage Reduction (%)",
+        "easyocr": "",
+        "rapidocr": "0"
+      }
+    ]
+  },
+  {
+    "row": 81,
+    "id": "Night Guest",
+    "conflicts": [
+      {
+        "field": "Special Mechanic(s) Summary",
+        "easyocr": "Invulnerability; Flees from flaming items_ large soulmark, closed walls and daytime",
+        "rapidocr": "Invulnerability:Fleesfromflaming ilems, large soulmark, closed walls and daytime"
+      }
+    ]
+  },
+  {
+    "row": 82,
+    "id": "Ottar the Cursed",
+    "conflicts": [
+      {
+        "field": "Common Location(s)",
+        "easyocr": "Scarlet Hunt 4 & 10 (Vilgraw Ruins)",
+        "rapidocr": "Scartet Hunt4&10(VilgrawRuins)"
+      }
+    ]
+  },
+  {
+    "row": 83,
+    "id": "Plague Bandit",
+    "conflicts": [
+      {
+        "field": "Armor (Est.)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Damage Reduction (%)",
+        "easyocr": "",
+        "rapidocr": "0"
+      }
+    ]
+  },
+  {
+    "row": 84,
+    "id": "Plague Barbarian",
+    "conflicts": [
+      {
+        "field": "Physical ATK",
+        "easyocr": "",
+        "rapidocr": "32"
+      }
+    ]
+  },
+  {
+    "row": 85,
+    "id": "Plague Commander",
+    "conflicts": [
+      {
+        "field": "Special Mechanic(s) Summary",
+        "easyocr": "Double damage (Taking Damage)",
+        "rapidocr": "DoubledamageTaking Damage)"
+      },
+      {
+        "field": "Common Location(s)",
+        "easyocr": "Scarlet Hunt 1 Forsaken 2 (N; Rare)",
+        "rapidocr": "Scarlet Hunt 1;Forsaken2(N;Rare)"
+      }
+    ]
+  },
+  {
+    "row": 88,
+    "id": "",
+    "conflicts": [
+      {
+        "field": "ID",
+        "easyocr": "Alague Santa",
+        "rapidocr": "PlagueSanta"
+      },
+      {
+        "field": "Elemental ATK",
+        "easyocr": "'Cold",
+        "rapidocr": "35Cold"
+      },
+      {
+        "field": "Common Location(s)",
+        "easyocr": "Scarlet Hunt 11 (Commander Claus vs. Plague Santa)",
+        "rapidocr": "Scariet Hunt 11(CommanderClaus vs.Plague Santa)"
+      }
+    ]
+  },
+  {
+    "row": 89,
+    "id": "Plague Spawn",
+    "conflicts": [
+      {
+        "field": "Health",
+        "easyocr": "",
+        "rapidocr": "65"
+      },
+      {
+        "field": "Armor (Est.)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Damage Reduction (%)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Physical ATK",
+        "easyocr": "",
+        "rapidocr": "6"
+      },
+      {
+        "field": "Common Location(s)",
+        "easyocr": "Forsaken and 2 (N, H)",
+        "rapidocr": "Forsaken 1 and 2 (N, H)"
+      }
+    ]
+  },
+  {
+    "row": 90,
+    "id": "Plague Wolf",
+    "conflicts": [
+      {
+        "field": "Armor (Est.)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Damage Reduction (%)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Physical ATK",
+        "easyocr": "",
+        "rapidocr": "9"
+      }
+    ]
+  },
+  {
+    "row": 91,
+    "id": "",
+    "conflicts": [
+      {
+        "field": "ID",
+        "easyocr": "(lagueridden",
+        "rapidocr": "Plaguerdden"
+      },
+      {
+        "field": "Health",
+        "easyocr": "",
+        "rapidocr": "65"
+      },
+      {
+        "field": "Armor (Est.)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Damage Reduction (%)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Special Mechanic(s) Summary",
+        "easyocr": "Spit: AoE attack (15 Physical) and slows movement",
+        "rapidocr": "Spit:AoE atlack(15Physical)and slowsmovement"
+      }
+    ]
+  },
+  {
+    "row": 92,
+    "id": "Plaguis",
+    "conflicts": [
+      {
+        "field": "Common Location(s)",
+        "easyocr": "Scarlet Hunt 1; Forsaken (N; Rare)",
+        "rapidocr": "ScarletHunt 1;Forsaken1(N;Rare)"
+      }
+    ]
+  },
+  {
+    "row": 93,
+    "id": "Possessed",
+    "conflicts": [
+      {
+        "field": "Armor (Est.)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Damage Reduction (%)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Common Location(s)",
+        "easyocr": "Forsaken and 2 (N, H); TC",
+        "rapidocr": "Forsaken 1 and 2(N,H): TC"
+      }
+    ]
+  },
+  {
+    "row": 94,
+    "id": "Priestess",
+    "conflicts": [
+      {
+        "field": "Armor (Est.)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Damage Reduction (%)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Common Location(s)",
+        "easyocr": "TC; Torturers and 2",
+        "rapidocr": "TC;Torturers 1 and 2"
+      }
+    ]
+  },
+  {
+    "row": 95,
+    "id": "Punisher",
+    "conflicts": [
+      {
+        "field": "Special Mechanic(s) Summary",
+        "easyocr": "Chance to resurrect (50% Health); Increased damage (<50% Health; Zx)",
+        "rapidocr": "()s a"
+      }
+    ]
+  },
+  {
+    "row": 96,
+    "id": "Rat",
+    "conflicts": [
+      {
+        "field": "Health",
+        "easyocr": "",
+        "rapidocr": "1"
+      },
+      {
+        "field": "Armor (Est.)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Damage Reduction (%)",
+        "easyocr": "",
+        "rapidocr": "0"
+      }
+    ]
+  },
+  {
+    "row": 97,
+    "id": "Rogvold's Shadow",
+    "conflicts": [
+      {
+        "field": "Armor (Est.)",
+        "easyocr": "50",
+        "rapidocr": ""
+      },
+      {
+        "field": "Special Mechanic(s) Summary",
+        "easyocr": "Chance to freeze; Fears and summons 2 Mourning Reaper's Shadows (<75 50%, 25Health) Heal (Lightning; 35-50 Health); Lightning: AoE attack (35-50 Pure); Invulnerability (Periodic); Siphon (40% Damage)",
+        "rapidocr": "Chance to freeze;Fears and summons 2 Mourning Reaper's Shadows(<75%,50%,25%Health) Hea1(Lightning:35-50Health);Lightning:AoEattack(35-50Pure);Invuinerability (Periodic);Siphon(40%Damage)"
+      },
+      {
+        "field": "Common Location(s)",
+        "easyocr": "",
+        "rapidocr": "SC"
+      }
+    ]
+  },
+  {
+    "row": 98,
+    "id": "Scientist's Ghost",
+    "conflicts": [
+      {
+        "field": "Armor (Est.)",
+        "easyocr": "475,",
+        "rapidocr": "475"
+      },
+      {
+        "field": "Special Mechanic(s) Summary",
+        "easyocr": "Chance to frostbite (4 Cold x 5 ticks)",
+        "rapidocr": "Chance tofrostbite{4Coldx5ticks)"
+      }
+    ]
+  },
+  {
+    "row": 99,
+    "id": "Scribe's Ghost",
+    "conflicts": [
+      {
+        "field": "Damage Reduction (%)",
+        "easyocr": "74.2+0.2",
+        "rapidocr": "74.2±0.7"
+      },
+      {
+        "field": "Special Mechanic(s) Summary",
+        "easyocr": "Cone: AoE attack (50 Cold) and freezes",
+        "rapidocr": "Cone:AoEaltack(50 Cold)and freezes"
+      },
+      {
+        "field": "Common Location(s)",
+        "easyocr": "",
+        "rapidocr": "co"
+      }
+    ]
+  },
+  {
+    "row": 100,
+    "id": "",
+    "conflicts": [
+      {
+        "field": "ID",
+        "easyocr": "SiRowen",
+        "rapidocr": "SirRowen"
+      },
+      {
+        "field": "Common Location(s)",
+        "easyocr": "Purge The Filth",
+        "rapidocr": "Purge The Filh"
+      }
+    ]
+  },
+  {
+    "row": 101,
+    "id": "Skeleton",
+    "conflicts": [
+      {
+        "field": "Armor (Est.)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Damage Reduction (%)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Common Location(s)",
+        "easyocr": "AC; AtGFM; NC",
+        "rapidocr": "AC;AIGFM; NC"
+      }
+    ]
+  },
+  {
+    "row": 102,
+    "id": "Skeleton Warrior",
+    "conflicts": [
+      {
+        "field": "Armor (Est.)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Damage Reduction (%)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Common Location(s)",
+        "easyocr": "",
+        "rapidocr": "SC"
+      }
+    ]
+  },
+  {
+    "row": 103,
+    "id": "Slaughterer",
+    "conflicts": [
+      {
+        "field": "Physical ATK",
+        "easyocr": "",
+        "rapidocr": "62"
+      }
+    ]
+  },
+  {
+    "row": 104,
+    "id": "Sufferer",
+    "conflicts": [
+      {
+        "field": "Armor (Est.)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Damage Reduction (%)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Common Location(s)",
+        "easyocr": "TC; Torturers and 2; US",
+        "rapidocr": "TC; Torturers 1 and 2; US"
+      }
+    ]
+  },
+  {
+    "row": 105,
+    "id": "Summoner",
+    "conflicts": [
+      {
+        "field": "Armor (Est.)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Damage Reduction (%)",
+        "easyocr": "",
+        "rapidocr": "0"
+      }
+    ]
+  },
+  {
+    "row": 106,
+    "id": "Tomb Guardian",
+    "conflicts": [
+      {
+        "field": "Physical ATK",
+        "easyocr": "",
+        "rapidocr": "32"
+      },
+      {
+        "field": "Common Location(s)",
+        "easyocr": "Scarlet Hunt 4 & 10 (Vilgraw Ruins)",
+        "rapidocr": "Scartet Hunt4 & 10 (Vigraw Ruins)"
+      }
+    ]
+  },
+  {
+    "row": 107,
+    "id": "",
+    "conflicts": [
+      {
+        "field": "ID",
+        "easyocr": "Torture",
+        "rapidocr": "Torturer"
+      },
+      {
+        "field": "Special Mechanic(s) Summary",
+        "easyocr": "Attack speed increases as health decreases",
+        "rapidocr": "Altack speed increases as healthdecreases"
+      },
+      {
+        "field": "Common Location(s)",
+        "easyocr": "TC; Torturers",
+        "rapidocr": "TC; Torturers 1"
+      }
+    ]
+  },
+  {
+    "row": 108,
+    "id": "Torturer Scout",
+    "conflicts": [
+      {
+        "field": "Armor (Est.)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Damage Reduction (%)",
+        "easyocr": "",
+        "rapidocr": "0"
+      }
+    ]
+  },
+  {
+    "row": 109,
+    "id": "",
+    "conflicts": [
+      {
+        "field": "ID",
+        "easyocr": "Turkey",
+        "rapidocr": ""
+      },
+      {
+        "field": "Armor (Est.)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Damage Reduction (%)",
+        "easyocr": "",
+        "rapidocr": "0"
+      }
+    ]
+  },
+  {
+    "row": 110,
+    "id": "",
+    "conflicts": [
+      {
+        "field": "ID",
+        "easyocr": "Tukey Boss",
+        "rapidocr": "Turkey Boss"
+      },
+      {
+        "field": "Armor (Est.)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Damage Reduction (%)",
+        "easyocr": "",
+        "rapidocr": "0"
+      }
+    ]
+  },
+  {
+    "row": 111,
+    "id": "Varg",
+    "conflicts": [
+      {
+        "field": "Common Location(s)",
+        "easyocr": "Scarlet Hunt 1; SI-S5 (Rare)",
+        "rapidocr": "Scarlet Hunt1;S1-S5(Rare)"
+      }
+    ]
+  },
+  {
+    "row": 112,
+    "id": "Vengeful Spirit",
+    "conflicts": [
+      {
+        "field": "Common Location(s)",
+        "easyocr": "Scarlet Hunt 4 & 10 (Vilgraw Ruins)",
+        "rapidocr": "Scarlet Hunt4&10(VigrawRuins)"
+      }
+    ]
+  },
+  {
+    "row": 114,
+    "id": "Wagenburg Archer",
+    "conflicts": [
+      {
+        "field": "Special Mechanic(s) Summary",
+        "easyocr": "Chance to heal (40 Health); Slows attack speed and movement; Varying ranged attack (Armor penalty)",
+        "rapidocr": "Chancetoheal(40Health);Slowsattackspeed andmovement;Varyingranged attack(Amorpenalty):"
+      }
+    ]
+  },
+  {
+    "row": 115,
+    "id": "Wagenburg Crossbowman",
+    "conflicts": [
+      {
+        "field": "Special Mechanic(s) Summary",
+        "easyocr": "Chance to heal (40 Health); Ranged attack",
+        "rapidocr": "Chance to heal (40 Health); Ranged altack"
+      }
+    ]
+  },
+  {
+    "row": 116,
+    "id": "Wagenburg Duelist",
+    "conflicts": [
+      {
+        "field": "Special Mechanic(s) Summary",
+        "easyocr": "Chance to heal (40 Health)",
+        "rapidocr": "Chance to heal (40 Health}"
+      }
+    ]
+  },
+  {
+    "row": 118,
+    "id": "Wagenburg Gladiator",
+    "conflicts": [
+      {
+        "field": "Damage Reduction (%)",
+        "easyocr": "71.0+0.",
+        "rapidocr": "71.0±0.3"
+      }
+    ]
+  },
+  {
+    "row": 119,
+    "id": "",
+    "conflicts": [
+      {
+        "field": "ID",
+        "easyocr": "Wagenburg Lieuenan(W)",
+        "rapidocr": "Wagenburg:Lieutenant(1)"
+      },
+      {
+        "field": "Damage Reduction (%)",
+        "easyocr": "86.5.0.6",
+        "rapidocr": "86.5±0.6"
+      },
+      {
+        "field": "Special Mechanic(s) Summary",
+        "easyocr": "Chance to block (40 damage x hit(s) @ 2 sec(s) , Stuns attacker); Chance to heal (100 Health) Chance to stun; Resurrects (100% Health; Once)",
+        "rapidocr": "Chance to block(40 damage x hit(s)@ 2 sec(s), Stuns alttacker);Chance to heal (100 Health): Chance to stun;Resurrects(100%Health;Once)"
+      }
+    ]
+  },
+  {
+    "row": 120,
+    "id": "",
+    "conflicts": [
+      {
+        "field": "ID",
+        "easyocr": "WagenburgLteuenant(2)",
+        "rapidocr": "Wagenburgteutenant(2)"
+      },
+      {
+        "field": "Special Mechanic(s) Summary",
+        "easyocr": "Chance to fear attacker Chance to damage attacker (50 Pure); Chance to fear Chance to heal (100 Health); Temporarily increases damage (2x) against enemies affected by trap_ fear; stun or freezing",
+        "rapidocr": "Chancetodamageatlacker(50Pure);Chance lofear;Chance tofearaltacker Chance to heal (100 Health); Temporarily increases damage (2x) against enemies affected by trap, fear, stun or freezing"
+      }
+    ]
+  },
+  {
+    "row": 121,
+    "id": "",
+    "conflicts": [
+      {
+        "field": "ID",
+        "easyocr": "Wagenburg Liteuenant(8)",
+        "rapidocr": "(e)queuejianBinquabeM"
+      },
+      {
+        "field": "Damage Reduction (%)",
+        "easyocr": "83.0+1.0",
+        "rapidocr": "83.0±1,0"
+      },
+      {
+        "field": "Elemental ATK",
+        "easyocr": "15Cold",
+        "rapidocr": "15:Cda"
+      },
+      {
+        "field": "Special Mechanic(s) Summary",
+        "easyocr": "Chance to block (50 X - hit(s) @ 2 sec(s) , Freezes attacker); Chance to freeze attacker Chance to heal (100 Health); Resurrects (100% Health; Once); Slows attack speed and movement",
+        "rapidocr": "Chance toblock(50 x hit(s)@ 2 sec(s).Freezes attacker);Chance to freeze attacker Chance to heal(100 Health);Resurrects (100% Health;Once);Slows altack speed and movement"
+      }
+    ]
+  },
+  {
+    "row": 122,
+    "id": "Wagenburg Mourner",
+    "conflicts": [
+      {
+        "field": "Special Mechanic(s) Summary",
+        "easyocr": "Chance to heal (40 Health); Chance to instakill",
+        "rapidocr": "Chancetoheal(40Health);Chance toinstakil"
+      }
+    ]
+  },
+  {
+    "row": 123,
+    "id": "Wagenburg Pikeman",
+    "conflicts": [
+      {
+        "field": "Special Mechanic(s) Summary",
+        "easyocr": "Chance to heal (40 Health); Chance to pierce and deal 2x damage",
+        "rapidocr": "Chancetoheal(40 Health):Chance topierce and deal2xdamage"
+      }
+    ]
+  },
+  {
+    "row": 124,
+    "id": "Wagenburg Ritualist",
+    "conflicts": [
+      {
+        "field": "Special Mechanic(s) Summary",
+        "easyocr": "Chance to fear attacker; Chance to heal (40 Health); Bleeds (4 Bleed x 5 ticks)",
+        "rapidocr": "Chance to fear alttacker;Chance to heal(40 Health);Bleeds(4 Bleed x5 ticks)"
+      }
+    ]
+  },
+  {
+    "row": 125,
+    "id": "",
+    "conflicts": [
+      {
+        "field": "ID",
+        "easyocr": "Wagenburg Warrior",
+        "rapidocr": "Wagenburg Warior"
+      },
+      {
+        "field": "Special Mechanic(s) Summary",
+        "easyocr": "Chance to block (25 x 2 hit(s)); Chance to heal (40 Health); Resurrects (100% Health; Once)",
+        "rapidocr": "Chance to block(25x2hit(s);Chance toheal(40Health};Resurrects(100%Health;Once)"
+      }
+    ]
+  },
+  {
+    "row": 126,
+    "id": "Whispering Nightmare",
+    "conflicts": [
+      {
+        "field": "Armor (Est.)",
+        "easyocr": "305",
+        "rapidocr": "S00"
+      },
+      {
+        "field": "Special Mechanic(s) Summary",
+        "easyocr": "Chance to slow attack speed and movement 15 Bleed x Blast: AoE attack (15 Physical ticks); Cone: AoE attack (85 Physical) and slows attack speed",
+        "rapidocr": "Chancetoslowattackspeed andmovement"
+      }
+    ]
+  },
+  {
+    "row": 127,
+    "id": "Wild Horse",
+    "conflicts": [
+      {
+        "field": "Armor (Est.)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Damage Reduction (%)",
+        "easyocr": "",
+        "rapidocr": "0"
+      }
+    ]
+  },
+  {
+    "row": 128,
+    "id": "Witch",
+    "conflicts": [
+      {
+        "field": "Armor (Est.)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Damage Reduction (%)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Common Location(s)",
+        "easyocr": "S2-S5; Forsaken and 2 (N, H)",
+        "rapidocr": "S2-S5; Forsaken 1 and 2 (N, H)"
+      }
+    ]
+  },
+  {
+    "row": 130,
+    "id": "Witch Totem",
+    "conflicts": [
+      {
+        "field": "Armor (Est.)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Damage Reduction (%)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Special Mechanic(s) Summary",
+        "easyocr": "Summons Witch Guard (Death (3))",
+        "rapidocr": "Summons Witch Guard (Death (3)"
+      }
+    ]
+  },
+  {
+    "row": 131,
+    "id": "Wolf",
+    "conflicts": [
+      {
+        "field": "Armor (Est.)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Damage Reduction (%)",
+        "easyocr": "",
+        "rapidocr": "0"
+      },
+      {
+        "field": "Physical ATK",
+        "easyocr": "",
+        "rapidocr": "6"
+      }
+    ]
+  },
+  {
+    "row": 132,
+    "id": "",
+    "conflicts": [
+      {
+        "field": "ID",
+        "easyocr": "Yaaon)",
+        "rapidocr": "Yaron"
+      },
+      {
+        "field": "Physical ATK",
+        "easyocr": "",
+        "rapidocr": "83"
+      },
+      {
+        "field": "Special Mechanic(s) Summary",
+        "easyocr": "Chance to stun; Increased damage (<30% Health; Zx)",
+        "rapidocr": "Chance to stun;Increased damage(<30%Health;2x)"
+      }
+    ]
+  }
+]
