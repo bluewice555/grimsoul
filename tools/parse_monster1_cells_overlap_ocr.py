@@ -10,8 +10,8 @@ from rapidocr_onnxruntime import RapidOCR
 ROOT = Path(__file__).resolve().parent.parent
 IMAGE_PATH = ROOT / "docs" / "sources" / "monster_1.jpg"
 CELLS_PATH = ROOT / ".work" / "ocr" / "monster_1_cells.json"
-OUTPUT_JSON = ROOT / "docs" / "dataset" / "monster.json"
-OUTPUT_CONFLICTS = ROOT / ".work" / "ocr" / "monster_1_conflicts.json"
+OUTPUT_JSON = ROOT / "docs" / "dataset" / "monster_overlap.json"
+OUTPUT_CONFLICTS = ROOT / ".work" / "ocr" / "monster_1_overlap_conflicts.json"
 
 FIELDS = [
     "ID",
@@ -43,14 +43,15 @@ def normalize_text(text: str) -> str:
 
 
 def preprocess_a(crop):
-    big = cv2.resize(crop, None, fx=2, fy=2, interpolation=cv2.INTER_LANCZOS4)
+    big = cv2.resize(crop, None, fx=4, fy=4, interpolation=cv2.INTER_CUBIC)
     gray = cv2.cvtColor(big, cv2.COLOR_BGR2GRAY)
-    _, th = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
-    return th
+    return cv2.adaptiveThreshold(
+        gray, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 31, 11
+    )
 
 
 def preprocess_b(crop):
-    big = cv2.resize(crop, None, fx=2, fy=2, interpolation=cv2.INTER_LANCZOS4)
+    big = cv2.resize(crop, None, fx=3, fy=3, interpolation=cv2.INTER_LANCZOS4)
     gray = cv2.cvtColor(big, cv2.COLOR_BGR2GRAY)
     blur = cv2.bilateralFilter(gray, 5, 35, 35)
     _, th = cv2.threshold(blur, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
@@ -58,18 +59,20 @@ def preprocess_b(crop):
 
 
 def preprocess_c(crop):
-    big = cv2.resize(crop, None, fx=2, fy=2, interpolation=cv2.INTER_LANCZOS4)
+    big = cv2.resize(crop, None, fx=4, fy=4, interpolation=cv2.INTER_CUBIC)
     gray = cv2.cvtColor(big, cv2.COLOR_BGR2GRAY)
-    clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8, 8))
-    g = clahe.apply(gray)
-    _, th = cv2.threshold(g, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+    denoise = cv2.fastNlMeansDenoising(gray, None, 12, 7, 21)
+    sharp = cv2.addWeighted(
+        denoise, 1.5, cv2.GaussianBlur(denoise, (0, 0), 1.0), -0.5, 0
+    )
+    _, th = cv2.threshold(sharp, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
     return th
 
 
 METHODS = {
-    "a_lanczos_otsu": preprocess_a,
+    "a_adapt": preprocess_a,
     "b_bilat_otsu": preprocess_b,
-    "c_clahe_otsu": preprocess_c,
+    "c_denoise_otsu": preprocess_c,
 }
 
 
@@ -85,37 +88,39 @@ def rapid_text(engine, image) -> str:
 
 
 def pick_overlap(candidates):
-    pool = {}
+    overlaps = []
+    easy_values = {}
+    rapid_values = {}
+
     for c in candidates:
         if c["easy_norm"]:
-            pool.setdefault(c["easy_norm"], []).append(c["easy"])
+            easy_values.setdefault(c["easy_norm"], []).append(c["easy"])
         if c["rapid_norm"]:
-            pool.setdefault(c["rapid_norm"], []).append(c["rapid"])
+            rapid_values.setdefault(c["rapid_norm"], []).append(c["rapid"])
+        if c["easy_norm"] and c["easy_norm"] == c["rapid_norm"]:
+            overlaps.extend([c["easy"], c["rapid"]])
 
-    unique_norms = len(pool)
+    if overlaps:
+        return max(overlaps, key=len)
 
-    # Any 2 matching outputs (from 3 methods x 2 OCR engines) are enough to accept.
-    agree = [(k, vals) for k, vals in pool.items() if len(vals) >= 2]
-    if agree:
-        agree.sort(key=lambda kv: (len(kv[1]), len(kv[0])), reverse=True)
-        return max(agree[0][1], key=len), len(agree[0][1]), agree[0][0], unique_norms
-    return None, 0, "", unique_norms
+    cross = set(easy_values.keys()) & set(rapid_values.keys())
+    if cross:
+        best_key = max(cross, key=len)
+        pool = easy_values[best_key] + rapid_values[best_key]
+        return max(pool, key=len)
 
+    consensus_pool = {}
+    for c in candidates:
+        if c["easy_norm"]:
+            consensus_pool.setdefault(c["easy_norm"], []).append(c["easy"])
+        if c["rapid_norm"]:
+            consensus_pool.setdefault(c["rapid_norm"], []).append(c["rapid"])
+    consensus = [texts for _, texts in consensus_pool.items() if len(texts) >= 2]
+    if consensus:
+        merged = [t for group in consensus for t in group]
+        return max(merged, key=len)
 
-def try_stage(candidates, stage_name, image, reader, rapid):
-    easy_value = easy_text(reader, image)
-    rapid_value = rapid_text(rapid, image)
-    candidates.append(
-        {
-            "method": stage_name,
-            "easy": easy_value,
-            "rapid": rapid_value,
-            "easy_norm": normalize_text(easy_value),
-            "rapid_norm": normalize_text(rapid_value),
-        }
-    )
-    selected, support_count, selected_norm, unique_norms = pick_overlap(candidates)
-    return selected, support_count, selected_norm, unique_norms
+    return None
 
 
 def main() -> int:
@@ -137,6 +142,8 @@ def main() -> int:
         rec_use_cuda=True,
         rec_model_path=None,
     )
+    print("EasyOCR device: GPU (forced)")
+    print("RapidOCR device: GPU (forced)")
 
     rows = []
     conflicts = []
@@ -163,55 +170,44 @@ def main() -> int:
             ]
 
             method_results = []
-            stages = [("raw", crop)] + [(name, fn(crop)) for name, fn in METHODS.items()]
-            selected = None
-            support_count = 0
-            selected_norm = ""
-            unique_norms = 0
-            used_stage = ""
-            for stage_name, stage_img in stages:
-                selected, support_count, selected_norm, unique_norms = try_stage(
-                    method_results, stage_name, stage_img, reader, rapid
+            for name, fn in METHODS.items():
+                processed = fn(crop)
+                easy_value = easy_text(reader, processed)
+                rapid_value = rapid_text(rapid, processed)
+                method_results.append(
+                    {
+                        "method": name,
+                        "easy": easy_value,
+                        "rapid": rapid_value,
+                        "easy_norm": normalize_text(easy_value),
+                        "rapid_norm": normalize_text(rapid_value),
+                    }
                 )
-                if selected is not None:
-                    used_stage = stage_name
-                    break
 
             if all((m["easy"] == "" and m["rapid"] == "") for m in method_results):
                 continue
 
+            selected = pick_overlap(method_results)
             if selected is not None:
                 row[field] = selected
-                print(
-                    f"cell r{row_index + 1:03d} c{col_index + 1:02d} {field}: "
-                    f"accepted (stage={used_stage}, support={support_count}, unique_norms={unique_norms}, norm={selected_norm})"
-                )
             else:
                 row_conflicts.append({"field": field, "methods": method_results})
-                non_empty = sum(
-                    1
-                    for m in method_results
-                    for v in (m["easy_norm"], m["rapid_norm"])
-                    if v
-                )
-                print(
-                    f"cell r{row_index + 1:03d} c{col_index + 1:02d} {field}: "
-                    f"conflict (outputs={non_empty}, unique_norms={unique_norms})"
-                )
 
         rows.append(row)
         if row_conflicts:
-            conflicts.append({"row": row_index + 1, "id": row.get("ID", ""), "conflicts": row_conflicts})
+            conflicts.append(
+                {"row": row_index + 1, "id": row.get("ID", ""), "conflicts": row_conflicts}
+            )
 
-        print(
-            f"row progress {row_index + 1}/{total_rows} "
-            f"(row_conflicts={len(row_conflicts)}, total_conflicts={len(conflicts)})"
-        )
+        if (row_index + 1) % 20 == 0:
+            print(f"progress {row_index + 1}/{total_rows}")
 
     OUTPUT_JSON.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT_CONFLICTS.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT_JSON.write_text(json.dumps(rows, ensure_ascii=False, indent=2), encoding="utf-8")
-    OUTPUT_CONFLICTS.write_text(json.dumps(conflicts, ensure_ascii=False, indent=2), encoding="utf-8")
+    OUTPUT_CONFLICTS.write_text(
+        json.dumps(conflicts, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
     print(OUTPUT_JSON)
     print(OUTPUT_CONFLICTS)
     return 0
