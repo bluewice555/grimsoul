@@ -1,0 +1,547 @@
+﻿<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <title>Dataset Viewer</title>
+  <style>
+    :root {
+      --bg: #f4f5f7;
+      --panel: #fff;
+      --text: #101216;
+      --muted: #69707d;
+      --line: #dcdfe4;
+      --head: #12161d;
+      --shadow: rgba(0,0,0,.06);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Noto Sans TC", sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg,#fff 0%,#f9fafb 20%,var(--bg) 100%);
+    }
+    .page { max-width: 1700px; margin: 0 auto; padding: 26px 18px 44px; }
+    .top {
+      display: flex; align-items: end; justify-content: space-between; gap: 16px; margin-bottom: 14px;
+    }
+    .kicker { font-size: 11px; letter-spacing: .13em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+    h1 { margin: 6px 0 0; font-size: clamp(30px, 5vw, 54px); line-height: 1; letter-spacing: -.03em; }
+    .intro { margin: 8px 0 0; color: var(--muted); font-size: 14px; }
+    .home { text-decoration: none; color: var(--text); border: 1px solid var(--line); border-radius: 999px; padding: 9px 14px; background: #fff; }
+    .home:hover { border-color: #b8bec8; }
+    .toolbar {
+      border: 1px solid var(--line); border-radius: 16px; background: var(--panel); box-shadow: 0 12px 32px var(--shadow);
+      padding: 12px; display: flex; gap: 12px; align-items: center; margin-bottom: 12px; flex-wrap: wrap;
+    }
+    .toolbar.editing {
+      border-color: #1f7a45;
+      box-shadow: 0 12px 32px rgba(31,122,69,.16);
+      background: #f4fff8;
+    }
+    label { font-size: 13px; color: var(--muted); }
+    select {
+      min-width: 260px; padding: 8px 10px; border-radius: 10px; border: 1px solid var(--line); background: #fff; color: var(--text);
+    }
+    .status { color: var(--muted); font-size: 13px; }
+    .btn {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 7px 10px;
+      background: #fff;
+      color: var(--text);
+      font-size: 12px;
+      cursor: pointer;
+    }
+    .btn:hover { border-color: #b8bec8; }
+    .btn.primary {
+      border-color: #1f7a45;
+      background: #1f7a45;
+      color: #fff;
+    }
+    .btn:disabled {
+      opacity: .5;
+      cursor: not-allowed;
+    }
+    .table-wrap {
+      border: 1px solid var(--line); border-radius: 16px; background: var(--panel); box-shadow: 0 12px 32px var(--shadow);
+      overflow: auto;
+    }
+    table { width: max-content; min-width: 100%; border-collapse: collapse; }
+    th, td {
+      padding: 10px 12px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; font-size: 12px; line-height: 1.45; white-space: nowrap;
+    }
+    th { position: sticky; top: 0; z-index: 2; background: var(--head); color: #fff; font-size: 11px; letter-spacing: .03em; }
+    tbody tr:nth-child(even) td { background: #fcfcfd; }
+    .json { white-space: pre-wrap; line-height: 1.35; }
+    .empty { color: #9aa2ad; }
+    code { font-family: Consolas, "Courier New", monospace; }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="top">
+      <div>
+        <div class="kicker">Dataset</div>
+        <h1>Unified Viewer</h1>
+        <p class="intro">單一頁面瀏覽所有可用 dataset。</p>
+      </div>
+      <a class="home" href="./index.html">回首頁</a>
+    </div>
+
+    <div class="toolbar">
+      <label for="dataset-select">資料集：</label>
+      <select id="dataset-select"></select>
+      <button id="open-file-btn" class="btn" type="button">開啟檔案（編輯）</button>
+      <button id="copy-path-btn" class="btn" type="button">複製路徑</button>
+      <button id="flush-btn" class="btn primary" type="button" disabled>寫入 Flush</button>
+      <span id="status" class="status">載入中...</span>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr id="head-top"></tr>
+          <tr id="head-sub"></tr>
+        </thead>
+        <tbody id="body"><tr><td class="empty">載入中...</td></tr></tbody>
+      </table>
+    </div>
+  </main>
+
+  <script>
+    const DATASETS = [
+      { id: 'armor-items', label: 'armor items', file: './dataset/armor-items.json' },
+      { id: 'armor-set-effects', label: 'armor sets', file: './dataset/armor-set-effects.json' },
+      { id: 'armor-sets', label: 'armor sheet', file: './dataset/armor-sets.json' },
+      { id: 'monster', label: 'monster', file: './dataset/monster.json' },
+      { id: 'skill', label: 'skill', file: './dataset/skill.json' },
+      { id: 'weapon', label: 'weapon', file: './dataset/weapon.json' }
+    ];
+    const LOCAL_PROJECT_ROOT = 'C:\\Users\\lab\\Desktop\\grimsoul';
+
+    const selectEl = document.getElementById('dataset-select');
+    const toolbarEl = document.querySelector('.toolbar');
+    const statusEl = document.getElementById('status');
+    const headTopEl = document.getElementById('head-top');
+    const headSubEl = document.getElementById('head-sub');
+    const bodyEl = document.getElementById('body');
+    const openFileBtn = document.getElementById('open-file-btn');
+    const copyPathBtn = document.getElementById('copy-path-btn');
+    const flushBtn = document.getElementById('flush-btn');
+    let currentRows = [];
+    let currentKeyOrder = [];
+    let currentDataset = { keys: [], datas: [] };
+    let currentDatasetId = 'monster';
+    let changes = [];
+    let activeSortKey = '__none__';
+    let activeSortOrder = 'asc';
+    let editFileHandle = null;
+    let isEditMode = false;
+    let isDirty = false;
+
+    function setModePreview() {
+      isEditMode = false;
+      editFileHandle = null;
+      isDirty = false;
+      flushBtn.disabled = true;
+      flushBtn.style.display = 'none';
+      toolbarEl.classList.remove('editing');
+    }
+
+    function setModeEditing(handle) {
+      isEditMode = true;
+      editFileHandle = handle;
+      isDirty = false;
+      flushBtn.disabled = false;
+      flushBtn.style.display = '';
+      toolbarEl.classList.add('editing');
+    }
+
+    function pendingChangeCount() {
+      const unique = new Set();
+      for (const c of changes) {
+        unique.add(`${c.index}::${c.path}`);
+      }
+      return unique.size;
+    }
+
+    function refreshStatusLoaded(labelOverride = null) {
+      const d = DATASETS.find(x => x.id === currentDatasetId) || DATASETS[0];
+      const label = labelOverride || d.label;
+      const pending = pendingChangeCount();
+      if (isEditMode) {
+        statusEl.textContent = `${label}：${currentRows.length} 筆（未寫入變更 ${pending} 項）`;
+      } else {
+        statusEl.textContent = `${label}：${currentRows.length} 筆（預覽）`;
+      }
+    }
+
+    function escapeHtml(v) {
+      return String(v)
+        .replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;')
+        .replaceAll('"','&quot;').replaceAll("'",'&#39;');
+    }
+
+    function valToHtml(v) {
+      if (v === null || v === undefined || v === '') return '<span class="empty">-</span>';
+      if (typeof v === 'object') return `<span class="json">${escapeHtml(JSON.stringify(v, null, 2))}</span>`;
+      return escapeHtml(v);
+    }
+
+    function normalizeDataset(data) {
+      // Strict mode:
+      // must be { "keys": [...], "datas": [...] }
+      if (data && typeof data === 'object' && Array.isArray(data.keys) && Array.isArray(data.datas)) {
+        return { rows: data.datas, keys: data.keys };
+      }
+      throw new Error('Dataset format must be { keys: [...], datas: [...] }');
+    }
+
+    function collectKeys(rows, datasetId, explicitKeys) {
+      return Array.isArray(explicitKeys) ? explicitKeys : [];
+    }
+
+    // key spec supports:
+    // "Health"
+    // { "Fracture": ["Armor", "Weapon"] }
+    // { key: "Fracture", children: ["Armor","Weapon"] }
+    function buildColumns(keys) {
+      const top = [];
+      const sub = [];
+      const leaf = [];
+      for (const item of keys) {
+        if (typeof item === 'string') {
+          top.push({ label: item, path: [item], rowspan: 2, colspan: 1, sortable: true });
+          leaf.push({ label: item, path: [item], sortable: true });
+          continue;
+        }
+        if (item && typeof item === 'object') {
+          let parent = null;
+          let children = null;
+          const ks = Object.keys(item);
+          if (ks.length === 1 && Array.isArray(item[ks[0]])) {
+            parent = ks[0];
+            children = item[parent];
+          }
+          if (parent && children && children.length) {
+            top.push({ label: parent, path: [parent], rowspan: 1, colspan: children.length, sortable: false });
+            for (const ch of children) {
+              const cLabel = String(ch);
+              const cPath = [parent, cLabel];
+              leaf.push({ label: cLabel, path: cPath, sortable: true });
+              sub.push({ label: cLabel, path: cPath, sortable: true });
+            }
+            continue;
+          }
+        }
+      }
+      return { top, sub, leaf };
+    }
+
+    function getByPath(obj, path) {
+      let cur = obj;
+      for (const p of path) {
+        if (cur == null || typeof cur !== 'object' || !(p in cur)) return undefined;
+        cur = cur[p];
+      }
+      return cur;
+    }
+
+    function setByPath(obj, path, value) {
+      if (!path.length) return;
+      let cur = obj;
+      for (let i = 0; i < path.length - 1; i += 1) {
+        const p = path[i];
+        if (cur[p] == null || typeof cur[p] !== 'object') cur[p] = {};
+        cur = cur[p];
+      }
+      cur[path[path.length - 1]] = value;
+    }
+
+    function deleteByPath(obj, path) {
+      if (!path.length) return;
+      let cur = obj;
+      for (let i = 0; i < path.length - 1; i += 1) {
+        const p = path[i];
+        if (cur[p] == null || typeof cur[p] !== 'object') return;
+        cur = cur[p];
+      }
+      delete cur[path[path.length - 1]];
+    }
+
+    function downloadText(filename, content, type = 'application/json;charset=utf-8') {
+      const blob = new Blob([content], { type });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    }
+
+    function normalizeSortValue(v) {
+      if (v === null || v === undefined) return '';
+      if (typeof v === 'number') return v;
+      if (typeof v === 'boolean') return v ? 1 : 0;
+      if (typeof v === 'object') return JSON.stringify(v);
+      const s = String(v);
+      const n = Number(s);
+      if (!Number.isNaN(n) && s.trim() !== '') return n;
+      return s.toLowerCase();
+    }
+
+    function sortRows(rows, key, order) {
+      if (!key || key === '__none__') return [...rows];
+      const sign = order === 'desc' ? -1 : 1;
+      const path = key.split('.');
+      return [...rows].sort((a, b) => {
+        const va = normalizeSortValue(getByPath(a, path));
+        const vb = normalizeSortValue(getByPath(b, path));
+        if (va === vb) return 0;
+        return va > vb ? sign : -sign;
+      });
+    }
+
+    function render(rows) {
+      const keys = collectKeys(rows, selectEl.value, currentKeyOrder);
+      const columns = buildColumns(keys);
+      const key = activeSortKey;
+      const order = activeSortOrder;
+      const sortedRows = sortRows(rows, key, order);
+      currentRows = sortedRows;
+      if (!rows.length || !columns.leaf.length) {
+        headTopEl.innerHTML = '';
+        headSubEl.innerHTML = '';
+        bodyEl.innerHTML = '<tr><td class="empty">無資料可顯示</td></tr>';
+        return;
+      }
+      headTopEl.innerHTML = columns.top.map(c => {
+        const k = c.path.join('.');
+        const marker = (c.sortable && k === key) ? (order === 'asc' ? ' ▲' : ' ▼') : '';
+        const attrs = c.sortable ? `data-sort-key="${escapeHtml(k)}"` : '';
+        const span = `rowspan="${c.rowspan}" colspan="${c.colspan}"`;
+        return `<th ${span} ${attrs}>${escapeHtml(c.label)}${marker}</th>`;
+      }).join('');
+      headSubEl.innerHTML = columns.sub.map(c => {
+        const k = c.path.join('.');
+        const marker = (k === key) ? (order === 'asc' ? ' ▲' : ' ▼') : '';
+        return `<th data-sort-key="${escapeHtml(k)}">${escapeHtml(c.label)}${marker}</th>`;
+      }).join('');
+      bodyEl.innerHTML = currentRows.map((r, i) => {
+        const idx = r.__index ?? i;
+        const cols = columns.leaf.map((c) => {
+          const raw = getByPath(r, c.path);
+          const editable = isEditMode && raw !== '-' && (typeof raw !== 'object' || raw === null);
+          const val = raw === null || raw === undefined ? '' : String(raw);
+          return `<td data-row="${i}" data-idx="${idx}" data-path="${escapeHtml(c.path.join('.'))}" data-editable="${editable ? '1' : '0'}" data-raw="${escapeHtml(val)}">${valToHtml(raw)}</td>`;
+        }).join('');
+        return `<tr>${cols}</tr>`;
+      }).join('');
+
+      bodyEl.querySelectorAll('td[data-editable="1"]').forEach((td) => {
+        td.addEventListener('dblclick', () => startInlineEdit(td));
+      });
+      const bindSort = (root) => {
+        root.querySelectorAll('th[data-sort-key]').forEach((th) => {
+          th.addEventListener('click', () => {
+            const k = th.dataset.sortKey;
+            if (activeSortKey === k) {
+              activeSortOrder = activeSortOrder === 'asc' ? 'desc' : 'asc';
+            } else {
+              activeSortKey = k;
+              activeSortOrder = 'asc';
+            }
+            render(currentRows);
+          });
+        });
+      };
+      bindSort(headTopEl);
+      bindSort(headSubEl);
+    }
+
+    function startInlineEdit(td) {
+      if (!isEditMode) return;
+      if (td.dataset.editing === '1') return;
+      td.dataset.editing = '1';
+      const oldValue = td.dataset.raw ?? '';
+      const rowIndex = Number(td.dataset.row);
+      const stableIdx = Number(td.dataset.idx);
+      const path = (td.dataset.path || '').split('.').filter(Boolean);
+
+      const input = document.createElement('input');
+      input.type = 'text';
+      input.value = oldValue;
+      input.style.width = '100%';
+      input.style.font = 'inherit';
+      input.style.border = '1px solid #9aa5b5';
+      input.style.borderRadius = '6px';
+      input.style.padding = '4px 6px';
+      input.style.background = '#fff';
+      input.style.color = '#101216';
+
+      td.innerHTML = '';
+      td.appendChild(input);
+      input.focus();
+      input.select();
+
+      let finished = false;
+      const commit = () => {
+        if (finished) return;
+        finished = true;
+        const newValue = input.value;
+        const target = currentRows[rowIndex];
+        if (target) {
+          const before = getByPath(target, path);
+          if (newValue === '') deleteByPath(target, path);
+          else setByPath(target, path, newValue);
+          changes.push({
+            index: Number.isFinite(stableIdx) ? stableIdx : target.__index ?? rowIndex,
+            path: path.join('.'),
+            before: before ?? null,
+            after: newValue === '' ? null : newValue
+          });
+          isDirty = true;
+        }
+        td.dataset.editing = '0';
+        render(currentRows);
+        refreshStatusLoaded();
+      };
+      const cancel = () => {
+        if (finished) return;
+        finished = true;
+        td.dataset.editing = '0';
+        render(currentRows);
+      };
+
+      input.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          commit();
+        } else if (e.key === 'Escape') {
+          e.preventDefault();
+          cancel();
+        }
+      });
+      input.addEventListener('blur', () => cancel());
+    }
+
+    async function loadOne(id) {
+      const d = DATASETS.find(x => x.id === id) || DATASETS[0];
+      currentDatasetId = d.id;
+      statusEl.textContent = `載入 ${d.label}...`;
+      try {
+        const res = await fetch(d.file, { cache: 'no-store' });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        const normalized = normalizeDataset(data);
+        currentKeyOrder = normalized.keys;
+        currentRows = normalized.rows.map((r, i) => ({ ...r, __index: i }));
+        currentDataset = {
+          keys: [...currentKeyOrder],
+          datas: currentRows.map(({ __index, ...rest }) => rest)
+        };
+        changes = [];
+        isDirty = false;
+        render(currentRows);
+        refreshStatusLoaded(d.label);
+      } catch (e) {
+        headTopEl.innerHTML = '';
+        headSubEl.innerHTML = '';
+        bodyEl.innerHTML = `<tr><td class="empty">載入失敗：${escapeHtml(e.message)}</td></tr>`;
+        statusEl.textContent = `${d.label} 載入失敗`;
+      }
+    }
+
+    async function openFileForEdit() {
+      if (!window.showOpenFilePicker) {
+        alert('此瀏覽器不支援 File System Access API。請使用新版 Chrome/Edge。');
+        return;
+      }
+      try {
+        const [handle] = await window.showOpenFilePicker({
+          multiple: false,
+          types: [{ description: 'JSON', accept: { 'application/json': ['.json'] } }]
+        });
+        const file = await handle.getFile();
+        const text = await file.text();
+        const data = JSON.parse(text);
+        const normalized = normalizeDataset(data);
+        currentKeyOrder = normalized.keys;
+        currentRows = normalized.rows.map((r, i) => ({ ...r, __index: i }));
+        currentDataset = {
+          keys: [...currentKeyOrder],
+          datas: currentRows.map(({ __index, ...rest }) => rest)
+        };
+        changes = [];
+        setModeEditing(handle);
+        render(currentRows);
+        statusEl.textContent = `${file.name}：${currentRows.length} 筆（未寫入變更 0 項）`;
+      } catch (e) {
+        if (e && e.name === 'AbortError') return;
+        statusEl.textContent = `開檔失敗：${e.message}`;
+      }
+    }
+
+    async function copyCurrentDatasetPath() {
+      const d = DATASETS.find(x => x.id === currentDatasetId) || DATASETS[0];
+      const rel = d.file.replace(/^\.\//, 'docs/').replaceAll('/', '\\');
+      const abs = `${LOCAL_PROJECT_ROOT}\\${rel}`;
+      try {
+        await navigator.clipboard.writeText(abs);
+        statusEl.textContent = `已複製路徑：${abs}`;
+      } catch (e) {
+        statusEl.textContent = `複製失敗：${e.message}`;
+      }
+    }
+
+    async function flushToFile() {
+      if (!isEditMode || !editFileHandle) return;
+      try {
+        const datas = currentRows
+          .slice()
+          .sort((a, b) => (a.__index ?? 0) - (b.__index ?? 0))
+          .map(({ __index, ...rest }) => rest);
+        const out = { keys: currentKeyOrder, datas };
+        const writable = await editFileHandle.createWritable();
+        await writable.write(JSON.stringify(out, null, 2));
+        await writable.close();
+        isDirty = false;
+        changes = [];
+        statusEl.textContent = `已寫入：${currentDatasetId}（未寫入變更 0 項）`;
+      } catch (e) {
+        statusEl.textContent = `寫入失敗：${e.message}`;
+      }
+    }
+
+    function init() {
+      const params = new URLSearchParams(location.search);
+      const q = params.get('d') || 'monster';
+      selectEl.innerHTML = DATASETS.map(d => `<option value="${d.id}">${d.label}</option>`).join('');
+      selectEl.value = DATASETS.some(d => d.id === q) ? q : 'monster';
+      selectEl.addEventListener('change', () => {
+        const id = selectEl.value;
+        const url = new URL(location.href);
+        url.searchParams.set('d', id);
+        history.replaceState({}, '', url);
+        setModePreview();
+        activeSortKey = '__none__';
+        activeSortOrder = 'asc';
+        loadOne(id);
+      });
+      openFileBtn.addEventListener('click', () => openFileForEdit());
+      copyPathBtn.addEventListener('click', () => copyCurrentDatasetPath());
+      flushBtn.addEventListener('click', () => flushToFile());
+      setModePreview();
+      loadOne(selectEl.value);
+    }
+
+    init();
+  </script>
+</body>
+</html>

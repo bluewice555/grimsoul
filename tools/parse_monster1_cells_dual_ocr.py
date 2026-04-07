@@ -84,38 +84,50 @@ def rapid_text(engine, image) -> str:
     return clean_text(" ".join(item[1] for item in results))
 
 
-def pick_overlap(candidates):
-    pool = {}
-    for c in candidates:
-        if c["easy_norm"]:
-            pool.setdefault(c["easy_norm"], []).append(c["easy"])
-        if c["rapid_norm"]:
-            pool.setdefault(c["rapid_norm"], []).append(c["rapid"])
-
-    unique_norms = len(pool)
-
-    # Any 2 matching outputs (from 3 methods x 2 OCR engines) are enough to accept.
-    agree = [(k, vals) for k, vals in pool.items() if len(vals) >= 2]
-    if agree:
-        agree.sort(key=lambda kv: (len(kv[1]), len(kv[0])), reverse=True)
-        return max(agree[0][1], key=len), len(agree[0][1]), agree[0][0], unique_norms
-    return None, 0, "", unique_norms
-
-
-def try_stage(candidates, stage_name, image, reader, rapid):
+def try_stage(stage_name, image, reader, rapid):
     easy_value = easy_text(reader, image)
     rapid_value = rapid_text(rapid, image)
-    candidates.append(
-        {
-            "method": stage_name,
-            "easy": easy_value,
-            "rapid": rapid_value,
-            "easy_norm": normalize_text(easy_value),
-            "rapid_norm": normalize_text(rapid_value),
-        }
-    )
-    selected, support_count, selected_norm, unique_norms = pick_overlap(candidates)
-    return selected, support_count, selected_norm, unique_norms
+    return {
+        "method": stage_name,
+        "easy": easy_value,
+        "rapid": rapid_value,
+        "easy_norm": normalize_text(easy_value),
+        "rapid_norm": normalize_text(rapid_value),
+    }
+
+
+def decide_with_rules(method_results):
+    # Rule 1: same-stage easy == rapid and both non-empty => absolute accept
+    for m in method_results:
+        if m["easy_norm"] and m["easy_norm"] == m["rapid_norm"]:
+            chosen = m["easy"] if len(m["easy"]) >= len(m["rapid"]) else m["rapid"]
+            return chosen, "rule1_same_stage_agree", m["method"], m["easy_norm"]
+
+    # Rule 2: cross-engine matching across preprocessing stages
+    # (easy_any_stage vs rapid_any_stage), explicitly no self-engine comparison.
+    easy_map = {}
+    rapid_map = {}
+    for m in method_results:
+        if m["easy_norm"]:
+            easy_map.setdefault(m["easy_norm"], []).append(m["easy"])
+        if m["rapid_norm"]:
+            rapid_map.setdefault(m["rapid_norm"], []).append(m["rapid"])
+    cross = [k for k in easy_map.keys() if k in rapid_map]
+    if cross:
+        cross.sort(key=len, reverse=True)
+        k = cross[0]
+        pool = easy_map[k] + rapid_map[k]
+        return max(pool, key=len), "rule2_cross_stage_cross_engine_agree", "cross", k
+
+    # Rule 3: one engine has data, the other engine has none => accept non-empty side
+    any_easy = [m["easy"] for m in method_results if m["easy_norm"]]
+    any_rapid = [m["rapid"] for m in method_results if m["rapid_norm"]]
+    if any_easy and not any_rapid:
+        return max(any_easy, key=len), "rule3_easy_only", "cross", normalize_text(max(any_easy, key=len))
+    if any_rapid and not any_easy:
+        return max(any_rapid, key=len), "rule3_rapid_only", "cross", normalize_text(max(any_rapid, key=len))
+
+    return None, "conflict", "none", ""
 
 
 def main() -> int:
@@ -164,27 +176,22 @@ def main() -> int:
 
             method_results = []
             stages = [("raw", crop)] + [(name, fn(crop)) for name, fn in METHODS.items()]
-            selected = None
-            support_count = 0
-            selected_norm = ""
-            unique_norms = 0
-            used_stage = ""
             for stage_name, stage_img in stages:
-                selected, support_count, selected_norm, unique_norms = try_stage(
-                    method_results, stage_name, stage_img, reader, rapid
-                )
-                if selected is not None:
-                    used_stage = stage_name
-                    break
+                method_results.append(try_stage(stage_name, stage_img, reader, rapid))
 
             if all((m["easy"] == "" and m["rapid"] == "") for m in method_results):
                 continue
 
+            selected, reason, used_stage, selected_norm = decide_with_rules(method_results)
+            unique_norms = len(
+                set([m["easy_norm"] for m in method_results if m["easy_norm"]])
+                | set([m["rapid_norm"] for m in method_results if m["rapid_norm"]])
+            )
             if selected is not None:
                 row[field] = selected
                 print(
                     f"cell r{row_index + 1:03d} c{col_index + 1:02d} {field}: "
-                    f"accepted (stage={used_stage}, support={support_count}, unique_norms={unique_norms}, norm={selected_norm})"
+                    f"accepted ({reason}, stage={used_stage}, unique_norms={unique_norms}, norm={selected_norm})"
                 )
             else:
                 row_conflicts.append({"field": field, "methods": method_results})
@@ -196,7 +203,7 @@ def main() -> int:
                 )
                 print(
                     f"cell r{row_index + 1:03d} c{col_index + 1:02d} {field}: "
-                    f"conflict (outputs={non_empty}, unique_norms={unique_norms})"
+                    f"conflict ({reason}, outputs={non_empty}, unique_norms={unique_norms})"
                 )
 
         rows.append(row)
