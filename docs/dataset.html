@@ -95,6 +95,8 @@
     <div class="toolbar">
       <label for="dataset-select">資料集：</label>
       <select id="dataset-select"></select>
+      <label><input id="show-debug-toggle" type="checkbox" /> 顯示 DEBUG</label>
+      <span id="meta-filters"></span>
       <button id="open-file-btn" class="btn" type="button">開啟檔案（編輯）</button>
       <button id="copy-path-btn" class="btn" type="button">複製路徑</button>
       <button id="flush-btn" class="btn primary" type="button" disabled>寫入 Flush</button>
@@ -124,8 +126,10 @@
     const LOCAL_PROJECT_ROOT = 'C:\\Users\\lab\\Desktop\\grimsoul';
 
     const selectEl = document.getElementById('dataset-select');
+    const showDebugToggleEl = document.getElementById('show-debug-toggle');
     const toolbarEl = document.querySelector('.toolbar');
     const statusEl = document.getElementById('status');
+    const metaFiltersEl = document.getElementById('meta-filters');
     const headTopEl = document.getElementById('head-top');
     const headSubEl = document.getElementById('head-sub');
     const bodyEl = document.getElementById('body');
@@ -133,15 +137,20 @@
     const copyPathBtn = document.getElementById('copy-path-btn');
     const flushBtn = document.getElementById('flush-btn');
     let currentRows = [];
+    let currentBaseRows = [];
     let currentKeyOrder = [];
     let currentDataset = { keys: [], datas: [] };
     let currentDatasetId = 'monster';
     let changes = [];
     let activeSortKey = '__none__';
     let activeSortOrder = 'asc';
+    let currentMeta = {};
+    let activeMetaFilters = {};
+    let initialQueryFilters = {};
     let editFileHandle = null;
     let isEditMode = false;
     let isDirty = false;
+    let showDebug = false;
 
     function setModePreview() {
       isEditMode = false;
@@ -196,13 +205,27 @@
       // Strict mode:
       // must be { "keys": [...], "datas": [...] }
       if (data && typeof data === 'object' && Array.isArray(data.keys) && Array.isArray(data.datas)) {
-        return { rows: data.datas, keys: data.keys };
+        const meta = {};
+        for (const [k, v] of Object.entries(data)) {
+          if (k === 'keys' || k === 'datas') continue;
+          meta[k] = v;
+        }
+        return { rows: data.datas, keys: data.keys, meta };
       }
       throw new Error('Dataset format must be { keys: [...], datas: [...] }');
     }
 
     function collectKeys(rows, datasetId, explicitKeys) {
-      return Array.isArray(explicitKeys) ? explicitKeys : [];
+      if (!Array.isArray(explicitKeys)) return [];
+      if (showDebug) return explicitKeys;
+      return explicitKeys.filter((k) => {
+        if (typeof k === 'string') return !k.startsWith('_');
+        if (k && typeof k === 'object') {
+          const ks = Object.keys(k);
+          if (ks.length === 1) return !String(ks[0]).startsWith('_');
+        }
+        return true;
+      });
     }
 
     // key spec supports:
@@ -365,6 +388,57 @@
       bindSort(headSubEl);
     }
 
+    function applyMetaFilters(rows) {
+      let out = rows;
+      for (const [key, value] of Object.entries(activeMetaFilters)) {
+        if (!value) continue;
+        const needle = String(value).toLowerCase();
+        out = out.filter((r) => {
+          const v = r[key];
+          if (Array.isArray(v)) {
+            return v.some((item) => String(item ?? '').toLowerCase().startsWith(needle));
+          }
+          return String(v ?? '').toLowerCase().startsWith(needle);
+        });
+      }
+      return out;
+    }
+
+    function renderMetaFilters() {
+      const entries = Object.entries(currentMeta).filter(([k, v]) => {
+        if (!Array.isArray(v)) return false;
+        if (!showDebug && String(k).startsWith('_')) return false;
+        return true;
+      });
+      if (!entries.length) {
+        metaFiltersEl.innerHTML = '';
+        return;
+      }
+      const controls = entries.map(([k, arr]) => {
+        const options = ['<option value="">全部</option>']
+          .concat(arr.map((x) => {
+            const v = String(x);
+            const selected = activeMetaFilters[k] === v ? ' selected' : '';
+            return `<option value="${escapeHtml(v)}"${selected}>${escapeHtml(v)}</option>`;
+          }))
+          .join('');
+        return `<label>${escapeHtml(k)}：<select data-meta-key="${escapeHtml(k)}">${options}</select></label>`;
+      }).join('');
+      metaFiltersEl.innerHTML = controls;
+      metaFiltersEl.querySelectorAll('select[data-meta-key]').forEach((sel) => {
+        sel.addEventListener('change', () => {
+          const k = sel.dataset.metaKey;
+          activeMetaFilters[k] = sel.value || '';
+          const url = new URL(location.href);
+          if (activeMetaFilters[k]) url.searchParams.set(k, activeMetaFilters[k]);
+          else url.searchParams.delete(k);
+          history.replaceState({}, '', url);
+          currentRows = applyMetaFilters(currentBaseRows);
+          render(currentRows);
+        });
+      });
+    }
+
     function startInlineEdit(td) {
       if (!isEditMode) return;
       if (td.dataset.editing === '1') return;
@@ -441,10 +515,23 @@
         const data = await res.json();
         const normalized = normalizeDataset(data);
         currentKeyOrder = normalized.keys;
-        currentRows = normalized.rows.map((r, i) => ({ ...r, __index: i }));
+        const rawRows = normalized.rows.map((r, i) => ({ ...r, __index: i }));
+        currentMeta = normalized.meta || {};
+        const prevFilters = { ...activeMetaFilters };
+        activeMetaFilters = {};
+        for (const k of Object.keys(currentMeta)) {
+          if (typeof prevFilters[k] === 'string' && prevFilters[k] !== '') {
+            activeMetaFilters[k] = prevFilters[k];
+          } else if (typeof initialQueryFilters[k] === 'string') {
+            activeMetaFilters[k] = initialQueryFilters[k];
+          }
+        }
+        renderMetaFilters();
+        currentBaseRows = rawRows;
+        currentRows = applyMetaFilters(currentBaseRows);
         currentDataset = {
           keys: [...currentKeyOrder],
-          datas: currentRows.map(({ __index, ...rest }) => rest)
+          datas: rawRows.map(({ __index, ...rest }) => rest)
         };
         changes = [];
         isDirty = false;
@@ -473,10 +560,20 @@
         const data = JSON.parse(text);
         const normalized = normalizeDataset(data);
         currentKeyOrder = normalized.keys;
-        currentRows = normalized.rows.map((r, i) => ({ ...r, __index: i }));
+        currentBaseRows = normalized.rows.map((r, i) => ({ ...r, __index: i }));
+        currentMeta = normalized.meta || {};
+        const prevFilters = { ...activeMetaFilters };
+        activeMetaFilters = {};
+        for (const k of Object.keys(currentMeta)) {
+          if (typeof prevFilters[k] === 'string' && prevFilters[k] !== '') {
+            activeMetaFilters[k] = prevFilters[k];
+          }
+        }
+        renderMetaFilters();
+        currentRows = applyMetaFilters(currentBaseRows);
         currentDataset = {
           keys: [...currentKeyOrder],
-          datas: currentRows.map(({ __index, ...rest }) => rest)
+          datas: currentBaseRows.map(({ __index, ...rest }) => rest)
         };
         changes = [];
         setModeEditing(handle);
@@ -522,8 +619,20 @@
     function init() {
       const params = new URLSearchParams(location.search);
       const q = params.get('d') || 'monster';
+      initialQueryFilters = {};
+      for (const [k, v] of params.entries()) {
+        if (k !== 'd' && v) initialQueryFilters[k] = v;
+      }
       selectEl.innerHTML = DATASETS.map(d => `<option value="${d.id}">${d.label}</option>`).join('');
       selectEl.value = DATASETS.some(d => d.id === q) ? q : 'monster';
+      showDebug = false;
+      showDebugToggleEl.checked = false;
+      showDebugToggleEl.addEventListener('change', () => {
+        showDebug = showDebugToggleEl.checked;
+        renderMetaFilters();
+        currentRows = applyMetaFilters(currentBaseRows);
+        render(currentRows);
+      });
       selectEl.addEventListener('change', () => {
         const id = selectEl.value;
         const url = new URL(location.href);
