@@ -1,5 +1,10 @@
 {
   "locations": [
+    "資源地1",
+    "資源地2",
+    "資源地3",
+    "資源地4",
+    "資源地5",
     "你的要塞",
     "冰封森林",
     "叛徒地下墓穴",
@@ -26,11 +31,6 @@
     "要塞",
     "詛咒者寶藏",
     "詛咒觀測所",
-    "資源地1",
-    "資源地2",
-    "資源地3",
-    "資源地4",
-    "資源地5",
     "邪惡堡壘",
     "野蠻人營地",
     "陰森宅邸",
@@ -767,7 +767,7 @@
     },
     {
       "ID": "Damned",
-      "Name": "該死的",
+      "Name": "被咒者",
       "Health": "90",
       "Physical ATK": "9",
       "locations": [
@@ -1190,7 +1190,7 @@
       ]
     },
     {
-      "ID": "Decay Rat",
+      "ID": "_Decay Rat",
       "Name": "腐爛鼠",
       "Health": "40",
       "Special Mechanic(s) Summary": "毒藥（2 毒 x 5 滴）",
@@ -1400,7 +1400,7 @@
     },
     {
       "ID": "Exile (1)",
-      "Name": "流放 (1)",
+      "Name": "流亡者",
       "Health": "100",
       "Armor (Est.)": "各不相同； <400",
       "Damage Reduction (%)": "各不相同； <70.8",
@@ -1418,7 +1418,7 @@
     },
     {
       "ID": "Exile (2)",
-      "Name": "流放 (2)",
+      "Name": "流亡者",
       "Health": "100",
       "Armor (Est.)": "變化：<580",
       "Damage Reduction (%)": "變化：<77.9",
@@ -2022,7 +2022,7 @@
       ]
     },
     {
-      "ID": "Harat's/Plague God's/Nameless God's Acolyte",
+      "ID": "_Harat's/Plague God's/Nameless God's Acolyte",
       "Name": "哈拉特/瘟疫之神/無名之神的侍僧",
       "Health": "2800",
       "Physical ATK": "44+L evel/5",
@@ -2183,7 +2183,7 @@
       ]
     },
     {
-      "ID": "Horde Spawn (1)",
+      "ID": "_Horde Spawn (1)",
       "Name": "部落生成 (1)",
       "Health": "900",
       "Armor (Est.)": "100",
@@ -2896,7 +2896,7 @@
       ]
     },
     {
-      "ID": "Plague Elf",
+      "ID": "_Plague Elf",
       "Name": "瘟疫精靈",
       "Health": "100",
       "Armor (Est.)": "30",
@@ -3014,7 +3014,7 @@
     },
     {
       "ID": "Plagueridden",
-      "Name": "瘟疫肆虐",
+      "Name": "瘟疫雷德",
       "Health": "65",
       "Physical ATK": "10",
       "Special Mechanic(s) Summary": "吐痰：AoE攻擊（15物理）並減慢移動速度",
@@ -3503,12 +3503,11 @@
       "Health": "50",
       "Special Mechanic(s) Summary": "見狀逃跑",
       "locations": [
-        "（感恩節）",
-        "資源地1",
-        "資源地2",
-        "資源地3",
-        "資源地4",
-        "資源地5"
+        "（感恩節）資源地1",
+        "（感恩節）資源地2",
+        "（感恩節）資源地3",
+        "（感恩節）資源地4",
+        "（感恩節）資源地5"
       ]
     },
     {
@@ -3525,7 +3524,7 @@
       ]
     },
     {
-      "ID": "Varg",
+      "ID": "_Varg",
       "Name": "座狼",
       "Health": "760",
       "Armor (Est.)": "100",
@@ -3829,7 +3828,7 @@
       ]
     },
     {
-      "ID": "Witch Guard",
+      "ID": "_Witch Guard",
       "Name": "女巫守衛",
       "Health": "150",
       "Armor (Est.)": "50",
@@ -3844,7 +3843,7 @@
       ]
     },
     {
-      "ID": "Witch Totem",
+      "ID": "_Witch Totem",
       "Name": "女巫圖騰",
       "Health": "30",
       "Special Mechanic(s) Summary": "召喚女巫守衛（死亡 (3)）",

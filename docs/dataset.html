@@ -140,6 +140,7 @@
     let currentBaseRows = [];
     let currentKeyOrder = [];
     let currentDataset = { keys: [], datas: [] };
+    let currentDoc = null;
     let currentDatasetId = 'monster';
     let changes = [];
     let activeSortKey = '__none__';
@@ -199,6 +200,22 @@
       if (v === null || v === undefined || v === '') return '<span class="empty">-</span>';
       if (typeof v === 'object') return `<span class="json">${escapeHtml(JSON.stringify(v, null, 2))}</span>`;
       return escapeHtml(v);
+    }
+
+    function isUnderscoreHidden(value) {
+      return typeof value === 'string' && value.startsWith('_');
+    }
+
+    function visibleValue(raw) {
+      if (isUnderscoreHidden(raw)) return '';
+      if (Array.isArray(raw)) {
+        return raw.filter((x) => !isUnderscoreHidden(x));
+      }
+      return raw;
+    }
+
+    function isRowHidden(row) {
+      return isUnderscoreHidden(row?.ID);
     }
 
     function normalizeDataset(data) {
@@ -309,14 +326,18 @@
     }
 
     function normalizeSortValue(v) {
-      if (v === null || v === undefined) return '';
-      if (typeof v === 'number') return v;
-      if (typeof v === 'boolean') return v ? 1 : 0;
-      if (typeof v === 'object') return JSON.stringify(v);
-      const s = String(v);
+      // rank: 0 empty, 1 number, 2 text
+      if (v === null || v === undefined) return { rank: 0, value: '' };
+      if (typeof v === 'string' && v.trim() === '') return { rank: 0, value: '' };
+      if (Array.isArray(v) && v.length === 0) return { rank: 0, value: '' };
+
+      if (typeof v === 'number') return { rank: 1, value: v };
+      if (typeof v === 'boolean') return { rank: 1, value: v ? 1 : 0 };
+
+      const s = typeof v === 'object' ? JSON.stringify(v) : String(v);
       const n = Number(s);
-      if (!Number.isNaN(n) && s.trim() !== '') return n;
-      return s.toLowerCase();
+      if (!Number.isNaN(n) && s.trim() !== '') return { rank: 1, value: n };
+      return { rank: 2, value: s.toLowerCase() };
     }
 
     function sortRows(rows, key, order) {
@@ -326,8 +347,15 @@
       return [...rows].sort((a, b) => {
         const va = normalizeSortValue(getByPath(a, path));
         const vb = normalizeSortValue(getByPath(b, path));
-        if (va === vb) return 0;
-        return va > vb ? sign : -sign;
+
+        if (va.rank !== vb.rank) return (va.rank - vb.rank) * sign;
+        if (va.value < vb.value) return -1 * sign;
+        if (va.value > vb.value) return 1 * sign;
+
+        // Stable tie-breaker: preserve original row order.
+        const ai = Number.isFinite(a.__index) ? a.__index : 0;
+        const bi = Number.isFinite(b.__index) ? b.__index : 0;
+        return ai - bi;
       });
     }
 
@@ -336,7 +364,8 @@
       const columns = buildColumns(keys);
       const key = activeSortKey;
       const order = activeSortOrder;
-      const sortedRows = sortRows(rows, key, order);
+      const visibleRows = rows.filter((r) => !isRowHidden(r));
+      const sortedRows = sortRows(visibleRows, key, order);
       currentRows = sortedRows;
       if (!rows.length || !columns.leaf.length) {
         headTopEl.innerHTML = '';
@@ -360,9 +389,14 @@
         const idx = r.__index ?? i;
         const cols = columns.leaf.map((c) => {
           const raw = getByPath(r, c.path);
-          const editable = isEditMode && raw !== '-' && (typeof raw !== 'object' || raw === null);
-          const val = raw === null || raw === undefined ? '' : String(raw);
-          return `<td data-row="${i}" data-idx="${idx}" data-path="${escapeHtml(c.path.join('.'))}" data-editable="${editable ? '1' : '0'}" data-raw="${escapeHtml(val)}">${valToHtml(raw)}</td>`;
+          const shown = visibleValue(raw);
+          const isArray = Array.isArray(shown);
+          const editable = isEditMode && shown !== '-' && (shown === null || typeof shown !== 'object' || isArray);
+          const val = shown === null || shown === undefined
+            ? ''
+            : (isArray ? shown.join('；') : String(shown));
+          const rawType = isArray ? 'array' : (raw === null ? 'null' : typeof raw);
+          return `<td data-row="${i}" data-idx="${idx}" data-path="${escapeHtml(c.path.join('.'))}" data-editable="${editable ? '1' : '0'}" data-raw-type="${rawType}" data-raw="${escapeHtml(val)}">${valToHtml(shown)}</td>`;
         }).join('');
         return `<tr>${cols}</tr>`;
       }).join('');
@@ -394,7 +428,7 @@
         if (!value) continue;
         const needle = String(value).toLowerCase();
         out = out.filter((r) => {
-          const v = r[key];
+          const v = visibleValue(r[key]);
           if (Array.isArray(v)) {
             return v.some((item) => String(item ?? '').toLowerCase().startsWith(needle));
           }
@@ -415,8 +449,9 @@
         return;
       }
       const controls = entries.map(([k, arr]) => {
+        const cleanArr = arr.filter((x) => !isUnderscoreHidden(x));
         const options = ['<option value="">全部</option>']
-          .concat(arr.map((x) => {
+          .concat(cleanArr.map((x) => {
             const v = String(x);
             const selected = activeMetaFilters[k] === v ? ' selected' : '';
             return `<option value="${escapeHtml(v)}"${selected}>${escapeHtml(v)}</option>`;
@@ -444,6 +479,7 @@
       if (td.dataset.editing === '1') return;
       td.dataset.editing = '1';
       const oldValue = td.dataset.raw ?? '';
+      const rawType = td.dataset.rawType ?? 'string';
       const rowIndex = Number(td.dataset.row);
       const stableIdx = Number(td.dataset.idx);
       const path = (td.dataset.path || '').split('.').filter(Boolean);
@@ -472,8 +508,21 @@
         const target = currentRows[rowIndex];
         if (target) {
           const before = getByPath(target, path);
-          if (newValue === '') deleteByPath(target, path);
-          else setByPath(target, path, newValue);
+          if (rawType === 'array') {
+            if (newValue.trim() === '') {
+              deleteByPath(target, path);
+            } else {
+              const arr = newValue
+                .split(/[;；]+/)
+                .map((x) => x.trim())
+                .filter(Boolean);
+              if (arr.length === 0) deleteByPath(target, path);
+              else setByPath(target, path, arr);
+            }
+          } else {
+            if (newValue === '') deleteByPath(target, path);
+            else setByPath(target, path, newValue);
+          }
           changes.push({
             index: Number.isFinite(stableIdx) ? stableIdx : target.__index ?? rowIndex,
             path: path.join('.'),
@@ -513,6 +562,7 @@
         const res = await fetch(d.file, { cache: 'no-store' });
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
+        currentDoc = data;
         const normalized = normalizeDataset(data);
         currentKeyOrder = normalized.keys;
         const rawRows = normalized.rows.map((r, i) => ({ ...r, __index: i }));
@@ -558,6 +608,7 @@
         const file = await handle.getFile();
         const text = await file.text();
         const data = JSON.parse(text);
+        currentDoc = data;
         const normalized = normalizeDataset(data);
         currentKeyOrder = normalized.keys;
         currentBaseRows = normalized.rows.map((r, i) => ({ ...r, __index: i }));
@@ -600,11 +651,15 @@
     async function flushToFile() {
       if (!isEditMode || !editFileHandle) return;
       try {
-        const datas = currentRows
+        const datas = currentBaseRows
           .slice()
           .sort((a, b) => (a.__index ?? 0) - (b.__index ?? 0))
           .map(({ __index, ...rest }) => rest);
-        const out = { keys: currentKeyOrder, datas };
+        const out = {
+          ...(currentDoc && typeof currentDoc === 'object' ? currentDoc : {}),
+          keys: currentKeyOrder,
+          datas,
+        };
         const writable = await editFileHandle.createWritable();
         await writable.write(JSON.stringify(out, null, 2));
         await writable.close();
