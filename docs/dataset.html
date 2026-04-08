@@ -126,7 +126,7 @@
     <div class="top">
       <div>
         <div class="kicker">Dataset</div>
-        <h1>Unified Viewer</h1>
+        <h1>Dataset Viewer</h1>
         <p class="intro">單一頁面瀏覽所有可用 dataset。</p>
       </div>
       <a class="home" href="./index.html">回首頁</a>
@@ -146,6 +146,7 @@
     </div>
 
     <div id="root-lists" class="root-lists-wrap" style="display:none;"></div>
+    <div id="named-tables" class="root-lists-wrap" style="display:none;"></div>
 
     <div class="table-wrap">
       <table>
@@ -164,7 +165,7 @@
       { id: 'armor-set-effects', label: 'armor sets', file: '../dataset/raw/armor-set-effects.json' },
       { id: 'armor-sets', label: 'armor sheet', file: '../dataset/raw/armor-sets.json' },
       { id: 'monster', label: 'monster', file: '../dataset/raw/monster.json' },
-      { id: 'monster-hit', label: 'monster hit', file: '../dataset/fight/monster_hit.json' },
+      { id: 'hit', label: 'hit', file: '../dataset/fight/hit.json' },
       { id: 'skill', label: 'skill', file: '../dataset/raw/skill.json' },
       { id: 'weapon', label: 'weapon', file: '../dataset/raw/weapon.json' }
     ];
@@ -182,6 +183,7 @@
     const copyPathBtn = document.getElementById('copy-path-btn');
     const flushBtn = document.getElementById('flush-btn');
     const rootListsEl = document.getElementById('root-lists');
+    const namedTablesEl = document.getElementById('named-tables');
     const VIEW_STATE_COOKIE = 'dataset_view_state';
     let currentRows = [];
     let currentBaseRows = [];
@@ -194,8 +196,10 @@
     let activeSortOrder = 'asc';
     let currentMeta = {};
     let currentRootLists = {};
+    let currentNamedTables = {};
+    let namedTableStates = {};
     let activeMetaFilters = {};
-    let activeMetaFlatten = {};
+    let activeTableListMode = false;
     let initialQueryFilters = {};
     let editFileHandle = null;
     let isEditMode = false;
@@ -218,7 +222,7 @@
         dataset: currentDatasetId,
         showDebug,
         filters: activeMetaFilters,
-        flatten: activeMetaFlatten,
+        listMode: activeTableListMode,
       };
       setCookie(VIEW_STATE_COOKIE, encodeURIComponent(JSON.stringify(state)));
     }
@@ -302,20 +306,29 @@
     }
 
     function normalizeDataset(data) {
-      // Strict mode:
-      // must be { "keys": [...], "datas": [...] }
-      if (data && typeof data === 'object' && Array.isArray(data.keys) && Array.isArray(data.datas)) {
-        const meta = (data.filter && typeof data.filter === 'object' && !Array.isArray(data.filter))
-          ? data.filter
-          : {};
-        const rootLists = {};
-        for (const [k, v] of Object.entries(data)) {
-          if (k === 'keys' || k === 'datas' || k === 'filter') continue;
-          if (Array.isArray(v)) rootLists[k] = v;
-        }
-        return { rows: data.datas, keys: data.keys, meta, rootLists };
+      if (!data || typeof data !== 'object' || Array.isArray(data)) {
+        throw new Error('Dataset format must be a JSON object');
       }
-      throw new Error('Dataset format must be { keys: [...], datas: [...] }');
+      const meta = (data.filter && typeof data.filter === 'object' && !Array.isArray(data.filter))
+        ? data.filter
+        : {};
+      const rootLists = {};
+      const namedTables = {};
+      for (const [k, v] of Object.entries(data)) {
+        if (k === 'keys' || k === 'datas' || k === 'filter') continue;
+        if (v && typeof v === 'object' && !Array.isArray(v) && Array.isArray(v.keys) && Array.isArray(v.datas)) {
+          namedTables[k] = {
+            keys: v.keys,
+            datas: v.datas,
+            filter: (v.filter && typeof v.filter === 'object' && !Array.isArray(v.filter)) ? v.filter : {}
+          };
+          continue;
+        }
+        if (Array.isArray(v)) rootLists[k] = v;
+      }
+      const rows = Array.isArray(data.datas) ? data.datas : [];
+      const keys = Array.isArray(data.keys) ? data.keys : [];
+      return { rows, keys, meta, rootLists, namedTables };
     }
 
     function renderRootLists() {
@@ -372,7 +385,7 @@
       }).join('');
     }
 
-    function collectKeys(rows, datasetId, explicitKeys) {
+    function collectKeys(explicitKeys) {
       if (!Array.isArray(explicitKeys)) return [];
       if (showDebug) return explicitKeys;
       return explicitKeys.filter((k) => {
@@ -500,7 +513,7 @@
     }
 
     function render(rows) {
-      const keys = collectKeys(rows, selectEl.value, currentKeyOrder);
+      const keys = collectKeys(currentKeyOrder);
       const columns = buildColumns(keys);
       const key = activeSortKey;
       const order = activeSortOrder;
@@ -531,8 +544,7 @@
           const raw = getByPath(r, c.path);
           const shown = visibleValue(raw);
           const isArray = Array.isArray(shown);
-          const rootKey = c.path[0];
-          const flattenList = activeMetaFlatten[rootKey] !== true;
+          const flattenList = !activeTableListMode;
           const editable = isEditMode && shown !== '-' && (shown === null || typeof shown !== 'object' || isArray);
           const val = shown === null || shown === undefined
             ? ''
@@ -580,6 +592,145 @@
       return out;
     }
 
+    function applyMetaFiltersGeneric(rows, filters) {
+      let out = rows;
+      for (const [key, value] of Object.entries(filters || {})) {
+        if (!value) continue;
+        const needle = String(value).toLowerCase();
+        out = out.filter((r) => {
+          const v = visibleValue(r[key]);
+          if (Array.isArray(v)) {
+            return v.some((item) => String(item ?? '').toLowerCase().startsWith(needle));
+          }
+          return String(v ?? '').toLowerCase().startsWith(needle);
+        });
+      }
+      return out;
+    }
+
+    function renderNamedTables() {
+      const entries = Object.entries(currentNamedTables || {}).filter(([k, v]) => {
+        if (!v || typeof v !== 'object') return false;
+        if (!Array.isArray(v.keys) || !Array.isArray(v.datas)) return false;
+        if (!showDebug && String(k).startsWith('_')) return false;
+        return true;
+      });
+      if (!entries.length) {
+        namedTablesEl.style.display = 'none';
+        namedTablesEl.innerHTML = '';
+        return;
+      }
+
+      namedTablesEl.style.display = '';
+      namedTablesEl.innerHTML = entries.map(([name, table]) => {
+        const state = namedTableStates[name] || (namedTableStates[name] = {
+          sortKey: '__none__',
+          sortOrder: 'asc',
+          filters: {},
+          listMode: false
+        });
+        const meta = (table.filter && typeof table.filter === 'object') ? table.filter : {};
+        const baseRows = table.datas.map((r, i) => ({ ...r, __index: i }));
+        const filteredRows = applyMetaFiltersGeneric(baseRows, state.filters);
+        const keys = collectKeys(table.keys);
+        const columns = buildColumns(keys);
+        const visibleRows = filteredRows.filter((r) => !isRowHidden(r));
+        const sortedRows = sortRows(visibleRows, state.sortKey, state.sortOrder);
+
+        const filterEntries = Object.entries(meta).filter(([k, v]) => {
+          if (!Array.isArray(v)) return false;
+          if (!showDebug && String(k).startsWith('_')) return false;
+          return true;
+        });
+        const filtersHtml = filterEntries.map(([k, arr]) => {
+          const cleanArr = showDebug ? arr : arr.filter((x) => !isUnderscoreHidden(x));
+          const options = ['<option value="">（全部）</option>']
+            .concat(cleanArr.map((x) => {
+              const v = String(x);
+              const selected = state.filters[k] === v ? ' selected' : '';
+              return `<option value="${escapeHtml(v)}"${selected}>${escapeHtml(v)}</option>`;
+            }))
+            .join('');
+          return `<label>${escapeHtml(k)}：<select data-nt-meta-key="${escapeHtml(k)}">${options}</select></label>`;
+        }).join('');
+
+        const headTop = columns.top.map(c => {
+          const k = c.path.join('.');
+          const marker = (c.sortable && k === state.sortKey) ? (state.sortOrder === 'asc' ? ' ▲' : ' ▼') : '';
+          const attrs = c.sortable ? `data-nt-sort-key="${escapeHtml(k)}"` : '';
+          const span = `rowspan="${c.rowspan}" colspan="${c.colspan}"`;
+          return `<th ${span} ${attrs}>${escapeHtml(c.label)}${marker}</th>`;
+        }).join('');
+        const headSub = columns.sub.map(c => {
+          const k = c.path.join('.');
+          const marker = (k === state.sortKey) ? (state.sortOrder === 'asc' ? ' ▲' : ' ▼') : '';
+          return `<th data-nt-sort-key="${escapeHtml(k)}">${escapeHtml(c.label)}${marker}</th>`;
+        }).join('');
+        const body = sortedRows.map((r) => {
+          const cols = columns.leaf.map((c) => {
+            const raw = getByPath(r, c.path);
+            const shown = visibleValue(raw);
+            const isArray = Array.isArray(shown);
+            const flattenList = !state.listMode;
+            return `<td>${valToHtml(shown, flattenList && isArray)}</td>`;
+          }).join('');
+          return `<tr>${cols}</tr>`;
+        }).join('') || '<tr><td class="empty">無資料可顯示</td></tr>';
+
+        return `
+          <div class="root-list-card" data-nt-card="${escapeHtml(name)}">
+            <div class="root-list-head">
+              <strong>${escapeHtml(name)}</strong>
+              <span>共 ${sortedRows.length} 筆</span>
+              <label><input type="checkbox" data-nt-list-mode ${state.listMode ? 'checked' : ''} />（列表）</label>
+            </div>
+            ${filtersHtml
+              ? `<div class="toolbar" style="margin-bottom:8px; box-shadow:none; border-radius:10px;">${filtersHtml}</div>`
+              : ''}
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>${headTop}</tr>
+                  <tr>${headSub}</tr>
+                </thead>
+                <tbody>${body}</tbody>
+              </table>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      namedTablesEl.querySelectorAll('[data-nt-card]').forEach((card) => {
+        const name = card.getAttribute('data-nt-card');
+        const state = namedTableStates[name];
+        card.querySelectorAll('select[data-nt-meta-key]').forEach((sel) => {
+          sel.addEventListener('change', () => {
+            const k = sel.dataset.ntMetaKey;
+            state.filters[k] = sel.value || '';
+            renderNamedTables();
+          });
+        });
+        card.querySelectorAll('input[type="checkbox"][data-nt-list-mode]').forEach((cb) => {
+          cb.addEventListener('change', () => {
+            state.listMode = cb.checked;
+            renderNamedTables();
+          });
+        });
+        card.querySelectorAll('th[data-nt-sort-key]').forEach((th) => {
+          th.addEventListener('click', () => {
+            const k = th.dataset.ntSortKey;
+            if (state.sortKey === k) {
+              state.sortOrder = state.sortOrder === 'asc' ? 'desc' : 'asc';
+            } else {
+              state.sortKey = k;
+              state.sortOrder = 'asc';
+            }
+            renderNamedTables();
+          });
+        });
+      });
+    }
+
     function renderMetaFilters() {
       const entries = Object.entries(currentMeta).filter(([k, v]) => {
         if (!Array.isArray(v)) return false;
@@ -587,12 +738,20 @@
         return true;
       });
       if (!entries.length) {
-        metaFiltersEl.innerHTML = '';
+        const listChecked = activeTableListMode ? ' checked' : '';
+        metaFiltersEl.innerHTML = `<label><input type="checkbox" id="table-list-mode"${listChecked} />（列表）</label>`;
+        const listCbOnly = document.getElementById('table-list-mode');
+        if (listCbOnly) {
+          listCbOnly.addEventListener('change', () => {
+            activeTableListMode = listCbOnly.checked;
+            saveViewState();
+            render(currentRows);
+          });
+        }
         return;
       }
       const controls = entries.map(([k, arr]) => {
         const cleanArr = showDebug ? arr : arr.filter((x) => !isUnderscoreHidden(x));
-        const listChecked = activeMetaFlatten[k] === true ? ' checked' : '';
         const options = ['<option value="">（全部）</option>']
           .concat(cleanArr.map((x) => {
             const v = String(x);
@@ -600,9 +759,10 @@
             return `<option value="${escapeHtml(v)}"${selected}>${escapeHtml(v)}</option>`;
           }))
           .join('');
-        return `<label>${escapeHtml(k)}：<select data-meta-key="${escapeHtml(k)}">${options}</select> <input type="checkbox" data-meta-flatten="${escapeHtml(k)}"${listChecked} />（列表）</label>`;
+        return `<label>${escapeHtml(k)}：<select data-meta-key="${escapeHtml(k)}">${options}</select></label>`;
       }).join('');
-      metaFiltersEl.innerHTML = controls;
+      const listChecked = activeTableListMode ? ' checked' : '';
+      metaFiltersEl.innerHTML = `${controls} <label><input type="checkbox" id="table-list-mode"${listChecked} />（列表）</label>`;
       metaFiltersEl.querySelectorAll('select[data-meta-key]').forEach((sel) => {
         sel.addEventListener('change', () => {
           const k = sel.dataset.metaKey;
@@ -616,14 +776,14 @@
           render(currentRows);
         });
       });
-      metaFiltersEl.querySelectorAll('input[type="checkbox"][data-meta-flatten]').forEach((cb) => {
-        cb.addEventListener('change', () => {
-          const k = cb.dataset.metaFlatten;
-          activeMetaFlatten[k] = cb.checked;
+      const listCb = document.getElementById('table-list-mode');
+      if (listCb) {
+        listCb.addEventListener('change', () => {
+          activeTableListMode = listCb.checked;
           saveViewState();
           render(currentRows);
         });
-      });
+      }
     }
 
     function startInlineEdit(td) {
@@ -722,12 +882,15 @@
         const rawRows = normalized.rows.map((r, i) => ({ ...r, __index: i }));
         currentMeta = normalized.meta || {};
         currentRootLists = normalized.rootLists || {};
+        currentNamedTables = normalized.namedTables || {};
+        namedTableStates = {};
         if (isDatasetSwitch) {
           activeMetaFilters = {};
-          activeMetaFlatten = {};
+          activeTableListMode = false;
         }
         renderMetaFilters();
         renderRootLists();
+        renderNamedTables();
         currentBaseRows = rawRows;
         currentRows = applyMetaFilters(currentBaseRows);
         currentDataset = {
@@ -740,6 +903,12 @@
         refreshStatusLoaded(d.label);
         saveViewState();
       } catch (e) {
+        currentRootLists = {};
+        currentNamedTables = {};
+        rootListsEl.style.display = 'none';
+        rootListsEl.innerHTML = '';
+        namedTablesEl.style.display = 'none';
+        namedTablesEl.innerHTML = '';
         headTopEl.innerHTML = '';
         headSubEl.innerHTML = '';
         bodyEl.innerHTML = `<tr><td class="empty">載入失敗：${escapeHtml(e.message)}</td></tr>`;
@@ -766,8 +935,11 @@
         currentBaseRows = normalized.rows.map((r, i) => ({ ...r, __index: i }));
         currentMeta = normalized.meta || {};
         currentRootLists = normalized.rootLists || {};
+        currentNamedTables = normalized.namedTables || {};
+        namedTableStates = {};
         renderMetaFilters();
         renderRootLists();
+        renderNamedTables();
         currentRows = applyMetaFilters(currentBaseRows);
         currentDataset = {
           keys: [...currentKeyOrder],
@@ -844,6 +1016,7 @@
         saveViewState();
         renderMetaFilters();
         renderRootLists();
+        renderNamedTables();
         currentRows = applyMetaFilters(currentBaseRows);
         render(currentRows);
         refreshStatusLoaded();
@@ -867,8 +1040,8 @@
       if (cookieState?.filters && typeof cookieState.filters === 'object') {
         activeMetaFilters = { ...cookieState.filters };
       }
-      if (cookieState?.flatten && typeof cookieState.flatten === 'object') {
-        activeMetaFlatten = { ...cookieState.flatten };
+      if (typeof cookieState?.listMode === 'boolean') {
+        activeTableListMode = cookieState.listMode;
       }
       loadOne(selectEl.value);
     }
@@ -877,3 +1050,6 @@
   </script>
 </body>
 </html>
+
+
+

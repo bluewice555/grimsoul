@@ -1,0 +1,633 @@
+{
+  "monsters": [
+    "Forsaken Hermit: 50",
+    "Leper: 50",
+    "Wolf: 50",
+    "Plagueridden: 65",
+    "Bear: 70",
+    "Damned: 90",
+    "Direwolf: 100",
+    "Witch: 100",
+    "Damned Warrior: 140",
+    "Damned Knight: 200",
+    "Damned Zealot: 200",
+    "Damned Templar: 300",
+    "Doomed: 300"
+  ],
+  "weapons": [
+    "Club: 14",
+    "Dagger: 19",
+    "Spade: 19",
+    "Cart Thill: 24",
+    "Simple Bow: 26",
+    "Spiked Mace: 26",
+    "One-handed Sword: 30",
+    "Morning Star: 34",
+    "Flanged Mace: 35",
+    "Falchion: 36",
+    "Simple Crossbow: 45",
+    "Light Crossbow: 55",
+    "Bastard Sword: 58",
+    "Kriegsmesser: 61",
+    "Composite Bow: 63",
+    "Halberd: 81",
+    "Heavy Crossbow: 90"
+  ],
+  "skills": [
+    "Club: 3",
+    "Cart Thill: 4",
+    "Spade: 4",
+    "Dagger: 5",
+    "One-handed Sword: 6",
+    "Spiked Mace: 7",
+    "Flanged Mace: 8",
+    "Morning Star: 8",
+    "Falchion: 9",
+    "Halberd: 15",
+    "Kriegsmesser: 15",
+    "Bastard Sword: 15"
+  ],
+  "hit_monster": {
+    "keys": [
+      "weapon",
+      "Forsaken Hermit",
+      "Leper",
+      "Wolf",
+      "Plagueridden",
+      "Bear",
+      "Damned",
+      "Direwolf",
+      "Witch",
+      "Damned Warrior",
+      "Damned Knight",
+      "Damned Zealot",
+      "Damned Templar",
+      "Doomed"
+    ],
+    "datas": [
+      {
+        "Forsaken Hermit": [
+          "4",
+          "3(3)"
+        ],
+        "Leper": [
+          "4",
+          "3(3)"
+        ],
+        "Wolf": [
+          "4",
+          "3(3)"
+        ],
+        "Plagueridden": [
+          "5",
+          "4(3)"
+        ],
+        "Bear": "5",
+        "Damned": [
+          "7",
+          "6(1)"
+        ],
+        "Direwolf": [
+          "8",
+          "7(1)",
+          "6(3)"
+        ],
+        "Witch": [
+          "8",
+          "7(1)",
+          "6(3)"
+        ],
+        "Damned Warrior": [
+          "10",
+          "9(2)"
+        ],
+        "Damned Knight": [
+          "15",
+          "14(1)",
+          "13(2)",
+          "12(3)"
+        ],
+        "Damned Zealot": [
+          "15",
+          "14(1)",
+          "13(2)",
+          "12(3)"
+        ],
+        "Damned Templar": [
+          "22",
+          "20(1)",
+          "19(2)",
+          "18(3)"
+        ],
+        "Doomed": [
+          "22",
+          "20(1)",
+          "19(2)",
+          "18(3)"
+        ],
+        "weapon": "Club"
+      },
+      {
+        "Forsaken Hermit": "3",
+        "Leper": "3",
+        "Wolf": "3",
+        "Plagueridden": [
+          "4",
+          "3(3)"
+        ],
+        "Bear": [
+          "4",
+          "3(5)"
+        ],
+        "Damned": [
+          "5",
+          "4(4)"
+        ],
+        "Direwolf": [
+          "6",
+          "5(1)"
+        ],
+        "Witch": [
+          "6",
+          "5(1)"
+        ],
+        "Damned Warrior": [
+          "8",
+          "7(1)",
+          "6(5)"
+        ],
+        "Damned Knight": [
+          "11",
+          "10(1)",
+          "9(4)"
+        ],
+        "Damned Zealot": [
+          "11",
+          "10(1)",
+          "9(4)"
+        ],
+        "Damned Templar": [
+          "16",
+          "15(1)",
+          "14(3)",
+          "13(5)"
+        ],
+        "Doomed": [
+          "16",
+          "15(1)",
+          "14(3)",
+          "13(5)"
+        ],
+        "weapon": "Dagger"
+      },
+      {
+        "Forsaken Hermit": "3",
+        "Leper": "3",
+        "Wolf": "3",
+        "Plagueridden": [
+          "4",
+          "3(3)"
+        ],
+        "Bear": "4",
+        "Damned": [
+          "5",
+          "4(4)"
+        ],
+        "Direwolf": [
+          "6",
+          "5(1)"
+        ],
+        "Witch": [
+          "6",
+          "5(1)"
+        ],
+        "Damned Warrior": [
+          "8",
+          "7(1)"
+        ],
+        "Damned Knight": [
+          "11",
+          "10(1)",
+          "9(4)"
+        ],
+        "Damned Zealot": [
+          "11",
+          "10(1)",
+          "9(4)"
+        ],
+        "Damned Templar": [
+          "16",
+          "15(1)",
+          "14(3)"
+        ],
+        "Doomed": [
+          "16",
+          "15(1)",
+          "14(3)"
+        ],
+        "weapon": "Spade"
+      },
+      {
+        "Forsaken Hermit": [
+          "3",
+          "2(1)"
+        ],
+        "Leper": [
+          "3",
+          "2(1)"
+        ],
+        "Wolf": [
+          "3",
+          "2(1)"
+        ],
+        "Plagueridden": "3",
+        "Bear": "3",
+        "Damned": "4",
+        "Direwolf": [
+          "5",
+          "4(1)"
+        ],
+        "Witch": [
+          "5",
+          "4(1)"
+        ],
+        "Damned Warrior": [
+          "6",
+          "5(4)"
+        ],
+        "Damned Knight": [
+          "9",
+          "8(1)"
+        ],
+        "Damned Zealot": [
+          "9",
+          "8(1)"
+        ],
+        "Damned Templar": [
+          "13",
+          "12(1)",
+          "11(4)"
+        ],
+        "Doomed": [
+          "13",
+          "12(1)",
+          "11(4)"
+        ],
+        "weapon": "Cart Thill"
+      },
+      {
+        "Forsaken Hermit": "2",
+        "Leper": "2",
+        "Wolf": "2",
+        "Plagueridden": "3",
+        "Bear": "3",
+        "Damned": "4",
+        "Direwolf": "4",
+        "Witch": "4",
+        "Damned Warrior": "6",
+        "Damned Knight": "8",
+        "Damned Zealot": "8",
+        "Damned Templar": "12",
+        "Doomed": "12",
+        "weapon": "Simple Bow"
+      },
+      {
+        "Forsaken Hermit": "2",
+        "Leper": "2",
+        "Wolf": "2",
+        "Plagueridden": [
+          "3",
+          "2(7)"
+        ],
+        "Bear": "3",
+        "Damned": [
+          "4",
+          "3(4)"
+        ],
+        "Direwolf": "4",
+        "Witch": "4",
+        "Damned Warrior": [
+          "6",
+          "5(2)"
+        ],
+        "Damned Knight": [
+          "8",
+          "7(3)"
+        ],
+        "Damned Zealot": [
+          "8",
+          "7(3)"
+        ],
+        "Damned Templar": [
+          "12",
+          "11(2)",
+          "10(4)"
+        ],
+        "Doomed": [
+          "12",
+          "11(2)",
+          "10(4)"
+        ],
+        "weapon": "Spiked Mace"
+      },
+      {
+        "Forsaken Hermit": "2",
+        "Leper": "2",
+        "Wolf": "2",
+        "Plagueridden": [
+          "3",
+          "2(3)"
+        ],
+        "Bear": [
+          "3",
+          "2(5)"
+        ],
+        "Damned": "3",
+        "Direwolf": [
+          "4",
+          "3(4)"
+        ],
+        "Witch": [
+          "4",
+          "3(4)"
+        ],
+        "Damned Warrior": [
+          "5",
+          "4(5)"
+        ],
+        "Damned Knight": [
+          "7",
+          "6(4)"
+        ],
+        "Damned Zealot": [
+          "7",
+          "6(4)"
+        ],
+        "Damned Templar": [
+          "10",
+          "9(4)"
+        ],
+        "Doomed": [
+          "10",
+          "9(4)"
+        ],
+        "weapon": "One-handed Sword"
+      },
+      {
+        "Forsaken Hermit": "2",
+        "Leper": "2",
+        "Wolf": "2",
+        "Plagueridden": "2",
+        "Bear": [
+          "3",
+          "2(1)"
+        ],
+        "Damned": "3",
+        "Direwolf": "3",
+        "Witch": "3",
+        "Damned Warrior": [
+          "5",
+          "4(1)"
+        ],
+        "Damned Knight": [
+          "6",
+          "5(6)"
+        ],
+        "Damned Zealot": [
+          "6",
+          "5(6)"
+        ],
+        "Damned Templar": [
+          "9",
+          "8(4)"
+        ],
+        "Doomed": [
+          "9",
+          "8(4)"
+        ],
+        "weapon": "Morning Star"
+      },
+      {
+        "Forsaken Hermit": "2",
+        "Leper": "2",
+        "Wolf": "2",
+        "Plagueridden": "2",
+        "Bear": "2",
+        "Damned": "3",
+        "Direwolf": "3",
+        "Witch": "3",
+        "Damned Warrior": "4",
+        "Damned Knight": [
+          "6",
+          "5(5)"
+        ],
+        "Damned Zealot": [
+          "6",
+          "5(5)"
+        ],
+        "Damned Templar": [
+          "9",
+          "8(3)",
+          "7(8)"
+        ],
+        "Doomed": [
+          "9",
+          "8(3)",
+          "7(8)"
+        ],
+        "weapon": "Flanged Mace"
+      },
+      {
+        "Forsaken Hermit": "2",
+        "Leper": "2",
+        "Wolf": "2",
+        "Plagueridden": "2",
+        "Bear": "2",
+        "Damned": [
+          "3",
+          "2(9)"
+        ],
+        "Direwolf": "3",
+        "Witch": "3",
+        "Damned Warrior": "4",
+        "Damned Knight": [
+          "6",
+          "5(4)"
+        ],
+        "Damned Zealot": [
+          "6",
+          "5(4)"
+        ],
+        "Damned Templar": [
+          "9",
+          "8(2)",
+          "7(7)"
+        ],
+        "Doomed": [
+          "9",
+          "8(2)",
+          "7(7)"
+        ],
+        "weapon": "Falchion"
+      },
+      {
+        "Forsaken Hermit": "2",
+        "Leper": "2",
+        "Wolf": "2",
+        "Plagueridden": "2",
+        "Bear": "2",
+        "Damned": "2",
+        "Direwolf": "3",
+        "Witch": "3",
+        "Damned Warrior": "4",
+        "Damned Knight": "5",
+        "Damned Zealot": "5",
+        "Damned Templar": "7",
+        "Doomed": "7",
+        "weapon": "Simple Crossbow"
+      },
+      {
+        "Forsaken Hermit": "1",
+        "Leper": "1",
+        "Wolf": "1",
+        "Plagueridden": "2",
+        "Bear": "2",
+        "Damned": "2",
+        "Direwolf": "2",
+        "Witch": "2",
+        "Damned Warrior": "3",
+        "Damned Knight": "4",
+        "Damned Zealot": "4",
+        "Damned Templar": "6",
+        "Doomed": "6",
+        "weapon": "Light Crossbow"
+      },
+      {
+        "Forsaken Hermit": "1",
+        "Leper": "1",
+        "Wolf": "1",
+        "Plagueridden": [
+          "2",
+          "1(7)"
+        ],
+        "Bear": [
+          "2",
+          "1(12)"
+        ],
+        "Damned": "2",
+        "Direwolf": "2",
+        "Witch": "2",
+        "Damned Warrior": [
+          "3",
+          "2(12)"
+        ],
+        "Damned Knight": [
+          "4",
+          "3(9)"
+        ],
+        "Damned Zealot": [
+          "4",
+          "3(9)"
+        ],
+        "Damned Templar": [
+          "6",
+          "5(2)"
+        ],
+        "Doomed": [
+          "6",
+          "5(2)"
+        ],
+        "weapon": "Bastard Sword"
+      },
+      {
+        "Forsaken Hermit": "1",
+        "Leper": "1",
+        "Wolf": "1",
+        "Plagueridden": [
+          "2",
+          "1(4)"
+        ],
+        "Bear": [
+          "2",
+          "1(9)"
+        ],
+        "Damned": "2",
+        "Direwolf": "2",
+        "Witch": "2",
+        "Damned Warrior": [
+          "3",
+          "2(9)"
+        ],
+        "Damned Knight": [
+          "4",
+          "3(6)"
+        ],
+        "Damned Zealot": [
+          "4",
+          "3(6)"
+        ],
+        "Damned Templar": [
+          "5",
+          "4(14)"
+        ],
+        "Doomed": [
+          "5",
+          "4(14)"
+        ],
+        "weapon": "Kriegsmesser"
+      },
+      {
+        "Forsaken Hermit": "1",
+        "Leper": "1",
+        "Wolf": "1",
+        "Plagueridden": "2",
+        "Bear": "2",
+        "Damned": "2",
+        "Direwolf": "2",
+        "Witch": "2",
+        "Damned Warrior": "3",
+        "Damned Knight": "4",
+        "Damned Zealot": "4",
+        "Damned Templar": "5",
+        "Doomed": "5",
+        "weapon": "Composite Bow"
+      },
+      {
+        "Forsaken Hermit": "1",
+        "Leper": "1",
+        "Wolf": "1",
+        "Plagueridden": "1",
+        "Bear": "1",
+        "Damned": [
+          "2",
+          "1(9)"
+        ],
+        "Direwolf": "2",
+        "Witch": "2",
+        "Damned Warrior": "2",
+        "Damned Knight": "3",
+        "Damned Zealot": "3",
+        "Damned Templar": "4",
+        "Doomed": "4",
+        "weapon": "Halberd"
+      },
+      {
+        "Forsaken Hermit": "1",
+        "Leper": "1",
+        "Wolf": "1",
+        "Plagueridden": "1",
+        "Bear": "1",
+        "Damned": "1",
+        "Direwolf": "2",
+        "Witch": "2",
+        "Damned Warrior": "2",
+        "Damned Knight": "3",
+        "Damned Zealot": "3",
+        "Damned Templar": "4",
+        "Doomed": "4",
+        "weapon": "Heavy Crossbow"
+      }
+    ],
+    "filter": {}
+  }
+}
