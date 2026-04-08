@@ -37,6 +37,13 @@
       border: 1px solid var(--line); border-radius: 16px; background: var(--panel); box-shadow: 0 12px 32px var(--shadow);
       padding: 12px; display: flex; gap: 12px; align-items: center; margin-bottom: 12px; flex-wrap: wrap;
     }
+    .toolbar-right {
+      margin-left: auto;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
     .toolbar.editing {
       border-color: #1f7a45;
       box-shadow: 0 12px 32px rgba(31,122,69,.16);
@@ -97,8 +104,10 @@
       <select id="dataset-select"></select>
       <label><input id="show-debug-toggle" type="checkbox" /> 顯示 DEBUG</label>
       <span id="meta-filters"></span>
-      <button id="open-file-btn" class="btn" type="button">開啟檔案（編輯）</button>
-      <button id="copy-path-btn" class="btn" type="button">複製路徑</button>
+      <div class="toolbar-right">
+        <button id="open-file-btn" class="btn" type="button">開啟檔案（編輯）</button>
+        <button id="copy-path-btn" class="btn" type="button">複製路徑</button>
+      </div>
       <button id="flush-btn" class="btn primary" type="button" disabled>寫入 Flush</button>
       <span id="status" class="status">載入中...</span>
     </div>
@@ -147,6 +156,7 @@
     let activeSortOrder = 'asc';
     let currentMeta = {};
     let activeMetaFilters = {};
+    let activeMetaFlatten = {};
     let initialQueryFilters = {};
     let editFileHandle = null;
     let isEditMode = false;
@@ -196,8 +206,9 @@
         .replaceAll('"','&quot;').replaceAll("'",'&#39;');
     }
 
-    function valToHtml(v) {
+    function valToHtml(v, flattenList = false) {
       if (v === null || v === undefined || v === '') return '<span class="empty">-</span>';
+      if (Array.isArray(v) && flattenList) return escapeHtml(v.join('；'));
       if (typeof v === 'object') return `<span class="json">${escapeHtml(JSON.stringify(v, null, 2))}</span>`;
       return escapeHtml(v);
     }
@@ -391,12 +402,14 @@
           const raw = getByPath(r, c.path);
           const shown = visibleValue(raw);
           const isArray = Array.isArray(shown);
+          const rootKey = c.path[0];
+          const flattenList = activeMetaFlatten[rootKey] === true;
           const editable = isEditMode && shown !== '-' && (shown === null || typeof shown !== 'object' || isArray);
           const val = shown === null || shown === undefined
             ? ''
             : (isArray ? shown.join('；') : String(shown));
           const rawType = isArray ? 'array' : (raw === null ? 'null' : typeof raw);
-          return `<td data-row="${i}" data-idx="${idx}" data-path="${escapeHtml(c.path.join('.'))}" data-editable="${editable ? '1' : '0'}" data-raw-type="${rawType}" data-raw="${escapeHtml(val)}">${valToHtml(shown)}</td>`;
+          return `<td data-row="${i}" data-idx="${idx}" data-path="${escapeHtml(c.path.join('.'))}" data-editable="${editable ? '1' : '0'}" data-raw-type="${rawType}" data-raw="${escapeHtml(val)}">${valToHtml(shown, flattenList)}</td>`;
         }).join('');
         return `<tr>${cols}</tr>`;
       }).join('');
@@ -450,14 +463,15 @@
       }
       const controls = entries.map(([k, arr]) => {
         const cleanArr = arr.filter((x) => !isUnderscoreHidden(x));
-        const options = ['<option value="">全部</option>']
+        const flattenChecked = activeMetaFlatten[k] ? ' checked' : '';
+        const options = ['<option value="">（全部）</option>']
           .concat(cleanArr.map((x) => {
             const v = String(x);
             const selected = activeMetaFilters[k] === v ? ' selected' : '';
             return `<option value="${escapeHtml(v)}"${selected}>${escapeHtml(v)}</option>`;
           }))
           .join('');
-        return `<label>${escapeHtml(k)}：<select data-meta-key="${escapeHtml(k)}">${options}</select></label>`;
+        return `<label>${escapeHtml(k)}：<select data-meta-key="${escapeHtml(k)}">${options}</select> <input type="checkbox" data-meta-flatten="${escapeHtml(k)}"${flattenChecked} />（展平）</label>`;
       }).join('');
       metaFiltersEl.innerHTML = controls;
       metaFiltersEl.querySelectorAll('select[data-meta-key]').forEach((sel) => {
@@ -469,6 +483,13 @@
           else url.searchParams.delete(k);
           history.replaceState({}, '', url);
           currentRows = applyMetaFilters(currentBaseRows);
+          render(currentRows);
+        });
+      });
+      metaFiltersEl.querySelectorAll('input[type="checkbox"][data-meta-flatten]').forEach((cb) => {
+        cb.addEventListener('change', () => {
+          const k = cb.dataset.metaFlatten;
+          activeMetaFlatten[k] = cb.checked;
           render(currentRows);
         });
       });
@@ -568,13 +589,16 @@
         const rawRows = normalized.rows.map((r, i) => ({ ...r, __index: i }));
         currentMeta = normalized.meta || {};
         const prevFilters = { ...activeMetaFilters };
+        const prevFlatten = { ...activeMetaFlatten };
         activeMetaFilters = {};
+        activeMetaFlatten = {};
         for (const k of Object.keys(currentMeta)) {
           if (typeof prevFilters[k] === 'string' && prevFilters[k] !== '') {
             activeMetaFilters[k] = prevFilters[k];
           } else if (typeof initialQueryFilters[k] === 'string') {
             activeMetaFilters[k] = initialQueryFilters[k];
           }
+          if (prevFlatten[k] === true) activeMetaFlatten[k] = true;
         }
         renderMetaFilters();
         currentBaseRows = rawRows;
@@ -614,11 +638,14 @@
         currentBaseRows = normalized.rows.map((r, i) => ({ ...r, __index: i }));
         currentMeta = normalized.meta || {};
         const prevFilters = { ...activeMetaFilters };
+        const prevFlatten = { ...activeMetaFlatten };
         activeMetaFilters = {};
+        activeMetaFlatten = {};
         for (const k of Object.keys(currentMeta)) {
           if (typeof prevFilters[k] === 'string' && prevFilters[k] !== '') {
             activeMetaFilters[k] = prevFilters[k];
           }
+          if (prevFlatten[k] === true) activeMetaFlatten[k] = true;
         }
         renderMetaFilters();
         currentRows = applyMetaFilters(currentBaseRows);

@@ -1,4 +1,24 @@
 {
+  "Crafting": [
+    "原松木",
+    "松木板",
+    "樺木板",
+    "石灰岩",
+    "亞麻纖維",
+    "繩子",
+    "布料",
+    "皮革",
+    "皮條",
+    "碎銅片",
+    "銅錠",
+    "青銅錠",
+    "青銅釘",
+    "鐵錠",
+    "線",
+    "弓弦",
+    "高品質弓弦",
+    "機械裝置"
+  ],
   "keys": [
     "ID",
     "Name",
@@ -30,7 +50,11 @@
       "Speed": "1.1",
       "Range": "1.2",
       "Durability": "400 sec(s)",
-      "Crafting": "原松木: 2; 亞麻纖維: 3; 繩子: 2",
+      "Crafting": [
+        "原松木: 2",
+        "亞麻纖維: 3",
+        "繩子: 2"
+      ],
       "Special Effect(s)": "每次命中額外消耗 5 秒耐久；可驅趕夜訪者",
       "Physical": "7",
       "Skill(s)": "火把"
@@ -42,7 +66,10 @@
       "Speed": "1.1",
       "Range": "1.2",
       "Durability": "50",
-      "Crafting": "原松木: 2; 石灰岩: 2",
+      "Crafting": [
+        "原松木: 2",
+        "石灰岩: 2"
+      ],
       "Special Effect(s)": "可開採石灰岩與銅礦石",
       "Skill(s)": "(採集)"
     },
@@ -52,7 +79,10 @@
       "Speed": "1.1",
       "Range": "1.2",
       "Durability": "50",
-      "Crafting": "原松木: 2; 石灰岩: 2",
+      "Crafting": [
+        "原松木: 2",
+        "石灰岩: 2"
+      ],
       "Special Effect(s)": "可開採石灰岩與銅礦石；資源點採集次數需求減半",
       "Physical": "8",
       "Skill(s)": "(採集)"
@@ -62,7 +92,10 @@
       "Name": "石斧",
       "Range": "1.1",
       "Durability": "50",
-      "Crafting": "原松木: 2; 石灰岩: 2",
+      "Crafting": [
+        "原松木: 2",
+        "石灰岩: 2"
+      ],
       "Special Effect(s)": "可砍伐松木",
       "Speed": "1.0",
       "Physical": "9",
@@ -73,7 +106,10 @@
       "Name": "工匠石斧",
       "Range": "1.1",
       "Durability": "50",
-      "Crafting": "原松木: 2; 石灰岩: 2",
+      "Crafting": [
+        "原松木: 2",
+        "石灰岩: 2"
+      ],
       "Special Effect(s)": "可砍伐松木；資源點採集次數需求減半",
       "Speed": "1.1",
       "Physical": "9",
@@ -86,7 +122,10 @@
       "Speed": "1.1",
       "Range": "1.3",
       "Durability": "67",
-      "Crafting": "青銅錠: 2; 原松木: 2",
+      "Crafting": [
+        "原松木: 2",
+        "青銅錠: 2"
+      ],
       "Special Effect(s)": "可開採鐵礦石",
       "Skill(s)": "(採集)"
     },
@@ -107,7 +146,10 @@
       "Physical": "13",
       "Range": "1.2",
       "Durability": "67",
-      "Crafting": "青銅錠: 2; 原松木: 2",
+      "Crafting": [
+        "原松木: 2",
+        "青銅錠: 2"
+      ],
       "Special Effect(s)": "可砍伐樺木",
       "Speed": "1.0",
       "Skill(s)": "(採集)"
@@ -119,7 +161,9 @@
       "Speed": "0.9",
       "Range": "1.4",
       "Durability": "56",
-      "Crafting": "原松木: 5",
+      "Crafting": [
+        "原松木: 5"
+      ],
       "Special Effect(s)": null,
       "Skill(s)": "棍子"
     },
@@ -141,7 +185,9 @@
       "Speed": "0.9",
       "Range": "1.4",
       "Durability": "56",
-      "Crafting": "原松木: 5",
+      "Crafting": [
+        "原松木: 5"
+      ],
       "Special Effect(s)": "潛行命中時擊暈 1 秒",
       "Skill(s)": "棍子"
     },
@@ -198,7 +244,11 @@
       "Speed": "1.2",
       "Range": "1.7",
       "Durability": "84",
-      "Crafting": "銅錠: 3; 青銅釘: 2; 松木板: 5",
+      "Crafting": [
+        "松木板: 5",
+        "銅錠: 3",
+        "青銅釘: 2"
+      ],
       "Special Effect(s)": null,
       "Skill(s)": "鍬"
     },
@@ -209,7 +259,11 @@
       "Speed": "1.4",
       "Range": "1.2",
       "Durability": "100",
-      "Crafting": "銅錠: 4; 松木板: 5; 皮革: 5",
+      "Crafting": [
+        "松木板: 5",
+        "皮革: 5",
+        "銅錠: 4"
+      ],
       "Special Effect(s)": null,
       "Skill(s)": "匕首"
     },
@@ -231,7 +285,11 @@
       "Speed": "1.2",
       "Range": "1.7",
       "Durability": "84",
-      "Crafting": "銅錠: 3; 青銅釘: 2; 松木板: 5",
+      "Crafting": [
+        "松木板: 5",
+        "銅錠: 3",
+        "青銅釘: 2"
+      ],
       "Special Effect(s)": null,
       "Skill(s)": "鍬"
     },
@@ -253,7 +311,11 @@
       "Speed": "1.4",
       "Range": "1.2",
       "Durability": "100",
-      "Crafting": "銅錠: 7; 松木板: 5; 皮革: 5",
+      "Crafting": [
+        "松木板: 5",
+        "皮革: 5",
+        "銅錠: 7"
+      ],
       "Special Effect(s)": null,
       "Skill(s)": "匕首"
     },
@@ -264,7 +326,11 @@
       "Speed": "1.4",
       "Range": "1.2",
       "Durability": "100",
-      "Crafting": "銅錠: 7; 松木板: 5; 皮革: 5",
+      "Crafting": [
+        "松木板: 5",
+        "皮革: 5",
+        "銅錠: 7"
+      ],
       "Special Effect(s)": null,
       "Skill(s)": "匕首"
     },
@@ -275,7 +341,11 @@
       "Speed": "0.8",
       "Range": "5.0",
       "Durability": "63",
-      "Crafting": "松木板: 1; 弓弦: 1; 皮條: 3",
+      "Crafting": [
+        "松木板: 1",
+        "皮條: 3",
+        "弓弦: 1"
+      ],
       "Special Effect(s)": "遠程傷害浮動(受護甲減免影響)",
       "Skill(s)": "簡單弓具"
     },
@@ -286,7 +356,10 @@
       "Speed": "0.7",
       "Range": "2.0",
       "Durability": "42",
-      "Crafting": "原松木: 10; 布料: 6",
+      "Crafting": [
+        "原松木: 10",
+        "布料: 6"
+      ],
       "Special Effect(s)": null,
       "Skill(s)": "車把"
     },
@@ -352,7 +425,11 @@
       "Speed": "1.3",
       "Range": "1.4",
       "Durability": "91",
-      "Crafting": "青銅釘: 6; 松木板: 5; 皮革: 2",
+      "Crafting": [
+        "松木板: 5",
+        "皮革: 2",
+        "青銅釘: 6"
+      ],
       "Special Effect(s)": null,
       "Skill(s)": "尖刺錘"
     },
@@ -363,7 +440,10 @@
       "Speed": "0.7",
       "Range": "2.0",
       "Durability": "42",
-      "Crafting": "原松木: 10; 布料: 6",
+      "Crafting": [
+        "原松木: 10",
+        "布料: 6"
+      ],
       "Special Effect(s)": null,
       "Skill(s)": "車把"
     },
@@ -374,7 +454,10 @@
       "Speed": "0.7",
       "Range": "2.0",
       "Durability": "42",
-      "Crafting": "原松木: 10; 布料: 6",
+      "Crafting": [
+        "原松木: 10",
+        "布料: 6"
+      ],
       "Special Effect(s)": null,
       "Skill(s)": "車把"
     },
@@ -396,7 +479,11 @@
       "Speed": "1.3",
       "Range": "1.4",
       "Durability": "91",
-      "Crafting": "青銅釘: 6; 松木板: 5; 皮革: 2",
+      "Crafting": [
+        "松木板: 5",
+        "皮革: 2",
+        "青銅釘: 6"
+      ],
       "Special Effect(s)": null,
       "Skill(s)": null
     },
@@ -407,7 +494,11 @@
       "Speed": "1.4",
       "Range": "1.4",
       "Durability": "250",
-      "Crafting": "青銅釘: 16; 松木板: 14; 皮革: 5",
+      "Crafting": [
+        "松木板: 14",
+        "皮革: 5",
+        "青銅釘: 16"
+      ],
       "Special Effect(s)": "耐久提升",
       "Skill(s)": null
     },
@@ -441,7 +532,11 @@
       "Physical": "30",
       "Range": "1.5",
       "Durability": "67",
-      "Crafting": "銅錠: 10; 松木板: 6; 皮革: 6",
+      "Crafting": [
+        "松木板: 6",
+        "皮革: 6",
+        "銅錠: 10"
+      ],
       "Speed": "1.0",
       "Special Effect(s)": null,
       "Skill(s)": "單手劍"
@@ -452,7 +547,11 @@
       "Physical": "33",
       "Range": "1.5",
       "Durability": "67",
-      "Crafting": "銅錠: 10; 松木板: 6; 皮革: 6",
+      "Crafting": [
+        "松木板: 6",
+        "皮革: 6",
+        "銅錠: 10"
+      ],
       "Speed": "1.0",
       "Special Effect(s)": null,
       "Skill(s)": "短彎刀"
@@ -464,7 +563,12 @@
       "Speed": "1.1",
       "Range": "1.4",
       "Durability": "77",
-      "Crafting": "銅錠: 3; 青銅釘: 7; 松木板: 8; 皮革: 3",
+      "Crafting": [
+        "松木板: 8",
+        "皮革: 3",
+        "銅錠: 3",
+        "青銅釘: 7"
+      ],
       "Special Effect(s)": null,
       "Skill(s)": "流星錘"
     },
@@ -474,7 +578,12 @@
       "Physical": "35",
       "Speed": "0.4",
       "Durability": "40",
-      "Crafting": "青銅錠: 2; 松木板: 4; 弓弦: 2; 皮條: 2",
+      "Crafting": [
+        "松木板: 4",
+        "皮條: 2",
+        "青銅錠: 2",
+        "弓弦: 2"
+      ],
       "Special Effect(s)": "遠程攻擊(受護甲減免影響)；裝填時定身使用者",
       "Range": "6.0",
       "Skill(s)": "簡單弓具"
@@ -486,7 +595,11 @@
       "Speed": "1.2",
       "Range": "1.4",
       "Durability": "84",
-      "Crafting": "銅錠: 13; 線: 10; 皮革: 7",
+      "Crafting": [
+        "皮革: 7",
+        "銅錠: 13",
+        "線: 10"
+      ],
       "Special Effect(s)": null,
       "Skill(s)": "法蘭錘"
     },
@@ -497,7 +610,12 @@
       "Speed": "1.3",
       "Range": "1.2",
       "Durability": "91",
-      "Crafting": "青銅錠: 8; 松木板: 5; 線: 8; 皮革: 8",
+      "Crafting": [
+        "松木板: 5",
+        "皮革: 8",
+        "青銅錠: 8",
+        "線: 8"
+      ],
       "Special Effect(s)": null,
       "Skill(s)": "彎刀"
     },
@@ -508,7 +626,12 @@
       "Speed": "1.1",
       "Range": "1.4",
       "Durability": "77",
-      "Crafting": "銅錠: 3; 青銅釘: 7; 松木板: 8; 皮革: 3",
+      "Crafting": [
+        "松木板: 8",
+        "皮革: 3",
+        "銅錠: 3",
+        "青銅釘: 7"
+      ],
       "Special Effect(s)": null,
       "Skill(s)": "流星錘"
     },
@@ -519,7 +642,12 @@
       "Speed": "1.1",
       "Range": "1.4",
       "Durability": "77",
-      "Crafting": "銅錠: 3; 青銅釘: 7; 松木板: 8; 皮革: 3",
+      "Crafting": [
+        "松木板: 8",
+        "皮革: 3",
+        "銅錠: 3",
+        "青銅釘: 7"
+      ],
       "Special Effect(s)": null,
       "Skill(s)": "流星錘"
     },
@@ -530,7 +658,11 @@
       "Speed": "1.2",
       "Range": "1.4",
       "Durability": "84",
-      "Crafting": "銅錠: 13; 線: 10; 皮革: 7",
+      "Crafting": [
+        "皮革: 7",
+        "銅錠: 13",
+        "線: 10"
+      ],
       "Special Effect(s)": null,
       "Skill(s)": "法蘭錘"
     },
@@ -541,7 +673,12 @@
       "Speed": "1.3",
       "Range": "1.2",
       "Durability": "91",
-      "Crafting": "青銅錠: 8; 松木板: 5; 線: 8; 皮革: 8",
+      "Crafting": [
+        "松木板: 5",
+        "皮革: 8",
+        "青銅錠: 8",
+        "線: 8"
+      ],
       "Special Effect(s)": null,
       "Skill(s)": "彎刀"
     },
@@ -552,7 +689,12 @@
       "Speed": "1.3",
       "Range": "1.2",
       "Durability": "91",
-      "Crafting": "青銅錠: 8; 松木板: 5; 線: 8; 皮革: 8",
+      "Crafting": [
+        "松木板: 5",
+        "皮革: 8",
+        "青銅錠: 8",
+        "線: 8"
+      ],
       "Special Effect(s)": null,
       "Skill(s)": "彎刀"
     },
@@ -573,7 +715,11 @@
       "Physical": "43",
       "Range": "2.0",
       "Durability": "72",
-      "Crafting": "銅錠: 20; 松木板: 10; 皮條: 15",
+      "Crafting": [
+        "松木板: 10",
+        "皮條: 15",
+        "銅錠: 20"
+      ],
       "Speed": "1.0",
       "Special Effect(s)": null,
       "Skill(s)": "銅巨戰斧"
@@ -584,7 +730,13 @@
       "Physical": "45",
       "Speed": "0.3",
       "Durability": "35",
-      "Crafting": "鐵錠: 5; 松木板: 7; 機械裝置: 1; 弓弦: 4; 皮條: 4",
+      "Crafting": [
+        "松木板: 7",
+        "皮條: 4",
+        "鐵錠: 5",
+        "弓弦: 4",
+        "機械裝置: 1"
+      ],
       "Special Effect(s)": "遠程攻擊(受護甲減免影響)；裝填時定身使用者",
       "Range": "6.0",
       "Skill(s)": "簡單弓具"
@@ -674,7 +826,13 @@
       "Speed": "0.9",
       "Range": "1.7",
       "Durability": "56",
-      "Crafting": "青銅錠: 15; 碎銅片: 7; 松木板: 8; 線: 7; 皮革: 6",
+      "Crafting": [
+        "松木板: 8",
+        "皮革: 6",
+        "碎銅片: 7",
+        "青銅錠: 15",
+        "線: 7"
+      ],
       "Special Effect(s)": null,
       "Skill(s)": "變種劍"
     },
@@ -788,7 +946,13 @@
       "Speed": "1.1",
       "Range": "1.7",
       "Durability": "59",
-      "Crafting": "鐵錠: 20; 碎銅片: 8; 樺木板: 12; 線: 4; 皮革: 8",
+      "Crafting": [
+        "樺木板: 12",
+        "皮革: 8",
+        "碎銅片: 8",
+        "鐵錠: 20",
+        "線: 4"
+      ],
       "Special Effect(s)": null,
       "Skill(s)": "戰爭軍刀"
     },
@@ -809,7 +973,12 @@
       "Physical": "63",
       "Speed": "0.8",
       "Durability": "59",
-      "Crafting": "鐵錠: 8; 樺木板: 10; 高品質弓弦: 4; 皮條: 12",
+      "Crafting": [
+        "樺木板: 10",
+        "皮條: 12",
+        "鐵錠: 8",
+        "高品質弓弦: 4"
+      ],
       "Special Effect(s)": "遠程傷害浮動(受護甲減免影響)",
       "Range": "7.0",
       "Skill(s)": "簡單弓具"
@@ -832,7 +1001,13 @@
       "Speed": "0.9",
       "Range": "1.7",
       "Durability": "56",
-      "Crafting": "青銅錠: 15; 碎銅片: 7; 松木板: 8; 線: 7; 皮革: 6",
+      "Crafting": [
+        "松木板: 8",
+        "皮革: 6",
+        "碎銅片: 7",
+        "青銅錠: 15",
+        "線: 7"
+      ],
       "Special Effect(s)": null,
       "Skill(s)": "變種劍"
     },
@@ -843,7 +1018,13 @@
       "Speed": "0.9",
       "Range": "1.7",
       "Durability": "56",
-      "Crafting": "青銅錠: 15; 碎銅片: 7; 松木板: 8; 線: 7; 皮革: 6",
+      "Crafting": [
+        "松木板: 8",
+        "皮革: 6",
+        "碎銅片: 7",
+        "青銅錠: 15",
+        "線: 7"
+      ],
       "Special Effect(s)": null,
       "Skill(s)": null
     },
@@ -865,7 +1046,13 @@
       "Speed": "1.1",
       "Range": "1.7",
       "Durability": "59",
-      "Crafting": "鐵錠: 20; 碎銅片: 8; 樺木板: 12; 線: 4; 皮革: 8",
+      "Crafting": [
+        "樺木板: 12",
+        "皮革: 8",
+        "碎銅片: 8",
+        "鐵錠: 20",
+        "線: 4"
+      ],
       "Special Effect(s)": null,
       "Skill(s)": "戰爭軍刀"
     },
@@ -1058,7 +1245,12 @@
       "Speed": "0.2",
       "Range": "7.5",
       "Durability": "29",
-      "Crafting": "鐵錠: 10; 樺木板: 20; 機械裝置: 15; 高品質弓弦: 6",
+      "Crafting": [
+        "樺木板: 20",
+        "鐵錠: 10",
+        "高品質弓弦: 6",
+        "機械裝置: 15"
+      ],
       "Special Effect(s)": "遠程攻擊(受護甲減免影響)；裝填時定身使用者",
       "Skill(s)": "簡單弓具"
     },
