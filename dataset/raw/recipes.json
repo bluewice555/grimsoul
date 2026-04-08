@@ -1,0 +1,1084 @@
+{
+  "filter": {
+    "materials": [
+      "動物毛皮",
+      "亞麻纖維",
+      "布料",
+      "原松木",
+      "樺木材",
+      "石灰岩",
+      "銅礦石",
+      "碎銅片",
+      "銅錠",
+      "錫",
+      "鐵礦石",
+      "鐵碎片",
+      "青銅錠",
+      "鐵錠",
+      "皮條",
+      "皮革",
+      "弓弦",
+      "山楂",
+      "小空瓶",
+      "墓地蘑菇",
+      "防禦藥膏",
+      "韭蔥",
+      "吉普賽蘑菇",
+      "南瓜",
+      "大米",
+      "冬青果",
+      "空水瓶",
+      "韭蔥種",
+      "燕麥種",
+      "茄參種",
+      "南瓜子",
+      "水稻種",
+      "生肉",
+      "火雞",
+      "繩子",
+      "松木板",
+      "青銅釘",
+      "線",
+      "厚布",
+      "烈酒",
+      "硝酸鉀",
+      "硫磺",
+      "煤炭",
+      "機械裝置",
+      "黑火藥",
+      "空水桶",
+      "茄參根",
+      "樺木板",
+      "鐵板",
+      "未知",
+      "高品質弓弦",
+      "鋼錠"
+    ]
+  },
+  "keys": [
+    "category",
+    "materials",
+    "result",
+    "time"
+  ],
+  "datas": [
+    {
+      "materials": [
+        "動物毛皮:1"
+      ],
+      "result": "皮革",
+      "time": "05:00",
+      "category": "曬架"
+    },
+    {
+      "materials": [
+        "亞麻纖維:2"
+      ],
+      "result": "繩子",
+      "time": "05:00",
+      "category": "曬架"
+    },
+    {
+      "materials": [
+        "亞麻纖維:2"
+      ],
+      "result": "布料",
+      "time": "03:00",
+      "category": "縫紉台"
+    },
+    {
+      "materials": [
+        "布料:2"
+      ],
+      "result": "厚布",
+      "time": "03:00",
+      "category": "縫紉台"
+    },
+    {
+      "materials": [
+        "原松木:1"
+      ],
+      "result": "松木板",
+      "time": "04:09",
+      "category": "木工台"
+    },
+    {
+      "materials": [
+        "樺木材:1"
+      ],
+      "result": "樺木板",
+      "time": null,
+      "category": "木工台"
+    },
+    {
+      "materials": [
+        "石灰岩:2"
+      ],
+      "result": "石塊",
+      "time": "04:09",
+      "category": "石匠台"
+    },
+    {
+      "materials": [
+        "銅礦石:2"
+      ],
+      "result": "銅錠",
+      "time": null,
+      "category": "熔爐"
+    },
+    {
+      "materials": [
+        "碎銅片:4"
+      ],
+      "result": "銅錠",
+      "time": "03:00",
+      "category": "熔爐"
+    },
+    {
+      "materials": [
+        "銅錠:1",
+        "錫:1"
+      ],
+      "result": "青銅錠",
+      "time": "14:00",
+      "category": "熔爐"
+    },
+    {
+      "materials": [
+        "鐵礦石:2"
+      ],
+      "result": "鐵錠",
+      "time": null,
+      "category": "熔爐"
+    },
+    {
+      "materials": [
+        "鐵碎片:5"
+      ],
+      "result": "鐵錠",
+      "time": null,
+      "category": "熔爐"
+    },
+    {
+      "materials": [
+        "青銅錠:1"
+      ],
+      "result": "青銅釘",
+      "time": null,
+      "category": "工作檯"
+    },
+    {
+      "materials": [
+        "鐵錠:2"
+      ],
+      "result": "鐵板",
+      "time": null,
+      "category": "工作檯"
+    },
+    {
+      "materials": [
+        "皮條:2"
+      ],
+      "result": "皮革",
+      "time": null,
+      "category": "工作檯"
+    },
+    {
+      "materials": [
+        "皮革:1"
+      ],
+      "result": "皮條",
+      "time": null,
+      "category": "工作檯"
+    },
+    {
+      "materials": [
+        "弓弦:10"
+      ],
+      "result": "高品質弓弦",
+      "time": null,
+      "category": "工作檯"
+    },
+    {
+      "materials": [
+        "山楂:5",
+        "小空瓶:1"
+      ],
+      "result": "烈酒",
+      "time": null,
+      "category": "草藥桌"
+    },
+    {
+      "materials": [
+        "墓地蘑菇:20",
+        "小空瓶:1"
+      ],
+      "result": "蘑菇浸劑",
+      "time": null,
+      "category": "草藥桌"
+    },
+    {
+      "materials": [
+        "防禦藥膏:10"
+      ],
+      "result": "持久藥膏",
+      "time": null,
+      "category": "草藥桌"
+    },
+    {
+      "materials": [
+        "山楂:3"
+      ],
+      "result": "漿果飲料",
+      "time": "03:12",
+      "category": "篝火"
+    },
+    {
+      "materials": [
+        "韭蔥:2"
+      ],
+      "result": "韭蔥湯",
+      "time": null,
+      "category": "篝火"
+    },
+    {
+      "materials": [
+        "吉普賽蘑菇:5"
+      ],
+      "result": "蘑菇湯",
+      "time": null,
+      "category": "篝火"
+    },
+    {
+      "materials": [
+        "南瓜:1"
+      ],
+      "result": "烤南瓜",
+      "time": null,
+      "category": "篝火"
+    },
+    {
+      "materials": [
+        "大米:1",
+        "冬青果:5"
+      ],
+      "result": "莓果燕麥粥",
+      "time": null,
+      "category": "篝火"
+    },
+    {
+      "materials": [
+        "空水瓶:1"
+      ],
+      "result": "瓶裝水",
+      "time": null,
+      "category": "水井"
+    },
+    {
+      "materials": [
+        "韭蔥種:1"
+      ],
+      "result": "韭蔥",
+      "time": null,
+      "category": "花園苗床"
+    },
+    {
+      "materials": [
+        "燕麥種:1"
+      ],
+      "result": "燕麥",
+      "time": null,
+      "category": "花園苗床"
+    },
+    {
+      "materials": [
+        "茄參種:1"
+      ],
+      "result": "茄參根",
+      "time": null,
+      "category": "花園苗床"
+    },
+    {
+      "materials": [
+        "南瓜子:1"
+      ],
+      "result": "南瓜",
+      "time": null,
+      "category": "花園苗床"
+    },
+    {
+      "materials": [
+        "水稻種:1"
+      ],
+      "result": "大米",
+      "time": null,
+      "category": "花園苗床"
+    },
+    {
+      "materials": [
+        "生肉:1"
+      ],
+      "result": "烤肉",
+      "time": null,
+      "category": "火"
+    },
+    {
+      "materials": [
+        "韭蔥:1"
+      ],
+      "result": "烤韭蔥",
+      "time": null,
+      "category": "火"
+    },
+    {
+      "materials": [
+        "南瓜:1"
+      ],
+      "result": "烤南瓜",
+      "time": null,
+      "category": "火"
+    },
+    {
+      "materials": [
+        "火雞:1"
+      ],
+      "result": "烤火雞",
+      "time": null,
+      "category": "火"
+    },
+    {
+      "materials": [
+        "生肉:1"
+      ],
+      "result": "牛肉乾",
+      "time": null,
+      "category": "肉類烘乾機"
+    },
+    {
+      "materials": [
+        "原松木:2",
+        "石灰岩:2"
+      ],
+      "result": "石斧",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "原松木:2",
+        "石灰岩:2"
+      ],
+      "result": "石鎬",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "原松木:5"
+      ],
+      "result": "棍子",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "原松木:2",
+        "繩子:2",
+        "亞麻纖維:3"
+      ],
+      "result": "火把",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "繩子:2",
+        "亞麻纖維:4"
+      ],
+      "result": "破麻袋",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "亞麻纖維:2",
+        "原松木:3",
+        "繩子:1"
+      ],
+      "result": "藤編護盾",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "亞麻纖維:2",
+        "布料:1"
+      ],
+      "result": "閥帽(1等帽)",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "亞麻纖維:3",
+        "布料:1",
+        "繩子:1"
+      ],
+      "result": "襯衫(1等衣)",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "亞麻纖維:2",
+        "布料:1"
+      ],
+      "result": "乞丐手套(1等手)",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "亞麻纖維:3",
+        "布料:1",
+        "繩子:1"
+      ],
+      "result": "乞丐褲(1等褲)",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "亞麻纖維:2",
+        "布料:1"
+      ],
+      "result": "乞丐鞋(1等鞋)",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "原松木:10",
+        "布料:6"
+      ],
+      "result": "車把",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "松木板:5",
+        "銅錠:3",
+        "青銅釘:2"
+      ],
+      "result": "鍬",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "亞麻纖維:3",
+        "布料:5"
+      ],
+      "result": "繃帶",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "銅錠:4",
+        "皮革:5",
+        "松木板:5"
+      ],
+      "result": "匕首",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "松木板:10",
+        "繩子:10",
+        "皮革:3",
+        "線:2"
+      ],
+      "result": "簡單弓具",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "銅錠:10",
+        "皮革:6",
+        "松木板:6"
+      ],
+      "result": "單手劍",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "厚布:2",
+        "繩子:4",
+        "布料:7"
+      ],
+      "result": "頭套(2等帽)",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "厚布:4",
+        "繩子:6",
+        "皮革:8"
+      ],
+      "result": "軟鎧甲(2等衣)",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "厚布:2",
+        "繩子:2",
+        "皮革:4"
+      ],
+      "result": "皮手套(2等手)",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "厚布:4",
+        "繩子:6",
+        "皮革:8"
+      ],
+      "result": "棉褲(2等褲)",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "厚布:1",
+        "繩子:4",
+        "皮革:4"
+      ],
+      "result": "皮靴",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "皮革:2",
+        "原松木:5",
+        "碎銅片:1",
+        "繩子:3"
+      ],
+      "result": "皮革護盾",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "松木板:5",
+        "青銅釘:6",
+        "皮革:2"
+      ],
+      "result": "尖刺錘",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "銅錠:3",
+        "皮革:3",
+        "松木板:8",
+        "青銅錠:7"
+      ],
+      "result": "流星錘",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "烈酒:1",
+        "布料:1",
+        "冬青果:5"
+      ],
+      "result": "苦町劑",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "硝酸鉀:6",
+        "硫磺:2",
+        "煤炭:2"
+      ],
+      "result": "黑火藥",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "青銅釘:1",
+        "機械裝置:1",
+        "碎銅片:3"
+      ],
+      "result": "陷阱",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "黑火藥:5",
+        "空水瓶:1",
+        "繩子:1"
+      ],
+      "result": "炸藥",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "銅錠:13",
+        "皮革:7",
+        "線:10"
+      ],
+      "result": "法蘭錘",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "繩子:3",
+        "皮革:3",
+        "銅錠:2",
+        "松木板:5",
+        "皮條:6"
+      ],
+      "result": "複合盾",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "厚布:5",
+        "皮革:5",
+        "銅錠:3"
+      ],
+      "result": "鐵帽(3等帽)",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "厚布:10",
+        "皮革:8",
+        "銅錠:5"
+      ],
+      "result": "銅鎖子甲(3等衣)",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "厚布:4",
+        "皮革:3",
+        "銅錠:1"
+      ],
+      "result": "鎖環甲護手(3等手)",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "厚布:10",
+        "皮革:7",
+        "銅錠:4"
+      ],
+      "result": "銅腿甲(3等褲)",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "厚布:5",
+        "皮革:5",
+        "繩子:6"
+      ],
+      "result": "長筒靴(3等鞋)",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "銅錠:10",
+        "皮條:10",
+        "弓弦:2",
+        "松木板:10"
+      ],
+      "result": "獵弩",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "黑火藥:10",
+        "空水桶:1",
+        "繩子:1",
+        "線:2"
+      ],
+      "result": "炸藥桶",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "皮革:6",
+        "松木板:7",
+        "青銅錠:2",
+        "青銅釘:2",
+        "皮條:5"
+      ],
+      "result": "青盾",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "青銅錠:10",
+        "皮條:20",
+        "弓弦:4",
+        "松木板:20",
+        "機械裝置:1"
+      ],
+      "result": "輕弩",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "烈酒:1",
+        "布料:1",
+        "茄參根:1"
+      ],
+      "result": "茄參町劑",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "原松木:2",
+        "青銅錠:2"
+      ],
+      "result": "青銅斧",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "原松木:2",
+        "青銅錠:2"
+      ],
+      "result": "青銅十字鎬",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "青銅錠:8",
+        "松木板:5",
+        "皮革:8",
+        "線:8"
+      ],
+      "result": "彎刀",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "厚布:10",
+        "布料:12",
+        "青銅錠:3"
+      ],
+      "result": "十字軍盔(4等帽)",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "厚布:14",
+        "布料:16",
+        "青銅錠:4",
+        "銅錠:7"
+      ],
+      "result": "青銅鎖子甲(4等衣)",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "厚布:4",
+        "皮革:6",
+        "青銅錠:2",
+        "銅錠:4"
+      ],
+      "result": "裝甲鎖子甲手套(4等手)",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "厚布:14",
+        "布料:16",
+        "青銅錠:3",
+        "銅錠:7"
+      ],
+      "result": "青銅腿甲(4等褲)",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "厚布:6",
+        "皮革:5",
+        "青銅錠:2",
+        "銅錠:5"
+      ],
+      "result": "鉚靴(4等鞋)",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "青銅錠:15",
+        "松木板:8",
+        "線:7",
+        "碎銅片:7",
+        "皮革:6"
+      ],
+      "result": "變種劍",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "厚布:14",
+        "皮革:10",
+        "青銅錠:2",
+        "皮條:4"
+      ],
+      "result": "皮包",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "樺木板:12",
+        "鐵錠:20",
+        "皮革:8",
+        "線:4",
+        "碎銅片:8"
+      ],
+      "result": "戰爭軍刀",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "鐵錠:14",
+        "線:3",
+        "皮革:10",
+        "厚布:16"
+      ],
+      "result": "卓越頭盔(5等帽)",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "鐵錠:8",
+        "鐵板:14",
+        "線:6",
+        "皮革:18",
+        "厚布:26"
+      ],
+      "result": "鱗甲(5等衣)",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "鐵錠:4",
+        "鐵板:3",
+        "線:2",
+        "皮革:8",
+        "厚布:13"
+      ],
+      "result": "鱗護手(5等手)",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "鐵錠:6",
+        "鐵板:13",
+        "線:6",
+        "皮革:17",
+        "厚布:24"
+      ],
+      "result": "鱗腿甲(5等褲)",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "鐵錠:8",
+        "線:3",
+        "皮革:15",
+        "厚布:16"
+      ],
+      "result": "戰靴(5等鞋)",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "皮革:12",
+        "樺木板:6",
+        "鐵錠:8",
+        "青銅釘:5",
+        "皮條:8"
+      ],
+      "result": "鐵釘盾",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "未知:None"
+      ],
+      "result": "戟",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "未知:None"
+      ],
+      "result": "皮駝籃",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "高品質弓弦:4",
+        "鐵錠:8",
+        "樺木板:10",
+        "皮條:12"
+      ],
+      "result": "複合弓",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "鋼錠:2",
+        "鐵錠:15",
+        "厚布:10",
+        "皮革:12"
+      ],
+      "result": "錦標頭盔(6等帽)",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "鋼錠:7",
+        "鐵板:10",
+        "厚布:16",
+        "皮革:14"
+      ],
+      "result": "鎖子鎧(6等衣)",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "鋼錠:2",
+        "鐵錠:15",
+        "厚布:8",
+        "皮革:10"
+      ],
+      "result": "鎖子鎧手套(6等手)",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "鋼錠:7",
+        "鐵板:10",
+        "厚布:16",
+        "皮革:14"
+      ],
+      "result": "鎖子鎧腿甲(6等褲)",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "鋼錠:2",
+        "鐵錠:10",
+        "厚布:10",
+        "皮革:10"
+      ],
+      "result": "鎖子脛甲(6等鞋)",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "未知:None"
+      ],
+      "result": "小圓盾",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "未知:None"
+      ],
+      "result": "重弩",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "黑火藥:15",
+        "繩子:1",
+        "鐵錠:8",
+        "機械裝置:1"
+      ],
+      "result": "火藥炸彈",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "鐵錠:2",
+        "樺木板:2"
+      ],
+      "result": "鐵斧",
+      "time": null,
+      "category": "圖紙"
+    },
+    {
+      "materials": [
+        "鐵錠:2",
+        "樺木板:2"
+      ],
+      "result": "鐵十字鎬",
+      "time": null,
+      "category": "圖紙"
+    }
+  ]
+}
