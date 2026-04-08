@@ -1,4 +1,8 @@
 {
+  "heat_source": [
+    "原松木: 120",
+    "松木板: 180"
+  ],
   "filter": {
     "materials": [
       "亞麻纖維",
@@ -59,7 +63,9 @@
     "category",
     "materials",
     "result",
-    "time"
+    "time",
+    "heat",
+    "speed_up"
   ],
   "datas": [
     {
@@ -67,7 +73,7 @@
         "動物毛皮:1"
       ],
       "result": "皮革",
-      "time": "05:00",
+      "time": 300,
       "category": "曬架"
     },
     {
@@ -75,7 +81,7 @@
         "亞麻纖維:2"
       ],
       "result": "繩子",
-      "time": "05:00",
+      "time": 300,
       "category": "曬架"
     },
     {
@@ -83,7 +89,7 @@
         "亞麻纖維:2"
       ],
       "result": "布料",
-      "time": "03:00",
+      "time": 180,
       "category": "縫紉台"
     },
     {
@@ -91,7 +97,7 @@
         "布料:2"
       ],
       "result": "厚布",
-      "time": "03:00",
+      "time": 180,
       "category": "縫紉台"
     },
     {
@@ -99,8 +105,9 @@
         "原松木:1"
       ],
       "result": "松木板",
-      "time": "04:09",
-      "category": "木工台"
+      "time": 300,
+      "category": "木工台",
+      "speed_up": "20%"
     },
     {
       "materials": [
@@ -115,24 +122,27 @@
         "石灰岩:2"
       ],
       "result": "石塊",
-      "time": "04:09",
-      "category": "石匠台"
+      "time": 300,
+      "category": "石匠台",
+      "speed_up": "20%"
     },
     {
       "materials": [
         "銅礦石:2"
       ],
       "result": "銅錠",
-      "time": null,
-      "category": "熔爐"
+      "time": 240,
+      "category": "熔爐",
+      "heat": "V"
     },
     {
       "materials": [
         "碎銅片:4"
       ],
       "result": "銅錠",
-      "time": "03:00",
-      "category": "熔爐"
+      "time": 180,
+      "category": "熔爐",
+      "heat": "V"
     },
     {
       "materials": [
@@ -140,8 +150,9 @@
         "錫:1"
       ],
       "result": "青銅錠",
-      "time": "14:00",
-      "category": "熔爐"
+      "time": 840,
+      "category": "熔爐",
+      "heat": "V"
     },
     {
       "materials": [
@@ -149,7 +160,8 @@
       ],
       "result": "鐵錠",
       "time": null,
-      "category": "熔爐"
+      "category": "熔爐",
+      "heat": "V"
     },
     {
       "materials": [
@@ -157,15 +169,17 @@
       ],
       "result": "鐵錠",
       "time": null,
-      "category": "熔爐"
+      "category": "熔爐",
+      "heat": "V"
     },
     {
       "materials": [
         "青銅錠:1"
       ],
       "result": "青銅釘",
-      "time": null,
-      "category": "工作檯"
+      "time": 240,
+      "category": "工作檯",
+      "speed_up": "30%"
     },
     {
       "materials": [
@@ -230,16 +244,20 @@
         "山楂:3"
       ],
       "result": "漿果飲料",
-      "time": "03:12",
-      "category": "篝火"
+      "time": 240,
+      "category": "篝火",
+      "heat": "V",
+      "speed_up": "25%"
     },
     {
       "materials": [
         "韭蔥:2"
       ],
       "result": "韭蔥湯",
-      "time": null,
-      "category": "篝火"
+      "time": 360,
+      "category": "篝火",
+      "heat": "V",
+      "speed_up": "30%"
     },
     {
       "materials": [
@@ -247,7 +265,8 @@
       ],
       "result": "蘑菇湯",
       "time": null,
-      "category": "篝火"
+      "category": "篝火",
+      "heat": "V"
     },
     {
       "materials": [
@@ -255,7 +274,8 @@
       ],
       "result": "烤南瓜",
       "time": null,
-      "category": "篝火"
+      "category": "篝火",
+      "heat": "V"
     },
     {
       "materials": [
@@ -264,23 +284,26 @@
       ],
       "result": "莓果燕麥粥",
       "time": null,
-      "category": "篝火"
+      "category": "篝火",
+      "heat": "V"
     },
     {
       "materials": [
         "空水瓶:1"
       ],
       "result": "瓶裝水",
-      "time": null,
-      "category": "水井"
+      "time": 1200,
+      "category": "水井",
+      "speed_up": "50%"
     },
     {
       "materials": [
         "韭蔥種:1"
       ],
       "result": "韭蔥",
-      "time": null,
-      "category": "花園苗床"
+      "time": 3600,
+      "category": "花園苗床",
+      "speed_up": "20%"
     },
     {
       "materials": [
@@ -319,16 +342,20 @@
         "生肉:1"
       ],
       "result": "烤肉",
-      "time": null,
-      "category": "火"
+      "time": 480,
+      "category": "火",
+      "heat": "V",
+      "speed_up": "30%"
     },
     {
       "materials": [
         "韭蔥:1"
       ],
       "result": "烤韭蔥",
-      "time": null,
-      "category": "火"
+      "time": 240,
+      "category": "火",
+      "heat": "V",
+      "speed_up": "25%"
     },
     {
       "materials": [
@@ -336,7 +363,8 @@
       ],
       "result": "烤南瓜",
       "time": null,
-      "category": "火"
+      "category": "火",
+      "heat": "V"
     },
     {
       "materials": [
@@ -344,7 +372,8 @@
       ],
       "result": "烤火雞",
       "time": null,
-      "category": "火"
+      "category": "火",
+      "heat": "V"
     },
     {
       "materials": [
@@ -360,7 +389,7 @@
         "石灰岩:2"
       ],
       "result": "石斧",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -369,7 +398,7 @@
         "石灰岩:2"
       ],
       "result": "石鎬",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -377,7 +406,7 @@
         "原松木:5"
       ],
       "result": "棍子",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -387,7 +416,7 @@
         "亞麻纖維:3"
       ],
       "result": "火把",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -396,7 +425,7 @@
         "亞麻纖維:4"
       ],
       "result": "破麻袋",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -406,7 +435,7 @@
         "繩子:1"
       ],
       "result": "藤編護盾",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -415,7 +444,7 @@
         "布料:1"
       ],
       "result": "閥帽(1等帽)",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -425,7 +454,7 @@
         "繩子:1"
       ],
       "result": "襯衫(1等衣)",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -434,7 +463,7 @@
         "布料:1"
       ],
       "result": "乞丐手套(1等手)",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -444,7 +473,7 @@
         "繩子:1"
       ],
       "result": "乞丐褲(1等褲)",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -453,7 +482,7 @@
         "布料:1"
       ],
       "result": "乞丐鞋(1等鞋)",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -462,7 +491,7 @@
         "布料:6"
       ],
       "result": "車把",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -472,7 +501,7 @@
         "青銅釘:2"
       ],
       "result": "鍬",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -481,7 +510,7 @@
         "布料:5"
       ],
       "result": "繃帶",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -491,7 +520,7 @@
         "松木板:5"
       ],
       "result": "匕首",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -502,7 +531,7 @@
         "繩子:10"
       ],
       "result": "簡單弓具",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -512,7 +541,7 @@
         "松木板:6"
       ],
       "result": "單手劍",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -522,7 +551,7 @@
         "布料:7"
       ],
       "result": "頭套(2等帽)",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -532,7 +561,7 @@
         "皮革:8"
       ],
       "result": "軟鎧甲(2等衣)",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -542,7 +571,7 @@
         "皮革:4"
       ],
       "result": "皮手套(2等手)",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -552,7 +581,7 @@
         "皮革:8"
       ],
       "result": "棉褲(2等褲)",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -562,7 +591,7 @@
         "皮革:4"
       ],
       "result": "皮靴",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -573,7 +602,7 @@
         "繩子:3"
       ],
       "result": "皮革護盾",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -583,7 +612,7 @@
         "皮革:2"
       ],
       "result": "尖刺錘",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -594,7 +623,7 @@
         "青銅釘:7"
       ],
       "result": "流星錘",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -604,7 +633,7 @@
         "冬青果:5"
       ],
       "result": "苦町劑",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -614,7 +643,7 @@
         "煤炭:2"
       ],
       "result": "黑火藥",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -624,7 +653,7 @@
         "碎銅片:3"
       ],
       "result": "陷阱",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -634,7 +663,7 @@
         "繩子:1"
       ],
       "result": "炸藥",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -644,7 +673,7 @@
         "線:10"
       ],
       "result": "法蘭錘",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -656,7 +685,7 @@
         "皮條:6"
       ],
       "result": "複合盾",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -666,7 +695,7 @@
         "銅錠:3"
       ],
       "result": "鐵帽(3等帽)",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -676,7 +705,7 @@
         "銅錠:5"
       ],
       "result": "銅鎖子甲(3等衣)",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -686,7 +715,7 @@
         "銅錠:1"
       ],
       "result": "鎖環甲護手(3等手)",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -696,7 +725,7 @@
         "銅錠:4"
       ],
       "result": "銅腿甲(3等褲)",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -706,7 +735,7 @@
         "繩子:6"
       ],
       "result": "長筒靴(3等鞋)",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -717,7 +746,7 @@
         "松木板:10"
       ],
       "result": "獵弩",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -728,7 +757,7 @@
         "線:2"
       ],
       "result": "炸藥桶",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -740,7 +769,7 @@
         "皮條:5"
       ],
       "result": "青盾",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -752,7 +781,7 @@
         "機械裝置:1"
       ],
       "result": "輕弩",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -762,7 +791,7 @@
         "茄參根:1"
       ],
       "result": "茄參町劑",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -771,7 +800,7 @@
         "青銅錠:2"
       ],
       "result": "青銅斧",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -780,7 +809,7 @@
         "青銅錠:2"
       ],
       "result": "青銅十字鎬",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -791,7 +820,7 @@
         "線:8"
       ],
       "result": "彎刀",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -801,7 +830,7 @@
         "青銅錠:3"
       ],
       "result": "十字軍盔(4等帽)",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -812,7 +841,7 @@
         "銅錠:7"
       ],
       "result": "青銅鎖子甲(4等衣)",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -823,7 +852,7 @@
         "銅錠:4"
       ],
       "result": "裝甲鎖子甲手套(4等手)",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -834,7 +863,7 @@
         "銅錠:7"
       ],
       "result": "青銅腿甲(4等褲)",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -845,7 +874,7 @@
         "銅錠:5"
       ],
       "result": "鉚靴(4等鞋)",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -857,7 +886,7 @@
         "皮革:6"
       ],
       "result": "變種劍",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -868,7 +897,7 @@
         "皮條:4"
       ],
       "result": "皮包",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -880,7 +909,7 @@
         "碎銅片:8"
       ],
       "result": "戰爭軍刀",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -891,7 +920,7 @@
         "厚布:16"
       ],
       "result": "卓越頭盔(5等帽)",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -903,7 +932,7 @@
         "厚布:26"
       ],
       "result": "鱗甲(5等衣)",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -915,7 +944,7 @@
         "厚布:13"
       ],
       "result": "鱗護手(5等手)",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -927,7 +956,7 @@
         "厚布:24"
       ],
       "result": "鱗腿甲(5等褲)",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -938,7 +967,7 @@
         "厚布:16"
       ],
       "result": "戰靴(5等鞋)",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -950,7 +979,7 @@
         "皮條:8"
       ],
       "result": "鐵釘盾",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -958,7 +987,7 @@
         "未知"
       ],
       "result": "戟",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -966,7 +995,7 @@
         "未知"
       ],
       "result": "皮駝籃",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -977,7 +1006,7 @@
         "皮條:12"
       ],
       "result": "複合弓",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -988,7 +1017,7 @@
         "皮革:12"
       ],
       "result": "錦標頭盔(6等帽)",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -999,7 +1028,7 @@
         "皮革:14"
       ],
       "result": "鎖子鎧(6等衣)",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -1010,7 +1039,7 @@
         "皮革:10"
       ],
       "result": "鎖子鎧手套(6等手)",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -1021,7 +1050,7 @@
         "皮革:14"
       ],
       "result": "鎖子鎧腿甲(6等褲)",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -1032,7 +1061,7 @@
         "皮革:10"
       ],
       "result": "鎖子脛甲(6等鞋)",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -1040,7 +1069,7 @@
         "未知"
       ],
       "result": "小圓盾",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -1051,7 +1080,7 @@
         "高品質弓弦:6"
       ],
       "result": "重弩",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -1062,7 +1091,7 @@
         "機械裝置:1"
       ],
       "result": "火藥炸彈",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -1071,7 +1100,7 @@
         "樺木板:2"
       ],
       "result": "鐵斧",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     },
     {
@@ -1080,7 +1109,7 @@
         "樺木板:2"
       ],
       "result": "鐵十字鎬",
-      "time": null,
+      "time": 0,
       "category": "圖紙"
     }
   ]

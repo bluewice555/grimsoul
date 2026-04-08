@@ -1,0 +1,1990 @@
+{
+  "keys": [
+    "ID",
+    "Name",
+    "source",
+    "value"
+  ],
+  "datas": [
+    {
+      "Name": "刺客彎刀",
+      "ID": "Assassin falchion",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "刺客細匕",
+      "ID": "Assassin's stiletto",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "ID": "Bard's boots",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Bard's gloves",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Bard's hood",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Bard's shirt",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Bard's trousers",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "Name": "變種劍",
+      "ID": "Bastard sword",
+      "source": "materials|recipes|weapon",
+      "value": ""
+    },
+    {
+      "Name": "熊掌",
+      "ID": "Bear's paw",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "狂戰士斧",
+      "ID": "Berserker axe",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "ID": "Berserker boots",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Berserker coat",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Berserker gloves",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Berserker helm",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Berserker trousers",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "Name": "黑色熊掌",
+      "ID": "Black bear's paw",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "黑色雙刃大砍刀",
+      "ID": "Black claymore",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "黑複合弓",
+      "ID": "Black composite bow",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "黑關刀",
+      "ID": "Black glaive",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "ID": "Black great helm",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "Name": "黑戟",
+      "ID": "Black halberd",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "黑武士刀",
+      "ID": "Black katana",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "ID": "Black scale armor",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Black scale chausses",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Black scale gauntlets",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "Name": "黑短彎刀",
+      "ID": "Black scimitar",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "ID": "Black soldiers boots",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Black templar armor",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Black templar gloves",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Black templar helm",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Black templar sabaton's",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Black temple chausses",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "Name": "嗜血者",
+      "ID": "Bloodthirsty",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "骨製弩",
+      "ID": "Bone bow",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "骨錘",
+      "ID": "Bone mace",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "ID": "Bonnet cap",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "Name": "灼熱火焰之弓",
+      "ID": "Bow of searing flame",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "ID": "Brigandine",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Brigandine chausses",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Brigandine gloves",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "Name": "青銅斧",
+      "ID": "Bronze axe",
+      "source": "materials|recipes|weapon",
+      "value": ""
+    },
+    {
+      "ID": "Bronze chausses",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Bronze hauberk",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "Name": "青銅鎬",
+      "ID": "Bronze pickaxe",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "掃把",
+      "ID": "Broom",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "屠夫切肉刀",
+      "ID": "Butcher's cleaver",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "車把",
+      "ID": "Cart thill",
+      "source": "materials|recipes|weapon",
+      "value": ""
+    },
+    {
+      "ID": "Chainmail gauntlets",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Chainmail sabaton's",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "Name": "精選守衛長槍",
+      "ID": "Chosen guard's spear",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "ID": "Christmas boots",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Christmas coat",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Christmas hat",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Christmas mittens",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Christmas trousers",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "Name": "雙刃大砍刀",
+      "ID": "Claymore",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "棍子",
+      "ID": "Club",
+      "source": "materials|recipes|weapon",
+      "value": ""
+    },
+    {
+      "Name": "戰鬥鏟",
+      "ID": "Combat shovel",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "複合弓",
+      "ID": "Composite bow",
+      "source": "materials|recipes|weapon",
+      "value": ""
+    },
+    {
+      "ID": "Copper chausses",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Copper hauberk",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "Name": "銅巨戰斧",
+      "ID": "Copper poleaxe",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "工匠石斧",
+      "ID": "Crafter's stone axe",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "工匠石鎬",
+      "ID": "Crafter's stone pick",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "ID": "Crow's armor",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Crow's chausses",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Crow's gloves",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Crow's spy boots",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Crow's spy helmet",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "Name": "詛咒之錘",
+      "ID": "Cursed mace",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "匕首",
+      "ID": "Dagger",
+      "source": "materials|recipes|weapon",
+      "value": ""
+    },
+    {
+      "ID": "Desert hunter armor",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Desert hunter boots",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Desert hunter chausses",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Desert hunter gloves",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Desert hunter helmet",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Duelist's armor",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Duelist's boots",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Duelist's chausses",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Duelist's gloves",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Duelist's helmet",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "Name": "耐用匕首",
+      "ID": "Durable dagger",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "耐用長柄叉",
+      "ID": "Durable pitchfork",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "耐用鐵匠鎚",
+      "ID": "Durable smith's hammer",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "耐用狼牙棒",
+      "ID": "Durable spiked mace",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "ID": "Espadon",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "行刑者鐵鉤",
+      "ID": "Executioner's hook",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "ID": "Executioners boots",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Executioners gloves",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Executioners hood",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Executioners robe",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Executioners trousers",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "Name": "流亡者流星錘",
+      "ID": "Exile's morning star",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "彎刀",
+      "ID": "Falchion",
+      "source": "materials|recipes|weapon",
+      "value": ""
+    },
+    {
+      "ID": "Falves armor",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Falves boots",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Falves gloves",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Falves helmet",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Falves trousers",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "Name": "火焰闊頭槍",
+      "ID": "Fire partisan",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "拳頭",
+      "ID": "Fists",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "火焰戟",
+      "ID": "Flaming halberd",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "火焰劍",
+      "ID": "Flaming sword",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "法蘭錘",
+      "ID": "Flanged mace",
+      "source": "materials|recipes|weapon",
+      "value": ""
+    },
+    {
+      "Name": "凍翼",
+      "ID": "Freeze wing",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "ID": "Frost behter",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Frost boots",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Frost chausses",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "Name": "寒霜匕首",
+      "ID": "Frost dagger",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "ID": "Frost gauntlets",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Frost helm",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Gambeson",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "Name": "幽魂劍",
+      "ID": "Ghost sword",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "ID": "Gladiator armor",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Gladiator boots",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Gladiator gauntlets",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Gladiator greaves",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Gladiator helmet",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "Name": "關刀",
+      "ID": "Glaive",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "ID": "Great helm",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Guardian of purity armor",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Guardian of purity boots",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Guardian of purity chausses",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Guardian of purity gloves",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Guardian of purity mask",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "Name": "戟",
+      "ID": "Halberd",
+      "source": "materials|recipes|weapon",
+      "value": ""
+    },
+    {
+      "Name": "重弩",
+      "ID": "Heavy crossbow",
+      "source": "materials|recipes|weapon",
+      "value": ""
+    },
+    {
+      "ID": "High boots",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "Name": "鋤頭",
+      "ID": "Hoe",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "ID": "Hood",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "Name": "冰斧",
+      "ID": "Ice axe",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "冰弓",
+      "ID": "Ice bow",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "冰戟",
+      "ID": "Ice halberd",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "冰錘",
+      "ID": "Ice mace",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "冰鐮",
+      "ID": "Ice scythe",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "冰劍",
+      "ID": "Ice sword",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "照明者",
+      "ID": "Illuminator",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "帝國之刃",
+      "ID": "Imperial blade",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "ID": "Imperial jaeger boots",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Imperial jaeger chausses",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Imperial jaeger chestplate",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Imperial jaeger gloves",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Imperial jaeger helmet",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Imperial soldiers boots",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Imperial soldiers chausses",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Imperial soldiers gauntlets",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Imperial soldiers hauberk",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Imperial soldiers helm",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "Name": "審判官之吻",
+      "ID": "Inquisitor's kiss",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "鐵製變種劍",
+      "ID": "Iron bastard sword",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "彎匕首",
+      "ID": "Jambiya",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "武士刀",
+      "ID": "Katana",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "ID": "Kettle hat",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "Name": "短彎刀",
+      "ID": "Khopesh",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "魯伯特騎士之劍",
+      "ID": "Knight rupert's sword",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "戰爭軍刀",
+      "ID": "Kriegsmesser",
+      "source": "materials|recipes|weapon",
+      "value": ""
+    },
+    {
+      "Name": "克里斯匕首",
+      "ID": "Kris",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "ID": "Lamellar sun dragon chestplate",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Leather boots",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Leather gloves",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "Name": "輕弩",
+      "ID": "Light crossbow",
+      "source": "materials|recipes|weapon",
+      "value": ""
+    },
+    {
+      "Name": "黑曜木劍",
+      "ID": "Macuahuitl",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "掠奪者之斧",
+      "ID": "Marauder's axe",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "宗師之斧",
+      "ID": "Master's axe",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "宗師黑斧",
+      "ID": "Master's black axe",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "流星錘",
+      "ID": "Morning star",
+      "source": "materials|recipes|weapon",
+      "value": ""
+    },
+    {
+      "ID": "Mourning reapers boots",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Mourning reapers gloves",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Mourning reapers mask",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Mourning reapers robe",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Mourning reapers trousers",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "Name": "夜遊神的鐮刀",
+      "ID": "Night guest sickle",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "ID": "Night hunter boots",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Night hunter coat",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Night hunter gloves",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Night hunter hood",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Night hunter trousers",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Northern wolf armor",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Northern wolf boots",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Northern wolf gauntlets",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Northern wolf helmet",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Northern wolf pants",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "Name": "新手錘",
+      "ID": "Novice mace",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "槳",
+      "ID": "Oar",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "單手劍",
+      "ID": "One-handed sword",
+      "source": "materials|recipes|weapon",
+      "value": ""
+    },
+    {
+      "ID": "Pack leader's boots",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Pack leader's chestplate",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Pack leader's gloves",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Pack leader's helmet",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Pack leader's trousers",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Pilgrim boots",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Pilgrim gloves",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Pilgrim hat",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Pilgrim shirt",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Pilgrim trousers",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "Name": "長柄叉",
+      "ID": "Pitchfork",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "ID": "Plague doctor boots",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Plague doctor cape",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Plague doctor gloves",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Plague doctor mask",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Plague doctor trousers",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Plated chainmail gloves",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "Name": "毒匕首",
+      "ID": "Poisoned dagger",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "ID": "Pot helm",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Quilted trousers",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Ragged boots",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Ragged mittens",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Ragged trousers",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "Name": "渡鴉弩",
+      "ID": "Raven crossbow",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "收割者儀式劍",
+      "ID": "Reaper's ceremonial sword",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "騎士劍",
+      "ID": "Ritterschwert",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "儀式鐮刀",
+      "ID": "Ritual scythe",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "ID": "Riveted boots",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "Name": "皇家錘",
+      "ID": "Royal mace",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "ID": "Royal messenger's boots",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Royal messenger's cap",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Royal messenger's gauntlets",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Royal messenger's shirt",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Royal messenger's trousers",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Scale armor",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Scale chausses",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Scale gauntlets",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "Name": "彎刀劍",
+      "ID": "Scimitar",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "恐懼鐮刀",
+      "ID": "Scythe of terror",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "ID": "Shirt",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "Name": "尖嘯之斧",
+      "ID": "Shrieking axe",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "鐮刀",
+      "ID": "Sickle",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "銀製雙刃大砍刀",
+      "ID": "Silver claymore",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "銀月鐮刀",
+      "ID": "Silver moon sickle",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "西蒙風刃",
+      "ID": "Simoom blades",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "簡單弓具",
+      "ID": "Simple bow",
+      "source": "materials|recipes|weapon",
+      "value": ""
+    },
+    {
+      "Name": "獵弩",
+      "ID": "Simple crossbow",
+      "source": "materials|recipes|weapon",
+      "value": ""
+    },
+    {
+      "Name": "邪視之刃",
+      "ID": "Sinister gaze blade",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "ID": "Sinister knight's armor",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Sinister knight's boots",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Sinister knight's chausses",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Sinister knight's gloves",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Sinister knight's helmet",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "Name": "碎顱者",
+      "ID": "Skullcrusher",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "小劍",
+      "ID": "Smallsword",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "鐵匠鎚",
+      "ID": "Smith's hammer",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "ID": "Snow hunter armor",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Snow hunter boots",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Snow hunter chausses",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Snow hunter gauntlets",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Snow hunter hood",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Soldiers boots",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "Name": "噬魂師",
+      "ID": "Soul eater",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "鍬",
+      "ID": "Spade",
+      "source": "materials|recipes|weapon",
+      "value": ""
+    },
+    {
+      "ID": "Spiked chausses",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Spiked cuirass",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Spiked gloves",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Spiked helmet",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "Name": "尖刺錘",
+      "ID": "Spiked mace",
+      "source": "materials|recipes|weapon",
+      "value": ""
+    },
+    {
+      "ID": "Spiked sabatons",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "Name": "尖刺三叉戟",
+      "ID": "Spiked trident",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "石斧",
+      "ID": "Stone axe",
+      "source": "materials|recipes|weapon",
+      "value": ""
+    },
+    {
+      "Name": "石鎬",
+      "ID": "Stone pick",
+      "source": "materials|recipes|weapon",
+      "value": ""
+    },
+    {
+      "ID": "Storm herald boots",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Storm herald chausses",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Storm herald chest plate",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Storm herald gauntlets",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Storm herald helm",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "Name": "堅固棍子",
+      "ID": "Sturdy club",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "ID": "Sun dragon bracers",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Sun dragon greaves",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Sun dragon mask",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Sun dragon trousers",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "Name": "折劍匕首",
+      "ID": "Swordbreaker",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "ID": "Templar armor",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Templar chausses",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Templar gloves",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Templar helm",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Templar sabaton's",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "Name": "聖殿劍",
+      "ID": "Templar sword",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "神殿火把",
+      "ID": "Temple torch",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "粉碎者",
+      "ID": "The smasher",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "雷神鴛鴦鉞",
+      "ID": "Thunder god's knuckledusters",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "火把",
+      "ID": "Torch",
+      "source": "materials|recipes|weapon",
+      "value": ""
+    },
+    {
+      "ID": "Tournament helm",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "Name": "狂戰士巨戰斧",
+      "ID": "War dogs axe",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "戰鎚",
+      "ID": "War hammer",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "ID": "Warlock's boots",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Warlock's gloves",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Warlock's mask",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Warlock's robes",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "ID": "Warlock's trousers",
+      "source": "armor-items",
+      "value": ""
+    },
+    {
+      "Name": "配重錘",
+      "ID": "Weighted mace",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "木劍",
+      "ID": "Wooden sword",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "諸神之怒",
+      "ID": "Wrath of the gods",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "亞塔甘刀",
+      "ID": "Yatagan",
+      "source": "weapon",
+      "value": ""
+    },
+    {
+      "Name": "乞丐手套(1等手)",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "乞丐褲(1等褲)",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "乞丐鞋(1等鞋)",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "十字軍盔(4等帽)",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "卓越頭盔(5等帽)",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "南瓜",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "厚布",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "大米",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "小圓盾",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "布料",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "戰靴(5等鞋)",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "持久藥膏",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "松木板",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "棉褲(2等褲)",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "樺木板",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "漿果飲料",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "火藥炸彈",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "炸藥",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "炸藥桶",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "烈酒",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "烤南瓜",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "烤火雞",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "烤肉",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "烤韭蔥",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "燕麥",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "牛肉乾",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "瓶裝水",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "皮包",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "皮手套(2等手)",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "皮條",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "皮革",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "皮革護盾",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "皮靴",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "皮駝籃",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "石塊",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "破麻袋",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "繃帶",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "繩子",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "苦町劑",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "茄參根",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "茄參町劑",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "莓果燕麥粥",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "藤編護盾",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "蘑菇浸劑",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "蘑菇湯",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "裝甲鎖子甲手套(4等手)",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "複合盾",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "襯衫(1等衣)",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "軟鎧甲(2等衣)",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "鉚靴(4等鞋)",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "銅腿甲(3等褲)",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "銅錠",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "銅鎖子甲(3等衣)",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "錦標頭盔(6等帽)",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "鎖子脛甲(6等鞋)",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "鎖子鎧(6等衣)",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "鎖子鎧手套(6等手)",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "鎖子鎧腿甲(6等褲)",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "鎖環甲護手(3等手)",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "鐵十字鎬",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "鐵帽(3等帽)",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "鐵斧",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "鐵板",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "鐵釘盾",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "鐵錠",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "長筒靴(3等鞋)",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "閥帽(1等帽)",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "陷阱",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "青盾",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "青銅十字鎬",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "青銅腿甲(4等褲)",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "青銅釘",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "青銅錠",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "青銅鎖子甲(4等衣)",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "韭蔥",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "韭蔥湯",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "頭套(2等帽)",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "高品質弓弦",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "鱗甲(5等衣)",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "鱗腿甲(5等褲)",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "鱗護手(5等手)",
+      "source": "materials|recipes",
+      "value": ""
+    },
+    {
+      "Name": "黑火藥",
+      "source": "materials|recipes",
+      "value": ""
+    }
+  ]
+}
