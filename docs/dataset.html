@@ -236,11 +236,9 @@
       // Strict mode:
       // must be { "keys": [...], "datas": [...] }
       if (data && typeof data === 'object' && Array.isArray(data.keys) && Array.isArray(data.datas)) {
-        const meta = {};
-        for (const [k, v] of Object.entries(data)) {
-          if (k === 'keys' || k === 'datas') continue;
-          meta[k] = v;
-        }
+        const meta = (data.filter && typeof data.filter === 'object' && !Array.isArray(data.filter))
+          ? data.filter
+          : {};
         return { rows: data.datas, keys: data.keys, meta };
       }
       throw new Error('Dataset format must be { keys: [...], datas: [...] }');
