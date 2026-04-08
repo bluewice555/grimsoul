@@ -1,12 +1,37 @@
-﻿{
+{
   "monsters": [
-    "熊",
-    "被咒者",
-    "鹿",
-    "冰原狼",
-    "痲瘋病人",
-    "瘟疫雷德",
-    "狼"
+    "Bear",
+    "Damned",
+    "Deer",
+    "Direwolf",
+    "Leper",
+    "Plagueridden",
+    "Wolf",
+    "Damned Knight",
+    "Damned Warrior",
+    "Witch",
+    "Damned Templar",
+    "Damned Zealot",
+    "Doomed",
+    "Forsaken Hermit"
+  ],
+  "weapons": [
+    "Cart Thill",
+    "Club",
+    "Simple Bow",
+    "Simple Crossbow",
+    "Spiked Mace",
+    "Dagger",
+    "Falchion",
+    "Spade",
+    "One-handed Sword",
+    "Light Crossbow",
+    "Morning Star",
+    "Bastard Sword",
+    "Composite Bow",
+    "Kriegsmesser",
+    "Heavy Crossbow",
+    "Flanged Mace"
   ],
   "keys": [],
   "datas": []

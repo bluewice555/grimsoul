@@ -824,7 +824,7 @@
     },
     {
       "ID": "Damned Knight",
-      "Name": "詛咒騎士",
+      "Name": "被咒騎士",
       "Health": "200",
       "Armor (Est.)": "70",
       "Damage Reduction (%)": "29.7+-0.6",
@@ -907,7 +907,7 @@
     },
     {
       "ID": "Damned Templar",
-      "Name": "該死的聖堂武士",
+      "Name": "被咒聖殿騎士",
       "Health": "300",
       "Armor (Est.)": "100",
       "Damage Reduction (%)": "37.5±1.4",

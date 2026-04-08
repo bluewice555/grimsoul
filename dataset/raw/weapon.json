@@ -339,14 +339,15 @@
     {
       "ID": "Simple Bow",
       "Name": "簡單弓具",
-      "Physical": "23",
+      "Physical": "26",
       "Speed": "0.8",
       "Range": "5.0",
       "Durability": "63",
       "Crafting": [
-        "松木板: 1",
+        "松木板: 10",
         "皮條: 3",
-        "弓弦: 1"
+        "線: 2",
+        "繩子: 10"
       ],
       "Special Effect(s)": "遠程傷害浮動(受護甲減免影響)",
       "Skill(s)": "簡單弓具"
@@ -379,7 +380,7 @@
     {
       "ID": "Bone Bow",
       "Name": "骨製弩",
-      "Physical": "25",
+      "Physical": "35",
       "Speed": "0.8",
       "Range": "5.0",
       "Durability": "59",
@@ -577,7 +578,7 @@
     {
       "ID": "Simple Crossbow",
       "Name": "獵弩",
-      "Physical": "35",
+      "Physical": "45",
       "Speed": "0.4",
       "Durability": "40",
       "Crafting": [
@@ -587,7 +588,7 @@
         "弓弦: 2"
       ],
       "Special Effect(s)": "遠程攻擊(受護甲減免影響)；裝填時定身使用者",
-      "Range": "6.0",
+      "Range": "6.5",
       "Skill(s)": "簡單弓具"
     },
     {
@@ -729,8 +730,8 @@
     {
       "ID": "Light Crossbow",
       "Name": "輕弩",
-      "Physical": "45",
-      "Speed": "0.3",
+      "Physical": "55",
+      "Speed": "0.4",
       "Durability": "35",
       "Crafting": [
         "松木板: 7",
@@ -740,7 +741,7 @@
         "機械裝置: 1"
       ],
       "Special Effect(s)": "遠程攻擊(受護甲減免影響)；裝填時定身使用者",
-      "Range": "6.0",
+      "Range": "7.0",
       "Skill(s)": "簡單弓具"
     },
     {

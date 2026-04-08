@@ -77,6 +77,39 @@
       border: 1px solid var(--line); border-radius: 16px; background: var(--panel); box-shadow: 0 12px 32px var(--shadow);
       overflow: auto;
     }
+    .root-lists-wrap {
+      margin-bottom: 12px;
+    }
+    .root-list-card {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 10px;
+      margin-bottom: 10px;
+      background: #fff;
+    }
+    .root-list-head {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 8px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .root-list-table-wrap { overflow: auto; }
+    .root-list-table th { position: static; background: #f5f6f8; color: #2b3240; }
+    .root-list-table {
+      width: 100%;
+      min-width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+      border: 1px solid var(--line);
+    }
+    .root-list-table td, .root-list-table th {
+      border: 1px solid var(--line);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
     table { width: max-content; min-width: 100%; border-collapse: collapse; }
     th, td {
       padding: 10px 12px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; font-size: 12px; line-height: 1.45; white-space: nowrap;
@@ -112,6 +145,8 @@
       <span id="status" class="status">載入中...</span>
     </div>
 
+    <div id="root-lists" class="root-lists-wrap" style="display:none;"></div>
+
     <div class="table-wrap">
       <table>
         <thead>
@@ -146,6 +181,8 @@
     const openFileBtn = document.getElementById('open-file-btn');
     const copyPathBtn = document.getElementById('copy-path-btn');
     const flushBtn = document.getElementById('flush-btn');
+    const rootListsEl = document.getElementById('root-lists');
+    const VIEW_STATE_COOKIE = 'dataset_view_state';
     let currentRows = [];
     let currentBaseRows = [];
     let currentKeyOrder = [];
@@ -156,6 +193,7 @@
     let activeSortKey = '__none__';
     let activeSortOrder = 'asc';
     let currentMeta = {};
+    let currentRootLists = {};
     let activeMetaFilters = {};
     let activeMetaFlatten = {};
     let initialQueryFilters = {};
@@ -163,6 +201,37 @@
     let isEditMode = false;
     let isDirty = false;
     let showDebug = false;
+
+    function setCookie(name, value, maxAgeSec = 60 * 60 * 24 * 365) {
+      document.cookie = `${name}=${value}; path=/; max-age=${maxAgeSec}; samesite=lax`;
+    }
+
+    function getCookie(name) {
+      const prefix = `${name}=`;
+      const parts = document.cookie.split(';').map((x) => x.trim());
+      const found = parts.find((x) => x.startsWith(prefix));
+      return found ? found.slice(prefix.length) : '';
+    }
+
+    function saveViewState() {
+      const state = {
+        dataset: currentDatasetId,
+        showDebug,
+        filters: activeMetaFilters,
+        flatten: activeMetaFlatten,
+      };
+      setCookie(VIEW_STATE_COOKIE, encodeURIComponent(JSON.stringify(state)));
+    }
+
+    function loadViewState() {
+      try {
+        const raw = getCookie(VIEW_STATE_COOKIE);
+        if (!raw) return null;
+        return JSON.parse(decodeURIComponent(raw));
+      } catch {
+        return null;
+      }
+    }
 
     function setModePreview() {
       isEditMode = false;
@@ -239,9 +308,68 @@
         const meta = (data.filter && typeof data.filter === 'object' && !Array.isArray(data.filter))
           ? data.filter
           : {};
-        return { rows: data.datas, keys: data.keys, meta };
+        const rootLists = {};
+        for (const [k, v] of Object.entries(data)) {
+          if (k === 'keys' || k === 'datas' || k === 'filter') continue;
+          if (Array.isArray(v)) rootLists[k] = v;
+        }
+        return { rows: data.datas, keys: data.keys, meta, rootLists };
       }
       throw new Error('Dataset format must be { keys: [...], datas: [...] }');
+    }
+
+    function renderRootLists() {
+      function autoCols(values) {
+        if (!values.length) return 1;
+        const lengths = values.map((x) => String(x ?? '').length);
+        const avg = lengths.reduce((a, b) => a + b, 0) / lengths.length;
+        let cols = 4;
+        if (avg <= 4) cols = 8;
+        else if (avg <= 8) cols = 6;
+        else if (avg <= 12) cols = 5;
+        else if (avg <= 20) cols = 4;
+        else cols = 3;
+        cols = Math.min(cols, values.length, 12);
+        cols = Math.max(cols, 1);
+        return cols;
+      }
+
+      const entries = Object.entries(currentRootLists).filter(([k, v]) => {
+        if (!Array.isArray(v)) return false;
+        if (!showDebug && String(k).startsWith('_')) return false;
+        return true;
+      });
+      if (!entries.length) {
+        rootListsEl.style.display = 'none';
+        rootListsEl.innerHTML = '';
+        return;
+      }
+      rootListsEl.style.display = '';
+      rootListsEl.innerHTML = entries.map(([k, arr]) => {
+        const values = showDebug ? arr : arr.filter((x) => !isUnderscoreHidden(x));
+        const cols = autoCols(values);
+        const rows = [];
+        for (let i = 0; i < values.length; i += cols) rows.push(values.slice(i, i + cols));
+        const body = rows.map((row) => {
+          const cells = [];
+          for (let i = 0; i < cols; i += 1) {
+            const v = row[i];
+            cells.push(`<td>${v === undefined ? '<span class="empty">-</span>' : escapeHtml(String(v))}</td>`);
+          }
+          return `<tr>${cells.join('')}</tr>`;
+        }).join('');
+        return `
+          <div class="root-list-card">
+            <div class="root-list-head">
+              <strong>${escapeHtml(k)}</strong>
+              <span>共 ${values.length} 項</span>
+              <span>表格：${rows.length} x ${cols}</span>
+            </div>
+            <div class="root-list-table-wrap">
+              <table class="root-list-table"><tbody>${body || '<tr><td class="empty">-</td></tr>'}</tbody></table>
+            </div>
+          </div>`;
+      }).join('');
     }
 
     function collectKeys(rows, datasetId, explicitKeys) {
@@ -483,6 +611,7 @@
           if (activeMetaFilters[k]) url.searchParams.set(k, activeMetaFilters[k]);
           else url.searchParams.delete(k);
           history.replaceState({}, '', url);
+          saveViewState();
           currentRows = applyMetaFilters(currentBaseRows);
           render(currentRows);
         });
@@ -491,6 +620,7 @@
         cb.addEventListener('change', () => {
           const k = cb.dataset.metaFlatten;
           activeMetaFlatten[k] = cb.checked;
+          saveViewState();
           render(currentRows);
         });
       });
@@ -591,11 +721,13 @@
         currentKeyOrder = normalized.keys;
         const rawRows = normalized.rows.map((r, i) => ({ ...r, __index: i }));
         currentMeta = normalized.meta || {};
+        currentRootLists = normalized.rootLists || {};
         if (isDatasetSwitch) {
           activeMetaFilters = {};
           activeMetaFlatten = {};
         }
         renderMetaFilters();
+        renderRootLists();
         currentBaseRows = rawRows;
         currentRows = applyMetaFilters(currentBaseRows);
         currentDataset = {
@@ -606,6 +738,7 @@
         isDirty = false;
         render(currentRows);
         refreshStatusLoaded(d.label);
+        saveViewState();
       } catch (e) {
         headTopEl.innerHTML = '';
         headSubEl.innerHTML = '';
@@ -632,7 +765,9 @@
         currentKeyOrder = normalized.keys;
         currentBaseRows = normalized.rows.map((r, i) => ({ ...r, __index: i }));
         currentMeta = normalized.meta || {};
+        currentRootLists = normalized.rootLists || {};
         renderMetaFilters();
+        renderRootLists();
         currentRows = applyMetaFilters(currentBaseRows);
         currentDataset = {
           keys: [...currentKeyOrder],
@@ -680,7 +815,9 @@
         await writable.close();
         isDirty = false;
         changes = [];
-        statusEl.textContent = `已寫入：${currentDatasetId}（未寫入變更 0 項）`;
+        currentDoc = out;
+        setModePreview();
+        statusEl.textContent = `已寫入：${currentDatasetId}（預覽）`;
       } catch (e) {
         statusEl.textContent = `寫入失敗：${e.message}`;
       }
@@ -689,17 +826,24 @@
     function init() {
       const params = new URLSearchParams(location.search);
       const q = params.get('d') || 'monster';
+      const cookieState = loadViewState();
       initialQueryFilters = {};
       for (const [k, v] of params.entries()) {
         if (k !== 'd' && v) initialQueryFilters[k] = v;
       }
       selectEl.innerHTML = DATASETS.map(d => `<option value="${d.id}">${d.label}</option>`).join('');
-      selectEl.value = DATASETS.some(d => d.id === q) ? q : 'monster';
-      showDebug = false;
+      const cookieDataset = cookieState?.dataset;
+      const wantedDataset = DATASETS.some(d => d.id === q) ? q
+        : (DATASETS.some(d => d.id === cookieDataset) ? cookieDataset : 'monster');
+      selectEl.value = wantedDataset;
+      showDebug = Boolean(cookieState?.showDebug);
       showDebugToggleEl.checked = false;
+      showDebugToggleEl.checked = showDebug;
       showDebugToggleEl.addEventListener('change', () => {
         showDebug = showDebugToggleEl.checked;
+        saveViewState();
         renderMetaFilters();
+        renderRootLists();
         currentRows = applyMetaFilters(currentBaseRows);
         render(currentRows);
         refreshStatusLoaded();
@@ -712,12 +856,20 @@
         setModePreview();
         activeSortKey = '__none__';
         activeSortOrder = 'asc';
+        saveViewState();
         loadOne(id);
       });
       openFileBtn.addEventListener('click', () => openFileForEdit());
       copyPathBtn.addEventListener('click', () => copyCurrentDatasetPath());
       flushBtn.addEventListener('click', () => flushToFile());
       setModePreview();
+      currentDatasetId = selectEl.value;
+      if (cookieState?.filters && typeof cookieState.filters === 'object') {
+        activeMetaFilters = { ...cookieState.filters };
+      }
+      if (cookieState?.flatten && typeof cookieState.flatten === 'object') {
+        activeMetaFlatten = { ...cookieState.flatten };
+      }
       loadOne(selectEl.value);
     }
 
