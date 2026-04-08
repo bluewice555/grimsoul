@@ -125,12 +125,13 @@
 
   <script>
     const DATASETS = [
-      { id: 'armor-items', label: 'armor items', file: './dataset/armor-items.json' },
-      { id: 'armor-set-effects', label: 'armor sets', file: './dataset/armor-set-effects.json' },
-      { id: 'armor-sets', label: 'armor sheet', file: './dataset/armor-sets.json' },
-      { id: 'monster', label: 'monster', file: './dataset/monster.json' },
-      { id: 'skill', label: 'skill', file: './dataset/skill.json' },
-      { id: 'weapon', label: 'weapon', file: './dataset/weapon.json' }
+      { id: 'armor-items', label: 'armor items', file: '../dataset/raw/armor-items.json' },
+      { id: 'armor-set-effects', label: 'armor sets', file: '../dataset/raw/armor-set-effects.json' },
+      { id: 'armor-sets', label: 'armor sheet', file: '../dataset/raw/armor-sets.json' },
+      { id: 'monster', label: 'monster', file: '../dataset/raw/monster.json' },
+      { id: 'monster-hit', label: 'monster hit', file: '../dataset/fight/monster_hit.json' },
+      { id: 'skill', label: 'skill', file: '../dataset/raw/skill.json' },
+      { id: 'weapon', label: 'weapon', file: '../dataset/raw/weapon.json' }
     ];
     const LOCAL_PROJECT_ROOT = 'C:\\Users\\lab\\Desktop\\grimsoul';
 
@@ -208,7 +209,7 @@
 
     function valToHtml(v, flattenList = false) {
       if (v === null || v === undefined || v === '') return '<span class="empty">-</span>';
-      if (Array.isArray(v) && flattenList) return escapeHtml(v.join('；'));
+      if (Array.isArray(v) && flattenList) return escapeHtml(v.join('; '));
       if (typeof v === 'object') return `<span class="json">${escapeHtml(JSON.stringify(v, null, 2))}</span>`;
       return escapeHtml(v);
     }
@@ -218,6 +219,7 @@
     }
 
     function visibleValue(raw) {
+      if (showDebug) return raw;
       if (isUnderscoreHidden(raw)) return '';
       if (Array.isArray(raw)) {
         return raw.filter((x) => !isUnderscoreHidden(x));
@@ -226,6 +228,7 @@
     }
 
     function isRowHidden(row) {
+      if (showDebug) return false;
       return isUnderscoreHidden(row?.ID);
     }
 
@@ -403,11 +406,11 @@
           const shown = visibleValue(raw);
           const isArray = Array.isArray(shown);
           const rootKey = c.path[0];
-          const flattenList = activeMetaFlatten[rootKey] === true;
+          const flattenList = activeMetaFlatten[rootKey] !== true;
           const editable = isEditMode && shown !== '-' && (shown === null || typeof shown !== 'object' || isArray);
           const val = shown === null || shown === undefined
             ? ''
-            : (isArray ? shown.join('；') : String(shown));
+            : (isArray ? shown.join('; ') : String(shown));
           const rawType = isArray ? 'array' : (raw === null ? 'null' : typeof raw);
           return `<td data-row="${i}" data-idx="${idx}" data-path="${escapeHtml(c.path.join('.'))}" data-editable="${editable ? '1' : '0'}" data-raw-type="${rawType}" data-raw="${escapeHtml(val)}">${valToHtml(shown, flattenList)}</td>`;
         }).join('');
@@ -462,8 +465,8 @@
         return;
       }
       const controls = entries.map(([k, arr]) => {
-        const cleanArr = arr.filter((x) => !isUnderscoreHidden(x));
-        const flattenChecked = activeMetaFlatten[k] ? ' checked' : '';
+        const cleanArr = showDebug ? arr : arr.filter((x) => !isUnderscoreHidden(x));
+        const listChecked = activeMetaFlatten[k] === true ? ' checked' : '';
         const options = ['<option value="">（全部）</option>']
           .concat(cleanArr.map((x) => {
             const v = String(x);
@@ -471,7 +474,7 @@
             return `<option value="${escapeHtml(v)}"${selected}>${escapeHtml(v)}</option>`;
           }))
           .join('');
-        return `<label>${escapeHtml(k)}：<select data-meta-key="${escapeHtml(k)}">${options}</select> <input type="checkbox" data-meta-flatten="${escapeHtml(k)}"${flattenChecked} />（展平）</label>`;
+        return `<label>${escapeHtml(k)}：<select data-meta-key="${escapeHtml(k)}">${options}</select> <input type="checkbox" data-meta-flatten="${escapeHtml(k)}"${listChecked} />（列表）</label>`;
       }).join('');
       metaFiltersEl.innerHTML = controls;
       metaFiltersEl.querySelectorAll('select[data-meta-key]').forEach((sel) => {
@@ -576,8 +579,10 @@
     }
 
     async function loadOne(id) {
+      const prevDatasetId = currentDatasetId;
       const d = DATASETS.find(x => x.id === id) || DATASETS[0];
       currentDatasetId = d.id;
+      const isDatasetSwitch = prevDatasetId !== d.id;
       statusEl.textContent = `載入 ${d.label}...`;
       try {
         const res = await fetch(d.file, { cache: 'no-store' });
@@ -588,17 +593,9 @@
         currentKeyOrder = normalized.keys;
         const rawRows = normalized.rows.map((r, i) => ({ ...r, __index: i }));
         currentMeta = normalized.meta || {};
-        const prevFilters = { ...activeMetaFilters };
-        const prevFlatten = { ...activeMetaFlatten };
-        activeMetaFilters = {};
-        activeMetaFlatten = {};
-        for (const k of Object.keys(currentMeta)) {
-          if (typeof prevFilters[k] === 'string' && prevFilters[k] !== '') {
-            activeMetaFilters[k] = prevFilters[k];
-          } else if (typeof initialQueryFilters[k] === 'string') {
-            activeMetaFilters[k] = initialQueryFilters[k];
-          }
-          if (prevFlatten[k] === true) activeMetaFlatten[k] = true;
+        if (isDatasetSwitch) {
+          activeMetaFilters = {};
+          activeMetaFlatten = {};
         }
         renderMetaFilters();
         currentBaseRows = rawRows;
@@ -637,16 +634,6 @@
         currentKeyOrder = normalized.keys;
         currentBaseRows = normalized.rows.map((r, i) => ({ ...r, __index: i }));
         currentMeta = normalized.meta || {};
-        const prevFilters = { ...activeMetaFilters };
-        const prevFlatten = { ...activeMetaFlatten };
-        activeMetaFilters = {};
-        activeMetaFlatten = {};
-        for (const k of Object.keys(currentMeta)) {
-          if (typeof prevFilters[k] === 'string' && prevFilters[k] !== '') {
-            activeMetaFilters[k] = prevFilters[k];
-          }
-          if (prevFlatten[k] === true) activeMetaFlatten[k] = true;
-        }
         renderMetaFilters();
         currentRows = applyMetaFilters(currentBaseRows);
         currentDataset = {
@@ -665,7 +652,10 @@
 
     async function copyCurrentDatasetPath() {
       const d = DATASETS.find(x => x.id === currentDatasetId) || DATASETS[0];
-      const rel = d.file.replace(/^\.\//, 'docs/').replaceAll('/', '\\');
+      const rel = d.file
+        .replace(/^\.\.\//, '')
+        .replace(/^\.\//, 'docs/')
+        .replaceAll('/', '\\');
       const abs = `${LOCAL_PROJECT_ROOT}\\${rel}`;
       try {
         await navigator.clipboard.writeText(abs);
@@ -714,6 +704,7 @@
         renderMetaFilters();
         currentRows = applyMetaFilters(currentBaseRows);
         render(currentRows);
+        refreshStatusLoaded();
       });
       selectEl.addEventListener('change', () => {
         const id = selectEl.value;
