@@ -626,7 +626,9 @@
       if (!rows.length || !columns.leaf.length) {
         headTopEl.innerHTML = '';
         headSubEl.innerHTML = '';
-        bodyEl.innerHTML = '<tr><td class="empty">無資料可顯示</td></tr>';
+        const hasOtherContent = Object.keys(currentRootLists || {}).length > 0
+          || Object.keys(currentNamedTables || {}).length > 0;
+        bodyEl.innerHTML = hasOtherContent ? '' : '<tr><td class="empty">無資料可顯示</td></tr>';
         return;
       }
       headTopEl.innerHTML = columns.top.map(c => {
@@ -1157,5 +1159,4 @@
   </script>
 </body>
 </html>
-
 
