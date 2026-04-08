@@ -3,28 +3,28 @@
     "ID",
     "Name",
     "Level",
-    "source",
-    "enemy",
+    "pickup",
+    "Mining",
+    "Camping",
+    "Wander",
     "event"
   ],
   "datas": [
     {
+      "ID": "Pine Thicket",
       "Name": "松樹叢",
-      "Level": "1級木",
-      "source": [
-        "松木: 105(35)",
-        "石灰岩: 22(10)",
-        "銅礦石: 6",
-        "亞麻纖維: 20",
-        "山楂: 30",
-        "冬青果: 12"
+      "Level": "S1",
+      "pickup": [
+        "Pine Log: 35",
+        "Limestone: 10",
+        "Flax bush: 20",
+        "Hawberry: 10",
+        "Hollyberry: 4"
       ],
-      "enemy": [
-        "痲瘋病人: 2-3",
-        "狼: 6-8",
-        "熊: 1",
-        "瘟疫雷德: 1",
-        "被咒者: 1"
+      "Mining": [
+        "Pine: 35",
+        "Node: 4",
+        "Copper: 2"
       ],
       "event": [
         "麻袋: 3",
@@ -32,30 +32,234 @@
         "水井: 0-1",
         "箱子: 0-1"
       ],
-      "ID": ""
+      "Camping": [
+        "Deer: 2-4",
+        "癲瘋病人: 2-3",
+        "狼: 6-8",
+        "熊: 1",
+        "瘟疫雷德: 1",
+        "被咒者: 1"
+      ],
+      "Wander": []
     },
     {
+      "ID": "Stone Foothills",
       "Name": "岩石小丘",
-      "Level": "1級石",
-      "source": [
-        "松木: 30(10)",
-        "石灰岩: 85(10)",
-        "銅礦石: 24",
-        "亞麻纖維: 10",
-        "山楂: 30"
+      "Level": "S1",
+      "pickup": [
+        "Pine Log: 10",
+        "Limestone: 10",
+        "Flax bush: 10",
+        "Hawberry: 10"
       ],
-      "enemy": [
-        "痲瘋病人: 6-7",
-        "狼: 1-3",
-        "瘟疫雷德: 1",
-        "被咒者: 2-3"
+      "Mining": [
+        "Pine: 10",
+        "Node: 25",
+        "Copper: 8"
       ],
       "event": [
         "麻袋: 3",
         "屍體: 1",
         "水井: 0-1"
       ],
-      "ID": ""
+      "Camping": [
+        "癲瘋病人: 6-7",
+        "狼: 1-3",
+        "瘟疫雷德: 1",
+        "被咒者: 2-3"
+      ],
+      "Wander": []
+    },
+    {
+      "ID": "Pine Grove",
+      "Name": "",
+      "Level": "S2",
+      "pickup": [
+        "Pine Log: 55",
+        "Limestone: 18",
+        "Flax bush: 40",
+        "Hawberry: 8",
+        "Hollyberry: 8"
+      ],
+      "Mining": [
+        "Pine: 45",
+        "Node: 4",
+        "Copper: 5"
+      ],
+      "event": [],
+      "Camping": [
+        "Deer: 4",
+        "Wolve: 3-5",
+        "Bear: 9-10",
+        "Leper: 1-2",
+        "Damned: 2",
+        "Direwolve: 4-5",
+        "Damned Warriors: 1-2"
+      ],
+      "Wander": []
+    },
+    {
+      "ID": "Stone Hills",
+      "Name": "",
+      "Level": "S2",
+      "pickup": [
+        "Pine Log: 15",
+        "Limestone: 20",
+        "Flax bush: 20",
+        "Hawberry: 8",
+        "Hollyberry: 8"
+      ],
+      "Mining": [
+        "Pine: 13",
+        "Node: 33",
+        "Copper: 20"
+      ],
+      "event": [],
+      "Camping": [
+        "Deer: 1",
+        "Wolve: 1",
+        "Leper: 4",
+        "Damned: 8",
+        "Plaguerldden: 7",
+        "Direwolve: 1",
+        "Damned Warriors: 2"
+      ],
+      "Wander": []
+    },
+    {
+      "ID": "Pine Forest",
+      "Name": "",
+      "Level": "S3",
+      "pickup": [
+        "Pine Log: 35",
+        "Limestone: 15",
+        "Flax bush: 40",
+        "Hawberry: 30",
+        "Hollyberry: 30"
+      ],
+      "Mining": [
+        "Pine: 85",
+        "Tomb: 6",
+        "Node: 6",
+        "Copper: 9"
+      ],
+      "Camping": [
+        "痲瘋病人: 8",
+        "熊: 4",
+        "狼: 6",
+        "被咒騎士: 4",
+        "被咒瘟疫聖殿騎士: 1",
+        "被咒者: 9",
+        "冰原狼: 10",
+        "女巫: 1"
+      ],
+      "event": [],
+      "Wander": []
+    },
+    {
+      "ID": "Stone Cliffs",
+      "Name": "Stone Cliffs",
+      "Level": "S3",
+      "pickup": [
+        "Pine Log: 15",
+        "Limestone: 42",
+        "Flax bush: 32",
+        "Hawberry: 30",
+        "Hollyberry: 30"
+      ],
+      "Mining": [
+        "Pine: 25",
+        "Tomb: 12",
+        "Node: 29",
+        "Copper: 28"
+      ],
+      "event": [],
+      "Camping": [],
+      "Wander": []
+    },
+    {
+      "ID": "Birch Grove",
+      "Name": "",
+      "Level": "S4",
+      "pickup": [
+        "Pine Log: 46",
+        "Limestone: 17",
+        "Flax bush: 59",
+        "Gypsy: 16",
+        "Grave: 16"
+      ],
+      "Mining": [
+        "Pine: 35",
+        "Birch: 20",
+        "Node: 10",
+        "Copper: 11"
+      ],
+      "event": [],
+      "Camping": [],
+      "Wander": []
+    },
+    {
+      "ID": "Iron Hills",
+      "Name": "",
+      "Level": "S4",
+      "pickup": [
+        "Pine Log: 12",
+        "Limestone: 40",
+        "Flax bush: 49",
+        "Gypsy: 16",
+        "Grave: 16"
+      ],
+      "Mining": [
+        "Pine: 20",
+        "Node: 29",
+        "Copper: 15",
+        "Iron: 14"
+      ],
+      "event": [],
+      "Camping": [],
+      "Wander": []
+    },
+    {
+      "ID": "Birch Forest",
+      "Name": "Birch Forest",
+      "Level": "S5",
+      "pickup": [
+        "Pine Log: 50",
+        "Limestone: 20",
+        "Flax bush: 65",
+        "Gypsy: 19",
+        "Grave: 19"
+      ],
+      "Mining": [
+        "Pine: 26",
+        "Birch: 41",
+        "Node: 12",
+        "Copper: 12"
+      ],
+      "event": [],
+      "Camping": [],
+      "Wander": []
+    },
+    {
+      "ID": "Iron Cliffs",
+      "Name": "",
+      "Level": "S5",
+      "pickup": [
+        "Pine Log: 14",
+        "Limestone: 40",
+        "Flax bush: 54",
+        "Gypsy: 19",
+        "Grave: 19"
+      ],
+      "Mining": [
+        "Pine: 23",
+        "Node: 30",
+        "Copper: 8",
+        "Iron: 30"
+      ],
+      "event": [],
+      "Camping": [],
+      "Wander": []
     }
   ]
 }
