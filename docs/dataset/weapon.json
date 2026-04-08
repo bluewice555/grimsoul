@@ -44,7 +44,7 @@
       "Durability": "50",
       "Crafting": "原松木: 2; 石灰岩: 2",
       "Special Effect(s)": "可開採石灰岩與銅礦石",
-      "Skill(s)": null
+      "Skill(s)": "(採集)"
     },
     {
       "ID": "Crafter's Stone Pick",
@@ -55,7 +55,7 @@
       "Crafting": "原松木: 2; 石灰岩: 2",
       "Special Effect(s)": "可開採石灰岩與銅礦石；資源點採集次數需求減半",
       "Physical": "8",
-      "Skill(s)": null
+      "Skill(s)": "(採集)"
     },
     {
       "ID": "Stone Axe",
@@ -66,7 +66,7 @@
       "Special Effect(s)": "可砍伐松木",
       "Speed": "1.0",
       "Physical": "9",
-      "Skill(s)": null
+      "Skill(s)": "(採集)"
     },
     {
       "ID": "Crafter's Stone Axe",
@@ -77,7 +77,7 @@
       "Special Effect(s)": "可砍伐松木；資源點採集次數需求減半",
       "Speed": "1.1",
       "Physical": "9",
-      "Skill(s)": null
+      "Skill(s)": "(採集)"
     },
     {
       "ID": "Bronze Pickaxe",
@@ -88,7 +88,7 @@
       "Durability": "67",
       "Crafting": "青銅錠: 2; 原松木: 2",
       "Special Effect(s)": "可開採鐵礦石",
-      "Skill(s)": null
+      "Skill(s)": "(採集)"
     },
     {
       "ID": "Hoe",
@@ -103,14 +103,14 @@
     },
     {
       "ID": "Bronze Axe",
-      "Name": "青銅矛",
+      "Name": "青銅斧",
       "Physical": "13",
       "Range": "1.2",
       "Durability": "67",
       "Crafting": "青銅錠: 2; 原松木: 2",
       "Special Effect(s)": "可砍伐樺木",
       "Speed": "1.0",
-      "Skill(s)": "青銅矛"
+      "Skill(s)": "(採集)"
     },
     {
       "ID": "Club",
@@ -209,7 +209,7 @@
       "Speed": "1.4",
       "Range": "1.2",
       "Durability": "100",
-      "Crafting": "銅錠: 7; 松木板: 5; 皮革: 5",
+      "Crafting": "銅錠: 4; 松木板: 5; 皮革: 5",
       "Special Effect(s)": null,
       "Skill(s)": "匕首"
     },
@@ -618,7 +618,7 @@
       "Speed": "1.1",
       "Range": "1.4",
       "Durability": "91",
-      "Special Effect(s)": "?????????????????y=(1/0.7)*x+1?x?????????70%???2??",
+      "Special Effect(s)": "依使用者已損失生命值暫時提升傷害（y=(1/0.7)*x+1；x為已損失生命比例；70%時最高2倍）",
       "Crafting": null,
       "Skill(s)": null
     },
@@ -755,7 +755,7 @@
       "Speed": "0.9",
       "Range": "1.5",
       "Durability": "56",
-      "Special Effect(s)": "?25.0%?????????60??????????1????????????1.5?2?...?4??",
+      "Special Effect(s)": "約25.0%機率造成範圍攻擊（60物理；近距離）；每多1個附近敵人暫時提升傷害（1.5、2、...、4倍）",
       "Crafting": null,
       "Skill(s)": null
     },
@@ -799,7 +799,7 @@
       "Speed": "1.2",
       "Range": "1.2",
       "Durability": "67",
-      "Special Effect(s)": "??1?????????????1.2?1.4?...?",
+      "Special Effect(s)": "每多1個附近敵人，暫時提升傷害（1.2、1.4、...）",
       "Crafting": null,
       "Skill(s)": null
     },
@@ -1079,7 +1079,7 @@
       "Physical": "95",
       "Range": "2.0",
       "Durability": "40",
-      "Special Effect(s)": "?62.5%?????????????????0.75?0.5?0.25??",
+      "Special Effect(s)": "約62.5%機率在連續命中時永久降低敵方傷害（0.75、0.5、0.25倍）",
       "Speed": "1.0",
       "Crafting": null,
       "Skill(s)": "狂戰士巨戰斧"
@@ -1091,7 +1091,7 @@
       "Speed": "0.9",
       "Range": "1.5",
       "Durability": "100",
-      "Special Effect(s)": "??????????????1.15?1.3?1.45?...????7?",
+      "Special Effect(s)": "每次擊殺後暫時獲得攻速加成（1.15、1.3、1.45、...），持續7秒",
       "Crafting": null,
       "Skill(s)": null
     },
@@ -1192,7 +1192,7 @@
       "Speed": "0.9",
       "Range": "2.0",
       "Durability": "67",
-      "Special Effect(s)": "??????????0.5??????3?",
+      "Special Effect(s)": "暫時降低目標命中率（0.5倍），持續約3秒",
       "Crafting": null,
       "Skill(s)": null
     },
@@ -1258,7 +1258,7 @@
       "Speed": "0.8",
       "Range": "2.3",
       "Durability": "50",
-      "Special Effect(s)": "?56.0%?????????????????0.75?0.5?0.25??",
+      "Special Effect(s)": "約56.0%機率在連續命中時永久降低敵方護甲（0.75、0.5、0.25倍）",
       "Crafting": null,
       "Skill(s)": null
     },
@@ -1291,7 +1291,7 @@
       "Speed": "0.8",
       "Range": "2.3",
       "Durability": "63",
-      "Special Effect(s)": "?43.5%?????????0.25-0.5???????2???????0????2??????????",
+      "Special Effect(s)": "約43.5%機率造成濃射傷害（0.25-0.5倍穿刺）；最多2個目標（主目標0、側目標2；近距離）；耐久提升",
       "Crafting": null,
       "Skill(s)": null
     },
