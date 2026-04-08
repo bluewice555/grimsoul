@@ -260,7 +260,7 @@
       "Name": "車把",
       "ID": "Cart thill",
       "source": "materials|recipes|weapon",
-      "value": ""
+      "value": "280"
     },
     {
       "ID": "Chainmail gauntlets",
@@ -313,7 +313,7 @@
       "Name": "棍子",
       "ID": "Club",
       "source": "materials|recipes|weapon",
-      "value": ""
+      "value": "20"
     },
     {
       "Name": "戰鬥鏟",
@@ -390,7 +390,7 @@
       "Name": "匕首",
       "ID": "Dagger",
       "source": "materials|recipes|weapon",
-      "value": ""
+      "value": "427"
     },
     {
       "ID": "Desert hunter armor",
@@ -1005,7 +1005,7 @@
       "Name": "單手劍",
       "ID": "One-handed sword",
       "source": "materials|recipes|weapon",
-      "value": ""
+      "value": "814"
     },
     {
       "ID": "Pack leader's boots",
@@ -1390,13 +1390,13 @@
       "Name": "石斧",
       "ID": "Stone axe",
       "source": "materials|recipes|weapon",
-      "value": ""
+      "value": "16"
     },
     {
       "Name": "石鎬",
       "ID": "Stone pick",
       "source": "materials|recipes|weapon",
-      "value": ""
+      "value": "16"
     },
     {
       "ID": "Storm herald boots",
@@ -1508,7 +1508,7 @@
       "Name": "火把",
       "ID": "Torch",
       "source": "materials|recipes|weapon",
-      "value": ""
+      "value": "148"
     },
     {
       "ID": "Tournament helm",
@@ -1579,17 +1579,17 @@
     {
       "Name": "乞丐手套(1等手)",
       "source": "materials|recipes",
-      "value": ""
+      "value": "80"
     },
     {
       "Name": "乞丐褲(1等褲)",
       "source": "materials|recipes",
-      "value": ""
+      "value": "140"
     },
     {
       "Name": "乞丐鞋(1等鞋)",
       "source": "materials|recipes",
-      "value": ""
+      "value": "80"
     },
     {
       "Name": "十字軍盔(4等帽)",
@@ -1609,7 +1609,7 @@
     {
       "Name": "厚布",
       "source": "materials|recipes",
-      "value": ""
+      "value": "80"
     },
     {
       "Name": "大米",
@@ -1624,7 +1624,7 @@
     {
       "Name": "布料",
       "source": "materials|recipes",
-      "value": ""
+      "value": "40"
     },
     {
       "Name": "戰靴(5等鞋)",
@@ -1639,12 +1639,12 @@
     {
       "Name": "松木板",
       "source": "materials|recipes",
-      "value": ""
+      "value": "4"
     },
     {
       "Name": "棉褲(2等褲)",
       "source": "materials|recipes",
-      "value": ""
+      "value": "840"
     },
     {
       "Name": "樺木板",
@@ -1719,27 +1719,27 @@
     {
       "Name": "皮手套(2等手)",
       "source": "materials|recipes",
-      "value": ""
+      "value": "380"
     },
     {
       "Name": "皮條",
       "source": "materials|recipes",
-      "value": ""
+      "value": "35"
     },
     {
       "Name": "皮革",
       "source": "materials|recipes",
-      "value": ""
+      "value": "35"
     },
     {
       "Name": "皮革護盾",
       "source": "materials|recipes",
-      "value": ""
+      "value": "230"
     },
     {
       "Name": "皮靴",
       "source": "materials|recipes",
-      "value": ""
+      "value": "380"
     },
     {
       "Name": "皮駝籃",
@@ -1749,22 +1749,22 @@
     {
       "Name": "石塊",
       "source": "materials|recipes",
-      "value": ""
+      "value": "8"
     },
     {
       "Name": "破麻袋",
       "source": "materials|recipes",
-      "value": ""
+      "value": "160"
     },
     {
       "Name": "繃帶",
       "source": "materials|recipes",
-      "value": ""
+      "value": "260"
     },
     {
       "Name": "繩子",
       "source": "materials|recipes",
-      "value": ""
+      "value": "40"
     },
     {
       "Name": "苦町劑",
@@ -1789,7 +1789,7 @@
     {
       "Name": "藤編護盾",
       "source": "materials|recipes",
-      "value": ""
+      "value": "92"
     },
     {
       "Name": "蘑菇浸劑",
@@ -1809,17 +1809,17 @@
     {
       "Name": "複合盾",
       "source": "materials|recipes",
-      "value": ""
+      "value": "571"
     },
     {
       "Name": "襯衫(1等衣)",
       "source": "materials|recipes",
-      "value": ""
+      "value": "140"
     },
     {
       "Name": "軟鎧甲(2等衣)",
       "source": "materials|recipes",
-      "value": ""
+      "value": "840"
     },
     {
       "Name": "鉚靴(4等鞋)",
@@ -1829,17 +1829,17 @@
     {
       "Name": "銅腿甲(3等褲)",
       "source": "materials|recipes",
-      "value": ""
+      "value": "1277"
     },
     {
       "Name": "銅錠",
       "source": "materials|recipes",
-      "value": ""
+      "value": "58"
     },
     {
       "Name": "銅鎖子甲(3等衣)",
       "source": "materials|recipes",
-      "value": ""
+      "value": "1370"
     },
     {
       "Name": "錦標頭盔(6等帽)",
@@ -1869,7 +1869,7 @@
     {
       "Name": "鎖環甲護手(3等手)",
       "source": "materials|recipes",
-      "value": ""
+      "value": "483"
     },
     {
       "Name": "鐵十字鎬",
@@ -1879,7 +1879,7 @@
     {
       "Name": "鐵帽(3等帽)",
       "source": "materials|recipes",
-      "value": ""
+      "value": "749"
     },
     {
       "Name": "鐵斧",
@@ -1904,12 +1904,12 @@
     {
       "Name": "長筒靴(3等鞋)",
       "source": "materials|recipes",
-      "value": ""
+      "value": "815"
     },
     {
       "Name": "閥帽(1等帽)",
       "source": "materials|recipes",
-      "value": ""
+      "value": "80"
     },
     {
       "Name": "陷阱",
@@ -1959,7 +1959,7 @@
     {
       "Name": "頭套(2等帽)",
       "source": "materials|recipes",
-      "value": ""
+      "value": "600"
     },
     {
       "Name": "高品質弓弦",
