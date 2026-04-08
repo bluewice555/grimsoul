@@ -481,32 +481,132 @@
       URL.revokeObjectURL(url);
     }
 
-    function normalizeSortValue(v) {
-      // rank: 0 empty, 1 number, 2 text
-      if (v === null || v === undefined) return { rank: 0, value: '' };
-      if (typeof v === 'string' && v.trim() === '') return { rank: 0, value: '' };
-      if (Array.isArray(v) && v.length === 0) return { rank: 0, value: '' };
-
-      if (typeof v === 'number') return { rank: 1, value: v };
-      if (typeof v === 'boolean') return { rank: 1, value: v ? 1 : 0 };
-
-      const s = typeof v === 'object' ? JSON.stringify(v) : String(v);
-      const n = Number(s);
-      if (!Number.isNaN(n) && s.trim() !== '') return { rank: 1, value: n };
-      return { rank: 2, value: s.toLowerCase() };
+    function parseNameNumber(s) {
+      if (typeof s !== 'string') return null;
+      const m = s.trim().match(/^(.+?)\s*:\s*(-?\d+(?:\.\d+)?)$/);
+      if (!m) return null;
+      return { name: m[1].trim().toLowerCase(), num: Number(m[2]) };
     }
 
-    function sortRows(rows, key, order) {
+    function itemMatchesPreferred(item, preferred) {
+      if (!preferred) return false;
+      const p = String(preferred).trim().toLowerCase();
+      const raw = String(item ?? '').trim().toLowerCase();
+      if (!raw || !p) return false;
+      if (raw === p) return true;
+      const pair = parseNameNumber(raw);
+      if (pair && pair.name === p) return true;
+      return raw.startsWith(`${p}:`);
+    }
+
+    function pickListFirstByFilter(arr, preferred) {
+      if (!Array.isArray(arr) || arr.length === 0) return '';
+      if (!preferred) return arr[0];
+      const hit = arr.find((x) => itemMatchesPreferred(x, preferred));
+      return hit !== undefined ? hit : arr[0];
+    }
+
+    function reorderListByPreferred(arr, preferred) {
+      if (!Array.isArray(arr) || arr.length <= 1 || !preferred) return arr;
+      const idx = arr.findIndex((x) => itemMatchesPreferred(x, preferred));
+      if (idx <= 0) return arr;
+      return [arr[idx], ...arr.slice(0, idx), ...arr.slice(idx + 1)];
+    }
+
+    function normalizeSortValue(v, preferredListItem = null) {
+      // rank: 0 empty, 1 number, 2 name:number pair, 3 text
+      if (v === null || v === undefined) return { rank: 0, type: 'empty' };
+      if (typeof v === 'string' && v.trim() === '') return { rank: 0, type: 'empty' };
+      if (Array.isArray(v) && v.length === 0) return { rank: 0, type: 'empty' };
+
+      if (Array.isArray(v)) {
+        const first = pickListFirstByFilter(v, preferredListItem);
+        const pair = parseNameNumber(String(first));
+        if (pair) return { rank: 2, type: 'pair', name: pair.name, num: pair.num };
+        const n = Number(String(first));
+        if (!Number.isNaN(n) && String(first).trim() !== '') return { rank: 1, type: 'number', num: n };
+        return { rank: 3, type: 'text', text: String(first).toLowerCase() };
+      }
+
+      if (typeof v === 'number') return { rank: 1, type: 'number', num: v };
+      if (typeof v === 'boolean') return { rank: 1, type: 'number', num: v ? 1 : 0 };
+
+      const s = typeof v === 'object' ? JSON.stringify(v) : String(v);
+      const pair = parseNameNumber(s);
+      if (pair) return { rank: 2, type: 'pair', name: pair.name, num: pair.num };
+      const n = Number(s);
+      if (!Number.isNaN(n) && s.trim() !== '') return { rank: 1, type: 'number', num: n };
+      return { rank: 3, type: 'text', text: s.toLowerCase() };
+    }
+
+    function compareSortValue(a, b) {
+      if (a.rank !== b.rank) return a.rank - b.rank;
+      if (a.type === 'pair' && b.type === 'pair') {
+        if (a.name < b.name) return -1;
+        if (a.name > b.name) return 1;
+        if (a.num < b.num) return -1;
+        if (a.num > b.num) return 1;
+        return 0;
+      }
+      if (a.type === 'number' && b.type === 'number') {
+        if (a.num < b.num) return -1;
+        if (a.num > b.num) return 1;
+        return 0;
+      }
+      const ta = a.text ?? '';
+      const tb = b.text ?? '';
+      if (ta < tb) return -1;
+      if (ta > tb) return 1;
+      return 0;
+    }
+
+    function sortRows(rows, key, order, filters = {}, metaFilterOptions = {}) {
       if (!key || key === '__none__') return [...rows];
       const sign = order === 'desc' ? -1 : 1;
       const path = key.split('.');
-      return [...rows].sort((a, b) => {
-        const va = normalizeSortValue(getByPath(a, path));
-        const vb = normalizeSortValue(getByPath(b, path));
+      const preferred = filters && typeof filters === 'object' ? (filters[path[0]] || null) : null;
+      const filterArr = (metaFilterOptions && Array.isArray(metaFilterOptions[path[0]]))
+        ? metaFilterOptions[path[0]].map((x) => String(x).trim().toLowerCase())
+        : null;
+      const filterRank = filterArr ? new Map(filterArr.map((v, i) => [v, i])) : null;
 
-        if (va.rank !== vb.rank) return (va.rank - vb.rank) * sign;
-        if (va.value < vb.value) return -1 * sign;
-        if (va.value > vb.value) return 1 * sign;
+      function valueFilterName(v) {
+        if (!v) return null;
+        if (v.type === 'pair') return v.name;
+        if (v.type === 'text') {
+          const p = parseNameNumber(v.text);
+          return p ? p.name : v.text;
+        }
+        return null;
+      }
+
+      return [...rows].sort((a, b) => {
+        const va = normalizeSortValue(getByPath(a, path), preferred);
+        const vb = normalizeSortValue(getByPath(b, path), preferred);
+
+        if (filterRank && filterRank.size > 0) {
+          const na = valueFilterName(va);
+          const nb = valueFilterName(vb);
+          const ra = na !== null && filterRank.has(na) ? filterRank.get(na) : null;
+          const rb = nb !== null && filterRank.has(nb) ? filterRank.get(nb) : null;
+          const ka = ra !== null;
+          const kb = rb !== null;
+
+          if (order === 'asc') {
+            // ASC: in-filter first by filter order, unknowns after with default ASC.
+            if (ka && !kb) return -1;
+            if (!ka && kb) return 1;
+            if (ka && kb && ra !== rb) return ra - rb;
+          } else {
+            // DESC: unknowns first with default DESC, then in-filter by reverse filter order.
+            if (!ka && kb) return -1;
+            if (ka && !kb) return 1;
+            if (ka && kb && ra !== rb) return rb - ra;
+          }
+        }
+
+        const c = compareSortValue(va, vb);
+        if (c !== 0) return c * sign;
 
         // Stable tie-breaker: preserve original row order.
         const ai = Number.isFinite(a.__index) ? a.__index : 0;
@@ -521,7 +621,7 @@
       const key = activeSortKey;
       const order = activeSortOrder;
       const visibleRows = rows.filter((r) => !isRowHidden(r));
-      const sortedRows = sortRows(visibleRows, key, order);
+      const sortedRows = sortRows(visibleRows, key, order, activeMetaFilters, currentMeta);
       currentRows = sortedRows;
       if (!rows.length || !columns.leaf.length) {
         headTopEl.innerHTML = '';
@@ -548,12 +648,14 @@
           const shown = visibleValue(raw);
           const isArray = Array.isArray(shown);
           const flattenList = !activeTableListMode;
+          const preferred = activeMetaFilters?.[c.path[0]] || null;
+          const shownForDisplay = isArray ? reorderListByPreferred(shown, preferred) : shown;
           const editable = isEditMode && shown !== '-' && (shown === null || typeof shown !== 'object' || isArray);
-          const val = shown === null || shown === undefined
+          const val = shownForDisplay === null || shownForDisplay === undefined
             ? ''
-            : (isArray ? shown.join('; ') : String(shown));
+            : (isArray ? shownForDisplay.join('; ') : String(shownForDisplay));
           const rawType = isArray ? 'array' : (raw === null ? 'null' : typeof raw);
-          return `<td data-row="${i}" data-idx="${idx}" data-path="${escapeHtml(c.path.join('.'))}" data-editable="${editable ? '1' : '0'}" data-raw-type="${rawType}" data-raw="${escapeHtml(val)}">${valToHtml(shown, flattenList)}</td>`;
+          return `<td data-row="${i}" data-idx="${idx}" data-path="${escapeHtml(c.path.join('.'))}" data-editable="${editable ? '1' : '0'}" data-raw-type="${rawType}" data-raw="${escapeHtml(val)}">${valToHtml(shownForDisplay, flattenList)}</td>`;
         }).join('');
         return `<tr>${cols}</tr>`;
       }).join('');
@@ -638,7 +740,7 @@
         const keys = collectKeys(table.keys);
         const columns = buildColumns(keys);
         const visibleRows = filteredRows.filter((r) => !isRowHidden(r));
-        const sortedRows = sortRows(visibleRows, state.sortKey, state.sortOrder);
+        const sortedRows = sortRows(visibleRows, state.sortKey, state.sortOrder, state.filters, meta);
 
         const filterEntries = Object.entries(meta).filter(([k, v]) => {
           if (!Array.isArray(v)) return false;
@@ -675,7 +777,9 @@
             const shown = visibleValue(raw);
             const isArray = Array.isArray(shown);
             const flattenList = !state.listMode;
-            return `<td>${valToHtml(shown, flattenList && isArray)}</td>`;
+            const preferred = state.filters?.[c.path[0]] || null;
+            const shownForDisplay = isArray ? reorderListByPreferred(shown, preferred) : shown;
+            return `<td>${valToHtml(shownForDisplay, flattenList && isArray)}</td>`;
           }).join('');
           return `<tr>${cols}</tr>`;
         }).join('') || '<tr><td class="empty">無資料可顯示</td></tr>';
@@ -1053,8 +1157,5 @@
   </script>
 </body>
 </html>
-
-
-
 
 
