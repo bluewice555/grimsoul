@@ -1,0 +1,185 @@
+{
+  "keys": [
+    "materials",
+    "result",
+    "source"
+  ],
+  "datas": [
+    {
+      "materials": [
+        "原松木: 1"
+      ],
+      "result": "石灰岩: 1",
+      "source": "harvest"
+    },
+    {
+      "materials": [
+        "原松木: 5"
+      ],
+      "result": "亞麻纖維: 1",
+      "source": "harvest"
+    },
+    {
+      "materials": [
+        "原松木: 5"
+      ],
+      "result": "山楂: 1",
+      "source": "harvest"
+    },
+    {
+      "materials": [
+        "原松木: 5"
+      ],
+      "result": "冬青果: 1",
+      "source": "harvest"
+    },
+    {
+      "materials": [
+        "原松木: 5"
+      ],
+      "result": "碎銅片: 1",
+      "source": "recipe"
+    },
+    {
+      "materials": [
+        "原松木: 6"
+      ],
+      "result": "銅礦石: 1",
+      "source": "recipe"
+    },
+    {
+      "materials": [
+        "亞麻纖維: 2"
+      ],
+      "result": "繩子: 1",
+      "source": "recipe"
+    },
+    {
+      "materials": [
+        "亞麻纖維: 2"
+      ],
+      "result": "布料: 1",
+      "source": "recipe"
+    },
+    {
+      "materials": [
+        "山楂: 3",
+        "原松木: 2"
+      ],
+      "result": "漿果飲料: 1",
+      "source": "recipe"
+    },
+    {
+      "materials": [
+        "漿果飲料: 7"
+      ],
+      "result": "蜂蜜: 3",
+      "source": "hp"
+    },
+    {
+      "materials": [
+        "漿果飲料: 1"
+      ],
+      "result": "烤肉: 1",
+      "source": "hp"
+    },
+    {
+      "materials": [
+        "烤韭蔥: 1"
+      ],
+      "result": "漿果飲料: 1",
+      "source": "hp"
+    },
+    {
+      "materials": [
+        "生肉: 1",
+        "原松木: 4"
+      ],
+      "result": "烤肉: 1",
+      "source": "recipe"
+    },
+    {
+      "materials": [
+        "韭蔥: 1",
+        "原松木: 2"
+      ],
+      "result": "烤韭蔥: 1",
+      "source": "recipe"
+    },
+    {
+      "materials": [
+        "韭蔥種: 1"
+      ],
+      "result": "韭蔥: 1",
+      "source": "recipe"
+    },
+    {
+      "materials": [
+        "動物毛皮: 1"
+      ],
+      "result": "皮革: 1",
+      "source": "mapping"
+    },
+    {
+      "materials": [
+        "皮革: 3"
+      ],
+      "result": "皮條: 4",
+      "source": "mapping"
+    },
+    {
+      "materials": [
+        "碎銅片: 4"
+      ],
+      "result": "銅錠: 1",
+      "source": "recipe"
+    },
+    {
+      "materials": [
+        "銅礦石: 3"
+      ],
+      "result": "銅錠: 1",
+      "source": "recipe"
+    }
+  ],
+  "filter": {
+    "materials": [
+      "原松木",
+      "亞麻纖維",
+      "山楂",
+      "漿果飲料",
+      "生肉",
+      "烤韭蔥",
+      "韭蔥",
+      "韭蔥種",
+      "動物毛皮",
+      "皮革",
+      "碎銅片",
+      "銅礦石"
+    ],
+    "result": [
+      "石灰岩",
+      "亞麻纖維",
+      "山楂",
+      "冬青果",
+      "碎銅片",
+      "銅礦石",
+      "繩子",
+      "布料",
+      "漿果飲料",
+      "蜂蜜",
+      "韭蔥",
+      "烤韭蔥",
+      "烤肉",
+      "皮革",
+      "皮條",
+      "銅錠"
+    ],
+    "source": [
+      "harvest",
+      "recipe",
+      "hp",
+      "mapping"
+    ]
+  }
+}
