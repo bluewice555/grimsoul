@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weapon Viewer</title>
+  <style>
+    :root {
+      --bg-a: #fff7ed;
+      --bg-b: #eff6ff;
+      --panel: #ffffff;
+      --text: #1f2937;
+      --muted: #4b5563;
+      --line: #e5e7eb;
+      --accent: #0ea5e9;
+      --accent-2: #f97316;
+      --shadow: rgba(15, 23, 42, 0.08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Noto Sans TC", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 8% 12%, rgba(249, 115, 22, 0.2), transparent 34%),
+        radial-gradient(circle at 92% 18%, rgba(14, 165, 233, 0.2), transparent 30%),
+        linear-gradient(180deg, var(--bg-a) 0%, var(--bg-b) 100%);
+      min-height: 100vh;
+    }
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 28px 18px 44px;
+    }
+    .top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .kicker {
+      display: inline-block;
+      font-size: 11px;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(34px, 6vw, 68px);
+      line-height: .96;
+      letter-spacing: -.03em;
+    }
+    .intro {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .home {
+      text-decoration: none;
+      color: var(--text);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 9px 14px;
+      background: rgba(255, 255, 255, .92);
+      font-size: 13px;
+      white-space: nowrap;
+    }
+    .home:hover { border-color: #cbd5e1; }
+    .placeholder {
+      margin-top: 16px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background:
+        linear-gradient(120deg, rgba(249, 115, 22, 0.08), rgba(14, 165, 233, 0.08)),
+        var(--panel);
+      box-shadow: 0 18px 40px var(--shadow);
+      padding: 22px;
+    }
+    .placeholder h2 {
+      margin: 0 0 8px;
+      font-size: 24px;
+      line-height: 1.1;
+    }
+    .placeholder p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .chip {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 12px;
+      background: #fff;
+      color: #374151;
+    }
+    .chip.primary {
+      border-color: rgba(14, 165, 233, 0.35);
+      background: rgba(14, 165, 233, 0.12);
+      color: #075985;
+    }
+    .chip.warn {
+      border-color: rgba(249, 115, 22, 0.35);
+      background: rgba(249, 115, 22, 0.12);
+      color: #9a3412;
+    }
+    .frame {
+      margin-top: 18px;
+      border: 1px dashed #cbd5e1;
+      border-radius: 14px;
+      min-height: 260px;
+      background: rgba(255, 255, 255, .75);
+      display: grid;
+      place-items: center;
+      color: #6b7280;
+      font-size: 14px;
+      text-align: center;
+      padding: 16px;
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="top">
+      <div>
+        <span class="kicker">Feature</span>
+        <h1>Weapon Viewer</h1>
+        <p class="intro">武器對基礎資源的顯示頁。此版本先建立空白骨架，後續逐步加入資料存取與篩選邏輯。</p>
+      </div>
+      <a class="home" href="./index.html">回首頁</a>
+    </div>
+
+    <section class="placeholder">
+      <h2>Empty State</h2>
+      <p>目前尚未載入任何資料。接下來會依序接上資料來源、轉換流程與圖形渲染。</p>
+      <div class="chips">
+        <span class="chip primary">Light + Colorful Theme</span>
+        <span class="chip">Page Ready</span>
+        <span class="chip warn">Data Pending</span>
+      </div>
+      <div class="frame">
+        Weapon charts placeholder<br />
+        （後續放入每個武器對每個基礎資源的圖）
+      </div>
+    </section>
+  </main>
+</body>
+</html>
