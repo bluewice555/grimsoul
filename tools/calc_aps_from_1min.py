@@ -270,7 +270,7 @@ def main() -> None:
     ap = argparse.ArgumentParser(description="Compute weapon APS from 1-min audio by first-last rule and export wave plots.")
     ap.add_argument("--audio-dir", default=".audio/1 min", help="Directory with weapon mp3 files")
     ap.add_argument("--beat-dir", default=".audio/1 min beat", help="Directory with beat reference mp3 files")
-    ap.add_argument("--out-dir", default=".temp/aps_from_1min", help="Output directory")
+    ap.add_argument("--out-dir", default=".temp/aps_from_1min_fix2", help="Output directory")
     ap.add_argument("--sr", type=int, default=11025, help="Decode sample rate")
     args = ap.parse_args()
 

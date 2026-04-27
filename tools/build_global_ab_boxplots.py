@@ -1,6 +1,7 @@
-import csv
+﻿import csv
 import glob
 import os
+import argparse
 import subprocess
 from collections import defaultdict
 
@@ -35,15 +36,30 @@ def decode_audio_mono_f32(path: str, sr: int = 22050) -> tuple[np.ndarray, int]:
 
 def detect_peaks_by_expected_hits(env: np.ndarray, sr: int, expected_hits: int) -> np.ndarray:
     best = None
-    for dist_ms in (220, 240, 260, 280, 300, 320, 340, 360):
-        distance = int(sr * dist_ms / 1000)
-        for prom_p in np.linspace(70, 99.5, 180):
+    exp_period = 60.0 / max(1, expected_hits - 1)
+    dist_ms_candidates = [exp_period * f * 1000.0 for f in (0.45, 0.55, 0.65, 0.75)]
+    prom_candidates = [55.0, 65.0, 75.0, 85.0, 92.0, 96.0]
+    for dist_ms in dist_ms_candidates:
+        distance = max(1, int(sr * dist_ms / 1000.0))
+        for prom_p in prom_candidates:
             prom = np.percentile(env, prom_p)
-            peaks, _ = find_peaks(env, distance=distance, prominence=prom)
+            peaks, props = find_peaks(env, distance=distance, prominence=prom)
+            # simple near-duplicate prune by relative spacing
+            if len(peaks) >= 3:
+                d = np.diff(peaks) / sr
+                med = float(np.median(d))
+                if med > 0:
+                    keep = [0]
+                    for i in range(1, len(peaks)):
+                        if (peaks[i] - peaks[keep[-1]]) / sr >= 0.45 * med:
+                            keep.append(i)
+                    peaks = peaks[np.array(keep, dtype=int)]
             err = abs(len(peaks) - expected_hits)
-            cand = (err, abs(dist_ms - 280), abs(prom_p - 90), peaks)
+            cand = (err, abs(dist_ms - exp_period * 550.0), abs(prom_p - 85), peaks)
             if best is None or cand < best:
                 best = cand
+    if best is None:
+        raise RuntimeError("peak detect failed")
     return best[-1]
 
 
@@ -91,30 +107,56 @@ def load_expected_hits(path: str) -> list[tuple[str, int]]:
     with open(path, "r", encoding="utf-8-sig", newline="") as f:
         r = csv.DictReader(f)
         for row in r:
-            rows.append((row["weapon"], int(row["hits"])))
+            rows.append((row["weapon"], int(float(row["hits"]))))
     return rows
 
 
 def match_audio_file(audio_dir: str, weapon_name: str) -> str:
     cands = sorted(glob.glob(os.path.join(audio_dir, "*.mp3")))
-    alias = {
-        "戰爭軍刀": "刺客彎刀",
-    }
-    lookup_names = [weapon_name]
-    if weapon_name in alias:
-        lookup_names.append(alias[weapon_name])
     for p in cands:
-        base = os.path.basename(p)
-        for name in lookup_names:
-            if base.startswith(name):
-                return p
+        base = os.path.splitext(os.path.basename(p))[0]
+        if base == weapon_name:
+            return p
     raise FileNotFoundError(f"audio not found for weapon={weapon_name}")
 
 
+def style_and_save_boxplot(plot_data, plot_order, title, out_png):
+    if not plot_data:
+        return
+    plt.figure(figsize=(7.5, 5), dpi=170)
+    bp = plt.boxplot(plot_data, tick_labels=plot_order, patch_artist=True, showmeans=True, widths=0.6)
+    palette = {"AA": "#4e79a7", "AB": "#e15759", "BA": "#59a14f", "BB": "#b07aa1"}
+    for patch, pair in zip(bp["boxes"], plot_order):
+        patch.set_facecolor(palette.get(pair, "#9ca3af"))
+        patch.set_alpha(0.45)
+    for med in bp["medians"]:
+        med.set_color("#111111")
+        med.set_linewidth(2)
+    for mean in bp["means"]:
+        mean.set_marker("o")
+        mean.set_markerfacecolor("#111111")
+        mean.set_markeredgecolor("#111111")
+        mean.set_markersize(4)
+    plt.title(title)
+    plt.xlabel("Pair Type")
+    plt.ylabel("Interval (s)")
+    plt.grid(axis="y", alpha=0.25)
+    plt.tight_layout()
+    plt.savefig(out_png)
+    plt.close()
+
+
 def main() -> None:
-    summary_csv = ".temp/weapon_waveforms_summary.csv"
-    audio_dir = ".audio/1 min"
-    out_root = ".temp/boxplots_ab_global"
+    ap = argparse.ArgumentParser(description="Global AB labeling and AA/AB/BA/BB interval boxplots.")
+    ap.add_argument("--summary-csv", default=".temp/aps_from_1min_fix2/aps_summary.csv")
+    ap.add_argument("--audio-dir", default=".audio/1 min")
+    ap.add_argument("--out-root", default=".temp/boxplots_ab_global")
+    ap.add_argument("--sr", type=int, default=22050)
+    args = ap.parse_args()
+
+    summary_csv = args.summary_csv
+    audio_dir = args.audio_dir
+    out_root = args.out_root
     out_plots = os.path.join(out_root, "plots")
     os.makedirs(out_plots, exist_ok=True)
 
@@ -131,7 +173,7 @@ def main() -> None:
         except FileNotFoundError:
             missing_weapons.append(weapon)
             continue
-        x, sr = decode_audio_mono_f32(audio, sr=22050)
+        x, sr = decode_audio_mono_f32(audio, sr=args.sr)
         env = gaussian_filter1d(np.abs(x), sigma=max(1, int(sr * 0.004)))
         peaks = detect_peaks_by_expected_hits(env, sr, expected_hits)
         times = peaks / sr
@@ -144,25 +186,31 @@ def main() -> None:
 
     if len(all_windows) == 0:
         raise RuntimeError("no audio matched; cannot build global A/B")
+
     all_windows_np = np.vstack(all_windows)
     feat = pca_reduce(all_windows_np, out_dim=6)
     labels_raw = kmeans2(feat)
 
-    # Semantic alignment for global A/B:
-    # A = cluster whose peak position is earlier in the local window, B = later.
     peak_pos = np.argmax(all_windows_np, axis=1)
     m0 = float(np.mean(peak_pos[labels_raw == 0]))
     m1 = float(np.mean(peak_pos[labels_raw == 1]))
-    if m0 <= m1:
-        to_ab = {0: "A", 1: "B"}
+    # Windows are centered at detected hit peak; peak position may tie.
+    # Use left-right asymmetry to assign a stable semantic A/B orientation.
+    mid = all_windows_np.shape[1] // 2
+    left_e = np.sum(all_windows_np[:, :mid], axis=1)
+    right_e = np.sum(all_windows_np[:, mid + 1 :], axis=1)
+    skew = right_e - left_e
+    s0 = float(np.mean(skew[labels_raw == 0])) if np.any(labels_raw == 0) else 0.0
+    s1 = float(np.mean(skew[labels_raw == 1])) if np.any(labels_raw == 1) else 0.0
+    if abs(s0 - s1) > 1e-9:
+        to_ab = {0: "A", 1: "B"} if s0 <= s1 else {0: "B", 1: "A"}
     else:
-        to_ab = {0: "B", 1: "A"}
+        to_ab = {0: "A", 1: "B"} if m0 <= m1 else {0: "B", 1: "A"}
 
     weapon_labels = defaultdict(dict)
     for (weapon, i), lab in zip(all_meta, labels_raw):
         weapon_labels[weapon][i] = to_ab[int(lab)]
 
-    summary_rows = []
     global_labels_csv = os.path.join(out_root, "global_hit_labels.csv")
     with open(global_labels_csv, "w", encoding="utf-8-sig", newline="") as f:
         w = csv.writer(f)
@@ -176,6 +224,11 @@ def main() -> None:
                 w.writerow([weapon, i, f"{t:.6f}", labels[i]])
 
     interval_quantiles_csv = os.path.join(out_root, "interval_quantiles_by_weapon_pair.csv")
+    summary_csv_out = os.path.join(out_root, "pair_stats_summary.csv")
+
+    summary_rows = []
+    global_pair = defaultdict(list)
+
     with open(interval_quantiles_csv, "w", encoding="utf-8-sig", newline="") as fq:
         wq = csv.writer(fq)
         wq.writerow(["weapon", "pair_type", "n", "mean_s", "std_s", "percentile", "interval_s", "ratio_to_p50"])
@@ -200,42 +253,36 @@ def main() -> None:
                     continue
                 plot_order.append(pair)
                 plot_data.append(arr)
+                global_pair[pair].extend(arr.tolist())
                 p50 = np.percentile(arr, 50)
                 qs = np.percentile(arr, q_levels)
                 for lv, qv in zip(q_levels, qs):
                     wq.writerow([weapon, pair, len(arr), f"{arr.mean():.6f}", f"{arr.std():.6f}", lv, f"{qv:.6f}", f"{(qv/p50):.4f}"])
                 summary_rows.append([weapon, pair, len(arr), float(arr.mean()), float(arr.std()), float(p50)])
 
-            if len(plot_data) > 0:
-                plt.figure(figsize=(7.5, 5), dpi=170)
-                bp = plt.boxplot(plot_data, tick_labels=plot_order, patch_artist=True, showmeans=True, widths=0.6)
-                palette = {"AA": "#4e79a7", "AB": "#e15759", "BA": "#59a14f", "BB": "#b07aa1"}
-                for patch, pair in zip(bp["boxes"], plot_order):
-                    patch.set_facecolor(palette[pair])
-                    patch.set_alpha(0.45)
-                for med in bp["medians"]:
-                    med.set_color("#111111")
-                    med.set_linewidth(2)
-                for mean in bp["means"]:
-                    mean.set_marker("o")
-                    mean.set_markerfacecolor("#111111")
-                    mean.set_markeredgecolor("#111111")
-                    mean.set_markersize(4)
-                plt.title(f"{weapon} Interval by Pair Type (Global A/B, Raw)")
-                plt.xlabel("Pair Type")
-                plt.ylabel("Interval (s)")
-                plt.grid(axis="y", alpha=0.25)
-                plt.tight_layout()
-                plt.savefig(os.path.join(out_plots, f"{weapon}.png"))
-                plt.close()
+            style_and_save_boxplot(
+                plot_data,
+                plot_order,
+                f"{weapon} Interval by Pair Type (Global A/B)",
+                os.path.join(out_plots, f"{weapon}.png"),
+            )
 
-    summary_csv_out = os.path.join(out_root, "pair_stats_summary.csv")
     with open(summary_csv_out, "w", encoding="utf-8-sig", newline="") as f:
         w = csv.writer(f)
         w.writerow(["weapon", "pair_type", "n", "mean_s", "std_s", "p50_s"])
         for row in summary_rows:
             weapon, pair, n, mean_s, std_s, p50 = row
             w.writerow([weapon, pair, n, f"{mean_s:.6f}", f"{std_s:.6f}", f"{p50:.6f}"])
+
+    gp_data = []
+    gp_order = []
+    for pair in ("AA", "AB", "BA", "BB"):
+        arr = np.array(global_pair.get(pair, []), dtype=float)
+        if len(arr) == 0:
+            continue
+        gp_order.append(pair)
+        gp_data.append(arr)
+    style_and_save_boxplot(gp_data, gp_order, "Global Interval by Pair Type (AA/AB/BA/BB)", os.path.join(out_root, "global_pair_boxplot.png"))
 
     report = os.path.join(out_root, "global_ab_report.txt")
     with open(report, "w", encoding="utf-8") as f:
@@ -244,12 +291,15 @@ def main() -> None:
         f.write("- B = later local peak position cluster\n")
         f.write(f"cluster0_peakpos_mean={m0:.3f}\n")
         f.write(f"cluster1_peakpos_mean={m1:.3f}\n")
+        f.write(f"cluster0_skew_mean={s0:.6f}\n")
+        f.write(f"cluster1_skew_mean={s1:.6f}\n")
         f.write(f"weapons_total={len(weapons)}\n")
         f.write(f"weapons_processed={len(per_weapon)}\n")
         f.write(f"weapons_missing_audio={len(missing_weapons)}\n")
         if missing_weapons:
             f.write("missing_list=" + ",".join(missing_weapons) + "\n")
         f.write(f"plots_dir={out_plots}\n")
+        f.write(f"global_plot={os.path.join(out_root, 'global_pair_boxplot.png')}\n")
 
     print(f"[ok] plots: {out_plots}")
     print(f"[ok] labels: {global_labels_csv}")
