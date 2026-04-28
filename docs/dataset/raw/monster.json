@@ -218,13 +218,13 @@
       ]
     },
     {
-      "ID": "Auxiliary Jerzy (N, H, L)",
-      "Name": "輔助傑茲（N、H、L）",
-      "Health": "100, 670, 1325",
-      "Armor (Est.)": "10,30,40",
-      "Damage Reduction (%)": "6.4+-1.1, 16.0+-1.1,20.2+-1.1",
-      "Physical ATK": "4, 8, 20",
-      "Elemental ATK": "2, 4, 10 火",
+      "ID": "Auxiliary Jerzy (N)",
+      "Name": "輔助傑茲（N）",
+      "Health": "100",
+      "Armor (Est.)": "10",
+      "Damage Reduction (%)": "6.4+-1.1",
+      "Physical ATK": "4",
+      "Elemental ATK": "2 火",
       "Special Mechanic(s) Summary": "賜予（死亡）；刀槍不入（生命值，週期 2/2）；遠程攻擊；虹吸（15/25/35% 傷害）",
       "Soul Eater": "V",
       "Thunder God's Knuckledusters": "V",
@@ -263,13 +263,103 @@
       ]
     },
     {
-      "ID": "Auxiliary Lothar (N, H, L)",
-      "Name": "輔助洛薩（N、H、L）",
-      "Health": "100, 670, 1325",
-      "Armor (Est.)": "10,30,40",
-      "Damage Reduction (%)": "6.4+-1.1, 16.0+-1.1,20.2+-1.1",
-      "Physical ATK": "4,8, 20",
-      "Elemental ATK": "2, 4, 10 火",
+      "ID": "Auxiliary Jerzy (H)",
+      "Name": "輔助傑茲（H）",
+      "Health": "670",
+      "Armor (Est.)": "30",
+      "Damage Reduction (%)": "16.0+-1.1",
+      "Physical ATK": "8",
+      "Elemental ATK": "4 火",
+      "Special Mechanic(s) Summary": "賜予（死亡）；刀槍不入（生命值，週期 2/2）；遠程攻擊；虹吸（15/25/35% 傷害）",
+      "Soul Eater": "V",
+      "Thunder God's Knuckledusters": "V",
+      "Human / Monster": "X",
+      "Instakill": "X",
+      "Fracture": {
+        "Armor": "V",
+        "Weapon": "X"
+      },
+      "Elemental Modifier": {
+        "Pierce": "V",
+        "Cold": "V",
+        "Fire": "V",
+        "Reap": "V"
+      },
+      "Elemental DoT Modifier": {
+        "Poison": "V",
+        "Frostbite": "V",
+        "Bleed": "V",
+        "Ignite": "V"
+      },
+      "Crowd Control": {
+        "Blind": "V",
+        "Icy Slow": "V",
+        "Shrieking Slow": "X",
+        "Fear": "X",
+        "X": "X",
+        "Freeze": "X",
+        "Stun": "X",
+        "V": "X",
+        "Trap": "X"
+      },
+      "locations": [
+        "猩紅狩獵 6",
+        "被遺忘的寺廟"
+      ]
+    },
+    {
+      "ID": "Auxiliary Jerzy (L)",
+      "Name": "輔助傑茲（L）",
+      "Health": "1325",
+      "Armor (Est.)": "40",
+      "Damage Reduction (%)": "20.2+-1.1",
+      "Physical ATK": "20",
+      "Elemental ATK": "10 火",
+      "Special Mechanic(s) Summary": "賜予（死亡）；刀槍不入（生命值，週期 2/2）；遠程攻擊；虹吸（15/25/35% 傷害）",
+      "Soul Eater": "V",
+      "Thunder God's Knuckledusters": "V",
+      "Human / Monster": "X",
+      "Instakill": "X",
+      "Fracture": {
+        "Armor": "V",
+        "Weapon": "X"
+      },
+      "Elemental Modifier": {
+        "Pierce": "V",
+        "Cold": "V",
+        "Fire": "V",
+        "Reap": "V"
+      },
+      "Elemental DoT Modifier": {
+        "Poison": "V",
+        "Frostbite": "V",
+        "Bleed": "V",
+        "Ignite": "V"
+      },
+      "Crowd Control": {
+        "Blind": "V",
+        "Icy Slow": "V",
+        "Shrieking Slow": "X",
+        "Fear": "X",
+        "X": "X",
+        "Freeze": "X",
+        "Stun": "X",
+        "V": "X",
+        "Trap": "X"
+      },
+      "locations": [
+        "猩紅狩獵 6",
+        "被遺忘的寺廟"
+      ]
+    },
+    {
+      "ID": "Auxiliary Lothar (N)",
+      "Name": "輔助洛薩（N）",
+      "Health": "100",
+      "Armor (Est.)": "10",
+      "Damage Reduction (%)": "6.4+-1.1",
+      "Physical ATK": "4",
+      "Elemental ATK": "2 火",
       "Special Mechanic(s) Summary": "賜予（死亡）；刀槍不入（生命值，週期 2/2）；遠程攻擊；傷害增加（<20% 生命值；1.2/1.3/1.4x）",
       "Soul Eater": "V",
       "Thunder God's Knuckledusters": "V",
@@ -308,13 +398,193 @@
       ]
     },
     {
-      "ID": "Auxiliary Nigurot (N, H,L)",
-      "Name": "輔助尼古羅特 (N, H,L)",
-      "Health": "100, 670, 1325",
-      "Armor (Est.)": "10,30,40",
-      "Damage Reduction (%)": "6.4+-1.1, 16.0+-1.1,20.2+-1.1",
-      "Physical ATK": "4,8, 20",
-      "Elemental ATK": "2, 4, 10 火",
+      "ID": "Auxiliary Lothar (H)",
+      "Name": "輔助洛薩（H）",
+      "Health": "670",
+      "Armor (Est.)": "30",
+      "Damage Reduction (%)": "16.0+-1.1",
+      "Physical ATK": "8",
+      "Elemental ATK": "4 火",
+      "Special Mechanic(s) Summary": "賜予（死亡）；刀槍不入（生命值，週期 2/2）；遠程攻擊；傷害增加（<20% 生命值；1.2/1.3/1.4x）",
+      "Soul Eater": "V",
+      "Thunder God's Knuckledusters": "V",
+      "Human / Monster": "X",
+      "Instakill": "X",
+      "Fracture": {
+        "Armor": "V",
+        "Weapon": "X"
+      },
+      "Elemental Modifier": {
+        "Pierce": "V",
+        "Cold": "V",
+        "Fire": "V",
+        "Reap": "V"
+      },
+      "Elemental DoT Modifier": {
+        "Poison": "V",
+        "Frostbite": "V",
+        "Bleed": "V",
+        "Ignite": "X"
+      },
+      "Crowd Control": {
+        "Blind": "V",
+        "Icy Slow": "V",
+        "Shrieking Slow": "X",
+        "Fear": "X",
+        "X": "X",
+        "Freeze": "X",
+        "Stun": "X",
+        "V": "X",
+        "Trap": "X"
+      },
+      "locations": [
+        "猩紅狩獵 6",
+        "被遺忘的寺廟"
+      ]
+    },
+    {
+      "ID": "Auxiliary Lothar (L)",
+      "Name": "輔助洛薩（L）",
+      "Health": "1325",
+      "Armor (Est.)": "40",
+      "Damage Reduction (%)": "20.2+-1.1",
+      "Physical ATK": "20",
+      "Elemental ATK": "10 火",
+      "Special Mechanic(s) Summary": "賜予（死亡）；刀槍不入（生命值，週期 2/2）；遠程攻擊；傷害增加（<20% 生命值；1.2/1.3/1.4x）",
+      "Soul Eater": "V",
+      "Thunder God's Knuckledusters": "V",
+      "Human / Monster": "X",
+      "Instakill": "X",
+      "Fracture": {
+        "Armor": "V",
+        "Weapon": "X"
+      },
+      "Elemental Modifier": {
+        "Pierce": "V",
+        "Cold": "V",
+        "Fire": "V",
+        "Reap": "V"
+      },
+      "Elemental DoT Modifier": {
+        "Poison": "V",
+        "Frostbite": "V",
+        "Bleed": "V",
+        "Ignite": "X"
+      },
+      "Crowd Control": {
+        "Blind": "V",
+        "Icy Slow": "V",
+        "Shrieking Slow": "X",
+        "Fear": "X",
+        "X": "X",
+        "Freeze": "X",
+        "Stun": "X",
+        "V": "X",
+        "Trap": "X"
+      },
+      "locations": [
+        "猩紅狩獵 6",
+        "被遺忘的寺廟"
+      ]
+    },
+    {
+      "ID": "Auxiliary Nigurot (N)",
+      "Name": "輔助尼古羅特 (N)",
+      "Health": "100",
+      "Armor (Est.)": "10",
+      "Damage Reduction (%)": "6.4+-1.1",
+      "Physical ATK": "4",
+      "Elemental ATK": "2 火",
+      "Special Mechanic(s) Summary": "賜予（死亡）；刀槍不入（生命值，週期 2/2）；遠程攻擊；反射護盾（20/25/30% 傷害）",
+      "Soul Eater": "V",
+      "Thunder God's Knuckledusters": "V",
+      "Human / Monster": "X",
+      "Instakill": "X",
+      "Fracture": {
+        "Armor": "V",
+        "Weapon": "X"
+      },
+      "Elemental Modifier": {
+        "Pierce": "V",
+        "Cold": "V",
+        "Fire": "X",
+        "Reap": "V"
+      },
+      "Elemental DoT Modifier": {
+        "Poison": "V",
+        "Frostbite": "V",
+        "Bleed": "V",
+        "Ignite": "V"
+      },
+      "Crowd Control": {
+        "Blind": "V",
+        "Icy Slow": "V",
+        "Shrieking Slow": "X",
+        "Fear": "X",
+        "X": "X",
+        "Freeze": "X",
+        "Stun": "X",
+        "V": "X",
+        "Trap": "X"
+      },
+      "locations": [
+        "猩紅狩獵 6",
+        "被遺忘的寺廟"
+      ]
+    },
+    {
+      "ID": "Auxiliary Nigurot (H)",
+      "Name": "輔助尼古羅特 (H)",
+      "Health": "670",
+      "Armor (Est.)": "30",
+      "Damage Reduction (%)": "16.0+-1.1",
+      "Physical ATK": "8",
+      "Elemental ATK": "4 火",
+      "Special Mechanic(s) Summary": "賜予（死亡）；刀槍不入（生命值，週期 2/2）；遠程攻擊；反射護盾（20/25/30% 傷害）",
+      "Soul Eater": "V",
+      "Thunder God's Knuckledusters": "V",
+      "Human / Monster": "X",
+      "Instakill": "X",
+      "Fracture": {
+        "Armor": "V",
+        "Weapon": "X"
+      },
+      "Elemental Modifier": {
+        "Pierce": "V",
+        "Cold": "V",
+        "Fire": "X",
+        "Reap": "V"
+      },
+      "Elemental DoT Modifier": {
+        "Poison": "V",
+        "Frostbite": "V",
+        "Bleed": "V",
+        "Ignite": "V"
+      },
+      "Crowd Control": {
+        "Blind": "V",
+        "Icy Slow": "V",
+        "Shrieking Slow": "X",
+        "Fear": "X",
+        "X": "X",
+        "Freeze": "X",
+        "Stun": "X",
+        "V": "X",
+        "Trap": "X"
+      },
+      "locations": [
+        "猩紅狩獵 6",
+        "被遺忘的寺廟"
+      ]
+    },
+    {
+      "ID": "Auxiliary Nigurot (L)",
+      "Name": "輔助尼古羅特 (L)",
+      "Health": "1325",
+      "Armor (Est.)": "40",
+      "Damage Reduction (%)": "20.2+-1.1",
+      "Physical ATK": "20",
+      "Elemental ATK": "10 火",
       "Special Mechanic(s) Summary": "賜予（死亡）；刀槍不入（生命值，週期 2/2）；遠程攻擊；反射護盾（20/25/30% 傷害）",
       "Soul Eater": "V",
       "Thunder God's Knuckledusters": "V",
@@ -612,13 +882,13 @@
       ]
     },
     {
-      "ID": "Chaplain Fernana (N, H, L)",
-      "Name": "費爾納納牧師 (N, H, L)",
-      "Health": "100, 670, 1325",
-      "Armor (Est.)": "10,30,40",
-      "Damage Reduction (%)": "6.4+-1.1, 16.0+-1.1,20.2+-1.1",
-      "Physical ATK": "4,8, 20",
-      "Elemental ATK": "2, 4, 10 火",
+      "ID": "Chaplain Fernana (N)",
+      "Name": "費爾納納牧師 (N)",
+      "Health": "100",
+      "Armor (Est.)": "10",
+      "Damage Reduction (%)": "6.4+-1.1",
+      "Physical ATK": "4",
+      "Elemental ATK": "2 火",
       "Special Mechanic(s) Summary": "賜予（死亡）；刀槍不入（生命值，週期 2/2）；遠程攻擊；減慢移動速度",
       "locations": [
         "猩紅狩獵 6",
@@ -626,13 +896,41 @@
       ]
     },
     {
-      "ID": "Chaplain Girdsiny (N, H,L)",
-      "Name": "吉爾西尼牧師 (N, H,L)",
-      "Health": "100, 670 , 1325",
-      "Armor (Est.)": "10, 30, 40",
-      "Damage Reduction (%)": "6.4+-1.1, 16.0+-1.1,20.2+-1.1",
-      "Physical ATK": "4, 8, 20",
-      "Elemental ATK": "2, 4, 10 火",
+      "ID": "Chaplain Fernana (H)",
+      "Name": "費爾納納牧師 (H)",
+      "Health": "670",
+      "Armor (Est.)": "30",
+      "Damage Reduction (%)": "16.0+-1.1",
+      "Physical ATK": "8",
+      "Elemental ATK": "4 火",
+      "Special Mechanic(s) Summary": "賜予（死亡）；刀槍不入（生命值，週期 2/2）；遠程攻擊；減慢移動速度",
+      "locations": [
+        "猩紅狩獵 6",
+        "被遺忘的寺廟"
+      ]
+    },
+    {
+      "ID": "Chaplain Fernana (L)",
+      "Name": "費爾納納牧師 (L)",
+      "Health": "1325",
+      "Armor (Est.)": "40",
+      "Damage Reduction (%)": "20.2+-1.1",
+      "Physical ATK": "20",
+      "Elemental ATK": "10 火",
+      "Special Mechanic(s) Summary": "賜予（死亡）；刀槍不入（生命值，週期 2/2）；遠程攻擊；減慢移動速度",
+      "locations": [
+        "猩紅狩獵 6",
+        "被遺忘的寺廟"
+      ]
+    },
+    {
+      "ID": "Chaplain Girdsiny (N)",
+      "Name": "吉爾西尼牧師 (N)",
+      "Health": "100",
+      "Armor (Est.)": "10",
+      "Damage Reduction (%)": "6.4+-1.1",
+      "Physical ATK": "4",
+      "Elemental ATK": "2 火",
       "Special Mechanic(s) Summary": "賜予（死亡）；刀槍不入（生命值，週期 2/2）；遠程攻擊；火柱：範圍攻擊（20+25/10+60/10+175物理+火；持續）",
       "Soul Eater": "V",
       "Thunder God's Knuckledusters": "V",
@@ -671,13 +969,191 @@
       ]
     },
     {
-      "ID": "Chaplain Nymphalis (N, H, L)",
-      "Name": "牧師蛺蝶 (N, H, L)",
-      "Health": "100, 670, 1325",
-      "Armor (Est.)": "10,30,40",
-      "Damage Reduction (%)": "6.4+-1.1, 16.0+-1.1,20.2+-1.1",
-      "Physical ATK": "4,8, 20",
-      "Elemental ATK": "2, 4, 10 火",
+      "ID": "Chaplain Girdsiny (H)",
+      "Name": "吉爾西尼牧師 (H)",
+      "Health": "670",
+      "Armor (Est.)": "30",
+      "Damage Reduction (%)": "16.0+-1.1",
+      "Physical ATK": "8",
+      "Elemental ATK": "4 火",
+      "Special Mechanic(s) Summary": "賜予（死亡）；刀槍不入（生命值，週期 2/2）；遠程攻擊；火柱：範圍攻擊（20+25/10+60/10+175物理+火；持續）",
+      "Soul Eater": "V",
+      "Thunder God's Knuckledusters": "V",
+      "Human / Monster": "V",
+      "Instakill": "X",
+      "Fracture": {
+        "Armor": "V",
+        "Weapon": "X"
+      },
+      "Elemental Modifier": {
+        "Pierce": "V",
+        "Cold": "V",
+        "Fire": "V",
+        "Reap": "V"
+      },
+      "Elemental DoT Modifier": {
+        "Poison": "V",
+        "Frostbite": "V",
+        "Bleed": "V",
+        "Ignite": "V"
+      },
+      "Crowd Control": {
+        "Blind": "V",
+        "Icy Slow": "V",
+        "Shrieking Slow": "X",
+        "Fear": "X",
+        "X": "X",
+        "Freeze": "X",
+        "Stun": "X",
+        "V": "X",
+        "Trap": "X"
+      },
+      "locations": [
+        "被遺忘的寺廟",
+        "猗紅狩獵 6"
+      ]
+    },
+    {
+      "ID": "Chaplain Girdsiny (L)",
+      "Name": "吉爾西尼牧師 (L)",
+      "Health": "1325",
+      "Armor (Est.)": "40",
+      "Damage Reduction (%)": "20.2+-1.1",
+      "Physical ATK": "20",
+      "Elemental ATK": "10 火",
+      "Special Mechanic(s) Summary": "賜予（死亡）；刀槍不入（生命值，週期 2/2）；遠程攻擊；火柱：範圍攻擊（20+25/10+60/10+175物理+火；持續）",
+      "Soul Eater": "V",
+      "Thunder God's Knuckledusters": "V",
+      "Human / Monster": "V",
+      "Instakill": "X",
+      "Fracture": {
+        "Armor": "V",
+        "Weapon": "X"
+      },
+      "Elemental Modifier": {
+        "Pierce": "V",
+        "Cold": "V",
+        "Fire": "V",
+        "Reap": "V"
+      },
+      "Elemental DoT Modifier": {
+        "Poison": "V",
+        "Frostbite": "V",
+        "Bleed": "V",
+        "Ignite": "V"
+      },
+      "Crowd Control": {
+        "Blind": "V",
+        "Icy Slow": "V",
+        "Shrieking Slow": "X",
+        "Fear": "X",
+        "X": "X",
+        "Freeze": "X",
+        "Stun": "X",
+        "V": "X",
+        "Trap": "X"
+      },
+      "locations": [
+        "被遺忘的寺廟",
+        "猗紅狩獵 6"
+      ]
+    },
+    {
+      "ID": "Chaplain Nymphalis (N)",
+      "Name": "牧師蛺蝶 (N)",
+      "Health": "100",
+      "Armor (Est.)": "10",
+      "Damage Reduction (%)": "6.4+-1.1",
+      "Physical ATK": "4",
+      "Elemental ATK": "2 火",
+      "Special Mechanic(s) Summary": "賜予（死亡）；刀槍不入（生命值，週期 2/2）；遠程攻擊；降低攻擊速度",
+      "Soul Eater": "V",
+      "Thunder God's Knuckledusters": "V",
+      "Human / Monster": "X",
+      "Instakill": "X",
+      "Fracture": {
+        "Armor": "V",
+        "Weapon": "X"
+      },
+      "Elemental Modifier": {
+        "Pierce": "V",
+        "Cold": "V",
+        "Fire": "V",
+        "Reap": "V"
+      },
+      "Elemental DoT Modifier": {
+        "Poison": "V",
+        "Frostbite": "V",
+        "Bleed": "V",
+        "Ignite": "V"
+      },
+      "Crowd Control": {
+        "Blind": "V",
+        "Icy Slow": "V",
+        "Fear": "X",
+        "X": "V",
+        "Freeze": "V",
+        "Stun": "V",
+        "V": "X",
+        "Trap": "V"
+      },
+      "locations": [
+        "被遺忘的寺廟",
+        "猗紅狩獵 6"
+      ]
+    },
+    {
+      "ID": "Chaplain Nymphalis (H)",
+      "Name": "牧師蛺蝶 (H)",
+      "Health": "670",
+      "Armor (Est.)": "30",
+      "Damage Reduction (%)": "16.0+-1.1",
+      "Physical ATK": "8",
+      "Elemental ATK": "4 火",
+      "Special Mechanic(s) Summary": "賜予（死亡）；刀槍不入（生命值，週期 2/2）；遠程攻擊；降低攻擊速度",
+      "Soul Eater": "V",
+      "Thunder God's Knuckledusters": "V",
+      "Human / Monster": "X",
+      "Instakill": "X",
+      "Fracture": {
+        "Armor": "V",
+        "Weapon": "X"
+      },
+      "Elemental Modifier": {
+        "Pierce": "V",
+        "Cold": "V",
+        "Fire": "V",
+        "Reap": "V"
+      },
+      "Elemental DoT Modifier": {
+        "Poison": "V",
+        "Frostbite": "V",
+        "Bleed": "V",
+        "Ignite": "V"
+      },
+      "Crowd Control": {
+        "Blind": "V",
+        "Icy Slow": "V",
+        "Fear": "X",
+        "X": "V",
+        "Freeze": "V",
+        "Stun": "V",
+        "V": "X",
+        "Trap": "V"
+      },
+      "locations": [
+        "被遺忘的寺廟",
+        "猗紅狩獵 6"
+      ]
+    },
+    {
+      "ID": "Chaplain Nymphalis (L)",
+      "Name": "牧師蛺蝶 (L)",
+      "Health": "1325",
+      "Armor (Est.)": "40",
+      "Damage Reduction (%)": "20.2+-1.1",
+      "Physical ATK": "20",
+      "Elemental ATK": "10 火",
       "Special Mechanic(s) Summary": "賜予（死亡）；刀槍不入（生命值，週期 2/2）；遠程攻擊；降低攻擊速度",
       "Soul Eater": "V",
       "Thunder God's Knuckledusters": "V",
@@ -1943,13 +2419,13 @@
       ]
     },
     {
-      "ID": "Halt Coldbane (N, H, L)",
-      "Name": "停止寒毒 (N, H, L)",
-      "Health": "700, 1800, 4400",
-      "Armor (Est.)": "35, 50, 250",
-      "Damage Reduction (%)": "17.4+-0.6,23.2+-0.6, 60.0+-0.6",
-      "Physical ATK": "15, 21, 20",
-      "Elemental ATK": "10, 21,65 冷",
+      "ID": "Halt Coldbane (N)",
+      "Name": "停止寒毒 (N)",
+      "Health": "700",
+      "Armor (Est.)": "35",
+      "Damage Reduction (%)": "17.4+-0.6",
+      "Physical ATK": "15",
+      "Elemental ATK": "10 冷",
       "Special Mechanic(s) Summary": "橫掃：範圍攻擊（30+20/43+43/70+125物理+冰冷）；凍傷幾率（5/7/10 冷 x 5 刻度）；刀槍不入和冰刺：AoE攻擊（<85%、60%、25%生命值；30+20/43+43/701925/7075/125/125/125/125/125/125/125/1575；個停止碎片",
       "Soul Eater": "V",
       "Human / Monster": "X",
@@ -1986,10 +2462,172 @@
       ]
     },
     {
-      "ID": "Halt Shard (N, H, L)",
-      "Name": "停止碎片（N、H、L）",
-      "Health": "50,80, 140",
-      "Physical ATK": "4,6, 12",
+      "ID": "Halt Coldbane (H)",
+      "Name": "停止寒毒 (H)",
+      "Health": "1800",
+      "Armor (Est.)": "50",
+      "Damage Reduction (%)": "23.2+-0.6",
+      "Physical ATK": "21",
+      "Elemental ATK": "21 冷",
+      "Special Mechanic(s) Summary": "橫掃：範圍攻擊（30+20/43+43/70+125物理+冰冷）；凍傷幾率（5/7/10 冷 x 5 刻度）；刀槍不入和冰刺：AoE攻擊（<85%、60%、25%生命值；30+20/43+43/701925/7075/125/125/125/125/125/125/125/1575；個停止碎片",
+      "Soul Eater": "V",
+      "Human / Monster": "X",
+      "Instakill": "X",
+      "Fracture": {
+        "Weapon": "X"
+      },
+      "Elemental Modifier": {
+        "Pierce": "V",
+        "Cold": "V",
+        "Fire": "V",
+        "Reap": "V"
+      },
+      "Elemental DoT Modifier": {
+        "Poison": "V",
+        "Frostbite": "V",
+        "Bleed": "V",
+        "Ignite": "V"
+      },
+      "Crowd Control": {
+        "Blind": "V",
+        "Icy Slow": "X",
+        "Shrieking Slow": "X",
+        "Fear": "X",
+        "X": "X",
+        "Freeze": "X",
+        "Stun": "X",
+        "V": "X",
+        "Trap": "X"
+      },
+      "locations": [
+        "冰封森林",
+        "猗紅狩獵 5"
+      ]
+    },
+    {
+      "ID": "Halt Coldbane (L)",
+      "Name": "停止寒毒 (L)",
+      "Health": "4400",
+      "Armor (Est.)": "250",
+      "Damage Reduction (%)": "60.0+-0.6",
+      "Physical ATK": "20",
+      "Elemental ATK": "65 冷",
+      "Special Mechanic(s) Summary": "橫掃：範圍攻擊（30+20/43+43/70+125物理+冰冷）；凍傷幾率（5/7/10 冷 x 5 刻度）；刀槍不入和冰刺：AoE攻擊（<85%、60%、25%生命值；30+20/43+43/701925/7075/125/125/125/125/125/125/125/1575；個停止碎片",
+      "Soul Eater": "V",
+      "Human / Monster": "X",
+      "Instakill": "X",
+      "Fracture": {
+        "Weapon": "X"
+      },
+      "Elemental Modifier": {
+        "Pierce": "V",
+        "Cold": "V",
+        "Fire": "V",
+        "Reap": "V"
+      },
+      "Elemental DoT Modifier": {
+        "Poison": "V",
+        "Frostbite": "V",
+        "Bleed": "V",
+        "Ignite": "V"
+      },
+      "Crowd Control": {
+        "Blind": "V",
+        "Icy Slow": "X",
+        "Shrieking Slow": "X",
+        "Fear": "X",
+        "X": "X",
+        "Freeze": "X",
+        "Stun": "X",
+        "V": "X",
+        "Trap": "X"
+      },
+      "locations": [
+        "冰封森林",
+        "猗紅狩獵 5"
+      ]
+    },
+    {
+      "ID": "Halt Shard (N)",
+      "Name": "停止碎片（N）",
+      "Health": "50",
+      "Physical ATK": "4",
+      "Special Mechanic(s) Summary": "減慢移動速度 (0.5x)",
+      "Soul Eater": "V",
+      "Thunder God's Knuckledusters": "V",
+      "Human / Monster": "V",
+      "Instakill": "V",
+      "Elemental Modifier": {
+        "Pierce": "V",
+        "Cold": "V",
+        "Fire": "V",
+        "Reap": "V"
+      },
+      "Elemental DoT Modifier": {
+        "Poison": "V",
+        "Frostbite": "V",
+        "Bleed": "V",
+        "Ignite": "V"
+      },
+      "Crowd Control": {
+        "Blind": "V",
+        "Icy Slow": "V",
+        "Shrieking Slow": "V",
+        "Fear": "V",
+        "X": "V",
+        "Freeze": "V",
+        "Stun": "V",
+        "V": "V",
+        "Trap": "V"
+      },
+      "locations": [
+        "冰封森林",
+        "猗紅狩獵 5"
+      ]
+    },
+    {
+      "ID": "Halt Shard (H)",
+      "Name": "停止碎片（H）",
+      "Health": "80",
+      "Physical ATK": "6",
+      "Special Mechanic(s) Summary": "減慢移動速度 (0.5x)",
+      "Soul Eater": "V",
+      "Thunder God's Knuckledusters": "V",
+      "Human / Monster": "V",
+      "Instakill": "V",
+      "Elemental Modifier": {
+        "Pierce": "V",
+        "Cold": "V",
+        "Fire": "V",
+        "Reap": "V"
+      },
+      "Elemental DoT Modifier": {
+        "Poison": "V",
+        "Frostbite": "V",
+        "Bleed": "V",
+        "Ignite": "V"
+      },
+      "Crowd Control": {
+        "Blind": "V",
+        "Icy Slow": "V",
+        "Shrieking Slow": "V",
+        "Fear": "V",
+        "X": "V",
+        "Freeze": "V",
+        "Stun": "V",
+        "V": "V",
+        "Trap": "V"
+      },
+      "locations": [
+        "冰封森林",
+        "猗紅狩獵 5"
+      ]
+    },
+    {
+      "ID": "Halt Shard (L)",
+      "Name": "停止碎片（L）",
+      "Health": "140",
+      "Physical ATK": "12",
       "Special Mechanic(s) Summary": "減慢移動速度 (0.5x)",
       "Soul Eater": "V",
       "Thunder God's Knuckledusters": "V",
@@ -2065,13 +2703,99 @@
       ]
     },
     {
-      "ID": "Harid Fire Incarnate (N, H, L)",
-      "Name": "哈里德火焰化身（N、H、L）",
-      "Health": "500 , 1200, 3300",
-      "Armor (Est.)": "75, 100, 400",
-      "Damage Reduction (%)": "31.9+-1.1, 38.3+-1.1, 71.0+-0.6",
-      "Physical ATK": "15,20,35",
-      "Elemental ATK": "5、15、35 火",
+      "ID": "Harid Fire Incarnate (N)",
+      "Name": "哈里德火焰化身（N）",
+      "Health": "500",
+      "Armor (Est.)": "75",
+      "Damage Reduction (%)": "31.9+-1.1",
+      "Physical ATK": "15",
+      "Elemental ATK": "5 火",
+      "Special Mechanic(s) Summary": "有機會點燃（3/5/7 火 x 5 刻度）；遺產;刀槍不入（生命值，週期 1/2）；傳送和眩暈",
+      "Soul Eater": "V",
+      "Thunder God's Knuckledusters": "V",
+      "Human / Monster": "X",
+      "Instakill": "X",
+      "Fracture": {
+        "Weapon": "X"
+      },
+      "Elemental Modifier": {
+        "Pierce": "V",
+        "Cold": "V",
+        "Fire": "V",
+        "Reap": "V"
+      },
+      "Elemental DoT Modifier": {
+        "Poison": "V",
+        "Frostbite": "V",
+        "Bleed": "V",
+        "Ignite": "V"
+      },
+      "Crowd Control": {
+        "Blind": "V",
+        "Icy Slow": "V",
+        "Fear": "X",
+        "X": "X",
+        "Freeze": "V",
+        "Stun": "V",
+        "V": "X",
+        "Trap": "X"
+      },
+      "locations": [
+        "猩紅狩獵 6",
+        "被遺忘的寺廟"
+      ]
+    },
+    {
+      "ID": "Harid Fire Incarnate (H)",
+      "Name": "哈里德火焰化身（H）",
+      "Health": "1200",
+      "Armor (Est.)": "100",
+      "Damage Reduction (%)": "38.3+-1.1",
+      "Physical ATK": "20",
+      "Elemental ATK": "15 火",
+      "Special Mechanic(s) Summary": "有機會點燃（3/5/7 火 x 5 刻度）；遺產;刀槍不入（生命值，週期 1/2）；傳送和眩暈",
+      "Soul Eater": "V",
+      "Thunder God's Knuckledusters": "V",
+      "Human / Monster": "X",
+      "Instakill": "X",
+      "Fracture": {
+        "Weapon": "X"
+      },
+      "Elemental Modifier": {
+        "Pierce": "V",
+        "Cold": "V",
+        "Fire": "V",
+        "Reap": "V"
+      },
+      "Elemental DoT Modifier": {
+        "Poison": "V",
+        "Frostbite": "V",
+        "Bleed": "V",
+        "Ignite": "V"
+      },
+      "Crowd Control": {
+        "Blind": "V",
+        "Icy Slow": "V",
+        "Fear": "X",
+        "X": "X",
+        "Freeze": "V",
+        "Stun": "V",
+        "V": "X",
+        "Trap": "X"
+      },
+      "locations": [
+        "猩紅狩獵 6",
+        "被遺忘的寺廟"
+      ]
+    },
+    {
+      "ID": "Harid Fire Incarnate (L)",
+      "Name": "哈里德火焰化身（L）",
+      "Health": "3300",
+      "Armor (Est.)": "400",
+      "Damage Reduction (%)": "71.0+-0.6",
+      "Physical ATK": "35",
+      "Elemental ATK": "35 火",
       "Special Mechanic(s) Summary": "有機會點燃（3/5/7 火 x 5 刻度）；遺產;刀槍不入（生命值，週期 1/2）；傳送和眩暈",
       "Soul Eater": "V",
       "Thunder God's Knuckledusters": "V",
@@ -2284,13 +3008,13 @@
       ]
     },
     {
-      "ID": "Inquisitor Antonio (N, H, L)",
-      "Name": "審判官安東尼奧 (N, H, L)",
-      "Health": "100, 670, 1325",
-      "Armor (Est.)": "10,30,40",
-      "Damage Reduction (%)": "6.4+-1.1, 16.0+-1.1,20.2+-1.1",
-      "Physical ATK": "4, 8, 20",
-      "Elemental ATK": "2, 4, 10 火",
+      "ID": "Inquisitor Antonio (N)",
+      "Name": "審判官安東尼奧 (N)",
+      "Health": "100",
+      "Armor (Est.)": "10",
+      "Damage Reduction (%)": "6.4+-1.1",
+      "Physical ATK": "4",
+      "Elemental ATK": "2 火",
       "Special Mechanic(s) Summary": "賜予（死亡）；刀槍不入（生命值，週期 2/2）；遠程攻擊；恐懼聖歌",
       "Soul Eater": "V",
       "Thunder God's Knuckledusters": "V",
@@ -2328,13 +3052,101 @@
       ]
     },
     {
-      "ID": "Inquisitor Baxter (N, H,L)",
-      "Name": "審判官巴克斯特（N、H、L）",
-      "Health": "100, 670 , 1325",
-      "Armor (Est.)": "10,30,40",
-      "Damage Reduction (%)": "6.4+-1.1, 16.0+-1.1,20.2+-1.1",
-      "Physical ATK": "4,8, 20",
-      "Elemental ATK": "2, 4, 10 火",
+      "ID": "Inquisitor Antonio (H)",
+      "Name": "審判官安東尼奧 (H)",
+      "Health": "670",
+      "Armor (Est.)": "30",
+      "Damage Reduction (%)": "16.0+-1.1",
+      "Physical ATK": "8",
+      "Elemental ATK": "4 火",
+      "Special Mechanic(s) Summary": "賜予（死亡）；刀槍不入（生命值，週期 2/2）；遠程攻擊；恐懼聖歌",
+      "Soul Eater": "V",
+      "Thunder God's Knuckledusters": "V",
+      "Human / Monster": "V",
+      "Instakill": "V",
+      "Fracture": {
+        "Armor": "X"
+      },
+      "Elemental Modifier": {
+        "Pierce": "V",
+        "Cold": "V",
+        "Fire": "V",
+        "Reap": "V"
+      },
+      "Elemental DoT Modifier": {
+        "Poison": "V",
+        "Frostbite": "V",
+        "Bleed": "V",
+        "Ignite": "V"
+      },
+      "Crowd Control": {
+        "Blind": "V",
+        "Icy Slow": "V",
+        "Shrieking Slow": "V",
+        "Fear": "V",
+        "X": "V",
+        "Freeze": "V",
+        "Stun": "V",
+        "V": "X",
+        "Trap": "V"
+      },
+      "locations": [
+        "猩紅狩獵 6",
+        "被遺忘的寺廟"
+      ]
+    },
+    {
+      "ID": "Inquisitor Antonio (L)",
+      "Name": "審判官安東尼奧 (L)",
+      "Health": "1325",
+      "Armor (Est.)": "40",
+      "Damage Reduction (%)": "20.2+-1.1",
+      "Physical ATK": "20",
+      "Elemental ATK": "10 火",
+      "Special Mechanic(s) Summary": "賜予（死亡）；刀槍不入（生命值，週期 2/2）；遠程攻擊；恐懼聖歌",
+      "Soul Eater": "V",
+      "Thunder God's Knuckledusters": "V",
+      "Human / Monster": "V",
+      "Instakill": "V",
+      "Fracture": {
+        "Armor": "X"
+      },
+      "Elemental Modifier": {
+        "Pierce": "V",
+        "Cold": "V",
+        "Fire": "V",
+        "Reap": "V"
+      },
+      "Elemental DoT Modifier": {
+        "Poison": "V",
+        "Frostbite": "V",
+        "Bleed": "V",
+        "Ignite": "V"
+      },
+      "Crowd Control": {
+        "Blind": "V",
+        "Icy Slow": "V",
+        "Shrieking Slow": "V",
+        "Fear": "V",
+        "X": "V",
+        "Freeze": "V",
+        "Stun": "V",
+        "V": "X",
+        "Trap": "V"
+      },
+      "locations": [
+        "猩紅狩獵 6",
+        "被遺忘的寺廟"
+      ]
+    },
+    {
+      "ID": "Inquisitor Baxter (N)",
+      "Name": "審判官巴克斯特（N）",
+      "Health": "100",
+      "Armor (Est.)": "10",
+      "Damage Reduction (%)": "6.4+-1.1",
+      "Physical ATK": "4",
+      "Elemental ATK": "2 火",
       "Special Mechanic(s) Summary": "賜予（死亡）；刀槍不入（生命值，週期 2/2）；遠程攻擊；窒息咒：陷阱（20+10/10+50/10+100 物理+火焰）",
       "Soul Eater": "V",
       "Thunder God's Knuckledusters": "V",
@@ -2373,13 +3185,169 @@
       ]
     },
     {
-      "ID": "Inquisitor Inotsky (N, H, L)",
-      "Name": "審判官伊諾茨基 (N, H, L)",
-      "Health": "100,670, 1325",
-      "Armor (Est.)": "10,30,40",
-      "Damage Reduction (%)": "6.4+-1.1, 16.0+-1.1,20.2+-1.1",
-      "Physical ATK": "4,8, 20",
-      "Elemental ATK": "2, 4, 10 火",
+      "ID": "Inquisitor Baxter (H)",
+      "Name": "審判官巴克斯特（H）",
+      "Health": "670",
+      "Armor (Est.)": "30",
+      "Damage Reduction (%)": "16.0+-1.1",
+      "Physical ATK": "8",
+      "Elemental ATK": "4 火",
+      "Special Mechanic(s) Summary": "賜予（死亡）；刀槍不入（生命值，週期 2/2）；遠程攻擊；窒息咒：陷阱（20+10/10+50/10+100 物理+火焰）",
+      "Soul Eater": "V",
+      "Thunder God's Knuckledusters": "V",
+      "Human / Monster": "X",
+      "Instakill": "V",
+      "Fracture": {
+        "Armor": "V",
+        "Weapon": "V"
+      },
+      "Elemental Modifier": {
+        "Pierce": "V",
+        "Cold": "V",
+        "Fire": "V",
+        "Reap": "V"
+      },
+      "Elemental DoT Modifier": {
+        "Poison": "V",
+        "Frostbite": "V",
+        "Bleed": "V",
+        "Ignite": "V"
+      },
+      "Crowd Control": {
+        "Blind": "V",
+        "Icy Slow": "V",
+        "Shrieking Slow": "V",
+        "Fear": "V",
+        "X": "V",
+        "Freeze": "V",
+        "Stun": "V",
+        "V": "X",
+        "Trap": "V"
+      },
+      "locations": [
+        "被遺忘的寺廟",
+        "猗紅狩獵 6"
+      ]
+    },
+    {
+      "ID": "Inquisitor Baxter (L)",
+      "Name": "審判官巴克斯特（L）",
+      "Health": "1325",
+      "Armor (Est.)": "40",
+      "Damage Reduction (%)": "20.2+-1.1",
+      "Physical ATK": "20",
+      "Elemental ATK": "10 火",
+      "Special Mechanic(s) Summary": "賜予（死亡）；刀槍不入（生命值，週期 2/2）；遠程攻擊；窒息咒：陷阱（20+10/10+50/10+100 物理+火焰）",
+      "Soul Eater": "V",
+      "Thunder God's Knuckledusters": "V",
+      "Human / Monster": "X",
+      "Instakill": "V",
+      "Fracture": {
+        "Armor": "V",
+        "Weapon": "V"
+      },
+      "Elemental Modifier": {
+        "Pierce": "V",
+        "Cold": "V",
+        "Fire": "V",
+        "Reap": "V"
+      },
+      "Elemental DoT Modifier": {
+        "Poison": "V",
+        "Frostbite": "V",
+        "Bleed": "V",
+        "Ignite": "V"
+      },
+      "Crowd Control": {
+        "Blind": "V",
+        "Icy Slow": "V",
+        "Shrieking Slow": "V",
+        "Fear": "V",
+        "X": "V",
+        "Freeze": "V",
+        "Stun": "V",
+        "V": "X",
+        "Trap": "V"
+      },
+      "locations": [
+        "被遺忘的寺廟",
+        "猗紅狩獵 6"
+      ]
+    },
+    {
+      "ID": "Inquisitor Inotsky (N)",
+      "Name": "審判官伊諾茨基 (N)",
+      "Health": "100",
+      "Armor (Est.)": "10",
+      "Damage Reduction (%)": "6.4+-1.1",
+      "Physical ATK": "4",
+      "Elemental ATK": "2 火",
+      "Special Mechanic(s) Summary": "賜予（死亡）；刀槍不入（生命值，週期 2/2）；遠程攻擊；致盲妖術：陷阱（10+15/10+50/10+150 物理+火焰）",
+      "Soul Eater": "V",
+      "Human / Monster": "X",
+      "Instakill": "V",
+      "Elemental Modifier": {
+        "Pierce": "V",
+        "Cold": "V",
+        "Fire": "V",
+        "Reap": "V"
+      },
+      "Elemental DoT Modifier": {
+        "Poison": "V",
+        "Ignite": "V"
+      },
+      "Crowd Control": {
+        "X": "X",
+        "Freeze": "X",
+        "V": "X",
+        "Trap": "V"
+      },
+      "locations": [
+        "猩紅狩獵 6",
+        "被遺忘的寺廟"
+      ]
+    },
+    {
+      "ID": "Inquisitor Inotsky (H)",
+      "Name": "審判官伊諾茨基 (H)",
+      "Health": "670",
+      "Armor (Est.)": "30",
+      "Damage Reduction (%)": "16.0+-1.1",
+      "Physical ATK": "8",
+      "Elemental ATK": "4 火",
+      "Special Mechanic(s) Summary": "賜予（死亡）；刀槍不入（生命值，週期 2/2）；遠程攻擊；致盲妖術：陷阱（10+15/10+50/10+150 物理+火焰）",
+      "Soul Eater": "V",
+      "Human / Monster": "X",
+      "Instakill": "V",
+      "Elemental Modifier": {
+        "Pierce": "V",
+        "Cold": "V",
+        "Fire": "V",
+        "Reap": "V"
+      },
+      "Elemental DoT Modifier": {
+        "Poison": "V",
+        "Ignite": "V"
+      },
+      "Crowd Control": {
+        "X": "X",
+        "Freeze": "X",
+        "V": "X",
+        "Trap": "V"
+      },
+      "locations": [
+        "猩紅狩獵 6",
+        "被遺忘的寺廟"
+      ]
+    },
+    {
+      "ID": "Inquisitor Inotsky (L)",
+      "Name": "審判官伊諾茨基 (L)",
+      "Health": "1325",
+      "Armor (Est.)": "40",
+      "Damage Reduction (%)": "20.2+-1.1",
+      "Physical ATK": "20",
+      "Elemental ATK": "10 火",
       "Special Mechanic(s) Summary": "賜予（死亡）；刀槍不入（生命值，週期 2/2）；遠程攻擊；致盲妖術：陷阱（10+15/10+50/10+150 物理+火焰）",
       "Soul Eater": "V",
       "Human / Monster": "X",
