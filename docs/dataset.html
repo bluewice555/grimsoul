@@ -516,6 +516,15 @@
       return [arr[idx], ...arr.slice(0, idx), ...arr.slice(idx + 1)];
     }
 
+    function parseFirstNumber(s) {
+      const text = String(s ?? '').trim();
+      if (!text) return null;
+      const m = text.match(/-?\d+(?:\.\d+)?/);
+      if (!m) return null;
+      const n = Number(m[0]);
+      return Number.isNaN(n) ? null : n;
+    }
+
     function normalizeSortValue(v, preferredListItem = null) {
       // rank: 0 empty, 1 number, 2 name:number pair, 3 text
       if (v === null || v === undefined) return { rank: 0, type: 'empty' };
@@ -526,8 +535,8 @@
         const first = pickListFirstByFilter(v, preferredListItem);
         const pair = parseNameNumber(String(first));
         if (pair) return { rank: 2, type: 'pair', name: pair.name, num: pair.num };
-        const n = Number(String(first));
-        if (!Number.isNaN(n) && String(first).trim() !== '') return { rank: 1, type: 'number', num: n };
+        const n = parseFirstNumber(first);
+        if (n !== null) return { rank: 1, type: 'number', num: n };
         return { rank: 3, type: 'text', text: String(first).toLowerCase() };
       }
 
@@ -537,8 +546,8 @@
       const s = typeof v === 'object' ? JSON.stringify(v) : String(v);
       const pair = parseNameNumber(s);
       if (pair) return { rank: 2, type: 'pair', name: pair.name, num: pair.num };
-      const n = Number(s);
-      if (!Number.isNaN(n) && s.trim() !== '') return { rank: 1, type: 'number', num: n };
+      const n = parseFirstNumber(s);
+      if (n !== null) return { rank: 1, type: 'number', num: n };
       return { rank: 3, type: 'text', text: s.toLowerCase() };
     }
 
