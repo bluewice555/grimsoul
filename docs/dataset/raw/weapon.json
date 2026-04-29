@@ -31,7 +31,8 @@
     "Durability",
     "Crafting",
     "Special Effect(s)",
-    "Skill(s)"
+    "Skill(s)",
+    "rawAps"
   ],
   "datas": [
     {
@@ -43,7 +44,8 @@
       "Durability": "",
       "Crafting": null,
       "Special Effect(s)": null,
-      "Skill(s)": "拳頭"
+      "Skill(s)": "拳頭",
+      "rawAps": null
     },
     {
       "ID": "Torch",
@@ -59,7 +61,8 @@
       ],
       "Special Effect(s)": "每次命中額外消耗 5 秒耐久；可驅趕夜訪者",
       "Physical": "7",
-      "Skill(s)": "火把"
+      "Skill(s)": "火把",
+      "rawAps": null
     },
     {
       "ID": "Stone Pick",
@@ -73,7 +76,8 @@
         "石灰岩: 2"
       ],
       "Special Effect(s)": "可開採石灰岩與銅礦石",
-      "Skill(s)": "(採集)"
+      "Skill(s)": "(採集)",
+      "rawAps": null
     },
     {
       "ID": "Crafter's Stone Pick",
@@ -87,7 +91,8 @@
       ],
       "Special Effect(s)": "可開採石灰岩與銅礦石；資源點採集次數需求減半",
       "Physical": "8",
-      "Skill(s)": "(採集)"
+      "Skill(s)": "(採集)",
+      "rawAps": null
     },
     {
       "ID": "Stone Axe",
@@ -101,7 +106,8 @@
       "Special Effect(s)": "可砍伐松木",
       "Speed": "1.0",
       "Physical": "9",
-      "Skill(s)": "(採集)"
+      "Skill(s)": "(採集)",
+      "rawAps": null
     },
     {
       "ID": "Crafter's Stone Axe",
@@ -115,7 +121,8 @@
       "Special Effect(s)": "可砍伐松木；資源點採集次數需求減半",
       "Speed": "1.1",
       "Physical": "9",
-      "Skill(s)": "(採集)"
+      "Skill(s)": "(採集)",
+      "rawAps": null
     },
     {
       "ID": "Bronze Pickaxe",
@@ -129,7 +136,8 @@
         "青銅錠: 2"
       ],
       "Special Effect(s)": "可開採鐵礦石",
-      "Skill(s)": "(採集)"
+      "Skill(s)": "(採集)",
+      "rawAps": null
     },
     {
       "ID": "Hoe",
@@ -140,7 +148,8 @@
       "Durability": "112",
       "Crafting": null,
       "Special Effect(s)": null,
-      "Skill(s)": "鋤頭"
+      "Skill(s)": "鋤頭",
+      "rawAps": 1.466667
     },
     {
       "ID": "Bronze Axe",
@@ -154,7 +163,8 @@
       ],
       "Special Effect(s)": "可砍伐樺木",
       "Speed": "1.0",
-      "Skill(s)": "(採集)"
+      "Skill(s)": "(採集)",
+      "rawAps": null
     },
     {
       "ID": "Club",
@@ -167,7 +177,8 @@
         "原松木: 5"
       ],
       "Special Effect(s)": null,
-      "Skill(s)": "棍子"
+      "Skill(s)": "棍子",
+      "rawAps": null
     },
     {
       "ID": "Sickle",
@@ -178,7 +189,8 @@
       "Durability": "125",
       "Crafting": null,
       "Special Effect(s)": null,
-      "Skill(s)": "鐮刀"
+      "Skill(s)": "鐮刀",
+      "rawAps": 1.666667
     },
     {
       "ID": "Sturdy Club",
@@ -191,29 +203,44 @@
         "原松木: 5"
       ],
       "Special Effect(s)": "潛行命中時擊暈 1 秒",
-      "Skill(s)": "棍子"
+      "Skill(s)": "棍子",
+      "rawAps": null
     },
     {
       "ID": "Durable Smith's Hammer",
-      "Name": "耐用鐵匠鎚",
+      "Name": "耐用鐵匠錘",
       "Physical": "18",
       "Speed": "1.1",
       "Range": "1.1",
       "Durability": "340",
       "Special Effect(s)": "耐久提升",
       "Crafting": null,
-      "Skill(s)": "鐵匠鎚"
+      "Skill(s)": "鐵匠錘",
+      "rawAps": null
+    },
+    {
+      "ID": "",
+      "Name": "刃棒",
+      "Physical": "33",
+      "Speed": "1.3",
+      "Range": "1.4",
+      "Durability": "",
+      "Special Effect(s)": "",
+      "Crafting": null,
+      "Skill(s)": "尖刺錘",
+      "rawAps": 1.25
     },
     {
       "ID": "Smith's Hammer",
-      "Name": "鐵匠鎚",
+      "Name": "鐵匠錘",
       "Physical": "18",
       "Speed": "1.1",
       "Range": "1.1",
       "Durability": "77",
       "Crafting": null,
       "Special Effect(s)": null,
-      "Skill(s)": "鐵匠鎚"
+      "Skill(s)": "鐵匠錘",
+      "rawAps": 1.1
     },
     {
       "ID": "Frost Dagger",
@@ -225,7 +252,8 @@
       "Durability": "100",
       "Special Effect(s)": "約 23.2% 機率降低攻速與移速",
       "Crafting": null,
-      "Skill(s)": "匕首"
+      "Skill(s)": "匕首",
+      "rawAps": null
     },
     {
       "ID": "Temple Torch",
@@ -237,7 +265,8 @@
       "Durability": "400 sec(s)",
       "Special Effect(s)": "每次命中額外消耗 5 秒耐久；約 17.4% 機率點燃(2 火 x 4 跳)；可驅趕夜訪者",
       "Crafting": null,
-      "Skill(s)": "火把"
+      "Skill(s)": "火把",
+      "rawAps": null
     },
     {
       "ID": "Spade",
@@ -252,7 +281,8 @@
         "青銅釘: 2"
       ],
       "Special Effect(s)": null,
-      "Skill(s)": "鍬"
+      "Skill(s)": "鍬",
+      "rawAps": null
     },
     {
       "ID": "Dagger",
@@ -267,7 +297,8 @@
         "銅錠: 4"
       ],
       "Special Effect(s)": null,
-      "Skill(s)": "匕首"
+      "Skill(s)": "匕首",
+      "rawAps": 1.366667
     },
     {
       "ID": "Durable Dagger",
@@ -278,7 +309,8 @@
       "Durability": "500",
       "Special Effect(s)": "耐久提升",
       "Crafting": null,
-      "Skill(s)": "匕首"
+      "Skill(s)": "匕首",
+      "rawAps": null
     },
     {
       "ID": "Combat Shovel",
@@ -293,7 +325,8 @@
         "青銅釘: 2"
       ],
       "Special Effect(s)": null,
-      "Skill(s)": "鍬"
+      "Skill(s)": "鍬",
+      "rawAps": 1.2
     },
     {
       "ID": "Poisoned Dagger",
@@ -304,11 +337,12 @@
       "Durability": "112",
       "Special Effect(s)": "約 41.1% 機率中毒(10 中毒 x 6 跳)",
       "Crafting": null,
-      "Skill(s)": "匕首"
+      "Skill(s)": "匕首",
+      "rawAps": null
     },
     {
       "ID": "Jambiya",
-      "Name": "彎匕首",
+      "Name": "葉門雙刃彎刀",
       "Physical": "21",
       "Speed": "1.4",
       "Range": "1.2",
@@ -319,7 +353,8 @@
         "銅錠: 7"
       ],
       "Special Effect(s)": null,
-      "Skill(s)": "匕首"
+      "Skill(s)": "匕首",
+      "rawAps": 1.366667
     },
     {
       "ID": "Swordbreaker",
@@ -334,7 +369,8 @@
         "銅錠: 7"
       ],
       "Special Effect(s)": null,
-      "Skill(s)": "匕首"
+      "Skill(s)": "匕首",
+      "rawAps": null
     },
     {
       "ID": "Simple Bow",
@@ -350,7 +386,8 @@
         "繩子: 10"
       ],
       "Special Effect(s)": "遠程傷害浮動(受護甲減免影響)",
-      "Skill(s)": "簡單弓具"
+      "Skill(s)": "簡單弓具",
+      "rawAps": null
     },
     {
       "ID": "Cart Thill",
@@ -364,7 +401,8 @@
         "布料: 6"
       ],
       "Special Effect(s)": null,
-      "Skill(s)": "車把"
+      "Skill(s)": "車把",
+      "rawAps": 0.666667
     },
     {
       "ID": "Night Guest Sickle",
@@ -375,7 +413,8 @@
       "Durability": "91",
       "Special Effect(s)": "約 12.1% 機率秒殺",
       "Crafting": null,
-      "Skill(s)": "鐮刀"
+      "Skill(s)": "鐮刀",
+      "rawAps": null
     },
     {
       "ID": "Bone Bow",
@@ -386,7 +425,8 @@
       "Durability": "59",
       "Special Effect(s)": "遠程傷害浮動(受護甲減免影響)",
       "Crafting": null,
-      "Skill(s)": "簡單弓具"
+      "Skill(s)": "簡單弓具",
+      "rawAps": null
     },
     {
       "ID": "Durable Pitchfork",
@@ -397,7 +437,8 @@
       "Special Effect(s)": "耐久提升",
       "Speed": "1.0",
       "Crafting": null,
-      "Skill(s)": "長柄叉"
+      "Skill(s)": "長柄叉",
+      "rawAps": null
     },
     {
       "ID": "Pitchfork",
@@ -408,7 +449,8 @@
       "Speed": "1.0",
       "Crafting": null,
       "Special Effect(s)": null,
-      "Skill(s)": "長柄叉"
+      "Skill(s)": "長柄叉",
+      "rawAps": 1.0
     },
     {
       "ID": "Durable Spiked Mace",
@@ -419,7 +461,8 @@
       "Durability": "250",
       "Special Effect(s)": "耐久提升",
       "Crafting": null,
-      "Skill(s)": "尖刺錘"
+      "Skill(s)": "尖刺錘",
+      "rawAps": null
     },
     {
       "ID": "Spiked Mace",
@@ -434,7 +477,8 @@
         "青銅釘: 6"
       ],
       "Special Effect(s)": null,
-      "Skill(s)": "尖刺錘"
+      "Skill(s)": "尖刺錘",
+      "rawAps": 1.25
     },
     {
       "ID": "Wooden Sword",
@@ -448,7 +492,8 @@
         "布料: 6"
       ],
       "Special Effect(s)": null,
-      "Skill(s)": "車把"
+      "Skill(s)": "車把",
+      "rawAps": null
     },
     {
       "ID": "Broom",
@@ -462,7 +507,8 @@
         "布料: 6"
       ],
       "Special Effect(s)": null,
-      "Skill(s)": "車把"
+      "Skill(s)": "車把",
+      "rawAps": null
     },
     {
       "ID": "Oar",
@@ -473,7 +519,8 @@
       "Durability": "50",
       "Crafting": null,
       "Special Effect(s)": null,
-      "Skill(s)": "槳"
+      "Skill(s)": "槳",
+      "rawAps": 0.816667
     },
     {
       "ID": "Macuahuitl",
@@ -488,7 +535,8 @@
         "青銅釘: 6"
       ],
       "Special Effect(s)": null,
-      "Skill(s)": null
+      "Skill(s)": null,
+      "rawAps": null
     },
     {
       "ID": "Weighted Mace",
@@ -503,7 +551,8 @@
         "青銅釘: 16"
       ],
       "Special Effect(s)": "耐久提升",
-      "Skill(s)": null
+      "Skill(s)": null,
+      "rawAps": null
     },
     {
       "ID": "Bow of Searing Flame",
@@ -515,7 +564,8 @@
       "Special Effect(s)": "約 35.8% 機率點燃(5 火 x 5 跳)；可驅趕夜訪者；遠程傷害浮動(受護甲減免影響)",
       "Range": "7.0",
       "Crafting": null,
-      "Skill(s)": "簡單弓具"
+      "Skill(s)": "簡單弓具",
+      "rawAps": null
     },
     {
       "ID": "Ice Bow",
@@ -527,7 +577,8 @@
       "Special Effect(s)": "大幅降低攻速與移速；遠程傷害浮動(受護甲減免影響)",
       "Range": "7.0",
       "Crafting": null,
-      "Skill(s)": "簡單弓具"
+      "Skill(s)": "簡單弓具",
+      "rawAps": null
     },
     {
       "ID": "One-handed Sword",
@@ -542,11 +593,12 @@
       ],
       "Speed": "1.0",
       "Special Effect(s)": null,
-      "Skill(s)": "單手劍"
+      "Skill(s)": "單手劍",
+      "rawAps": 0.966667
     },
     {
       "ID": "Khopesh",
-      "Name": "短彎刀",
+      "Name": "克歐佩什彎刀",
       "Physical": "33",
       "Range": "1.5",
       "Durability": "67",
@@ -557,7 +609,8 @@
       ],
       "Speed": "1.0",
       "Special Effect(s)": null,
-      "Skill(s)": "短彎刀"
+      "Skill(s)": "短彎刀",
+      "rawAps": null
     },
     {
       "ID": "Morning Star",
@@ -573,7 +626,8 @@
         "青銅釘: 7"
       ],
       "Special Effect(s)": null,
-      "Skill(s)": "流星錘"
+      "Skill(s)": "流星錘",
+      "rawAps": 1.1
     },
     {
       "ID": "Simple Crossbow",
@@ -589,7 +643,8 @@
       ],
       "Special Effect(s)": "遠程攻擊(受護甲減免影響)；裝填時定身使用者",
       "Range": "6.5",
-      "Skill(s)": "簡單弓具"
+      "Skill(s)": "簡單弓具",
+      "rawAps": null
     },
     {
       "ID": "Flanged Mace",
@@ -604,7 +659,8 @@
         "線: 10"
       ],
       "Special Effect(s)": null,
-      "Skill(s)": "法蘭錘"
+      "Skill(s)": "法蘭錘",
+      "rawAps": 1.183333
     },
     {
       "ID": "Falchion",
@@ -620,7 +676,8 @@
         "線: 8"
       ],
       "Special Effect(s)": null,
-      "Skill(s)": "彎刀"
+      "Skill(s)": "彎刀",
+      "rawAps": 1.25
     },
     {
       "ID": "Exile's Morning Star",
@@ -636,7 +693,8 @@
         "青銅釘: 7"
       ],
       "Special Effect(s)": null,
-      "Skill(s)": "流星錘"
+      "Skill(s)": "流星錘",
+      "rawAps": null
     },
     {
       "ID": "Royal Mace",
@@ -652,7 +710,8 @@
         "青銅釘: 7"
       ],
       "Special Effect(s)": null,
-      "Skill(s)": "流星錘"
+      "Skill(s)": "流星錘",
+      "rawAps": null
     },
     {
       "ID": "Novice Mace",
@@ -667,7 +726,8 @@
         "線: 10"
       ],
       "Special Effect(s)": null,
-      "Skill(s)": "法蘭錘"
+      "Skill(s)": "法蘭錘",
+      "rawAps": null
     },
     {
       "ID": "Assassin Falchion",
@@ -683,7 +743,8 @@
         "線: 8"
       ],
       "Special Effect(s)": null,
-      "Skill(s)": "彎刀"
+      "Skill(s)": "彎刀",
+      "rawAps": 1.25
     },
     {
       "ID": "Yatagan",
@@ -699,7 +760,8 @@
         "線: 8"
       ],
       "Special Effect(s)": null,
-      "Skill(s)": "彎刀"
+      "Skill(s)": "彎刀",
+      "rawAps": null
     },
     {
       "ID": "Bone Mace",
@@ -710,7 +772,8 @@
       "Durability": "72",
       "Crafting": null,
       "Special Effect(s)": null,
-      "Skill(s)": null
+      "Skill(s)": null,
+      "rawAps": null
     },
     {
       "ID": "Copper Poleaxe",
@@ -725,7 +788,8 @@
       ],
       "Speed": "1.0",
       "Special Effect(s)": null,
-      "Skill(s)": "銅巨戰斧"
+      "Skill(s)": "銅巨戰斧",
+      "rawAps": null
     },
     {
       "ID": "Light Crossbow",
@@ -742,7 +806,8 @@
       ],
       "Special Effect(s)": "遠程攻擊(受護甲減免影響)；裝填時定身使用者",
       "Range": "7.0",
-      "Skill(s)": "簡單弓具"
+      "Skill(s)": "簡單弓具",
+      "rawAps": null
     },
     {
       "ID": "Kris",
@@ -753,7 +818,8 @@
       "Durability": "100",
       "Special Effect(s)": "潛行命中時暫時提升 3 倍傷害",
       "Crafting": null,
-      "Skill(s)": "匕首"
+      "Skill(s)": "匕首",
+      "rawAps": null
     },
     {
       "ID": "Soul Eater",
@@ -764,7 +830,8 @@
       "Special Effect(s)": "連續擊殺時永久提升傷害(+0/2/3/4)",
       "Speed": "1.0",
       "Crafting": null,
-      "Skill(s)": "匕首"
+      "Skill(s)": "匕首",
+      "rawAps": null
     },
     {
       "ID": "Berserker Axe",
@@ -775,7 +842,8 @@
       "Durability": "91",
       "Special Effect(s)": "依使用者已損失生命值暫時提升傷害（y=(1/0.7)*x+1；x為已損失生命比例；70%時最高2倍）",
       "Crafting": null,
-      "Skill(s)": null
+      "Skill(s)": null,
+      "rawAps": null
     },
     {
       "ID": "Illuminator",
@@ -787,7 +855,8 @@
       "Special Effect(s)": "約 52.2% 機率點燃(5 火 x 4 跳)；可驅趕夜訪者",
       "Speed": "1.0",
       "Crafting": null,
-      "Skill(s)": null
+      "Skill(s)": null,
+      "rawAps": null
     },
     {
       "ID": "Butcher's Cleaver",
@@ -798,7 +867,8 @@
       "Durability": "77",
       "Special Effect(s)": "30% 機率恢復恐狼飽食度(2 口)",
       "Crafting": null,
-      "Skill(s)": null
+      "Skill(s)": null,
+      "rawAps": null
     },
     {
       "ID": "Bear's Paw",
@@ -809,7 +879,8 @@
       "Durability": "67",
       "Special Effect(s)": "約 49.2% 機率流血(8 流血 x 5 跳)",
       "Crafting": null,
-      "Skill(s)": "拳頭"
+      "Skill(s)": "拳頭",
+      "rawAps": null
     },
     {
       "ID": "Black Bear's Paw",
@@ -820,7 +891,8 @@
       "Durability": "91",
       "Special Effect(s)": "約 50.0% 機率流血(8 流血 x 5 跳)",
       "Crafting": null,
-      "Skill(s)": "拳頭"
+      "Skill(s)": "拳頭",
+      "rawAps": null
     },
     {
       "ID": "Bastard Sword",
@@ -837,7 +909,8 @@
         "線: 7"
       ],
       "Special Effect(s)": null,
-      "Skill(s)": "變種劍"
+      "Skill(s)": "變種劍",
+      "rawAps": 0.85
     },
     {
       "ID": "Black Scimitar",
@@ -848,18 +921,20 @@
       "Durability": "100",
       "Special Effect(s)": "耐久提升",
       "Crafting": null,
-      "Skill(s)": "短彎刀"
+      "Skill(s)": "短彎刀",
+      "rawAps": null
     },
     {
       "ID": "Scimitar",
-      "Name": "彎刀劍",
+      "Name": "短彎刀",
       "Physical": "59",
       "Speed": "1.2",
       "Range": "1.5",
       "Durability": "72",
       "Crafting": null,
       "Special Effect(s)": null,
-      "Skill(s)": null
+      "Skill(s)": "短彎刀",
+      "rawAps": 1.166667
     },
     {
       "ID": "Ice Axe",
@@ -871,7 +946,8 @@
       "Special Effect(s)": "降低攻速與移速",
       "Speed": "1.0",
       "Crafting": null,
-      "Skill(s)": null
+      "Skill(s)": null,
+      "rawAps": null
     },
     {
       "ID": "Ice Mace",
@@ -883,7 +959,8 @@
       "Durability": "56",
       "Special Effect(s)": "連續 3 次命中後凍結",
       "Crafting": null,
-      "Skill(s)": null
+      "Skill(s)": null,
+      "rawAps": null
     },
     {
       "ID": "Ice Sword",
@@ -895,7 +972,8 @@
       "Durability": "53",
       "Special Effect(s)": "約 26.9% 機率凍結",
       "Crafting": null,
-      "Skill(s)": "變種劍"
+      "Skill(s)": "變種劍",
+      "rawAps": null
     },
     {
       "ID": "Flaming Sword",
@@ -907,7 +985,8 @@
       "Durability": "59",
       "Special Effect(s)": "可驅趕夜訪者",
       "Crafting": null,
-      "Skill(s)": "變種劍"
+      "Skill(s)": "變種劍",
+      "rawAps": null
     },
     {
       "ID": "Ritual Scythe",
@@ -918,7 +997,8 @@
       "Durability": "56",
       "Special Effect(s)": "約25.0%機率造成範圍攻擊（60物理；近距離）；每多1個附近敵人暫時提升傷害（1.5、2、...、4倍）",
       "Crafting": null,
-      "Skill(s)": null
+      "Skill(s)": null,
+      "rawAps": null
     },
     {
       "ID": "Knight Rupert's Sword",
@@ -929,7 +1009,8 @@
       "Durability": "84",
       "Crafting": null,
       "Special Effect(s)": null,
-      "Skill(s)": "變種劍"
+      "Skill(s)": "變種劍",
+      "rawAps": null
     },
     {
       "ID": "Thunder God's Knuckledusters",
@@ -940,7 +1021,8 @@
       "Durability": "77",
       "Special Effect(s)": "每次擊殺後 10 秒內造成濺射傷害(0/15/30/45 穿刺)，最多 3 個目標",
       "Crafting": null,
-      "Skill(s)": "拳頭"
+      "Skill(s)": "拳頭",
+      "rawAps": null
     },
     {
       "ID": "Kriegsmesser",
@@ -957,7 +1039,8 @@
         "線: 4"
       ],
       "Special Effect(s)": null,
-      "Skill(s)": "戰爭軍刀"
+      "Skill(s)": "戰爭軍刀",
+      "rawAps": 1.05
     },
     {
       "ID": "Marauder's Axe",
@@ -968,7 +1051,8 @@
       "Durability": "67",
       "Special Effect(s)": "每多1個附近敵人，暫時提升傷害（1.2、1.4、...）",
       "Crafting": null,
-      "Skill(s)": null
+      "Skill(s)": null,
+      "rawAps": null
     },
     {
       "ID": "Composite Bow",
@@ -984,7 +1068,8 @@
       ],
       "Special Effect(s)": "遠程傷害浮動(受護甲減免影響)",
       "Range": "7.0",
-      "Skill(s)": "簡單弓具"
+      "Skill(s)": "簡單弓具",
+      "rawAps": null
     },
     {
       "ID": "Black Composite Bow",
@@ -995,7 +1080,8 @@
       "Special Effect(s)": "耐久提升；遠程傷害浮動(受護甲減免影響)",
       "Range": "7.0",
       "Crafting": null,
-      "Skill(s)": "簡單弓具"
+      "Skill(s)": "簡單弓具",
+      "rawAps": null
     },
     {
       "ID": "Ritterschwert",
@@ -1012,11 +1098,12 @@
         "線: 7"
       ],
       "Special Effect(s)": null,
-      "Skill(s)": "變種劍"
+      "Skill(s)": "變種劍",
+      "rawAps": null
     },
     {
       "ID": "Smallsword",
-      "Name": "小劍",
+      "Name": "輕劍",
       "Physical": "64",
       "Speed": "0.9",
       "Range": "1.7",
@@ -1029,7 +1116,8 @@
         "線: 7"
       ],
       "Special Effect(s)": null,
-      "Skill(s)": null
+      "Skill(s)": null,
+      "rawAps": 0.85
     },
     {
       "ID": "Assassin's Stiletto",
@@ -1040,7 +1128,8 @@
       "Durability": "67",
       "Special Effect(s)": "連續命中時暫時提升傷害",
       "Crafting": null,
-      "Skill(s)": "匕首"
+      "Skill(s)": "匕首",
+      "rawAps": null
     },
     {
       "ID": "Katana",
@@ -1057,7 +1146,8 @@
         "線: 4"
       ],
       "Special Effect(s)": null,
-      "Skill(s)": "戰爭軍刀"
+      "Skill(s)": "戰爭軍刀",
+      "rawAps": null
     },
     {
       "ID": "Black Katana",
@@ -1068,7 +1158,8 @@
       "Durability": "84",
       "Special Effect(s)": "耐久提升",
       "Crafting": null,
-      "Skill(s)": "戰爭軍刀"
+      "Skill(s)": "戰爭軍刀",
+      "rawAps": null
     },
     {
       "ID": "Fire Partisan",
@@ -1080,7 +1171,8 @@
       "Durability": "46",
       "Special Effect(s)": "約 25.0% 機率點燃(5 火 x 6 跳)；可驅趕夜訪者",
       "Crafting": null,
-      "Skill(s)": "戟"
+      "Skill(s)": "戟",
+      "rawAps": null
     },
     {
       "ID": "Ice Scythe",
@@ -1092,7 +1184,8 @@
       "Durability": "72",
       "Special Effect(s)": "約 26.4% 機率凍結並附加凍傷(10 冰 x 6 跳)",
       "Crafting": null,
-      "Skill(s)": null
+      "Skill(s)": null,
+      "rawAps": null
     },
     {
       "ID": "Black Claymore",
@@ -1104,7 +1197,8 @@
       "Durability": "91",
       "Special Effect(s)": "耐久提升",
       "Crafting": null,
-      "Skill(s)": "雙刃大砍刀"
+      "Skill(s)": "雙刃大砍刀",
+      "rawAps": null
     },
     {
       "ID": "Claymore",
@@ -1115,7 +1209,8 @@
       "Durability": "63",
       "Crafting": null,
       "Special Effect(s)": null,
-      "Skill(s)": "雙刃大砍刀"
+      "Skill(s)": "雙刃大砍刀",
+      "rawAps": 1.083333
     },
     {
       "ID": "Scythe of Terror",
@@ -1126,7 +1221,8 @@
       "Durability": "72",
       "Special Effect(s)": "約 52.8% 機率施加恐懼",
       "Crafting": null,
-      "Skill(s)": null
+      "Skill(s)": null,
+      "rawAps": null
     },
     {
       "ID": "Reaper's Ceremonial Sword",
@@ -1138,7 +1234,8 @@
       "Durability": "50",
       "Special Effect(s)": "附帶收割效果",
       "Crafting": null,
-      "Skill(s)": null
+      "Skill(s)": null,
+      "rawAps": null
     },
     {
       "ID": "Ice Halberd",
@@ -1150,7 +1247,8 @@
       "Durability": "46",
       "Special Effect(s)": "降低攻速與移速",
       "Crafting": null,
-      "Skill(s)": "戟"
+      "Skill(s)": "戟",
+      "rawAps": null
     },
     {
       "ID": "Flaming Halberd",
@@ -1162,7 +1260,8 @@
       "Durability": "46",
       "Special Effect(s)": "可驅趕夜訪者",
       "Crafting": null,
-      "Skill(s)": "戟"
+      "Skill(s)": "戟",
+      "rawAps": null
     },
     {
       "ID": "Black Halberd",
@@ -1173,7 +1272,8 @@
       "Durability": "63",
       "Special Effect(s)": "耐久提升",
       "Crafting": null,
-      "Skill(s)": "戟"
+      "Skill(s)": "戟",
+      "rawAps": null
     },
     {
       "ID": "Halberd",
@@ -1186,7 +1286,8 @@
         "未知"
       ],
       "Special Effect(s)": null,
-      "Skill(s)": "戟"
+      "Skill(s)": "戟",
+      "rawAps": 0.916667
     },
     {
       "ID": "The Smasher",
@@ -1197,7 +1298,8 @@
       "Durability": "72",
       "Special Effect(s)": "約 36.6% 機率擊暈",
       "Crafting": null,
-      "Skill(s)": null
+      "Skill(s)": null,
+      "rawAps": null
     },
     {
       "ID": "Ghost Sword",
@@ -1208,7 +1310,8 @@
       "Durability": "56",
       "Special Effect(s)": "降低移動速度",
       "Crafting": null,
-      "Skill(s)": "變種劍"
+      "Skill(s)": "變種劍",
+      "rawAps": null
     },
     {
       "ID": "Raven Crossbow",
@@ -1219,7 +1322,8 @@
       "Durability": "56",
       "Special Effect(s)": "遠程攻擊；裝填時定身使用者；潛行命中時暫時提升 3 倍傷害",
       "Crafting": null,
-      "Skill(s)": "簡單弓具"
+      "Skill(s)": "簡單弓具",
+      "rawAps": null
     },
     {
       "ID": "Skullcrusher",
@@ -1230,7 +1334,8 @@
       "Durability": "50",
       "Special Effect(s)": "約 26.0% 機率擊暈並造成 2 倍傷害",
       "Crafting": null,
-      "Skill(s)": null
+      "Skill(s)": null,
+      "rawAps": null
     },
     {
       "ID": "Espadon",
@@ -1241,7 +1346,8 @@
       "Durability": "56",
       "Crafting": null,
       "Special Effect(s)": null,
-      "Skill(s)": null
+      "Skill(s)": null,
+      "rawAps": null
     },
     {
       "ID": "Heavy Crossbow",
@@ -1257,7 +1363,8 @@
         "機械裝置: 15"
       ],
       "Special Effect(s)": "遠程攻擊(受護甲減免影響)；裝填時定身使用者",
-      "Skill(s)": "簡單弓具"
+      "Skill(s)": "簡單弓具",
+      "rawAps": null
     },
     {
       "ID": "Iron Bastard Sword",
@@ -1268,7 +1375,8 @@
       "Durability": "77",
       "Special Effect(s)": "對人型敵人暫時提升 1.4 倍傷害",
       "Crafting": null,
-      "Skill(s)": "變種劍"
+      "Skill(s)": "變種劍",
+      "rawAps": null
     },
     {
       "ID": "War Dogs Axe",
@@ -1279,7 +1387,8 @@
       "Special Effect(s)": "約62.5%機率在連續命中時永久降低敵方傷害（0.75、0.5、0.25倍）",
       "Speed": "1.0",
       "Crafting": null,
-      "Skill(s)": "狂戰士巨戰斧"
+      "Skill(s)": "狂戰士巨戰斧",
+      "rawAps": null
     },
     {
       "ID": "Simoom Blades",
@@ -1290,7 +1399,8 @@
       "Durability": "100",
       "Special Effect(s)": "每次擊殺後暫時獲得攻速加成（1.15、1.3、1.45、...），持續7秒",
       "Crafting": null,
-      "Skill(s)": null
+      "Skill(s)": null,
+      "rawAps": null
     },
     {
       "ID": "Sinister Gaze Blade",
@@ -1301,7 +1411,8 @@
       "Durability": "50",
       "Special Effect(s)": "約 20.0% 機率施加恐懼；對受陷阱、恐懼、擊暈或凍結影響的敵人暫時提升 2 倍傷害",
       "Crafting": null,
-      "Skill(s)": null
+      "Skill(s)": null,
+      "rawAps": null
     },
     {
       "ID": "Silver Moon Sickle",
@@ -1312,7 +1423,8 @@
       "Durability": "59",
       "Special Effect(s)": "夜晚時暫時提升 1.5 倍傷害",
       "Crafting": null,
-      "Skill(s)": null
+      "Skill(s)": null,
+      "rawAps": null
     },
     {
       "ID": "Chosen Guard's Spear",
@@ -1323,7 +1435,8 @@
       "Durability": "72",
       "Special Effect(s)": "約 22.2% 機率穿刺並造成 2 倍傷害",
       "Crafting": null,
-      "Skill(s)": null
+      "Skill(s)": null,
+      "rawAps": null
     },
     {
       "ID": "Silver Claymore",
@@ -1334,7 +1447,8 @@
       "Durability": "77",
       "Special Effect(s)": "對怪物暫時提升 1.4 倍傷害",
       "Crafting": null,
-      "Skill(s)": "雙刃大砍刀"
+      "Skill(s)": "雙刃大砍刀",
+      "rawAps": null
     },
     {
       "ID": "Wrath of the Gods",
@@ -1345,7 +1459,8 @@
       "Durability": "72",
       "Special Effect(s)": "潛行命中時擊暈 3 秒",
       "Crafting": null,
-      "Skill(s)": null
+      "Skill(s)": null,
+      "rawAps": null
     },
     {
       "ID": "Freeze Wing",
@@ -1357,7 +1472,8 @@
       "Durability": "46",
       "Special Effect(s)": "約 15.9% 機率造成濺射冰凍，最多 2 個目標",
       "Crafting": null,
-      "Skill(s)": null
+      "Skill(s)": null,
+      "rawAps": null
     },
     {
       "ID": "Inquisitor's Kiss",
@@ -1369,7 +1485,8 @@
       "Durability": "50",
       "Special Effect(s)": "約 24.0% 機率造成範圍點燃(7 火 x 4 跳)；持續 5 秒；可驅趕夜訪者",
       "Crafting": null,
-      "Skill(s)": null
+      "Skill(s)": null,
+      "rawAps": null
     },
     {
       "ID": "Cursed Mace",
@@ -1380,7 +1497,8 @@
       "Durability": "67",
       "Special Effect(s)": "將對目標造成傷害的 10% 反彈給自己",
       "Crafting": null,
-      "Skill(s)": null
+      "Skill(s)": null,
+      "rawAps": null
     },
     {
       "ID": "Imperial Blade",
@@ -1391,7 +1509,8 @@
       "Durability": "67",
       "Special Effect(s)": "暫時降低目標命中率（0.5倍），持續約3秒",
       "Crafting": null,
-      "Skill(s)": null
+      "Skill(s)": null,
+      "rawAps": null
     },
     {
       "ID": "Master's Axe",
@@ -1402,7 +1521,8 @@
       "Special Effect(s)": "約 23.9% 機率造成範圍攻擊(110 物理；近距離)",
       "Speed": "1.0",
       "Crafting": null,
-      "Skill(s)": null
+      "Skill(s)": null,
+      "rawAps": null
     },
     {
       "ID": "Master's Black Axe",
@@ -1413,7 +1533,8 @@
       "Special Effect(s)": "約 24.5% 機率造成範圍攻擊(110 物理；近距離)；耐久提升",
       "Speed": "1.0",
       "Crafting": null,
-      "Skill(s)": null
+      "Skill(s)": null,
+      "rawAps": null
     },
     {
       "ID": "Templar Sword",
@@ -1424,7 +1545,8 @@
       "Durability": "50",
       "Special Effect(s)": "約 2.0% 機率流放",
       "Crafting": null,
-      "Skill(s)": null
+      "Skill(s)": null,
+      "rawAps": null
     },
     {
       "ID": "Bloodthirsty",
@@ -1435,7 +1557,8 @@
       "Durability": "46",
       "Special Effect(s)": "造成流血(9 流血 x 5 跳)",
       "Crafting": null,
-      "Skill(s)": null
+      "Skill(s)": null,
+      "rawAps": null
     },
     {
       "ID": "Shrieking Axe",
@@ -1446,7 +1569,8 @@
       "Special Effect(s)": "約 42.0% 機率造成範圍減速(遠距離，降低攻速與移速)",
       "Speed": "1.0",
       "Crafting": null,
-      "Skill(s)": null
+      "Skill(s)": null,
+      "rawAps": null
     },
     {
       "ID": "Executioner's Hook",
@@ -1457,7 +1581,8 @@
       "Durability": "50",
       "Special Effect(s)": "約56.0%機率在連續命中時永久降低敵方護甲（0.75、0.5、0.25倍）",
       "Crafting": null,
-      "Skill(s)": null
+      "Skill(s)": null,
+      "rawAps": null
     },
     {
       "ID": "Glaive",
@@ -1468,7 +1593,8 @@
       "Durability": "46",
       "Special Effect(s)": "約 43.5% 機率造成濺射傷害(0.25–0.5 倍穿刺)，最多 2 個目標",
       "Crafting": null,
-      "Skill(s)": null
+      "Skill(s)": null,
+      "rawAps": null
     },
     {
       "ID": "Spiked Trident",
@@ -1479,7 +1605,8 @@
       "Durability": "50",
       "Special Effect(s)": "約 36.7% 機率中毒(12 中毒 x 5 跳)",
       "Crafting": null,
-      "Skill(s)": "長柄叉"
+      "Skill(s)": "長柄叉",
+      "rawAps": null
     },
     {
       "ID": "Black Glaive",
@@ -1490,11 +1617,12 @@
       "Durability": "63",
       "Special Effect(s)": "約43.5%機率造成濃射傷害（0.25-0.5倍穿刺）；最多2個目標（主目標0、側目標2；近距離）；耐久提升",
       "Crafting": null,
-      "Skill(s)": null
+      "Skill(s)": null,
+      "rawAps": null
     },
     {
       "ID": "War Hammer",
-      "Name": "戰鎚",
+      "Name": "戰錘",
       "Elemental": "40 Pierce",
       "Speed": "1.3",
       "Range": "1.3",
@@ -1502,7 +1630,9 @@
       "Special Effect(s)": "附帶穿刺效果",
       "Physical": "132",
       "Crafting": null,
-      "Skill(s)": null
+      "Skill(s)": null,
+      "rawAps": null
     }
-  ]
+  ],
+  "apsScaleFactor": 1.023514
 }
