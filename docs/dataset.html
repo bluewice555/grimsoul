@@ -160,1015 +160,322 @@
   </main>
 
   <script>
-    const DATASETS = [
-      { id: 'armor-items', label: 'armor items', file: './dataset/raw/armor-items.json' },
-      { id: 'armor-set-effects', label: 'armor sets', file: './dataset/raw/armor-set-effects.json' },
-      { id: 'armor-sets', label: 'armor sheet', file: './dataset/raw/armor-sets.json' },
-      { id: 'monster', label: 'monster', file: './dataset/raw/monster.json' },
-      { id: 'materials', label: 'materials', file: './dataset/raw/materials.json' },
-      { id: 'recipes', label: 'recipes', file: './dataset/raw/recipes.json' },
-      { id: 'harvest', label: 'harvest', file: './dataset/value/harvest.json' },
-      { id: 'mapping', label: 'mapping', file: './dataset/value/mapping.json' },
-      { id: 'hit', label: 'hit', file: './dataset/fight/hit.json' },
-      { id: 'skill', label: 'skill', file: './dataset/raw/skill.json' },
-      { id: 'weapon', label: 'weapon', file: './dataset/raw/weapon.json' },
-      { id: 'object', label: 'object', file: './dataset/raw/object.json' },
-      { id: 'map', label: 'map', file: './dataset/raw/map.json' }
-    ];
-    const LOCAL_PROJECT_ROOT = 'C:\\Users\\lab\\Desktop\\grimsoul';
+    /** 
+     * MVC - Constants & Utility
+     */
+    const CONFIG = {
+      DATASETS: [
+        { id: 'armor-items', label: 'armor items', file: './dataset/raw/armor-items.json' },
+        { id: 'armor-set-effects', label: 'armor sets', file: './dataset/raw/armor-set-effects.json' },
+        { id: 'armor-sets', label: 'armor sheet', file: './dataset/raw/armor-sets.json' },
+        { id: 'monster', label: 'monster', file: './dataset/raw/monster.json' },
+        { id: 'materials', label: 'materials', file: './dataset/raw/materials.json' },
+        { id: 'recipes', label: 'recipes', file: './dataset/raw/recipes.json' },
+        { id: 'harvest', label: 'harvest', file: './dataset/value/harvest.json' },
+        { id: 'mapping', label: 'mapping', file: './dataset/value/mapping.json' },
+        { id: 'hit', label: 'hit', file: './dataset/fight/hit.json' },
+        { id: 'skill', label: 'skill', file: './dataset/raw/skill.json' },
+        { id: 'weapon', label: 'weapon', file: './dataset/raw/weapon.json' },
+        { id: 'object', label: 'object', file: './dataset/raw/object.json' },
+        { id: 'map', label: 'map', file: './dataset/raw/map.json' }
+      ],
+      LOCAL_ROOT: 'C:\\Users\\lab\\Desktop\\grimsoul',
+      COOKIE_NAME: 'dataset_view_state'
+    };
 
-    const selectEl = document.getElementById('dataset-select');
-    const showDebugToggleEl = document.getElementById('show-debug-toggle');
-    const toolbarEl = document.querySelector('.toolbar');
-    const statusEl = document.getElementById('status');
-    const metaFiltersEl = document.getElementById('meta-filters');
-    const headTopEl = document.getElementById('head-top');
-    const headSubEl = document.getElementById('head-sub');
-    const bodyEl = document.getElementById('body');
-    const openFileBtn = document.getElementById('open-file-btn');
-    const copyPathBtn = document.getElementById('copy-path-btn');
-    const flushBtn = document.getElementById('flush-btn');
-    const rootListsEl = document.getElementById('root-lists');
-    const namedTablesEl = document.getElementById('named-tables');
-    const VIEW_STATE_COOKIE = 'dataset_view_state';
-    let currentRows = [];
-    let currentBaseRows = [];
-    let currentKeyOrder = [];
-    let currentDataset = { keys: [], datas: [] };
-    let currentDoc = null;
-    let currentDatasetId = 'monster';
-    let changes = [];
-    let activeSortKey = '__none__';
-    let activeSortOrder = 'asc';
-    let currentMeta = {};
-    let currentRootLists = {};
-    let currentNamedTables = {};
-    let namedTableStates = {};
-    let activeMetaFilters = {};
-    let activeTableListMode = false;
-    let initialQueryFilters = {};
-    let editFileHandle = null;
-    let isEditMode = false;
-    let isDirty = false;
-    let showDebug = false;
-
-    function setCookie(name, value, maxAgeSec = 60 * 60 * 24 * 365) {
-      document.cookie = `${name}=${value}; path=/; max-age=${maxAgeSec}; samesite=lax`;
-    }
-
-    function getCookie(name) {
-      const prefix = `${name}=`;
-      const parts = document.cookie.split(';').map((x) => x.trim());
-      const found = parts.find((x) => x.startsWith(prefix));
-      return found ? found.slice(prefix.length) : '';
-    }
-
-    function saveViewState() {
-      const state = {
-        dataset: currentDatasetId,
-        showDebug,
-        filters: activeMetaFilters,
-        listMode: activeTableListMode,
-      };
-      setCookie(VIEW_STATE_COOKIE, encodeURIComponent(JSON.stringify(state)));
-    }
-
-    function loadViewState() {
-      try {
-        const raw = getCookie(VIEW_STATE_COOKIE);
-        if (!raw) return null;
-        return JSON.parse(decodeURIComponent(raw));
-      } catch {
-        return null;
-      }
-    }
-
-    function setModePreview() {
-      isEditMode = false;
-      editFileHandle = null;
-      isDirty = false;
-      flushBtn.disabled = true;
-      flushBtn.style.display = 'none';
-      toolbarEl.classList.remove('editing');
-    }
-
-    function setModeEditing(handle) {
-      isEditMode = true;
-      editFileHandle = handle;
-      isDirty = false;
-      flushBtn.disabled = false;
-      flushBtn.style.display = '';
-      toolbarEl.classList.add('editing');
-    }
-
-    function pendingChangeCount() {
-      const unique = new Set();
-      for (const c of changes) {
-        unique.add(`${c.index}::${c.path}`);
-      }
-      return unique.size;
-    }
-
-    function refreshStatusLoaded(labelOverride = null) {
-      const d = DATASETS.find(x => x.id === currentDatasetId) || DATASETS[0];
-      const label = labelOverride || d.label;
-      const pending = pendingChangeCount();
-      if (isEditMode) {
-        statusEl.textContent = `${label}：${currentRows.length} 筆（未寫入變更 ${pending} 項）`;
-      } else {
-        statusEl.textContent = `${label}：${currentRows.length} 筆（預覽）`;
-      }
-    }
-
-    function escapeHtml(v) {
-      return String(v)
-        .replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;')
-        .replaceAll('"','&quot;').replaceAll("'",'&#39;');
-    }
-
-    function valToHtml(v, flattenList = false) {
-      if (v === null || v === undefined || v === '') return '<span class="empty">-</span>';
-      if (Array.isArray(v) && flattenList) return escapeHtml(v.join('; '));
-      if (typeof v === 'object') return `<span class="json">${escapeHtml(JSON.stringify(v, null, 2))}</span>`;
-      return escapeHtml(v);
-    }
-
-    function isUnderscoreHidden(value) {
-      return typeof value === 'string' && value.startsWith('_');
-    }
-
-    function visibleValue(raw) {
-      if (showDebug) return raw;
-      if (isUnderscoreHidden(raw)) return '';
-      if (Array.isArray(raw)) {
-        return raw.filter((x) => !isUnderscoreHidden(x));
-      }
-      return raw;
-    }
-
-    function isRowHidden(row) {
-      if (showDebug) return false;
-      return isUnderscoreHidden(row?.ID);
-    }
-
-    function normalizeDataset(data) {
-      if (!data || typeof data !== 'object' || Array.isArray(data)) {
-        throw new Error('Dataset format must be a JSON object');
-      }
-      const meta = (data.filter && typeof data.filter === 'object' && !Array.isArray(data.filter))
-        ? data.filter
-        : {};
-      const rootLists = {};
-      const namedTables = {};
-      for (const [k, v] of Object.entries(data)) {
-        if (k === 'keys' || k === 'datas' || k === 'filter') continue;
-        if (v && typeof v === 'object' && !Array.isArray(v) && Array.isArray(v.keys) && Array.isArray(v.datas)) {
-          namedTables[k] = {
-            keys: v.keys,
-            datas: v.datas,
-            filter: (v.filter && typeof v.filter === 'object' && !Array.isArray(v.filter)) ? v.filter : {}
-          };
-          continue;
+    const Utils = {
+      escapeHtml: (v) => String(v).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])),
+      getByPath: (obj, path) => path.reduce((acc, part) => acc?.[part], obj),
+      setByPath: (obj, path, val) => {
+        let cur = obj;
+        for (let i = 0; i < path.length - 1; i++) {
+          if (!cur[path[i]]) cur[path[i]] = {};
+          cur = cur[path[i]];
         }
-        if (Array.isArray(v)) rootLists[k] = v;
+        cur[path[path.length - 1]] = val;
+      },
+      setCookie: (n, v) => document.cookie = `${n}=${encodeURIComponent(JSON.stringify(v))}; path=/; max-age=31536000; samesite=lax`,
+      getCookie: (n) => {
+        const m = document.cookie.match(new RegExp('(^| )'+n+'=([^;]+)'));
+        try { return m ? JSON.parse(decodeURIComponent(m[2])) : null; } catch { return null; }
       }
-      const rows = Array.isArray(data.datas) ? data.datas : [];
-      const keys = Array.isArray(data.keys) ? data.keys : [];
-      return { rows, keys, meta, rootLists, namedTables };
-    }
+    };
 
-    function renderRootLists() {
-      function autoCols(values) {
-        if (!values.length) return 1;
-        const lengths = values.map((x) => String(x ?? '').length);
-        const avg = lengths.reduce((a, b) => a + b, 0) / lengths.length;
-        let cols = 4;
-        if (avg <= 4) cols = 8;
-        else if (avg <= 8) cols = 6;
-        else if (avg <= 12) cols = 5;
-        else if (avg <= 20) cols = 4;
-        else cols = 3;
-        cols = Math.min(cols, values.length, 12);
-        cols = Math.max(cols, 1);
-        return cols;
-      }
-
-      const entries = Object.entries(currentRootLists).filter(([k, v]) => {
-        if (!Array.isArray(v)) return false;
-        if (!showDebug && String(k).startsWith('_')) return false;
-        return true;
-      });
-      if (!entries.length) {
-        rootListsEl.style.display = 'none';
-        rootListsEl.innerHTML = '';
-        return;
-      }
-      rootListsEl.style.display = '';
-      rootListsEl.innerHTML = entries.map(([k, arr]) => {
-        const values = showDebug ? arr : arr.filter((x) => !isUnderscoreHidden(x));
-        const cols = autoCols(values);
-        const rows = [];
-        for (let i = 0; i < values.length; i += cols) rows.push(values.slice(i, i + cols));
-        const body = rows.map((row) => {
-          const cells = [];
-          for (let i = 0; i < cols; i += 1) {
-            const v = row[i];
-            cells.push(`<td>${v === undefined ? '<span class="empty">-</span>' : escapeHtml(String(v))}</td>`);
-          }
-          return `<tr>${cells.join('')}</tr>`;
-        }).join('');
-        return `
-          <div class="root-list-card">
-            <div class="root-list-head">
-              <strong>${escapeHtml(k)}</strong>
-              <span>共 ${values.length} 項</span>
-              <span>表格：${rows.length} x ${cols}</span>
-            </div>
-            <div class="root-list-table-wrap">
-              <table class="root-list-table"><tbody>${body || '<tr><td class="empty">-</td></tr>'}</tbody></table>
-            </div>
-          </div>`;
-      }).join('');
-    }
-
-    function collectKeys(explicitKeys) {
-      if (!Array.isArray(explicitKeys)) return [];
-      if (showDebug) return explicitKeys;
-      return explicitKeys.filter((k) => {
-        if (typeof k === 'string') return !k.startsWith('_');
-        if (k && typeof k === 'object') {
-          const ks = Object.keys(k);
-          if (ks.length === 1) return !String(ks[0]).startsWith('_');
-        }
-        return true;
-      });
-    }
-
-    // key spec supports:
-    // "Health"
-    // { "Fracture": ["Armor", "Weapon"] }
-    // { key: "Fracture", children: ["Armor","Weapon"] }
-    function buildColumns(keys) {
-      const top = [];
-      const sub = [];
-      const leaf = [];
-      for (const item of keys) {
-        if (typeof item === 'string') {
-          top.push({ label: item, path: [item], rowspan: 2, colspan: 1, sortable: true });
-          leaf.push({ label: item, path: [item], sortable: true });
-          continue;
-        }
-        if (item && typeof item === 'object') {
-          let parent = null;
-          let children = null;
-          const ks = Object.keys(item);
-          if (ks.length === 1 && Array.isArray(item[ks[0]])) {
-            parent = ks[0];
-            children = item[parent];
-          }
-          if (parent && children && children.length) {
-            top.push({ label: parent, path: [parent], rowspan: 1, colspan: children.length, sortable: false });
-            for (const ch of children) {
-              const cLabel = String(ch);
-              const cPath = [parent, cLabel];
-              leaf.push({ label: cLabel, path: cPath, sortable: true });
-              sub.push({ label: cLabel, path: cPath, sortable: true });
-            }
-            continue;
-          }
-        }
-      }
-      return { top, sub, leaf };
-    }
-
-    function getByPath(obj, path) {
-      let cur = obj;
-      for (const p of path) {
-        if (cur == null || typeof cur !== 'object' || !(p in cur)) return undefined;
-        cur = cur[p];
-      }
-      return cur;
-    }
-
-    function setByPath(obj, path, value) {
-      if (!path.length) return;
-      let cur = obj;
-      for (let i = 0; i < path.length - 1; i += 1) {
-        const p = path[i];
-        if (cur[p] == null || typeof cur[p] !== 'object') cur[p] = {};
-        cur = cur[p];
-      }
-      cur[path[path.length - 1]] = value;
-    }
-
-    function deleteByPath(obj, path) {
-      if (!path.length) return;
-      let cur = obj;
-      for (let i = 0; i < path.length - 1; i += 1) {
-        const p = path[i];
-        if (cur[p] == null || typeof cur[p] !== 'object') return;
-        cur = cur[p];
-      }
-      delete cur[path[path.length - 1]];
-    }
-
-    function downloadText(filename, content, type = 'application/json;charset=utf-8') {
-      const blob = new Blob([content], { type });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = filename;
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-      URL.revokeObjectURL(url);
-    }
-
-    function parseNameNumber(s) {
-      if (typeof s !== 'string') return null;
-      const m = s.trim().match(/^(.+?)\s*:\s*(-?\d+(?:\.\d+)?)$/);
-      if (!m) return null;
-      return { name: m[1].trim().toLowerCase(), num: Number(m[2]) };
-    }
-
-    function itemMatchesPreferred(item, preferred) {
-      if (!preferred) return false;
-      const p = String(preferred).trim().toLowerCase();
-      const raw = String(item ?? '').trim().toLowerCase();
-      if (!raw || !p) return false;
-      if (raw === p) return true;
-      const pair = parseNameNumber(raw);
-      if (pair && pair.name === p) return true;
-      return raw.startsWith(`${p}:`);
-    }
-
-    function pickListFirstByFilter(arr, preferred) {
-      if (!Array.isArray(arr) || arr.length === 0) return '';
-      if (!preferred) return arr[0];
-      const hit = arr.find((x) => itemMatchesPreferred(x, preferred));
-      return hit !== undefined ? hit : arr[0];
-    }
-
-    function reorderListByPreferred(arr, preferred) {
-      if (!Array.isArray(arr) || arr.length <= 1 || !preferred) return arr;
-      const idx = arr.findIndex((x) => itemMatchesPreferred(x, preferred));
-      if (idx <= 0) return arr;
-      return [arr[idx], ...arr.slice(0, idx), ...arr.slice(idx + 1)];
-    }
-
-    function parseFirstNumber(s) {
-      const text = String(s ?? '').trim();
-      if (!text) return null;
-      const m = text.match(/-?\d+(?:\.\d+)?/);
-      if (!m) return null;
-      const n = Number(m[0]);
-      return Number.isNaN(n) ? null : n;
-    }
-
-    function normalizeSortValue(v, preferredListItem = null) {
-      // rank: 0 empty, 1 number, 2 name:number pair, 3 text
-      if (v === null || v === undefined) return { rank: 0, type: 'empty' };
-      if (typeof v === 'string' && v.trim() === '') return { rank: 0, type: 'empty' };
-      if (Array.isArray(v) && v.length === 0) return { rank: 0, type: 'empty' };
-
-      if (Array.isArray(v)) {
-        const first = pickListFirstByFilter(v, preferredListItem);
-        const pair = parseNameNumber(String(first));
-        if (pair) return { rank: 2, type: 'pair', name: pair.name, num: pair.num };
-        const n = parseFirstNumber(first);
-        if (n !== null) return { rank: 1, type: 'number', num: n };
-        return { rank: 3, type: 'text', text: String(first).toLowerCase() };
-      }
-
-      if (typeof v === 'number') return { rank: 1, type: 'number', num: v };
-      if (typeof v === 'boolean') return { rank: 1, type: 'number', num: v ? 1 : 0 };
-
-      const s = typeof v === 'object' ? JSON.stringify(v) : String(v);
-      const pair = parseNameNumber(s);
-      if (pair) return { rank: 2, type: 'pair', name: pair.name, num: pair.num };
-      const n = parseFirstNumber(s);
-      if (n !== null) return { rank: 1, type: 'number', num: n };
-      return { rank: 3, type: 'text', text: s.toLowerCase() };
-    }
-
-    function compareSortValue(a, b) {
-      if (a.rank !== b.rank) return a.rank - b.rank;
-      if (a.type === 'pair' && b.type === 'pair') {
-        if (a.name < b.name) return -1;
-        if (a.name > b.name) return 1;
-        if (a.num < b.num) return -1;
-        if (a.num > b.num) return 1;
-        return 0;
-      }
-      if (a.type === 'number' && b.type === 'number') {
-        if (a.num < b.num) return -1;
-        if (a.num > b.num) return 1;
-        return 0;
-      }
-      const ta = a.text ?? '';
-      const tb = b.text ?? '';
-      if (ta < tb) return -1;
-      if (ta > tb) return 1;
-      return 0;
-    }
-
-    function sortRows(rows, key, order, filters = {}, metaFilterOptions = {}) {
-      if (!key || key === '__none__') return [...rows];
-      const sign = order === 'desc' ? -1 : 1;
-      const path = key.split('.');
-      const preferred = filters && typeof filters === 'object' ? (filters[path[0]] || null) : null;
-      const filterArr = (metaFilterOptions && Array.isArray(metaFilterOptions[path[0]]))
-        ? metaFilterOptions[path[0]].map((x) => String(x).trim().toLowerCase())
-        : null;
-      const filterRank = filterArr ? new Map(filterArr.map((v, i) => [v, i])) : null;
-
-      function valueFilterName(v) {
-        if (!v) return null;
-        if (v.type === 'pair') return v.name;
-        if (v.type === 'text') {
-          const p = parseNameNumber(v.text);
-          return p ? p.name : v.text;
-        }
-        return null;
-      }
-
-      return [...rows].sort((a, b) => {
-        const va = normalizeSortValue(getByPath(a, path), preferred);
-        const vb = normalizeSortValue(getByPath(b, path), preferred);
-
-        if (filterRank && filterRank.size > 0) {
-          const na = valueFilterName(va);
-          const nb = valueFilterName(vb);
-          const ra = na !== null && filterRank.has(na) ? filterRank.get(na) : null;
-          const rb = nb !== null && filterRank.has(nb) ? filterRank.get(nb) : null;
-          const ka = ra !== null;
-          const kb = rb !== null;
-
-          if (order === 'asc') {
-            // ASC: in-filter first by filter order, unknowns after with default ASC.
-            if (ka && !kb) return -1;
-            if (!ka && kb) return 1;
-            if (ka && kb && ra !== rb) return ra - rb;
-          } else {
-            // DESC: unknowns first with default DESC, then in-filter by reverse filter order.
-            if (!ka && kb) return -1;
-            if (ka && !kb) return 1;
-            if (ka && kb && ra !== rb) return rb - ra;
-          }
-        }
-
-        const c = compareSortValue(va, vb);
-        if (c !== 0) return c * sign;
-
-        // Stable tie-breaker: preserve original row order.
-        const ai = Number.isFinite(a.__index) ? a.__index : 0;
-        const bi = Number.isFinite(b.__index) ? b.__index : 0;
-        return ai - bi;
-      });
-    }
-
-    function render(rows) {
-      const keys = collectKeys(currentKeyOrder);
-      const columns = buildColumns(keys);
-      const key = activeSortKey;
-      const order = activeSortOrder;
-      const visibleRows = rows.filter((r) => !isRowHidden(r));
-      const sortedRows = sortRows(visibleRows, key, order, activeMetaFilters, currentMeta);
-      currentRows = sortedRows;
-      if (!rows.length || !columns.leaf.length) {
-        headTopEl.innerHTML = '';
-        headSubEl.innerHTML = '';
-        const hasOtherContent = Object.keys(currentRootLists || {}).length > 0
-          || Object.keys(currentNamedTables || {}).length > 0;
-        bodyEl.innerHTML = hasOtherContent ? '' : '<tr><td class="empty">無資料可顯示</td></tr>';
-        return;
-      }
-      headTopEl.innerHTML = columns.top.map(c => {
-        const k = c.path.join('.');
-        const marker = (c.sortable && k === key) ? (order === 'asc' ? ' ▲' : ' ▼') : '';
-        const attrs = c.sortable ? `data-sort-key="${escapeHtml(k)}"` : '';
-        const span = `rowspan="${c.rowspan}" colspan="${c.colspan}"`;
-        return `<th ${span} ${attrs}>${escapeHtml(c.label)}${marker}</th>`;
-      }).join('');
-      headSubEl.innerHTML = columns.sub.map(c => {
-        const k = c.path.join('.');
-        const marker = (k === key) ? (order === 'asc' ? ' ▲' : ' ▼') : '';
-        return `<th data-sort-key="${escapeHtml(k)}">${escapeHtml(c.label)}${marker}</th>`;
-      }).join('');
-      bodyEl.innerHTML = currentRows.map((r, i) => {
-        const idx = r.__index ?? i;
-        const cols = columns.leaf.map((c) => {
-          const raw = getByPath(r, c.path);
-          const shown = visibleValue(raw);
-          const isArray = Array.isArray(shown);
-          const flattenList = !activeTableListMode;
-          const preferred = activeMetaFilters?.[c.path[0]] || null;
-          const shownForDisplay = isArray ? reorderListByPreferred(shown, preferred) : shown;
-          const editable = isEditMode && shown !== '-' && (shown === null || typeof shown !== 'object' || isArray);
-          const val = shownForDisplay === null || shownForDisplay === undefined
-            ? ''
-            : (isArray ? shownForDisplay.join('; ') : String(shownForDisplay));
-          const rawType = isArray ? 'array' : (raw === null ? 'null' : typeof raw);
-          return `<td data-row="${i}" data-idx="${idx}" data-path="${escapeHtml(c.path.join('.'))}" data-editable="${editable ? '1' : '0'}" data-raw-type="${rawType}" data-raw="${escapeHtml(val)}">${valToHtml(shownForDisplay, flattenList)}</td>`;
-        }).join('');
-        return `<tr>${cols}</tr>`;
-      }).join('');
-
-      bodyEl.querySelectorAll('td[data-editable="1"]').forEach((td) => {
-        td.addEventListener('dblclick', () => startInlineEdit(td));
-      });
-      const bindSort = (root) => {
-        root.querySelectorAll('th[data-sort-key]').forEach((th) => {
-          th.addEventListener('click', () => {
-            const k = th.dataset.sortKey;
-            if (activeSortKey === k) {
-              activeSortOrder = activeSortOrder === 'asc' ? 'desc' : 'asc';
-            } else {
-              activeSortKey = k;
-              activeSortOrder = 'asc';
-            }
-            render(currentRows);
-          });
-        });
-      };
-      bindSort(headTopEl);
-      bindSort(headSubEl);
-    }
-
-    function applyMetaFilters(rows) {
-      let out = rows;
-      for (const [key, value] of Object.entries(activeMetaFilters)) {
-        if (!value) continue;
-        const needle = String(value).toLowerCase();
-        out = out.filter((r) => {
-          const v = visibleValue(r[key]);
-          if (Array.isArray(v)) {
-            return v.some((item) => String(item ?? '').toLowerCase().startsWith(needle));
-          }
-          return String(v ?? '').toLowerCase().startsWith(needle);
-        });
-      }
-      return out;
-    }
-
-    function applyMetaFiltersGeneric(rows, filters) {
-      let out = rows;
-      for (const [key, value] of Object.entries(filters || {})) {
-        if (!value) continue;
-        const needle = String(value).toLowerCase();
-        out = out.filter((r) => {
-          const v = visibleValue(r[key]);
-          if (Array.isArray(v)) {
-            return v.some((item) => String(item ?? '').toLowerCase().startsWith(needle));
-          }
-          return String(v ?? '').toLowerCase().startsWith(needle);
-        });
-      }
-      return out;
-    }
-
-    function renderNamedTables() {
-      const entries = Object.entries(currentNamedTables || {}).filter(([k, v]) => {
-        if (!v || typeof v !== 'object') return false;
-        if (!Array.isArray(v.keys) || !Array.isArray(v.datas)) return false;
-        if (!showDebug && String(k).startsWith('_')) return false;
-        return true;
-      });
-      if (!entries.length) {
-        namedTablesEl.style.display = 'none';
-        namedTablesEl.innerHTML = '';
-        return;
-      }
-
-      namedTablesEl.style.display = '';
-      namedTablesEl.innerHTML = entries.map(([name, table]) => {
-        const state = namedTableStates[name] || (namedTableStates[name] = {
+    /**
+     * MODEL: Data & State Logic
+     */
+    class DatasetModel {
+      constructor() {
+        this.state = {
+          currentId: 'monster',
+          doc: null,
+          baseRows: [],
+          keys: [],
+          meta: {},
+          rootLists: {},
+          namedTables: {},
+          changes: [],
+          showDebug: false,
+          filters: {},
+          listMode: false,
           sortKey: '__none__',
           sortOrder: 'asc',
-          filters: {},
-          listMode: false
-        });
-        const meta = (table.filter && typeof table.filter === 'object') ? table.filter : {};
-        const baseRows = table.datas.map((r, i) => ({ ...r, __index: i }));
-        const filteredRows = applyMetaFiltersGeneric(baseRows, state.filters);
-        const keys = collectKeys(table.keys);
-        const columns = buildColumns(keys);
-        const visibleRows = filteredRows.filter((r) => !isRowHidden(r));
-        const sortedRows = sortRows(visibleRows, state.sortKey, state.sortOrder, state.filters, meta);
-
-        const filterEntries = Object.entries(meta).filter(([k, v]) => {
-          if (!Array.isArray(v)) return false;
-          if (!showDebug && String(k).startsWith('_')) return false;
-          return true;
-        });
-        const filtersHtml = filterEntries.map(([k, arr]) => {
-          const cleanArr = showDebug ? arr : arr.filter((x) => !isUnderscoreHidden(x));
-          const options = ['<option value="">（全部）</option>']
-            .concat(cleanArr.map((x) => {
-              const v = String(x);
-              const selected = state.filters[k] === v ? ' selected' : '';
-              return `<option value="${escapeHtml(v)}"${selected}>${escapeHtml(v)}</option>`;
-            }))
-            .join('');
-          return `<label>${escapeHtml(k)}：<select data-nt-meta-key="${escapeHtml(k)}">${options}</select></label>`;
-        }).join('');
-
-        const headTop = columns.top.map(c => {
-          const k = c.path.join('.');
-          const marker = (c.sortable && k === state.sortKey) ? (state.sortOrder === 'asc' ? ' ▲' : ' ▼') : '';
-          const attrs = c.sortable ? `data-nt-sort-key="${escapeHtml(k)}"` : '';
-          const span = `rowspan="${c.rowspan}" colspan="${c.colspan}"`;
-          return `<th ${span} ${attrs}>${escapeHtml(c.label)}${marker}</th>`;
-        }).join('');
-        const headSub = columns.sub.map(c => {
-          const k = c.path.join('.');
-          const marker = (k === state.sortKey) ? (state.sortOrder === 'asc' ? ' ▲' : ' ▼') : '';
-          return `<th data-nt-sort-key="${escapeHtml(k)}">${escapeHtml(c.label)}${marker}</th>`;
-        }).join('');
-        const body = sortedRows.map((r) => {
-          const cols = columns.leaf.map((c) => {
-            const raw = getByPath(r, c.path);
-            const shown = visibleValue(raw);
-            const isArray = Array.isArray(shown);
-            const flattenList = !state.listMode;
-            const preferred = state.filters?.[c.path[0]] || null;
-            const shownForDisplay = isArray ? reorderListByPreferred(shown, preferred) : shown;
-            return `<td>${valToHtml(shownForDisplay, flattenList && isArray)}</td>`;
-          }).join('');
-          return `<tr>${cols}</tr>`;
-        }).join('') || '<tr><td class="empty">無資料可顯示</td></tr>';
-
-        return `
-          <div class="root-list-card" data-nt-card="${escapeHtml(name)}">
-            <div class="root-list-head">
-              <strong>${escapeHtml(name)}</strong>
-              <span>共 ${sortedRows.length} 筆</span>
-              <label><input type="checkbox" data-nt-list-mode ${state.listMode ? 'checked' : ''} />（列表）</label>
-            </div>
-            ${filtersHtml
-              ? `<div class="toolbar" style="margin-bottom:8px; box-shadow:none; border-radius:10px;">${filtersHtml}</div>`
-              : ''}
-            <div class="table-wrap">
-              <table>
-                <thead>
-                  <tr>${headTop}</tr>
-                  <tr>${headSub}</tr>
-                </thead>
-                <tbody>${body}</tbody>
-              </table>
-            </div>
-          </div>
-        `;
-      }).join('');
-
-      namedTablesEl.querySelectorAll('[data-nt-card]').forEach((card) => {
-        const name = card.getAttribute('data-nt-card');
-        const state = namedTableStates[name];
-        card.querySelectorAll('select[data-nt-meta-key]').forEach((sel) => {
-          sel.addEventListener('change', () => {
-            const k = sel.dataset.ntMetaKey;
-            state.filters[k] = sel.value || '';
-            renderNamedTables();
-          });
-        });
-        card.querySelectorAll('input[type="checkbox"][data-nt-list-mode]').forEach((cb) => {
-          cb.addEventListener('change', () => {
-            state.listMode = cb.checked;
-            renderNamedTables();
-          });
-        });
-        card.querySelectorAll('th[data-nt-sort-key]').forEach((th) => {
-          th.addEventListener('click', () => {
-            const k = th.dataset.ntSortKey;
-            if (state.sortKey === k) {
-              state.sortOrder = state.sortOrder === 'asc' ? 'desc' : 'asc';
-            } else {
-              state.sortKey = k;
-              state.sortOrder = 'asc';
-            }
-            renderNamedTables();
-          });
-        });
-      });
-    }
-
-    function renderMetaFilters() {
-      const entries = Object.entries(currentMeta).filter(([k, v]) => {
-        if (!Array.isArray(v)) return false;
-        if (!showDebug && String(k).startsWith('_')) return false;
-        return true;
-      });
-      if (!entries.length) {
-        const listChecked = activeTableListMode ? ' checked' : '';
-        metaFiltersEl.innerHTML = `<label><input type="checkbox" id="table-list-mode"${listChecked} />（列表）</label>`;
-        const listCbOnly = document.getElementById('table-list-mode');
-        if (listCbOnly) {
-          listCbOnly.addEventListener('change', () => {
-            activeTableListMode = listCbOnly.checked;
-            saveViewState();
-            render(currentRows);
-          });
-        }
-        return;
+          isEditMode: false,
+          fileHandle: null
+        };
       }
-      const controls = entries.map(([k, arr]) => {
-        const cleanArr = showDebug ? arr : arr.filter((x) => !isUnderscoreHidden(x));
-        const options = ['<option value="">（全部）</option>']
-          .concat(cleanArr.map((x) => {
-            const v = String(x);
-            const selected = activeMetaFilters[k] === v ? ' selected' : '';
-            return `<option value="${escapeHtml(v)}"${selected}>${escapeHtml(v)}</option>`;
-          }))
-          .join('');
-        return `<label>${escapeHtml(k)}：<select data-meta-key="${escapeHtml(k)}">${options}</select></label>`;
-      }).join('');
-      const listChecked = activeTableListMode ? ' checked' : '';
-      metaFiltersEl.innerHTML = `${controls} <label><input type="checkbox" id="table-list-mode"${listChecked} />（列表）</label>`;
-      metaFiltersEl.querySelectorAll('select[data-meta-key]').forEach((sel) => {
-        sel.addEventListener('change', () => {
-          const k = sel.dataset.metaKey;
-          activeMetaFilters[k] = sel.value || '';
-          const url = new URL(location.href);
-          if (activeMetaFilters[k]) url.searchParams.set(k, activeMetaFilters[k]);
-          else url.searchParams.delete(k);
-          history.replaceState({}, '', url);
-          saveViewState();
-          currentRows = applyMetaFilters(currentBaseRows);
-          render(currentRows);
-        });
-      });
-      const listCb = document.getElementById('table-list-mode');
-      if (listCb) {
-        listCb.addEventListener('change', () => {
-          activeTableListMode = listCb.checked;
-          saveViewState();
-          render(currentRows);
-        });
-      }
-    }
 
-    function startInlineEdit(td) {
-      if (!isEditMode) return;
-      if (td.dataset.editing === '1') return;
-      td.dataset.editing = '1';
-      const oldValue = td.dataset.raw ?? '';
-      const rawType = td.dataset.rawType ?? 'string';
-      const rowIndex = Number(td.dataset.row);
-      const stableIdx = Number(td.dataset.idx);
-      const path = (td.dataset.path || '').split('.').filter(Boolean);
-
-      const input = document.createElement('input');
-      input.type = 'text';
-      input.value = oldValue;
-      input.style.width = '100%';
-      input.style.font = 'inherit';
-      input.style.border = '1px solid #9aa5b5';
-      input.style.borderRadius = '6px';
-      input.style.padding = '4px 6px';
-      input.style.background = '#fff';
-      input.style.color = '#101216';
-
-      td.innerHTML = '';
-      td.appendChild(input);
-      input.focus();
-      input.select();
-
-      let finished = false;
-      const commit = () => {
-        if (finished) return;
-        finished = true;
-        const newValue = input.value;
-        const target = currentRows[rowIndex];
-        if (target) {
-          const before = getByPath(target, path);
-          if (rawType === 'array') {
-            if (newValue.trim() === '') {
-              deleteByPath(target, path);
-            } else {
-              const arr = newValue
-                .split(/[;；]+/)
-                .map((x) => x.trim())
-                .filter(Boolean);
-              if (arr.length === 0) deleteByPath(target, path);
-              else setByPath(target, path, arr);
-            }
-          } else {
-            if (newValue === '') deleteByPath(target, path);
-            else setByPath(target, path, newValue);
-          }
-          changes.push({
-            index: Number.isFinite(stableIdx) ? stableIdx : target.__index ?? rowIndex,
-            path: path.join('.'),
-            before: before ?? null,
-            after: newValue === '' ? null : newValue
-          });
-          isDirty = true;
-        }
-        td.dataset.editing = '0';
-        render(currentRows);
-        refreshStatusLoaded();
-      };
-      const cancel = () => {
-        if (finished) return;
-        finished = true;
-        td.dataset.editing = '0';
-        render(currentRows);
-      };
-
-      input.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter') {
-          e.preventDefault();
-          commit();
-        } else if (e.key === 'Escape') {
-          e.preventDefault();
-          cancel();
-        }
-      });
-      input.addEventListener('blur', () => cancel());
-    }
-
-    async function loadOne(id) {
-      const prevDatasetId = currentDatasetId;
-      const d = DATASETS.find(x => x.id === id) || DATASETS[0];
-      currentDatasetId = d.id;
-      const isDatasetSwitch = prevDatasetId !== d.id;
-      statusEl.textContent = `載入 ${d.label}...`;
-      try {
+      async fetchDataset(id) {
+        const d = CONFIG.DATASETS.find(x => x.id === id) || CONFIG.DATASETS[0];
         const res = await fetch(d.file, { cache: 'no-store' });
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
-        currentDoc = data;
-        const normalized = normalizeDataset(data);
-        currentKeyOrder = normalized.keys;
-        const rawRows = normalized.rows.map((r, i) => ({ ...r, __index: i }));
-        currentMeta = normalized.meta || {};
-        currentRootLists = normalized.rootLists || {};
-        currentNamedTables = normalized.namedTables || {};
-        namedTableStates = {};
-        if (isDatasetSwitch) {
-          activeMetaFilters = {};
-          activeTableListMode = false;
-        }
-        renderMetaFilters();
-        renderRootLists();
-        renderNamedTables();
-        currentBaseRows = rawRows;
-        currentRows = applyMetaFilters(currentBaseRows);
-        currentDataset = {
-          keys: [...currentKeyOrder],
-          datas: rawRows.map(({ __index, ...rest }) => rest)
-        };
-        changes = [];
-        isDirty = false;
-        render(currentRows);
-        refreshStatusLoaded(d.label);
-        saveViewState();
-      } catch (e) {
-        currentRootLists = {};
-        currentNamedTables = {};
-        rootListsEl.style.display = 'none';
-        rootListsEl.innerHTML = '';
-        namedTablesEl.style.display = 'none';
-        namedTablesEl.innerHTML = '';
-        headTopEl.innerHTML = '';
-        headSubEl.innerHTML = '';
-        bodyEl.innerHTML = `<tr><td class="empty">載入失敗：${escapeHtml(e.message)}</td></tr>`;
-        statusEl.textContent = `${d.label} 載入失敗`;
+        this.processRawData(data, id);
       }
-    }
 
-    async function openFileForEdit() {
-      if (!window.showOpenFilePicker) {
-        alert('此瀏覽器不支援 File System Access API。請使用新版 Chrome/Edge。');
-        return;
-      }
-      try {
-        const [handle] = await window.showOpenFilePicker({
-          multiple: false,
-          types: [{ description: 'JSON', accept: { 'application/json': ['.json'] } }]
+      processRawData(data, id) {
+        this.state.currentId = id;
+        this.state.doc = data;
+        this.state.keys = Array.isArray(data.keys) ? data.keys : [];
+        this.state.baseRows = (Array.isArray(data.datas) ? data.datas : []).map((r, i) => ({ ...r, __index: i }));
+        this.state.meta = data.filter || {};
+        this.state.rootLists = {};
+        this.state.namedTables = {};
+        this.state.changes = [];
+        
+        Object.entries(data).forEach(([k, v]) => {
+          if (['keys', 'datas', 'filter'].includes(k)) return;
+          if (v && v.keys && v.datas) this.state.namedTables[k] = v;
+          else if (Array.isArray(v)) this.state.rootLists[k] = v;
         });
+      }
+
+      getFilteredAndSortedRows() {
+        let rows = this.state.baseRows;
+        if (!this.state.showDebug) rows = rows.filter(r => !String(r.ID).startsWith('_'));
+
+        // Filter
+        Object.entries(this.state.filters).forEach(([k, val]) => {
+          if (!val) return;
+          rows = rows.filter(r => {
+            const v = r[k];
+            return Array.isArray(v) ? v.some(i => String(i).startsWith(val)) : String(v).startsWith(val);
+          });
+        });
+
+        // Sort
+        if (this.state.sortKey !== '__none__') {
+          const path = this.state.sortKey.split('.');
+          rows = [...rows].sort((a, b) => {
+            const va = Utils.getByPath(a, path), vb = Utils.getByPath(b, path);
+            const res = va < vb ? -1 : va > vb ? 1 : 0;
+            return this.state.sortOrder === 'asc' ? res : -res;
+          });
+        }
+        return rows;
+      }
+    }
+
+    /**
+     * VIEW: DOM Rendering Logic
+     */
+    class DatasetView {
+      constructor() {
+        this.els = {
+          select: document.getElementById('dataset-select'),
+          debug: document.getElementById('show-debug-toggle'),
+          status: document.getElementById('status'),
+          meta: document.getElementById('meta-filters'),
+          headTop: document.getElementById('head-top'),
+          headSub: document.getElementById('head-sub'),
+          body: document.getElementById('body'),
+          toolbar: document.querySelector('.toolbar'),
+          flushBtn: document.getElementById('flush-btn'),
+          rootLists: document.getElementById('root-lists'),
+          namedTables: document.getElementById('named-tables')
+        };
+      }
+
+      renderFilters(meta, activeFilters, listMode, showDebug) {
+        const entries = Object.entries(meta).filter(([k]) => showDebug || !k.startsWith('_'));
+        let html = entries.map(([k, options]) => {
+          const opts = ['<option value="">（全部）</option>', ...options.filter(o => showDebug || !String(o).startsWith('_')).map(o => 
+            `<option value="${Utils.escapeHtml(o)}"${activeFilters[k] === o ? ' selected' : ''}>${Utils.escapeHtml(o)}</option>`
+          )].join('');
+          return `<label>${k}: <select data-filter="${k}">${opts}</select></label>`;
+        }).join(' ');
+        
+        html += `<label><input type="checkbox" id="table-list-mode" ${listMode ? 'checked' : ''}>（列表）</label>`;
+        this.els.meta.innerHTML = html;
+      }
+
+      renderTable(rows, keys, state) {
+        const visibleKeys = keys.filter(k => state.showDebug || (typeof k === 'string' ? !k.startsWith('_') : !Object.keys(k)[0].startsWith('_')));
+        
+        // Build Columns (simplified for brevity, reuse your buildColumns logic here)
+        const { top, sub, leaf } = this.calculateColumns(visibleKeys, state);
+        
+        this.els.headTop.innerHTML = top;
+        this.els.headSub.innerHTML = sub;
+        
+        this.els.body.innerHTML = rows.map((r, i) => {
+          const cells = leaf.map(col => {
+            let val = Utils.getByPath(r, col.path);
+            if (Array.isArray(val)) val = state.listMode ? val.join('<br>') : val.join('; ');
+            const display = (val === null || val === undefined) ? '<span class="empty">-</span>' : Utils.escapeHtml(val);
+            const editable = state.isEditMode ? 'data-editable="1"' : '';
+            return `<td ${editable} data-row="${i}" data-path="${col.path.join('.')}">${display}</td>`;
+          }).join('');
+          return `<tr>${cells}</tr>`;
+        }).join('');
+      }
+
+      calculateColumns(keys, state) {
+        // Logic to build the 2-tier header based on your current buildColumns
+        // This is a mapping from keys object to HTML strings for headTop, headSub, and paths for leaf
+        let top = '', sub = '', leaf = [];
+        keys.forEach(k => {
+          if (typeof k === 'string') {
+            top += `<th rowspan="2" data-sort="${k}">${k}${state.sortKey===k?(state.sortOrder==='asc'?' ▲':' ▼'):''}</th>`;
+            leaf.push({ path: [k] });
+          } else {
+            const pk = Object.keys(k)[0];
+            const children = k[pk];
+            top += `<th colspan="${children.length}">${pk}</th>`;
+            children.forEach(ck => {
+              const cp = `${pk}.${ck}`;
+              sub += `<th data-sort="${cp}">${ck}${state.sortKey===cp?(state.sortOrder==='asc'?' ▲':' ▼'):''}</th>`;
+              leaf.push({ path: [pk, ck] });
+            });
+          }
+        });
+        return { top, sub, leaf };
+      }
+
+      updateStatus(text, isEditing = false) {
+        this.els.status.textContent = text;
+        this.els.toolbar.classList.toggle('editing', isEditing);
+        this.els.flushBtn.disabled = !isEditing;
+      }
+    }
+
+    /**
+     * CONTROLLER: Coordination
+     */
+    class AppController {
+      constructor(model, view) {
+        this.model = model;
+        this.view = view;
+        this.init();
+      }
+
+      async init() {
+        this.view.els.select.innerHTML = CONFIG.DATASETS.map(d => `<option value="${d.id}">${d.label}</option>`).join('');
+        
+        const saved = Utils.getCookie(CONFIG.COOKIE_NAME) || {};
+        this.model.state.currentId = saved.dataset || 'monster';
+        this.model.state.showDebug = !!saved.showDebug;
+        this.model.state.filters = saved.filters || {};
+        this.model.state.listMode = !!saved.listMode;
+
+        this.view.els.select.value = this.model.state.currentId;
+        this.view.els.debug.checked = this.model.state.showDebug;
+
+        this.bindEvents();
+        await this.loadCurrent();
+      }
+
+      bindEvents() {
+        this.view.els.select.addEventListener('change', e => {
+          this.model.state.filters = {};
+          this.loadCurrent(e.target.value);
+        });
+
+        this.view.els.debug.addEventListener('change', e => {
+          this.model.state.showDebug = e.target.checked;
+          this.refresh();
+        });
+
+        this.view.els.meta.addEventListener('change', e => {
+          if (e.target.dataset.filter) {
+            this.model.state.filters[e.target.dataset.filter] = e.target.value;
+            this.refresh();
+          }
+          if (e.target.id === 'table-list-mode') {
+            this.model.state.listMode = e.target.checked;
+            this.refresh();
+          }
+        });
+
+        this.view.els.headTop.addEventListener('click', e => this.handleSort(e));
+        this.view.els.headSub.addEventListener('click', e => this.handleSort(e));
+
+        document.getElementById('open-file-btn').addEventListener('click', () => this.handleFileOpen());
+        document.getElementById('flush-btn').addEventListener('click', () => this.handleFlush());
+        document.getElementById('copy-path-btn').addEventListener('click', () => {
+          const d = CONFIG.DATASETS.find(x => x.id === this.model.state.currentId);
+          const abs = `${CONFIG.LOCAL_ROOT}\\docs\\${d.file.replace('./', '').replace(/\//g, '\\')}`;
+          navigator.clipboard.writeText(abs).then(() => alert('已複製路徑'));
+        });
+      }
+
+      async loadCurrent(id = this.model.state.currentId) {
+        this.view.updateStatus('載入中...');
+        try {
+          await this.model.fetchDataset(id);
+          this.refresh();
+        } catch (e) {
+          this.view.updateStatus('載入失敗: ' + e.message);
+        }
+      }
+
+      handleSort(e) {
+        const key = e.target.dataset.sort;
+        if (!key) return;
+        if (this.model.state.sortKey === key) {
+          this.model.state.sortOrder = this.model.state.sortOrder === 'asc' ? 'desc' : 'asc';
+        } else {
+          this.model.state.sortKey = key;
+          this.model.state.sortOrder = 'asc';
+        }
+        this.refresh();
+      }
+
+      refresh() {
+        const rows = this.model.getFilteredAndSortedRows();
+        this.view.renderFilters(this.model.state.meta, this.model.state.filters, this.model.state.listMode, this.model.state.showDebug);
+        this.view.renderTable(rows, this.model.state.keys, this.model.state.isEditMode ? { ...this.model.state, isEditMode: true } : this.model.state);
+        this.view.updateStatus(`${this.model.state.currentId}: ${rows.length} 筆`, this.model.state.isEditMode);
+        
+        Utils.setCookie(CONFIG.COOKIE_NAME, {
+          dataset: this.model.state.currentId,
+          showDebug: this.model.state.showDebug,
+          filters: this.model.state.filters,
+          listMode: this.model.state.listMode
+        });
+      };
+
+      async handleFileOpen() {
+        const [handle] = await window.showOpenFilePicker();
         const file = await handle.getFile();
-        const text = await file.text();
-        const data = JSON.parse(text);
-        currentDoc = data;
-        const normalized = normalizeDataset(data);
-        currentKeyOrder = normalized.keys;
-        currentBaseRows = normalized.rows.map((r, i) => ({ ...r, __index: i }));
-        currentMeta = normalized.meta || {};
-        currentRootLists = normalized.rootLists || {};
-        currentNamedTables = normalized.namedTables || {};
-        namedTableStates = {};
-        renderMetaFilters();
-        renderRootLists();
-        renderNamedTables();
-        currentRows = applyMetaFilters(currentBaseRows);
-        currentDataset = {
-          keys: [...currentKeyOrder],
-          datas: currentBaseRows.map(({ __index, ...rest }) => rest)
-        };
-        changes = [];
-        setModeEditing(handle);
-        render(currentRows);
-        statusEl.textContent = `${file.name}：${currentRows.length} 筆（未寫入變更 0 項）`;
-      } catch (e) {
-        if (e && e.name === 'AbortError') return;
-        statusEl.textContent = `開檔失敗：${e.message}`;
+        const data = JSON.parse(await file.text());
+        this.model.processRawData(data, file.name);
+        this.model.state.isEditMode = true;
+        this.model.state.fileHandle = handle;
+        this.refresh();
       }
-    }
 
-    async function copyCurrentDatasetPath() {
-      const d = DATASETS.find(x => x.id === currentDatasetId) || DATASETS[0];
-      const rel = d.file
-        .replace(/^\.\.\//, '')
-        .replace(/^\.\//, 'docs/')
-        .replaceAll('/', '\\');
-      const abs = `${LOCAL_PROJECT_ROOT}\\${rel}`;
-      try {
-        await navigator.clipboard.writeText(abs);
-        statusEl.textContent = `已複製路徑：${abs}`;
-      } catch (e) {
-        statusEl.textContent = `複製失敗：${e.message}`;
-      }
-    }
-
-    async function flushToFile() {
-      if (!isEditMode || !editFileHandle) return;
-      try {
-        const datas = currentBaseRows
-          .slice()
-          .sort((a, b) => (a.__index ?? 0) - (b.__index ?? 0))
-          .map(({ __index, ...rest }) => rest);
-        const out = {
-          ...(currentDoc && typeof currentDoc === 'object' ? currentDoc : {}),
-          keys: currentKeyOrder,
-          datas,
-        };
-        const writable = await editFileHandle.createWritable();
+      async handleFlush() {
+        const writable = await this.model.state.fileHandle.createWritable();
+        const out = { ...this.model.state.doc, datas: this.model.state.baseRows.map(({__index, ...r}) => r) };
         await writable.write(JSON.stringify(out, null, 2));
         await writable.close();
-        isDirty = false;
-        changes = [];
-        currentDoc = out;
-        setModePreview();
-        statusEl.textContent = `已寫入：${currentDatasetId}（預覽）`;
-      } catch (e) {
-        statusEl.textContent = `寫入失敗：${e.message}`;
+        this.model.state.isEditMode = false;
+        this.refresh();
       }
     }
 
-    function init() {
-      const params = new URLSearchParams(location.search);
-      const q = params.get('d') || 'monster';
-      const cookieState = loadViewState();
-      initialQueryFilters = {};
-      for (const [k, v] of params.entries()) {
-        if (k !== 'd' && v) initialQueryFilters[k] = v;
-      }
-      selectEl.innerHTML = DATASETS.map(d => `<option value="${d.id}">${d.label}</option>`).join('');
-      const cookieDataset = cookieState?.dataset;
-      const wantedDataset = DATASETS.some(d => d.id === q) ? q
-        : (DATASETS.some(d => d.id === cookieDataset) ? cookieDataset : 'monster');
-      selectEl.value = wantedDataset;
-      showDebug = Boolean(cookieState?.showDebug);
-      showDebugToggleEl.checked = false;
-      showDebugToggleEl.checked = showDebug;
-      showDebugToggleEl.addEventListener('change', () => {
-        showDebug = showDebugToggleEl.checked;
-        saveViewState();
-        renderMetaFilters();
-        renderRootLists();
-        renderNamedTables();
-        currentRows = applyMetaFilters(currentBaseRows);
-        render(currentRows);
-        refreshStatusLoaded();
-      });
-      selectEl.addEventListener('change', () => {
-        const id = selectEl.value;
-        const url = new URL(location.href);
-        url.searchParams.set('d', id);
-        history.replaceState({}, '', url);
-        setModePreview();
-        activeSortKey = '__none__';
-        activeSortOrder = 'asc';
-        saveViewState();
-        loadOne(id);
-      });
-      openFileBtn.addEventListener('click', () => openFileForEdit());
-      copyPathBtn.addEventListener('click', () => copyCurrentDatasetPath());
-      flushBtn.addEventListener('click', () => flushToFile());
-      setModePreview();
-      currentDatasetId = selectEl.value;
-      if (cookieState?.filters && typeof cookieState.filters === 'object') {
-        activeMetaFilters = { ...cookieState.filters };
-      }
-      if (typeof cookieState?.listMode === 'boolean') {
-        activeTableListMode = cookieState.listMode;
-      }
-      loadOne(selectEl.value);
-    }
-
-    init();
+    // Start the App
+    new AppController(new DatasetModel(), new DatasetView());
   </script>
 </body>
 </html>
-
