@@ -1,0 +1,3670 @@
+{
+  "version": "v2",
+  "mapGroupCount": 63,
+  "maps": [
+    {
+      "category": "資源地",
+      "zh_TW": "松樹叢",
+      "nameID": "map.easy_forest.name",
+      "mapPointIDs": [
+        "easy_forest_01",
+        "easy_forest_02",
+        "easy_forest_03"
+      ],
+      "locations": [
+        "easy_forest_01",
+        "easy_forest",
+        "farm_forest_easy_01",
+        "farm_forest_easy_02",
+        "farm_forest_easy_03",
+        "easy_forest_02",
+        "easy_forest_copy_1",
+        "easy_forest_03",
+        "easy_forest_copy_2"
+      ],
+      "enemies": [
+        {
+          "enemyID": "bear",
+          "enemyNameID": "mob.bear.name",
+          "kind": "animal_enemy_or_creature",
+          "sources": [
+            "locations.avatars",
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "cursed",
+          "enemyNameID": "mob.cursed.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars",
+            "locations.scripts.spawn",
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "cursed_martyr",
+          "enemyNameID": "mob.cursed_martyr.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars",
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "deer",
+          "enemyNameID": "mob.deer.name",
+          "kind": "neutral_creature",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "leper",
+          "enemyNameID": "mob.leper.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars",
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "player_bot_easy_1",
+          "enemyNameID": "Player1234",
+          "kind": "enemy",
+          "sources": [
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "player_bot_easy_2",
+          "enemyNameID": "Player1234",
+          "kind": "enemy",
+          "sources": [
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "player_bot_easy_3",
+          "enemyNameID": "Player1234",
+          "kind": "enemy",
+          "sources": [
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "player_bot_easy_4",
+          "enemyNameID": "Player1234",
+          "kind": "enemy",
+          "sources": [
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "player_bot_easy_5",
+          "enemyNameID": "Player1234",
+          "kind": "enemy",
+          "sources": [
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "player_bot_easy_6",
+          "enemyNameID": "Player1234",
+          "kind": "enemy",
+          "sources": [
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "player_bot_easy_7",
+          "enemyNameID": "Player1234",
+          "kind": "enemy",
+          "sources": [
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "turkey",
+          "enemyNameID": "mob.turkey.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "turkey_boss",
+          "enemyNameID": "mob.turkey_boss.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "wolf",
+          "enemyNameID": "mob.wolf.name",
+          "kind": "animal_enemy_or_creature",
+          "sources": [
+            "locations.avatars",
+            "locations.scripts.spawn",
+            "locations.unique_avatars"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "資源地",
+      "zh_TW": "岩石小丘",
+      "nameID": "map.easy_rock.name",
+      "mapPointIDs": [
+        "easy_rock_01",
+        "easy_rock_02",
+        "easy_rock_03"
+      ],
+      "locations": [
+        "easy_rock_01",
+        "easy_rock",
+        "farm_rock_easy_01",
+        "farm_rock_easy_02",
+        "farm_rock_easy_03",
+        "easy_rock_02",
+        "easy_rock_copy_1",
+        "easy_rock_03",
+        "easy_rock_copy_2"
+      ],
+      "enemies": [
+        {
+          "enemyID": "bear",
+          "enemyNameID": "mob.bear.name",
+          "kind": "animal_enemy_or_creature",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "cursed",
+          "enemyNameID": "mob.cursed.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars",
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "cursed_martyr",
+          "enemyNameID": "mob.cursed_martyr.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars",
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "deer",
+          "enemyNameID": "mob.deer.name",
+          "kind": "neutral_creature",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "leper",
+          "enemyNameID": "mob.leper.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars",
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "player_bot_easy_1",
+          "enemyNameID": "Player1234",
+          "kind": "enemy",
+          "sources": [
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "player_bot_easy_2",
+          "enemyNameID": "Player1234",
+          "kind": "enemy",
+          "sources": [
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "player_bot_easy_3",
+          "enemyNameID": "Player1234",
+          "kind": "enemy",
+          "sources": [
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "player_bot_easy_4",
+          "enemyNameID": "Player1234",
+          "kind": "enemy",
+          "sources": [
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "player_bot_easy_5",
+          "enemyNameID": "Player1234",
+          "kind": "enemy",
+          "sources": [
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "player_bot_easy_6",
+          "enemyNameID": "Player1234",
+          "kind": "enemy",
+          "sources": [
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "player_bot_easy_7",
+          "enemyNameID": "Player1234",
+          "kind": "enemy",
+          "sources": [
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "turkey",
+          "enemyNameID": "mob.turkey.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "turkey_boss",
+          "enemyNameID": "mob.turkey_boss.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "wolf",
+          "enemyNameID": "mob.wolf.name",
+          "kind": "animal_enemy_or_creature",
+          "sources": [
+            "locations.avatars",
+            "locations.scripts.spawn",
+            "locations.unique_avatars"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "資源地",
+      "zh_TW": "小松樹林",
+      "nameID": "map.norm_forest.name",
+      "mapPointIDs": [
+        "normal_forest_01",
+        "normal_forest_02"
+      ],
+      "locations": [
+        "normal_forest_01",
+        "normal_forest",
+        "farm_forest_normal_01",
+        "normal_forest_02"
+      ],
+      "enemies": [
+        {
+          "enemyID": "bear",
+          "enemyNameID": "mob.bear.name",
+          "kind": "animal_enemy_or_creature",
+          "sources": [
+            "locations.avatars",
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "cursed",
+          "enemyNameID": "mob.cursed.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars",
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "cursed_individ",
+          "enemyNameID": "mob.cursed_individ.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "deer",
+          "enemyNameID": "mob.deer.name",
+          "kind": "neutral_creature",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "direwolf",
+          "enemyNameID": "mob.direwolf.name",
+          "kind": "animal_enemy_or_creature",
+          "sources": [
+            "locations.avatars",
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "enemy_bot_tier_1",
+          "enemyNameID": "Player1234",
+          "kind": "enemy",
+          "sources": [
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "knight",
+          "enemyNameID": "mob.knight.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars",
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "knight_warrior",
+          "enemyNameID": "mob.knight_warrior.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars",
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "leper",
+          "enemyNameID": "mob.leper.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars",
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "player_bot_normal_1",
+          "enemyNameID": "Player1234",
+          "kind": "enemy",
+          "sources": [
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "player_bot_normal_2",
+          "enemyNameID": "Player1234",
+          "kind": "enemy",
+          "sources": [
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "player_bot_normal_3",
+          "enemyNameID": "Player1234",
+          "kind": "enemy",
+          "sources": [
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "player_bot_normal_4",
+          "enemyNameID": "Player1234",
+          "kind": "enemy",
+          "sources": [
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "player_bot_normal_5",
+          "enemyNameID": "Player1234",
+          "kind": "enemy",
+          "sources": [
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "player_bot_normal_6",
+          "enemyNameID": "Player1234",
+          "kind": "enemy",
+          "sources": [
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "player_bot_normal_7",
+          "enemyNameID": "Player1234",
+          "kind": "enemy",
+          "sources": [
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "turkey",
+          "enemyNameID": "mob.turkey.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "turkey_boss",
+          "enemyNameID": "mob.turkey_boss.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "witch",
+          "enemyNameID": "mob.witch.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "wolf",
+          "enemyNameID": "mob.wolf.name",
+          "kind": "animal_enemy_or_creature",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "wolf_varg",
+          "enemyNameID": "mob.wolf_varg.name",
+          "kind": "animal_enemy_or_creature",
+          "sources": [
+            "locations.avatars"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "資源地",
+      "zh_TW": "岩石丘陵",
+      "nameID": "map.norm_rock.name",
+      "mapPointIDs": [
+        "normal_rock_01",
+        "normal_rock_02"
+      ],
+      "locations": [
+        "normal_rock_01",
+        "normal_rock",
+        "farm_rock_normal_01",
+        "normal_rock_02"
+      ],
+      "enemies": [
+        {
+          "enemyID": "bear",
+          "enemyNameID": "mob.bear.name",
+          "kind": "animal_enemy_or_creature",
+          "sources": [
+            "locations.avatars",
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "cursed",
+          "enemyNameID": "mob.cursed.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars",
+            "locations.scripts.spawn",
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "cursed_individ",
+          "enemyNameID": "mob.cursed_individ.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "cursed_martyr",
+          "enemyNameID": "mob.cursed_martyr.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars",
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "deer",
+          "enemyNameID": "mob.deer.name",
+          "kind": "neutral_creature",
+          "sources": [
+            "locations.avatars",
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "direwolf",
+          "enemyNameID": "mob.direwolf.name",
+          "kind": "animal_enemy_or_creature",
+          "sources": [
+            "locations.avatars",
+            "locations.scripts.spawn",
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "enemy_bot_tier_1",
+          "enemyNameID": "Player1234",
+          "kind": "enemy",
+          "sources": [
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "knight",
+          "enemyNameID": "mob.knight.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars",
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "knight_warrior",
+          "enemyNameID": "mob.knight_warrior.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars",
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "leper",
+          "enemyNameID": "mob.leper.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars",
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "player_bot_normal_1",
+          "enemyNameID": "Player1234",
+          "kind": "enemy",
+          "sources": [
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "player_bot_normal_2",
+          "enemyNameID": "Player1234",
+          "kind": "enemy",
+          "sources": [
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "player_bot_normal_3",
+          "enemyNameID": "Player1234",
+          "kind": "enemy",
+          "sources": [
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "player_bot_normal_4",
+          "enemyNameID": "Player1234",
+          "kind": "enemy",
+          "sources": [
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "player_bot_normal_5",
+          "enemyNameID": "Player1234",
+          "kind": "enemy",
+          "sources": [
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "player_bot_normal_6",
+          "enemyNameID": "Player1234",
+          "kind": "enemy",
+          "sources": [
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "player_bot_normal_7",
+          "enemyNameID": "Player1234",
+          "kind": "enemy",
+          "sources": [
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "turkey",
+          "enemyNameID": "mob.turkey.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "turkey_boss",
+          "enemyNameID": "mob.turkey_boss.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "witch",
+          "enemyNameID": "mob.witch.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "wolf",
+          "enemyNameID": "mob.wolf.name",
+          "kind": "animal_enemy_or_creature",
+          "sources": [
+            "locations.avatars",
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "wolf_varg",
+          "enemyNameID": "mob.wolf_varg.name",
+          "kind": "animal_enemy_or_creature",
+          "sources": [
+            "locations.avatars"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "資源地",
+      "zh_TW": "松樹林",
+      "nameID": "map.hard_forest.name",
+      "mapPointIDs": [
+        "hard_forest_01"
+      ],
+      "locations": [
+        "hard_forest_01",
+        "hard_forest",
+        "night_stash_dungeon"
+      ],
+      "enemies": [
+        {
+          "enemyID": "bear",
+          "enemyNameID": "mob.bear.name",
+          "kind": "animal_enemy_or_creature",
+          "sources": [
+            "locations.avatars",
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "cursed",
+          "enemyNameID": "mob.cursed.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "cursed_individ",
+          "enemyNameID": "mob.cursed_individ.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "deer",
+          "enemyNameID": "mob.deer.name",
+          "kind": "neutral_creature",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "direwolf",
+          "enemyNameID": "mob.direwolf.name",
+          "kind": "animal_enemy_or_creature",
+          "sources": [
+            "locations.avatars",
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "enemy_bot_tier_2",
+          "enemyNameID": "Player1234",
+          "kind": "enemy",
+          "sources": [
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "knight",
+          "enemyNameID": "mob.knight.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars",
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "leper",
+          "enemyNameID": "mob.leper.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "leper_hermit",
+          "enemyNameID": "mob.leper_hermit.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "moose",
+          "enemyNameID": "mob.moose.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "player_bot_hard_1",
+          "enemyNameID": "Player1234",
+          "kind": "enemy",
+          "sources": [
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "player_bot_hard_2",
+          "enemyNameID": "Player1234",
+          "kind": "enemy",
+          "sources": [
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "player_bot_hard_3",
+          "enemyNameID": "Player1234",
+          "kind": "enemy",
+          "sources": [
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "player_bot_hard_4",
+          "enemyNameID": "Player1234",
+          "kind": "enemy",
+          "sources": [
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "player_bot_hard_5",
+          "enemyNameID": "Player1234",
+          "kind": "enemy",
+          "sources": [
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "player_bot_hard_6",
+          "enemyNameID": "Player1234",
+          "kind": "enemy",
+          "sources": [
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "player_bot_hard_7",
+          "enemyNameID": "Player1234",
+          "kind": "enemy",
+          "sources": [
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "templar",
+          "enemyNameID": "mob.templar.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars",
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "templar_zealot",
+          "enemyNameID": "mob.templar_zealot.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "turkey",
+          "enemyNameID": "mob.turkey.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "turkey_boss",
+          "enemyNameID": "mob.turkey_boss.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "witch",
+          "enemyNameID": "mob.witch.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "wolf",
+          "enemyNameID": "mob.wolf.name",
+          "kind": "animal_enemy_or_creature",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "wolf_varg",
+          "enemyNameID": "mob.wolf_varg.name",
+          "kind": "animal_enemy_or_creature",
+          "sources": [
+            "locations.avatars"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "資源地",
+      "zh_TW": "岩石懸崖",
+      "nameID": "map.hard_rock.name",
+      "mapPointIDs": [
+        "hard_rock_01"
+      ],
+      "locations": [
+        "hard_rock_01",
+        "hard_rock",
+        "night_stash_dungeon"
+      ],
+      "enemies": [
+        {
+          "enemyID": "bear",
+          "enemyNameID": "mob.bear.name",
+          "kind": "animal_enemy_or_creature",
+          "sources": [
+            "locations.avatars",
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "cursed",
+          "enemyNameID": "mob.cursed.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "cursed_individ",
+          "enemyNameID": "mob.cursed_individ.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "deer",
+          "enemyNameID": "mob.deer.name",
+          "kind": "neutral_creature",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "direwolf",
+          "enemyNameID": "mob.direwolf.name",
+          "kind": "animal_enemy_or_creature",
+          "sources": [
+            "locations.avatars",
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "enemy_bot_tier_2",
+          "enemyNameID": "Player1234",
+          "kind": "enemy",
+          "sources": [
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "knight",
+          "enemyNameID": "mob.knight.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars",
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "leper",
+          "enemyNameID": "mob.leper.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "leper_hermit",
+          "enemyNameID": "mob.leper_hermit.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "moose",
+          "enemyNameID": "mob.moose.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "player_bot_hard_1",
+          "enemyNameID": "Player1234",
+          "kind": "enemy",
+          "sources": [
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "player_bot_hard_2",
+          "enemyNameID": "Player1234",
+          "kind": "enemy",
+          "sources": [
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "player_bot_hard_3",
+          "enemyNameID": "Player1234",
+          "kind": "enemy",
+          "sources": [
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "player_bot_hard_4",
+          "enemyNameID": "Player1234",
+          "kind": "enemy",
+          "sources": [
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "player_bot_hard_5",
+          "enemyNameID": "Player1234",
+          "kind": "enemy",
+          "sources": [
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "player_bot_hard_6",
+          "enemyNameID": "Player1234",
+          "kind": "enemy",
+          "sources": [
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "player_bot_hard_7",
+          "enemyNameID": "Player1234",
+          "kind": "enemy",
+          "sources": [
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "templar",
+          "enemyNameID": "mob.templar.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars",
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "templar_zealot",
+          "enemyNameID": "mob.templar_zealot.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "turkey",
+          "enemyNameID": "mob.turkey.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "turkey_boss",
+          "enemyNameID": "mob.turkey_boss.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "witch",
+          "enemyNameID": "mob.witch.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "wolf",
+          "enemyNameID": "mob.wolf.name",
+          "kind": "animal_enemy_or_creature",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "wolf_varg",
+          "enemyNameID": "mob.wolf_varg.name",
+          "kind": "animal_enemy_or_creature",
+          "sources": [
+            "locations.avatars"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "資源地",
+      "zh_TW": "小樺樹林",
+      "nameID": "map.norm_birch.name",
+      "mapPointIDs": [
+        "north_birch_hard4"
+      ],
+      "locations": [
+        "north_birch_hard4"
+      ],
+      "enemies": [
+        {
+          "enemyID": "archer",
+          "enemyNameID": "mob.archer.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "axe_thrower_scout",
+          "enemyNameID": "mob.axe_thrower_scout.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "bear",
+          "enemyNameID": "mob.bear.name",
+          "kind": "animal_enemy_or_creature",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "cursed",
+          "enemyNameID": "mob.cursed.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "cursed_martyr",
+          "enemyNameID": "mob.cursed_martyr.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "direwolf",
+          "enemyNameID": "mob.direwolf.name",
+          "kind": "animal_enemy_or_creature",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "goblin",
+          "enemyNameID": "mob.goblin.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "knight",
+          "enemyNameID": "mob.knight.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "knight_warrior",
+          "enemyNameID": "mob.knight_warrior.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "moose",
+          "enemyNameID": "mob.moose.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "rogue",
+          "enemyNameID": "mob.rogue.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "templar",
+          "enemyNameID": "mob.templar.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "templar_zealot",
+          "enemyNameID": "mob.templar_zealot.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "turkey",
+          "enemyNameID": "mob.turkey.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "turkey_boss",
+          "enemyNameID": "mob.turkey_boss.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "witch",
+          "enemyNameID": "mob.witch.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "資源地",
+      "zh_TW": "鐵丘陵",
+      "nameID": "map.iron_mine.name",
+      "mapPointIDs": [
+        "north_iron_hard4"
+      ],
+      "locations": [
+        "north_iron_hard4"
+      ],
+      "enemies": [
+        {
+          "enemyID": "archer",
+          "enemyNameID": "mob.archer.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "axe_thrower_scout",
+          "enemyNameID": "mob.axe_thrower_scout.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "bear",
+          "enemyNameID": "mob.bear.name",
+          "kind": "animal_enemy_or_creature",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "cursed",
+          "enemyNameID": "mob.cursed.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "cursed_martyr",
+          "enemyNameID": "mob.cursed_martyr.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "direwolf",
+          "enemyNameID": "mob.direwolf.name",
+          "kind": "animal_enemy_or_creature",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "goblin",
+          "enemyNameID": "mob.goblin.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "knight",
+          "enemyNameID": "mob.knight.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "knight_warrior",
+          "enemyNameID": "mob.knight_warrior.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "moose",
+          "enemyNameID": "mob.moose.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "rogue",
+          "enemyNameID": "mob.rogue.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "templar",
+          "enemyNameID": "mob.templar.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "templar_zealot",
+          "enemyNameID": "mob.templar_zealot.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "turkey",
+          "enemyNameID": "mob.turkey.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "turkey_boss",
+          "enemyNameID": "mob.turkey_boss.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "witch",
+          "enemyNameID": "mob.witch.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "資源地",
+      "zh_TW": "樺樹林",
+      "nameID": "map.hard_birch.name",
+      "mapPointIDs": [
+        "north_birch_hard5"
+      ],
+      "locations": [
+        "north_birch_hard5"
+      ],
+      "enemies": [
+        {
+          "enemyID": "archer",
+          "enemyNameID": "mob.archer.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "axe_thrower_scout",
+          "enemyNameID": "mob.axe_thrower_scout.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "cursed",
+          "enemyNameID": "mob.cursed.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "cursed_martyr",
+          "enemyNameID": "mob.cursed_martyr.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "goblin",
+          "enemyNameID": "mob.goblin.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "knight",
+          "enemyNameID": "mob.knight.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "knight_warrior",
+          "enemyNameID": "mob.knight_warrior.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "moose",
+          "enemyNameID": "mob.moose.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "rogue",
+          "enemyNameID": "mob.rogue.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "rogue_stun",
+          "enemyNameID": "mob.rogue_stun.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "templar",
+          "enemyNameID": "mob.templar.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "templar_shield",
+          "enemyNameID": "mob.templar_shield.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "templar_zealot",
+          "enemyNameID": "mob.templar_zealot.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "turkey",
+          "enemyNameID": "mob.turkey.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "turkey_boss",
+          "enemyNameID": "mob.turkey_boss.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "witch",
+          "enemyNameID": "mob.witch.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "資源地",
+      "zh_TW": "鐵崖",
+      "nameID": "map.iron_mine_hard.name",
+      "mapPointIDs": [
+        "north_iron_hard5"
+      ],
+      "locations": [
+        "north_iron_hard5"
+      ],
+      "enemies": [
+        {
+          "enemyID": "archer",
+          "enemyNameID": "mob.archer.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "axe_thrower_scout",
+          "enemyNameID": "mob.axe_thrower_scout.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "cursed",
+          "enemyNameID": "mob.cursed.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "cursed_martyr",
+          "enemyNameID": "mob.cursed_martyr.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "goblin",
+          "enemyNameID": "mob.goblin.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "knight",
+          "enemyNameID": "mob.knight.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "knight_warrior",
+          "enemyNameID": "mob.knight_warrior.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "moose",
+          "enemyNameID": "mob.moose.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "rogue",
+          "enemyNameID": "mob.rogue.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "rogue_stun",
+          "enemyNameID": "mob.rogue_stun.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "templar",
+          "enemyNameID": "mob.templar.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "templar_shield",
+          "enemyNameID": "mob.templar_shield.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "templar_zealot",
+          "enemyNameID": "mob.templar_zealot.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "turkey",
+          "enemyNameID": "mob.turkey.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "turkey_boss",
+          "enemyNameID": "mob.turkey_boss.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "witch",
+          "enemyNameID": "mob.witch.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "常駐和平地",
+      "zh_TW": "紅天使營地",
+      "nameID": "map.crimson_camp.name",
+      "mapPointIDs": [
+        "crimson_camp"
+      ],
+      "locations": [
+        "crimson_camp"
+      ],
+      "enemies": [
+        {
+          "enemyID": "crimson_intendant",
+          "enemyNameID": "mob.crimson_intendant.name",
+          "kind": "unknown_or_enemy",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "goblin_camp",
+          "enemyNameID": "ui.sly_hunks.title",
+          "kind": "enemy",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "常駐和平地",
+      "zh_TW": "東盧比尼亞碼頭",
+      "nameID": "map.dock_east.name",
+      "mapPointIDs": [
+        "dock_east"
+      ],
+      "locations": [
+        "dock_east"
+      ],
+      "enemies": []
+    },
+    {
+      "category": "常駐和平地",
+      "zh_TW": "西盧比尼亞碼頭",
+      "nameID": "map.dock_west.name",
+      "mapPointIDs": [
+        "dock_west"
+      ],
+      "locations": [
+        "dock_west"
+      ],
+      "enemies": []
+    },
+    {
+      "category": "常駐刷新圖",
+      "zh_TW": "看守者棚屋",
+      "nameID": "map.boss_01.name",
+      "mapPointIDs": [
+        "boss_01"
+      ],
+      "locations": [
+        "boss_01"
+      ],
+      "enemies": [
+        {
+          "enemyID": "keeper",
+          "enemyNameID": "mob.keeper.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "wolf_decayed",
+          "enemyNameID": "mob.wolf_decayed.name",
+          "kind": "animal_enemy_or_creature",
+          "sources": [
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "wolf_fenrir",
+          "enemyNameID": "mob.wolf_fenrir.name",
+          "kind": "animal_enemy_or_creature",
+          "sources": [
+            "locations.scripts.spawn"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "常駐刷新圖",
+      "zh_TW": "地下聖壇",
+      "nameID": "map.temple.name",
+      "mapPointIDs": [
+        "temple"
+      ],
+      "locations": [
+        "temple",
+        "temple_ground",
+        "temple_dungeon"
+      ],
+      "enemies": [
+        {
+          "enemyID": "axe_thrower_scout",
+          "enemyNameID": "mob.axe_thrower_scout.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "cursed",
+          "enemyNameID": "mob.cursed.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "leper",
+          "enemyNameID": "mob.leper.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "常駐刷新圖",
+      "zh_TW": "叛徒地下墓穴",
+      "nameID": "map.event.catacomb.name",
+      "mapPointIDs": [
+        "catacomb"
+      ],
+      "locations": [
+        "catacomb",
+        "catacomb_ground",
+        "catacomb_dungeon_01",
+        "catacomb_dungeon_02",
+        "catacomb_dungeon_03",
+        "catacomb_dungeon_04",
+        "catacomb_dungeon_05",
+        "catacomb_dungeon_final"
+      ],
+      "enemies": [
+        {
+          "enemyID": "axe_thrower_scout",
+          "enemyNameID": "mob.axe_thrower_scout.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "cursed",
+          "enemyNameID": "mob.cursed.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "leper",
+          "enemyNameID": "mob.leper.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "隨機事件圖",
+      "zh_TW": "被攻擊的商隊",
+      "nameID": "map.event.caravan.name",
+      "mapPointIDs": [
+        "caravan1",
+        "caravan2"
+      ],
+      "locations": [
+        "caravan1",
+        "caravan",
+        "caravan2"
+      ],
+      "enemies": [
+        {
+          "enemyID": "deer",
+          "enemyNameID": "mob.deer.name",
+          "kind": "neutral_creature",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "隨機事件圖",
+      "zh_TW": "偉大養母伊薩",
+      "nameID": "map.event.aissa.name",
+      "mapPointIDs": [
+        "aissa"
+      ],
+      "locations": [
+        "aissa"
+      ],
+      "enemies": []
+    },
+    {
+      "category": "隨機事件圖",
+      "zh_TW": "墮落騎士",
+      "nameID": "map.event.deadman.name",
+      "mapPointIDs": [
+        "deadman_easy",
+        "deadman_normal",
+        "deadman_hard",
+        "deadman_very_hard"
+      ],
+      "locations": [
+        "deadman_easy",
+        "deadman_normal",
+        "deadman_hard",
+        "deadman_very_hard"
+      ],
+      "enemies": [
+        {
+          "enemyID": "deer",
+          "enemyNameID": "mob.deer.name",
+          "kind": "neutral_creature",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "direwolf",
+          "enemyNameID": "mob.direwolf.name",
+          "kind": "animal_enemy_or_creature",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "knight",
+          "enemyNameID": "mob.knight.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "templar",
+          "enemyNameID": "mob.templar.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "templar_shield",
+          "enemyNameID": "mob.templar_shield.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "wolf",
+          "enemyNameID": "mob.wolf.name",
+          "kind": "animal_enemy_or_creature",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "隨機事件圖",
+      "zh_TW": "破損貨車",
+      "nameID": "map.event.waggon.name",
+      "mapPointIDs": [
+        "waggon_easy",
+        "waggon_normal",
+        "waggon_hard",
+        "waggon_very_hard"
+      ],
+      "locations": [
+        "waggon_easy",
+        "waggon_normal",
+        "waggon_hard",
+        "waggon_very_hard"
+      ],
+      "enemies": [
+        {
+          "enemyID": "bear",
+          "enemyNameID": "mob.bear.name",
+          "kind": "animal_enemy_or_creature",
+          "sources": [
+            "locations.avatars",
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "cursed",
+          "enemyNameID": "mob.cursed.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars",
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "deer",
+          "enemyNameID": "mob.deer.name",
+          "kind": "neutral_creature",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "direwolf",
+          "enemyNameID": "mob.direwolf.name",
+          "kind": "animal_enemy_or_creature",
+          "sources": [
+            "locations.avatars",
+            "locations.scripts.spawn",
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "horse",
+          "enemyNameID": "mob.horse.name",
+          "kind": "neutral_creature",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "knight",
+          "enemyNameID": "mob.knight.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars",
+            "locations.scripts.spawn",
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "knight_warrior",
+          "enemyNameID": "mob.knight_warrior.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.scripts.spawn",
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "leper",
+          "enemyNameID": "mob.leper.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars",
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "player_bot_event_easy",
+          "enemyNameID": "Player1234",
+          "kind": "enemy",
+          "sources": [
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "player_bot_event_hard",
+          "enemyNameID": "Player1234",
+          "kind": "enemy",
+          "sources": [
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "player_bot_event_normal",
+          "enemyNameID": "Player1234",
+          "kind": "enemy",
+          "sources": [
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "player_bot_event_very_hard",
+          "enemyNameID": "Player1234",
+          "kind": "enemy",
+          "sources": [
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "templar",
+          "enemyNameID": "mob.templar.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.scripts.spawn",
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "templar_zealot",
+          "enemyNameID": "mob.templar_zealot.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars",
+            "locations.scripts.spawn",
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "witch",
+          "enemyNameID": "mob.witch.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "wolf",
+          "enemyNameID": "mob.wolf.name",
+          "kind": "animal_enemy_or_creature",
+          "sources": [
+            "locations.avatars",
+            "locations.scripts.spawn",
+            "locations.unique_avatars"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "隨機事件圖",
+      "zh_TW": "死亡村莊",
+      "nameID": "map.event.burned_village.name",
+      "mapPointIDs": [
+        "burned_village_easy",
+        "burned_village_normal",
+        "burned_village_hard",
+        "burned_village_very_hard"
+      ],
+      "locations": [
+        "burned_village_easy",
+        "burned_village_normal",
+        "burned_village_hard",
+        "burned_village_very_hard"
+      ],
+      "enemies": [
+        {
+          "enemyID": "axe_thrower_dung",
+          "enemyNameID": "mob.axe_thrower_dung.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "cursed",
+          "enemyNameID": "mob.cursed.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars",
+            "locations.scripts.spawn",
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "leper",
+          "enemyNameID": "mob.leper.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "rogue",
+          "enemyNameID": "mob.rogue.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars",
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "rogue_stun",
+          "enemyNameID": "mob.rogue_stun.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars",
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "skeleton",
+          "enemyNameID": "mob.skeleton.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "skeleton_hard",
+          "enemyNameID": "mob.skeleton_hard.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "skeleton_very_hard",
+          "enemyNameID": "mob.skeleton_very_hard.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.scripts.spawn"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "隨機事件圖",
+      "zh_TW": "狩獵場",
+      "nameID": "map.hunting_grounds.name",
+      "mapPointIDs": [
+        "hunting_grounds_easy",
+        "hunting_grounds_hard"
+      ],
+      "locations": [
+        "hunting_grounds_easy",
+        "hunting_grounds",
+        "hunting_grounds_hard"
+      ],
+      "enemies": [
+        {
+          "enemyID": "deer",
+          "enemyNameID": "mob.deer.name",
+          "kind": "neutral_creature",
+          "sources": [
+            "locations.avatars"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "隨機事件圖",
+      "zh_TW": "牧場",
+      "nameID": "map.pasture.name",
+      "mapPointIDs": [
+        "pasture_easy",
+        "pasture_hard"
+      ],
+      "locations": [
+        "pasture_easy",
+        "pasture",
+        "pasture_hard"
+      ],
+      "enemies": [
+        {
+          "enemyID": "horse",
+          "enemyNameID": "mob.horse.name",
+          "kind": "neutral_creature",
+          "sources": [
+            "locations.avatars"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "隨機事件圖",
+      "zh_TW": "墳場之夜",
+      "nameID": "map.event.cemetery.name",
+      "mapPointIDs": [
+        "cemetery"
+      ],
+      "locations": [
+        "cemetery"
+      ],
+      "enemies": [
+        {
+          "enemyID": "cursed",
+          "enemyNameID": "mob.cursed.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "leper",
+          "enemyNameID": "mob.leper.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "witch",
+          "enemyNameID": "mob.witch.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "隨機事件圖",
+      "zh_TW": "商人護送",
+      "nameID": "map.event.convoy.name",
+      "mapPointIDs": [
+        "convoy_easy",
+        "convoy_hard"
+      ],
+      "locations": [
+        "convoy_easy",
+        "convoy",
+        "convoy_hard"
+      ],
+      "enemies": [
+        {
+          "enemyID": "convoy_brother",
+          "enemyNameID": "mob.trader.name",
+          "kind": "unknown_or_enemy",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "convoy_horse",
+          "enemyNameID": "mob.horse.home.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "convoy_trader",
+          "enemyNameID": "mob.trader.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "convoy_waggon",
+          "enemyNameID": "item.waggon.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "stationary_convoy_cursed",
+          "enemyNameID": "mob.cursed.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "隨機事件圖",
+      "zh_TW": "被咒者的財寶",
+      "nameID": "map.event.td.chest.name",
+      "mapPointIDs": [
+        "td.chest.easy",
+        "td.chest.hard"
+      ],
+      "locations": [
+        "td.chest.easy",
+        "td.chest.location",
+        "td.chest.hard"
+      ],
+      "enemies": []
+    },
+    {
+      "category": "隨機事件圖",
+      "zh_TW": "游商",
+      "nameID": "map.event.trader.name",
+      "mapPointIDs": [
+        "trader_easy",
+        "trader_hard"
+      ],
+      "locations": [
+        "trader_easy",
+        "trader",
+        "trader_hard"
+      ],
+      "enemies": [
+        {
+          "enemyID": "direwolf_trainer",
+          "enemyNameID": "mob.direwolf.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "horse.trade",
+          "enemyNameID": "mob.horse.home.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "trader",
+          "enemyNameID": "mob.trader.name",
+          "kind": "neutral_or_attackable_npc",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "trader_2",
+          "enemyNameID": "mob.trader.name",
+          "kind": "neutral_or_attackable_npc",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "trader_3",
+          "enemyNameID": "mob.trader.name",
+          "kind": "neutral_or_attackable_npc",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "trader_trainer",
+          "enemyNameID": "mob.trainer.name",
+          "kind": "neutral_or_attackable_npc",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "隨機事件圖",
+      "zh_TW": "暗祭",
+      "nameID": "map.event.converter.name",
+      "mapPointIDs": [
+        "converter_easy",
+        "converter_hard"
+      ],
+      "locations": [
+        "converter_easy",
+        "converter",
+        "converter_hard"
+      ],
+      "enemies": [
+        {
+          "enemyID": "cursed",
+          "enemyNameID": "mob.cursed.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "leper",
+          "enemyNameID": "mob.leper.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "wolf",
+          "enemyNameID": "mob.wolf.name",
+          "kind": "animal_enemy_or_creature",
+          "sources": [
+            "locations.avatars"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "隨機事件圖",
+      "zh_TW": "獻祭之祭壇",
+      "nameID": "map.sacrificial_altar.name",
+      "mapPointIDs": [
+        "sacrificial_altar"
+      ],
+      "locations": [
+        "sacrificial_altar"
+      ],
+      "enemies": []
+    },
+    {
+      "category": "隨機事件圖",
+      "zh_TW": "荒廢地穴",
+      "nameID": "map.event.anniversary.name",
+      "mapPointIDs": [
+        "crypt"
+      ],
+      "locations": [
+        "crypt",
+        "anniversary_ground",
+        "anniversary_dungeon"
+      ],
+      "enemies": [
+        {
+          "enemyID": "bat_weak",
+          "enemyNameID": "mob.bat.name",
+          "kind": "unknown_or_enemy",
+          "sources": [
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "skeleton",
+          "enemyNameID": "mob.skeleton.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "隨機事件圖",
+      "zh_TW": "野蠻人營地",
+      "nameID": "map.death_labyrinth.name",
+      "mapPointIDs": [
+        "death_labyrinth"
+      ],
+      "locations": [
+        "death_labyrinth"
+      ],
+      "enemies": [
+        {
+          "enemyID": "archer",
+          "enemyNameID": "mob.archer.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "cursed_martyr",
+          "enemyNameID": "mob.cursed_martyr.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "direwolf",
+          "enemyNameID": "mob.direwolf.name",
+          "kind": "animal_enemy_or_creature",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "knight_warrior",
+          "enemyNameID": "mob.knight_warrior.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "plague_priest_labyrinth",
+          "enemyNameID": "mob.plague_priest.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "rogue",
+          "enemyNameID": "mob.rogue.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "rogue_stun",
+          "enemyNameID": "mob.rogue_stun.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "shaman_dung",
+          "enemyNameID": "mob.shaman_dung.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "templar_zealot",
+          "enemyNameID": "mob.templar_zealot.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "wolf",
+          "enemyNameID": "mob.wolf.name",
+          "kind": "animal_enemy_or_creature",
+          "sources": [
+            "locations.avatars"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "隨機事件圖",
+      "zh_TW": "通靈巫師的巢穴",
+      "nameID": "map.warlock_lair.name",
+      "mapPointIDs": [
+        "warlock_lair"
+      ],
+      "locations": [
+        "warlock_lair"
+      ],
+      "enemies": [
+        {
+          "enemyID": "warlock_lair_necromancer",
+          "enemyNameID": "mob.warlock_lair_necromancer.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "warlock_lair_necromancer_hard",
+          "enemyNameID": "mob.warlock_lair_necromancer_hard.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "warlock_lair_necromancer_medium",
+          "enemyNameID": "mob.warlock_lair_necromancer_medium.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "隨機事件圖",
+      "zh_TW": "維比約恩的巢穴",
+      "nameID": "map.virbjorn_lair.name",
+      "mapPointIDs": [
+        "virbjorn_lair"
+      ],
+      "locations": [
+        "virbjorn_lair"
+      ],
+      "enemies": [
+        {
+          "enemyID": "bear",
+          "enemyNameID": "mob.bear.name",
+          "kind": "animal_enemy_or_creature",
+          "sources": [
+            "locations.scripts.spawn",
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "bear_virbjorn",
+          "enemyNameID": "mob.bear_virbjorn.name",
+          "kind": "animal_enemy_or_creature",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "定期活動地圖",
+      "zh_TW": "冰封森林",
+      "nameID": "map.halt_location.name",
+      "mapPointIDs": [
+        "halt",
+        "halt_new"
+      ],
+      "locations": [
+        "halt",
+        "halt_location",
+        "halt_new",
+        "halt_new_location_easy",
+        "halt_new_location_medium",
+        "halt_new_location_hard"
+      ],
+      "enemies": []
+    },
+    {
+      "category": "定期活動地圖",
+      "zh_TW": "被遺忘的神殿",
+      "nameID": "map.harid_location.name",
+      "mapPointIDs": [
+        "harid"
+      ],
+      "locations": [
+        "harid",
+        "harid_location.easy",
+        "harid_location.medium",
+        "harid_location.hard"
+      ],
+      "enemies": []
+    },
+    {
+      "category": "定期活動地圖",
+      "zh_TW": "腐敗死神搖籃",
+      "nameID": "map.popup_location.dungeon_challenges.name",
+      "mapPointIDs": [
+        "dungeon_challenges"
+      ],
+      "locations": [
+        "dungeon_challenges",
+        "dungeon_challenges_ground",
+        "dungeon_challenges_01",
+        "dungeon_challenges_02",
+        "dungeon_challenges_03"
+      ],
+      "enemies": []
+    },
+    {
+      "category": "定期活動地圖",
+      "zh_TW": "古人墓穴",
+      "nameID": "map.ancient_sepulchre.name",
+      "mapPointIDs": [
+        "ancient_sepulchre"
+      ],
+      "locations": [
+        "ancient_sepulchre",
+        "ancient_sepulchre_exchange",
+        "ancient_sepulchre_dungeon_easy",
+        "ancient_sepulchre_dungeon_medium",
+        "ancient_sepulchre_dungeon_hard"
+      ],
+      "enemies": [
+        {
+          "enemyID": "sepulchre_raven",
+          "enemyNameID": "mob.hw_raven.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "定期活動地圖",
+      "zh_TW": "沼澤之心",
+      "nameID": "map.cursed_lady.name",
+      "mapPointIDs": [
+        "cursed_lady"
+      ],
+      "locations": [
+        "cursed_lady",
+        "cursed_lady_location_easy",
+        "cursed_lady_location_normal",
+        "cursed_lady_location_hard"
+      ],
+      "enemies": []
+    },
+    {
+      "category": "常駐冷卻圖",
+      "zh_TW": "被咒者的天文台",
+      "nameID": "map.observatory.name",
+      "mapPointIDs": [
+        "observatory"
+      ],
+      "locations": [
+        "observatory",
+        "observatory_ground"
+      ],
+      "enemies": [
+        {
+          "enemyID": "scholar_ghost",
+          "enemyNameID": "mob.scholar_ghost.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "scribe_ghost",
+          "enemyNameID": "mob.scribe_ghost.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "常駐冷卻圖",
+      "zh_TW": "瓦根堡",
+      "nameID": "map.wagenburg.name",
+      "mapPointIDs": [
+        "wagenburg"
+      ],
+      "locations": [
+        "wagenburg"
+      ],
+      "enemies": [
+        {
+          "enemyID": "wagenburg_black_knight",
+          "enemyNameID": "mob.wagenburg_black_knight.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "wagenburg_crossbowman",
+          "enemyNameID": "mob.wagenburg_crossbowman.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "wagenburg_dragon_crit",
+          "enemyNameID": "mob.wagenburg_dragon_crit.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "wagenburg_duelist",
+          "enemyNameID": "mob.wagenburg_duelist.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "wagenburg_east_champion",
+          "enemyNameID": "mob.wagenburg_east_champion.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "wagenburg_gladiator",
+          "enemyNameID": "mob.wagenburg_gladiator.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "wagenburg_ice_bowman",
+          "enemyNameID": "mob.wagenburg_ice_bowman.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "wagenburg_reaper",
+          "enemyNameID": "mob.wagenburg_reaper.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "wagenburg_warlock",
+          "enemyNameID": "mob.wagenburg_warlock.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "常駐冷卻圖",
+      "zh_TW": "銀礦",
+      "nameID": "map.silver_mine.name",
+      "mapPointIDs": [
+        "mine_silver_01"
+      ],
+      "locations": [
+        "mine_silver_01",
+        "silver_mine_ground",
+        "silver_mine_dungeon"
+      ],
+      "enemies": []
+    },
+    {
+      "category": "常駐冷卻圖",
+      "zh_TW": "險惡城堡",
+      "nameID": "map.castle.name",
+      "mapPointIDs": [
+        "castle"
+      ],
+      "locations": [
+        "castle"
+      ],
+      "enemies": [
+        {
+          "enemyID": "castle_ghost",
+          "enemyNameID": "mob.castle_ghost.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "skeleton_very_hard",
+          "enemyNameID": "mob.skeleton_very_hard.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "transparent_mob",
+          "enemyNameID": "",
+          "kind": "enemy",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "常駐冷卻圖",
+      "zh_TW": "被棄者地下城",
+      "nameID": "map.ruins_01.name",
+      "mapPointIDs": [
+        "ruins_01"
+      ],
+      "locations": [
+        "ruins_01",
+        "dungeon_01_01",
+        "dungeon_01_02",
+        "dungeon_01_03"
+      ],
+      "enemies": [
+        {
+          "enemyID": "axe_thrower_scout",
+          "enemyNameID": "mob.axe_thrower_scout.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "leper",
+          "enemyNameID": "mob.leper.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "常駐冷卻圖",
+      "zh_TW": "酷吏地下城",
+      "nameID": "map.ruins_02.name",
+      "mapPointIDs": [
+        "ruins_02"
+      ],
+      "locations": [
+        "ruins_02",
+        "dungeon_02_01",
+        "dungeon_02_02",
+        "dungeon_02_03"
+      ],
+      "enemies": []
+    },
+    {
+      "category": "非隨機事件圖",
+      "zh_TW": "小型被棄者藏匿處",
+      "nameID": "map.tiny_hermit_storage.name",
+      "mapPointIDs": [
+        "tiny_hermit_storage"
+      ],
+      "locations": [
+        "tiny_hermit_storage"
+      ],
+      "enemies": []
+    },
+    {
+      "category": "非隨機事件圖",
+      "zh_TW": "被棄者藏匿處的",
+      "nameID": "map.small_hermit_storage.name",
+      "mapPointIDs": [
+        "small_hermit_storage_easy",
+        "small_hermit_storage_hard"
+      ],
+      "locations": [
+        "small_hermit_storage_easy",
+        "small_hermit_storage",
+        "small_hermit_storage_hard"
+      ],
+      "enemies": []
+    },
+    {
+      "category": "非隨機事件圖",
+      "zh_TW": "被棄者藏匿處的大型",
+      "nameID": "map.big_hermit_storage.name",
+      "mapPointIDs": [
+        "big_hermit_storage_easy",
+        "big_hermit_storage_hard"
+      ],
+      "locations": [
+        "big_hermit_storage_easy",
+        "big_hermit_storage",
+        "big_hermit_storage_hard"
+      ],
+      "enemies": []
+    },
+    {
+      "category": "非隨機事件圖",
+      "zh_TW": "被棄隱士棚屋",
+      "nameID": "map.hermit_hut.name",
+      "mapPointIDs": [
+        "hermit_hut"
+      ],
+      "locations": [
+        "hermit_hut"
+      ],
+      "enemies": [
+        {
+          "enemyID": "deer",
+          "enemyNameID": "mob.deer.name",
+          "kind": "neutral_creature",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "leper_hermit",
+          "enemyNameID": "mob.leper_hermit.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "wolf",
+          "enemyNameID": "mob.wolf.name",
+          "kind": "animal_enemy_or_creature",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "節日圖",
+      "zh_TW": "不祥墳場",
+      "nameID": "map.halloween_cemetery.name",
+      "mapPointIDs": [
+        "halloween_cemetery"
+      ],
+      "locations": [
+        "halloween_cemetery",
+        "cemetery_halloween"
+      ],
+      "enemies": [
+        {
+          "enemyID": "leper",
+          "enemyNameID": "mob.leper.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "skeleton",
+          "enemyNameID": "mob.skeleton.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "witch",
+          "enemyNameID": "mob.witch.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "節日圖",
+      "zh_TW": "失落墳場",
+      "nameID": "map.forgotten_cemetery.name",
+      "mapPointIDs": [
+        "forgotten_cemetery"
+      ],
+      "locations": [
+        "forgotten_cemetery"
+      ],
+      "enemies": [
+        {
+          "enemyID": "cursed",
+          "enemyNameID": "mob.cursed.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "cursed_individ_bp2",
+          "enemyNameID": "mob.cursed_individ.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.scripts.spawn"
+          ]
+        },
+        {
+          "enemyID": "leper",
+          "enemyNameID": "mob.leper.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "summoner",
+          "enemyNameID": "mob.summoner.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "節日圖",
+      "zh_TW": "陰森宅邸",
+      "nameID": "map.halloween_mansion.name",
+      "mapPointIDs": [
+        "halloween_mansion"
+      ],
+      "locations": [
+        "halloween_mansion"
+      ],
+      "enemies": [
+        {
+          "enemyID": "hw_fire1",
+          "enemyNameID": "mob.holy.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "hw_fire2",
+          "enemyNameID": "mob.holy.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "hw_fire3",
+          "enemyNameID": "mob.holy.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "hw_fire4",
+          "enemyNameID": "mob.holy.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "hw_fire5",
+          "enemyNameID": "mob.holy.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "hw_fire6",
+          "enemyNameID": "mob.holy.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "skeleton",
+          "enemyNameID": "mob.skeleton.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "skeleton_boss",
+          "enemyNameID": "mob.skeleton_boss.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "節日圖",
+      "zh_TW": "瘟疫女巫會",
+      "nameID": "map.halloween_coven.name",
+      "mapPointIDs": [
+        "halloween_coven"
+      ],
+      "locations": [
+        "halloween_coven"
+      ],
+      "enemies": [
+        {
+          "enemyID": "hw_fire1",
+          "enemyNameID": "mob.holy.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "hw_fire2",
+          "enemyNameID": "mob.holy.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "hw_fire3",
+          "enemyNameID": "mob.holy.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "hw_fire4",
+          "enemyNameID": "mob.holy.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "hw_fire5",
+          "enemyNameID": "mob.holy.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "節日圖",
+      "zh_TW": "逝者村",
+      "nameID": "map.halloween_village.name",
+      "mapPointIDs": [
+        "halloween_village"
+      ],
+      "locations": [
+        "halloween_village"
+      ],
+      "enemies": [
+        {
+          "enemyID": "skeleton",
+          "enemyNameID": "mob.skeleton.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "skeleton_boss_halloween_village",
+          "enemyNameID": "mob.skeleton_boss_halloween_village.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "節日圖",
+      "zh_TW": "寒冰寶藏",
+      "nameID": "map.xmas_bags.name",
+      "mapPointIDs": [
+        "xmas_bags"
+      ],
+      "locations": [
+        "xmas_bags"
+      ],
+      "enemies": []
+    },
+    {
+      "category": "節日圖",
+      "zh_TW": "標記地點",
+      "nameID": "map.anniv20_1.name",
+      "mapPointIDs": [
+        "anniv20_1"
+      ],
+      "locations": [
+        "anniv20_1",
+        "anniv20_1_loc"
+      ],
+      "enemies": []
+    },
+    {
+      "category": "節日圖",
+      "zh_TW": "臨時營地",
+      "nameID": "map.anniv20_2.name",
+      "mapPointIDs": [
+        "anniv20_2"
+      ],
+      "locations": [
+        "anniv20_2",
+        "anniv20_2_loc"
+      ],
+      "enemies": [
+        {
+          "enemyID": "dead_rupert_anniv20",
+          "enemyNameID": "mob.dead_rupert.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "npc_anniv20",
+          "enemyNameID": "",
+          "kind": "enemy",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "節日圖",
+      "zh_TW": "瘟疫精靈村莊",
+      "nameID": "map.xmas_goblin_village.name",
+      "mapPointIDs": [
+        "xmas_goblin_village"
+      ],
+      "locations": [
+        "xmas_goblin_village"
+      ],
+      "enemies": [
+        {
+          "enemyID": "cursed_walker_factory",
+          "enemyNameID": "mob.xmas_walker.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "direwolf",
+          "enemyNameID": "mob.direwolf.name",
+          "kind": "animal_enemy_or_creature",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "goblin_xmas",
+          "enemyNameID": "mob.goblin_xmas.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "wolf",
+          "enemyNameID": "mob.wolf.name",
+          "kind": "animal_enemy_or_creature",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "節日圖",
+      "zh_TW": "麋鹿牧場",
+      "nameID": "map.xmas_shepherd.name",
+      "mapPointIDs": [
+        "xmas_shepherd"
+      ],
+      "locations": [
+        "xmas_shepherd"
+      ],
+      "enemies": [
+        {
+          "enemyID": "deer_shepher",
+          "enemyNameID": "mob.deer.name",
+          "kind": "unknown_or_enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "npc_xmas_shepherd",
+          "enemyNameID": "mob.camp_trader.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "節日圖",
+      "zh_TW": "瘟疫聖誕老人的莊園",
+      "nameID": "map.rogue_santa_manor.name",
+      "mapPointIDs": [
+        "rogue_santa_manor"
+      ],
+      "locations": [
+        "rogue_santa_manor",
+        "xmas_santa_factory_01"
+      ],
+      "enemies": [
+        {
+          "enemyID": "cursed_walker_factory",
+          "enemyNameID": "mob.xmas_walker.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "direwolf",
+          "enemyNameID": "mob.direwolf.name",
+          "kind": "animal_enemy_or_creature",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "goblin_xmas",
+          "enemyNameID": "mob.goblin_xmas.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "rogue",
+          "enemyNameID": "mob.rogue.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "wolf_decayed",
+          "enemyNameID": "mob.wolf_decayed.name",
+          "kind": "animal_enemy_or_creature",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "wolf_varg",
+          "enemyNameID": "mob.wolf_varg.name",
+          "kind": "animal_enemy_or_creature",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "節日圖",
+      "zh_TW": "克勞斯指揮官大本營",
+      "nameID": "map.claus_trade.name",
+      "mapPointIDs": [
+        "claus_trade"
+      ],
+      "locations": [
+        "claus_trade",
+        "xmas_exchange"
+      ],
+      "enemies": [
+        {
+          "enemyID": "deer_claus_trade",
+          "enemyNameID": "mob.deer.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "節日圖",
+      "zh_TW": "維爾格勞廢墟",
+      "nameID": "map.halloween_town_ruins.name",
+      "mapPointIDs": [
+        "halloween_town_ruins"
+      ],
+      "locations": [
+        "halloween_town_ruins",
+        "halloween_town_ruins.easy",
+        "halloween_town_ruins.medium",
+        "halloween_town_ruins.hard"
+      ],
+      "enemies": [
+        {
+          "enemyID": "cursed_ghost",
+          "enemyNameID": "mob.cursed_ghost.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "knight_ghost",
+          "enemyNameID": "mob.knight_ghost.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "skeleton_archer",
+          "enemyNameID": "mob.skeleton_archer.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "skeleton_boss_grave_guardian",
+          "enemyNameID": "mob.skeleton_boss_halloween_village.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "skeleton_grenadier_hw",
+          "enemyNameID": "mob.skeleton_grenadier.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "skeleton_hw",
+          "enemyNameID": "mob.skeleton.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "skeleton_medium",
+          "enemyNameID": "mob.skeleton_medium.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars",
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "skeleton_medium_archer",
+          "enemyNameID": "mob.skeleton_medium_archer.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "skeleton_very_hard",
+          "enemyNameID": "mob.skeleton_very_hard.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "skeleton_very_hard_archer",
+          "enemyNameID": "mob.skeleton_very_hard_archer.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.avatars"
+          ]
+        },
+        {
+          "enemyID": "summoner_ottar_cursed",
+          "enemyNameID": "mob.summoner_ottar_cursed.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "whispering_nightmare",
+          "enemyNameID": "mob.whispering_nightmare.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "節日圖",
+      "zh_TW": "聖誕貨車",
+      "nameID": "map.xmas_deer.name",
+      "mapPointIDs": [
+        "xmas_deer"
+      ],
+      "locations": [
+        "xmas_deer"
+      ],
+      "enemies": [
+        {
+          "enemyID": "deer_xmas",
+          "enemyNameID": "mob.deer.name",
+          "kind": "unknown_or_enemy",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "節日圖",
+      "zh_TW": "克勞斯指揮官槓上了瘟疫聖誕老人",
+      "nameID": "map.xmas_santa_vs_claus.name",
+      "mapPointIDs": [
+        "xmas_santa_vs_claus"
+      ],
+      "locations": [
+        "xmas_santa_vs_claus"
+      ],
+      "enemies": [
+        {
+          "enemyID": "klaus_xmas_2023",
+          "enemyNameID": "mob.xmas_klaus_2022.name",
+          "kind": "unknown_or_enemy",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        },
+        {
+          "enemyID": "rogue_santa_xmas_2023",
+          "enemyNameID": "mob.rogue_santa.name",
+          "kind": "enemy",
+          "sources": [
+            "locations.unique_avatars"
+          ]
+        }
+      ]
+    }
+  ]
+}

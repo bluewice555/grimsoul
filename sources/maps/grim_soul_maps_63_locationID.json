@@ -1,0 +1,535 @@
+{
+  "count": 63,
+  "note": "locationID field is the renamed IDs field from the final 63 map groups.",
+  "maps": [
+    {
+      "category": "資源地",
+      "zh_TW": "松樹叢",
+      "nameID": "map.easy_forest.name",
+      "locationID": [
+        "easy_forest_01",
+        "easy_forest_02",
+        "easy_forest_03"
+      ]
+    },
+    {
+      "category": "資源地",
+      "zh_TW": "岩石小丘",
+      "nameID": "map.easy_rock.name",
+      "locationID": [
+        "easy_rock_01",
+        "easy_rock_02",
+        "easy_rock_03"
+      ]
+    },
+    {
+      "category": "資源地",
+      "zh_TW": "小松樹林",
+      "nameID": "map.norm_forest.name",
+      "locationID": [
+        "normal_forest_01",
+        "normal_forest_02"
+      ]
+    },
+    {
+      "category": "資源地",
+      "zh_TW": "岩石丘陵",
+      "nameID": "map.norm_rock.name",
+      "locationID": [
+        "normal_rock_01",
+        "normal_rock_02"
+      ]
+    },
+    {
+      "category": "資源地",
+      "zh_TW": "松樹林",
+      "nameID": "map.hard_forest.name",
+      "locationID": [
+        "hard_forest_01"
+      ]
+    },
+    {
+      "category": "資源地",
+      "zh_TW": "岩石懸崖",
+      "nameID": "map.hard_rock.name",
+      "locationID": [
+        "hard_rock_01"
+      ]
+    },
+    {
+      "category": "資源地",
+      "zh_TW": "小樺樹林",
+      "nameID": "map.norm_birch.name",
+      "locationID": [
+        "north_birch_hard4"
+      ]
+    },
+    {
+      "category": "資源地",
+      "zh_TW": "鐵丘陵",
+      "nameID": "map.iron_mine.name",
+      "locationID": [
+        "north_iron_hard4"
+      ]
+    },
+    {
+      "category": "資源地",
+      "zh_TW": "樺樹林",
+      "nameID": "map.hard_birch.name",
+      "locationID": [
+        "north_birch_hard5"
+      ]
+    },
+    {
+      "category": "資源地",
+      "zh_TW": "鐵崖",
+      "nameID": "map.iron_mine_hard.name",
+      "locationID": [
+        "north_iron_hard5"
+      ]
+    },
+    {
+      "category": "常駐和平地",
+      "zh_TW": "紅天使營地",
+      "nameID": "map.crimson_camp.name",
+      "locationID": [
+        "crimson_camp"
+      ]
+    },
+    {
+      "category": "常駐和平地",
+      "zh_TW": "東盧比尼亞碼頭",
+      "nameID": "map.dock_east.name",
+      "locationID": [
+        "dock_east"
+      ]
+    },
+    {
+      "category": "常駐和平地",
+      "zh_TW": "西盧比尼亞碼頭",
+      "nameID": "map.dock_west.name",
+      "locationID": [
+        "dock_west"
+      ]
+    },
+    {
+      "category": "常駐刷新圖",
+      "zh_TW": "看守者棚屋",
+      "nameID": "map.boss_01.name",
+      "locationID": [
+        "boss_01"
+      ]
+    },
+    {
+      "category": "常駐刷新圖",
+      "zh_TW": "地下聖壇",
+      "nameID": "map.temple.name",
+      "locationID": [
+        "temple"
+      ]
+    },
+    {
+      "category": "常駐刷新圖",
+      "zh_TW": "叛徒地下墓穴",
+      "nameID": "map.event.catacomb.name",
+      "locationID": [
+        "catacomb"
+      ]
+    },
+    {
+      "category": "隨機事件圖",
+      "zh_TW": "被攻擊的商隊",
+      "nameID": "map.event.caravan.name",
+      "locationID": [
+        "caravan1",
+        "caravan2"
+      ]
+    },
+    {
+      "category": "隨機事件圖",
+      "zh_TW": "偉大養母伊薩",
+      "nameID": "map.event.aissa.name",
+      "locationID": [
+        "aissa"
+      ]
+    },
+    {
+      "category": "隨機事件圖",
+      "zh_TW": "墮落騎士",
+      "nameID": "map.event.deadman.name",
+      "locationID": [
+        "deadman_easy",
+        "deadman_normal",
+        "deadman_hard",
+        "deadman_very_hard"
+      ]
+    },
+    {
+      "category": "隨機事件圖",
+      "zh_TW": "破損貨車",
+      "nameID": "map.event.waggon.name",
+      "locationID": [
+        "waggon_easy",
+        "waggon_normal",
+        "waggon_hard",
+        "waggon_very_hard"
+      ]
+    },
+    {
+      "category": "隨機事件圖",
+      "zh_TW": "死亡村莊",
+      "nameID": "map.event.burned_village.name",
+      "locationID": [
+        "burned_village_easy",
+        "burned_village_normal",
+        "burned_village_hard",
+        "burned_village_very_hard"
+      ]
+    },
+    {
+      "category": "隨機事件圖",
+      "zh_TW": "狩獵場",
+      "nameID": "map.hunting_grounds.name",
+      "locationID": [
+        "hunting_grounds_easy",
+        "hunting_grounds_hard"
+      ]
+    },
+    {
+      "category": "隨機事件圖",
+      "zh_TW": "牧場",
+      "nameID": "map.pasture.name",
+      "locationID": [
+        "pasture_easy",
+        "pasture_hard"
+      ]
+    },
+    {
+      "category": "隨機事件圖",
+      "zh_TW": "墳場之夜",
+      "nameID": "map.event.cemetery.name",
+      "locationID": [
+        "cemetery"
+      ]
+    },
+    {
+      "category": "隨機事件圖",
+      "zh_TW": "商人護送",
+      "nameID": "map.event.convoy.name",
+      "locationID": [
+        "convoy_easy",
+        "convoy_hard"
+      ]
+    },
+    {
+      "category": "隨機事件圖",
+      "zh_TW": "被咒者的財寶",
+      "nameID": "map.event.td.chest.name",
+      "locationID": [
+        "td.chest.easy",
+        "td.chest.hard"
+      ]
+    },
+    {
+      "category": "隨機事件圖",
+      "zh_TW": "游商",
+      "nameID": "map.event.trader.name",
+      "locationID": [
+        "trader_easy",
+        "trader_hard"
+      ]
+    },
+    {
+      "category": "隨機事件圖",
+      "zh_TW": "暗祭",
+      "nameID": "map.event.converter.name",
+      "locationID": [
+        "converter_easy",
+        "converter_hard"
+      ]
+    },
+    {
+      "category": "隨機事件圖",
+      "zh_TW": "獻祭之祭壇",
+      "nameID": "map.sacrificial_altar.name",
+      "locationID": [
+        "sacrificial_altar"
+      ]
+    },
+    {
+      "category": "隨機事件圖",
+      "zh_TW": "荒廢地穴",
+      "nameID": "map.event.anniversary.name",
+      "locationID": [
+        "crypt"
+      ]
+    },
+    {
+      "category": "隨機事件圖",
+      "zh_TW": "野蠻人營地",
+      "nameID": "map.death_labyrinth.name",
+      "locationID": [
+        "death_labyrinth"
+      ]
+    },
+    {
+      "category": "隨機事件圖",
+      "zh_TW": "通靈巫師的巢穴",
+      "nameID": "map.warlock_lair.name",
+      "locationID": [
+        "warlock_lair"
+      ]
+    },
+    {
+      "category": "隨機事件圖",
+      "zh_TW": "維比約恩的巢穴",
+      "nameID": "map.virbjorn_lair.name",
+      "locationID": [
+        "virbjorn_lair"
+      ]
+    },
+    {
+      "category": "定期活動地圖",
+      "zh_TW": "冰封森林",
+      "nameID": "map.halt_location.name",
+      "locationID": [
+        "halt",
+        "halt_new"
+      ]
+    },
+    {
+      "category": "定期活動地圖",
+      "zh_TW": "被遺忘的神殿",
+      "nameID": "map.harid_location.name",
+      "locationID": [
+        "harid"
+      ]
+    },
+    {
+      "category": "定期活動地圖",
+      "zh_TW": "腐敗死神搖籃",
+      "nameID": "map.popup_location.dungeon_challenges.name",
+      "locationID": [
+        "dungeon_challenges"
+      ]
+    },
+    {
+      "category": "定期活動地圖",
+      "zh_TW": "古人墓穴",
+      "nameID": "map.ancient_sepulchre.name",
+      "locationID": [
+        "ancient_sepulchre"
+      ]
+    },
+    {
+      "category": "定期活動地圖",
+      "zh_TW": "沼澤之心",
+      "nameID": "map.cursed_lady.name",
+      "locationID": [
+        "cursed_lady"
+      ]
+    },
+    {
+      "category": "常駐冷卻圖",
+      "zh_TW": "被咒者的天文台",
+      "nameID": "map.observatory.name",
+      "locationID": [
+        "observatory"
+      ]
+    },
+    {
+      "category": "常駐冷卻圖",
+      "zh_TW": "瓦根堡",
+      "nameID": "map.wagenburg.name",
+      "locationID": [
+        "wagenburg"
+      ]
+    },
+    {
+      "category": "常駐冷卻圖",
+      "zh_TW": "銀礦",
+      "nameID": "map.silver_mine.name",
+      "locationID": [
+        "mine_silver_01"
+      ]
+    },
+    {
+      "category": "常駐冷卻圖",
+      "zh_TW": "險惡城堡",
+      "nameID": "map.castle.name",
+      "locationID": [
+        "castle"
+      ]
+    },
+    {
+      "category": "常駐冷卻圖",
+      "zh_TW": "被棄者地下城",
+      "nameID": "map.ruins_01.name",
+      "locationID": [
+        "ruins_01"
+      ]
+    },
+    {
+      "category": "常駐冷卻圖",
+      "zh_TW": "酷吏地下城",
+      "nameID": "map.ruins_02.name",
+      "locationID": [
+        "ruins_02"
+      ]
+    },
+    {
+      "category": "非隨機事件圖",
+      "zh_TW": "小型被棄者藏匿處",
+      "nameID": "map.tiny_hermit_storage.name",
+      "locationID": [
+        "tiny_hermit_storage"
+      ]
+    },
+    {
+      "category": "非隨機事件圖",
+      "zh_TW": "被棄者藏匿處的",
+      "nameID": "map.small_hermit_storage.name",
+      "locationID": [
+        "small_hermit_storage_easy",
+        "small_hermit_storage_hard"
+      ]
+    },
+    {
+      "category": "非隨機事件圖",
+      "zh_TW": "被棄者藏匿處的大型",
+      "nameID": "map.big_hermit_storage.name",
+      "locationID": [
+        "big_hermit_storage_easy",
+        "big_hermit_storage_hard"
+      ]
+    },
+    {
+      "category": "非隨機事件圖",
+      "zh_TW": "被棄隱士棚屋",
+      "nameID": "map.hermit_hut.name",
+      "locationID": [
+        "hermit_hut"
+      ]
+    },
+    {
+      "category": "節日圖",
+      "zh_TW": "不祥墳場",
+      "nameID": "map.halloween_cemetery.name",
+      "locationID": [
+        "halloween_cemetery"
+      ]
+    },
+    {
+      "category": "節日圖",
+      "zh_TW": "失落墳場",
+      "nameID": "map.forgotten_cemetery.name",
+      "locationID": [
+        "forgotten_cemetery"
+      ]
+    },
+    {
+      "category": "節日圖",
+      "zh_TW": "陰森宅邸",
+      "nameID": "map.halloween_mansion.name",
+      "locationID": [
+        "halloween_mansion"
+      ]
+    },
+    {
+      "category": "節日圖",
+      "zh_TW": "瘟疫女巫會",
+      "nameID": "map.halloween_coven.name",
+      "locationID": [
+        "halloween_coven"
+      ]
+    },
+    {
+      "category": "節日圖",
+      "zh_TW": "逝者村",
+      "nameID": "map.halloween_village.name",
+      "locationID": [
+        "halloween_village"
+      ]
+    },
+    {
+      "category": "節日圖",
+      "zh_TW": "寒冰寶藏",
+      "nameID": "map.xmas_bags.name",
+      "locationID": [
+        "xmas_bags"
+      ]
+    },
+    {
+      "category": "節日圖",
+      "zh_TW": "標記地點",
+      "nameID": "map.anniv20_1.name",
+      "locationID": [
+        "anniv20_1"
+      ]
+    },
+    {
+      "category": "節日圖",
+      "zh_TW": "臨時營地",
+      "nameID": "map.anniv20_2.name",
+      "locationID": [
+        "anniv20_2"
+      ]
+    },
+    {
+      "category": "節日圖",
+      "zh_TW": "瘟疫精靈村莊",
+      "nameID": "map.xmas_goblin_village.name",
+      "locationID": [
+        "xmas_goblin_village"
+      ]
+    },
+    {
+      "category": "節日圖",
+      "zh_TW": "麋鹿牧場",
+      "nameID": "map.xmas_shepherd.name",
+      "locationID": [
+        "xmas_shepherd"
+      ]
+    },
+    {
+      "category": "節日圖",
+      "zh_TW": "瘟疫聖誕老人的莊園",
+      "nameID": "map.rogue_santa_manor.name",
+      "locationID": [
+        "rogue_santa_manor"
+      ]
+    },
+    {
+      "category": "節日圖",
+      "zh_TW": "克勞斯指揮官大本營",
+      "nameID": "map.claus_trade.name",
+      "locationID": [
+        "claus_trade"
+      ]
+    },
+    {
+      "category": "節日圖",
+      "zh_TW": "維爾格勞廢墟",
+      "nameID": "map.halloween_town_ruins.name",
+      "locationID": [
+        "halloween_town_ruins"
+      ]
+    },
+    {
+      "category": "節日圖",
+      "zh_TW": "聖誕貨車",
+      "nameID": "map.xmas_deer.name",
+      "locationID": [
+        "xmas_deer"
+      ]
+    },
+    {
+      "category": "節日圖",
+      "zh_TW": "克勞斯指揮官槓上了瘟疫聖誕老人",
+      "nameID": "map.xmas_santa_vs_claus.name",
+      "locationID": [
+        "xmas_santa_vs_claus"
+      ]
+    }
+  ]
+}
