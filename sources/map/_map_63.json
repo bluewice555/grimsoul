@@ -1,0 +1,722 @@
+[
+    {
+      "nameID": "map.easy_forest.name",
+      "pointIDs": [
+        "easy_forest_01",
+        "easy_forest_02",
+        "easy_forest_03"
+      ],
+      "locationIDs": [
+        "easy_forest",
+        "easy_forest_copy_1",
+        "easy_forest_copy_2"
+      ],
+      "templateIDs": [
+        "farm_forest_easy_01",
+        "farm_forest_easy_02",
+        "farm_forest_easy_03"
+      ],
+      "category": "資源地"
+    },
+    {
+      "nameID": "map.easy_rock.name",
+      "pointIDs": [
+        "easy_rock_01",
+        "easy_rock_02",
+        "easy_rock_03"
+      ],
+      "locationIDs": [
+        "easy_rock",
+        "easy_rock_copy_1",
+        "easy_rock_copy_2"
+      ],
+      "templateIDs": [
+        "farm_rock_easy_01",
+        "farm_rock_easy_02",
+        "farm_rock_easy_03"
+      ],
+      "category": "資源地"
+    },
+    {
+      "nameID": "map.norm_forest.name",
+      "pointIDs": [
+        "normal_forest_01",
+        "normal_forest_02"
+      ],
+      "locationIDs": [
+        "normal_forest"
+      ],
+      "templateIDs": [
+        "farm_forest_normal_01"
+      ],
+      "category": "資源地"
+    },
+    {
+      "nameID": "map.norm_rock.name",
+      "pointIDs": [
+        "normal_rock_01",
+        "normal_rock_02"
+      ],
+      "locationIDs": [
+        "normal_rock"
+      ],
+      "templateIDs": [
+        "farm_rock_normal_01"
+      ],
+      "category": "資源地"
+    },
+    {
+      "nameID": "map.hard_forest.name",
+      "pointIDs": [
+        "hard_forest_01"
+      ],
+      "locationIDs": [
+        "hard_forest",
+        "night_stash_dungeon"
+      ],
+      "category": "資源地"
+    },
+    {
+      "nameID": "map.hard_rock.name",
+      "pointIDs": [
+        "hard_rock_01"
+      ],
+      "locationIDs": [
+        "hard_rock",
+        "night_stash_dungeon"
+      ],
+      "category": "資源地"
+    },
+    {
+      "nameID": "map.norm_birch.name",
+      "pointIDs": [
+        "north_birch_hard4"
+      ],
+      "locationIDs": [
+        "north_birch_hard4"
+      ],
+      "category": "資源地"
+    },
+    {
+      "nameID": "map.iron_mine.name",
+      "pointIDs": [
+        "north_iron_hard4"
+      ],
+      "locationIDs": [
+        "north_iron_hard4"
+      ],
+      "category": "資源地"
+    },
+    {
+      "nameID": "map.hard_birch.name",
+      "pointIDs": [
+        "north_birch_hard5"
+      ],
+      "locationIDs": [
+        "north_birch_hard5"
+      ],
+      "category": "資源地"
+    },
+    {
+      "nameID": "map.iron_mine_hard.name",
+      "pointIDs": [
+        "north_iron_hard5"
+      ],
+      "locationIDs": [
+        "north_iron_hard5"
+      ],
+      "category": "資源地"
+    },
+    {
+      "nameID": "map.crimson_camp.name",
+      "pointIDs": [
+        "crimson_camp"
+      ],
+      "locationIDs": [
+        "crimson_camp"
+      ],
+      "category": "常駐和平地"
+    },
+    {
+      "nameID": "map.dock_east.name",
+      "pointIDs": [
+        "dock_east"
+      ],
+      "locationIDs": [
+        "dock_east"
+      ],
+      "category": "常駐和平地"
+    },
+    {
+      "nameID": "map.dock_west.name",
+      "pointIDs": [
+        "dock_west"
+      ],
+      "locationIDs": [
+        "dock_west"
+      ],
+      "category": "常駐和平地"
+    },
+    {
+      "nameID": "map.boss_01.name",
+      "pointIDs": [
+        "boss_01"
+      ],
+      "locationIDs": [
+        "boss_01"
+      ],
+      "category": "常駐刷新圖"
+    },
+    {
+      "nameID": "map.temple.name",
+      "pointIDs": [
+        "temple"
+      ],
+      "locationIDs": [
+        "temple_ground",
+        "temple_dungeon"
+      ],
+      "category": "常駐刷新圖"
+    },
+    {
+      "nameID": "map.event.catacomb.name",
+      "pointIDs": [
+        "catacomb"
+      ],
+      "locationIDs": [
+        "catacomb_ground",
+        "catacomb_dungeon_01",
+        "catacomb_dungeon_02",
+        "catacomb_dungeon_03",
+        "catacomb_dungeon_04",
+        "catacomb_dungeon_05",
+        "catacomb_dungeon_final"
+      ],
+      "category": "常駐刷新圖"
+    },
+    {
+      "nameID": "map.event.caravan.name",
+      "pointIDs": [
+        "caravan1",
+        "caravan2"
+      ],
+      "locationIDs": [
+        "caravan"
+      ],
+      "category": "隨機事件圖"
+    },
+    {
+      "nameID": "map.event.aissa.name",
+      "pointIDs": [
+        "aissa"
+      ],
+      "locationIDs": [
+        "aissa"
+      ],
+      "category": "隨機事件圖"
+    },
+    {
+      "nameID": "map.event.deadman.name",
+      "pointIDs": [
+        "deadman_easy",
+        "deadman_normal",
+        "deadman_hard",
+        "deadman_very_hard"
+      ],
+      "locationIDs": [
+        "deadman_easy",
+        "deadman_normal",
+        "deadman_hard",
+        "deadman_very_hard"
+      ],
+      "category": "隨機事件圖"
+    },
+    {
+      "nameID": "map.event.waggon.name",
+      "pointIDs": [
+        "waggon_easy",
+        "waggon_normal",
+        "waggon_hard",
+        "waggon_very_hard"
+      ],
+      "locationIDs": [
+        "waggon_easy",
+        "waggon_normal",
+        "waggon_hard",
+        "waggon_very_hard"
+      ],
+      "category": "隨機事件圖"
+    },
+    {
+      "nameID": "map.event.burned_village.name",
+      "pointIDs": [
+        "burned_village_easy",
+        "burned_village_normal",
+        "burned_village_hard",
+        "burned_village_very_hard"
+      ],
+      "locationIDs": [
+        "burned_village_easy",
+        "burned_village_normal",
+        "burned_village_hard",
+        "burned_village_very_hard"
+      ],
+      "category": "隨機事件圖"
+    },
+    {
+      "nameID": "map.hunting_grounds.name",
+      "pointIDs": [
+        "hunting_grounds_easy",
+        "hunting_grounds",
+        "hunting_grounds_hard"
+      ],
+      "locationIDs": [
+        "hunting_grounds"
+      ],
+      "category": "隨機事件圖"
+    },
+    {
+      "nameID": "map.pasture.name",
+      "pointIDs": [
+        "pasture_easy",
+        "pasture",
+        "pasture_hard"
+      ],
+      "locationIDs": [
+        "pasture"
+      ],
+      "category": "隨機事件圖"
+    },
+    {
+      "nameID": "map.event.cemetery.name",
+      "pointIDs": [
+        "cemetery"
+      ],
+      "locationIDs": [
+        "cemetery"
+      ],
+      "category": "隨機事件圖"
+    },
+    {
+      "nameID": "map.event.convoy.name",
+      "pointIDs": [
+        "convoy_easy",
+        "convoy_hard"
+      ],
+      "locationIDs": [
+        "convoy"
+      ],
+      "category": "隨機事件圖"
+    },
+    {
+      "nameID": "map.event.td.chest.name",
+      "pointIDs": [
+        "td.chest.easy",
+        "td.chest.hard"
+      ],
+      "locationIDs": [
+        "td.chest.location"
+      ],
+      "category": "隨機事件圖"
+    },
+    {
+      "nameID": "map.event.trader.name",
+      "pointIDs": [
+        "trader_easy",
+        "trader_hard"
+      ],
+      "locationIDs": [
+        "trader"
+      ],
+      "category": "隨機事件圖"
+    },
+    {
+      "nameID": "map.event.converter.name",
+      "pointIDs": [
+        "converter_easy",
+        "converter_hard"
+      ],
+      "locationIDs": [
+        "converter"
+      ],
+      "category": "隨機事件圖"
+    },
+    {
+      "nameID": "map.sacrificial_altar.name",
+      "pointIDs": [
+        "sacrificial_altar"
+      ],
+      "locationIDs": [
+        "sacrificial_altar"
+      ],
+      "category": "隨機事件圖"
+    },
+    {
+      "nameID": "map.event.anniversary.name",
+      "pointIDs": [
+        "crypt"
+      ],
+      "locationIDs": [
+        "anniversary_ground",
+        "anniversary_dungeon"
+      ],
+      "category": "隨機事件圖"
+    },
+    {
+      "nameID": "map.death_labyrinth.name",
+      "pointIDs": [
+        "death_labyrinth"
+      ],
+      "locationIDs": [
+        "death_labyrinth"
+      ],
+      "category": "隨機事件圖"
+    },
+    {
+      "nameID": "map.warlock_lair.name",
+      "pointIDs": [
+        "warlock_lair"
+      ],
+      "locationIDs": [
+        "warlock_lair"
+      ],
+      "category": "隨機事件圖"
+    },
+    {
+      "nameID": "map.virbjorn_lair.name",
+      "pointIDs": [
+        "virbjorn_lair"
+      ],
+      "locationIDs": [
+        "virbjorn_lair"
+      ],
+      "category": "隨機事件圖"
+    },
+    {
+      "nameID": "map.halt_location.name",
+      "pointIDs": [
+        "halt",
+        "halt_new"
+      ],
+      "locationIDs": [
+        "halt_location",
+        "halt_new_location_easy",
+        "halt_new_location_medium",
+        "halt_new_location_hard"
+      ],
+      "category": "定期活動地圖"
+    },
+    {
+      "nameID": "map.harid_location.name",
+      "pointIDs": [
+        "harid"
+      ],
+      "locationIDs": [
+        "harid_location.easy",
+        "harid_location.medium",
+        "harid_location.hard"
+      ],
+      "category": "定期活動地圖"
+    },
+    {
+      "nameID": "map.popup_location.dungeon_challenges.name",
+      "pointIDs": [
+        "dungeon_challenges"
+      ],
+      "locationIDs": [
+        "dungeon_challenges_ground",
+        "dungeon_challenges_01",
+        "dungeon_challenges_02",
+        "dungeon_challenges_03"
+      ],
+      "category": "定期活動地圖"
+    },
+    {
+      "nameID": "map.ancient_sepulchre.name",
+      "pointIDs": [
+        "ancient_sepulchre"
+      ],
+      "locationIDs": [
+        "ancient_sepulchre_exchange",
+        "ancient_sepulchre_dungeon_easy",
+        "ancient_sepulchre_dungeon_medium",
+        "ancient_sepulchre_dungeon_hard"
+      ],
+      "category": "定期活動地圖"
+    },
+    {
+      "nameID": "map.cursed_lady.name",
+      "pointIDs": [
+        "cursed_lady"
+      ],
+      "locationIDs": [
+        "cursed_lady_location_easy",
+        "cursed_lady_location_normal",
+        "cursed_lady_location_hard"
+      ],
+      "category": "定期活動地圖"
+    },
+    {
+      "nameID": "map.observatory.name",
+      "pointIDs": [
+        "observatory"
+      ],
+      "locationIDs": [
+        "observatory_ground"
+      ],
+      "category": "常駐冷卻圖"
+    },
+    {
+      "nameID": "map.wagenburg.name",
+      "pointIDs": [
+        "wagenburg"
+      ],
+      "locationIDs": [
+        "wagenburg"
+      ],
+      "category": "常駐冷卻圖"
+    },
+    {
+      "nameID": "map.silver_mine.name",
+      "pointIDs": [
+        "mine_silver_01"
+      ],
+      "locationIDs": [
+        "silver_mine_ground",
+        "silver_mine_dungeon"
+      ],
+      "category": "常駐冷卻圖"
+    },
+    {
+      "nameID": "map.castle.name",
+      "pointIDs": [
+        "castle"
+      ],
+      "locationIDs": [
+        "castle"
+      ],
+      "category": "常駐冷卻圖"
+    },
+    {
+      "nameID": "map.ruins_01.name",
+      "pointIDs": [
+        "ruins_01"
+      ],
+      "locationIDs": [
+        "ruins_01",
+        "dungeon_01_01",
+        "dungeon_01_02",
+        "dungeon_01_03"
+      ],
+      "category": "常駐冷卻圖"
+    },
+    {
+      "nameID": "map.ruins_02.name",
+      "pointIDs": [
+        "ruins_02"
+      ],
+      "locationIDs": [
+        "ruins_02",
+        "dungeon_02_01",
+        "dungeon_02_02",
+        "dungeon_02_03"
+      ],
+      "category": "常駐冷卻圖"
+    },
+    {
+      "nameID": "map.tiny_hermit_storage.name",
+      "pointIDs": [
+        "tiny_hermit_storage"
+      ],
+      "locationIDs": [
+        "tiny_hermit_storage"
+      ],
+      "category": "非隨機事件圖"
+    },
+    {
+      "nameID": "map.small_hermit_storage.name",
+      "pointIDs": [
+        "small_hermit_storage_easy",
+        "small_hermit_storage",
+        "small_hermit_storage_hard"
+      ],
+      "locationIDs": [
+        "small_hermit_storage"
+      ],
+      "category": "非隨機事件圖"
+    },
+    {
+      "nameID": "map.big_hermit_storage.name",
+      "pointIDs": [
+        "big_hermit_storage_easy",
+        "big_hermit_storage",
+        "big_hermit_storage_hard"
+      ],
+      "locationIDs": [
+        "big_hermit_storage"
+      ],
+      "category": "非隨機事件圖"
+    },
+    {
+      "nameID": "map.hermit_hut.name",
+      "pointIDs": [
+        "hermit_hut"
+      ],
+      "locationIDs": [
+        "hermit_hut"
+      ],
+      "category": "非隨機事件圖"
+    },
+    {
+      "nameID": "map.halloween_cemetery.name",
+      "pointIDs": [
+        "halloween_cemetery"
+      ],
+      "locationIDs": [
+        "cemetery_halloween"
+      ],
+      "category": "節日圖"
+    },
+    {
+      "nameID": "map.forgotten_cemetery.name",
+      "pointIDs": [
+        "forgotten_cemetery"
+      ],
+      "locationIDs": [
+        "forgotten_cemetery"
+      ],
+      "category": "節日圖"
+    },
+    {
+      "nameID": "map.halloween_mansion.name",
+      "pointIDs": [
+        "halloween_mansion"
+      ],
+      "locationIDs": [
+        "halloween_mansion"
+      ],
+      "category": "節日圖"
+    },
+    {
+      "nameID": "map.halloween_coven.name",
+      "pointIDs": [
+        "halloween_coven"
+      ],
+      "locationIDs": [
+        "halloween_coven"
+      ],
+      "category": "節日圖"
+    },
+    {
+      "nameID": "map.halloween_village.name",
+      "pointIDs": [
+        "halloween_village"
+      ],
+      "locationIDs": [
+        "halloween_village"
+      ],
+      "category": "節日圖"
+    },
+    {
+      "nameID": "map.xmas_bags.name",
+      "pointIDs": [
+        "xmas_bags"
+      ],
+      "locationIDs": [
+        "xmas_bags"
+      ],
+      "category": "節日圖"
+    },
+    {
+      "nameID": "map.anniv20_1.name",
+      "pointIDs": [
+        "anniv20_1"
+      ],
+      "locationIDs": [
+        "anniv20_1_loc"
+      ],
+      "category": "節日圖"
+    },
+    {
+      "nameID": "map.anniv20_2.name",
+      "pointIDs": [
+        "anniv20_2"
+      ],
+      "locationIDs": [
+        "anniv20_2_loc"
+      ],
+      "category": "節日圖"
+    },
+    {
+      "nameID": "map.xmas_goblin_village.name",
+      "pointIDs": [
+        "xmas_goblin_village"
+      ],
+      "locationIDs": [
+        "xmas_goblin_village"
+      ],
+      "category": "節日圖"
+    },
+    {
+      "nameID": "map.xmas_shepherd.name",
+      "pointIDs": [
+        "xmas_shepherd"
+      ],
+      "locationIDs": [
+        "xmas_shepherd"
+      ],
+      "category": "節日圖"
+    },
+    {
+      "nameID": "map.rogue_santa_manor.name",
+      "pointIDs": [
+        "rogue_santa_manor"
+      ],
+      "locationIDs": [
+        "xmas_santa_factory_01"
+      ],
+      "category": "節日圖"
+    },
+    {
+      "nameID": "map.claus_trade.name",
+      "pointIDs": [
+        "claus_trade"
+      ],
+      "locationIDs": [
+        "xmas_exchange"
+      ],
+      "category": "節日圖"
+    },
+    {
+      "nameID": "map.halloween_town_ruins.name",
+      "pointIDs": [
+        "halloween_town_ruins"
+      ],
+      "locationIDs": [
+        "halloween_town_ruins.easy",
+        "halloween_town_ruins.medium",
+        "halloween_town_ruins.hard"
+      ],
+      "category": "節日圖"
+    },
+    {
+      "nameID": "map.xmas_deer.name",
+      "pointIDs": [
+        "xmas_deer"
+      ],
+      "locationIDs": [
+        "xmas_deer"
+      ],
+      "category": "節日圖"
+    },
+    {
+      "nameID": "map.xmas_santa_vs_claus.name",
+      "pointIDs": [
+        "xmas_santa_vs_claus"
+      ],
+      "locationIDs": [
+        "xmas_santa_vs_claus"
+      ],
+      "category": "節日圖"
+    }
+]

@@ -1,0 +1,544 @@
+{
+  "map.easy_forest.name": [
+    "bear",
+    "cursed",
+    "cursed_martyr",
+    "deer",
+    "leper",
+    "wolf",
+    {
+      "name": "turkey",
+      "event": "thanksgiving_exchange"
+    },
+    {
+      "name": "turkey_boss",
+      "event": "thanksgiving_exchange"
+    }
+  ],
+  "map.easy_rock.name": [
+    "bear",
+    "cursed",
+    "cursed_martyr",
+    "deer",
+    "leper",
+    "wolf",
+    {
+      "name": "turkey",
+      "event": "thanksgiving_exchange"
+    },
+    {
+      "name": "turkey_boss",
+      "event": "thanksgiving_exchange"
+    }
+  ],
+  "map.norm_forest.name": [
+    "bear",
+    "cursed",
+    {
+      "name": "cursed_individ",
+      "event": "challenges"
+    },
+    "deer",
+    "direwolf",
+    "knight",
+    "knight_warrior",
+    "leper",
+    "witch",
+    "wolf",
+    {
+      "name": "wolf_varg",
+      "event": "challenges"
+    },
+    {
+      "name": "turkey",
+      "event": "thanksgiving_exchange"
+    },
+    {
+      "name": "turkey_boss",
+      "event": "thanksgiving_exchange"
+    }
+  ],
+  "map.norm_rock.name": [
+    "bear",
+    "cursed",
+    {
+      "name": "cursed_individ",
+      "event": "challenges"
+    },
+    "cursed_martyr",
+    "deer",
+    "direwolf",
+    "knight",
+    "knight_warrior",
+    "leper",
+    "witch",
+    "wolf",
+    {
+      "name": "wolf_varg",
+      "event": "challenges"
+    },
+    {
+      "name": "turkey",
+      "event": "thanksgiving_exchange"
+    },
+    {
+      "name": "turkey_boss",
+      "event": "thanksgiving_exchange"
+    }
+  ],
+  "map.hard_forest.name": [
+    "bear",
+    "cursed",
+    {
+      "name": "cursed_individ",
+      "event": "challenges"
+    },
+    "deer",
+    "direwolf",
+    "knight",
+    "leper",
+    "leper_hermit",
+    "moose",
+    "templar",
+    "templar_zealot",
+    "witch",
+    "wolf",
+    {
+      "name": "wolf_varg",
+      "event": "challenges"
+    },
+    {
+      "name": "turkey",
+      "event": "thanksgiving_exchange"
+    },
+    {
+      "name": "turkey_boss",
+      "event": "thanksgiving_exchange"
+    }
+  ],
+  "map.hard_rock.name": [
+    "bear",
+    "cursed",
+    {
+      "name": "cursed_individ",
+      "event": "challenges"
+    },
+    "deer",
+    "direwolf",
+    "knight",
+    "leper",
+    "leper_hermit",
+    "moose",
+    "templar",
+    "templar_zealot",
+    "witch",
+    "wolf",
+    {
+      "name": "wolf_varg",
+      "event": "challenges"
+    },
+    {
+      "name": "turkey",
+      "event": "thanksgiving_exchange"
+    },
+    {
+      "name": "turkey_boss",
+      "event": "thanksgiving_exchange"
+    }
+  ],
+  "map.norm_birch.name": [
+    "archer",
+    "axe_thrower_scout",
+    "bear",
+    "cursed",
+    "cursed_martyr",
+    "direwolf",
+    "goblin",
+    "knight",
+    "knight_warrior",
+    "moose",
+    "rogue",
+    "templar",
+    "templar_zealot",
+    "witch",
+    {
+      "name": "turkey",
+      "event": "thanksgiving_exchange"
+    },
+    {
+      "name": "turkey_boss",
+      "event": "thanksgiving_exchange"
+    }
+  ],
+  "map.iron_mine.name": [
+    "archer",
+    "axe_thrower_scout",
+    "bear",
+    "cursed",
+    "cursed_martyr",
+    "direwolf",
+    "goblin",
+    "knight",
+    "knight_warrior",
+    "moose",
+    "rogue",
+    "templar",
+    "templar_zealot",
+    "witch",
+    {
+      "name": "turkey",
+      "event": "thanksgiving_exchange"
+    },
+    {
+      "name": "turkey_boss",
+      "event": "thanksgiving_exchange"
+    }
+  ],
+  "map.hard_birch.name": [
+    "archer",
+    "axe_thrower_scout",
+    "cursed",
+    "cursed_martyr",
+    "goblin",
+    "knight",
+    "knight_warrior",
+    "moose",
+    "rogue",
+    "rogue_stun",
+    "templar",
+    "templar_shield",
+    "templar_zealot",
+    "witch",
+    {
+      "name": "turkey",
+      "event": "thanksgiving_exchange"
+    },
+    {
+      "name": "turkey_boss",
+      "event": "thanksgiving_exchange"
+    }
+  ],
+  "map.iron_mine_hard.name": [
+    "archer",
+    "axe_thrower_scout",
+    "cursed",
+    "cursed_martyr",
+    "goblin",
+    "knight",
+    "knight_warrior",
+    "moose",
+    "rogue",
+    "rogue_stun",
+    "templar",
+    "templar_shield",
+    "templar_zealot",
+    "witch",
+    {
+      "name": "turkey",
+      "event": "thanksgiving_exchange"
+    },
+    {
+      "name": "turkey_boss",
+      "event": "thanksgiving_exchange"
+    }
+  ],
+  "map.boss_01.name": [
+    "keeper",
+    "wolf_decayed",
+    {
+      "name": "cursed",
+      "event": "explosion"
+    },
+    {
+      "name": "wolf_fenrir",
+      "event": "fenrir"
+    }
+  ],
+  "map.temple.name": [
+    "leper",
+    "cursed",
+    "axe_thrower_scout",
+    "victim_dung",
+    "axe_thrower_dung",
+    "hangman_dung"
+  ],
+  "map.event.catacomb.name": [
+    "leper",
+    "cursed",
+    "axe_thrower_scout",
+    "cursed_dung1",
+    "leper_soldier",
+    "leper_poison",
+    "knight_dung1",
+    "templar_dung1",
+    "maniac",
+    "templar_berserk",
+    "victim_dung",
+    "rogue_stun",
+    "shaman_dung",
+    "axe_thrower_dung",
+    "torturer_dung",
+    "hangman_dung"
+  ],
+  "map.event.caravan.name": [
+    "deer"
+  ],
+  "map.event.aissa.name": [
+    "aissa",
+    "bat",
+    "skeleton"
+  ],
+  "map.event.deadman.name": [
+    "deer",
+    "direwolf",
+    "knight",
+    "night_guest",
+    "templar",
+    "templar_shield",
+    "wolf"
+  ],
+  "map.event.waggon.name": [
+    "bear",
+    "cursed",
+    "deer",
+    "direwolf",
+    "horse",
+    "knight",
+    "knight_warrior",
+    "leper",
+    "night_guest",
+    "templar",
+    "templar_zealot",
+    "witch",
+    "wolf"
+  ],
+  "map.event.burned_village.name": [
+    "axe_thrower_dung",
+    "cursed",
+    "leper",
+    "night_guest",
+    "rogue",
+    "rogue_stun",
+    "skeleton",
+    "skeleton_hard",
+    "skeleton_very_hard"
+  ],
+  "map.hunting_grounds.name": [
+    "deer"
+  ],
+  "map.pasture.name": [
+    "horse"
+  ],
+  "map.event.cemetery.name": [
+    "cursed",
+    "knight",
+    "leper",
+    "night_guest",
+    "witch"
+  ],
+  "map.event.convoy.name": [
+    "convoy_brother",
+    "convoy_cursed",
+    "convoy_horse",
+    "convoy_knight",
+    "convoy_leper",
+    "convoy_trader",
+    "halt_shard",
+    "stationary_convoy_cursed"
+  ],
+  "map.event.td.chest.name": [
+    "cultist",
+    "knight",
+    "leper",
+    "cursed",
+    "wolf",
+    "direwolf"
+  ],
+  "map.event.trader.name": [
+    "direwolf_trainer",
+    "horse.trade",
+    "trader",
+    "trader_2",
+    "trader_3",
+    "trader_trainer"
+  ],
+  "map.event.converter.name": [
+    "bat",
+    "cursed",
+    "direwolf",
+    "leper",
+    "leper_hermit",
+    "night_guest",
+    "skeleton",
+    "wolf"
+  ],
+  "map.sacrificial_altar.name": [
+    "cursed"
+  ],
+  "map.event.anniversary.name": [
+    "bat_weak",
+    "cursed",
+    "maniac",
+    "rogue",
+    "rogue_stun",
+    "skeleton"
+  ],
+  "map.death_labyrinth.name": [
+    "archer",
+    "cursed_martyr",
+    "direwolf",
+    "knight_warrior",
+    "plague_priest_labyrinth",
+    "rogue",
+    "rogue_stun",
+    "shaman_dung",
+    "templar_zealot",
+    "wolf",
+    "wolf_decayed"
+  ],
+  "map.warlock_lair.name": [
+    "warlock_lair_necromancer",
+    "warlock_lair_necromancer_medium",
+    "warlock_lair_necromancer_hard",
+    "skeleton"
+  ],
+  "map.virbjorn_lair.name": [
+    "bear",
+    "bear_virbjorn"
+  ],
+  "map.halt_location.name": [
+    "halt",
+    "halt_new_easy",
+    "halt_new_medium",
+    "halt_new_hard",
+    "halt_shard",
+    "halt_shard_easy",
+    "halt_shard_medium",
+    "halt_shard_hard"
+  ],
+  "map.harid_location.name": [
+    "harid_easy",
+    "harid_medium",
+    "harid_hard",
+    "harid_priest",
+    "chaplain_girdsin",
+    "chaplain_nymphalis",
+    "chaplain_fernana",
+    "chaplain_baxter",
+    "inquisitor_inotsky",
+    "inquisitor_antonio",
+    "auxiliary_nigurot",
+    "auxiliary_jerzy",
+    "auxiliary_lothar"
+  ],
+  "map.popup_location.dungeon_challenges.name": [
+    "cursed_mutant",
+    "rat_mutant",
+    "knight_mutant",
+    "fat_mutant"
+  ],
+  "map.ancient_sepulchre.name": [
+    "sepulchre_banshee_easy",
+    "sepulchre_banshee_medium",
+    "sepulchre_banshee_hard",
+    "sepulchre_boss_easy",
+    "sepulchre_boss_medium",
+    "sepulchre_boss_hard",
+    "sepulchre_ghost_easy",
+    "sepulchre_ghost_medium",
+    "sepulchre_ghost_hard",
+    "sepulchre_skeleton_knight_easy",
+    "sepulchre_skeleton_knight_medium",
+    "sepulchre_skeleton_knight_hard",
+    "sepulchre_skeleton_melee_easy",
+    "sepulchre_skeleton_melee_medium",
+    "sepulchre_skeleton_melee_hard",
+    "sepulchre_skeleton_range_easy",
+    "sepulchre_skeleton_range_medium",
+    "sepulchre_skeleton_range_hard",
+    "sepulchre_skeleton_shield_easy",
+    "sepulchre_skeleton_shield_medium",
+    "sepulchre_skeleton_shield_hard"
+  ],
+  "map.cursed_lady.name": [
+    "boss_cursed_lady_easy",
+    "boss_cursed_lady_normal",
+    "boss_cursed_lady_hard",
+    "cursed_lady_shaman_easy",
+    "cursed_lady_shaman_medium",
+    "cursed_lady_shaman_hard"
+  ],
+  "map.observatory.name": [
+    "scribe_ghost",
+    "scholar_ghost"
+  ],
+  "map.wagenburg.name": [
+    "wagenburg_black_knight",
+    "wagenburg_crossbowman",
+    "wagenburg_dragon_crit",
+    "wagenburg_duelist",
+    "wagenburg_east_champion",
+    "wagenburg_gladiator",
+    "wagenburg_ice_bowman",
+    "wagenburg_reaper",
+    "wagenburg_warlock"
+  ],
+  "map.silver_mine.name": [
+    "night_guest",
+    "golem_bone",
+    "miner",
+    "overseer",
+    "sapper"
+  ],
+  "map.castle.name": [
+    "castle_boss",
+    "castle_ghost",
+    "night_guest",
+    "skeleton_very_hard",
+    {
+      "name": "skeleton",
+      "event": "halloween_2025"
+    }
+  ],
+  "map.ruins_01.name": [
+    "leper",
+    "axe_thrower_scout",
+    "cursed_dung1",
+    "knight_dung1",
+    "leper_poison",
+    "leper_soldier",
+    "skeleton",
+    "templar_dung1",
+    "witch",
+    "maniac",
+    "templar_berserk",
+    "eisenhorn",
+    "eisenhorn.heroic",
+    "templar_elite_1",
+    "templar_elite_2",
+    "templar_elite_3",
+    "templar_elite_4",
+    {
+      "name": "skeleton",
+      "event": "halloween_2025"
+    },
+    {
+      "name": "cursed_walker_factory",
+      "event": "xmas"
+    }
+  ],
+  "map.ruins_02.name": [
+    "axe_thrower_dung",
+    "axe_thrower_headhunter_dung",
+    "cruel_torturer_dung",
+    "fire_spawn_dung",
+    "hangman_dung",
+    "hangman_punisher_dung",
+    "karn",
+    "shaman_dung",
+    "torturer_dung",
+    "victim_dung",
+    "victim_dung_bowls",
+    "victim_dung_puzzle"
+  ]
+}

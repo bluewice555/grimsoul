@@ -1,0 +1,6567 @@
+{
+  "source": "refs_pure(2).json",
+  "key": "points",
+  "definition": "refs.maps.0.points plus refs.maps.0.events, indexed by point/event ID",
+  "count": 208,
+  "points": {
+    "home": {
+      "locations": [
+        "home",
+        "home_strongbox"
+      ],
+      "@ref:13": [
+        0,
+        0,
+        0
+      ],
+      "tags": [
+        "home"
+      ],
+      "stats": {
+        "danger": 0,
+        "@ref:24": 0,
+        "pine": 0,
+        "stone": 0,
+        "copper": 0,
+        "birch": 0,
+        "iron": 0
+      },
+      "picture": "Images/image_location_home",
+      "map_icon": "ui_home",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "crimson_camp": {
+      "location": "crimson_camp",
+      "visible": "crimson_camp_available",
+      "level_min": 7,
+      "@ref:13": [
+        -1.6,
+        -2.2,
+        0
+      ],
+      "stats": {
+        "danger": 0,
+        "@ref:24": 0,
+        "pine": 0,
+        "stone": 0,
+        "copper": 0,
+        "birch": 0,
+        "iron": 0
+      },
+      "ab_level_restriction": {
+        "group_b": 7,
+        "group_c": 7
+      },
+      "picture": "Images/image_location_crimson_camp",
+      "map_icon": "map_crimson_camp",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "view": {
+        "@ref:8": "map.crimson_camp.name",
+        "subtitle": {
+          "type": "string.format",
+          "string": "map.crimson_camp_subtitle.name"
+        }
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "catacomb": {
+      "locations": [
+        "catacomb_ground",
+        "catacomb_dungeon_01",
+        "catacomb_dungeon_02",
+        "catacomb_dungeon_03",
+        "catacomb_dungeon_04",
+        "catacomb_dungeon_05",
+        "catacomb_dungeon_final"
+      ],
+      "map_loot": "catacomb",
+      "visible": "can_catacomb",
+      "@ref:13": [
+        -15.05,
+        -5.83,
+        0
+      ],
+      "tags": [
+        "catacomb"
+      ],
+      "stats": {
+        "danger": 3,
+        "@ref:24": 3,
+        "pine": 0,
+        "stone": 0,
+        "copper": 0,
+        "birch": 0,
+        "iron": 0
+      },
+      "recommendations": {
+        "equip_tier": 3
+      },
+      "ab_level_restriction": {
+        "group_b": 20,
+        "group_c": 35
+      },
+      "pictures": [
+        "Images/image_location_dungeon",
+        "Images/image_location_dungeon_inside",
+        "Images/image_location_dungeon_inside",
+        "Images/image_location_dungeon_inside",
+        "Images/image_location_dungeon_inside",
+        "Images/image_location_dungeon_inside",
+        "Images/image_location_dungeon_inside",
+        "Images/image_location_dungeon_inside",
+        "Images/image_location_dungeon_inside",
+        "Images/image_location_dungeon_inside",
+        "Images/image_location_dungeon_inside"
+      ],
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "view": {
+        "@ref:8": "map.event.catacomb.name"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "easy_forest_01": {
+      "location": "easy_forest",
+      "custom_locations": [
+        "farm_forest_easy_01",
+        "farm_forest_easy_02",
+        "farm_forest_easy_03"
+      ],
+      "map_loot": "easy_forest",
+      "@ref:13": [
+        10,
+        2,
+        0
+      ],
+      "map_icon": "map_loot",
+      "map_icon_color": [
+        255,
+        213,
+        97
+      ],
+      "map_icon_visible": {
+        "type": "ab.is_easy_farm_save_corpse"
+      },
+      "tags": [
+        "death_warning",
+        "ab_easy_farm_save_corpse",
+        "tutor_visit"
+      ],
+      "stats": {
+        "danger": 1,
+        "@ref:24": 1,
+        "pine": 2,
+        "stone": 1,
+        "copper": 1,
+        "birch": 0,
+        "iron": 0
+      },
+      "picture": "Images/image_location_forest",
+      "view": {
+        "@ref:8": "map.easy_forest.name"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "easy_forest_02": {
+      "location": "easy_forest_copy_1",
+      "custom_locations": [
+        "farm_forest_easy_01",
+        "farm_forest_easy_02",
+        "farm_forest_easy_03"
+      ],
+      "map_loot": "easy_forest",
+      "@ref:13": [
+        5.48,
+        -7.71,
+        0
+      ],
+      "map_icon": "map_loot",
+      "map_icon_color": [
+        255,
+        213,
+        97
+      ],
+      "map_icon_visible": {
+        "type": "ab.is_easy_farm_save_corpse"
+      },
+      "tags": [
+        "death_warning",
+        "ab_easy_farm_save_corpse",
+        "tutor_visit"
+      ],
+      "stats": {
+        "danger": 1,
+        "@ref:24": 1,
+        "pine": 2,
+        "stone": 1,
+        "copper": 1,
+        "birch": 0,
+        "iron": 0
+      },
+      "picture": "Images/image_location_forest",
+      "view": {
+        "@ref:8": "map.easy_forest.name"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "easy_forest_03": {
+      "location": "easy_forest_copy_2",
+      "custom_locations": [
+        "farm_forest_easy_01",
+        "farm_forest_easy_02",
+        "farm_forest_easy_03"
+      ],
+      "map_loot": "easy_forest",
+      "@ref:13": [
+        31.71,
+        -8.25,
+        0
+      ],
+      "map_icon": "map_loot",
+      "map_icon_color": [
+        255,
+        213,
+        97
+      ],
+      "map_icon_visible": {
+        "type": "ab.is_easy_farm_save_corpse"
+      },
+      "tags": [
+        "death_warning",
+        "ab_easy_farm_save_corpse",
+        "tutor_visit"
+      ],
+      "stats": {
+        "danger": 1,
+        "@ref:24": 1,
+        "pine": 2,
+        "stone": 1,
+        "copper": 1,
+        "birch": 0,
+        "iron": 0
+      },
+      "picture": "Images/image_location_forest",
+      "view": {
+        "@ref:8": "map.easy_forest.name"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "normal_forest_01": {
+      "location": "normal_forest",
+      "custom_locations": [
+        "farm_forest_normal_01"
+      ],
+      "map_loot": "normal_forest",
+      "can_enter": {
+        "type": "normal.available"
+      },
+      "level_min": 23,
+      "@ref:13": [
+        14.5,
+        -2,
+        0
+      ],
+      "tags": [
+        "death_warning",
+        "tutor_visit"
+      ],
+      "stats": {
+        "danger": 2,
+        "@ref:24": 2,
+        "pine": 3,
+        "stone": 1,
+        "copper": 1,
+        "birch": 0,
+        "iron": 0
+      },
+      "recommendations": {
+        "equip_tier": 1
+      },
+      "ab_level_restriction": {
+        "group_b": 15,
+        "group_c": 23
+      },
+      "picture": "Images/image_location_forest",
+      "view": {
+        "@ref:8": "map.norm_forest.name",
+        "lock": "map.lock.default"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "normal_forest_02": {
+      "location": "normal_forest",
+      "custom_locations": [
+        "farm_forest_normal_01"
+      ],
+      "map_loot": "normal_forest",
+      "can_enter": {
+        "type": "normal.available"
+      },
+      "level_min": 23,
+      "@ref:13": [
+        33.42,
+        -16.9,
+        0
+      ],
+      "tags": [
+        "death_warning",
+        "tutor_visit"
+      ],
+      "stats": {
+        "danger": 2,
+        "@ref:24": 2,
+        "pine": 3,
+        "stone": 1,
+        "copper": 1,
+        "birch": 0,
+        "iron": 0
+      },
+      "recommendations": {
+        "equip_tier": 1
+      },
+      "ab_level_restriction": {
+        "group_b": 15,
+        "group_c": 23
+      },
+      "picture": "Images/image_location_forest",
+      "view": {
+        "@ref:8": "map.norm_forest.name",
+        "lock": "map.lock.default"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "hard_forest_01": {
+      "locations": [
+        "hard_forest",
+        "night_stash_dungeon"
+      ],
+      "map_loot": "hard_forest",
+      "can_enter": {
+        "type": "hard.available"
+      },
+      "level_min": 35,
+      "@ref:13": [
+        14,
+        -10,
+        0
+      ],
+      "tags": [
+        "death_warning",
+        "tutor_visit",
+        "shop_popup"
+      ],
+      "stats": {
+        "danger": 3,
+        "@ref:24": 3,
+        "pine": 4,
+        "stone": 2,
+        "copper": 2,
+        "birch": 0,
+        "iron": 0
+      },
+      "recommendations": {
+        "equip_tier": 2
+      },
+      "ab_level_restriction": {
+        "group_b": 20,
+        "group_c": 35
+      },
+      "pictures": [
+        "Images/image_location_forest",
+        "Images/image_location_dungeon_inside"
+      ],
+      "view": {
+        "@ref:8": "map.hard_forest.name",
+        "lock": "map.lock.default"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "easy_rock_01": {
+      "location": "easy_rock",
+      "custom_locations": [
+        "farm_rock_easy_01",
+        "farm_rock_easy_02",
+        "farm_rock_easy_03"
+      ],
+      "map_loot": "easy_forest",
+      "@ref:13": [
+        -2,
+        10,
+        0
+      ],
+      "map_icon": "map_loot",
+      "map_icon_color": [
+        255,
+        213,
+        97
+      ],
+      "map_icon_visible": {
+        "type": "ab.is_easy_farm_save_corpse"
+      },
+      "tags": [
+        "death_warning",
+        "ab_easy_farm_save_corpse",
+        "tutor_visit"
+      ],
+      "stats": {
+        "danger": 1,
+        "@ref:24": 1,
+        "pine": 1,
+        "stone": 2,
+        "copper": 1,
+        "birch": 0,
+        "iron": 0
+      },
+      "picture": "Images/image_location_rocks",
+      "view": {
+        "@ref:8": "map.easy_rock.name"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "easy_rock_02": {
+      "location": "easy_rock_copy_1",
+      "custom_locations": [
+        "farm_rock_easy_01",
+        "farm_rock_easy_02",
+        "farm_rock_easy_03"
+      ],
+      "map_loot": "easy_forest",
+      "@ref:13": [
+        -7,
+        6,
+        0.26
+      ],
+      "map_icon": "map_loot",
+      "map_icon_color": [
+        255,
+        213,
+        97
+      ],
+      "map_icon_visible": {
+        "type": "ab.is_easy_farm_save_corpse"
+      },
+      "tags": [
+        "death_warning",
+        "ab_easy_farm_save_corpse",
+        "tutor_visit"
+      ],
+      "stats": {
+        "danger": 1,
+        "@ref:24": 1,
+        "pine": 1,
+        "stone": 2,
+        "copper": 1,
+        "birch": 0,
+        "iron": 0
+      },
+      "picture": "Images/image_location_rocks",
+      "view": {
+        "@ref:8": "map.easy_rock.name"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "easy_rock_03": {
+      "location": "easy_rock_copy_2",
+      "custom_locations": [
+        "farm_rock_easy_01",
+        "farm_rock_easy_02",
+        "farm_rock_easy_03"
+      ],
+      "map_loot": "easy_forest",
+      "@ref:13": [
+        21.56,
+        -19.87,
+        0.06
+      ],
+      "map_icon": "map_loot",
+      "map_icon_color": [
+        255,
+        213,
+        97
+      ],
+      "map_icon_visible": {
+        "type": "ab.is_easy_farm_save_corpse"
+      },
+      "tags": [
+        "death_warning",
+        "ab_easy_farm_save_corpse",
+        "tutor_visit"
+      ],
+      "stats": {
+        "danger": 1,
+        "@ref:24": 1,
+        "pine": 1,
+        "stone": 2,
+        "copper": 1,
+        "birch": 0,
+        "iron": 0
+      },
+      "picture": "Images/image_location_rocks",
+      "view": {
+        "@ref:8": "map.easy_rock.name"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "normal_rock_01": {
+      "location": "normal_rock",
+      "custom_locations": [
+        "farm_rock_normal_01"
+      ],
+      "map_loot": "normal_forest",
+      "can_enter": {
+        "type": "normal.available"
+      },
+      "level_min": 23,
+      "@ref:13": [
+        -7,
+        12,
+        0.24
+      ],
+      "tags": [
+        "death_warning",
+        "tutor_visit"
+      ],
+      "stats": {
+        "danger": 2,
+        "@ref:24": 2,
+        "pine": 1,
+        "stone": 3,
+        "copper": 3,
+        "birch": 0,
+        "iron": 0
+      },
+      "recommendations": {
+        "equip_tier": 1
+      },
+      "ab_level_restriction": {
+        "group_b": 15,
+        "group_c": 23
+      },
+      "picture": "Images/image_location_rocks",
+      "view": {
+        "@ref:8": "map.norm_rock.name",
+        "lock": "map.lock.default"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "normal_rock_02": {
+      "location": "normal_rock",
+      "map_loot": "normal_forest",
+      "custom_locations": [
+        "farm_rock_normal_01"
+      ],
+      "can_enter": {
+        "type": "normal.available"
+      },
+      "level_min": 23,
+      "@ref:13": [
+        16.32,
+        -24.4,
+        0.15
+      ],
+      "tags": [
+        "death_warning",
+        "tutor_visit"
+      ],
+      "stats": {
+        "danger": 2,
+        "@ref:24": 2,
+        "pine": 1,
+        "stone": 3,
+        "copper": 3,
+        "birch": 0,
+        "iron": 0
+      },
+      "recommendations": {
+        "equip_tier": 1
+      },
+      "ab_level_restriction": {
+        "group_b": 15,
+        "group_c": 23
+      },
+      "picture": "Images/image_location_rocks",
+      "view": {
+        "@ref:8": "map.norm_rock.name",
+        "lock": "map.lock.default"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "hard_rock_01": {
+      "locations": [
+        "hard_rock",
+        "night_stash_dungeon"
+      ],
+      "map_loot": "hard_forest",
+      "can_enter": {
+        "type": "hard.available"
+      },
+      "level_min": 35,
+      "@ref:13": [
+        1.75,
+        15.56,
+        0.25
+      ],
+      "tags": [
+        "death_warning",
+        "tutor_visit",
+        "shop_popup"
+      ],
+      "stats": {
+        "danger": 3,
+        "@ref:24": 3,
+        "pine": 2,
+        "stone": 4,
+        "copper": 4,
+        "birch": 0,
+        "iron": 0
+      },
+      "recommendations": {
+        "equip_tier": 2
+      },
+      "ab_level_restriction": {
+        "group_b": 20,
+        "group_c": 35
+      },
+      "pictures": [
+        "Images/image_location_rocks",
+        "Images/image_location_dungeon_inside"
+      ],
+      "view": {
+        "@ref:8": "map.hard_rock.name",
+        "lock": "map.lock.default"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "ruins_01": {
+      "visible": {
+        "type": "resource",
+        "target": "global",
+        "resource": "ruins_01_access"
+      },
+      "timer": {
+        "type": "resource",
+        "target": "global",
+        "resource": "dungeon_01.opened"
+      },
+      "level_min": 23,
+      "locations": [
+        "ruins_01",
+        "dungeon_01_01",
+        "dungeon_01_02",
+        "dungeon_01_03"
+      ],
+      "map_loot": "dungeon_01",
+      "@ref:13": [
+        -13,
+        -17,
+        0.08
+      ],
+      "stats": {
+        "@ref:24": 6
+      },
+      "recommendations": {
+        "equip_tier": 3
+      },
+      "ab_level_restriction": {
+        "group_b": 20,
+        "group_c": 23
+      },
+      "pictures": [
+        "Images/image_location_dungeon",
+        "Images/image_location_dungeon_inside",
+        "Images/image_location_dungeon_inside",
+        "Images/image_location_dungeon_inside"
+      ],
+      "map_icon": "map_dungeon",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "view": {
+        "@ref:8": "map.ruins_01.name"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "ruins_02": {
+      "visible": {
+        "type": "resource",
+        "target": "global",
+        "resource": "ruins_02_access"
+      },
+      "timer": {
+        "type": "resource",
+        "target": "global",
+        "resource": "dungeon_02.opened"
+      },
+      "level_min": 50,
+      "locations": [
+        "ruins_02",
+        "dungeon_02_01",
+        "dungeon_02_02",
+        "dungeon_02_03"
+      ],
+      "map_loot": "dungeon_02",
+      "@ref:13": [
+        28,
+        14.5,
+        0
+      ],
+      "stats": {
+        "@ref:24": 8
+      },
+      "recommendations": {
+        "equip_tier": 4
+      },
+      "ab_level_restriction": {
+        "group_b": 50,
+        "group_c": 50
+      },
+      "pictures": [
+        "Images/image_location_dungeon",
+        "Images/image_location_dungeon_inside",
+        "Images/image_location_dungeon_inside",
+        "Images/image_location_dungeon_inside"
+      ],
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "map_icon": "map_dungeon",
+      "view": {
+        "@ref:8": "map.ruins_02.name"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "boss_01": {
+      "visible": {
+        "type": "resource",
+        "target": "global",
+        "resource": "boss_01_access"
+      },
+      "location": "boss_01",
+      "level_min": 23,
+      "map_loot": "keeper",
+      "@ref:13": [
+        -4.2,
+        -5.21,
+        0
+      ],
+      "stats": {
+        "@ref:24": 3
+      },
+      "recommendations": {
+        "equip_tier": 2
+      },
+      "ab_level_restriction": {
+        "group_b": 15,
+        "group_c": 23
+      },
+      "picture": "Images/image_location_keeper",
+      "map_icon": "map_key",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "map_icon_visible": "boss_01.is_alive",
+      "view": {
+        "@ref:8": "map.boss_01.name",
+        "subtitle": {
+          "type": "condition",
+          "if": "boss_01.is_alive",
+          "then": {
+            "type": "string.format",
+            "string": "map.boss_01.alive"
+          },
+          "else": {
+            "type": "string.format",
+            "string": "map.boss_01.dead"
+          }
+        }
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "temple": {
+      "visible": {
+        "type": "resource",
+        "target": "global",
+        "resource": "temple_access"
+      },
+      "level_min": 50,
+      "locations": [
+        "temple_ground",
+        "temple_dungeon"
+      ],
+      "map_loot": "temple",
+      "@ref:13": [
+        21.06,
+        -7.85,
+        0.05
+      ],
+      "stats": {
+        "@ref:24": 3
+      },
+      "recommendations": {
+        "equip_tier": 4
+      },
+      "ab_level_restriction": {
+        "group_b": 50,
+        "group_c": 50
+      },
+      "pictures": [
+        "Images/image_location_temple",
+        "Images/image_location_temple"
+      ],
+      "map_icon": "map_key",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "map_icon_visible": "temple.has_chest_reward",
+      "view": {
+        "@ref:8": "map.temple.name",
+        "subtitle": {
+          "type": "condition",
+          "if": "temple.has_chest_reward",
+          "then": {
+            "type": "string.format",
+            "string": "map.temple.chest_closed"
+          },
+          "else": {
+            "type": "string.format",
+            "string": "map.temple.chest_open"
+          }
+        }
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "tower": {
+      "can_enter": false,
+      "location": "easy_forest",
+      "@ref:13": [
+        8.41,
+        32.29,
+        0.15
+      ],
+      "region": "north",
+      "stats": {
+        "danger": -1,
+        "birch": 1
+      },
+      "picture": "Images/image_location_tower",
+      "map_icon": "map_dungeon",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "view": {
+        "@ref:8": "map.tower.name",
+        "lock": "map.lock.horse_battle"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "north_birch_hard4": {
+      "can_enter": {
+        "type": "north.available"
+      },
+      "level_min": 40,
+      "@ref:13": [
+        20.57,
+        26.2,
+        0
+      ],
+      "region": "north",
+      "location": "north_birch_hard4",
+      "map_loot": "north4",
+      "stats": {
+        "danger": 4,
+        "@ref:24": 4,
+        "pine": 2,
+        "birch": 2,
+        "stone": 2,
+        "copper": 2
+      },
+      "recommendations": {
+        "equip_tier": 3
+      },
+      "ab_level_restriction": {
+        "group_b": 40,
+        "group_c": 40
+      },
+      "picture": "Images/image_location_forest_birch",
+      "view": {
+        "@ref:8": "map.norm_birch.name",
+        "lock": "map.lock.horse_normal"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "north_birch_hard5": {
+      "can_enter": "horse.level_5",
+      "level_min": 50,
+      "@ref:13": [
+        16.03,
+        32.63,
+        0
+      ],
+      "region": "north",
+      "location": "north_birch_hard5",
+      "map_loot": "north5",
+      "stats": {
+        "danger": 5,
+        "@ref:24": 5,
+        "pine": 2,
+        "birch": 4,
+        "stone": 2,
+        "copper": 2
+      },
+      "recommendations": {
+        "equip_tier": 4
+      },
+      "ab_level_restriction": {
+        "group_b": 50,
+        "group_c": 50
+      },
+      "picture": "Images/image_location_forest_birch",
+      "view": {
+        "@ref:8": "map.hard_birch.name",
+        "lock": "map.lock.horse_5"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "north_iron_hard4": {
+      "can_enter": {
+        "type": "north.available"
+      },
+      "level_min": 40,
+      "@ref:13": [
+        27.95,
+        24.16,
+        0
+      ],
+      "region": "north",
+      "location": "north_iron_hard4",
+      "map_loot": "north4",
+      "stats": {
+        "danger": 4,
+        "pine": 2,
+        "stone": 3,
+        "iron": 2,
+        "copper": 2,
+        "@ref:24": 4
+      },
+      "recommendations": {
+        "equip_tier": 3
+      },
+      "ab_level_restriction": {
+        "group_b": 40,
+        "group_c": 40
+      },
+      "picture": "Images/image_location_iron",
+      "view": {
+        "@ref:8": "map.iron_mine.name",
+        "lock": "map.lock.horse_normal"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "north_iron_hard5": {
+      "can_enter": "horse.level_5",
+      "level_min": 50,
+      "@ref:13": [
+        34.18,
+        28.38,
+        0
+      ],
+      "region": "north",
+      "location": "north_iron_hard5",
+      "map_loot": "north5",
+      "stats": {
+        "danger": 5,
+        "@ref:24": 5,
+        "pine": 2,
+        "stone": 3,
+        "iron": 4,
+        "copper": 2
+      },
+      "recommendations": {
+        "equip_tier": 4
+      },
+      "ab_level_restriction": {
+        "group_b": 50,
+        "group_c": 50
+      },
+      "picture": "Images/image_location_iron",
+      "view": {
+        "@ref:8": "map.iron_mine_hard.name",
+        "lock": "map.lock.horse_5"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "dock_east": {
+      "visible": "dock_east.visible",
+      "can_enter": "dock_east.can_enter",
+      "level_min": 60,
+      "@ref:13": [
+        -11.91,
+        6.05,
+        0
+      ],
+      "region": "east",
+      "location": "dock_east",
+      "map_icon": "map_dock",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "picture": "Images/image_location_dock",
+      "view": {
+        "@ref:8": "map.dock_east.name"
+      },
+      "tags": [
+        "dock"
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "dock_west": {
+      "visible": "dock_west.visible",
+      "can_enter": "dock_west.can_enter",
+      "@ref:13": [
+        -18.23,
+        17.58,
+        0
+      ],
+      "region": "west",
+      "location": "dock_west",
+      "map_icon": "map_dock",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "picture": "Images/image_location_dock",
+      "view": {
+        "@ref:8": "map.dock_west.name",
+        "lock": "map.lock.boat"
+      },
+      "tags": [
+        "dock"
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "norm_birch_01": {
+      "@ref:13": [
+        -21,
+        22,
+        0
+      ],
+      "region": "west",
+      "can_enter": false,
+      "location": "unknown_location",
+      "ab_level_restriction": {
+        "group_b": 40,
+        "group_c": 40
+      },
+      "picture": "Images/image_location_crows",
+      "view": {
+        "@ref:8": "map.unknown_location.name",
+        "lock": "map.lock.unknown_location"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "mine_iron_01": {
+      "@ref:13": [
+        -24,
+        17,
+        0
+      ],
+      "region": "west",
+      "can_enter": false,
+      "location": "unknown_location",
+      "ab_level_restriction": {
+        "group_b": 40,
+        "group_c": 40
+      },
+      "picture": "Images/image_location_crows",
+      "view": {
+        "@ref:8": "map.unknown_location.name",
+        "lock": "map.lock.unknown_location"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "mine_silver_01": {
+      "@ref:13": [
+        -18,
+        26,
+        0
+      ],
+      "region": "west",
+      "level_min": 60,
+      "timer": "silver_mine_dungeon.time_left",
+      "locations": [
+        "silver_mine_ground",
+        "silver_mine_dungeon"
+      ],
+      "map_loot": "silver_mine",
+      "stats": {
+        "danger": 7,
+        "@ref:24": 2,
+        "silver": 4
+      },
+      "ab_level_restriction": {
+        "group_b": 40,
+        "group_c": 40
+      },
+      "picture": "Images/image_location_mine",
+      "map_icon": "map_dungeon",
+      "view": {
+        "@ref:8": "map.silver_mine.name",
+        "lock": "map.lock.boat"
+      },
+      "recommendations": {
+        "equip_tier": 7
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "castle": {
+      "can_enter": "horse.level_10",
+      "level_min": 60,
+      "timer": {
+        "type": "resource",
+        "target": "global",
+        "resource": "castle.trigger"
+      },
+      "@ref:13": [
+        27.34,
+        33.25,
+        -0.73
+      ],
+      "region": "north",
+      "location": "castle",
+      "map_loot": "castle",
+      "stats": {
+        "@ref:24": 6
+      },
+      "recommendations": {
+        "equip_tier": 5
+      },
+      "ab_level_restriction": {
+        "group_b": 60,
+        "group_c": 60
+      },
+      "picture": "Images/image_location_castle",
+      "map_icon": "map_boss",
+      "map_icon_color": [
+        182,
+        129,
+        255
+      ],
+      "tags": [
+        "castle"
+      ],
+      "view": {
+        "@ref:8": "map.castle.name",
+        "lock": "map.lock.horse_10",
+        "subtitle": {
+          "type": "condition",
+          "if": {
+            "type": "and",
+            "conditions": [
+              {
+                "type": ">",
+                "first": {
+                  "type": "resource",
+                  "target": "global",
+                  "resource": "castle.trigger"
+                },
+                "second": 0
+              },
+              {
+                "type": ">",
+                "first": {
+                  "type": "resource",
+                  "target": "global",
+                  "resource": "castle_boss_killed"
+                },
+                "second": 0
+              }
+            ]
+          },
+          "then": {
+            "type": "string.format",
+            "string": "map.castle.subtitle.map_clear"
+          },
+          "else": {
+            "type": "string.format",
+            "string": "map.castle.subtitle.not_explored"
+          }
+        }
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "enemy_01": {
+      "location": "enemy_01",
+      "visible": false,
+      "@ref:13": [
+        25.98,
+        -16.61,
+        0
+      ],
+      "stats": {
+        "danger": -1,
+        "@ref:24": -1
+      },
+      "view": {
+        "@ref:8": "map.enemy.name"
+      },
+      "picture": "Images/image_location_enemy",
+      "map_icon": "ui_home",
+      "map_icon_color": [
+        255,
+        127,
+        102
+      ],
+      "castle_level": 1,
+      "tags": [
+        "enemy_house"
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "enemy_02": {
+      "location": "enemy_02",
+      "visible": false,
+      "@ref:13": [
+        10,
+        13.5,
+        0.2
+      ],
+      "stats": {
+        "danger": -1,
+        "@ref:24": -1
+      },
+      "view": {
+        "@ref:8": "map.enemy.name"
+      },
+      "picture": "Images/image_location_enemy",
+      "map_icon": "ui_home",
+      "map_icon_color": [
+        255,
+        127,
+        102
+      ],
+      "castle_level": 1,
+      "tags": [
+        "enemy_house"
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "enemy_03": {
+      "location": "enemy_03",
+      "visible": false,
+      "@ref:13": [
+        -18,
+        -8,
+        0
+      ],
+      "stats": {
+        "danger": -1,
+        "@ref:24": -1
+      },
+      "view": {
+        "@ref:8": "map.enemy.name"
+      },
+      "picture": "Images/image_location_enemy",
+      "map_icon": "ui_home",
+      "map_icon_color": [
+        255,
+        127,
+        102
+      ],
+      "castle_level": 1,
+      "tags": [
+        "enemy_house"
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "enemy_04": {
+      "location": "enemy_04",
+      "visible": false,
+      "@ref:13": [
+        -1.37,
+        -13.01,
+        0
+      ],
+      "stats": {
+        "danger": -1,
+        "@ref:24": -1
+      },
+      "view": {
+        "@ref:8": "map.enemy.name"
+      },
+      "picture": "Images/image_location_enemy",
+      "map_icon": "ui_home",
+      "map_icon_color": [
+        255,
+        127,
+        102
+      ],
+      "castle_level": 1,
+      "tags": [
+        "enemy_house"
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "enemy_11": {
+      "location": "enemy_11",
+      "visible": false,
+      "@ref:13": [
+        -1.1,
+        -9.8,
+        0
+      ],
+      "stats": {
+        "danger": -1,
+        "@ref:24": -1
+      },
+      "view": {
+        "@ref:8": "map.enemy.name"
+      },
+      "picture": "Images/image_location_enemy",
+      "map_icon": "ui_home",
+      "map_icon_color": [
+        255,
+        127,
+        102
+      ],
+      "castle_level": 3,
+      "tags": [
+        "enemy_house"
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "enemy_12": {
+      "location": "enemy_12",
+      "visible": false,
+      "@ref:13": [
+        9,
+        13,
+        0.2
+      ],
+      "stats": {
+        "danger": -1,
+        "@ref:24": -1
+      },
+      "view": {
+        "@ref:8": "map.enemy.name"
+      },
+      "picture": "Images/image_location_enemy",
+      "map_icon": "ui_home",
+      "map_icon_color": [
+        255,
+        127,
+        102
+      ],
+      "castle_level": 9,
+      "tags": [
+        "enemy_house"
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "enemy_13": {
+      "location": "enemy_13",
+      "visible": false,
+      "@ref:13": [
+        -18.66,
+        -9.02,
+        0
+      ],
+      "stats": {
+        "danger": -1,
+        "@ref:24": -1
+      },
+      "view": {
+        "@ref:8": "map.enemy.name"
+      },
+      "picture": "Images/image_location_enemy",
+      "map_icon": "ui_home",
+      "map_icon_color": [
+        255,
+        127,
+        102
+      ],
+      "castle_level": 9,
+      "tags": [
+        "enemy_house"
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "enemy_14": {
+      "location": "enemy_14",
+      "visible": false,
+      "@ref:13": [
+        25.65,
+        -17.67,
+        0
+      ],
+      "stats": {
+        "danger": -1,
+        "@ref:24": -1
+      },
+      "view": {
+        "@ref:8": "map.enemy.name"
+      },
+      "picture": "Images/image_location_enemy",
+      "map_icon": "ui_home",
+      "map_icon_color": [
+        255,
+        127,
+        102
+      ],
+      "castle_level": 9,
+      "tags": [
+        "enemy_house"
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "halloween_cemetery": {
+      "visible": false,
+      "location": "cemetery_halloween",
+      "@ref:13": [
+        -8.6,
+        -30.4,
+        0
+      ],
+      "map_icon": "map_loot",
+      "map_icon_visible": {
+        "type": "not",
+        "condition": "halloween_cemetery.visited"
+      },
+      "stats": {
+        "@ref:24": 3
+      },
+      "picture": "Images/image_location_crows",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "view": {
+        "@ref:8": "map.halloween_cemetery.name"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "forgotten_cemetery": {
+      "location": "forgotten_cemetery",
+      "@ref:13": [
+        -9.6,
+        -26,
+        0
+      ],
+      "map_icon": "map_loot",
+      "tags": [
+        "forgotten_cemetery",
+        "battlepass_location"
+      ],
+      "visible": "forgotten_cemetery_available",
+      "stats": {
+        "@ref:24": 3
+      },
+      "picture": "Images/image_location_crows",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "map_icon_visible": "forgotten_cemetery_boss_available",
+      "view": {
+        "@ref:8": "map.forgotten_cemetery.name",
+        "subtitle": {
+          "type": "condition",
+          "if": "forgotten_cemetery_boss_available",
+          "then": {
+            "type": "string.format",
+            "string": "map.boss_01.alive"
+          },
+          "else": {
+            "type": "string.format",
+            "string": "map.boss_01.dead"
+          }
+        }
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "barbarian_camp": {
+      "location": "barbarian_camp",
+      "@ref:13": [
+        -11.1,
+        -29,
+        0
+      ],
+      "map_icon": "map_loot",
+      "tags": [
+        "barbarian_camp",
+        "battlepass_location"
+      ],
+      "visible": "barbarian_camp_available",
+      "stats": {
+        "@ref:24": 3
+      },
+      "picture": "Images/image_location_crows",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "map_icon_visible": "barbarian_camp_boss_available",
+      "view": {
+        "@ref:8": "map.barbarian_camp.name",
+        "subtitle": {
+          "type": "condition",
+          "if": "barbarian_camp_boss_available",
+          "then": {
+            "type": "string.format",
+            "string": "map.boss_01.alive"
+          },
+          "else": {
+            "type": "string.format",
+            "string": "map.boss_01.dead"
+          }
+        }
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "halloween_mansion": {
+      "visible": false,
+      "location": "halloween_mansion",
+      "@ref:13": [
+        -15.1,
+        -31.19,
+        0
+      ],
+      "map_icon": "map_loot",
+      "map_icon_visible": {
+        "type": "not",
+        "condition": "halloween_mansion.visited"
+      },
+      "stats": {
+        "@ref:24": 3
+      },
+      "picture": "Images/image_location_castle",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "view": {
+        "@ref:8": "map.halloween_mansion.name",
+        "subtitle": {
+          "type": "condition",
+          "if": {
+            "type": "not",
+            "condition": "halloween_mansion.visited"
+          },
+          "then": {
+            "type": "string.format",
+            "string": "map.reward_waits"
+          },
+          "else": {
+            "type": "string.format",
+            "string": ""
+          }
+        }
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "halloween_coven": {
+      "visible": false,
+      "location": "halloween_coven",
+      "@ref:13": [
+        8.2,
+        -33.5,
+        0
+      ],
+      "map_icon": "map_loot",
+      "map_icon_visible": {
+        "type": "not",
+        "condition": "halloween_coven.visited"
+      },
+      "stats": {
+        "@ref:24": 3
+      },
+      "picture": "Images/image_location_forest",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "view": {
+        "@ref:8": "map.halloween_coven.name",
+        "subtitle": {
+          "type": "condition",
+          "if": {
+            "type": "not",
+            "condition": "halloween_coven.visited"
+          },
+          "then": {
+            "type": "string.format",
+            "string": "map.reward_waits"
+          },
+          "else": {
+            "type": "string.format",
+            "string": ""
+          }
+        }
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "halloween_village": {
+      "visible": "halloween_village_available",
+      "location": "halloween_village",
+      "@ref:13": [
+        -11.46,
+        -23.72,
+        0
+      ],
+      "map_icon": "map_pumpkin",
+      "map_loot": "halloween_village",
+      "map_icon_visible": "halloween_village.show_boss_alive",
+      "stats": {
+        "@ref:24": 3
+      },
+      "picture": "Images/image_location_castle",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "view": {
+        "@ref:8": "map.halloween_village.name",
+        "subtitle": {
+          "type": "condition",
+          "if": {
+            "type": "not",
+            "condition": "halloween_village.show_boss_alive"
+          },
+          "then": {
+            "type": "string.format",
+            "string": "map.halloween_village.visited_subtitle.text"
+          },
+          "else": {
+            "type": "string.format",
+            "string": "map.halloween_village.not_visited_subtitle.text"
+          }
+        }
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "xmas_bags": {
+      "visible": "xmas_bags.active",
+      "expired": "xmas_bags.expired",
+      "timer": "xmas_bags.timer",
+      "location": "xmas_bags",
+      "@ref:13": [
+        5.2,
+        -2.75,
+        0
+      ],
+      "tags": [
+        "sticky_pointer"
+      ],
+      "map_icon": "map_loot",
+      "map_loot": "xmas_bags",
+      "map_icon_visible": "xmas_bags.active",
+      "stats": {
+        "@ref:24": 4
+      },
+      "picture": "Images/image_location_xmas",
+      "map_icon_color": [
+        130,
+        185,
+        255
+      ],
+      "recommendations": {
+        "equip_tier": 3
+      },
+      "view": {
+        "@ref:8": "map.xmas_bags.name",
+        "subtitle": {
+          "type": "string.format",
+          "string": "map.popup_location.temporary.text"
+        }
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "anniv20_1": {
+      "tags": [
+        "anniv20"
+      ],
+      "visible": false,
+      "location": "anniv20_1_loc",
+      "@ref:13": [
+        -6.5,
+        -24.75,
+        0
+      ],
+      "map_icon": "map_loot",
+      "map_icon_visible": {
+        "type": "not",
+        "condition": {
+          "type": "resource",
+          "resource": "anniv20_loc1.visited",
+          "target": "global"
+        }
+      },
+      "stats": {
+        "@ref:24": 2
+      },
+      "picture": "Images/image_location_crows",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "view": {
+        "@ref:8": "map.anniv20_1.name"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "anniv20_2": {
+      "tags": [
+        "anniv20"
+      ],
+      "visible": false,
+      "location": "anniv20_2_loc",
+      "@ref:13": [
+        -6.9,
+        -27.75,
+        0
+      ],
+      "map_icon": "map_loot",
+      "map_icon_visible": {
+        "type": "not",
+        "condition": {
+          "type": "resource",
+          "resource": "anniv20_loc2.visited",
+          "target": "global"
+        }
+      },
+      "stats": {
+        "@ref:24": 2
+      },
+      "picture": "Images/image_location_crows",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "view": {
+        "@ref:8": "map.anniv20_2.name"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "wagenburg": {
+      "can_enter": "horse.level_15",
+      "visible": {
+        "type": "gte",
+        "first": {
+          "type": "level"
+        },
+        "second": 50
+      },
+      "timer": {
+        "type": "sub",
+        "amounts": [
+          {
+            "type": "resource",
+            "resource": "wagenburg_expired_ts",
+            "target": "global"
+          },
+          {
+            "type": "time.now"
+          }
+        ]
+      },
+      "location": "wagenburg",
+      "level_min": 50,
+      "map_loot": "wagenburg",
+      "@ref:13": [
+        5.85,
+        -20,
+        0.28
+      ],
+      "tags": [
+        "far_away"
+      ],
+      "stats": {
+        "danger": 7,
+        "@ref:24": 6
+      },
+      "recommendations": {
+        "equip_tier": 6
+      },
+      "picture": "Images/image_location_wagenburg",
+      "map_icon": "map_wagenburg",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "map_icon_visible": "wagenburg_loot_available",
+      "view": {
+        "lock": "map.lock.horse_15",
+        "@ref:8": "map.wagenburg.name"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "xmas_goblin_village": {
+      "visible": "xmas_goblin_village.active",
+      "expired": "xmas_goblin_village.expired",
+      "timer": "xmas_goblin_village.timer",
+      "location": "xmas_goblin_village",
+      "@ref:13": [
+        -4.35,
+        -16.95,
+        0
+      ],
+      "tags": [
+        "sticky_pointer"
+      ],
+      "map_icon": "ui_home",
+      "map_loot": "xmas_goblin_village",
+      "map_icon_visible": "xmas_goblin_village.active",
+      "stats": {
+        "@ref:24": 7
+      },
+      "picture": "Images/image_location_xmas",
+      "map_icon_color": [
+        130,
+        185,
+        255
+      ],
+      "recommendations": {
+        "equip_tier": 1
+      },
+      "view": {
+        "@ref:8": "map.xmas_goblin_village.name",
+        "subtitle": {
+          "type": "string.format",
+          "string": "map.popup_location.temporary.text"
+        }
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "test_horse": {
+      "visible": {
+        "type": "debug.env"
+      },
+      "is_test": true,
+      "location": "test_horse",
+      "@ref:13": [
+        -16.2,
+        -3.39,
+        0
+      ],
+      "stats": {
+        "danger": -1,
+        "@ref:24": 4
+      },
+      "picture": "Images/image_location_crows",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "map_icon": "map_dungeon",
+      "view": {
+        "@ref:8": "Test-horse"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "test_dungeon": {
+      "visible": {
+        "type": "debug.env"
+      },
+      "is_test": true,
+      "location": "test_dungeon",
+      "@ref:13": [
+        -19.78,
+        -3.01,
+        0
+      ],
+      "stats": {
+        "danger": -1,
+        "@ref:24": 4
+      },
+      "picture": "Images/image_location_dungeon_inside",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "map_icon": "map_dungeon",
+      "view": {
+        "@ref:8": "Dungeon 1 Floor (Test)"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "test_dungeon2": {
+      "visible": {
+        "type": "debug.env"
+      },
+      "is_test": true,
+      "location": "test_dungeon_01_02",
+      "@ref:13": [
+        -20.91,
+        0.55,
+        0
+      ],
+      "stats": {
+        "danger": -1,
+        "@ref:24": 4
+      },
+      "picture": "Images/image_location_dungeon_inside",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "map_icon": "map_dungeon",
+      "view": {
+        "@ref:8": "Dungeon 2 Floor (Test)"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "test_dungeon3": {
+      "visible": {
+        "type": "debug.env"
+      },
+      "is_test": true,
+      "location": "test_dungeon_01_03",
+      "@ref:13": [
+        -16.72,
+        -0.19,
+        0
+      ],
+      "stats": {
+        "danger": -1,
+        "@ref:24": 4
+      },
+      "picture": "Images/image_location_dungeon_inside",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "map_icon": "map_dungeon",
+      "view": {
+        "@ref:8": "Dungeon 3 Floor (Test)"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "test_dungeon02_02": {
+      "visible": {
+        "type": "debug.env"
+      },
+      "is_test": true,
+      "location": "test_dungeon_02_02",
+      "@ref:13": [
+        -18.43,
+        2.7,
+        0
+      ],
+      "stats": {
+        "danger": -1,
+        "@ref:24": 4
+      },
+      "picture": "Images/image_location_dungeon_inside",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "map_icon": "map_dungeon",
+      "view": {
+        "@ref:8": "Dungeon 2 Floor 2 (Test)"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "test_point": {
+      "visible": {
+        "type": "debug.env"
+      },
+      "is_test": true,
+      "locations": [
+        "dungeon_02_03"
+      ],
+      "@ref:13": [
+        -13.14,
+        0.15,
+        0
+      ],
+      "stats": {
+        "@ref:24": 6
+      },
+      "pictures": [
+        "Images/image_location_dungeon"
+      ],
+      "map_icon": "map_loot",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "view": {
+        "@ref:8": "Karn dungeon"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "test_point_2": {
+      "visible": {
+        "type": "debug.env"
+      },
+      "is_test": true,
+      "locations": [
+        "farm_rock_easy_02"
+      ],
+      "@ref:13": [
+        -24.25,
+        -12.5,
+        0
+      ],
+      "picture": "Images/image_location_crows",
+      "map_icon": "map_loot",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "view": {
+        "@ref:8": "test_farm_rock_easy_02"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "test_point_3": {
+      "visible": {
+        "type": "debug.env"
+      },
+      "is_test": true,
+      "locations": [
+        "farm_rock_easy_03"
+      ],
+      "@ref:13": [
+        -26.25,
+        -11,
+        0
+      ],
+      "picture": "Images/image_location_crows",
+      "map_icon": "map_loot",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "view": {
+        "@ref:8": "test_farm_rock_easy_03"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "test_td": {
+      "visible": {
+        "type": "debug.env"
+      },
+      "is_test": true,
+      "tags": [
+        "event_accessor"
+      ],
+      "locations": [
+        "ancient_sepulchre_exchange",
+        "ancient_sepulchre_dungeon_easy",
+        "ancient_sepulchre_dungeon_medium",
+        "ancient_sepulchre_dungeon_hard"
+      ],
+      "event_accessor": "ancient_sepulchre",
+      "@ref:13": [
+        -23.69,
+        -5.46,
+        0
+      ],
+      "stats": {
+        "danger": -1,
+        "@ref:24": 4
+      },
+      "picture": "Images/image_location_crows",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "map_icon": "map_dungeon",
+      "view": {
+        "@ref:8": "Ancient Sepulchre"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "test_christmas_deer": {
+      "visible": {
+        "type": "debug.env"
+      },
+      "is_test": true,
+      "location": "farm_forest_easy_03",
+      "@ref:13": [
+        -26.83,
+        -6.53,
+        0
+      ],
+      "stats": {
+        "danger": -1,
+        "@ref:24": 4
+      },
+      "picture": "Images/image_location_crows",
+      "map_icon": "map_loot",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "view": {
+        "@ref:8": "test_farm_forest_easy_03"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "test_shepherd": {
+      "visible": {
+        "type": "debug.env"
+      },
+      "is_test": true,
+      "locations": [
+        "xmas_shepherd"
+      ],
+      "@ref:13": [
+        -21.24,
+        -22.46,
+        0
+      ],
+      "map_icon": "map_loot",
+      "map_icon_visible": 1,
+      "map_loot": "xmas_shepherd",
+      "stats": {
+        "@ref:24": 3
+      },
+      "picture": "Images/image_location_xmas",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "view": {
+        "@ref:8": "map.xmas_shepherd.name",
+        "subtitle": {
+          "type": "string.format",
+          "string": "map.popup_location.temporary.text"
+        }
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "test_trader": {
+      "visible": {
+        "type": "debug.env"
+      },
+      "is_test": true,
+      "location": "farm_forest_easy_02",
+      "@ref:13": [
+        -28.75,
+        -8.85,
+        0
+      ],
+      "stats": {
+        "danger": -1,
+        "@ref:24": 4
+      },
+      "picture": "Images/image_location_crows",
+      "map_icon": "map_loot",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "view": {
+        "@ref:8": "test_farm_forest_easy_02"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "test_chest": {
+      "visible": {
+        "type": "debug.env"
+      },
+      "is_test": true,
+      "location": "test_chest",
+      "@ref:13": [
+        -21,
+        -6.5,
+        0
+      ],
+      "stats": {
+        "danger": -1,
+        "@ref:24": 4
+      },
+      "picture": "Images/image_location_crows",
+      "map_icon": "map_loot",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "view": {
+        "@ref:8": "test_chest"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "quest_1_6": {
+      "tags": [
+        "quest"
+      ],
+      "locations": [
+        "task_1_6"
+      ],
+      "disposable": true,
+      "@ref:13": [
+        3.61,
+        3.02,
+        0
+      ],
+      "stats": {
+        "danger": 1,
+        "@ref:24": 1
+      },
+      "picture": "Images/image_location_crows",
+      "map_icon": "map_quest",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "quest_1_7": {
+      "tags": [
+        "quest"
+      ],
+      "locations": [
+        "task_1_7"
+      ],
+      "disposable": true,
+      "@ref:13": [
+        10.37,
+        -0.53,
+        0
+      ],
+      "stats": {
+        "danger": 1,
+        "@ref:24": 1
+      },
+      "picture": "Images/image_location_forest",
+      "map_icon": "map_quest",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "quest_1_9": {
+      "tags": [
+        "quest"
+      ],
+      "locations": [
+        "task_1_9"
+      ],
+      "disposable": true,
+      "@ref:13": [
+        2.14,
+        -12.08,
+        0
+      ],
+      "stats": {
+        "danger": 2,
+        "@ref:24": 2
+      },
+      "picture": "Images/image_location_enemy",
+      "map_icon": "map_quest",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "quest_1_13": {
+      "tags": [
+        "quest"
+      ],
+      "locations": [
+        "task_1_13"
+      ],
+      "disposable": true,
+      "@ref:13": [
+        14.8,
+        -5.5,
+        0
+      ],
+      "stats": {
+        "danger": 2,
+        "@ref:24": 2
+      },
+      "picture": "Images/image_location_crows",
+      "map_icon": "map_quest",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "quest_1_15": {
+      "tags": [
+        "quest"
+      ],
+      "locations": [
+        "task_1_15"
+      ],
+      "disposable": true,
+      "@ref:13": [
+        -3.62,
+        3.71,
+        0
+      ],
+      "stats": {
+        "danger": 2,
+        "@ref:24": 2
+      },
+      "picture": "Images/image_location_crows",
+      "map_icon": "map_quest",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "quest_2_1": {
+      "tags": [
+        "quest"
+      ],
+      "locations": [
+        "task_2_1_ground",
+        "task_2_1_dungeon"
+      ],
+      "disposable": true,
+      "@ref:13": [
+        -14.59,
+        -12.2,
+        0.03
+      ],
+      "stats": {
+        "danger": 3,
+        "@ref:24": 3
+      },
+      "picture": "Images/image_location_crows",
+      "map_icon": "map_quest",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "pictures": [
+        "Images/image_location_dungeon",
+        "Images/image_location_dungeon_inside"
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "quest_2_3": {
+      "tags": [
+        "quest"
+      ],
+      "locations": [
+        "task_2_3"
+      ],
+      "disposable": true,
+      "@ref:13": [
+        19.66,
+        4.3,
+        0
+      ],
+      "stats": {
+        "danger": 2,
+        "@ref:24": 2
+      },
+      "picture": "Images/image_location_enemy",
+      "map_icon": "map_quest",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "quest_2_5": {
+      "tags": [
+        "quest"
+      ],
+      "locations": [
+        "task_2_5"
+      ],
+      "disposable": true,
+      "@ref:13": [
+        7.3,
+        21.67,
+        0
+      ],
+      "stats": {
+        "danger": 3,
+        "@ref:24": 3
+      },
+      "picture": "Images/image_location_crows",
+      "map_icon": "map_quest",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "quest_2_9": {
+      "tags": [
+        "quest"
+      ],
+      "locations": [
+        "task_2_9_1",
+        "task_2_9_2"
+      ],
+      "disposable": true,
+      "@ref:13": [
+        -3.06,
+        -19.44,
+        0
+      ],
+      "stats": {
+        "danger": 1,
+        "@ref:24": 1
+      },
+      "picture": "Images/image_location_crows",
+      "map_icon": "map_quest",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "pictures": [
+        "Images/image_location_trader",
+        "Images/image_location_trader"
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "quest_2_13": {
+      "tags": [
+        "quest"
+      ],
+      "locations": [
+        "task_2_13"
+      ],
+      "disposable": true,
+      "@ref:13": [
+        11.12,
+        20.65,
+        0
+      ],
+      "stats": {
+        "danger": 3,
+        "@ref:24": 3
+      },
+      "picture": "Images/image_location_crows",
+      "map_icon": "map_quest",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "quest_2_15": {
+      "tags": [
+        "quest"
+      ],
+      "locations": [
+        "task_2_15_1",
+        "task_2_15_2"
+      ],
+      "disposable": true,
+      "@ref:13": [
+        21.81,
+        -4.25,
+        0
+      ],
+      "stats": {
+        "danger": 3,
+        "@ref:24": 3
+      },
+      "picture": "Images/image_location_crows",
+      "map_icon": "map_quest",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "pictures": [
+        "Images/image_location_crows",
+        "Images/image_location_crows"
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "quest_3_1": {
+      "tags": [
+        "quest"
+      ],
+      "locations": [
+        "task_3_1_ground",
+        "task_3_1_dungeon"
+      ],
+      "disposable": true,
+      "@ref:13": [
+        27.17,
+        -0.03,
+        0
+      ],
+      "stats": {
+        "danger": 3,
+        "@ref:24": 3
+      },
+      "picture": "Images/image_location_crows",
+      "map_icon": "map_quest",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "pictures": [
+        "Images/image_location_dungeon",
+        "Images/image_location_dungeon_inside"
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "quest_3_3": {
+      "tags": [
+        "quest"
+      ],
+      "locations": [
+        "task_3_3"
+      ],
+      "disposable": true,
+      "@ref:13": [
+        23.27,
+        6.32,
+        0
+      ],
+      "stats": {
+        "danger": 4,
+        "@ref:24": 4
+      },
+      "picture": "Images/image_location_forest",
+      "map_icon": "map_quest",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "pictures": [
+        "Images/image_location_crows"
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "quest_3_7": {
+      "tags": [
+        "quest"
+      ],
+      "locations": [
+        "task_3_7_ground",
+        "task_3_7_dungeon"
+      ],
+      "disposable": true,
+      "@ref:13": [
+        11.15,
+        -18.8,
+        0
+      ],
+      "stats": {
+        "danger": 4,
+        "@ref:24": 4
+      },
+      "picture": "Images/image_location_crows",
+      "map_icon": "map_quest",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "pictures": [
+        "Images/image_location_dungeon",
+        "Images/image_location_dungeon_inside"
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "quest_3_9": {
+      "tags": [
+        "quest"
+      ],
+      "locations": [
+        "task_3_9"
+      ],
+      "disposable": true,
+      "@ref:13": [
+        24.99,
+        2.95,
+        0
+      ],
+      "stats": {
+        "danger": 3,
+        "@ref:24": 3
+      },
+      "picture": "Images/image_location_forest",
+      "map_icon": "map_quest",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "quest_3_11": {
+      "tags": [
+        "quest"
+      ],
+      "locations": [
+        "task_3_11"
+      ],
+      "disposable": true,
+      "@ref:13": [
+        27.14,
+        27.23,
+        -1
+      ],
+      "stats": {
+        "danger": 4,
+        "@ref:24": 4
+      },
+      "picture": "Images/image_location_forest_birch",
+      "map_icon": "map_quest",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "can_enter": "horse.level_5",
+      "region": "north",
+      "view": {
+        "lock": "map.lock.horse_5"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "quest_3_15": {
+      "tags": [
+        "quest"
+      ],
+      "locations": [
+        "task_3_15"
+      ],
+      "disposable": true,
+      "@ref:13": [
+        19.66,
+        31.08,
+        -0.86
+      ],
+      "stats": {
+        "danger": 4,
+        "@ref:24": 4
+      },
+      "picture": "Images/image_location_enemy",
+      "map_icon": "map_quest",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "can_enter": "horse.level_5",
+      "region": "north",
+      "view": {
+        "lock": "map.lock.horse_5"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "quest_4_1": {
+      "tags": [
+        "quest"
+      ],
+      "locations": [
+        "task_4_1"
+      ],
+      "disposable": true,
+      "@ref:13": [
+        17.65,
+        -6.81,
+        0
+      ],
+      "stats": {
+        "danger": 4
+      },
+      "picture": "Images/image_location_trader",
+      "map_icon": "map_quest",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "quest_4_10": {
+      "tags": [
+        "quest"
+      ],
+      "locations": [
+        "task_4_10_1",
+        "task_4_10_2",
+        "task_4_10_3",
+        "task_4_10_4"
+      ],
+      "disposable": true,
+      "@ref:13": [
+        8.22,
+        -16,
+        0
+      ],
+      "stats": {
+        "danger": 5
+      },
+      "picture": "Images/image_location_crows",
+      "map_icon": "map_quest",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "pictures": [
+        "Images/image_location_crows",
+        "Images/image_location_crows",
+        "Images/image_location_crows",
+        "Images/image_location_crows"
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "quest_4_4": {
+      "tags": [
+        "quest"
+      ],
+      "locations": [
+        "task_4_4_stones_01",
+        "task_4_4_test_01",
+        "task_4_4_stones_02",
+        "task_4_4_test_02",
+        "task_4_4_stones_03",
+        "task_4_4_test_03",
+        "task_4_4_stones_04"
+      ],
+      "disposable": true,
+      "@ref:13": [
+        2.2,
+        -8.5,
+        0
+      ],
+      "stats": {
+        "danger": 5
+      },
+      "picture": "Images/image_location_rocks",
+      "map_icon": "map_quest",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "pictures": [
+        "Images/image_location_rocks",
+        "Images/image_location_rocks",
+        "Images/image_location_rocks",
+        "Images/image_location_rocks",
+        "Images/image_location_rocks",
+        "Images/image_location_rocks",
+        "Images/image_location_rocks"
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "quest_4_7": {
+      "tags": [
+        "quest"
+      ],
+      "locations": [
+        "task_4_7_ground_01",
+        "task_4_7_dungeon_01",
+        "task_4_7_dungeon_02",
+        "task_4_7_dungeon_02_5",
+        "task_4_7_dungeon_03",
+        "task_4_7_dungeon_04",
+        "task_4_7_dungeon_05",
+        "task_4_7_dungeon_07",
+        "task_4_7_dungeon_08",
+        "task_4_7_ground_02"
+      ],
+      "disposable": true,
+      "@ref:13": [
+        5.98,
+        7.53,
+        0
+      ],
+      "stats": {
+        "danger": 5
+      },
+      "picture": "Images/image_location_dungeon",
+      "map_icon": "map_quest",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "pictures": [
+        "Images/image_location_dungeon",
+        "Images/image_location_dungeon_inside",
+        "Images/image_location_dungeon_inside",
+        "Images/image_location_dungeon_inside",
+        "Images/image_location_dungeon_inside",
+        "Images/image_location_dungeon_inside",
+        "Images/image_location_dungeon_inside",
+        "Images/image_location_dungeon_inside",
+        "Images/image_location_dungeon_inside",
+        "Images/image_location_dungeon"
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "caravan_01": {
+      "event": true,
+      "location": "caravan",
+      "map_loot": "caravan",
+      "@ref:13": [
+        16.5,
+        6.5,
+        0
+      ],
+      "picture": "Images/image_location_crows",
+      "map_icon": "map_loot",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "caravan_02": {
+      "event": true,
+      "location": "caravan",
+      "map_loot": "caravan",
+      "@ref:13": [
+        19,
+        15,
+        0
+      ],
+      "picture": "Images/image_location_crows",
+      "map_icon": "map_loot",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "aissa": {
+      "tags": [
+        "aissa"
+      ],
+      "event": true,
+      "location": "aissa",
+      "@ref:13": [
+        1.6,
+        9.7,
+        0.15
+      ],
+      "recommendations": {
+        "equip_tier": 4
+      },
+      "picture": "Images/image_location_aissa",
+      "map_icon": "map_boss",
+      "map_icon_color": [
+        182,
+        129,
+        255
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "death_labyrinth": {
+      "tags": [
+        "death_labyrinth"
+      ],
+      "event": true,
+      "location": "death_labyrinth",
+      "@ref:13": [
+        14.45,
+        3.85,
+        0
+      ],
+      "map_icon": "map_loot",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "map_icon_visible": {
+        "type": "resource",
+        "resource": "death_labyrinth.has_reward",
+        "target": "global"
+      },
+      "picture": "Images/image_location_crows",
+      "_source_section": "refs.maps.0.points"
+    },
+    "halt": {
+      "visible": 0,
+      "can_enter": "halt_can_enter",
+      "location": "halt_location",
+      "@ref:13": [
+        -16.95,
+        -27.75,
+        0
+      ],
+      "map_loot": "halt_location",
+      "timer": "halt_timer",
+      "map_icon_visible": "halt_location.show_boss_alive",
+      "map_skull_icon_visible": "halt_location.show_boss_alive",
+      "tags": [
+        "halt"
+      ],
+      "stats": {
+        "danger": 4,
+        "@ref:24": 5
+      },
+      "recommendations": {
+        "equip_tier": 4
+      },
+      "ab_level_restriction": {
+        "group_b": 15,
+        "group_c": 15
+      },
+      "picture": "Images/image_location_halt",
+      "view": {
+        "@ref:8": "map.halt_location.name",
+        "subtitle": {
+          "type": "condition",
+          "if": {
+            "type": "not",
+            "condition": "halt_location.show_boss_alive"
+          },
+          "then": {
+            "type": "string.format",
+            "string": "map.halt_location.visited_subtitle.text"
+          },
+          "else": {
+            "type": "string.format",
+            "string": "map.halt_location.not_visited_subtitle.text"
+          }
+        }
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "halt_new": {
+      "visible": "halt_available",
+      "can_enter": "halt_can_enter",
+      "level_min": 15,
+      "locations": [
+        "halt_new_location_easy",
+        "halt_new_location_medium",
+        "halt_new_location_hard"
+      ],
+      "@ref:13": [
+        3.12,
+        -5.15,
+        0
+      ],
+      "map_loot": "halt_location",
+      "event_accessor": "halt",
+      "event_offers": "halt",
+      "timer": "halt_timer",
+      "map_icon": "map_boss",
+      "map_icon_color": [
+        182,
+        129,
+        255
+      ],
+      "tags": [
+        "halt",
+        "difficulty_choose",
+        "timer_as_time_left",
+        "event_accessor"
+      ],
+      "stats": {
+        "danger": 2,
+        "@ref:24": 5
+      },
+      "recommendations": {
+        "equip_tier": 2
+      },
+      "ab_level_restriction": {
+        "group_b": 15,
+        "group_c": 15
+      },
+      "picture": "Images/image_location_halt",
+      "view": {
+        "@ref:8": "map.halt_location.name"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "harid": {
+      "visible": "harid_available",
+      "can_enter": "harid_can_enter",
+      "level_min": 15,
+      "locations": [
+        "harid_location.easy",
+        "harid_location.medium",
+        "harid_location.hard"
+      ],
+      "@ref:13": [
+        6.1,
+        10.64,
+        0.29
+      ],
+      "event_offers": "harid",
+      "map_loot": "harid_location",
+      "timer": "harid_timer",
+      "map_icon": "map_boss",
+      "map_icon_color": [
+        182,
+        129,
+        255
+      ],
+      "tags": [
+        "harid",
+        "difficulty_choose",
+        "timer_as_time_left",
+        "event_accessor"
+      ],
+      "stats": {
+        "danger": 2,
+        "@ref:24": 5
+      },
+      "recommendations": {
+        "equip_tier": 2
+      },
+      "ab_level_restriction": {
+        "group_b": 15,
+        "group_c": 15
+      },
+      "picture": "Images/image_location_harid",
+      "view": {
+        "@ref:8": "map.harid_location.name"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "rogue_santa_manor": {
+      "visible": "rogue_santa_manor_available",
+      "can_enter": 1,
+      "location": "xmas_santa_factory_01",
+      "@ref:13": [
+        9.49,
+        -24.32,
+        0
+      ],
+      "map_loot": "rogue_santa_manor",
+      "timer": "rogue_santa_manor_timer",
+      "map_icon_visible": true,
+      "map_icon": "ui_home",
+      "map_icon_color": [
+        255,
+        127,
+        102
+      ],
+      "stats": {
+        "@ref:24": 5
+      },
+      "recommendations": {
+        "equip_tier": 2
+      },
+      "picture": "Images/image_location_xmas",
+      "view": {
+        "@ref:8": "map.rogue_santa_manor.name"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "claus_trade": {
+      "visible": "claus_trade_available",
+      "can_enter": true,
+      "location": "xmas_exchange",
+      "@ref:13": [
+        3.5,
+        0,
+        0
+      ],
+      "tags": [
+        "sticky_pointer"
+      ],
+      "map_loot": "claus_trade",
+      "stats": {
+        "@ref:24": 7
+      },
+      "timer": "claus_trade_timer",
+      "map_icon": "map_crimson_camp",
+      "map_icon_visible": true,
+      "map_icon_color": [
+        130,
+        185,
+        255
+      ],
+      "picture": "Images/image_location_crimson_camp",
+      "view": {
+        "@ref:8": "map.claus_trade.name",
+        "subtitle": {
+          "type": "string.format",
+          "string": "map.crimson_camp_subtitle.name"
+        }
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "halloween_town_ruins": {
+      "visible": "halloween_town_ruins_available",
+      "timer": "halloween_town_ruins_timer",
+      "tags": [
+        "halloween_town_ruins",
+        "difficulty_choose",
+        "timer_as_time_left",
+        "event_accessor"
+      ],
+      "locations": [
+        "halloween_town_ruins.easy",
+        "halloween_town_ruins.medium",
+        "halloween_town_ruins.hard"
+      ],
+      "@ref:13": [
+        -4.98,
+        -13.47,
+        0.25
+      ],
+      "map_loot": "halloween_town_ruins",
+      "map_icon_visible": 1,
+      "map_icon": "map_loot",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "stats": {
+        "danger": 2,
+        "@ref:24": 3
+      },
+      "picture": "Images/image_location_castle",
+      "view": {
+        "@ref:8": "map.halloween_town_ruins.name",
+        "subtitle": {
+          "type": "string.format",
+          "string": "map.popup_location.temporary.text"
+        }
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "dungeon_challenges": {
+      "visible": "dungeon_challenges.available",
+      "timer": "dungeon_challenges.timer",
+      "can_enter": "dungeon_challenges.can_enter",
+      "event_offers": "dungeon_challenges",
+      "level_min": 15,
+      "locations": [
+        "dungeon_challenges_ground",
+        "dungeon_challenges_01",
+        "dungeon_challenges_02",
+        "dungeon_challenges_03"
+      ],
+      "@ref:13": [
+        -6.46,
+        -7.33,
+        0
+      ],
+      "map_icon": "map_dungeon",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "map_loot": "dungeon_challenges_ground",
+      "tags": [
+        "event_accessor"
+      ],
+      "stats": {
+        "danger": -1,
+        "@ref:24": 5
+      },
+      "picture": "Images/image_location_dungeon_challenges",
+      "view": {
+        "@ref:8": "map.popup_location.dungeon_challenges.name"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "ancient_sepulchre": {
+      "visible": "ancient_sepulchre_available",
+      "level_min": 10,
+      "locations": [
+        "ancient_sepulchre_exchange",
+        "ancient_sepulchre_dungeon_easy",
+        "ancient_sepulchre_dungeon_medium",
+        "ancient_sepulchre_dungeon_hard"
+      ],
+      "event_accessor": "ancient_sepulchre",
+      "event_offers": "ancient_sepulchre",
+      "map_loot": "ancient_sepulchre",
+      "@ref:13": [
+        8.6,
+        5.2,
+        0
+      ],
+      "timer": "ancient_sepulchre_timer",
+      "map_icon": "map_dungeon",
+      "map_icon_visible": 1,
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "tags": [
+        "sticky_pointer",
+        "event_accessor"
+      ],
+      "stats": {
+        "@ref:24": 7
+      },
+      "picture": "Images/image_location_ancient_sepulchre",
+      "view": {
+        "@ref:8": "map.ancient_sepulchre.name"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "trader_01": {
+      "event": true,
+      "location": "trader",
+      "@ref:13": [
+        -9.4,
+        -8.05,
+        0
+      ],
+      "picture": "Images/image_location_trader",
+      "map_icon": "map_trader",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "trader_02": {
+      "event": true,
+      "location": "trader",
+      "@ref:13": [
+        -5.7,
+        -20.23,
+        0
+      ],
+      "picture": "Images/image_location_trader",
+      "map_icon": "map_trader",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "trader_03": {
+      "event": true,
+      "location": "trader",
+      "@ref:13": [
+        5.67,
+        -14.84,
+        0
+      ],
+      "picture": "Images/image_location_trader",
+      "map_icon": "map_trader",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "trader_04": {
+      "event": true,
+      "location": "trader",
+      "@ref:13": [
+        12,
+        4.61,
+        0
+      ],
+      "picture": "Images/image_location_trader",
+      "map_icon": "map_trader",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "trader_05": {
+      "event": true,
+      "location": "trader",
+      "@ref:13": [
+        12,
+        -22.19,
+        0
+      ],
+      "picture": "Images/image_location_trader",
+      "map_icon": "map_trader",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "trader_06": {
+      "event": true,
+      "location": "trader",
+      "@ref:13": [
+        2.66,
+        5.75,
+        0
+      ],
+      "picture": "Images/image_location_trader",
+      "map_icon": "map_trader",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "trader_07": {
+      "event": true,
+      "location": "trader",
+      "@ref:13": [
+        19.97,
+        -12.79,
+        0
+      ],
+      "picture": "Images/image_location_trader",
+      "map_icon": "map_trader",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "trader_08": {
+      "event": true,
+      "location": "trader",
+      "@ref:13": [
+        19.1,
+        -4.1,
+        0
+      ],
+      "picture": "Images/image_location_trader",
+      "map_icon": "map_trader",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "trader_09": {
+      "event": true,
+      "location": "trader",
+      "@ref:13": [
+        10.4,
+        -5.9,
+        0
+      ],
+      "picture": "Images/image_location_trader",
+      "map_icon": "map_trader",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "trader_10": {
+      "event": true,
+      "location": "trader",
+      "@ref:13": [
+        29.19,
+        -15.67,
+        0
+      ],
+      "picture": "Images/image_location_trader",
+      "map_icon": "map_trader",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "trader_11": {
+      "event": true,
+      "location": "trader",
+      "@ref:13": [
+        27.55,
+        -3.43,
+        0
+      ],
+      "picture": "Images/image_location_trader",
+      "map_icon": "map_trader",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "trader_12": {
+      "event": true,
+      "location": "trader",
+      "@ref:13": [
+        27.68,
+        8.83,
+        0
+      ],
+      "picture": "Images/image_location_trader",
+      "map_icon": "map_trader",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "waggon_01": {
+      "event": true,
+      "location": "waggon",
+      "@ref:13": [
+        10.31,
+        -14.17,
+        0
+      ],
+      "picture": "Images/image_location_crows",
+      "map_icon": "map_loot",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "waggon_02": {
+      "event": true,
+      "location": "waggon",
+      "@ref:13": [
+        -18.33,
+        -13.8,
+        0
+      ],
+      "picture": "Images/image_location_crows",
+      "map_icon": "map_loot",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "waggon_03": {
+      "event": true,
+      "location": "waggon",
+      "@ref:13": [
+        6.02,
+        -0.07,
+        0
+      ],
+      "picture": "Images/image_location_crows",
+      "map_icon": "map_loot",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "waggon_04": {
+      "event": true,
+      "location": "waggon",
+      "@ref:13": [
+        -9.7,
+        -13.31,
+        0
+      ],
+      "picture": "Images/image_location_crows",
+      "map_icon": "map_loot",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "waggon_05": {
+      "event": true,
+      "location": "waggon",
+      "@ref:13": [
+        -1,
+        -5.8,
+        0
+      ],
+      "picture": "Images/image_location_crows",
+      "map_icon": "map_loot",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "waggon_06": {
+      "event": true,
+      "location": "waggon",
+      "@ref:13": [
+        18.54,
+        -0.17,
+        0
+      ],
+      "picture": "Images/image_location_crows",
+      "map_icon": "map_loot",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "waggon_07": {
+      "event": true,
+      "location": "waggon",
+      "@ref:13": [
+        15.7,
+        9,
+        0
+      ],
+      "picture": "Images/image_location_crows",
+      "map_icon": "map_loot",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "waggon_08": {
+      "event": true,
+      "location": "waggon",
+      "@ref:13": [
+        -12.26,
+        -7.34,
+        0
+      ],
+      "picture": "Images/image_location_crows",
+      "map_icon": "map_loot",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "waggon_09": {
+      "event": true,
+      "location": "waggon",
+      "@ref:13": [
+        -8.6,
+        -22.6,
+        0
+      ],
+      "picture": "Images/image_location_crows",
+      "map_icon": "map_loot",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "waggon_10": {
+      "event": true,
+      "location": "waggon",
+      "@ref:13": [
+        30.43,
+        -0.26,
+        0
+      ],
+      "picture": "Images/image_location_crows",
+      "map_icon": "map_loot",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "waggon_11": {
+      "event": true,
+      "location": "waggon",
+      "@ref:13": [
+        32.33,
+        -11.75,
+        0
+      ],
+      "picture": "Images/image_location_crows",
+      "map_icon": "map_loot",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "waggon_12": {
+      "event": true,
+      "location": "waggon",
+      "@ref:13": [
+        28.46,
+        -20.88,
+        0
+      ],
+      "picture": "Images/image_location_crows",
+      "map_icon": "map_loot",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "deadman_01": {
+      "event": true,
+      "location": "deadman",
+      "map_loot": "deadman",
+      "@ref:13": [
+        15.34,
+        -17.8,
+        0
+      ],
+      "picture": "Images/image_location_crows",
+      "map_icon": "map_loot",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "deadman_02": {
+      "event": true,
+      "location": "deadman",
+      "map_loot": "deadman",
+      "@ref:13": [
+        -6.8,
+        -15.8,
+        0
+      ],
+      "picture": "Images/image_location_crows",
+      "map_icon": "map_loot",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "deadman_03": {
+      "event": true,
+      "location": "deadman",
+      "map_loot": "deadman",
+      "@ref:13": [
+        -4.11,
+        -10.26,
+        0
+      ],
+      "picture": "Images/image_location_crows",
+      "map_icon": "map_loot",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "deadman_04": {
+      "event": true,
+      "location": "deadman",
+      "map_loot": "deadman",
+      "@ref:13": [
+        -21.5,
+        -11.17,
+        0
+      ],
+      "picture": "Images/image_location_crows",
+      "map_icon": "map_loot",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "deadman_05": {
+      "event": true,
+      "location": "deadman",
+      "map_loot": "deadman",
+      "@ref:13": [
+        2.34,
+        -15.81,
+        0
+      ],
+      "picture": "Images/image_location_crows",
+      "map_icon": "map_loot",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "deadman_06": {
+      "event": true,
+      "location": "deadman",
+      "map_loot": "deadman",
+      "@ref:13": [
+        1.95,
+        -2.86,
+        0
+      ],
+      "picture": "Images/image_location_crows",
+      "map_icon": "map_loot",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "deadman_07": {
+      "event": true,
+      "location": "deadman",
+      "map_loot": "deadman",
+      "@ref:13": [
+        8.54,
+        -7.78,
+        0
+      ],
+      "picture": "Images/image_location_crows",
+      "map_icon": "map_loot",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "deadman_08": {
+      "event": true,
+      "location": "deadman",
+      "map_loot": "deadman",
+      "@ref:13": [
+        19.3,
+        -10.1,
+        0
+      ],
+      "picture": "Images/image_location_crows",
+      "map_icon": "map_loot",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "deadman_09": {
+      "event": true,
+      "location": "deadman",
+      "map_loot": "deadman",
+      "@ref:13": [
+        30.86,
+        -4.69,
+        0
+      ],
+      "picture": "Images/image_location_crows",
+      "map_icon": "map_loot",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "deadman_10": {
+      "event": true,
+      "location": "deadman",
+      "map_loot": "deadman",
+      "@ref:13": [
+        16.62,
+        2.31,
+        0
+      ],
+      "picture": "Images/image_location_crows",
+      "map_icon": "map_loot",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "deadman_11": {
+      "event": true,
+      "location": "deadman",
+      "map_loot": "deadman",
+      "@ref:13": [
+        10.24,
+        7.26,
+        0
+      ],
+      "picture": "Images/image_location_crows",
+      "map_icon": "map_loot",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "deadman_12": {
+      "event": true,
+      "location": "deadman",
+      "map_loot": "deadman",
+      "@ref:13": [
+        15.13,
+        17.47,
+        0
+      ],
+      "picture": "Images/image_location_crows",
+      "map_icon": "map_loot",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "catacomb_01": {
+      "event": true,
+      "locations": [
+        "catacomb_ground",
+        "catacomb_dungeon_01",
+        "catacomb_dungeon_02",
+        "catacomb_dungeon_03",
+        "catacomb_dungeon_04",
+        "catacomb_dungeon_05",
+        "catacomb_dungeon_final"
+      ],
+      "map_loot": "catacomb",
+      "@ref:13": [
+        -13.85,
+        -26.25,
+        0
+      ],
+      "picture": "Images/image_location_crows",
+      "map_icon": "map_loot",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "warlock_lair": {
+      "event": true,
+      "locations": [
+        "warlock_lair"
+      ],
+      "map_loot": "warlock_lair",
+      "@ref:13": [
+        -3.33,
+        -7.69,
+        0
+      ],
+      "picture": "Images/image_location_crows",
+      "map_icon": "map_loot",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "observatory": {
+      "timer": {
+        "type": "sub",
+        "amounts": [
+          {
+            "type": "resource",
+            "resource": "observatory_ground_expired_ts",
+            "target": "global"
+          },
+          {
+            "type": "time.now"
+          }
+        ]
+      },
+      "level_min": 30,
+      "map_loot": "observatory",
+      "location": "observatory_ground",
+      "@ref:13": [
+        -5.2,
+        18.05,
+        1.34
+      ],
+      "recommendations": {
+        "equip_tier": 3
+      },
+      "stats": {
+        "danger": 2,
+        "@ref:24": 4
+      },
+      "picture": "Images/image_location_crows",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "map_icon": "map_dungeon",
+      "view": {
+        "@ref:8": "map.observatory.name"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "hunting_grounds": {
+      "event": true,
+      "locations": [
+        "hunting_grounds"
+      ],
+      "map_loot": "hunting_grounds",
+      "@ref:13": [
+        7.59,
+        -5.03,
+        0
+      ],
+      "picture": "Images/image_location_crows",
+      "map_icon": "map_loot",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "pasture": {
+      "event": true,
+      "locations": [
+        "pasture"
+      ],
+      "map_loot": "pasture",
+      "@ref:13": [
+        10.4,
+        -3.3,
+        0
+      ],
+      "picture": "Images/image_location_crows",
+      "map_icon": "map_loot",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "sacrificial_altar": {
+      "event": true,
+      "locations": [
+        "sacrificial_altar"
+      ],
+      "map_loot": "sacrificial_altar",
+      "@ref:13": [
+        17.4,
+        11.2,
+        0
+      ],
+      "picture": "Images/image_location_crows",
+      "map_icon": "map_loot",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "tiny_hermit_storage": {
+      "event": true,
+      "locations": [
+        "tiny_hermit_storage"
+      ],
+      "map_loot": "tiny_hermit_storage",
+      "@ref:13": [
+        8,
+        -1.75,
+        0
+      ],
+      "picture": "Images/image_location_crows",
+      "map_icon": "map_loot",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "small_hermit_storage": {
+      "event": true,
+      "locations": [
+        "small_hermit_storage"
+      ],
+      "map_loot": "small_hermit_storage",
+      "@ref:13": [
+        13,
+        -3.5,
+        0
+      ],
+      "picture": "Images/image_location_crows",
+      "map_icon": "map_loot",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "big_hermit_storage": {
+      "event": true,
+      "locations": [
+        "big_hermit_storage"
+      ],
+      "map_loot": "big_hermit_storage",
+      "@ref:13": [
+        -5.89,
+        1.03,
+        0
+      ],
+      "picture": "Images/image_location_crows",
+      "map_icon": "map_loot",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "hermit_hut": {
+      "event": true,
+      "locations": [
+        "hermit_hut"
+      ],
+      "map_loot": "hermit_hut",
+      "@ref:13": [
+        16.45,
+        -15.25,
+        0
+      ],
+      "picture": "Images/image_location_crows",
+      "map_icon": "map_loot",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "virbjorn_lair": {
+      "event": true,
+      "locations": [
+        "virbjorn_lair"
+      ],
+      "map_loot": "virbjorn_lair",
+      "@ref:13": [
+        26.8,
+        -6.2,
+        0
+      ],
+      "picture": "Images/image_location_crows",
+      "map_icon": "map_loot",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "_source_section": "refs.maps.0.points"
+    },
+    "xmas_deer": {
+      "visible": "xmas_deer.active",
+      "expired": "xmas_deer.expired",
+      "timer": "xmas_deer.timer",
+      "location": "xmas_deer",
+      "@ref:13": [
+        6.67,
+        2.72,
+        0
+      ],
+      "tags": [
+        "sticky_pointer"
+      ],
+      "map_icon": "map_wagenburg",
+      "map_icon_visible": "xmas_deer.active",
+      "map_loot": "xmas_deer",
+      "stats": {
+        "@ref:24": 3
+      },
+      "picture": "Images/image_location_xmas",
+      "map_icon_color": [
+        130,
+        185,
+        255
+      ],
+      "recommendations": {
+        "equip_tier": 1
+      },
+      "view": {
+        "@ref:8": "map.xmas_deer.name",
+        "subtitle": {
+          "type": "string.format",
+          "string": "map.popup_location.temporary.text"
+        }
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "xmas_shepherd": {
+      "visible": "xmas_shepherd.active",
+      "expired": "xmas_shepherd.expired",
+      "timer": "xmas_shepherd.timer",
+      "location": "xmas_shepherd",
+      "@ref:13": [
+        -4.9,
+        -2.4,
+        0
+      ],
+      "tags": [
+        "sticky_pointer"
+      ],
+      "map_icon": "map_loot",
+      "map_icon_visible": "xmas_shepherd.loot_available",
+      "map_loot": "xmas_shepherd",
+      "stats": {
+        "@ref:24": 3
+      },
+      "picture": "Images/image_location_xmas",
+      "map_icon_color": [
+        130,
+        185,
+        255
+      ],
+      "view": {
+        "@ref:8": "map.xmas_shepherd.name",
+        "subtitle": {
+          "type": "string.format",
+          "string": "map.popup_location.temporary.text"
+        }
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "xmas_santa_vs_claus": {
+      "visible": "xmas_santa_vs_claus_visible",
+      "expired": "xmas_santa_vs_claus_expired",
+      "timer": "xmas_santa_vs_claus_timer",
+      "location": "xmas_santa_vs_claus",
+      "@ref:13": [
+        13.4,
+        7.1,
+        0
+      ],
+      "tags": [
+        "sticky_pointer",
+        "timer_as_time_left"
+      ],
+      "map_icon": "map_boss",
+      "map_icon_visible": "xmas_santa_vs_claus_visible",
+      "map_loot": "xmas_santa_vs_claus",
+      "stats": {
+        "@ref:24": 5
+      },
+      "picture": "Images/image_location_xmas",
+      "map_icon_color": [
+        130,
+        185,
+        255
+      ],
+      "recommendations": {
+        "equip_tier": 4
+      },
+      "view": {
+        "@ref:8": "map.xmas_santa_vs_claus.name",
+        "subtitle": {
+          "type": "string.format",
+          "string": "map.popup_location.temporary.text"
+        }
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "cursed_lady": {
+      "visible": "cursed_lady.available",
+      "can_enter": "cursed_lady.can_enter",
+      "level_min": 15,
+      "timer": "cursed_lady.timer",
+      "map_icon": "map_boss",
+      "map_icon_color": [
+        182,
+        129,
+        255
+      ],
+      "@ref:13": [
+        -11.84,
+        -3.52,
+        0
+      ],
+      "locations": [
+        "cursed_lady_location_easy",
+        "cursed_lady_location_normal",
+        "cursed_lady_location_hard"
+      ],
+      "tags": [
+        "cursed_lady",
+        "difficulty_choose",
+        "timer_as_time_left",
+        "event_accessor"
+      ],
+      "stats": {
+        "danger": 2,
+        "@ref:24": 5
+      },
+      "recommendations": {
+        "equip_tier": 2
+      },
+      "event_accessor": "cursed_lady",
+      "event_offers": "cursed_lady",
+      "map_loot": "cursed_lady",
+      "picture": "Images/image_location_cursed_lady",
+      "view": {
+        "@ref:8": "map.cursed_lady.name"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "anniversary": {
+      "visible": false,
+      "locations": [
+        "anniversary_ground",
+        "anniversary_dungeon"
+      ],
+      "@ref:13": [
+        -1.31,
+        -26.96,
+        0
+      ],
+      "stats": {
+        "@ref:24": 4
+      },
+      "pictures": [
+        "Images/image_location_dungeon",
+        "Images/image_location_dungeon_inside"
+      ],
+      "map_icon": "map_dungeon",
+      "map_icon_visible": {
+        "type": "not",
+        "condition": "anniversary.visited"
+      },
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "view": {
+        "@ref:8": "map.anniversary.name",
+        "subtitle": {
+          "type": "condition",
+          "if": {
+            "type": "not",
+            "condition": "anniversary.visited"
+          },
+          "then": {
+            "type": "string.format",
+            "string": "map.reward_waits"
+          },
+          "else": {
+            "type": "string.format",
+            "string": ""
+          }
+        }
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "enemy_point_1": {
+      "location": "enemy_tier_1_loc_1",
+      "map_loot": "enemy_tier_1",
+      "level_min": 25,
+      "recommendations": {
+        "equip_tier": 2
+      },
+      "ab_level_restriction": {
+        "group_b": 25,
+        "group_c": 25
+      },
+      "@ref:13": [
+        8.68,
+        18.82,
+        0.22
+      ],
+      "stats": {
+        "@ref:24": -1
+      },
+      "picture": "Images/image_location_enemy",
+      "map_icon": "ui_home",
+      "map_icon_color": [
+        255,
+        127,
+        102
+      ],
+      "tags": [
+        "dynamic_enemy"
+      ],
+      "view": {
+        "@ref:8": "map.enemy.name"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "enemy_point_2": {
+      "location": "enemy_tier_1_loc_2",
+      "map_loot": "enemy_tier_1",
+      "level_min": 25,
+      "recommendations": {
+        "equip_tier": 2
+      },
+      "ab_level_restriction": {
+        "group_b": 25,
+        "group_c": 25
+      },
+      "@ref:13": [
+        19.23,
+        8.1,
+        0
+      ],
+      "stats": {
+        "@ref:24": -1
+      },
+      "picture": "Images/image_location_enemy",
+      "map_icon": "ui_home",
+      "map_icon_color": [
+        255,
+        127,
+        102
+      ],
+      "tags": [
+        "dynamic_enemy"
+      ],
+      "view": {
+        "@ref:8": "map.enemy.name"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "enemy_point_3": {
+      "location": "enemy_tier_1_loc_3",
+      "map_loot": "enemy_tier_1",
+      "level_min": 25,
+      "recommendations": {
+        "equip_tier": 2
+      },
+      "ab_level_restriction": {
+        "group_b": 25,
+        "group_c": 25
+      },
+      "@ref:13": [
+        13.65,
+        -13.88,
+        0
+      ],
+      "stats": {
+        "@ref:24": -1
+      },
+      "picture": "Images/image_location_enemy",
+      "map_icon": "ui_home",
+      "map_icon_color": [
+        255,
+        127,
+        102
+      ],
+      "tags": [
+        "dynamic_enemy"
+      ],
+      "view": {
+        "@ref:8": "map.enemy.name"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "enemy_point_4": {
+      "location": "enemy_tier_1_loc_4",
+      "map_loot": "enemy_tier_1",
+      "level_min": 25,
+      "recommendations": {
+        "equip_tier": 2
+      },
+      "ab_level_restriction": {
+        "group_b": 25,
+        "group_c": 25
+      },
+      "@ref:13": [
+        5.78,
+        -11.49,
+        0
+      ],
+      "stats": {
+        "@ref:24": -1
+      },
+      "picture": "Images/image_location_enemy",
+      "map_icon": "ui_home",
+      "map_icon_color": [
+        255,
+        127,
+        102
+      ],
+      "tags": [
+        "dynamic_enemy"
+      ],
+      "view": {
+        "@ref:8": "map.enemy.name"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "enemy_point_5": {
+      "location": "enemy_tier_1_loc_5",
+      "map_loot": "enemy_tier_1",
+      "level_min": 25,
+      "recommendations": {
+        "equip_tier": 2
+      },
+      "ab_level_restriction": {
+        "group_b": 25,
+        "group_c": 25
+      },
+      "@ref:13": [
+        -7.42,
+        -10.74,
+        0
+      ],
+      "stats": {
+        "@ref:24": -1
+      },
+      "picture": "Images/image_location_enemy",
+      "map_icon": "ui_home",
+      "map_icon_color": [
+        255,
+        127,
+        102
+      ],
+      "tags": [
+        "dynamic_enemy"
+      ],
+      "view": {
+        "@ref:8": "map.enemy.name"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "enemy_point_6": {
+      "location": "enemy_tier_1_loc_5",
+      "map_loot": "enemy_tier_1",
+      "level_min": 25,
+      "recommendations": {
+        "equip_tier": 2
+      },
+      "ab_level_restriction": {
+        "group_b": 25,
+        "group_c": 25
+      },
+      "@ref:13": [
+        -8.82,
+        -4.7,
+        0
+      ],
+      "stats": {
+        "@ref:24": -1
+      },
+      "picture": "Images/image_location_enemy",
+      "map_icon": "ui_home",
+      "map_icon_color": [
+        255,
+        127,
+        102
+      ],
+      "tags": [
+        "dynamic_enemy"
+      ],
+      "view": {
+        "@ref:8": "map.enemy.name"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "enemy_point_7": {
+      "location": "enemy_tier_2_loc_1",
+      "map_loot": "enemy_tier_2",
+      "level_min": 40,
+      "recommendations": {
+        "equip_tier": 3
+      },
+      "ab_level_restriction": {
+        "group_b": 40,
+        "group_c": 40
+      },
+      "@ref:13": [
+        19.79,
+        -15.8,
+        0
+      ],
+      "stats": {
+        "@ref:24": -1
+      },
+      "picture": "Images/image_location_enemy",
+      "map_icon": "ui_home",
+      "map_icon_color": [
+        255,
+        127,
+        102
+      ],
+      "tags": [
+        "dynamic_enemy"
+      ],
+      "view": {
+        "@ref:8": "map.enemy.name"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "enemy_point_8": {
+      "location": "enemy_tier_2_loc_2",
+      "map_loot": "enemy_tier_2",
+      "level_min": 40,
+      "recommendations": {
+        "equip_tier": 3
+      },
+      "ab_level_restriction": {
+        "group_b": 40,
+        "group_c": 40
+      },
+      "@ref:13": [
+        23.91,
+        12.88,
+        0.2
+      ],
+      "stats": {
+        "@ref:24": -1
+      },
+      "picture": "Images/image_location_enemy",
+      "map_icon": "ui_home",
+      "map_icon_color": [
+        255,
+        127,
+        102
+      ],
+      "tags": [
+        "dynamic_enemy"
+      ],
+      "view": {
+        "@ref:8": "map.enemy.name"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "enemy_point_9": {
+      "location": "enemy_tier_2_loc_3",
+      "map_loot": "enemy_tier_2",
+      "level_min": 40,
+      "recommendations": {
+        "equip_tier": 3
+      },
+      "ab_level_restriction": {
+        "group_b": 40,
+        "group_c": 40
+      },
+      "@ref:13": [
+        21.9,
+        0.9,
+        0
+      ],
+      "stats": {
+        "@ref:24": -1
+      },
+      "picture": "Images/image_location_enemy",
+      "map_icon": "ui_home",
+      "map_icon_color": [
+        255,
+        127,
+        102
+      ],
+      "tags": [
+        "dynamic_enemy"
+      ],
+      "view": {
+        "@ref:8": "map.enemy.name"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "enemy_point_10": {
+      "location": "enemy_tier_2_loc_4",
+      "map_loot": "enemy_tier_2",
+      "level_min": 40,
+      "recommendations": {
+        "equip_tier": 3
+      },
+      "ab_level_restriction": {
+        "group_b": 40,
+        "group_c": 40
+      },
+      "@ref:13": [
+        4.42,
+        23.29,
+        0.22
+      ],
+      "stats": {
+        "@ref:24": -1
+      },
+      "picture": "Images/image_location_enemy",
+      "map_icon": "ui_home",
+      "map_icon_color": [
+        255,
+        127,
+        102
+      ],
+      "tags": [
+        "dynamic_enemy"
+      ],
+      "view": {
+        "@ref:8": "map.enemy.name"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "enemy_point_11": {
+      "location": "enemy_tier_2_loc_5",
+      "map_loot": "enemy_tier_2",
+      "level_min": 40,
+      "recommendations": {
+        "equip_tier": 3
+      },
+      "ab_level_restriction": {
+        "group_b": 40,
+        "group_c": 40
+      },
+      "@ref:13": [
+        -17.14,
+        -18.16,
+        0.25
+      ],
+      "stats": {
+        "@ref:24": -1
+      },
+      "picture": "Images/image_location_enemy",
+      "map_icon": "ui_home",
+      "map_icon_color": [
+        255,
+        127,
+        102
+      ],
+      "tags": [
+        "dynamic_enemy"
+      ],
+      "view": {
+        "@ref:8": "map.enemy.name"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "enemy_point_12": {
+      "location": "enemy_tier_2_loc_5",
+      "map_loot": "enemy_tier_2",
+      "level_min": 40,
+      "recommendations": {
+        "equip_tier": 3
+      },
+      "ab_level_restriction": {
+        "group_b": 40,
+        "group_c": 40
+      },
+      "@ref:13": [
+        -0.8,
+        -16.83,
+        0
+      ],
+      "stats": {
+        "@ref:24": -1
+      },
+      "picture": "Images/image_location_enemy",
+      "map_icon": "ui_home",
+      "map_icon_color": [
+        255,
+        127,
+        102
+      ],
+      "tags": [
+        "dynamic_enemy"
+      ],
+      "view": {
+        "@ref:8": "map.enemy.name"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "enemy_point_13": {
+      "location": "enemy_tier_3_loc_1",
+      "map_loot": "enemy_tier_3",
+      "level_min": 50,
+      "recommendations": {
+        "equip_tier": 4
+      },
+      "ab_level_restriction": {
+        "group_b": 50,
+        "group_c": 50
+      },
+      "@ref:13": [
+        9.52,
+        -10.87,
+        0
+      ],
+      "stats": {
+        "@ref:24": -1
+      },
+      "picture": "Images/image_location_enemy",
+      "map_icon": "ui_home",
+      "map_icon_color": [
+        255,
+        127,
+        102
+      ],
+      "tags": [
+        "dynamic_enemy"
+      ],
+      "view": {
+        "@ref:8": "map.enemy.name"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "enemy_point_14": {
+      "location": "enemy_tier_3_loc_2",
+      "map_loot": "enemy_tier_3",
+      "level_min": 50,
+      "recommendations": {
+        "equip_tier": 4
+      },
+      "ab_level_restriction": {
+        "group_b": 50,
+        "group_c": 50
+      },
+      "@ref:13": [
+        19.97,
+        -22.81,
+        0.1
+      ],
+      "stats": {
+        "@ref:24": -1
+      },
+      "picture": "Images/image_location_enemy",
+      "map_icon": "ui_home",
+      "map_icon_color": [
+        255,
+        127,
+        102
+      ],
+      "tags": [
+        "dynamic_enemy"
+      ],
+      "view": {
+        "@ref:8": "map.enemy.name"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "enemy_point_15": {
+      "location": "enemy_tier_3_loc_3",
+      "map_loot": "enemy_tier_3",
+      "level_min": 50,
+      "recommendations": {
+        "equip_tier": 4
+      },
+      "ab_level_restriction": {
+        "group_b": 50,
+        "group_c": 50
+      },
+      "@ref:13": [
+        24.74,
+        -11.75,
+        0.2
+      ],
+      "stats": {
+        "@ref:24": -1
+      },
+      "picture": "Images/image_location_enemy",
+      "map_icon": "ui_home",
+      "map_icon_color": [
+        255,
+        127,
+        102
+      ],
+      "tags": [
+        "dynamic_enemy"
+      ],
+      "view": {
+        "@ref:8": "map.enemy.name"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "enemy_point_16": {
+      "location": "enemy_tier_3_loc_4",
+      "map_loot": "enemy_tier_3",
+      "level_min": 50,
+      "recommendations": {
+        "equip_tier": 4
+      },
+      "ab_level_restriction": {
+        "group_b": 50,
+        "group_c": 50
+      },
+      "@ref:13": [
+        -3.69,
+        -22.99,
+        0
+      ],
+      "stats": {
+        "@ref:24": -1
+      },
+      "picture": "Images/image_location_enemy",
+      "map_icon": "ui_home",
+      "map_icon_color": [
+        255,
+        127,
+        102
+      ],
+      "tags": [
+        "dynamic_enemy"
+      ],
+      "view": {
+        "@ref:8": "map.enemy.name"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "enemy_point_17": {
+      "location": "enemy_tier_3_loc_5",
+      "map_loot": "enemy_tier_3",
+      "level_min": 50,
+      "recommendations": {
+        "equip_tier": 4
+      },
+      "ab_level_restriction": {
+        "group_b": 50,
+        "group_c": 50
+      },
+      "@ref:13": [
+        26.45,
+        5.86,
+        0
+      ],
+      "stats": {
+        "@ref:24": -1
+      },
+      "picture": "Images/image_location_enemy",
+      "map_icon": "ui_home",
+      "map_icon_color": [
+        255,
+        127,
+        102
+      ],
+      "tags": [
+        "dynamic_enemy"
+      ],
+      "view": {
+        "@ref:8": "map.enemy.name"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "enemy_point_18": {
+      "location": "enemy_tier_3_loc_5",
+      "map_loot": "enemy_tier_3",
+      "level_min": 50,
+      "recommendations": {
+        "equip_tier": 4
+      },
+      "ab_level_restriction": {
+        "group_b": 50,
+        "group_c": 50
+      },
+      "@ref:13": [
+        -17.82,
+        -24.42,
+        0
+      ],
+      "stats": {
+        "@ref:24": -1
+      },
+      "picture": "Images/image_location_enemy",
+      "map_icon": "ui_home",
+      "map_icon_color": [
+        255,
+        127,
+        102
+      ],
+      "tags": [
+        "dynamic_enemy"
+      ],
+      "view": {
+        "@ref:8": "map.enemy.name"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "enemy_loc_test": {
+      "location": "enemy_tier_1_loc_1",
+      "map_loot": "enemy_tier_1",
+      "level_min": 25,
+      "recommendations": {
+        "equip_tier": 2
+      },
+      "ab_level_restriction": {
+        "group_b": 25,
+        "group_c": 25
+      },
+      "@ref:13": [
+        -23.8,
+        -8.58,
+        0.31
+      ],
+      "stats": {
+        "@ref:24": -1
+      },
+      "picture": "Images/image_location_enemy",
+      "map_icon": "ui_home",
+      "map_icon_color": [
+        255,
+        127,
+        102
+      ],
+      "tags": [],
+      "view": {
+        "@ref:8": "Тест соседей (в админке)"
+      },
+      "visible": {
+        "type": "debug.env"
+      },
+      "is_test": true,
+      "_source_section": "refs.maps.0.points"
+    },
+    "unknown_location": {
+      "is_test": true,
+      "visible": {
+        "type": "debug.env"
+      },
+      "locations": [
+        "farm_forest_hard_01",
+        "night_stash_dungeon"
+      ],
+      "@ref:13": [
+        -27.07,
+        -13.94,
+        0.31
+      ],
+      "picture": "Images/image_location_crows",
+      "map_icon": "map_loot",
+      "map_icon_color": [
+        255,
+        235,
+        199
+      ],
+      "view": {
+        "@ref:8": "test_farm_forest_hard_01"
+      },
+      "_source_section": "refs.maps.0.points"
+    },
+    "cemetery": {
+      "type": "simple",
+      "@ref:8": "cemetery",
+      "locations": [
+        "cemetery"
+      ],
+      "map_loot": "cemetery",
+      "recommendations": {
+        "equip_tier": 2
+      },
+      "points": [
+        "waggon_01",
+        "waggon_02",
+        "waggon_03",
+        "waggon_04",
+        "waggon_05",
+        "waggon_06",
+        "waggon_07",
+        "waggon_08",
+        "waggon_09",
+        "waggon_10",
+        "waggon_11",
+        "waggon_12",
+        "deadman_01",
+        "deadman_02",
+        "deadman_03",
+        "deadman_04",
+        "deadman_05",
+        "deadman_06",
+        "deadman_07",
+        "deadman_08",
+        "deadman_09",
+        "deadman_10",
+        "deadman_11",
+        "deadman_12"
+      ],
+      "stats": {
+        "danger": 0,
+        "@ref:24": 3
+      },
+      "view": {
+        "@ref:8": "map.event.cemetery.name",
+        "text": "map.event.random.text",
+        "image": "image_ravens"
+      },
+      "_source_section": "refs.maps.0.events"
+    },
+    "fields": {
+      "type": "simple",
+      "@ref:8": "fields",
+      "locations": [
+        "fields"
+      ],
+      "points": [
+        "waggon_01",
+        "waggon_02",
+        "waggon_03",
+        "waggon_04",
+        "waggon_05",
+        "waggon_06",
+        "waggon_07",
+        "waggon_08",
+        "waggon_09",
+        "waggon_10",
+        "waggon_11",
+        "waggon_12",
+        "deadman_01",
+        "deadman_02",
+        "deadman_03",
+        "deadman_04",
+        "deadman_05",
+        "deadman_06",
+        "deadman_07",
+        "deadman_08",
+        "deadman_09",
+        "deadman_10",
+        "deadman_11",
+        "deadman_12"
+      ],
+      "stats": {
+        "danger": 0,
+        "@ref:24": 0
+      },
+      "view": {
+        "@ref:8": "map.event.fields.name",
+        "text": "map.event.random.text",
+        "image": "image_ravens"
+      },
+      "_source_section": "refs.maps.0.events"
+    },
+    "crypt": {
+      "type": "simple",
+      "@ref:8": "crypt",
+      "locations": [
+        "anniversary_ground",
+        "anniversary_dungeon"
+      ],
+      "map_loot": "crypt",
+      "recommendations": {
+        "equip_tier": 2
+      },
+      "points": [
+        "waggon_01",
+        "waggon_02",
+        "waggon_03",
+        "waggon_04",
+        "waggon_05",
+        "waggon_06",
+        "waggon_07",
+        "waggon_08",
+        "waggon_09",
+        "waggon_10",
+        "waggon_11",
+        "waggon_12",
+        "deadman_01",
+        "deadman_02",
+        "deadman_03",
+        "deadman_04",
+        "deadman_05",
+        "deadman_06",
+        "deadman_07",
+        "deadman_08",
+        "deadman_09",
+        "deadman_10",
+        "deadman_11",
+        "deadman_12"
+      ],
+      "stats": {
+        "@ref:24": 4
+      },
+      "view": {
+        "@ref:8": "map.event.anniversary.name",
+        "text": "map.event.random.text",
+        "image": "image_ravens"
+      },
+      "pictures": [
+        "Images/image_location_dungeon",
+        "Images/image_location_dungeon_inside"
+      ],
+      "_source_section": "refs.maps.0.events"
+    },
+    "trader_easy": {
+      "type": "energy_easy",
+      "@ref:8": "trader",
+      "location": "trader",
+      "pictures": [
+        "Images/image_location_trader"
+      ],
+      "points": [
+        "trader_01",
+        "trader_02",
+        "trader_03",
+        "trader_04",
+        "trader_05",
+        "trader_06",
+        "trader_07",
+        "trader_08",
+        "trader_09",
+        "trader_10",
+        "trader_11",
+        "trader_12"
+      ],
+      "scripts": {
+        "@ref:37": [
+          {
+            "type": "trader.roll_recipe"
+          },
+          {
+            "type": "resource.set",
+            "resource": "trader_hits_counter",
+            "target": "global",
+            "@ref:11": 0
+          }
+        ],
+        "enter": {
+          "type": "resource.set",
+          "resource": "trader_enter_counter",
+          "target": "global",
+          "@ref:11": 1
+        },
+        "stop": {
+          "type": "trader.clear_recipe"
+        }
+      },
+      "stats": {
+        "danger": 0,
+        "@ref:24": -1
+      },
+      "view": {
+        "@ref:8": "map.event.trader.name",
+        "text": "map.event.trader.text",
+        "image": "image_trader_waggon"
+      },
+      "_source_section": "refs.maps.0.events"
+    },
+    "trader_hard": {
+      "type": "simple",
+      "@ref:8": "trader",
+      "location": "trader",
+      "pictures": [
+        "Images/image_location_trader"
+      ],
+      "points": [
+        "trader_01",
+        "trader_02",
+        "trader_03",
+        "trader_04",
+        "trader_05",
+        "trader_06",
+        "trader_07",
+        "trader_08",
+        "trader_09",
+        "trader_10",
+        "trader_11",
+        "trader_12"
+      ],
+      "scripts": {
+        "@ref:37": [
+          {
+            "type": "trader.roll_recipe"
+          },
+          {
+            "type": "resource.set",
+            "resource": "trader_hits_counter",
+            "target": "global",
+            "@ref:11": 0
+          }
+        ],
+        "enter": {
+          "type": "resource.set",
+          "resource": "trader_enter_counter",
+          "target": "global",
+          "@ref:11": 1
+        },
+        "stop": {
+          "type": "trader.clear_recipe"
+        }
+      },
+      "stats": {
+        "danger": 0,
+        "@ref:24": -1
+      },
+      "view": {
+        "@ref:8": "map.event.trader.name",
+        "text": "map.event.trader.text",
+        "image": "image_trader_waggon"
+      },
+      "_source_section": "refs.maps.0.events"
+    },
+    "converter_easy": {
+      "type": "energy_easy",
+      "@ref:8": "converter",
+      "location": "converter",
+      "pictures": [
+        "Images/image_location_crows"
+      ],
+      "points": [
+        "waggon_01",
+        "waggon_02",
+        "waggon_03",
+        "waggon_04",
+        "waggon_05",
+        "waggon_06",
+        "waggon_07",
+        "waggon_08",
+        "waggon_09",
+        "waggon_10",
+        "waggon_11",
+        "waggon_12",
+        "deadman_01",
+        "deadman_02",
+        "deadman_03",
+        "deadman_04",
+        "deadman_05",
+        "deadman_06",
+        "deadman_07",
+        "deadman_08",
+        "deadman_09",
+        "deadman_10",
+        "deadman_11",
+        "deadman_12"
+      ],
+      "scripts": {
+        "@ref:37": {
+          "type": "resource.inc",
+          "resource": "converter_spawn_counter",
+          "target": "global",
+          "@ref:11": 1
+        },
+        "stop": {
+          "type": "converter.clear_cell"
+        }
+      },
+      "stats": {
+        "danger": 0,
+        "@ref:24": -1
+      },
+      "view": {
+        "@ref:8": "map.event.converter.name",
+        "text": "map.event.converter.text",
+        "image": "image_ravens"
+      },
+      "_source_section": "refs.maps.0.events"
+    },
+    "converter_hard": {
+      "type": "simple",
+      "@ref:8": "converter",
+      "location": "converter",
+      "pictures": [
+        "Images/image_location_crows"
+      ],
+      "points": [
+        "waggon_01",
+        "waggon_02",
+        "waggon_03",
+        "waggon_04",
+        "waggon_05",
+        "waggon_06",
+        "waggon_07",
+        "waggon_08",
+        "waggon_09",
+        "waggon_10",
+        "waggon_11",
+        "waggon_12",
+        "deadman_01",
+        "deadman_02",
+        "deadman_03",
+        "deadman_04",
+        "deadman_05",
+        "deadman_06",
+        "deadman_07",
+        "deadman_08",
+        "deadman_09",
+        "deadman_10",
+        "deadman_11",
+        "deadman_12"
+      ],
+      "scripts": {
+        "@ref:37": {
+          "type": "resource.inc",
+          "resource": "converter_spawn_counter",
+          "target": "global",
+          "@ref:11": 1
+        },
+        "stop": {
+          "type": "converter.clear_cell"
+        }
+      },
+      "stats": {
+        "danger": 0,
+        "@ref:24": -1
+      },
+      "view": {
+        "@ref:8": "map.event.converter.name",
+        "text": "map.event.converter.text",
+        "image": "image_ravens"
+      },
+      "_source_section": "refs.maps.0.events"
+    },
+    "waggon_easy": {
+      "type": "energy_easy",
+      "@ref:8": "waggon",
+      "map_loot": "waggon_easy",
+      "location": "waggon_easy",
+      "recommendations": {
+        "equip_tier": 2
+      },
+      "points": [
+        "waggon_01",
+        "waggon_02",
+        "waggon_03",
+        "waggon_04",
+        "waggon_05",
+        "waggon_06",
+        "waggon_07",
+        "waggon_08",
+        "waggon_09",
+        "waggon_10",
+        "waggon_11",
+        "waggon_12",
+        "deadman_01",
+        "deadman_02",
+        "deadman_03",
+        "deadman_04",
+        "deadman_05",
+        "deadman_06",
+        "deadman_07",
+        "deadman_08",
+        "deadman_09",
+        "deadman_10",
+        "deadman_11",
+        "deadman_12"
+      ],
+      "stats": {
+        "danger": 1,
+        "@ref:24": 2
+      },
+      "view": {
+        "@ref:8": "map.event.waggon.name",
+        "text": "map.event.random.text",
+        "image": "image_ravens"
+      },
+      "_source_section": "refs.maps.0.events"
+    },
+    "waggon_normal": {
+      "type": "energy_easy",
+      "@ref:8": "waggon",
+      "map_loot": "waggon_normal",
+      "location": "waggon_normal",
+      "recommendations": {
+        "equip_tier": 2
+      },
+      "points": [
+        "waggon_01",
+        "waggon_02",
+        "waggon_03",
+        "waggon_04",
+        "waggon_05",
+        "waggon_06",
+        "waggon_07",
+        "waggon_08",
+        "waggon_09",
+        "waggon_10",
+        "waggon_11",
+        "waggon_12",
+        "deadman_01",
+        "deadman_02",
+        "deadman_03",
+        "deadman_04",
+        "deadman_05",
+        "deadman_06",
+        "deadman_07",
+        "deadman_08",
+        "deadman_09",
+        "deadman_10",
+        "deadman_11",
+        "deadman_12"
+      ],
+      "stats": {
+        "danger": 2,
+        "@ref:24": 2
+      },
+      "view": {
+        "@ref:8": "map.event.waggon.name",
+        "text": "map.event.random.text",
+        "image": "image_ravens"
+      },
+      "_source_section": "refs.maps.0.events"
+    },
+    "waggon_hard": {
+      "type": "energy_easy",
+      "@ref:8": "waggon",
+      "map_loot": "waggon_hard",
+      "location": "waggon_hard",
+      "recommendations": {
+        "equip_tier": 2
+      },
+      "points": [
+        "waggon_01",
+        "waggon_02",
+        "waggon_03",
+        "waggon_04",
+        "waggon_05",
+        "waggon_06",
+        "waggon_07",
+        "waggon_08",
+        "waggon_09",
+        "waggon_10",
+        "waggon_11",
+        "waggon_12",
+        "deadman_01",
+        "deadman_02",
+        "deadman_03",
+        "deadman_04",
+        "deadman_05",
+        "deadman_06",
+        "deadman_07",
+        "deadman_08",
+        "deadman_09",
+        "deadman_10",
+        "deadman_11",
+        "deadman_12"
+      ],
+      "stats": {
+        "danger": 3,
+        "@ref:24": 2
+      },
+      "view": {
+        "@ref:8": "map.event.waggon.name",
+        "text": "map.event.random.text",
+        "image": "image_ravens"
+      },
+      "_source_section": "refs.maps.0.events"
+    },
+    "waggon_very_hard": {
+      "type": "energy_easy",
+      "@ref:8": "waggon",
+      "map_loot": "waggon_very_hard",
+      "location": "waggon_very_hard",
+      "recommendations": {
+        "equip_tier": 2
+      },
+      "points": [
+        "waggon_01",
+        "waggon_02",
+        "waggon_03",
+        "waggon_04",
+        "waggon_05",
+        "waggon_06",
+        "waggon_07",
+        "waggon_08",
+        "waggon_09",
+        "waggon_10",
+        "waggon_11",
+        "waggon_12",
+        "deadman_01",
+        "deadman_02",
+        "deadman_03",
+        "deadman_04",
+        "deadman_05",
+        "deadman_06",
+        "deadman_07",
+        "deadman_08",
+        "deadman_09",
+        "deadman_10",
+        "deadman_11",
+        "deadman_12"
+      ],
+      "stats": {
+        "danger": 4,
+        "@ref:24": 2
+      },
+      "view": {
+        "@ref:8": "map.event.waggon.name",
+        "text": "map.event.random.text",
+        "image": "image_ravens"
+      },
+      "_source_section": "refs.maps.0.events"
+    },
+    "deadman_easy": {
+      "type": "energy_easy",
+      "@ref:8": "deadman",
+      "map_loot": "deadman_easy",
+      "location": "deadman_easy",
+      "recommendations": {
+        "equip_tier": 1
+      },
+      "points": [
+        "waggon_01",
+        "waggon_02",
+        "waggon_03",
+        "waggon_04",
+        "waggon_05",
+        "waggon_06",
+        "waggon_07",
+        "waggon_08",
+        "waggon_09",
+        "waggon_10",
+        "waggon_11",
+        "waggon_12",
+        "deadman_01",
+        "deadman_02",
+        "deadman_03",
+        "deadman_04",
+        "deadman_05",
+        "deadman_06",
+        "deadman_07",
+        "deadman_08",
+        "deadman_09",
+        "deadman_10",
+        "deadman_11",
+        "deadman_12"
+      ],
+      "stats": {
+        "danger": 1,
+        "@ref:24": 2
+      },
+      "view": {
+        "@ref:8": "map.event.deadman.name",
+        "text": "map.event.random.text",
+        "image": "image_ravens"
+      },
+      "_source_section": "refs.maps.0.events"
+    },
+    "deadman_normal": {
+      "type": "energy_easy",
+      "@ref:8": "deadman",
+      "map_loot": "deadman_normal",
+      "location": "deadman_normal",
+      "recommendations": {
+        "equip_tier": 1
+      },
+      "points": [
+        "waggon_01",
+        "waggon_02",
+        "waggon_03",
+        "waggon_04",
+        "waggon_05",
+        "waggon_06",
+        "waggon_07",
+        "waggon_08",
+        "waggon_09",
+        "waggon_10",
+        "waggon_11",
+        "waggon_12",
+        "deadman_01",
+        "deadman_02",
+        "deadman_03",
+        "deadman_04",
+        "deadman_05",
+        "deadman_06",
+        "deadman_07",
+        "deadman_08",
+        "deadman_09",
+        "deadman_10",
+        "deadman_11",
+        "deadman_12"
+      ],
+      "stats": {
+        "danger": 2,
+        "@ref:24": 2
+      },
+      "view": {
+        "@ref:8": "map.event.deadman.name",
+        "text": "map.event.random.text",
+        "image": "image_ravens"
+      },
+      "_source_section": "refs.maps.0.events"
+    },
+    "deadman_hard": {
+      "type": "energy_easy",
+      "@ref:8": "deadman",
+      "map_loot": "deadman_hard",
+      "location": "deadman_hard",
+      "recommendations": {
+        "equip_tier": 1
+      },
+      "points": [
+        "waggon_01",
+        "waggon_02",
+        "waggon_03",
+        "waggon_04",
+        "waggon_05",
+        "waggon_06",
+        "waggon_07",
+        "waggon_08",
+        "waggon_09",
+        "waggon_10",
+        "waggon_11",
+        "waggon_12",
+        "deadman_01",
+        "deadman_02",
+        "deadman_03",
+        "deadman_04",
+        "deadman_05",
+        "deadman_06",
+        "deadman_07",
+        "deadman_08",
+        "deadman_09",
+        "deadman_10",
+        "deadman_11",
+        "deadman_12"
+      ],
+      "stats": {
+        "danger": 3,
+        "@ref:24": 2
+      },
+      "view": {
+        "@ref:8": "map.event.deadman.name",
+        "text": "map.event.random.text",
+        "image": "image_ravens"
+      },
+      "_source_section": "refs.maps.0.events"
+    },
+    "deadman_very_hard": {
+      "type": "energy_easy",
+      "@ref:8": "deadman",
+      "map_loot": "deadman_very_hard",
+      "location": "deadman_very_hard",
+      "recommendations": {
+        "equip_tier": 1
+      },
+      "points": [
+        "waggon_01",
+        "waggon_02",
+        "waggon_03",
+        "waggon_04",
+        "waggon_05",
+        "waggon_06",
+        "waggon_07",
+        "waggon_08",
+        "waggon_09",
+        "waggon_10",
+        "waggon_11",
+        "waggon_12",
+        "deadman_01",
+        "deadman_02",
+        "deadman_03",
+        "deadman_04",
+        "deadman_05",
+        "deadman_06",
+        "deadman_07",
+        "deadman_08",
+        "deadman_09",
+        "deadman_10",
+        "deadman_11",
+        "deadman_12"
+      ],
+      "stats": {
+        "danger": 4,
+        "@ref:24": 2
+      },
+      "view": {
+        "@ref:8": "map.event.deadman.name",
+        "text": "map.event.random.text",
+        "image": "image_ravens"
+      },
+      "_source_section": "refs.maps.0.events"
+    },
+    "burned_village_easy": {
+      "type": "energy_easy",
+      "@ref:8": "burned_village",
+      "map_loot": "burned_village_easy",
+      "location": "burned_village_easy",
+      "recommendations": {
+        "equip_tier": 0
+      },
+      "points": [
+        "waggon_01",
+        "waggon_02",
+        "waggon_03",
+        "waggon_04",
+        "waggon_05",
+        "waggon_06",
+        "waggon_07",
+        "waggon_08",
+        "waggon_09",
+        "waggon_10",
+        "waggon_11",
+        "waggon_12",
+        "deadman_01",
+        "deadman_02",
+        "deadman_03",
+        "deadman_04",
+        "deadman_05",
+        "deadman_06",
+        "deadman_07",
+        "deadman_08",
+        "deadman_09",
+        "deadman_10",
+        "deadman_11",
+        "deadman_12"
+      ],
+      "stats": {
+        "danger": 1,
+        "@ref:24": 2
+      },
+      "view": {
+        "@ref:8": "map.event.burned_village.name",
+        "text": "map.event.random.text",
+        "image": "image_ravens"
+      },
+      "map_icon_visible": {
+        "type": "resource",
+        "resource": "burned_village.has_reward",
+        "target": "global"
+      },
+      "scripts": {
+        "@ref:37": {
+          "type": "resource.set",
+          "resource": "burned_village.has_reward",
+          "target": "global",
+          "@ref:11": 1
+        }
+      },
+      "_source_section": "refs.maps.0.events"
+    },
+    "burned_village_normal": {
+      "type": "energy_easy",
+      "@ref:8": "burned_village",
+      "map_loot": "burned_village_normal",
+      "location": "burned_village_normal",
+      "recommendations": {
+        "equip_tier": 0
+      },
+      "points": [
+        "waggon_01",
+        "waggon_02",
+        "waggon_03",
+        "waggon_04",
+        "waggon_05",
+        "waggon_06",
+        "waggon_07",
+        "waggon_08",
+        "waggon_09",
+        "waggon_10",
+        "waggon_11",
+        "waggon_12",
+        "deadman_01",
+        "deadman_02",
+        "deadman_03",
+        "deadman_04",
+        "deadman_05",
+        "deadman_06",
+        "deadman_07",
+        "deadman_08",
+        "deadman_09",
+        "deadman_10",
+        "deadman_11",
+        "deadman_12"
+      ],
+      "stats": {
+        "danger": 2,
+        "@ref:24": 2
+      },
+      "view": {
+        "@ref:8": "map.event.burned_village.name",
+        "text": "map.event.random.text",
+        "image": "image_ravens"
+      },
+      "map_icon_visible": {
+        "type": "resource",
+        "resource": "burned_village.has_reward",
+        "target": "global"
+      },
+      "scripts": {
+        "@ref:37": {
+          "type": "resource.set",
+          "resource": "burned_village.has_reward",
+          "target": "global",
+          "@ref:11": 1
+        }
+      },
+      "_source_section": "refs.maps.0.events"
+    },
+    "burned_village_hard": {
+      "type": "energy_easy",
+      "@ref:8": "burned_village",
+      "map_loot": "burned_village_hard",
+      "location": "burned_village_hard",
+      "recommendations": {
+        "equip_tier": 0
+      },
+      "points": [
+        "waggon_01",
+        "waggon_02",
+        "waggon_03",
+        "waggon_04",
+        "waggon_05",
+        "waggon_06",
+        "waggon_07",
+        "waggon_08",
+        "waggon_09",
+        "waggon_10",
+        "waggon_11",
+        "waggon_12",
+        "deadman_01",
+        "deadman_02",
+        "deadman_03",
+        "deadman_04",
+        "deadman_05",
+        "deadman_06",
+        "deadman_07",
+        "deadman_08",
+        "deadman_09",
+        "deadman_10",
+        "deadman_11",
+        "deadman_12"
+      ],
+      "stats": {
+        "danger": 3,
+        "@ref:24": 2
+      },
+      "view": {
+        "@ref:8": "map.event.burned_village.name",
+        "text": "map.event.random.text",
+        "image": "image_ravens"
+      },
+      "map_icon_visible": {
+        "type": "resource",
+        "resource": "burned_village.has_reward",
+        "target": "global"
+      },
+      "scripts": {
+        "@ref:37": {
+          "type": "resource.set",
+          "resource": "burned_village.has_reward",
+          "target": "global",
+          "@ref:11": 1
+        }
+      },
+      "_source_section": "refs.maps.0.events"
+    },
+    "burned_village_very_hard": {
+      "type": "energy_easy",
+      "@ref:8": "burned_village",
+      "map_loot": "burned_village_very_hard",
+      "location": "burned_village_very_hard",
+      "recommendations": {
+        "equip_tier": 0
+      },
+      "points": [
+        "waggon_01",
+        "waggon_02",
+        "waggon_03",
+        "waggon_04",
+        "waggon_05",
+        "waggon_06",
+        "waggon_07",
+        "waggon_08",
+        "waggon_09",
+        "waggon_10",
+        "waggon_11",
+        "waggon_12",
+        "deadman_01",
+        "deadman_02",
+        "deadman_03",
+        "deadman_04",
+        "deadman_05",
+        "deadman_06",
+        "deadman_07",
+        "deadman_08",
+        "deadman_09",
+        "deadman_10",
+        "deadman_11",
+        "deadman_12"
+      ],
+      "stats": {
+        "danger": 4,
+        "@ref:24": 2
+      },
+      "view": {
+        "@ref:8": "map.event.burned_village.name",
+        "text": "map.event.random.text",
+        "image": "image_ravens"
+      },
+      "map_icon_visible": {
+        "type": "resource",
+        "resource": "burned_village.has_reward",
+        "target": "global"
+      },
+      "scripts": {
+        "@ref:37": {
+          "type": "resource.set",
+          "resource": "burned_village.has_reward",
+          "target": "global",
+          "@ref:11": 1
+        }
+      },
+      "_source_section": "refs.maps.0.events"
+    },
+    "convoy_easy": {
+      "type": "energy_easy",
+      "@ref:8": "convoy",
+      "map_loot": "convoy",
+      "location": "convoy",
+      "recommendations": {
+        "equip_tier": 2
+      },
+      "points": [
+        "waggon_01",
+        "waggon_02",
+        "waggon_03",
+        "waggon_04",
+        "waggon_05",
+        "waggon_06",
+        "waggon_07",
+        "waggon_08",
+        "waggon_09",
+        "waggon_10",
+        "waggon_11",
+        "waggon_12",
+        "deadman_01",
+        "deadman_02",
+        "deadman_03",
+        "deadman_04",
+        "deadman_05",
+        "deadman_06",
+        "deadman_07",
+        "deadman_08",
+        "deadman_09",
+        "deadman_10",
+        "deadman_11",
+        "deadman_12"
+      ],
+      "stats": {
+        "danger": 0,
+        "@ref:24": 4
+      },
+      "view": {
+        "@ref:8": "map.event.convoy.name",
+        "text": "map.event.convoy.text",
+        "image": "image_ravens"
+      },
+      "_source_section": "refs.maps.0.events"
+    },
+    "convoy_hard": {
+      "type": "simple",
+      "@ref:8": "convoy",
+      "map_loot": "convoy",
+      "location": "convoy",
+      "recommendations": {
+        "equip_tier": 2
+      },
+      "points": [
+        "waggon_01",
+        "waggon_02",
+        "waggon_03",
+        "waggon_04",
+        "waggon_05",
+        "waggon_06",
+        "waggon_07",
+        "waggon_08",
+        "waggon_09",
+        "waggon_10",
+        "waggon_11",
+        "waggon_12",
+        "deadman_01",
+        "deadman_02",
+        "deadman_03",
+        "deadman_04",
+        "deadman_05",
+        "deadman_06",
+        "deadman_07",
+        "deadman_08",
+        "deadman_09",
+        "deadman_10",
+        "deadman_11",
+        "deadman_12"
+      ],
+      "stats": {
+        "danger": 0,
+        "@ref:24": 4
+      },
+      "view": {
+        "@ref:8": "map.event.convoy.name",
+        "text": "map.event.convoy.text",
+        "image": "image_ravens"
+      },
+      "_source_section": "refs.maps.0.events"
+    },
+    "td.chest.easy": {
+      "type": "energy_easy",
+      "@ref:8": "td.chest",
+      "map_loot": "td.chest",
+      "location": "td.chest.location",
+      "recommendations": {
+        "equip_tier": 3
+      },
+      "points": [
+        "waggon_01",
+        "waggon_02",
+        "waggon_03",
+        "waggon_04",
+        "waggon_05",
+        "waggon_06",
+        "waggon_07",
+        "waggon_08",
+        "waggon_09",
+        "waggon_10",
+        "waggon_11",
+        "waggon_12",
+        "deadman_01",
+        "deadman_02",
+        "deadman_03",
+        "deadman_04",
+        "deadman_05",
+        "deadman_06",
+        "deadman_07",
+        "deadman_08",
+        "deadman_09",
+        "deadman_10",
+        "deadman_11",
+        "deadman_12"
+      ],
+      "stats": {
+        "danger": 0,
+        "@ref:24": 4
+      },
+      "view": {
+        "@ref:8": "map.event.td.chest.name",
+        "text": "map.event.random.text",
+        "image": "image_ravens"
+      },
+      "_source_section": "refs.maps.0.events"
+    },
+    "td.chest.hard": {
+      "type": "simple",
+      "@ref:8": "td.chest",
+      "map_loot": "td.chest",
+      "location": "td.chest.location",
+      "recommendations": {
+        "equip_tier": 3
+      },
+      "points": [
+        "waggon_01",
+        "waggon_02",
+        "waggon_03",
+        "waggon_04",
+        "waggon_05",
+        "waggon_06",
+        "waggon_07",
+        "waggon_08",
+        "waggon_09",
+        "waggon_10",
+        "waggon_11",
+        "waggon_12",
+        "deadman_01",
+        "deadman_02",
+        "deadman_03",
+        "deadman_04",
+        "deadman_05",
+        "deadman_06",
+        "deadman_07",
+        "deadman_08",
+        "deadman_09",
+        "deadman_10",
+        "deadman_11",
+        "deadman_12"
+      ],
+      "stats": {
+        "danger": 0,
+        "@ref:24": 4
+      },
+      "view": {
+        "@ref:8": "map.event.td.chest.name",
+        "text": "map.event.random.text",
+        "image": "image_ravens"
+      },
+      "_source_section": "refs.maps.0.events"
+    },
+    "caravan1": {
+      "type": "energy_easy",
+      "@ref:8": "caravan",
+      "map_loot": "caravan",
+      "location": "caravan",
+      "points": [
+        "caravan_01"
+      ],
+      "scripts": {
+        "@ref:37": {
+          "type": "resource.inc",
+          "resource": "caravan_discover_counter",
+          "target": "global",
+          "@ref:11": 1
+        },
+        "enter": {
+          "type": "resource.set",
+          "resource": "caravan_enter_counter",
+          "target": "global",
+          "@ref:11": 1
+        }
+      },
+      "stats": {
+        "danger": 0,
+        "@ref:24": 5
+      },
+      "view": {
+        "@ref:8": "map.event.caravan.name",
+        "text": "map.event.caravan.text",
+        "image": "image_ravens"
+      },
+      "_source_section": "refs.maps.0.events"
+    },
+    "caravan2": {
+      "type": "energy_hard",
+      "@ref:8": "caravan",
+      "map_loot": "caravan",
+      "location": "caravan",
+      "points": [
+        "caravan_02"
+      ],
+      "scripts": {
+        "@ref:37": {
+          "type": "resource.inc",
+          "resource": "caravan_discover_counter",
+          "target": "global",
+          "@ref:11": 1
+        },
+        "enter": {
+          "type": "resource.set",
+          "resource": "caravan_enter_counter",
+          "target": "global",
+          "@ref:11": 2
+        }
+      },
+      "stats": {
+        "@ref:24": 5
+      },
+      "view": {
+        "@ref:8": "map.event.caravan.name",
+        "text": "map.event.caravan.text",
+        "image": "image_ravens"
+      },
+      "_source_section": "refs.maps.0.events"
+    },
+    "aissa::_event": {
+      "type": "simple",
+      "@ref:8": "aissa",
+      "map_loot": "aissa",
+      "locations": [
+        "aissa"
+      ],
+      "points": [
+        "aissa"
+      ],
+      "stats": {
+        "@ref:24": 6
+      },
+      "view": {
+        "@ref:8": "map.event.aissa.name",
+        "text": "map.event.random.text",
+        "image": "image_ravens"
+      },
+      "pictures": [
+        "Images/image_location_aissa"
+      ],
+      "_source_section": "refs.maps.0.events"
+    },
+    "catacomb::_event": {
+      "type": "energy_easy",
+      "@ref:8": "catacomb",
+      "tag": "catacomb",
+      "locations": [
+        "catacomb_ground",
+        "catacomb_dungeon_01",
+        "catacomb_dungeon_02",
+        "catacomb_dungeon_03",
+        "catacomb_dungeon_04",
+        "catacomb_dungeon_05",
+        "catacomb_dungeon_final"
+      ],
+      "map_loot": "catacomb",
+      "points": [
+        "catacomb_01"
+      ],
+      "recommendations": {
+        "equip_tier": 3
+      },
+      "pictures": [
+        "Images/image_location_dungeon",
+        "Images/image_location_dungeon_inside",
+        "Images/image_location_dungeon_inside",
+        "Images/image_location_dungeon_inside",
+        "Images/image_location_dungeon_inside",
+        "Images/image_location_dungeon_inside",
+        "Images/image_location_dungeon_inside",
+        "Images/image_location_dungeon_inside",
+        "Images/image_location_dungeon_inside",
+        "Images/image_location_dungeon_inside",
+        "Images/image_location_dungeon_inside"
+      ],
+      "stats": {
+        "danger": 0,
+        "@ref:24": 8
+      },
+      "view": {
+        "@ref:8": "map.event.catacomb.name",
+        "text": "map.event.random.text",
+        "image": "image_ravens"
+      },
+      "_source_section": "refs.maps.0.events"
+    },
+    "death_labyrinth::_event": {
+      "type": "simple",
+      "location": "death_labyrinth",
+      "@ref:8": "death_labyrinth",
+      "map_loot": "death_labyrinth",
+      "points": [
+        "death_labyrinth"
+      ],
+      "scripts": {
+        "@ref:37": {
+          "type": "resource.set",
+          "resource": "death_labyrinth.has_reward",
+          "target": "global",
+          "@ref:11": 1
+        }
+      },
+      "stats": {
+        "@ref:24": 4
+      },
+      "picture": "Images/image_location_crows",
+      "view": {
+        "@ref:8": "map.death_labyrinth.name",
+        "text": "map.event.random.text",
+        "image": "image_ravens"
+      },
+      "_source_section": "refs.maps.0.events"
+    },
+    "warlock_lair::_event": {
+      "type": "simple",
+      "@ref:8": "warlock_lair",
+      "map_loot": "warlock_lair",
+      "location": "warlock_lair",
+      "points": [
+        "warlock_lair"
+      ],
+      "recommendations": {
+        "equip_tier": 2
+      },
+      "stats": {
+        "danger": 2,
+        "@ref:24": 3
+      },
+      "picture": "Images/image_location_crows",
+      "view": {
+        "@ref:8": "map.warlock_lair.name",
+        "text": "map.event.random.text",
+        "image": "image_ravens"
+      },
+      "_source_section": "refs.maps.0.events"
+    },
+    "hunting_grounds_easy": {
+      "type": "energy_easy",
+      "@ref:8": "hunting_grounds",
+      "map_loot": "hunting_grounds",
+      "location": "hunting_grounds",
+      "points": [
+        "hunting_grounds"
+      ],
+      "picture": "Images/image_location_crows",
+      "stats": {
+        "pine": 4,
+        "birch": 1
+      },
+      "view": {
+        "@ref:8": "map.hunting_grounds.name",
+        "text": "map.event.random.text",
+        "image": "image_ravens"
+      },
+      "_source_section": "refs.maps.0.events"
+    },
+    "hunting_grounds_hard": {
+      "type": "simple",
+      "@ref:8": "hunting_grounds",
+      "map_loot": "hunting_grounds",
+      "location": "hunting_grounds",
+      "points": [
+        "hunting_grounds"
+      ],
+      "picture": "Images/image_location_crows",
+      "stats": {
+        "pine": 4,
+        "birch": 1
+      },
+      "view": {
+        "@ref:8": "map.hunting_grounds.name",
+        "text": "map.event.random.text",
+        "image": "image_ravens"
+      },
+      "_source_section": "refs.maps.0.events"
+    },
+    "pasture_easy": {
+      "type": "energy_easy",
+      "@ref:8": "pasture",
+      "map_loot": "pasture",
+      "location": "pasture",
+      "points": [
+        "pasture"
+      ],
+      "picture": "Images/image_location_crows",
+      "view": {
+        "@ref:8": "map.pasture.name",
+        "text": "map.event.random.text",
+        "image": "image_ravens"
+      },
+      "_source_section": "refs.maps.0.events"
+    },
+    "pasture_hard": {
+      "type": "simple",
+      "@ref:8": "pasture",
+      "map_loot": "pasture",
+      "location": "pasture",
+      "points": [
+        "pasture"
+      ],
+      "picture": "Images/image_location_crows",
+      "view": {
+        "@ref:8": "map.pasture.name",
+        "text": "map.event.random.text",
+        "image": "image_ravens"
+      },
+      "_source_section": "refs.maps.0.events"
+    },
+    "sacrificial_altar::_event": {
+      "type": "simple",
+      "@ref:8": "sacrificial_altar",
+      "map_loot": "sacrificial_altar",
+      "location": "sacrificial_altar",
+      "points": [
+        "sacrificial_altar"
+      ],
+      "picture": "Images/image_location_crows",
+      "stats": {
+        "danger": 2,
+        "@ref:24": 1
+      },
+      "view": {
+        "@ref:8": "map.sacrificial_altar.name",
+        "text": "map.event.random.text",
+        "image": "image_ravens"
+      },
+      "_source_section": "refs.maps.0.events"
+    },
+    "tiny_hermit_storage::_event": {
+      "type": "energy_easy",
+      "@ref:8": "tiny_hermit_storage",
+      "tag": "tiny_hermit_storage",
+      "map_loot": "tiny_hermit_storage",
+      "location": "tiny_hermit_storage",
+      "points": [
+        "tiny_hermit_storage"
+      ],
+      "stats": {
+        "danger": 0,
+        "@ref:24": 1
+      },
+      "picture": "Images/image_location_crows",
+      "view": {
+        "@ref:8": "map.tiny_hermit_storage.name",
+        "text": "map.event.random.text",
+        "image": "image_ravens"
+      },
+      "_source_section": "refs.maps.0.events"
+    },
+    "small_hermit_storage_easy": {
+      "type": "energy_easy",
+      "@ref:8": "small_hermit_storage",
+      "tag": "small_hermit_storage",
+      "map_loot": "small_hermit_storage",
+      "location": "small_hermit_storage",
+      "points": [
+        "small_hermit_storage"
+      ],
+      "stats": {
+        "danger": 0,
+        "@ref:24": 3
+      },
+      "picture": "Images/image_location_crows",
+      "view": {
+        "@ref:8": "map.small_hermit_storage.name",
+        "text": "map.event.random.text",
+        "image": "image_ravens"
+      },
+      "_source_section": "refs.maps.0.events"
+    },
+    "small_hermit_storage_hard": {
+      "type": "simple",
+      "@ref:8": "small_hermit_storage",
+      "tag": "small_hermit_storage",
+      "map_loot": "small_hermit_storage",
+      "location": "small_hermit_storage",
+      "points": [
+        "small_hermit_storage"
+      ],
+      "stats": {
+        "danger": 0,
+        "@ref:24": 3
+      },
+      "picture": "Images/image_location_crows",
+      "view": {
+        "@ref:8": "map.small_hermit_storage.name",
+        "text": "map.event.random.text",
+        "image": "image_ravens"
+      },
+      "_source_section": "refs.maps.0.events"
+    },
+    "big_hermit_storage_easy": {
+      "type": "energy_easy",
+      "@ref:8": "big_hermit_storage",
+      "tag": "big_hermit_storage",
+      "map_loot": "big_hermit_storage",
+      "location": "big_hermit_storage",
+      "points": [
+        "big_hermit_storage"
+      ],
+      "stats": {
+        "danger": 0,
+        "@ref:24": 3
+      },
+      "picture": "Images/image_location_crows",
+      "view": {
+        "@ref:8": "map.big_hermit_storage.name",
+        "text": "map.event.random.text",
+        "image": "image_ravens"
+      },
+      "_source_section": "refs.maps.0.events"
+    },
+    "big_hermit_storage_hard": {
+      "type": "simple",
+      "@ref:8": "big_hermit_storage",
+      "tag": "big_hermit_storage",
+      "map_loot": "big_hermit_storage",
+      "location": "big_hermit_storage",
+      "points": [
+        "big_hermit_storage"
+      ],
+      "stats": {
+        "danger": 0,
+        "@ref:24": 3
+      },
+      "picture": "Images/image_location_crows",
+      "view": {
+        "@ref:8": "map.big_hermit_storage.name",
+        "text": "map.event.random.text",
+        "image": "image_ravens"
+      },
+      "_source_section": "refs.maps.0.events"
+    },
+    "hermit_hut::_event": {
+      "type": "simple",
+      "@ref:8": "hermit_hut",
+      "tag": "hermit_hut",
+      "map_loot": "hermit_hut",
+      "location": "hermit_hut",
+      "points": [
+        "hermit_hut"
+      ],
+      "recommendations": {
+        "equip_tier": 1
+      },
+      "stats": {
+        "danger": 1,
+        "@ref:24": 1
+      },
+      "picture": "Images/image_location_crows",
+      "view": {
+        "@ref:8": "map.hermit_hut.name",
+        "text": "map.event.random.text",
+        "image": "image_ravens"
+      },
+      "_source_section": "refs.maps.0.events"
+    },
+    "virbjorn_lair::_event": {
+      "type": "simple",
+      "@ref:8": "virbjorn_lair",
+      "map_loot": "virbjorn_lair",
+      "location": "virbjorn_lair",
+      "points": [
+        "virbjorn_lair"
+      ],
+      "recommendations": {
+        "equip_tier": 3
+      },
+      "stats": {
+        "danger": 3,
+        "@ref:24": 3
+      },
+      "picture": "Images/image_location_crows",
+      "view": {
+        "@ref:8": "map.virbjorn_lair.name",
+        "text": "map.event.random.text",
+        "image": "image_ravens"
+      },
+      "_source_section": "refs.maps.0.events"
+    }
+  }
+}

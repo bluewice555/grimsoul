@@ -1,0 +1,7267 @@
+{
+  "source": "refs_pure(2).json",
+  "key": "mobs",
+  "count": 321,
+  "mobs": {
+    "td.wave1_mob": {
+      "type": "weight",
+      "weights": [
+        {
+          "weight": 40,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "leper",
+            "@ref:13": "edge"
+          }
+        },
+        {
+          "weight": 8,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "cursed",
+            "@ref:13": "edge"
+          }
+        },
+        {
+          "weight": 8,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "wolf",
+            "@ref:13": "edge"
+          }
+        }
+      ]
+    },
+    "td.wave1": {
+      "type": "repeat",
+      "repeat": {
+        "type": "range",
+        "min": 8,
+        "max": 12
+      },
+      "script": "td.wave1_mob"
+    },
+    "td.wave2_mob": {
+      "type": "weight",
+      "weights": [
+        {
+          "weight": 25,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "leper",
+            "@ref:13": "edge"
+          }
+        },
+        {
+          "weight": 8,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "cursed",
+            "@ref:13": "edge"
+          }
+        },
+        {
+          "weight": 8,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "wolf",
+            "@ref:13": "edge"
+          }
+        }
+      ]
+    },
+    "td.wave2": {
+      "type": "repeat",
+      "repeat": {
+        "type": "range",
+        "min": 8,
+        "max": 12
+      },
+      "script": "td.wave2_mob"
+    },
+    "td.wave3_mob": {
+      "type": "weight",
+      "weights": [
+        {
+          "weight": 45,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "leper",
+            "@ref:13": "edge"
+          }
+        },
+        {
+          "weight": 8,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "cursed",
+            "@ref:13": "edge"
+          }
+        },
+        {
+          "weight": 8,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "direwolf",
+            "@ref:13": "edge"
+          }
+        }
+      ]
+    },
+    "td.wave3": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 8,
+          "max": 12
+        },
+        "script": "td.wave3_mob"
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "knight",
+        "@ref:13": "edge"
+      }
+    ],
+    "td.wave4_mob": {
+      "type": "weight",
+      "weights": [
+        {
+          "weight": 20,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "leper",
+            "@ref:13": "edge"
+          }
+        },
+        {
+          "weight": 3,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "cursed",
+            "@ref:13": "edge"
+          }
+        },
+        {
+          "weight": 3,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "direwolf",
+            "@ref:13": "edge"
+          }
+        }
+      ]
+    },
+    "td.wave4": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 8,
+          "max": 12
+        },
+        "script": "td.wave4_mob"
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "knight",
+        "@ref:13": "edge"
+      }
+    ],
+    "td.wave5": {
+      "type": "spawn",
+      "@ref:12": "cultist",
+      "@ref:13": "edge"
+    },
+    "d1.wave1": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 3,
+          "max": 5
+        },
+        "script": "leper_pack"
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 0,
+          "max": 1
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "cursed_dung1",
+          "@ref:13": "dungeon"
+        }
+      }
+    ],
+    "d1.wave2": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 3,
+          "max": 5
+        },
+        "script": "leper_pack"
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 1,
+          "max": 2
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "cursed_dung1",
+          "@ref:13": "dungeon"
+        }
+      }
+    ],
+    "d1.wave3": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 4,
+          "max": 6
+        },
+        "script": "leper_pack"
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 2,
+          "max": 3
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "cursed_dung1",
+          "@ref:13": "dungeon"
+        }
+      }
+    ],
+    "d1.wave4": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 4,
+          "max": 6
+        },
+        "script": "leper_pack"
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 3,
+          "max": 4
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "cursed_dung1",
+          "@ref:13": "dungeon"
+        }
+      }
+    ],
+    "d1.wave5": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 2,
+          "max": 4
+        },
+        "script": "leper_pack"
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 3,
+          "max": 4
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "cursed_dung1",
+          "@ref:13": "dungeon"
+        }
+      },
+      "mid_pack"
+    ],
+    "d1.wave6": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 3,
+          "max": 5
+        },
+        "script": "leper_pack"
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 2,
+          "max": 3
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "cursed_dung1",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 1,
+          "max": 2
+        },
+        "script": "mid_pack"
+      }
+    ],
+    "d1.wave7": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 2,
+          "max": 4
+        },
+        "script": "leper_pack"
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 3,
+          "max": 4
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "cursed_dung1",
+          "@ref:13": "dungeon"
+        }
+      },
+      "mid_pack",
+      {
+        "type": "probability",
+        "probability": 0.5,
+        "action": {
+          "type": "spawn",
+          "@ref:12": "templar_dung1",
+          "@ref:13": "dungeon"
+        }
+      }
+    ],
+    "d1.wave8": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 1,
+          "max": 2
+        },
+        "script": "leper_pack"
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 4,
+          "max": 6
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "cursed_dung1",
+          "@ref:13": "dungeon"
+        }
+      },
+      "mid_pack",
+      {
+        "type": "probability",
+        "probability": 0.5,
+        "action": {
+          "type": "spawn",
+          "@ref:12": "templar_dung1",
+          "@ref:13": "dungeon"
+        }
+      }
+    ],
+    "d1.wave9": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 3,
+          "max": 5
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "cursed_dung1",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": "mid_pack"
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "templar_dung1",
+        "@ref:13": "dungeon"
+      },
+      {
+        "type": "probability",
+        "probability": 0.5,
+        "action": {
+          "type": "repeat",
+          "repeat": {
+            "type": "range",
+            "min": 1,
+            "max": 2
+          },
+          "script": {
+            "type": "spawn",
+            "@ref:12": "leper_poison",
+            "@ref:13": "dungeon"
+          }
+        }
+      }
+    ],
+    "d1.wave10": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 5,
+          "max": 7
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "cursed_dung1",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": "mid_pack"
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 1,
+          "max": 2
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "templar_dung1",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "witch",
+        "@ref:13": "dungeon"
+      },
+      {
+        "type": "probability",
+        "probability": 0.5,
+        "action": {
+          "type": "repeat",
+          "repeat": {
+            "type": "range",
+            "min": 2,
+            "max": 3
+          },
+          "script": {
+            "type": "spawn",
+            "@ref:12": "leper_poison",
+            "@ref:13": "dungeon"
+          }
+        }
+      }
+    ],
+    "leper_pack": {
+      "type": "weight",
+      "weights": [
+        {
+          "weight": 5,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "leper_soldier",
+            "@ref:13": "dungeon"
+          }
+        },
+        {
+          "weight": 2,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "leper_poison",
+            "@ref:13": "dungeon"
+          }
+        }
+      ]
+    },
+    "mid_pack": {
+      "type": "weight",
+      "weights": [
+        {
+          "weight": 5,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "knight_dung1",
+            "@ref:13": "dungeon"
+          }
+        },
+        {
+          "weight": 2,
+          "action": {
+            "type": "repeat",
+            "repeat": 3,
+            "script": {
+              "type": "spawn",
+              "@ref:12": "cursed_dung1",
+              "@ref:13": "dungeon"
+            }
+          }
+        }
+      ]
+    },
+    "d1.wave1_old": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 3,
+          "max": 5
+        },
+        "script": "leper_pack"
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 0,
+          "max": 1
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "cursed_dung1",
+          "@ref:13": "dungeon"
+        }
+      }
+    ],
+    "d1.wave2_old": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 3,
+          "max": 5
+        },
+        "script": "leper_pack"
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 1,
+          "max": 2
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "cursed_dung1",
+          "@ref:13": "dungeon"
+        }
+      }
+    ],
+    "d1.wave3_old": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 4,
+          "max": 6
+        },
+        "script": "leper_pack"
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 2,
+          "max": 3
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "cursed_dung1",
+          "@ref:13": "dungeon"
+        }
+      }
+    ],
+    "d1.wave4_old": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 4,
+          "max": 6
+        },
+        "script": "leper_pack"
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 3,
+          "max": 4
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "cursed_dung1",
+          "@ref:13": "dungeon"
+        }
+      }
+    ],
+    "d1.wave5_old": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 2,
+          "max": 4
+        },
+        "script": "leper_pack"
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 3,
+          "max": 4
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "cursed_dung1",
+          "@ref:13": "dungeon"
+        }
+      },
+      "mid_pack"
+    ],
+    "d1.wave6_old": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 3,
+          "max": 5
+        },
+        "script": "leper_pack"
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 2,
+          "max": 3
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "cursed_dung1",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 1,
+          "max": 2
+        },
+        "script": "mid_pack"
+      }
+    ],
+    "d1.wave7_old": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 2,
+          "max": 4
+        },
+        "script": "leper_pack"
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 3,
+          "max": 4
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "cursed_dung1",
+          "@ref:13": "dungeon"
+        }
+      },
+      "mid_pack",
+      {
+        "type": "spawn",
+        "@ref:12": "templar_dung1",
+        "@ref:13": "dungeon"
+      }
+    ],
+    "d1.wave8_old": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 1,
+          "max": 2
+        },
+        "script": "leper_pack"
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 4,
+          "max": 6
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "cursed_dung1",
+          "@ref:13": "dungeon"
+        }
+      },
+      "mid_pack",
+      {
+        "type": "spawn",
+        "@ref:12": "templar_dung1",
+        "@ref:13": "dungeon"
+      }
+    ],
+    "d1.wave9_old": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 3,
+          "max": 5
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "cursed_dung1",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": "mid_pack"
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "templar_dung1",
+        "@ref:13": "dungeon"
+      },
+      {
+        "type": "probability",
+        "probability": 0.5,
+        "action": {
+          "type": "repeat",
+          "repeat": {
+            "type": "range",
+            "min": 1,
+            "max": 2
+          },
+          "script": {
+            "type": "spawn",
+            "@ref:12": "leper_poison",
+            "@ref:13": "dungeon"
+          }
+        }
+      }
+    ],
+    "d1.wave10_old": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 5,
+          "max": 7
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "cursed_dung1",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": "mid_pack"
+      },
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "templar_dung1",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "witch",
+        "@ref:13": "dungeon"
+      },
+      {
+        "type": "probability",
+        "probability": 0.5,
+        "action": {
+          "type": "repeat",
+          "repeat": {
+            "type": "range",
+            "min": 2,
+            "max": 3
+          },
+          "script": {
+            "type": "spawn",
+            "@ref:12": "leper_poison",
+            "@ref:13": "dungeon"
+          }
+        }
+      }
+    ],
+    "leper_pack_old": {
+      "type": "weight",
+      "weights": [
+        {
+          "weight": 5,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "leper_soldier",
+            "@ref:13": "dungeon"
+          }
+        },
+        {
+          "weight": 2,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "leper_poison",
+            "@ref:13": "dungeon"
+          }
+        }
+      ]
+    },
+    "mid_pack_old": {
+      "type": "weight",
+      "weights": [
+        {
+          "weight": 5,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "knight_dung1",
+            "@ref:13": "dungeon"
+          }
+        },
+        {
+          "weight": 2,
+          "action": {
+            "type": "repeat",
+            "repeat": 3,
+            "script": {
+              "type": "spawn",
+              "@ref:12": "cursed_dung1",
+              "@ref:13": "dungeon"
+            }
+          }
+        }
+      ]
+    },
+    "d1s2.wave1": [
+      {
+        "type": "spawn",
+        "@ref:12": "cursed_dung1",
+        "@ref:13": "dungeon"
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "knight_dung1",
+        "@ref:13": "dungeon"
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 2,
+          "max": 3
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "leper_poison",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "probability",
+        "probability": 0.5,
+        "action": {
+          "type": "spawn",
+          "@ref:12": "maniac",
+          "@ref:13": "dungeon"
+        }
+      }
+    ],
+    "d1s2.wave2": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 1,
+          "max": 2
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "cursed_dung1",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "knight_dung1",
+        "@ref:13": "dungeon"
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 1,
+          "max": 2
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "leper_poison",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "probability",
+        "probability": 0.7,
+        "action": "tp_pack"
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "maniac",
+        "@ref:13": "dungeon"
+      }
+    ],
+    "d1s2.wave3": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 1,
+          "max": 2
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "cursed_dung1",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 1,
+          "max": 2
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "knight_dung1",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 1,
+          "max": 2
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "leper_poison",
+          "@ref:13": "dungeon"
+        }
+      },
+      "tp_pack",
+      {
+        "type": "spawn",
+        "@ref:12": "maniac",
+        "@ref:13": "dungeon"
+      }
+    ],
+    "d1s2.wave4": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 1,
+          "max": 2
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "cursed_dung1",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 2,
+          "max": 3
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "knight_dung1",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "leper_poison",
+        "@ref:13": "dungeon"
+      },
+      "tp_pack",
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 1,
+          "max": 2
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "maniac",
+          "@ref:13": "dungeon"
+        }
+      }
+    ],
+    "d1s2.wave5": [
+      {
+        "type": "spawn",
+        "@ref:12": "cursed_dung1",
+        "@ref:13": "dungeon"
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 2,
+          "max": 4
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "knight_dung1",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 1,
+          "max": 2
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "leper_poison",
+          "@ref:13": "dungeon"
+        }
+      },
+      "tp_pack",
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "maniac",
+          "@ref:13": "dungeon"
+        }
+      }
+    ],
+    "d1s2.wave6": [
+      {
+        "type": "spawn",
+        "@ref:12": "cursed_dung1",
+        "@ref:13": "dungeon"
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 3,
+          "max": 4
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "knight_dung1",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 1,
+          "max": 2
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "leper_poison",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "templar_berserk",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 2,
+          "max": 3
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "maniac",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "witch",
+        "@ref:13": "dungeon"
+      }
+    ],
+    "tp_pack": {
+      "type": "weight",
+      "weights": [
+        {
+          "weight": 5,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "templar_dung1",
+            "@ref:13": "dungeon"
+          }
+        },
+        {
+          "weight": 2,
+          "action": {
+            "type": "repeat",
+            "repeat": 3,
+            "script": {
+              "type": "spawn",
+              "@ref:12": "leper_poison",
+              "@ref:13": "dungeon"
+            }
+          }
+        }
+      ]
+    },
+    "d1s3.wave1": [
+      {
+        "type": "spawn",
+        "@ref:12": "templar_elite_1",
+        "@ref:13": "dungeon"
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "templar_elite_2",
+        "@ref:13": "dungeon"
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "templar_elite_3",
+        "@ref:13": "dungeon"
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "templar_elite_4",
+        "@ref:13": "dungeon"
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "eisenhorn",
+        "@ref:13": "dungeon"
+      }
+    ],
+    "d1s3.wave1.heroic": [
+      {
+        "type": "spawn",
+        "@ref:12": "templar_elite_1",
+        "@ref:13": "dungeon"
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "templar_elite_2",
+        "@ref:13": "dungeon"
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "templar_elite_3",
+        "@ref:13": "dungeon"
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "templar_elite_4",
+        "@ref:13": "dungeon"
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "eisenhorn.heroic",
+        "@ref:13": "dungeon"
+      }
+    ],
+    "d1.event": {
+      "type": "weight.filtered",
+      "weights": [
+        {
+          "weight": 6,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "player_bot_hard_1",
+            "@ref:13": "dungeon.enter"
+          }
+        },
+        {
+          "weight": 6,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "player_bot_hard_2",
+            "@ref:13": "dungeon.enter"
+          }
+        },
+        {
+          "weight": 6,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "player_bot_hard_3",
+            "@ref:13": "dungeon.enter"
+          }
+        },
+        {
+          "weight": 6,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "player_bot_hard_4",
+            "@ref:13": "dungeon.enter"
+          }
+        },
+        {
+          "weight": 6,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "player_bot_hard_5",
+            "@ref:13": "dungeon.enter"
+          }
+        },
+        {
+          "weight": 3,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "player_bot_hard_6",
+            "@ref:13": "dungeon.enter"
+          }
+        },
+        {
+          "weight": 3,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "player_bot_hard_7",
+            "@ref:13": "dungeon.enter"
+          }
+        },
+        {
+          "weight": 6,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "enemy_bot_tier_2",
+            "@ref:13": "dungeon.enter"
+          },
+          "filter": {
+            "type": "external",
+            "script": "enemy_bot.can_spawn"
+          }
+        }
+      ]
+    },
+    "d1.event.pve": {
+      "type": "weight",
+      "weights": [
+        {
+          "weight": 3,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "templar_dung1",
+            "@ref:13": "dungeon.enter"
+          }
+        },
+        {
+          "weight": 5,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "knight_dung1",
+            "@ref:13": "dungeon.enter"
+          }
+        }
+      ]
+    },
+    "dung02.level01.event.pve": {
+      "type": "weight",
+      "weights": [
+        {
+          "weight": 3,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "axe_thrower_dung",
+            "@ref:13": "dungeon.enter"
+          }
+        },
+        {
+          "weight": 3,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "shaman_dung",
+            "@ref:13": "dungeon.enter"
+          }
+        }
+      ]
+    },
+    "dung02.level02.event.pve": {
+      "type": "weight",
+      "weights": [
+        {
+          "weight": 3,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "axe_thrower_headhunter_dung",
+            "@ref:13": "dungeon.enter"
+          }
+        },
+        {
+          "weight": 3,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "shaman_dung",
+            "@ref:13": "dungeon.enter"
+          }
+        }
+      ]
+    },
+    "d2.event.pve": {
+      "type": "weight",
+      "weights": [
+        {
+          "weight": 2,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "templar_dung1",
+            "@ref:13": "dungeon.enter"
+          }
+        },
+        {
+          "weight": 5,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "knight_dung1",
+            "@ref:13": "dungeon.enter"
+          }
+        }
+      ]
+    },
+    "cemetery.easy_mob": {
+      "type": "weight",
+      "weights": [
+        {
+          "weight": 1,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "leper",
+            "@ref:13": "cemetery.distant"
+          }
+        },
+        {
+          "weight": 1,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "cursed",
+            "@ref:13": "cemetery.grave",
+            "activity": "spawn_grave"
+          }
+        }
+      ]
+    },
+    "cemetery.easy": {
+      "type": "repeat",
+      "repeat": {
+        "type": "range",
+        "min": 1,
+        "max": 2
+      },
+      "script": "cemetery.easy_mob"
+    },
+    "cemetery.med_mob": {
+      "type": "weight",
+      "weights": [
+        {
+          "weight": 15,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "leper",
+            "@ref:13": "cemetery.distant"
+          }
+        },
+        {
+          "weight": 17,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "cursed",
+            "@ref:13": "cemetery.grave",
+            "activity": "spawn_grave"
+          }
+        },
+        {
+          "weight": 1,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "knight",
+            "@ref:13": "cemetery.distant"
+          }
+        }
+      ]
+    },
+    "cemetery.med": {
+      "type": "repeat",
+      "repeat": {
+        "type": "range",
+        "min": 3,
+        "max": 4
+      },
+      "script": "cemetery.med_mob"
+    },
+    "boss_01.wave_mob": {
+      "type": "weight",
+      "weights": [
+        {
+          "weight": 3,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "cursed",
+            "@ref:13": "edge"
+          }
+        },
+        {
+          "weight": 5,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "wolf_decayed",
+            "@ref:13": "edge"
+          }
+        }
+      ]
+    },
+    "boss_01.wave": {
+      "type": "repeat",
+      "repeat": {
+        "type": "range",
+        "min": 6,
+        "max": 7
+      },
+      "script": "boss_01.wave_mob"
+    },
+    "halloween.tot": {
+      "type": "repeat",
+      "repeat": {
+        "type": "range",
+        "min": 4,
+        "max": 5
+      },
+      "script": {
+        "type": "spawn",
+        "@ref:12": "skeleton",
+        "@ref:13": "edge"
+      }
+    },
+    "h.cemetery.easy_mob": {
+      "type": "weight",
+      "weights": [
+        {
+          "weight": 1,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "leper",
+            "@ref:13": "cemetery.distant"
+          }
+        },
+        {
+          "weight": 1,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "skeleton",
+            "@ref:13": "cemetery.grave",
+            "activity": "spawn_grave"
+          }
+        }
+      ]
+    },
+    "h.cemetery.easy": {
+      "type": "repeat",
+      "repeat": {
+        "type": "range",
+        "min": 1,
+        "max": 2
+      },
+      "script": "h.cemetery.easy_mob"
+    },
+    "h.cemetery.med_mob": {
+      "type": "weight",
+      "weights": [
+        {
+          "weight": 15,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "leper",
+            "@ref:13": "cemetery.distant"
+          }
+        },
+        {
+          "weight": 20,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "skeleton",
+            "@ref:13": "cemetery.grave",
+            "activity": "spawn_grave"
+          }
+        }
+      ]
+    },
+    "h.cemetery.med": {
+      "type": "repeat",
+      "repeat": 3,
+      "script": "h.cemetery.med_mob"
+    },
+    "h.secret_room": {
+      "type": "weight",
+      "weights": [
+        {
+          "weight": 1,
+          "action": {
+            "type": "repeat",
+            "repeat": 14,
+            "script": {
+              "type": "spawn",
+              "@ref:12": "skeleton",
+              "@ref:13": "dungeon"
+            }
+          }
+        }
+      ]
+    },
+    "pvp.hard": {
+      "type": "weight.filtered",
+      "weights": [
+        {
+          "weight": 6,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "player_bot_hard_1",
+            "@ref:13": "edge",
+            "pin": "pvp"
+          }
+        },
+        {
+          "weight": 6,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "player_bot_hard_2",
+            "@ref:13": "edge",
+            "pin": "pvp"
+          }
+        },
+        {
+          "weight": 6,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "player_bot_hard_3",
+            "@ref:13": "edge",
+            "pin": "pvp"
+          }
+        },
+        {
+          "weight": 6,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "player_bot_hard_4",
+            "@ref:13": "edge",
+            "pin": "pvp"
+          }
+        },
+        {
+          "weight": 6,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "player_bot_hard_5",
+            "@ref:13": "edge",
+            "pin": "pvp"
+          }
+        },
+        {
+          "weight": 3,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "player_bot_hard_6",
+            "@ref:13": "edge",
+            "pin": "pvp"
+          }
+        },
+        {
+          "weight": 3,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "player_bot_hard_7",
+            "@ref:13": "edge",
+            "pin": "pvp"
+          }
+        },
+        {
+          "weight": 6,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "enemy_bot_tier_2",
+            "@ref:13": "edge",
+            "pin": "pvp"
+          },
+          "filter": {
+            "type": "external",
+            "script": "enemy_bot.can_spawn"
+          }
+        },
+        {
+          "weight": 6,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "enemy_bot_tier_3",
+            "@ref:13": "edge",
+            "pin": "pvp"
+          },
+          "filter": {
+            "type": "external",
+            "script": "enemy_bot.can_spawn"
+          }
+        }
+      ]
+    },
+    "pve.hard4": {
+      "type": "weight",
+      "weights": [
+        {
+          "weight": 6,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "archer",
+            "@ref:13": "edge",
+            "pin": "pve"
+          }
+        },
+        {
+          "weight": 6,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "rogue",
+            "@ref:13": "edge",
+            "pin": "pve"
+          }
+        },
+        {
+          "weight": 6,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "knight",
+            "@ref:13": "edge",
+            "pin": "pve"
+          }
+        },
+        {
+          "weight": 6,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "templar",
+            "@ref:13": "edge",
+            "pin": "pve"
+          }
+        },
+        {
+          "weight": 8,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "rogue_stun",
+            "@ref:13": "edge",
+            "pin": "pve"
+          }
+        },
+        {
+          "weight": 4,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "halt_shard_north",
+            "@ref:13": "edge",
+            "pin": "pve"
+          }
+        }
+      ]
+    },
+    "pve.hard5": {
+      "type": "weight",
+      "weights": [
+        {
+          "weight": 8,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "archer",
+            "@ref:13": "edge",
+            "pin": "pve"
+          }
+        },
+        {
+          "weight": 8,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "rogue_stun",
+            "@ref:13": "edge",
+            "pin": "pve"
+          }
+        },
+        {
+          "weight": 6,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "knight",
+            "@ref:13": "edge",
+            "pin": "pve"
+          }
+        },
+        {
+          "weight": 6,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "templar",
+            "@ref:13": "edge",
+            "pin": "pve"
+          }
+        },
+        {
+          "weight": 2,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "templar_shield",
+            "@ref:13": "edge",
+            "pin": "pve"
+          }
+        },
+        {
+          "weight": 4,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "halt_shard_north",
+            "@ref:13": "edge",
+            "pin": "pve"
+          }
+        },
+        {
+          "weight": 10,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "bat",
+            "@ref:13": "edge",
+            "pin": "pve"
+          }
+        }
+      ]
+    },
+    "pvp.hard4": {
+      "type": "weight.filtered",
+      "weights": [
+        {
+          "weight": 9,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "player_bot_veryhard_1",
+            "@ref:13": "edge",
+            "pin": "pvp"
+          }
+        },
+        {
+          "weight": 9,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "player_bot_veryhard_2",
+            "@ref:13": "edge",
+            "pin": "pvp"
+          }
+        },
+        {
+          "weight": 6,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "player_bot_veryhard_3",
+            "@ref:13": "edge",
+            "pin": "pvp"
+          }
+        },
+        {
+          "weight": 6,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "player_bot_veryhard_4",
+            "@ref:13": "edge",
+            "pin": "pvp"
+          }
+        },
+        {
+          "weight": 3,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "player_bot_veryhard_5",
+            "@ref:13": "edge",
+            "pin": "pvp"
+          }
+        },
+        {
+          "weight": 3,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "player_bot_veryhard_6",
+            "@ref:13": "edge",
+            "pin": "pvp"
+          }
+        },
+        {
+          "weight": 9,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "enemy_bot_tier_3",
+            "@ref:13": "edge",
+            "pin": "pvp"
+          },
+          "filter": {
+            "type": "external",
+            "script": "enemy_bot.can_spawn"
+          }
+        }
+      ]
+    },
+    "pvp.hard5": {
+      "type": "weight.filtered",
+      "weights": [
+        {
+          "weight": 6,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "player_bot_veryhard_1",
+            "@ref:13": "edge",
+            "pin": "pvp"
+          }
+        },
+        {
+          "weight": 6,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "player_bot_veryhard_2",
+            "@ref:13": "edge",
+            "pin": "pvp"
+          }
+        },
+        {
+          "weight": 6,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "player_bot_veryhard_3",
+            "@ref:13": "edge",
+            "pin": "pvp"
+          }
+        },
+        {
+          "weight": 6,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "player_bot_veryhard_4",
+            "@ref:13": "edge",
+            "pin": "pvp"
+          }
+        },
+        {
+          "weight": 6,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "player_bot_veryhard_5",
+            "@ref:13": "edge",
+            "pin": "pvp"
+          }
+        },
+        {
+          "weight": 3,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "player_bot_veryhard_6",
+            "@ref:13": "edge",
+            "pin": "pvp"
+          }
+        },
+        {
+          "weight": 3,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "player_bot_veryhard_7",
+            "@ref:13": "edge",
+            "pin": "pvp"
+          }
+        },
+        {
+          "weight": 6,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "enemy_bot_tier_3",
+            "@ref:13": "edge",
+            "pin": "pvp"
+          },
+          "filter": {
+            "type": "external",
+            "script": "enemy_bot.can_spawn"
+          }
+        }
+      ]
+    },
+    "xmas_deer.wave_mob": {
+      "type": "spawn",
+      "@ref:12": "xmas_walker",
+      "@ref:13": "edge",
+      "pin": "wave"
+    },
+    "xmas_deer.wave1": {
+      "type": "spawn",
+      "@ref:12": "xmas_walker",
+      "@ref:13": "edge",
+      "pin": "wave"
+    },
+    "xmas_deer.wave2": {
+      "type": "repeat",
+      "repeat": 2,
+      "script": {
+        "type": "spawn",
+        "@ref:12": "xmas_walker",
+        "@ref:13": "edge",
+        "pin": "wave"
+      }
+    },
+    "xmas_deer.wave3": {
+      "type": "repeat",
+      "repeat": 3,
+      "script": {
+        "type": "spawn",
+        "@ref:12": "xmas_walker",
+        "@ref:13": "edge",
+        "pin": "wave"
+      }
+    },
+    "xmas_deer.wave4": {
+      "type": "repeat",
+      "repeat": 3,
+      "script": {
+        "type": "spawn",
+        "@ref:12": "xmas_walker",
+        "@ref:13": "edge",
+        "pin": "wave"
+      }
+    },
+    "xmas_deer.wave5": {
+      "type": "repeat",
+      "repeat": 4,
+      "script": {
+        "type": "spawn",
+        "@ref:12": "xmas_walker",
+        "@ref:13": "edge",
+        "pin": "wave"
+      }
+    },
+    "xmas_deer.wave6": {
+      "type": "repeat",
+      "repeat": 4,
+      "script": {
+        "type": "spawn",
+        "@ref:12": "xmas_walker",
+        "@ref:13": "edge",
+        "pin": "wave"
+      }
+    },
+    "xmas_deer.wave7": {
+      "type": "repeat",
+      "repeat": 5,
+      "script": {
+        "type": "spawn",
+        "@ref:12": "xmas_walker",
+        "@ref:13": "edge",
+        "pin": "wave"
+      }
+    },
+    "xmas_secret_room": {
+      "type": "repeat",
+      "repeat": 12,
+      "script": {
+        "type": "spawn",
+        "@ref:12": "cursed_walker_factory",
+        "@ref:13": "dungeon"
+      }
+    },
+    "xmas_enemy.wave": {
+      "type": "repeat",
+      "repeat": 3,
+      "script": {
+        "type": "spawn",
+        "@ref:12": "cursed_walker_factory",
+        "@ref:13": "edge"
+      }
+    },
+    "anniversary.wave1": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 1,
+          "max": 2
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "cursed",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 3,
+          "max": 4
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "skeleton",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 1,
+          "max": 2
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "rogue",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 0,
+          "max": 1
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "rogue_stun",
+          "@ref:13": "dungeon"
+        }
+      }
+    ],
+    "anniversary.pve": {
+      "type": "weight",
+      "weights": [
+        {
+          "weight": 1,
+          "action": {
+            "type": "repeat",
+            "repeat": {
+              "type": "range",
+              "min": 1,
+              "max": 2
+            },
+            "script": {
+              "type": "spawn",
+              "@ref:12": "skeleton",
+              "@ref:13": "cemetery.grave",
+              "activity": "spawn_grave"
+            }
+          }
+        }
+      ]
+    },
+    "anniversary.dungeon.pve": {
+      "type": "weight",
+      "weights": [
+        {
+          "weight": 2,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "rogue_stun",
+            "@ref:13": "dungeon.enter"
+          }
+        },
+        {
+          "weight": 1,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "maniac",
+            "@ref:13": "dungeon.enter"
+          }
+        },
+        {
+          "weight": 2,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "skeleton",
+            "@ref:13": "dungeon.enter"
+          }
+        }
+      ]
+    },
+    "task106.wave1": {
+      "type": "repeat",
+      "repeat": 2,
+      "script": {
+        "type": "spawn",
+        "@ref:12": "leper",
+        "@ref:13": "edge"
+      }
+    },
+    "task106.wave2": {
+      "type": "repeat",
+      "repeat": 3,
+      "script": {
+        "type": "spawn",
+        "@ref:12": "leper",
+        "@ref:13": "edge"
+      }
+    },
+    "task106.wave3": {
+      "type": "spawn",
+      "@ref:12": "cursed",
+      "@ref:13": "edge"
+    },
+    "task107.wave1": {
+      "type": "repeat",
+      "repeat": 2,
+      "script": {
+        "type": "spawn",
+        "@ref:12": "leper_task107",
+        "@ref:13": "edge"
+      }
+    },
+    "task107.wave2": [
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "leper_task107",
+          "@ref:13": "edge"
+        }
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "cursed_task107_empty",
+        "@ref:13": "edge"
+      }
+    ],
+    "task107.wave3": [
+      {
+        "type": "spawn",
+        "@ref:12": "leper_task107",
+        "@ref:13": "edge"
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "cursed_task107_empty",
+        "@ref:13": "edge"
+      }
+    ],
+    "task107.wave4": [
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "leper_task107",
+          "@ref:13": "edge"
+        }
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "cursed_task107",
+        "@ref:13": "edge"
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "cursed_task107_empty",
+        "@ref:13": "edge"
+      }
+    ],
+    "task109.wave1": [
+      {
+        "type": "spawn",
+        "@ref:12": "leper",
+        "@ref:13": "edge"
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "cursed",
+        "@ref:13": "edge"
+      }
+    ],
+    "task109.wave2": [
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "leper",
+          "@ref:13": "edge"
+        }
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "cursed",
+        "@ref:13": "edge"
+      }
+    ],
+    "task109.wave3": {
+      "type": "spawn",
+      "@ref:12": "cursed",
+      "@ref:13": "edge"
+    },
+    "task1015.wave1": [
+      {
+        "type": "spawn",
+        "@ref:12": "cursed",
+        "@ref:13": "cemetery.grave.boss",
+        "activity": "spawn_grave"
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "leper_poison",
+        "@ref:13": "cemetery.grave.boss",
+        "activity": "spawn_grave"
+      }
+    ],
+    "task1015.wave2": [
+      {
+        "type": "spawn",
+        "@ref:12": "cursed",
+        "@ref:13": "cemetery.grave",
+        "activity": "spawn_grave"
+      },
+      {
+        "type": "repeat",
+        "repeat": 3,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "leper",
+          "@ref:13": "cemetery.grave",
+          "activity": "spawn_grave"
+        }
+      }
+    ],
+    "task1015.wave3": [
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "cursed",
+          "@ref:13": "cemetery.grave",
+          "activity": "spawn_grave"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 4,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "leper",
+          "@ref:13": "cemetery.grave",
+          "activity": "spawn_grave"
+        }
+      }
+    ],
+    "task201.wave1": [
+      {
+        "type": "repeat",
+        "repeat": 4,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "leper_soldier",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "leper_poison",
+        "@ref:13": "dungeon"
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "cursed_dung1",
+        "@ref:13": "dungeon"
+      }
+    ],
+    "task201.wave2": [
+      {
+        "type": "repeat",
+        "repeat": 5,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "leper_soldier",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "leper_poison",
+        "@ref:13": "dungeon"
+      },
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "cursed_dung1",
+          "@ref:13": "dungeon"
+        }
+      }
+    ],
+    "task201.wave3": [
+      {
+        "type": "repeat",
+        "repeat": 5,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "leper_soldier",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "leper_poison",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "cursed_dung1",
+          "@ref:13": "dungeon"
+        }
+      }
+    ],
+    "task201.wave4": [
+      {
+        "type": "repeat",
+        "repeat": 6,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "leper_soldier",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 3,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "leper_poison",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "cursed_dung1",
+          "@ref:13": "dungeon"
+        }
+      }
+    ],
+    "task213.witch_wave": [
+      {
+        "type": "spawn",
+        "@ref:12": "cursed",
+        "@ref:13": "cemetery.grave",
+        "activity": "spawn_grave"
+      },
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "leper",
+          "@ref:13": "cemetery.grave",
+          "activity": "spawn_grave"
+        }
+      }
+    ],
+    "task215.wave1": {
+      "type": "repeat",
+      "repeat": 6,
+      "script": {
+        "type": "spawn",
+        "@ref:12": "skeleton_task215",
+        "@ref:13": "edge"
+      }
+    },
+    "task215.wave2": {
+      "type": "repeat",
+      "repeat": 10,
+      "script": {
+        "type": "spawn",
+        "@ref:12": "skeleton_task215",
+        "@ref:13": "edge"
+      }
+    },
+    "task215.wave3": [
+      {
+        "type": "repeat",
+        "repeat": 4,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "skeleton_task215",
+          "@ref:13": "edge"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 6,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "night_guest_task215",
+          "@ref:13": "edge"
+        }
+      }
+    ],
+    "task301.wave1": [
+      {
+        "type": "repeat",
+        "repeat": 3,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "skeleton",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "rogue",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "cursed",
+          "@ref:13": "dungeon"
+        }
+      }
+    ],
+    "task301.wave2": [
+      {
+        "type": "repeat",
+        "repeat": 4,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "skeleton",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 3,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "rogue",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 3,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "cursed",
+          "@ref:13": "dungeon"
+        }
+      }
+    ],
+    "task301.wave3": [
+      {
+        "type": "repeat",
+        "repeat": 5,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "skeleton",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 3,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "rogue",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 4,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "cursed",
+          "@ref:13": "dungeon"
+        }
+      }
+    ],
+    "task301.wave4": [
+      {
+        "type": "repeat",
+        "repeat": 6,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "skeleton",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 4,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "rogue",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 4,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "cursed",
+          "@ref:13": "dungeon"
+        }
+      }
+    ],
+    "task303.wave1": {
+      "type": "repeat",
+      "repeat": 3,
+      "script": {
+        "type": "spawn",
+        "@ref:12": "leper_task303",
+        "@ref:13": "edge"
+      }
+    },
+    "task303.wave2": [
+      {
+        "type": "spawn",
+        "@ref:12": "knight_task303",
+        "@ref:13": "edge"
+      },
+      {
+        "type": "repeat",
+        "repeat": 3,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "leper_task303",
+          "@ref:13": "edge"
+        }
+      }
+    ],
+    "task303.wave3": [
+      {
+        "type": "repeat",
+        "repeat": 6,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "leper_task303",
+          "@ref:13": "edge"
+        }
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "knight_task303",
+        "@ref:13": "edge"
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "maniac_task303",
+        "@ref:13": "edge"
+      }
+    ],
+    "task303.wave4": [
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "maniac_task303",
+          "@ref:13": "edge"
+        }
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "knight_task303",
+        "@ref:13": "edge"
+      },
+      {
+        "type": "repeat",
+        "repeat": 6,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "leper_task303",
+          "@ref:13": "edge"
+        }
+      }
+    ],
+    "task303.wave5": [
+      {
+        "type": "repeat",
+        "repeat": 7,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "leper_task303",
+          "@ref:13": "edge"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "knight_task303",
+          "@ref:13": "edge"
+        }
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "maniac_task303",
+        "@ref:13": "edge"
+      }
+    ],
+    "task307.dung": [
+      {
+        "type": "repeat",
+        "repeat": 3,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "templar_task307",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 5,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "archer_task307",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 7,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "leper_soldier_task307",
+          "@ref:13": "dungeon"
+        }
+      }
+    ],
+    "task309.wave1": {
+      "type": "repeat",
+      "repeat": 5,
+      "script": {
+        "type": "spawn",
+        "@ref:12": "leper_task309",
+        "@ref:13": "edge"
+      }
+    },
+    "task309.wave2": [
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "bear_task309",
+          "@ref:13": "edge"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 3,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "leper_task309",
+          "@ref:13": "edge"
+        }
+      }
+    ],
+    "task309.wave3": [
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "knight_task309",
+          "@ref:13": "edge"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 3,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "leper_task309",
+          "@ref:13": "edge"
+        }
+      }
+    ],
+    "task309.wave4": [
+      {
+        "type": "repeat",
+        "repeat": 6,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "leper_task309",
+          "@ref:13": "edge"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 4,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "bear_task309",
+          "@ref:13": "edge"
+        }
+      }
+    ],
+    "task309.wave5": [
+      {
+        "type": "repeat",
+        "repeat": 4,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "bear_task309",
+          "@ref:13": "edge"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "knight_task309",
+          "@ref:13": "edge"
+        }
+      }
+    ],
+    "task309.wave6": [
+      {
+        "type": "repeat",
+        "repeat": 6,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "leper_task309",
+          "@ref:13": "edge"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 3,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "knight_task309",
+          "@ref:13": "edge"
+        }
+      }
+    ],
+    "task311.wave1": [
+      {
+        "type": "repeat",
+        "repeat": 3,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "rogue",
+          "@ref:13": "edge"
+        }
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "archer",
+        "@ref:13": "edge"
+      }
+    ],
+    "task311.wave2": [
+      {
+        "type": "repeat",
+        "repeat": 3,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "rogue",
+          "@ref:13": "edge"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "archer",
+          "@ref:13": "edge"
+        }
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "rogue_stun",
+        "@ref:13": "edge"
+      }
+    ],
+    "task311.wave3": [
+      {
+        "type": "repeat",
+        "repeat": 4,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "rogue",
+          "@ref:13": "edge"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "rogue_stun",
+          "@ref:13": "edge"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 3,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "archer",
+          "@ref:13": "edge"
+        }
+      }
+    ],
+    "task315.wave1": {
+      "type": "repeat",
+      "repeat": 4,
+      "script": {
+        "type": "spawn",
+        "@ref:12": "rogue_task315",
+        "@ref:13": "edge"
+      }
+    },
+    "task315.wave2": [
+      {
+        "type": "repeat",
+        "repeat": 4,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "rogue_task315",
+          "@ref:13": "edge"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "archer_task315",
+          "@ref:13": "edge"
+        }
+      }
+    ],
+    "task315.wave3": [
+      {
+        "type": "spawn",
+        "@ref:12": "rogue_stun_task315",
+        "@ref:13": "edge"
+      },
+      {
+        "type": "repeat",
+        "repeat": 5,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "rogue_task315",
+          "@ref:13": "edge"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 3,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "archer_task315",
+          "@ref:13": "edge"
+        }
+      }
+    ],
+    "task315.wave4": [
+      {
+        "type": "repeat",
+        "repeat": 6,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "rogue_task315",
+          "@ref:13": "edge"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 3,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "archer_task315",
+          "@ref:13": "edge"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "rogue_stun_task315",
+          "@ref:13": "edge"
+        }
+      }
+    ],
+    "task315.wave5": [
+      {
+        "type": "repeat",
+        "repeat": 3,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "archer_task315",
+          "@ref:13": "edge"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 4,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "rogue_stun_task315",
+          "@ref:13": "edge"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 6,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "rogue_task315",
+          "@ref:13": "edge"
+        }
+      }
+    ],
+    "xmas_bags.wave1": {
+      "type": "weight",
+      "weights": [
+        {
+          "weight": 1,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "rat_mutant_xmas",
+            "@ref:13": "edge",
+            "pin": "wave"
+          }
+        },
+        {
+          "weight": 1,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "cursed_xmas_aoe",
+            "@ref:13": "edge",
+            "pin": "wave"
+          }
+        }
+      ]
+    },
+    "xmas_bags.wave2": [
+      {
+        "type": "weight",
+        "weights": [
+          {
+            "weight": 1,
+            "action": {
+              "type": "spawn",
+              "@ref:12": "cursed_xmas_aoe",
+              "@ref:13": "edge",
+              "pin": "wave"
+            }
+          },
+          {
+            "weight": 1,
+            "action": {
+              "type": "spawn",
+              "@ref:12": "rat_mutant_xmas",
+              "@ref:13": "edge",
+              "pin": "wave"
+            }
+          }
+        ]
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "rat_mutant_xmas",
+        "@ref:13": "edge",
+        "pin": "wave"
+      }
+    ],
+    "xmas_bags.wave3": [
+      {
+        "type": "weight",
+        "weights": [
+          {
+            "weight": 1,
+            "action": {
+              "type": "spawn",
+              "@ref:12": "rat_mutant_xmas",
+              "@ref:13": "edge",
+              "pin": "wave"
+            }
+          },
+          {
+            "weight": 1,
+            "action": {
+              "type": "spawn",
+              "@ref:12": "cursed_xmas_aoe",
+              "@ref:13": "edge",
+              "pin": "wave"
+            }
+          }
+        ]
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "rat_mutant_xmas",
+        "@ref:13": "edge",
+        "pin": "wave"
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "cursed_xmas_aoe",
+        "@ref:13": "edge",
+        "pin": "wave"
+      }
+    ],
+    "xmas_bags.wave4": [
+      {
+        "type": "weight",
+        "weights": [
+          {
+            "weight": 30,
+            "action": {
+              "type": "spawn",
+              "@ref:12": "knight_xmas_aoe",
+              "@ref:13": "edge",
+              "pin": "wave"
+            }
+          },
+          {
+            "weight": 35,
+            "action": {
+              "type": "repeat",
+              "repeat": 2,
+              "script": {
+                "type": "spawn",
+                "@ref:12": "rat_mutant_xmas",
+                "@ref:13": "edge",
+                "pin": "wave"
+              }
+            }
+          },
+          {
+            "weight": 35,
+            "action": {
+              "type": "repeat",
+              "repeat": 2,
+              "script": {
+                "type": "spawn",
+                "@ref:12": "cursed_xmas_aoe",
+                "@ref:13": "edge",
+                "pin": "wave"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "type": "weight",
+        "weights": [
+          {
+            "weight": 7,
+            "action": {
+              "type": "repeat",
+              "repeat": 2,
+              "script": {
+                "type": "spawn",
+                "@ref:12": "rat_mutant_xmas",
+                "@ref:13": "edge",
+                "pin": "wave"
+              }
+            }
+          },
+          {
+            "weight": 3,
+            "action": {
+              "type": "repeat",
+              "repeat": 2,
+              "script": {
+                "type": "spawn",
+                "@ref:12": "cursed_xmas_aoe",
+                "@ref:13": "edge",
+                "pin": "wave"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "xmas_bags.wave5": [
+      {
+        "type": "weight",
+        "weights": [
+          {
+            "weight": 3,
+            "action": {
+              "type": "spawn",
+              "@ref:12": "knight_xmas_aoe",
+              "@ref:13": "edge",
+              "pin": "wave"
+            }
+          },
+          {
+            "weight": 2,
+            "action": {
+              "type": "spawn",
+              "@ref:12": "templar_xmas_aoe",
+              "@ref:13": "edge",
+              "pin": "wave"
+            }
+          }
+        ]
+      },
+      {
+        "type": "weight",
+        "weights": [
+          {
+            "weight": 3,
+            "action": {
+              "type": "repeat",
+              "repeat": 2,
+              "script": {
+                "type": "spawn",
+                "@ref:12": "rat_mutant_xmas",
+                "@ref:13": "edge",
+                "pin": "wave"
+              }
+            }
+          },
+          {
+            "weight": 2,
+            "action": {
+              "type": "repeat",
+              "repeat": 2,
+              "script": {
+                "type": "spawn",
+                "@ref:12": "cursed_xmas_aoe",
+                "@ref:13": "edge",
+                "pin": "wave"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "xmas_bags.wave6": [
+      {
+        "type": "weight",
+        "weights": [
+          {
+            "weight": 2,
+            "action": {
+              "type": "spawn",
+              "@ref:12": "knight_xmas_aoe",
+              "@ref:13": "edge",
+              "pin": "wave"
+            }
+          },
+          {
+            "weight": 3,
+            "action": {
+              "type": "spawn",
+              "@ref:12": "templar_xmas_aoe",
+              "@ref:13": "edge",
+              "pin": "wave"
+            }
+          }
+        ]
+      },
+      {
+        "type": "weight",
+        "weights": [
+          {
+            "weight": 2,
+            "action": {
+              "type": "repeat",
+              "repeat": {
+                "type": "range",
+                "min": 1,
+                "max": 2
+              },
+              "script": {
+                "type": "spawn",
+                "@ref:12": "rat_mutant_xmas",
+                "@ref:13": "edge",
+                "pin": "wave"
+              }
+            }
+          },
+          {
+            "weight": 3,
+            "action": {
+              "type": "repeat",
+              "repeat": {
+                "type": "range",
+                "min": 1,
+                "max": 2
+              },
+              "script": {
+                "type": "spawn",
+                "@ref:12": "cursed_xmas_aoe",
+                "@ref:13": "edge",
+                "pin": "wave"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "type": "weight",
+        "weights": [
+          {
+            "weight": 1,
+            "action": {
+              "type": "spawn",
+              "@ref:12": "rat_mutant_xmas",
+              "@ref:13": "edge",
+              "pin": "wave"
+            }
+          },
+          {
+            "weight": 1,
+            "action": {
+              "type": "spawn",
+              "@ref:12": "cursed_xmas_aoe",
+              "@ref:13": "edge",
+              "pin": "wave"
+            }
+          }
+        ]
+      }
+    ],
+    "xmas_bags.wave7": [
+      {
+        "type": "weight",
+        "weights": [
+          {
+            "weight": 1,
+            "action": {
+              "type": "spawn",
+              "@ref:12": "knight_xmas_aoe",
+              "@ref:13": "edge",
+              "pin": "wave"
+            }
+          },
+          {
+            "weight": 1,
+            "action": {
+              "type": "spawn",
+              "@ref:12": "templar_xmas_aoe",
+              "@ref:13": "edge",
+              "pin": "wave"
+            }
+          }
+        ]
+      },
+      {
+        "type": "weight",
+        "weights": [
+          {
+            "weight": 1,
+            "action": {
+              "type": "repeat",
+              "repeat": 2,
+              "script": {
+                "type": "spawn",
+                "@ref:12": "rat_mutant_xmas",
+                "@ref:13": "edge",
+                "pin": "wave"
+              }
+            }
+          },
+          {
+            "weight": 1,
+            "action": {
+              "type": "repeat",
+              "repeat": 2,
+              "script": {
+                "type": "spawn",
+                "@ref:12": "cursed_xmas_aoe",
+                "@ref:13": "edge",
+                "pin": "wave"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "type": "weight",
+        "weights": [
+          {
+            "weight": 1,
+            "action": {
+              "type": "spawn",
+              "@ref:12": "rat_mutant_xmas",
+              "@ref:13": "edge",
+              "pin": "wave"
+            }
+          },
+          {
+            "weight": 1,
+            "action": {
+              "type": "spawn",
+              "@ref:12": "cursed_xmas_aoe",
+              "@ref:13": "edge",
+              "pin": "wave"
+            }
+          }
+        ]
+      }
+    ],
+    "task407_3.wave1": [
+      {
+        "type": "repeat",
+        "repeat": 29,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "grave",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "grave_elisa",
+        "@ref:13": "dungeon"
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "grave_rupert",
+        "@ref:13": "dungeon"
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "grave_maret",
+        "@ref:13": "dungeon"
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "grave_hugin",
+        "@ref:13": "dungeon"
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "grave_iven",
+        "@ref:13": "dungeon"
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "grave_kerr",
+        "@ref:13": "dungeon"
+      }
+    ],
+    "task407_5.wave1": {
+      "type": "repeat",
+      "repeat": 2,
+      "script": {
+        "type": "spawn",
+        "@ref:12": "immortal_mob_task_407_5_no_agro",
+        "@ref:13": "dungeon"
+      }
+    },
+    "task407_7.wave1": {
+      "type": "repeat",
+      "repeat": 3,
+      "script": {
+        "type": "spawn",
+        "@ref:12": "nightmare_skeleton",
+        "@ref:13": "dungeon"
+      }
+    },
+    "task407_7.wave2": {
+      "type": "spawn",
+      "@ref:12": "nightmare_skeleton",
+      "@ref:13": "dungeon"
+    },
+    "task407_7.wave3": {
+      "type": "repeat",
+      "repeat": 2,
+      "script": {
+        "type": "spawn",
+        "@ref:12": "nightmare_skeleton",
+        "@ref:13": "dungeon"
+      }
+    },
+    "task407_7.wave4": {
+      "type": "repeat",
+      "repeat": 7,
+      "script": {
+        "type": "spawn",
+        "@ref:12": "nightmare_skeleton",
+        "@ref:13": "dungeon"
+      }
+    },
+    "task404_1.wave1": {
+      "type": "repeat",
+      "repeat": 3,
+      "script": {
+        "type": "spawn",
+        "@ref:12": "cursed_task_404_test_1",
+        "@ref:13": "edge"
+      }
+    },
+    "task404_1.wave2": [
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "cursed_task_404_test_1",
+          "@ref:13": "edge"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "rogue_task_404_test_1",
+          "@ref:13": "edge"
+        }
+      }
+    ],
+    "task404_1.wave3": [
+      {
+        "type": "spawn",
+        "@ref:12": "cursed_task_404_test_1",
+        "@ref:13": "edge"
+      },
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "rogue_task_404_test_1",
+          "@ref:13": "edge"
+        }
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "rogue_stun_task_404_test_1",
+        "@ref:13": "edge"
+      }
+    ],
+    "task404_1.wave4": [
+      {
+        "type": "repeat",
+        "repeat": 3,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "rogue_task_404_test_1",
+          "@ref:13": "edge"
+        }
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "rogue_stun_task_404_test_1",
+        "@ref:13": "edge"
+      },
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "archer_task_404_test_1",
+          "@ref:13": "edge"
+        }
+      }
+    ],
+    "task404_1.wave5": [
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "rogue_task_404_test_1",
+          "@ref:13": "edge"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "rogue_stun_task_404_test_1",
+          "@ref:13": "edge"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 3,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "archer_task_404_test_1",
+          "@ref:13": "edge"
+        }
+      }
+    ],
+    "task404_1.wave6": {
+      "type": "spawn",
+      "@ref:12": "keeper_task_404_test_1",
+      "@ref:13": "edge"
+    },
+    "task404_3.wave1": {
+      "type": "repeat",
+      "repeat": 3,
+      "script": {
+        "type": "spawn",
+        "@ref:12": "skeleton",
+        "@ref:13": "edge"
+      }
+    },
+    "task404_3.wave2": {
+      "type": "repeat",
+      "repeat": 5,
+      "script": {
+        "type": "spawn",
+        "@ref:12": "skeleton",
+        "@ref:13": "edge"
+      }
+    },
+    "task404_3.wave3": [
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "skeleton",
+          "@ref:13": "edge"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "castle_ghost",
+          "@ref:13": "edge"
+        }
+      }
+    ],
+    "task404_3.wave4": [
+      {
+        "type": "repeat",
+        "repeat": 4,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "skeleton",
+          "@ref:13": "edge"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "castle_ghost",
+          "@ref:13": "edge"
+        }
+      }
+    ],
+    "task404_3.wave5": {
+      "type": "spawn",
+      "@ref:12": "skeleton_boss_task_404_test_3",
+      "@ref:13": "edge"
+    },
+    "convoy.wave1": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 3,
+          "max": 5
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "convoy_leper",
+          "@ref:13": "spawn1"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 2,
+          "max": 3
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "convoy_cursed",
+          "@ref:13": "spawn1"
+        }
+      }
+    ],
+    "convoy.wave2": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 4,
+          "max": 6
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "convoy_leper",
+          "@ref:13": "spawn2"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 2,
+          "max": 1
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "convoy_cursed",
+          "@ref:13": "spawn2"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 0,
+          "max": 1
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "halt_shard",
+          "@ref:13": "spawn2"
+        }
+      }
+    ],
+    "convoy.wave3": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 5,
+          "max": 6
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "convoy_leper",
+          "@ref:13": "spawn3"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 2,
+          "max": 3
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "convoy_cursed",
+          "@ref:13": "spawn3"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 1,
+          "max": 2
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "halt_shard",
+          "@ref:13": "spawn3"
+        }
+      }
+    ],
+    "convoy.wave4": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 5,
+          "max": 6
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "convoy_leper",
+          "@ref:13": "spawn4"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 1,
+          "max": 2
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "convoy_cursed",
+          "@ref:13": "spawn4"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 1,
+          "max": 2
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "convoy_knight",
+          "@ref:13": "spawn4"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 2,
+          "max": 3
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "halt_shard",
+          "@ref:13": "spawn4"
+        }
+      }
+    ],
+    "convoy.wave5": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 6,
+          "max": 7
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "convoy_leper",
+          "@ref:13": "spawn5"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 3,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "convoy_cursed",
+          "@ref:13": "spawn5"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 3,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "halt_shard",
+          "@ref:13": "spawn5"
+        }
+      }
+    ],
+    "temple_dung.room1": {
+      "type": "repeat",
+      "repeat": {
+        "type": "range",
+        "min": 2,
+        "max": 4
+      },
+      "script": {
+        "type": "spawn",
+        "@ref:12": "victim_dung",
+        "@ref:13": "dungeon"
+      }
+    },
+    "temple_dung.room2": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 2,
+          "max": 4
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "victim_dung",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 1,
+          "max": 2
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "axe_thrower_dung",
+          "@ref:13": "dungeon"
+        }
+      }
+    ],
+    "temple_dung.room3": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 2,
+          "max": 4
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "victim_dung",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 1,
+          "max": 2
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "axe_thrower_dung",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "hangman_dung",
+        "@ref:13": "dungeon"
+      }
+    ],
+    "temple_dung.room4": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 2,
+          "max": 4
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "victim_dung",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 1,
+          "max": 3
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "axe_thrower_dung",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "hangman_dung",
+        "@ref:13": "dungeon"
+      }
+    ],
+    "mobs_trap.wave": {
+      "type": "spawn",
+      "@ref:12": "victim_dung",
+      "@ref:13": "dungeon.room_nearby"
+    },
+    "mobs_puzze.wave": {
+      "type": "spawn",
+      "@ref:12": "victim_dung_bowls",
+      "@ref:13": "dungeon.room_nearby"
+    },
+    "d2s1.wave1": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 2,
+          "max": 4
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "victim_dung",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "shaman_dung",
+        "@ref:13": "dungeon"
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 1,
+          "max": 2
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "axe_thrower_dung",
+          "@ref:13": "dungeon"
+        }
+      }
+    ],
+    "d2s1.wave2": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 1,
+          "max": 2
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "victim_dung",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 0,
+          "max": 1
+        },
+        "script": "range_pack"
+      },
+      "mix_pack"
+    ],
+    "d2s1.wave3": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 2,
+          "max": 4
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "victim_dung",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": "range_pack"
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 0,
+          "max": 1
+        },
+        "script": "heavy_pack"
+      }
+    ],
+    "d2s1.wave4": [
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "victim_dung",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": "range_pack"
+      },
+      "mix_pack",
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 0,
+          "max": 1
+        },
+        "script": "heavy_pack"
+      }
+    ],
+    "d2s1.wave5": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 2,
+          "max": 4
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "victim_dung",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 1,
+          "max": 2
+        },
+        "script": "range_pack"
+      },
+      "mix_pack",
+      "heavy_pack"
+    ],
+    "d2s1.wave6": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 1,
+          "max": 2
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "victim_dung",
+          "@ref:13": "dungeon"
+        }
+      },
+      "range_pack",
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 0,
+          "max": 1
+        },
+        "script": "mix_pack"
+      },
+      "heavy_pack",
+      {
+        "type": "spawn",
+        "@ref:12": "torturer_dung",
+        "@ref:13": "dungeon"
+      }
+    ],
+    "d2s1.wave7": [
+      {
+        "type": "spawn",
+        "@ref:12": "victim_dung",
+        "@ref:13": "dungeon"
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 0,
+          "max": 1
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "shaman_dung",
+          "@ref:13": "dungeon"
+        }
+      },
+      "mix_pack",
+      "heavy_pack",
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 1,
+          "max": 2
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "torturer_dung",
+          "@ref:13": "dungeon"
+        }
+      }
+    ],
+    "d2s1.wave8": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 2,
+          "max": 3
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "victim_dung",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 1,
+          "max": 2
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "axe_thrower_dung",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 1,
+          "max": 2
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "shaman_dung",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 1,
+          "max": 2
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "hangman_dung",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "torturer_dung",
+          "@ref:13": "dungeon"
+        }
+      }
+    ],
+    "range_pack": {
+      "type": "weight",
+      "weights": [
+        {
+          "weight": 2,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "shaman_dung",
+            "@ref:13": "dungeon"
+          }
+        },
+        {
+          "weight": 3,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "axe_thrower_dung",
+            "@ref:13": "dungeon"
+          }
+        }
+      ]
+    },
+    "mix_pack": {
+      "type": "weight",
+      "weights": [
+        {
+          "weight": 1,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "hangman_dung",
+            "@ref:13": "dungeon"
+          }
+        },
+        {
+          "weight": 2,
+          "action": {
+            "type": "repeat",
+            "repeat": 2,
+            "script": {
+              "type": "spawn",
+              "@ref:12": "axe_thrower_dung",
+              "@ref:13": "dungeon"
+            }
+          }
+        }
+      ]
+    },
+    "heavy_pack": {
+      "type": "weight",
+      "weights": [
+        {
+          "weight": 1,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "torturer_dung",
+            "@ref:13": "dungeon"
+          }
+        },
+        {
+          "weight": 1,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "hangman_dung",
+            "@ref:13": "dungeon"
+          }
+        }
+      ]
+    },
+    "catacomb_wave01_mob": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 2,
+          "max": 3
+        },
+        "script": "leper_pack_c"
+      },
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "cursed_dung1",
+          "@ref:13": "catacomb"
+        }
+      }
+    ],
+    "catacomb_wave02_mob": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 3,
+          "max": 4
+        },
+        "script": "leper_pack_c"
+      },
+      {
+        "type": "repeat",
+        "repeat": 3,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "cursed_dung1",
+          "@ref:13": "catacomb"
+        }
+      }
+    ],
+    "catacomb_wave03_mob": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 5,
+          "max": 6
+        },
+        "script": "leper_pack_c"
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 3,
+          "max": 4
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "cursed_dung1",
+          "@ref:13": "catacomb"
+        }
+      }
+    ],
+    "catacomb_wave04_mob": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 3,
+          "max": 5
+        },
+        "script": "leper_pack_c"
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 1,
+          "max": 2
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "cursed_dung1",
+          "@ref:13": "catacomb"
+        }
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "knight_dung1",
+        "@ref:13": "catacomb"
+      }
+    ],
+    "catacomb_wave05_mob": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 1,
+          "max": 2
+        },
+        "script": "leper_pack_c"
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 2,
+          "max": 3
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "cursed_dung1",
+          "@ref:13": "catacomb"
+        }
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "knight_dung1",
+        "@ref:13": "catacomb"
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 0,
+          "max": 1
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "templar_dung1",
+          "@ref:13": "catacomb"
+        }
+      }
+    ],
+    "catacomb_wave06_mob": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 2,
+          "max": 3
+        },
+        "script": "leper_pack_c"
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 2,
+          "max": 3
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "cursed_dung1",
+          "@ref:13": "catacomb"
+        }
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "maniac",
+        "@ref:13": "catacomb"
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 1,
+          "max": 2
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "knight_dung1",
+          "@ref:13": "catacomb"
+        }
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "templar_dung1",
+        "@ref:13": "catacomb"
+      }
+    ],
+    "catacomb_wave07_mob": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 3,
+          "max": 5
+        },
+        "script": "leper_pack_c"
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 3,
+          "max": 4
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "cursed_dung1",
+          "@ref:13": "catacomb"
+        }
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "maniac",
+        "@ref:13": "catacomb"
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "knight_dung1",
+        "@ref:13": "catacomb"
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "templar_berserk",
+        "@ref:13": "catacomb"
+      }
+    ],
+    "catacomb_wave08_mob": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 2,
+          "max": 3
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "victim_dung",
+          "@ref:13": "catacomb"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 1,
+          "max": 2
+        },
+        "script": "range_pack_c"
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 1,
+          "max": 2
+        },
+        "script": "heavy_pack_c"
+      }
+    ],
+    "catacomb_wave09_mob": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 3,
+          "max": 4
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "victim_dung",
+          "@ref:13": "catacomb"
+        }
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "rogue_stun",
+        "@ref:13": "catacomb"
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 2,
+          "max": 3
+        },
+        "script": "range_pack_c"
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 1,
+          "max": 2
+        },
+        "script": "heavy_pack_c"
+      }
+    ],
+    "catacomb_wave10_mob": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 2,
+          "max": 3
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "victim_dung",
+          "@ref:13": "catacomb"
+        }
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "rogue_stun",
+        "@ref:13": "catacomb"
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 1,
+          "max": 2
+        },
+        "script": "range_pack_c"
+      },
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": "heavy_pack_c"
+      }
+    ],
+    "catacomb_wave11_mob": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 2,
+          "max": 4
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "victim_dung",
+          "@ref:13": "catacomb"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 1,
+          "max": 2
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "rogue_stun",
+          "@ref:13": "catacomb"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": "range_pack_c"
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 2,
+          "max": 3
+        },
+        "script": "heavy_pack_c"
+      }
+    ],
+    "catacomb_wave12_mob": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 2,
+          "max": 4
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "victim_dung",
+          "@ref:13": "catacomb"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "rogue_stun",
+          "@ref:13": "catacomb"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 2,
+          "max": 3
+        },
+        "script": "range_pack_c"
+      },
+      {
+        "type": "repeat",
+        "repeat": 3,
+        "script": "heavy_pack_c"
+      }
+    ],
+    "catacomb_wave13_mob": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 3,
+          "max": 5
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "victim_dung",
+          "@ref:13": "catacomb"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 2,
+          "max": 3
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "rogue_stun",
+          "@ref:13": "catacomb"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 3,
+        "script": "range_pack_c"
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 3,
+          "max": 4
+        },
+        "script": "heavy_pack_c"
+      }
+    ],
+    "catacomb_wave14_mob": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 4,
+          "max": 5
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "victim_dung",
+          "@ref:13": "catacomb"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 2,
+          "max": 3
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "rogue_stun",
+          "@ref:13": "catacomb"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 3,
+          "max": 4
+        },
+        "script": "range_pack_c"
+      },
+      {
+        "type": "repeat",
+        "repeat": 4,
+        "script": "heavy_pack_c"
+      }
+    ],
+    "catacomb_wave15_mob": [
+      {
+        "type": "repeat",
+        "repeat": 5,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "victim_dung",
+          "@ref:13": "catacomb"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 3,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "rogue_stun",
+          "@ref:13": "catacomb"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 4,
+        "script": "range_pack_c"
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 4,
+          "max": 5
+        },
+        "script": "heavy_pack_c"
+      }
+    ],
+    "leper_pack_c": {
+      "type": "weight",
+      "weights": [
+        {
+          "weight": 5,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "leper_soldier",
+            "@ref:13": "catacomb"
+          }
+        },
+        {
+          "weight": 2,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "leper_poison",
+            "@ref:13": "catacomb"
+          }
+        }
+      ]
+    },
+    "mid_pack_c": {
+      "type": "weight",
+      "weights": [
+        {
+          "weight": 5,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "knight_dung1",
+            "@ref:13": "catacomb"
+          }
+        },
+        {
+          "weight": 2,
+          "action": {
+            "type": "repeat",
+            "repeat": 3,
+            "script": {
+              "type": "spawn",
+              "@ref:12": "cursed_dung1",
+              "@ref:13": "catacomb"
+            }
+          }
+        }
+      ]
+    },
+    "range_pack_c": {
+      "type": "weight",
+      "weights": [
+        {
+          "weight": 2,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "shaman_dung",
+            "@ref:13": "catacomb"
+          }
+        },
+        {
+          "weight": 3,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "axe_thrower_dung",
+            "@ref:13": "catacomb"
+          }
+        }
+      ]
+    },
+    "heavy_pack_c": {
+      "type": "weight",
+      "weights": [
+        {
+          "weight": 1,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "torturer_dung",
+            "@ref:13": "catacomb"
+          }
+        },
+        {
+          "weight": 1,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "hangman_dung",
+            "@ref:13": "catacomb"
+          }
+        }
+      ]
+    },
+    "catacomb01_wave01": "catacomb_wave01_mob",
+    "catacomb01_wave02": "catacomb_wave02_mob",
+    "catacomb01_wave03": "catacomb_wave03_mob",
+    "catacomb02_wave01": "catacomb_wave04_mob",
+    "catacomb02_wave02": "catacomb_wave05_mob",
+    "catacomb02_wave03": "catacomb_wave06_mob",
+    "catacomb03_wave01": "catacomb_wave07_mob",
+    "catacomb03_wave02": "catacomb_wave08_mob",
+    "catacomb03_wave03": "catacomb_wave09_mob",
+    "catacomb04_wave01": "catacomb_wave10_mob",
+    "catacomb04_wave02": "catacomb_wave11_mob",
+    "catacomb04_wave03": "catacomb_wave12_mob",
+    "catacomb05_wave01": "catacomb_wave13_mob",
+    "catacomb05_wave02": "catacomb_wave14_mob",
+    "catacomb05_wave03": "catacomb_wave15_mob",
+    "night_stash.room2": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 2,
+          "max": 3
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "servant_nameless_neophyte",
+          "@ref:13": ""
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 1,
+          "max": 3
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "skeleton",
+          "@ref:13": ""
+        }
+      }
+    ],
+    "night_stash.room3": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 2,
+          "max": 3
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "servant_nameless_neophyte",
+          "@ref:13": ""
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 1,
+          "max": 3
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "skeleton",
+          "@ref:13": ""
+        }
+      }
+    ],
+    "hw_secret_room": {
+      "type": "repeat",
+      "repeat": 14,
+      "script": {
+        "type": "spawn",
+        "@ref:12": "skeleton",
+        "@ref:13": "dungeon"
+      }
+    },
+    "d2s2.wave1": [
+      {
+        "type": "repeat",
+        "repeat": 3,
+        "script": "range_pack_s2"
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "fire_spawn_dung",
+        "@ref:13": "dungeon"
+      },
+      {
+        "type": "repeat",
+        "repeat": 4,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "victim_dung",
+          "@ref:13": "dungeon"
+        }
+      }
+    ],
+    "d2s2.wave2": [
+      {
+        "type": "repeat",
+        "repeat": 5,
+        "script": "range_pack_s2"
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "fire_spawn_dung",
+        "@ref:13": "dungeon"
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 5,
+          "max": 6
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "victim_dung",
+          "@ref:13": "dungeon"
+        }
+      }
+    ],
+    "d2s2.wave3": [
+      {
+        "type": "repeat",
+        "repeat": 5,
+        "script": "range_pack_s2"
+      },
+      "mix_pack_s2",
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 4,
+          "max": 5
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "victim_dung",
+          "@ref:13": "dungeon"
+        }
+      }
+    ],
+    "d2s2.wave4": [
+      "range_pack_s2",
+      "heavy_pack_s2",
+      "mix_pack_s2"
+    ],
+    "d2s2.wave5": [
+      {
+        "type": "repeat",
+        "repeat": 3,
+        "script": "range_pack_s2"
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "hangman_punisher_dung",
+        "@ref:13": "dungeon"
+      },
+      "heavy_pack_s2",
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 1,
+          "max": 2
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "victim_dung",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "fire_spawn_dung",
+        "@ref:13": "dungeon"
+      }
+    ],
+    "d2s2.wave6": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 4,
+          "max": 5
+        },
+        "script": "range_pack_s2"
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 1,
+          "max": 2
+        },
+        "script": "mix_pack_s2"
+      },
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": "heavy_pack_s2"
+      },
+      {
+        "type": "repeat",
+        "repeat": 3,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "victim_dung",
+          "@ref:13": "dungeon"
+        }
+      }
+    ],
+    "d2s2.wave7": [
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "fire_spawn_dung",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 1,
+          "max": 2
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "axe_thrower_headhunter_dung",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "shaman_dung",
+        "@ref:13": "dungeon"
+      },
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "cruel_torturer_dung",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "hangman_punisher_dung",
+          "@ref:13": "dungeon"
+        }
+      }
+    ],
+    "d2s2.wave_puzzle_firetrap": [
+      {
+        "type": "spawn",
+        "@ref:12": "victim_dung_puzzle",
+        "@ref:13": "dungeon"
+      },
+      "d2s2.wave4"
+    ],
+    "d2s3.wave1": {
+      "type": "spawn",
+      "@ref:12": "karn",
+      "@ref:13": "dungeon",
+      "pin": "karn"
+    },
+    "range_pack_s2": {
+      "type": "weight",
+      "weights": [
+        {
+          "weight": 1,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "shaman_dung",
+            "@ref:13": "dungeon"
+          }
+        },
+        {
+          "weight": 1,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "axe_thrower_headhunter_dung",
+            "@ref:13": "dungeon"
+          }
+        }
+      ]
+    },
+    "mix_pack_s2": {
+      "type": "weight",
+      "weights": [
+        {
+          "weight": 1,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "hangman_punisher_dung",
+            "@ref:13": "dungeon"
+          }
+        },
+        {
+          "weight": 1,
+          "action": {
+            "type": "repeat",
+            "repeat": {
+              "type": "range",
+              "min": 1,
+              "max": 2
+            },
+            "script": {
+              "type": "spawn",
+              "@ref:12": "fire_spawn_dung",
+              "@ref:13": "dungeon"
+            }
+          }
+        }
+      ]
+    },
+    "heavy_pack_s2": {
+      "type": "weight",
+      "weights": [
+        {
+          "weight": 3,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "cruel_torturer_dung",
+            "@ref:13": "dungeon"
+          }
+        },
+        {
+          "weight": 5,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "hangman_punisher_dung",
+            "@ref:13": "dungeon"
+          }
+        }
+      ]
+    },
+    "mobs_puzzle_d2s2.wave": {
+      "type": "repeat",
+      "repeat": {
+        "type": "range",
+        "min": 1,
+        "max": 3
+      },
+      "script": {
+        "type": "spawn",
+        "@ref:12": "victim_dung_bowls",
+        "@ref:13": "dungeon.room_nearby"
+      }
+    },
+    "mobs_trap_d2s2.wave": {
+      "type": "repeat",
+      "repeat": {
+        "type": "range",
+        "min": 1,
+        "max": 3
+      },
+      "script": {
+        "type": "spawn",
+        "@ref:12": "victim_dung",
+        "@ref:13": "dungeon.room_nearby"
+      }
+    },
+    "challenge_3_easy.wave1": {
+      "type": "repeat",
+      "repeat": 3,
+      "script": {
+        "type": "spawn",
+        "@ref:12": "cursed_mutant",
+        "@ref:13": "dungeon"
+      }
+    },
+    "challenge_3_easy.wave2": {
+      "type": "repeat",
+      "repeat": 5,
+      "script": {
+        "type": "spawn",
+        "@ref:12": "cursed_mutant",
+        "@ref:13": "dungeon"
+      }
+    },
+    "challenge_3_normal.wave1": [
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "rat_mutant",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "cursed_mutant",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 4,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "knight_mutant",
+          "@ref:13": "dungeon"
+        }
+      }
+    ],
+    "challenge_3_normal.wave2": [
+      {
+        "type": "repeat",
+        "repeat": 3,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "rat_mutant",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 3,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "cursed_mutant",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 5,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "knight_mutant",
+          "@ref:13": "dungeon"
+        }
+      }
+    ],
+    "challenge_3_normal.wave3": [
+      {
+        "type": "repeat",
+        "repeat": 4,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "rat_mutant",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 4,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "cursed_mutant",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 6,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "knight_mutant",
+          "@ref:13": "dungeon"
+        }
+      }
+    ],
+    "challenge_3_hard.wave1": [
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "rat_mutant",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "cursed_mutant",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "knight_mutant",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "fat_mutant",
+          "@ref:13": "dungeon"
+        }
+      }
+    ],
+    "challenge_3_hard.wave2": [
+      {
+        "type": "repeat",
+        "repeat": 3,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "rat_mutant",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 3,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "cursed_mutant",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "knight_mutant",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 4,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "fat_mutant",
+          "@ref:13": "dungeon"
+        }
+      }
+    ],
+    "challenge_3_hard.wave3": [
+      {
+        "type": "repeat",
+        "repeat": 4,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "rat_mutant",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 4,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "cursed_mutant",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 3,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "knight_mutant",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 6,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "fat_mutant",
+          "@ref:13": "dungeon"
+        }
+      }
+    ],
+    "santa_vs_claus.wave1": {
+      "type": "repeat",
+      "repeat": {
+        "type": "range",
+        "min": 1,
+        "max": 2
+      },
+      "script": {
+        "type": "spawn",
+        "@ref:12": "xmas_walker_standart",
+        "@ref:13": "edge",
+        "pin": "wave"
+      }
+    },
+    "santa_vs_claus.wave1_extra": {
+      "type": "repeat",
+      "repeat": 2,
+      "script": {
+        "type": "spawn",
+        "@ref:12": "rat_mutant_xmas",
+        "@ref:13": "edge",
+        "pin": "wave"
+      }
+    },
+    "santa_vs_claus.wave2": [
+      {
+        "type": "spawn",
+        "@ref:12": "rat_mutant_xmas",
+        "@ref:13": "edge",
+        "pin": "wave"
+      },
+      {
+        "type": "probability",
+        "probability": 0.2,
+        "action": {
+          "type": "spawn",
+          "@ref:12": "rat_mutant_xmas",
+          "@ref:13": "edge",
+          "pin": "wave"
+        }
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "xmas_walker_standart",
+        "@ref:13": "edge",
+        "pin": "wave"
+      }
+    ],
+    "santa_vs_claus.wave2_extra": {
+      "type": "spawn",
+      "@ref:12": "knight_mutant_xmas",
+      "@ref:13": "edge",
+      "pin": "wave"
+    },
+    "santa_vs_claus.wave3": [
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "rat_mutant_xmas",
+          "@ref:13": "edge",
+          "pin": "wave"
+        }
+      },
+      {
+        "type": "probability",
+        "probability": 0.3,
+        "action": {
+          "type": "spawn",
+          "@ref:12": "rat_mutant_xmas",
+          "@ref:13": "edge",
+          "pin": "wave"
+        }
+      }
+    ],
+    "santa_vs_claus.wave3_extra": {
+      "type": "spawn",
+      "@ref:12": "fat_mutant_xmas",
+      "@ref:13": "edge",
+      "pin": "wave"
+    },
+    "santa_vs_claus.wave4": {
+      "type": "weight",
+      "weights": [
+        {
+          "weight": 1,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "knight_mutant_xmas",
+            "@ref:13": "edge",
+            "pin": "wave"
+          }
+        },
+        {
+          "weight": 1,
+          "action": {
+            "type": "repeat",
+            "repeat": 2,
+            "script": {
+              "type": "spawn",
+              "@ref:12": "xmas_walker_standart",
+              "@ref:13": "edge",
+              "pin": "wave"
+            }
+          }
+        }
+      ]
+    },
+    "santa_vs_claus.wave4_extra": [
+      {
+        "type": "spawn",
+        "@ref:12": "fat_mutant_xmas",
+        "@ref:13": "edge",
+        "pin": "wave"
+      },
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "knight_mutant_xmas",
+          "@ref:13": "edge",
+          "pin": "wave"
+        }
+      }
+    ],
+    "santa_vs_claus.wave5": [
+      {
+        "type": "spawn",
+        "@ref:12": "fat_mutant_xmas",
+        "@ref:13": "edge",
+        "pin": "wave"
+      },
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "rat_mutant_xmas",
+          "@ref:13": "edge",
+          "pin": "wave"
+        }
+      }
+    ],
+    "santa_vs_claus.wave5_extra": {
+      "type": "repeat",
+      "repeat": 5,
+      "script": {
+        "type": "spawn",
+        "@ref:12": "xmas_walker_standart",
+        "@ref:13": "edge",
+        "pin": "wave"
+      }
+    },
+    "santa_vs_claus.wave6": {
+      "type": "repeat",
+      "repeat": 5,
+      "script": {
+        "type": "spawn",
+        "@ref:12": "rat_mutant_xmas",
+        "@ref:13": "edge",
+        "pin": "wave"
+      }
+    },
+    "santa_vs_claus.wave6_extra": {
+      "type": "repeat",
+      "repeat": 5,
+      "script": {
+        "type": "spawn",
+        "@ref:12": "rat_mutant_xmas",
+        "@ref:13": "edge",
+        "pin": "wave"
+      }
+    },
+    "santa_vs_claus.wave7": {
+      "type": "weight",
+      "weights": [
+        {
+          "weight": 1,
+          "action": {
+            "type": "spawn",
+            "@ref:12": "xmas_walker_standart",
+            "@ref:13": "edge",
+            "pin": "wave"
+          }
+        },
+        {
+          "weight": 1,
+          "action": {
+            "type": "repeat",
+            "repeat": 2,
+            "script": {
+              "type": "spawn",
+              "@ref:12": "rat_mutant_xmas",
+              "@ref:13": "edge",
+              "pin": "wave"
+            }
+          }
+        }
+      ]
+    },
+    "santa_vs_claus.wave7_extra": {
+      "type": "spawn",
+      "@ref:12": "rat_mutant_xmas",
+      "@ref:13": "edge",
+      "pin": "wave"
+    },
+    "xmas_santa_factory_wave": {
+      "type": "spawn",
+      "@ref:12": "cursed_walker_factory",
+      "@ref:13": "explosion_wave"
+    },
+    "observatory_ground_wave": [
+      {
+        "type": "spawn",
+        "@ref:12": "scholar_ghost",
+        "@ref:13": "explosion_wave"
+      },
+      {
+        "type": "probability",
+        "probability": 0.5,
+        "action": {
+          "type": "spawn",
+          "@ref:12": "scribe_ghost",
+          "@ref:13": "explosion_wave"
+        }
+      }
+    ],
+    "ancient_sepulchre_dungeon_wave_1": {
+      "type": "spawn",
+      "@ref:12": "ancient_sepulchre_friendly_poleaxeman",
+      "@ref:13": "dungeon"
+    },
+    "ancient_sepulchre_dungeon_wave_2": {
+      "type": "repeat",
+      "repeat": 4,
+      "script": {
+        "type": "spawn",
+        "@ref:12": "ancient_sepulchre_skeleton_archer",
+        "@ref:13": "dungeon"
+      }
+    },
+    "ancient_sepulchre_dungeon_wave_3": {
+      "type": "repeat",
+      "repeat": 4,
+      "script": {
+        "type": "spawn",
+        "@ref:12": "ancient_sepulchre_ghost",
+        "@ref:13": "dungeon"
+      }
+    },
+    "ancient_sepulchre_dungeon_wave_4": {
+      "type": "spawn",
+      "@ref:12": "ancient_sepulchre_skeleton_shield",
+      "@ref:13": "dungeon"
+    },
+    "ancient_sepulchre_dungeon_wave_5": {
+      "type": "spawn",
+      "@ref:12": "ancient_sepulchre_friendly_archer",
+      "@ref:13": "dungeon"
+    },
+    "ancient_sepulchre_dungeon_wave_6": [
+      {
+        "type": "repeat",
+        "repeat": 4,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "ancient_sepulchre_skeleton_archer",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 4,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "ancient_sepulchre_skeleton_medium",
+          "@ref:13": "dungeon"
+        }
+      }
+    ],
+    "ancient_sepulchre_dungeon_wave_7": [
+      {
+        "type": "weight",
+        "weights": [
+          {
+            "weight": 1,
+            "action": {
+              "type": "spawn",
+              "@ref:12": "ancient_sepulchre_skeleton_medium",
+              "@ref:13": "dungeon"
+            }
+          },
+          {
+            "weight": 1,
+            "action": {
+              "type": "repeat",
+              "repeat": 3,
+              "script": {
+                "type": "spawn",
+                "@ref:12": "ancient_sepulchre_ghost",
+                "@ref:13": "dungeon"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "ancient_sepulchre_banshee",
+        "@ref:13": "dungeon"
+      }
+    ],
+    "ancient_sepulchre_dungeon_wave_8": {
+      "type": "spawn",
+      "@ref:12": "ancient_sepulchre_friendly_pernachman",
+      "@ref:13": "dungeon"
+    },
+    "ancient_sepulchre_dungeon_wave_9": [
+      {
+        "type": "spawn",
+        "@ref:12": "ancient_sepulchre_skeleton_knight",
+        "@ref:13": "dungeon"
+      },
+      {
+        "type": "repeat",
+        "repeat": 4,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "ancient_sepulchre_skeleton_archer",
+          "@ref:13": "dungeon"
+        }
+      }
+    ],
+    "ancient_sepulchre_dungeon_wave_10": [
+      {
+        "type": "weight",
+        "weights": [
+          {
+            "weight": 1,
+            "action": {
+              "type": "spawn",
+              "@ref:12": "ancient_sepulchre_skeleton_knight",
+              "@ref:13": "dungeon"
+            }
+          },
+          {
+            "weight": 1,
+            "action": {
+              "type": "spawn",
+              "@ref:12": "ancient_sepulchre_skeleton_shield",
+              "@ref:13": "dungeon"
+            }
+          },
+          {
+            "weight": 1,
+            "action": {
+              "type": "spawn",
+              "@ref:12": "ancient_sepulchre_banshee",
+              "@ref:13": "dungeon"
+            }
+          }
+        ]
+      },
+      {
+        "type": "weight",
+        "weights": [
+          {
+            "weight": 1,
+            "action": {
+              "type": "spawn",
+              "@ref:12": "ancient_sepulchre_skeleton_knight",
+              "@ref:13": "dungeon"
+            }
+          },
+          {
+            "weight": 1,
+            "action": {
+              "type": "spawn",
+              "@ref:12": "ancient_sepulchre_skeleton_shield",
+              "@ref:13": "dungeon"
+            }
+          },
+          {
+            "weight": 1,
+            "action": {
+              "type": "spawn",
+              "@ref:12": "ancient_sepulchre_banshee",
+              "@ref:13": "dungeon"
+            }
+          }
+        ]
+      }
+    ],
+    "ancient_sepulchre_dungeon_wave_11": {
+      "type": "spawn",
+      "@ref:12": "ancient_sepulchre_friendly_swordsman",
+      "@ref:13": "dungeon"
+    },
+    "ancient_sepulchre_dungeon_wave_12": {
+      "type": "repeat",
+      "repeat": 13,
+      "script": {
+        "type": "spawn",
+        "@ref:12": "ancient_sepulchre_ghost",
+        "@ref:13": "dungeon"
+      }
+    },
+    "ancient_sepulchre_dungeon_wave_final": {
+      "type": "spawn",
+      "@ref:12": "ancient_sepulchre_boss",
+      "@ref:13": "dungeon"
+    },
+    "ancient_sepulchre_dungeon_easy_wave_1": {
+      "type": "spawn",
+      "@ref:12": "sepulchre_friendly_poleaxeman_easy",
+      "@ref:13": "dungeon"
+    },
+    "ancient_sepulchre_dungeon_easy_wave_2": [
+      {
+        "type": "spawn",
+        "@ref:12": "sepulchre_skeleton_melee_easy",
+        "@ref:13": "dungeon"
+      },
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "sepulchre_skeleton_range_easy",
+          "@ref:13": "dungeon"
+        }
+      }
+    ],
+    "ancient_sepulchre_dungeon_easy_wave_3": {
+      "type": "repeat",
+      "repeat": 3,
+      "script": {
+        "type": "spawn",
+        "@ref:12": "sepulchre_ghost_easy",
+        "@ref:13": "dungeon"
+      }
+    },
+    "ancient_sepulchre_dungeon_easy_wave_4": {
+      "type": "spawn",
+      "@ref:12": "sepulchre_skeleton_shield_easy",
+      "@ref:13": "dungeon"
+    },
+    "ancient_sepulchre_dungeon_easy_wave_5": {
+      "type": "spawn",
+      "@ref:12": "sepulchre_friendly_archer_easy",
+      "@ref:13": "dungeon"
+    },
+    "ancient_sepulchre_dungeon_easy_wave_6": [
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "sepulchre_skeleton_range_easy",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "sepulchre_skeleton_melee_easy",
+        "@ref:13": "dungeon"
+      }
+    ],
+    "ancient_sepulchre_dungeon_easy_wave_7": {
+      "type": "spawn",
+      "@ref:12": "sepulchre_banshee_easy",
+      "@ref:13": "dungeon"
+    },
+    "ancient_sepulchre_dungeon_easy_wave_8": {
+      "type": "spawn",
+      "@ref:12": "sepulchre_friendly_pernachman_easy",
+      "@ref:13": "dungeon"
+    },
+    "ancient_sepulchre_dungeon_easy_wave_9": {
+      "type": "spawn",
+      "@ref:12": "sepulchre_skeleton_knight_easy",
+      "@ref:13": "dungeon"
+    },
+    "ancient_sepulchre_dungeon_easy_wave_10": [
+      {
+        "type": "weight",
+        "weights": [
+          {
+            "weight": 1,
+            "action": {
+              "type": "spawn",
+              "@ref:12": "sepulchre_skeleton_knight_easy",
+              "@ref:13": "dungeon"
+            }
+          },
+          {
+            "weight": 1,
+            "action": {
+              "type": "spawn",
+              "@ref:12": "sepulchre_skeleton_shield_easy",
+              "@ref:13": "dungeon"
+            }
+          },
+          {
+            "weight": 1,
+            "action": {
+              "type": "spawn",
+              "@ref:12": "sepulchre_banshee_easy",
+              "@ref:13": "dungeon"
+            }
+          }
+        ]
+      },
+      {
+        "type": "weight",
+        "weights": [
+          {
+            "weight": 1,
+            "action": {
+              "type": "spawn",
+              "@ref:12": "sepulchre_skeleton_knight_easy",
+              "@ref:13": "dungeon"
+            }
+          },
+          {
+            "weight": 1,
+            "action": {
+              "type": "spawn",
+              "@ref:12": "sepulchre_skeleton_shield_easy",
+              "@ref:13": "dungeon"
+            }
+          },
+          {
+            "weight": 1,
+            "action": {
+              "type": "spawn",
+              "@ref:12": "sepulchre_banshee_easy",
+              "@ref:13": "dungeon"
+            }
+          }
+        ]
+      }
+    ],
+    "ancient_sepulchre_dungeon_easy_wave_11": {
+      "type": "spawn",
+      "@ref:12": "sepulchre_friendly_swordsman_easy",
+      "@ref:13": "dungeon"
+    },
+    "ancient_sepulchre_dungeon_easy_wave_12": {
+      "type": "repeat",
+      "repeat": 5,
+      "script": {
+        "type": "spawn",
+        "@ref:12": "sepulchre_ghost_easy",
+        "@ref:13": "dungeon"
+      }
+    },
+    "ancient_sepulchre_dungeon_easy_wave_final": {
+      "type": "spawn",
+      "@ref:12": "sepulchre_boss_easy",
+      "@ref:13": "dungeon"
+    },
+    "ancient_sepulchre_dungeon_medium_wave_1": {
+      "type": "spawn",
+      "@ref:12": "sepulchre_friendly_poleaxeman_medium",
+      "@ref:13": "dungeon"
+    },
+    "ancient_sepulchre_dungeon_medium_wave_2": [
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "sepulchre_skeleton_melee_medium",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 3,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "sepulchre_skeleton_range_medium",
+          "@ref:13": "dungeon"
+        }
+      }
+    ],
+    "ancient_sepulchre_dungeon_medium_wave_3": {
+      "type": "repeat",
+      "repeat": 6,
+      "script": {
+        "type": "spawn",
+        "@ref:12": "sepulchre_ghost_medium",
+        "@ref:13": "dungeon"
+      }
+    },
+    "ancient_sepulchre_dungeon_medium_wave_4": {
+      "type": "spawn",
+      "@ref:12": "sepulchre_skeleton_shield_medium",
+      "@ref:13": "dungeon"
+    },
+    "ancient_sepulchre_dungeon_medium_wave_5": {
+      "type": "spawn",
+      "@ref:12": "sepulchre_friendly_archer_medium",
+      "@ref:13": "dungeon"
+    },
+    "ancient_sepulchre_dungeon_medium_wave_6": [
+      {
+        "type": "repeat",
+        "repeat": 4,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "sepulchre_skeleton_range_medium",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 3,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "sepulchre_skeleton_melee_medium",
+          "@ref:13": "dungeon"
+        }
+      }
+    ],
+    "ancient_sepulchre_dungeon_medium_wave_7": [
+      {
+        "type": "repeat",
+        "repeat": 3,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "sepulchre_ghost_medium",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "sepulchre_banshee_medium",
+        "@ref:13": "dungeon"
+      }
+    ],
+    "ancient_sepulchre_dungeon_medium_wave_8": {
+      "type": "spawn",
+      "@ref:12": "sepulchre_friendly_pernachman_medium",
+      "@ref:13": "dungeon"
+    },
+    "ancient_sepulchre_dungeon_medium_wave_9": [
+      {
+        "type": "spawn",
+        "@ref:12": "sepulchre_skeleton_knight_medium",
+        "@ref:13": "dungeon"
+      },
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "sepulchre_skeleton_melee_medium",
+          "@ref:13": "dungeon"
+        }
+      }
+    ],
+    "ancient_sepulchre_dungeon_medium_wave_10": [
+      {
+        "type": "weight",
+        "weights": [
+          {
+            "weight": 1,
+            "action": {
+              "type": "spawn",
+              "@ref:12": "sepulchre_skeleton_knight_medium",
+              "@ref:13": "dungeon"
+            }
+          },
+          {
+            "weight": 1,
+            "action": {
+              "type": "spawn",
+              "@ref:12": "sepulchre_skeleton_shield_medium",
+              "@ref:13": "dungeon"
+            }
+          },
+          {
+            "weight": 1,
+            "action": {
+              "type": "spawn",
+              "@ref:12": "sepulchre_banshee_medium",
+              "@ref:13": "dungeon"
+            }
+          }
+        ]
+      },
+      {
+        "type": "weight",
+        "weights": [
+          {
+            "weight": 1,
+            "action": {
+              "type": "spawn",
+              "@ref:12": "sepulchre_skeleton_knight_medium",
+              "@ref:13": "dungeon"
+            }
+          },
+          {
+            "weight": 1,
+            "action": {
+              "type": "spawn",
+              "@ref:12": "sepulchre_skeleton_shield_medium",
+              "@ref:13": "dungeon"
+            }
+          },
+          {
+            "weight": 1,
+            "action": {
+              "type": "spawn",
+              "@ref:12": "sepulchre_banshee_medium",
+              "@ref:13": "dungeon"
+            }
+          }
+        ]
+      }
+    ],
+    "ancient_sepulchre_dungeon_medium_wave_11": {
+      "type": "spawn",
+      "@ref:12": "sepulchre_friendly_swordsman_medium",
+      "@ref:13": "dungeon"
+    },
+    "ancient_sepulchre_dungeon_medium_wave_12": {
+      "type": "repeat",
+      "repeat": 10,
+      "script": {
+        "type": "spawn",
+        "@ref:12": "sepulchre_ghost_medium",
+        "@ref:13": "dungeon"
+      }
+    },
+    "ancient_sepulchre_dungeon_medium_wave_final": {
+      "type": "spawn",
+      "@ref:12": "sepulchre_boss_medium",
+      "@ref:13": "dungeon"
+    },
+    "ancient_sepulchre_dungeon_hard_wave_1": {
+      "type": "spawn",
+      "@ref:12": "sepulchre_friendly_poleaxeman_hard",
+      "@ref:13": "dungeon"
+    },
+    "ancient_sepulchre_dungeon_hard_wave_2": [
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "sepulchre_skeleton_melee_hard",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 4,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "sepulchre_skeleton_range_hard",
+          "@ref:13": "dungeon"
+        }
+      }
+    ],
+    "ancient_sepulchre_dungeon_hard_wave_3": {
+      "type": "repeat",
+      "repeat": 6,
+      "script": {
+        "type": "spawn",
+        "@ref:12": "sepulchre_ghost_hard",
+        "@ref:13": "dungeon"
+      }
+    },
+    "ancient_sepulchre_dungeon_hard_wave_4": {
+      "type": "spawn",
+      "@ref:12": "sepulchre_skeleton_shield_hard",
+      "@ref:13": "dungeon"
+    },
+    "ancient_sepulchre_dungeon_hard_wave_5": {
+      "type": "spawn",
+      "@ref:12": "sepulchre_friendly_archer_hard",
+      "@ref:13": "dungeon"
+    },
+    "ancient_sepulchre_dungeon_hard_wave_6": [
+      {
+        "type": "repeat",
+        "repeat": 4,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "sepulchre_skeleton_range_hard",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 4,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "sepulchre_skeleton_melee_hard",
+          "@ref:13": "dungeon"
+        }
+      }
+    ],
+    "ancient_sepulchre_dungeon_hard_wave_7": [
+      {
+        "type": "repeat",
+        "repeat": 3,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "sepulchre_ghost_hard",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "sepulchre_banshee_hard",
+        "@ref:13": "dungeon"
+      }
+    ],
+    "ancient_sepulchre_dungeon_hard_wave_8": {
+      "type": "spawn",
+      "@ref:12": "sepulchre_friendly_pernachman_hard",
+      "@ref:13": "dungeon"
+    },
+    "ancient_sepulchre_dungeon_hard_wave_9": [
+      {
+        "type": "spawn",
+        "@ref:12": "sepulchre_skeleton_knight_hard",
+        "@ref:13": "dungeon"
+      },
+      {
+        "type": "repeat",
+        "repeat": 2,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "sepulchre_skeleton_melee_hard",
+          "@ref:13": "dungeon"
+        }
+      }
+    ],
+    "ancient_sepulchre_dungeon_hard_wave_10": [
+      {
+        "type": "weight",
+        "weights": [
+          {
+            "weight": 1,
+            "action": {
+              "type": "spawn",
+              "@ref:12": "sepulchre_skeleton_knight_hard",
+              "@ref:13": "dungeon"
+            }
+          },
+          {
+            "weight": 1,
+            "action": {
+              "type": "spawn",
+              "@ref:12": "sepulchre_skeleton_shield_hard",
+              "@ref:13": "dungeon"
+            }
+          },
+          {
+            "weight": 1,
+            "action": {
+              "type": "spawn",
+              "@ref:12": "sepulchre_banshee_hard",
+              "@ref:13": "dungeon"
+            }
+          }
+        ]
+      },
+      {
+        "type": "weight",
+        "weights": [
+          {
+            "weight": 1,
+            "action": {
+              "type": "spawn",
+              "@ref:12": "sepulchre_skeleton_knight_hard",
+              "@ref:13": "dungeon"
+            }
+          },
+          {
+            "weight": 1,
+            "action": {
+              "type": "spawn",
+              "@ref:12": "sepulchre_skeleton_shield_hard",
+              "@ref:13": "dungeon"
+            }
+          },
+          {
+            "weight": 1,
+            "action": {
+              "type": "spawn",
+              "@ref:12": "sepulchre_banshee_hard",
+              "@ref:13": "dungeon"
+            }
+          }
+        ]
+      }
+    ],
+    "ancient_sepulchre_dungeon_hard_wave_11": {
+      "type": "spawn",
+      "@ref:12": "sepulchre_friendly_swordsman_hard",
+      "@ref:13": "dungeon"
+    },
+    "ancient_sepulchre_dungeon_hard_wave_12": {
+      "type": "repeat",
+      "repeat": 13,
+      "script": {
+        "type": "spawn",
+        "@ref:12": "sepulchre_ghost_hard",
+        "@ref:13": "dungeon"
+      }
+    },
+    "ancient_sepulchre_dungeon_hard_wave_final": {
+      "type": "spawn",
+      "@ref:12": "sepulchre_boss_hard",
+      "@ref:13": "dungeon"
+    },
+    "silver_mine_dungeon_room_1": [
+      {
+        "type": "spawn",
+        "@ref:12": "overseer",
+        "@ref:13": "dungeon"
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 2,
+          "max": 3
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "sapper",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 6,
+          "max": 8
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "miner",
+          "@ref:13": "dungeon"
+        }
+      }
+    ],
+    "silver_mine_dungeon_room_2": [
+      {
+        "type": "spawn",
+        "@ref:12": "golem_bone",
+        "@ref:13": "dungeon"
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "overseer",
+        "@ref:13": "dungeon"
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 2,
+          "max": 3
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "sapper",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 6,
+          "max": 8
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "miner",
+          "@ref:13": "dungeon"
+        }
+      }
+    ],
+    "silver_mine_dungeon_room_3": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 0,
+          "max": 1
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "golem_bone",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 0,
+          "max": 1
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "overseer",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 3,
+          "max": 4
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "sapper",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 6,
+          "max": 7
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "miner",
+          "@ref:13": "dungeon"
+        }
+      }
+    ],
+    "silver_mine_dungeon_room_4": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 1,
+          "max": 2
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "golem_bone",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 1,
+          "max": 2
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "overseer",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 3,
+          "max": 4
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "sapper",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 6,
+          "max": 7
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "miner",
+          "@ref:13": "dungeon"
+        }
+      }
+    ],
+    "silver_mine_dungeon_room_side_1": [
+      {
+        "type": "spawn",
+        "@ref:12": "golem_bone",
+        "@ref:13": "dungeon"
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "overseer",
+        "@ref:13": "dungeon"
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 2,
+          "max": 3
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "sapper",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 6,
+          "max": 8
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "miner",
+          "@ref:13": "dungeon"
+        }
+      }
+    ],
+    "silver_mine_dungeon_room_side_2": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 1,
+          "max": 2
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "golem_bone",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 1,
+          "max": 2
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "overseer",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 3,
+          "max": 4
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "sapper",
+          "@ref:13": "dungeon"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 6,
+          "max": 7
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "miner",
+          "@ref:13": "dungeon"
+        }
+      }
+    ],
+    "convoy_easy.wave1": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 3,
+          "max": 5
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "convoy_leper",
+          "@ref:13": "spawn1"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 2,
+          "max": 3
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "convoy_wolf",
+          "@ref:13": "spawn1"
+        }
+      }
+    ],
+    "convoy_easy.wave2": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 4,
+          "max": 6
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "convoy_leper",
+          "@ref:13": "spawn2"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 2,
+          "max": 3
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "convoy_wolf",
+          "@ref:13": "spawn2"
+        }
+      }
+    ],
+    "convoy_easy.wave3": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 5,
+          "max": 7
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "convoy_leper",
+          "@ref:13": "spawn3"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 3,
+          "max": 4
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "convoy_wolf",
+          "@ref:13": "spawn3"
+        }
+      }
+    ],
+    "convoy_easy.wave4": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 5,
+          "max": 7
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "convoy_leper",
+          "@ref:13": "spawn4"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 3,
+          "max": 5
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "convoy_wolf",
+          "@ref:13": "spawn4"
+        }
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "convoy_cursed",
+        "@ref:13": "spawn4"
+      }
+    ],
+    "convoy_easy.wave5": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 6,
+          "max": 7
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "convoy_leper",
+          "@ref:13": "spawn5"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 4,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "convoy_wolf",
+          "@ref:13": "spawn5"
+        }
+      },
+      {
+        "type": "spawn",
+        "@ref:12": "convoy_cursed",
+        "@ref:13": "spawn5"
+      }
+    ],
+    "convoy_normal.wave1": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 3,
+          "max": 5
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "convoy_leper",
+          "@ref:13": "spawn1"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 2,
+          "max": 3
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "convoy_direwolf",
+          "@ref:13": "spawn1"
+        }
+      }
+    ],
+    "convoy_normal.wave2": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 4,
+          "max": 6
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "convoy_leper",
+          "@ref:13": "spawn2"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 2,
+          "max": 3
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "convoy_direwolf",
+          "@ref:13": "spawn2"
+        }
+      }
+    ],
+    "convoy_normal.wave3": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 5,
+          "max": 7
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "convoy_leper",
+          "@ref:13": "spawn3"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 3,
+          "max": 4
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "convoy_direwolf",
+          "@ref:13": "spawn3"
+        }
+      }
+    ],
+    "convoy_normal.wave4": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 5,
+          "max": 7
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "convoy_leper",
+          "@ref:13": "spawn4"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 4,
+          "max": 6
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "convoy_direwolf",
+          "@ref:13": "spawn4"
+        }
+      }
+    ],
+    "convoy_normal.wave5": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 6,
+          "max": 7
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "convoy_leper",
+          "@ref:13": "spawn5"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 6,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "convoy_direwolf",
+          "@ref:13": "spawn5"
+        }
+      }
+    ],
+    "convoy_hard.wave1": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 3,
+          "max": 5
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "convoy_leper",
+          "@ref:13": "spawn1"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 2,
+          "max": 3
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "convoy_direwolf",
+          "@ref:13": "spawn1"
+        }
+      }
+    ],
+    "convoy_hard.wave2": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 4,
+          "max": 6
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "convoy_leper",
+          "@ref:13": "spawn2"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 2,
+          "max": 3
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "convoy_direwolf",
+          "@ref:13": "spawn2"
+        }
+      }
+    ],
+    "convoy_hard.wave3": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 5,
+          "max": 7
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "convoy_leper",
+          "@ref:13": "spawn3"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 3,
+          "max": 4
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "convoy_direwolf",
+          "@ref:13": "spawn3"
+        }
+      }
+    ],
+    "convoy_hard.wave4": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 5,
+          "max": 7
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "convoy_leper",
+          "@ref:13": "spawn4"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 4,
+          "max": 6
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "convoy_direwolf",
+          "@ref:13": "spawn4"
+        }
+      }
+    ],
+    "convoy_hard.wave5": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 6,
+          "max": 7
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "convoy_leper",
+          "@ref:13": "spawn5"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 6,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "convoy_direwolf",
+          "@ref:13": "spawn5"
+        }
+      }
+    ],
+    "convoy_very_hard.wave1": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 3,
+          "max": 5
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "convoy_leper",
+          "@ref:13": "spawn1"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 2,
+          "max": 3
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "convoy_direwolf",
+          "@ref:13": "spawn1"
+        }
+      }
+    ],
+    "convoy_very_hard.wave2": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 4,
+          "max": 6
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "convoy_leper",
+          "@ref:13": "spawn2"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 2,
+          "max": 3
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "convoy_direwolf",
+          "@ref:13": "spawn2"
+        }
+      }
+    ],
+    "convoy_very_hard.wave3": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 5,
+          "max": 7
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "convoy_leper",
+          "@ref:13": "spawn3"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 3,
+          "max": 4
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "convoy_direwolf",
+          "@ref:13": "spawn3"
+        }
+      }
+    ],
+    "convoy_very_hard.wave4": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 5,
+          "max": 7
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "convoy_leper",
+          "@ref:13": "spawn4"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 4,
+          "max": 6
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "convoy_direwolf",
+          "@ref:13": "spawn4"
+        }
+      }
+    ],
+    "convoy_very_hard.wave5": [
+      {
+        "type": "repeat",
+        "repeat": {
+          "type": "range",
+          "min": 6,
+          "max": 7
+        },
+        "script": {
+          "type": "spawn",
+          "@ref:12": "convoy_leper",
+          "@ref:13": "spawn5"
+        }
+      },
+      {
+        "type": "repeat",
+        "repeat": 6,
+        "script": {
+          "type": "spawn",
+          "@ref:12": "convoy_direwolf",
+          "@ref:13": "spawn5"
+        }
+      }
+    ]
+  }
+}

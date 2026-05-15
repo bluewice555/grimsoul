@@ -1,0 +1,2413 @@
+{
+  "aissa": {
+    "nameID": "mob.aissa.name",
+    "character": "aissa",
+    "mapIDs": [
+      "map.event.aissa.name"
+    ],
+    "locationIDs": [
+      "aissa"
+    ]
+  },
+  "archer": {
+    "nameID": "mob.archer.name",
+    "character": "archer",
+    "mapIDs": [
+      "map.death_labyrinth.name",
+      "map.hard_birch.name",
+      "map.iron_mine.name",
+      "map.iron_mine_hard.name",
+      "map.norm_birch.name"
+    ],
+    "locationIDs": [
+      "death_labyrinth",
+      "north_birch_hard4",
+      "north_birch_hard5",
+      "north_iron_hard4",
+      "north_iron_hard5"
+    ]
+  },
+  "auxiliary_jerzy": {
+    "nameID": "mob.auxiliary_jerzy.name",
+    "character": "harid_priest",
+    "mapIDs": [
+      "map.harid_location.name"
+    ],
+    "locationIDs": [
+      "harid_location.easy",
+      "harid_location.hard",
+      "harid_location.medium"
+    ]
+  },
+  "auxiliary_lothar": {
+    "nameID": "mob.auxiliary_lothar.name",
+    "character": "harid_priest",
+    "mapIDs": [
+      "map.harid_location.name"
+    ],
+    "locationIDs": [
+      "harid_location.easy",
+      "harid_location.hard",
+      "harid_location.medium"
+    ]
+  },
+  "auxiliary_nigurot": {
+    "nameID": "mob.auxiliary_nigurot.name",
+    "character": "harid_priest",
+    "mapIDs": [
+      "map.harid_location.name"
+    ],
+    "locationIDs": [
+      "harid_location.easy",
+      "harid_location.hard",
+      "harid_location.medium"
+    ]
+  },
+  "axe_thrower_dung": {
+    "nameID": "mob.axe_thrower_dung.name",
+    "character": "axe_thrower_dung",
+    "mapIDs": [
+      "map.event.burned_village.name",
+      "map.event.catacomb.name",
+      "map.ruins_02.name",
+      "map.temple.name"
+    ],
+    "locationIDs": [
+      "burned_village_easy",
+      "burned_village_hard",
+      "burned_village_normal",
+      "burned_village_very_hard",
+      "catacomb_dungeon_01",
+      "catacomb_dungeon_02",
+      "catacomb_dungeon_03",
+      "catacomb_dungeon_04",
+      "catacomb_dungeon_05",
+      "catacomb_dungeon_final",
+      "catacomb_ground",
+      "dungeon_02_01",
+      "dungeon_02_02",
+      "dungeon_02_03",
+      "ruins_02",
+      "temple_dungeon",
+      "temple_ground"
+    ]
+  },
+  "axe_thrower_headhunter_dung": {
+    "nameID": "mob.axe_thrower_headhunter_dung.name",
+    "character": "axe_thrower_headhunter_dung",
+    "mapIDs": [
+      "map.ruins_02.name"
+    ],
+    "locationIDs": [
+      "dungeon_02_01",
+      "dungeon_02_02",
+      "dungeon_02_03",
+      "ruins_02"
+    ]
+  },
+  "axe_thrower_scout": {
+    "nameID": "mob.axe_thrower_scout.name",
+    "character": "axe_thrower_scout",
+    "mapIDs": [
+      "map.event.catacomb.name",
+      "map.hard_birch.name",
+      "map.iron_mine.name",
+      "map.iron_mine_hard.name",
+      "map.norm_birch.name",
+      "map.ruins_01.name",
+      "map.temple.name"
+    ],
+    "locationIDs": [
+      "catacomb_dungeon_01",
+      "catacomb_dungeon_02",
+      "catacomb_dungeon_03",
+      "catacomb_dungeon_04",
+      "catacomb_dungeon_05",
+      "catacomb_dungeon_final",
+      "catacomb_ground",
+      "dungeon_01_01",
+      "dungeon_01_02",
+      "dungeon_01_03",
+      "north_birch_hard4",
+      "north_birch_hard5",
+      "north_iron_hard4",
+      "north_iron_hard5",
+      "ruins_01",
+      "temple_dungeon",
+      "temple_ground"
+    ]
+  },
+  "bat": {
+    "nameID": "mob.bat.name",
+    "character": "bat",
+    "mapIDs": [
+      "map.event.aissa.name",
+      "map.event.converter.name"
+    ],
+    "locationIDs": [
+      "aissa",
+      "converter"
+    ]
+  },
+  "bat_weak": {
+    "nameID": "mob.bat.name",
+    "character": "bat_weak",
+    "mapIDs": [
+      "map.event.anniversary.name"
+    ],
+    "locationIDs": [
+      "anniversary_dungeon",
+      "anniversary_ground"
+    ]
+  },
+  "bear": {
+    "nameID": "mob.bear.name",
+    "character": "bear",
+    "mapIDs": [
+      "map.easy_forest.name",
+      "map.easy_rock.name",
+      "map.event.waggon.name",
+      "map.hard_forest.name",
+      "map.hard_rock.name",
+      "map.iron_mine.name",
+      "map.norm_birch.name",
+      "map.norm_forest.name",
+      "map.norm_rock.name",
+      "map.virbjorn_lair.name"
+    ],
+    "locationIDs": [
+      "easy_forest",
+      "easy_forest_copy_1",
+      "easy_forest_copy_2",
+      "easy_rock",
+      "easy_rock_copy_1",
+      "easy_rock_copy_2",
+      "hard_forest",
+      "hard_rock",
+      "night_stash_dungeon",
+      "normal_forest",
+      "normal_rock",
+      "north_birch_hard4",
+      "north_iron_hard4",
+      "virbjorn_lair",
+      "waggon_easy",
+      "waggon_hard",
+      "waggon_normal",
+      "waggon_very_hard"
+    ]
+  },
+  "bear_virbjorn": {
+    "nameID": "mob.bear_virbjorn.name",
+    "character": "bear_virbjorn",
+    "mapIDs": [
+      "map.virbjorn_lair.name"
+    ],
+    "locationIDs": [
+      "virbjorn_lair"
+    ]
+  },
+  "boss_cursed_lady_easy": {
+    "nameID": "mob.boss_cursed_lady.name",
+    "character": "boss_cursed_lady_easy",
+    "mapIDs": [
+      "map.cursed_lady.name"
+    ],
+    "locationIDs": [
+      "cursed_lady_location_easy",
+      "cursed_lady_location_hard",
+      "cursed_lady_location_normal"
+    ]
+  },
+  "boss_cursed_lady_hard": {
+    "nameID": "mob.boss_cursed_lady.name",
+    "character": "boss_cursed_lady_hard",
+    "mapIDs": [
+      "map.cursed_lady.name"
+    ],
+    "locationIDs": [
+      "cursed_lady_location_easy",
+      "cursed_lady_location_hard",
+      "cursed_lady_location_normal"
+    ]
+  },
+  "boss_cursed_lady_normal": {
+    "nameID": "mob.boss_cursed_lady.name",
+    "character": "boss_cursed_lady_normal",
+    "mapIDs": [
+      "map.cursed_lady.name"
+    ],
+    "locationIDs": [
+      "cursed_lady_location_easy",
+      "cursed_lady_location_hard",
+      "cursed_lady_location_normal"
+    ]
+  },
+  "castle_boss": {
+    "nameID": "mob.castle_boss.name",
+    "character": "castle_boss",
+    "mapIDs": [
+      "map.castle.name"
+    ],
+    "locationIDs": [
+      "castle"
+    ]
+  },
+  "castle_ghost": {
+    "nameID": "mob.castle_ghost.name",
+    "character": "castle_ghost",
+    "mapIDs": [
+      "map.castle.name"
+    ],
+    "locationIDs": [
+      "castle"
+    ]
+  },
+  "chaplain_baxter": {
+    "nameID": "mob.chaplain_baxter.name",
+    "character": "harid_priest",
+    "mapIDs": [
+      "map.harid_location.name"
+    ],
+    "locationIDs": [
+      "harid_location.easy",
+      "harid_location.hard",
+      "harid_location.medium"
+    ]
+  },
+  "chaplain_fernana": {
+    "nameID": "mob.chaplain_fernana.name",
+    "character": "harid_priest",
+    "mapIDs": [
+      "map.harid_location.name"
+    ],
+    "locationIDs": [
+      "harid_location.easy",
+      "harid_location.hard",
+      "harid_location.medium"
+    ]
+  },
+  "chaplain_girdsin": {
+    "nameID": "mob.chaplain_girdsin.name",
+    "character": "harid_priest",
+    "mapIDs": [
+      "map.harid_location.name"
+    ],
+    "locationIDs": [
+      "harid_location.easy",
+      "harid_location.hard",
+      "harid_location.medium"
+    ]
+  },
+  "chaplain_nymphalis": {
+    "nameID": "mob.chaplain_nymphalis.name",
+    "character": "harid_priest",
+    "mapIDs": [
+      "map.harid_location.name"
+    ],
+    "locationIDs": [
+      "harid_location.easy",
+      "harid_location.hard",
+      "harid_location.medium"
+    ]
+  },
+  "convoy_brother": {
+    "nameID": "mob.trader.name",
+    "character": "convoy_brother",
+    "mapIDs": [
+      "map.event.convoy.name"
+    ],
+    "locationIDs": [
+      "convoy"
+    ]
+  },
+  "convoy_cursed": {
+    "nameID": "mob.cursed.name",
+    "character": "convoy_cursed",
+    "mapIDs": [
+      "map.event.convoy.name"
+    ],
+    "locationIDs": [
+      "convoy"
+    ]
+  },
+  "convoy_horse": {
+    "nameID": "mob.horse.home.name",
+    "character": "convoy_horse",
+    "mapIDs": [
+      "map.event.convoy.name"
+    ],
+    "locationIDs": [
+      "convoy"
+    ]
+  },
+  "convoy_knight": {
+    "nameID": "mob.knight.name",
+    "character": "convoy_knight",
+    "mapIDs": [
+      "map.event.convoy.name"
+    ],
+    "locationIDs": [
+      "convoy"
+    ]
+  },
+  "convoy_leper": {
+    "nameID": "mob.leper.name",
+    "character": "convoy_leper",
+    "mapIDs": [
+      "map.event.convoy.name"
+    ],
+    "locationIDs": [
+      "convoy"
+    ]
+  },
+  "convoy_trader": {
+    "nameID": "mob.trader.name",
+    "character": "convoy_trader",
+    "mapIDs": [
+      "map.event.convoy.name"
+    ],
+    "locationIDs": [
+      "convoy"
+    ]
+  },
+  "cruel_torturer_dung": {
+    "nameID": "mob.cruel_torturer_dung.name",
+    "character": "cruel_torturer_dung",
+    "mapIDs": [
+      "map.ruins_02.name"
+    ],
+    "locationIDs": [
+      "dungeon_02_01",
+      "dungeon_02_02",
+      "dungeon_02_03",
+      "ruins_02"
+    ]
+  },
+  "cultist": {
+    "nameID": "mob.cultist.name",
+    "character": "cultist",
+    "mapIDs": [
+      "map.event.td.chest.name"
+    ],
+    "locationIDs": [
+      "td.chest.location"
+    ]
+  },
+  "cursed": {
+    "nameID": "mob.cursed.name",
+    "character": "cursed",
+    "mapIDs": [
+      "map.boss_01.name",
+      "map.easy_forest.name",
+      "map.easy_rock.name",
+      "map.event.anniversary.name",
+      "map.event.burned_village.name",
+      "map.event.catacomb.name",
+      "map.event.cemetery.name",
+      "map.event.converter.name",
+      "map.event.td.chest.name",
+      "map.event.waggon.name",
+      "map.hard_birch.name",
+      "map.hard_forest.name",
+      "map.hard_rock.name",
+      "map.iron_mine.name",
+      "map.iron_mine_hard.name",
+      "map.norm_birch.name",
+      "map.norm_forest.name",
+      "map.norm_rock.name",
+      "map.sacrificial_altar.name",
+      "map.temple.name"
+    ],
+    "locationIDs": [
+      "anniversary_dungeon",
+      "anniversary_ground",
+      "boss_01",
+      "burned_village_easy",
+      "burned_village_hard",
+      "burned_village_normal",
+      "burned_village_very_hard",
+      "catacomb_dungeon_01",
+      "catacomb_dungeon_02",
+      "catacomb_dungeon_03",
+      "catacomb_dungeon_04",
+      "catacomb_dungeon_05",
+      "catacomb_dungeon_final",
+      "catacomb_ground",
+      "cemetery",
+      "converter",
+      "easy_forest",
+      "easy_forest_copy_1",
+      "easy_forest_copy_2",
+      "easy_rock",
+      "easy_rock_copy_1",
+      "easy_rock_copy_2",
+      "hard_forest",
+      "hard_rock",
+      "night_stash_dungeon",
+      "normal_forest",
+      "normal_rock",
+      "north_birch_hard4",
+      "north_birch_hard5",
+      "north_iron_hard4",
+      "north_iron_hard5",
+      "sacrificial_altar",
+      "td.chest.location",
+      "temple_dungeon",
+      "temple_ground",
+      "waggon_easy",
+      "waggon_hard",
+      "waggon_normal",
+      "waggon_very_hard"
+    ],
+    "events": [
+      "explosion"
+    ]
+  },
+  "cursed_dung1": {
+    "nameID": "mob.cursed_dung1.name",
+    "character": "cursed_dung1",
+    "mapIDs": [
+      "map.event.catacomb.name",
+      "map.ruins_01.name"
+    ],
+    "locationIDs": [
+      "catacomb_dungeon_01",
+      "catacomb_dungeon_02",
+      "catacomb_dungeon_03",
+      "catacomb_dungeon_04",
+      "catacomb_dungeon_05",
+      "catacomb_dungeon_final",
+      "catacomb_ground",
+      "dungeon_01_01",
+      "dungeon_01_02",
+      "dungeon_01_03",
+      "ruins_01"
+    ]
+  },
+  "cursed_individ": {
+    "nameID": "mob.cursed_individ.name",
+    "character": "cursed_individ",
+    "mapIDs": [
+      "map.hard_forest.name",
+      "map.hard_rock.name",
+      "map.norm_forest.name",
+      "map.norm_rock.name"
+    ],
+    "locationIDs": [
+      "hard_forest",
+      "hard_rock",
+      "night_stash_dungeon",
+      "normal_forest",
+      "normal_rock"
+    ],
+    "events": [
+      "challenges"
+    ]
+  },
+  "cursed_lady_shaman_easy": {
+    "nameID": "mob.cursed_lady_shaman.name",
+    "character": "cursed_lady_shaman_easy",
+    "mapIDs": [
+      "map.cursed_lady.name"
+    ],
+    "locationIDs": [
+      "cursed_lady_location_easy",
+      "cursed_lady_location_hard",
+      "cursed_lady_location_normal"
+    ]
+  },
+  "cursed_lady_shaman_hard": {
+    "nameID": "mob.cursed_lady_shaman.name",
+    "character": "cursed_lady_shaman_hard",
+    "mapIDs": [
+      "map.cursed_lady.name"
+    ],
+    "locationIDs": [
+      "cursed_lady_location_easy",
+      "cursed_lady_location_hard",
+      "cursed_lady_location_normal"
+    ]
+  },
+  "cursed_lady_shaman_medium": {
+    "nameID": "mob.cursed_lady_shaman.name",
+    "character": "cursed_lady_shaman_medium",
+    "mapIDs": [
+      "map.cursed_lady.name"
+    ],
+    "locationIDs": [
+      "cursed_lady_location_easy",
+      "cursed_lady_location_hard",
+      "cursed_lady_location_normal"
+    ]
+  },
+  "cursed_martyr": {
+    "nameID": "mob.cursed_martyr.name",
+    "character": "cursed_martyr",
+    "mapIDs": [
+      "map.death_labyrinth.name",
+      "map.easy_forest.name",
+      "map.easy_rock.name",
+      "map.hard_birch.name",
+      "map.iron_mine.name",
+      "map.iron_mine_hard.name",
+      "map.norm_birch.name",
+      "map.norm_rock.name"
+    ],
+    "locationIDs": [
+      "death_labyrinth",
+      "easy_forest",
+      "easy_forest_copy_1",
+      "easy_forest_copy_2",
+      "easy_rock",
+      "easy_rock_copy_1",
+      "easy_rock_copy_2",
+      "normal_rock",
+      "north_birch_hard4",
+      "north_birch_hard5",
+      "north_iron_hard4",
+      "north_iron_hard5"
+    ]
+  },
+  "cursed_mutant": {
+    "nameID": "mob.cursed_mutant.name",
+    "character": "cursed_mutant",
+    "mapIDs": [
+      "map.popup_location.dungeon_challenges.name"
+    ],
+    "locationIDs": [
+      "dungeon_challenges_01",
+      "dungeon_challenges_02",
+      "dungeon_challenges_03",
+      "dungeon_challenges_ground"
+    ]
+  },
+  "cursed_walker_factory": {
+    "nameID": "mob.xmas_walker.name",
+    "character": "cursed_walker",
+    "mapIDs": [
+      "map.ruins_01.name"
+    ],
+    "locationIDs": [
+      "dungeon_01_01",
+      "dungeon_01_02",
+      "dungeon_01_03",
+      "ruins_01"
+    ],
+    "events": [
+      "xmas"
+    ]
+  },
+  "deer": {
+    "nameID": "mob.deer.name",
+    "character": "deer",
+    "mapIDs": [
+      "map.easy_forest.name",
+      "map.easy_rock.name",
+      "map.event.caravan.name",
+      "map.event.deadman.name",
+      "map.event.waggon.name",
+      "map.hard_forest.name",
+      "map.hard_rock.name",
+      "map.hunting_grounds.name",
+      "map.norm_forest.name",
+      "map.norm_rock.name"
+    ],
+    "locationIDs": [
+      "caravan",
+      "deadman_easy",
+      "deadman_hard",
+      "deadman_normal",
+      "deadman_very_hard",
+      "easy_forest",
+      "easy_forest_copy_1",
+      "easy_forest_copy_2",
+      "easy_rock",
+      "easy_rock_copy_1",
+      "easy_rock_copy_2",
+      "hard_forest",
+      "hard_rock",
+      "hunting_grounds",
+      "night_stash_dungeon",
+      "normal_forest",
+      "normal_rock",
+      "waggon_easy",
+      "waggon_hard",
+      "waggon_normal",
+      "waggon_very_hard"
+    ]
+  },
+  "direwolf": {
+    "nameID": "mob.direwolf.name",
+    "character": "direwolf",
+    "mapIDs": [
+      "map.death_labyrinth.name",
+      "map.event.converter.name",
+      "map.event.deadman.name",
+      "map.event.td.chest.name",
+      "map.event.waggon.name",
+      "map.hard_forest.name",
+      "map.hard_rock.name",
+      "map.iron_mine.name",
+      "map.norm_birch.name",
+      "map.norm_forest.name",
+      "map.norm_rock.name"
+    ],
+    "locationIDs": [
+      "converter",
+      "deadman_easy",
+      "deadman_hard",
+      "deadman_normal",
+      "deadman_very_hard",
+      "death_labyrinth",
+      "hard_forest",
+      "hard_rock",
+      "night_stash_dungeon",
+      "normal_forest",
+      "normal_rock",
+      "north_birch_hard4",
+      "north_iron_hard4",
+      "td.chest.location",
+      "waggon_easy",
+      "waggon_hard",
+      "waggon_normal",
+      "waggon_very_hard"
+    ]
+  },
+  "direwolf_trainer": {
+    "nameID": "mob.direwolf.name",
+    "character": "direwolf_trainer",
+    "mapIDs": [
+      "map.event.trader.name"
+    ],
+    "locationIDs": [
+      "trader"
+    ]
+  },
+  "eisenhorn": {
+    "nameID": "mob.eisenhorn.name",
+    "character": "eisenhorn",
+    "mapIDs": [
+      "map.ruins_01.name"
+    ],
+    "locationIDs": [
+      "dungeon_01_01",
+      "dungeon_01_02",
+      "dungeon_01_03",
+      "ruins_01"
+    ]
+  },
+  "eisenhorn.heroic": {
+    "nameID": "mob.eisenhorn.name",
+    "character": "eisenhorn.heroic",
+    "mapIDs": [
+      "map.ruins_01.name"
+    ],
+    "locationIDs": [
+      "dungeon_01_01",
+      "dungeon_01_02",
+      "dungeon_01_03",
+      "ruins_01"
+    ]
+  },
+  "fat_mutant": {
+    "nameID": "mob.fat_mutant.name",
+    "character": "fat_mutant",
+    "mapIDs": [
+      "map.popup_location.dungeon_challenges.name"
+    ],
+    "locationIDs": [
+      "dungeon_challenges_01",
+      "dungeon_challenges_02",
+      "dungeon_challenges_03",
+      "dungeon_challenges_ground"
+    ]
+  },
+  "fire_spawn_dung": {
+    "nameID": "mob.fire_spawn_dung.name",
+    "character": "fire_spawn_dung",
+    "mapIDs": [
+      "map.ruins_02.name"
+    ],
+    "locationIDs": [
+      "dungeon_02_01",
+      "dungeon_02_02",
+      "dungeon_02_03",
+      "ruins_02"
+    ]
+  },
+  "goblin": {
+    "nameID": "mob.goblin.name",
+    "character": "goblin",
+    "mapIDs": [
+      "map.hard_birch.name",
+      "map.iron_mine.name",
+      "map.iron_mine_hard.name",
+      "map.norm_birch.name"
+    ],
+    "locationIDs": [
+      "north_birch_hard4",
+      "north_birch_hard5",
+      "north_iron_hard4",
+      "north_iron_hard5"
+    ]
+  },
+  "golem_bone": {
+    "nameID": "mob.golem_bone.name",
+    "character": "golem_bone",
+    "mapIDs": [
+      "map.silver_mine.name"
+    ],
+    "locationIDs": [
+      "silver_mine_dungeon",
+      "silver_mine_ground"
+    ]
+  },
+  "halt": {
+    "nameID": "mob.halt.name",
+    "character": "halt",
+    "mapIDs": [
+      "map.halt_location.name"
+    ],
+    "locationIDs": [
+      "halt_location",
+      "halt_new_location_easy",
+      "halt_new_location_hard",
+      "halt_new_location_medium"
+    ]
+  },
+  "halt_new_easy": {
+    "nameID": "mob.halt.name",
+    "character": "halt_new_easy",
+    "mapIDs": [
+      "map.halt_location.name"
+    ],
+    "locationIDs": [
+      "halt_location",
+      "halt_new_location_easy",
+      "halt_new_location_hard",
+      "halt_new_location_medium"
+    ]
+  },
+  "halt_new_hard": {
+    "nameID": "mob.halt.name",
+    "character": "halt_new_hard",
+    "mapIDs": [
+      "map.halt_location.name"
+    ],
+    "locationIDs": [
+      "halt_location",
+      "halt_new_location_easy",
+      "halt_new_location_hard",
+      "halt_new_location_medium"
+    ]
+  },
+  "halt_new_medium": {
+    "nameID": "mob.halt.name",
+    "character": "halt_new_medium",
+    "mapIDs": [
+      "map.halt_location.name"
+    ],
+    "locationIDs": [
+      "halt_location",
+      "halt_new_location_easy",
+      "halt_new_location_hard",
+      "halt_new_location_medium"
+    ]
+  },
+  "halt_shard": {
+    "nameID": "mob.halt_shard.name",
+    "character": "halt_shard",
+    "mapIDs": [
+      "map.event.convoy.name",
+      "map.halt_location.name"
+    ],
+    "locationIDs": [
+      "convoy",
+      "halt_location",
+      "halt_new_location_easy",
+      "halt_new_location_hard",
+      "halt_new_location_medium"
+    ]
+  },
+  "halt_shard_easy": {
+    "nameID": "mob.halt_shard.name",
+    "character": "halt_shard_easy",
+    "mapIDs": [
+      "map.halt_location.name"
+    ],
+    "locationIDs": [
+      "halt_location",
+      "halt_new_location_easy",
+      "halt_new_location_hard",
+      "halt_new_location_medium"
+    ]
+  },
+  "halt_shard_hard": {
+    "nameID": "mob.halt_shard.name",
+    "character": "halt_shard_hard",
+    "mapIDs": [
+      "map.halt_location.name"
+    ],
+    "locationIDs": [
+      "halt_location",
+      "halt_new_location_easy",
+      "halt_new_location_hard",
+      "halt_new_location_medium"
+    ]
+  },
+  "halt_shard_medium": {
+    "nameID": "mob.halt_shard.name",
+    "character": "halt_shard_medium",
+    "mapIDs": [
+      "map.halt_location.name"
+    ],
+    "locationIDs": [
+      "halt_location",
+      "halt_new_location_easy",
+      "halt_new_location_hard",
+      "halt_new_location_medium"
+    ]
+  },
+  "hangman_dung": {
+    "nameID": "mob.hangman_dung.name",
+    "character": "hangman_dung",
+    "mapIDs": [
+      "map.event.catacomb.name",
+      "map.ruins_02.name",
+      "map.temple.name"
+    ],
+    "locationIDs": [
+      "catacomb_dungeon_01",
+      "catacomb_dungeon_02",
+      "catacomb_dungeon_03",
+      "catacomb_dungeon_04",
+      "catacomb_dungeon_05",
+      "catacomb_dungeon_final",
+      "catacomb_ground",
+      "dungeon_02_01",
+      "dungeon_02_02",
+      "dungeon_02_03",
+      "ruins_02",
+      "temple_dungeon",
+      "temple_ground"
+    ]
+  },
+  "hangman_punisher_dung": {
+    "nameID": "mob.hangman_punisher_dung.name",
+    "character": "hangman_punisher_dung",
+    "mapIDs": [
+      "map.ruins_02.name"
+    ],
+    "locationIDs": [
+      "dungeon_02_01",
+      "dungeon_02_02",
+      "dungeon_02_03",
+      "ruins_02"
+    ]
+  },
+  "harid_easy": {
+    "nameID": "mob.harid.name",
+    "character": "harid",
+    "mapIDs": [
+      "map.harid_location.name"
+    ],
+    "locationIDs": [
+      "harid_location.easy",
+      "harid_location.hard",
+      "harid_location.medium"
+    ]
+  },
+  "harid_hard": {
+    "nameID": "mob.harid.name",
+    "character": "harid_hard",
+    "mapIDs": [
+      "map.harid_location.name"
+    ],
+    "locationIDs": [
+      "harid_location.easy",
+      "harid_location.hard",
+      "harid_location.medium"
+    ]
+  },
+  "harid_medium": {
+    "nameID": "mob.harid.name",
+    "character": "harid_medium",
+    "mapIDs": [
+      "map.harid_location.name"
+    ],
+    "locationIDs": [
+      "harid_location.easy",
+      "harid_location.hard",
+      "harid_location.medium"
+    ]
+  },
+  "harid_priest": {
+    "nameID": "Bagstor",
+    "character": "harid_priest",
+    "mapIDs": [
+      "map.harid_location.name"
+    ],
+    "locationIDs": [
+      "harid_location.easy",
+      "harid_location.hard",
+      "harid_location.medium"
+    ]
+  },
+  "horse": {
+    "nameID": "mob.horse.name",
+    "character": "horse",
+    "mapIDs": [
+      "map.event.waggon.name",
+      "map.pasture.name"
+    ],
+    "locationIDs": [
+      "pasture",
+      "waggon_easy",
+      "waggon_hard",
+      "waggon_normal",
+      "waggon_very_hard"
+    ]
+  },
+  "horse.trade": {
+    "nameID": "mob.horse.home.name",
+    "character": "horse.trade",
+    "mapIDs": [
+      "map.event.trader.name"
+    ],
+    "locationIDs": [
+      "trader"
+    ]
+  },
+  "inquisitor_antonio": {
+    "nameID": "mob.inquisitor_antonio.name",
+    "character": "inquisitor_antonio",
+    "mapIDs": [
+      "map.harid_location.name"
+    ],
+    "locationIDs": [
+      "harid_location.easy",
+      "harid_location.hard",
+      "harid_location.medium"
+    ]
+  },
+  "inquisitor_inotsky": {
+    "nameID": "mob.inquisitor_inotsky.name",
+    "character": "harid_priest",
+    "mapIDs": [
+      "map.harid_location.name"
+    ],
+    "locationIDs": [
+      "harid_location.easy",
+      "harid_location.hard",
+      "harid_location.medium"
+    ]
+  },
+  "karn": {
+    "nameID": "mob.karn.name",
+    "character": "karn",
+    "mapIDs": [
+      "map.ruins_02.name"
+    ],
+    "locationIDs": [
+      "dungeon_02_01",
+      "dungeon_02_02",
+      "dungeon_02_03",
+      "ruins_02"
+    ]
+  },
+  "keeper": {
+    "nameID": "mob.keeper.name",
+    "character": "keeper",
+    "mapIDs": [
+      "map.boss_01.name"
+    ],
+    "locationIDs": [
+      "boss_01"
+    ]
+  },
+  "knight": {
+    "nameID": "mob.knight.name",
+    "character": "knight",
+    "mapIDs": [
+      "map.event.cemetery.name",
+      "map.event.deadman.name",
+      "map.event.td.chest.name",
+      "map.event.waggon.name",
+      "map.hard_birch.name",
+      "map.hard_forest.name",
+      "map.hard_rock.name",
+      "map.iron_mine.name",
+      "map.iron_mine_hard.name",
+      "map.norm_birch.name",
+      "map.norm_forest.name",
+      "map.norm_rock.name"
+    ],
+    "locationIDs": [
+      "cemetery",
+      "deadman_easy",
+      "deadman_hard",
+      "deadman_normal",
+      "deadman_very_hard",
+      "hard_forest",
+      "hard_rock",
+      "night_stash_dungeon",
+      "normal_forest",
+      "normal_rock",
+      "north_birch_hard4",
+      "north_birch_hard5",
+      "north_iron_hard4",
+      "north_iron_hard5",
+      "td.chest.location",
+      "waggon_easy",
+      "waggon_hard",
+      "waggon_normal",
+      "waggon_very_hard"
+    ]
+  },
+  "knight_dung1": {
+    "nameID": "mob.knight_dung1.name",
+    "character": "knight_dung1",
+    "mapIDs": [
+      "map.event.catacomb.name",
+      "map.ruins_01.name"
+    ],
+    "locationIDs": [
+      "catacomb_dungeon_01",
+      "catacomb_dungeon_02",
+      "catacomb_dungeon_03",
+      "catacomb_dungeon_04",
+      "catacomb_dungeon_05",
+      "catacomb_dungeon_final",
+      "catacomb_ground",
+      "dungeon_01_01",
+      "dungeon_01_02",
+      "dungeon_01_03",
+      "ruins_01"
+    ]
+  },
+  "knight_mutant": {
+    "nameID": "mob.knight_mutant.name",
+    "character": "knight_mutant",
+    "mapIDs": [
+      "map.popup_location.dungeon_challenges.name"
+    ],
+    "locationIDs": [
+      "dungeon_challenges_01",
+      "dungeon_challenges_02",
+      "dungeon_challenges_03",
+      "dungeon_challenges_ground"
+    ]
+  },
+  "knight_warrior": {
+    "nameID": "mob.knight_warrior.name",
+    "character": "knight_warrior",
+    "mapIDs": [
+      "map.death_labyrinth.name",
+      "map.event.waggon.name",
+      "map.hard_birch.name",
+      "map.iron_mine.name",
+      "map.iron_mine_hard.name",
+      "map.norm_birch.name",
+      "map.norm_forest.name",
+      "map.norm_rock.name"
+    ],
+    "locationIDs": [
+      "death_labyrinth",
+      "normal_forest",
+      "normal_rock",
+      "north_birch_hard4",
+      "north_birch_hard5",
+      "north_iron_hard4",
+      "north_iron_hard5",
+      "waggon_easy",
+      "waggon_hard",
+      "waggon_normal",
+      "waggon_very_hard"
+    ]
+  },
+  "leper": {
+    "nameID": "mob.leper.name",
+    "character": "leper",
+    "mapIDs": [
+      "map.easy_forest.name",
+      "map.easy_rock.name",
+      "map.event.burned_village.name",
+      "map.event.catacomb.name",
+      "map.event.cemetery.name",
+      "map.event.converter.name",
+      "map.event.td.chest.name",
+      "map.event.waggon.name",
+      "map.hard_forest.name",
+      "map.hard_rock.name",
+      "map.norm_forest.name",
+      "map.norm_rock.name",
+      "map.ruins_01.name",
+      "map.temple.name"
+    ],
+    "locationIDs": [
+      "burned_village_easy",
+      "burned_village_hard",
+      "burned_village_normal",
+      "burned_village_very_hard",
+      "catacomb_dungeon_01",
+      "catacomb_dungeon_02",
+      "catacomb_dungeon_03",
+      "catacomb_dungeon_04",
+      "catacomb_dungeon_05",
+      "catacomb_dungeon_final",
+      "catacomb_ground",
+      "cemetery",
+      "converter",
+      "dungeon_01_01",
+      "dungeon_01_02",
+      "dungeon_01_03",
+      "easy_forest",
+      "easy_forest_copy_1",
+      "easy_forest_copy_2",
+      "easy_rock",
+      "easy_rock_copy_1",
+      "easy_rock_copy_2",
+      "hard_forest",
+      "hard_rock",
+      "night_stash_dungeon",
+      "normal_forest",
+      "normal_rock",
+      "ruins_01",
+      "td.chest.location",
+      "temple_dungeon",
+      "temple_ground",
+      "waggon_easy",
+      "waggon_hard",
+      "waggon_normal",
+      "waggon_very_hard"
+    ]
+  },
+  "leper_hermit": {
+    "nameID": "mob.leper_hermit.name",
+    "character": "leper_hermit",
+    "mapIDs": [
+      "map.event.converter.name",
+      "map.hard_forest.name",
+      "map.hard_rock.name"
+    ],
+    "locationIDs": [
+      "converter",
+      "hard_forest",
+      "hard_rock",
+      "night_stash_dungeon"
+    ]
+  },
+  "leper_poison": {
+    "nameID": "mob.leper_poison.name",
+    "character": "leper_poison",
+    "mapIDs": [
+      "map.event.catacomb.name",
+      "map.ruins_01.name"
+    ],
+    "locationIDs": [
+      "catacomb_dungeon_01",
+      "catacomb_dungeon_02",
+      "catacomb_dungeon_03",
+      "catacomb_dungeon_04",
+      "catacomb_dungeon_05",
+      "catacomb_dungeon_final",
+      "catacomb_ground",
+      "dungeon_01_01",
+      "dungeon_01_02",
+      "dungeon_01_03",
+      "ruins_01"
+    ]
+  },
+  "leper_soldier": {
+    "nameID": "mob.leper_soldier.name",
+    "character": "leper_soldier",
+    "mapIDs": [
+      "map.event.catacomb.name",
+      "map.ruins_01.name"
+    ],
+    "locationIDs": [
+      "catacomb_dungeon_01",
+      "catacomb_dungeon_02",
+      "catacomb_dungeon_03",
+      "catacomb_dungeon_04",
+      "catacomb_dungeon_05",
+      "catacomb_dungeon_final",
+      "catacomb_ground",
+      "dungeon_01_01",
+      "dungeon_01_02",
+      "dungeon_01_03",
+      "ruins_01"
+    ]
+  },
+  "maniac": {
+    "nameID": "mob.maniac.name",
+    "character": "maniac",
+    "mapIDs": [
+      "map.event.anniversary.name",
+      "map.event.catacomb.name",
+      "map.ruins_01.name"
+    ],
+    "locationIDs": [
+      "anniversary_dungeon",
+      "anniversary_ground",
+      "catacomb_dungeon_01",
+      "catacomb_dungeon_02",
+      "catacomb_dungeon_03",
+      "catacomb_dungeon_04",
+      "catacomb_dungeon_05",
+      "catacomb_dungeon_final",
+      "catacomb_ground",
+      "dungeon_01_01",
+      "dungeon_01_02",
+      "dungeon_01_03",
+      "ruins_01"
+    ]
+  },
+  "miner": {
+    "nameID": "mob.miner.name",
+    "character": "miner",
+    "mapIDs": [
+      "map.silver_mine.name"
+    ],
+    "locationIDs": [
+      "silver_mine_dungeon",
+      "silver_mine_ground"
+    ]
+  },
+  "moose": {
+    "nameID": "mob.moose.name",
+    "character": "moose",
+    "mapIDs": [
+      "map.hard_birch.name",
+      "map.hard_forest.name",
+      "map.hard_rock.name",
+      "map.iron_mine.name",
+      "map.iron_mine_hard.name",
+      "map.norm_birch.name"
+    ],
+    "locationIDs": [
+      "hard_forest",
+      "hard_rock",
+      "night_stash_dungeon",
+      "north_birch_hard4",
+      "north_birch_hard5",
+      "north_iron_hard4",
+      "north_iron_hard5"
+    ]
+  },
+  "night_guest": {
+    "nameID": "mob.night_guest.name",
+    "character": "night_guest",
+    "mapIDs": [
+      "map.castle.name",
+      "map.event.burned_village.name",
+      "map.event.cemetery.name",
+      "map.event.converter.name",
+      "map.event.deadman.name",
+      "map.event.waggon.name",
+      "map.silver_mine.name"
+    ],
+    "locationIDs": [
+      "burned_village_easy",
+      "burned_village_hard",
+      "burned_village_normal",
+      "burned_village_very_hard",
+      "castle",
+      "cemetery",
+      "converter",
+      "deadman_easy",
+      "deadman_hard",
+      "deadman_normal",
+      "deadman_very_hard",
+      "silver_mine_dungeon",
+      "silver_mine_ground",
+      "waggon_easy",
+      "waggon_hard",
+      "waggon_normal",
+      "waggon_very_hard"
+    ]
+  },
+  "overseer": {
+    "nameID": "mob.overseer.name",
+    "character": "overseer",
+    "mapIDs": [
+      "map.silver_mine.name"
+    ],
+    "locationIDs": [
+      "silver_mine_dungeon",
+      "silver_mine_ground"
+    ]
+  },
+  "plague_priest_labyrinth": {
+    "nameID": "mob.plague_priest.name",
+    "character": "plague_priest_labyrinth",
+    "mapIDs": [
+      "map.death_labyrinth.name"
+    ],
+    "locationIDs": [
+      "death_labyrinth"
+    ]
+  },
+  "rat_mutant": {
+    "nameID": "mob.rat_mutant.name",
+    "character": "rat_mutant",
+    "mapIDs": [
+      "map.popup_location.dungeon_challenges.name"
+    ],
+    "locationIDs": [
+      "dungeon_challenges_01",
+      "dungeon_challenges_02",
+      "dungeon_challenges_03",
+      "dungeon_challenges_ground"
+    ]
+  },
+  "rogue": {
+    "nameID": "mob.rogue.name",
+    "character": "rogue",
+    "mapIDs": [
+      "map.death_labyrinth.name",
+      "map.event.anniversary.name",
+      "map.event.burned_village.name",
+      "map.hard_birch.name",
+      "map.iron_mine.name",
+      "map.iron_mine_hard.name",
+      "map.norm_birch.name"
+    ],
+    "locationIDs": [
+      "anniversary_dungeon",
+      "anniversary_ground",
+      "burned_village_easy",
+      "burned_village_hard",
+      "burned_village_normal",
+      "burned_village_very_hard",
+      "death_labyrinth",
+      "north_birch_hard4",
+      "north_birch_hard5",
+      "north_iron_hard4",
+      "north_iron_hard5"
+    ]
+  },
+  "rogue_stun": {
+    "nameID": "mob.rogue_stun.name",
+    "character": "rogue_stun",
+    "mapIDs": [
+      "map.death_labyrinth.name",
+      "map.event.anniversary.name",
+      "map.event.burned_village.name",
+      "map.event.catacomb.name",
+      "map.hard_birch.name",
+      "map.iron_mine_hard.name"
+    ],
+    "locationIDs": [
+      "anniversary_dungeon",
+      "anniversary_ground",
+      "burned_village_easy",
+      "burned_village_hard",
+      "burned_village_normal",
+      "burned_village_very_hard",
+      "catacomb_dungeon_01",
+      "catacomb_dungeon_02",
+      "catacomb_dungeon_03",
+      "catacomb_dungeon_04",
+      "catacomb_dungeon_05",
+      "catacomb_dungeon_final",
+      "catacomb_ground",
+      "death_labyrinth",
+      "north_birch_hard5",
+      "north_iron_hard5"
+    ]
+  },
+  "sapper": {
+    "nameID": "mob.sapper.name",
+    "character": "sapper",
+    "mapIDs": [
+      "map.silver_mine.name"
+    ],
+    "locationIDs": [
+      "silver_mine_dungeon",
+      "silver_mine_ground"
+    ]
+  },
+  "scholar_ghost": {
+    "nameID": "mob.scholar_ghost.name",
+    "character": "scholar_ghost",
+    "mapIDs": [
+      "map.observatory.name"
+    ],
+    "locationIDs": [
+      "observatory_ground"
+    ]
+  },
+  "scribe_ghost": {
+    "nameID": "mob.scribe_ghost.name",
+    "character": "scribe_ghost",
+    "mapIDs": [
+      "map.observatory.name"
+    ],
+    "locationIDs": [
+      "observatory_ground"
+    ]
+  },
+  "sepulchre_banshee_easy": {
+    "nameID": "mob.ancient_sepulchre_banshee.name",
+    "character": "sepulchre_banshee_easy",
+    "mapIDs": [
+      "map.ancient_sepulchre.name"
+    ],
+    "locationIDs": [
+      "ancient_sepulchre_dungeon_easy",
+      "ancient_sepulchre_dungeon_hard",
+      "ancient_sepulchre_dungeon_medium",
+      "ancient_sepulchre_exchange"
+    ]
+  },
+  "sepulchre_banshee_hard": {
+    "nameID": "mob.ancient_sepulchre_banshee.name",
+    "character": "sepulchre_banshee_hard",
+    "mapIDs": [
+      "map.ancient_sepulchre.name"
+    ],
+    "locationIDs": [
+      "ancient_sepulchre_dungeon_easy",
+      "ancient_sepulchre_dungeon_hard",
+      "ancient_sepulchre_dungeon_medium",
+      "ancient_sepulchre_exchange"
+    ]
+  },
+  "sepulchre_banshee_medium": {
+    "nameID": "mob.ancient_sepulchre_banshee.name",
+    "character": "sepulchre_banshee_medium",
+    "mapIDs": [
+      "map.ancient_sepulchre.name"
+    ],
+    "locationIDs": [
+      "ancient_sepulchre_dungeon_easy",
+      "ancient_sepulchre_dungeon_hard",
+      "ancient_sepulchre_dungeon_medium",
+      "ancient_sepulchre_exchange"
+    ]
+  },
+  "sepulchre_boss_easy": {
+    "nameID": "mob.ancient_sepulchre_boss.name",
+    "character": "sepulchre_boss_easy",
+    "mapIDs": [
+      "map.ancient_sepulchre.name"
+    ],
+    "locationIDs": [
+      "ancient_sepulchre_dungeon_easy",
+      "ancient_sepulchre_dungeon_hard",
+      "ancient_sepulchre_dungeon_medium",
+      "ancient_sepulchre_exchange"
+    ]
+  },
+  "sepulchre_boss_hard": {
+    "nameID": "mob.ancient_sepulchre_boss.name",
+    "character": "sepulchre_boss_hard",
+    "mapIDs": [
+      "map.ancient_sepulchre.name"
+    ],
+    "locationIDs": [
+      "ancient_sepulchre_dungeon_easy",
+      "ancient_sepulchre_dungeon_hard",
+      "ancient_sepulchre_dungeon_medium",
+      "ancient_sepulchre_exchange"
+    ]
+  },
+  "sepulchre_boss_medium": {
+    "nameID": "mob.ancient_sepulchre_boss.name",
+    "character": "sepulchre_boss_medium",
+    "mapIDs": [
+      "map.ancient_sepulchre.name"
+    ],
+    "locationIDs": [
+      "ancient_sepulchre_dungeon_easy",
+      "ancient_sepulchre_dungeon_hard",
+      "ancient_sepulchre_dungeon_medium",
+      "ancient_sepulchre_exchange"
+    ]
+  },
+  "sepulchre_ghost_easy": {
+    "nameID": "mob.ancient_sepulchre_ghost.name",
+    "character": "sepulchre_ghost_easy",
+    "mapIDs": [
+      "map.ancient_sepulchre.name"
+    ],
+    "locationIDs": [
+      "ancient_sepulchre_dungeon_easy",
+      "ancient_sepulchre_dungeon_hard",
+      "ancient_sepulchre_dungeon_medium",
+      "ancient_sepulchre_exchange"
+    ]
+  },
+  "sepulchre_ghost_hard": {
+    "nameID": "mob.ancient_sepulchre_ghost.name",
+    "character": "sepulchre_ghost_hard",
+    "mapIDs": [
+      "map.ancient_sepulchre.name"
+    ],
+    "locationIDs": [
+      "ancient_sepulchre_dungeon_easy",
+      "ancient_sepulchre_dungeon_hard",
+      "ancient_sepulchre_dungeon_medium",
+      "ancient_sepulchre_exchange"
+    ]
+  },
+  "sepulchre_ghost_medium": {
+    "nameID": "mob.ancient_sepulchre_ghost.name",
+    "character": "sepulchre_ghost_medium",
+    "mapIDs": [
+      "map.ancient_sepulchre.name"
+    ],
+    "locationIDs": [
+      "ancient_sepulchre_dungeon_easy",
+      "ancient_sepulchre_dungeon_hard",
+      "ancient_sepulchre_dungeon_medium",
+      "ancient_sepulchre_exchange"
+    ]
+  },
+  "sepulchre_skeleton_knight_easy": {
+    "nameID": "mob.ancient_sepulchre_skeleton_knight.name",
+    "character": "sepulchre_skeleton_knight_easy",
+    "mapIDs": [
+      "map.ancient_sepulchre.name"
+    ],
+    "locationIDs": [
+      "ancient_sepulchre_dungeon_easy",
+      "ancient_sepulchre_dungeon_hard",
+      "ancient_sepulchre_dungeon_medium",
+      "ancient_sepulchre_exchange"
+    ]
+  },
+  "sepulchre_skeleton_knight_hard": {
+    "nameID": "mob.ancient_sepulchre_skeleton_knight.name",
+    "character": "sepulchre_skeleton_knight_hard",
+    "mapIDs": [
+      "map.ancient_sepulchre.name"
+    ],
+    "locationIDs": [
+      "ancient_sepulchre_dungeon_easy",
+      "ancient_sepulchre_dungeon_hard",
+      "ancient_sepulchre_dungeon_medium",
+      "ancient_sepulchre_exchange"
+    ]
+  },
+  "sepulchre_skeleton_knight_medium": {
+    "nameID": "mob.ancient_sepulchre_skeleton_knight.name",
+    "character": "sepulchre_skeleton_knight_medium",
+    "mapIDs": [
+      "map.ancient_sepulchre.name"
+    ],
+    "locationIDs": [
+      "ancient_sepulchre_dungeon_easy",
+      "ancient_sepulchre_dungeon_hard",
+      "ancient_sepulchre_dungeon_medium",
+      "ancient_sepulchre_exchange"
+    ]
+  },
+  "sepulchre_skeleton_melee_easy": {
+    "nameID": "mob.skeleton_medium.name",
+    "character": "sepulchre_skeleton_melee_easy",
+    "mapIDs": [
+      "map.ancient_sepulchre.name"
+    ],
+    "locationIDs": [
+      "ancient_sepulchre_dungeon_easy",
+      "ancient_sepulchre_dungeon_hard",
+      "ancient_sepulchre_dungeon_medium",
+      "ancient_sepulchre_exchange"
+    ]
+  },
+  "sepulchre_skeleton_melee_hard": {
+    "nameID": "mob.skeleton_medium.name",
+    "character": "sepulchre_skeleton_melee_hard",
+    "mapIDs": [
+      "map.ancient_sepulchre.name"
+    ],
+    "locationIDs": [
+      "ancient_sepulchre_dungeon_easy",
+      "ancient_sepulchre_dungeon_hard",
+      "ancient_sepulchre_dungeon_medium",
+      "ancient_sepulchre_exchange"
+    ]
+  },
+  "sepulchre_skeleton_melee_medium": {
+    "nameID": "mob.skeleton_medium.name",
+    "character": "sepulchre_skeleton_melee_medium",
+    "mapIDs": [
+      "map.ancient_sepulchre.name"
+    ],
+    "locationIDs": [
+      "ancient_sepulchre_dungeon_easy",
+      "ancient_sepulchre_dungeon_hard",
+      "ancient_sepulchre_dungeon_medium",
+      "ancient_sepulchre_exchange"
+    ]
+  },
+  "sepulchre_skeleton_range_easy": {
+    "nameID": "mob.skeleton_archer.name",
+    "character": "sepulchre_skeleton_range_easy",
+    "mapIDs": [
+      "map.ancient_sepulchre.name"
+    ],
+    "locationIDs": [
+      "ancient_sepulchre_dungeon_easy",
+      "ancient_sepulchre_dungeon_hard",
+      "ancient_sepulchre_dungeon_medium",
+      "ancient_sepulchre_exchange"
+    ]
+  },
+  "sepulchre_skeleton_range_hard": {
+    "nameID": "mob.skeleton_archer.name",
+    "character": "sepulchre_skeleton_range_hard",
+    "mapIDs": [
+      "map.ancient_sepulchre.name"
+    ],
+    "locationIDs": [
+      "ancient_sepulchre_dungeon_easy",
+      "ancient_sepulchre_dungeon_hard",
+      "ancient_sepulchre_dungeon_medium",
+      "ancient_sepulchre_exchange"
+    ]
+  },
+  "sepulchre_skeleton_range_medium": {
+    "nameID": "mob.skeleton_archer.name",
+    "character": "sepulchre_skeleton_range_medium",
+    "mapIDs": [
+      "map.ancient_sepulchre.name"
+    ],
+    "locationIDs": [
+      "ancient_sepulchre_dungeon_easy",
+      "ancient_sepulchre_dungeon_hard",
+      "ancient_sepulchre_dungeon_medium",
+      "ancient_sepulchre_exchange"
+    ]
+  },
+  "sepulchre_skeleton_shield_easy": {
+    "nameID": "mob.ancient_sepulchre_skeleton_shield.name",
+    "character": "sepulchre_skeleton_shield_easy",
+    "mapIDs": [
+      "map.ancient_sepulchre.name"
+    ],
+    "locationIDs": [
+      "ancient_sepulchre_dungeon_easy",
+      "ancient_sepulchre_dungeon_hard",
+      "ancient_sepulchre_dungeon_medium",
+      "ancient_sepulchre_exchange"
+    ]
+  },
+  "sepulchre_skeleton_shield_hard": {
+    "nameID": "mob.ancient_sepulchre_skeleton_shield.name",
+    "character": "sepulchre_skeleton_shield_hard",
+    "mapIDs": [
+      "map.ancient_sepulchre.name"
+    ],
+    "locationIDs": [
+      "ancient_sepulchre_dungeon_easy",
+      "ancient_sepulchre_dungeon_hard",
+      "ancient_sepulchre_dungeon_medium",
+      "ancient_sepulchre_exchange"
+    ]
+  },
+  "sepulchre_skeleton_shield_medium": {
+    "nameID": "mob.ancient_sepulchre_skeleton_shield.name",
+    "character": "sepulchre_skeleton_shield_medium",
+    "mapIDs": [
+      "map.ancient_sepulchre.name"
+    ],
+    "locationIDs": [
+      "ancient_sepulchre_dungeon_easy",
+      "ancient_sepulchre_dungeon_hard",
+      "ancient_sepulchre_dungeon_medium",
+      "ancient_sepulchre_exchange"
+    ]
+  },
+  "shaman_dung": {
+    "nameID": "mob.shaman_dung.name",
+    "character": "shaman_dung",
+    "mapIDs": [
+      "map.death_labyrinth.name",
+      "map.event.catacomb.name",
+      "map.ruins_02.name"
+    ],
+    "locationIDs": [
+      "catacomb_dungeon_01",
+      "catacomb_dungeon_02",
+      "catacomb_dungeon_03",
+      "catacomb_dungeon_04",
+      "catacomb_dungeon_05",
+      "catacomb_dungeon_final",
+      "catacomb_ground",
+      "death_labyrinth",
+      "dungeon_02_01",
+      "dungeon_02_02",
+      "dungeon_02_03",
+      "ruins_02"
+    ]
+  },
+  "skeleton": {
+    "nameID": "mob.skeleton.name",
+    "character": "skeleton",
+    "mapIDs": [
+      "map.castle.name",
+      "map.event.aissa.name",
+      "map.event.anniversary.name",
+      "map.event.burned_village.name",
+      "map.event.converter.name",
+      "map.ruins_01.name",
+      "map.warlock_lair.name"
+    ],
+    "locationIDs": [
+      "aissa",
+      "anniversary_dungeon",
+      "anniversary_ground",
+      "burned_village_easy",
+      "burned_village_hard",
+      "burned_village_normal",
+      "burned_village_very_hard",
+      "castle",
+      "converter",
+      "dungeon_01_01",
+      "dungeon_01_02",
+      "dungeon_01_03",
+      "ruins_01",
+      "warlock_lair"
+    ],
+    "events": [
+      "halloween_2025"
+    ]
+  },
+  "skeleton_hard": {
+    "nameID": "mob.skeleton_hard.name",
+    "character": "skeleton_hard",
+    "mapIDs": [
+      "map.event.burned_village.name"
+    ],
+    "locationIDs": [
+      "burned_village_easy",
+      "burned_village_hard",
+      "burned_village_normal",
+      "burned_village_very_hard"
+    ]
+  },
+  "skeleton_very_hard": {
+    "nameID": "mob.skeleton_very_hard.name",
+    "character": "skeleton_very_hard",
+    "mapIDs": [
+      "map.castle.name",
+      "map.event.burned_village.name"
+    ],
+    "locationIDs": [
+      "burned_village_easy",
+      "burned_village_hard",
+      "burned_village_normal",
+      "burned_village_very_hard",
+      "castle"
+    ]
+  },
+  "stationary_convoy_cursed": {
+    "nameID": "mob.cursed.name",
+    "character": "stationary_convoy_cursed",
+    "mapIDs": [
+      "map.event.convoy.name"
+    ],
+    "locationIDs": [
+      "convoy"
+    ]
+  },
+  "templar": {
+    "nameID": "mob.templar.name",
+    "character": "templar",
+    "mapIDs": [
+      "map.event.deadman.name",
+      "map.event.waggon.name",
+      "map.hard_birch.name",
+      "map.hard_forest.name",
+      "map.hard_rock.name",
+      "map.iron_mine.name",
+      "map.iron_mine_hard.name",
+      "map.norm_birch.name"
+    ],
+    "locationIDs": [
+      "deadman_easy",
+      "deadman_hard",
+      "deadman_normal",
+      "deadman_very_hard",
+      "hard_forest",
+      "hard_rock",
+      "night_stash_dungeon",
+      "north_birch_hard4",
+      "north_birch_hard5",
+      "north_iron_hard4",
+      "north_iron_hard5",
+      "waggon_easy",
+      "waggon_hard",
+      "waggon_normal",
+      "waggon_very_hard"
+    ]
+  },
+  "templar_berserk": {
+    "nameID": "mob.templar_berserk.name",
+    "character": "templar_berserk",
+    "mapIDs": [
+      "map.event.catacomb.name",
+      "map.ruins_01.name"
+    ],
+    "locationIDs": [
+      "catacomb_dungeon_01",
+      "catacomb_dungeon_02",
+      "catacomb_dungeon_03",
+      "catacomb_dungeon_04",
+      "catacomb_dungeon_05",
+      "catacomb_dungeon_final",
+      "catacomb_ground",
+      "dungeon_01_01",
+      "dungeon_01_02",
+      "dungeon_01_03",
+      "ruins_01"
+    ]
+  },
+  "templar_dung1": {
+    "nameID": "mob.templar_dung1.name",
+    "character": "templar_dung1",
+    "mapIDs": [
+      "map.event.catacomb.name",
+      "map.ruins_01.name"
+    ],
+    "locationIDs": [
+      "catacomb_dungeon_01",
+      "catacomb_dungeon_02",
+      "catacomb_dungeon_03",
+      "catacomb_dungeon_04",
+      "catacomb_dungeon_05",
+      "catacomb_dungeon_final",
+      "catacomb_ground",
+      "dungeon_01_01",
+      "dungeon_01_02",
+      "dungeon_01_03",
+      "ruins_01"
+    ]
+  },
+  "templar_elite_1": {
+    "nameID": "mob.templar_elite_1.name",
+    "character": "templar_elite_1",
+    "mapIDs": [
+      "map.ruins_01.name"
+    ],
+    "locationIDs": [
+      "dungeon_01_01",
+      "dungeon_01_02",
+      "dungeon_01_03",
+      "ruins_01"
+    ]
+  },
+  "templar_elite_2": {
+    "nameID": "mob.templar_elite_2.name",
+    "character": "templar_elite_2",
+    "mapIDs": [
+      "map.ruins_01.name"
+    ],
+    "locationIDs": [
+      "dungeon_01_01",
+      "dungeon_01_02",
+      "dungeon_01_03",
+      "ruins_01"
+    ]
+  },
+  "templar_elite_3": {
+    "nameID": "mob.templar_elite_3.name",
+    "character": "templar_elite_3",
+    "mapIDs": [
+      "map.ruins_01.name"
+    ],
+    "locationIDs": [
+      "dungeon_01_01",
+      "dungeon_01_02",
+      "dungeon_01_03",
+      "ruins_01"
+    ]
+  },
+  "templar_elite_4": {
+    "nameID": "mob.templar_elite_4.name",
+    "character": "templar_elite_4",
+    "mapIDs": [
+      "map.ruins_01.name"
+    ],
+    "locationIDs": [
+      "dungeon_01_01",
+      "dungeon_01_02",
+      "dungeon_01_03",
+      "ruins_01"
+    ]
+  },
+  "templar_shield": {
+    "nameID": "mob.templar_shield.name",
+    "character": "templar_shield",
+    "mapIDs": [
+      "map.event.deadman.name",
+      "map.hard_birch.name",
+      "map.iron_mine_hard.name"
+    ],
+    "locationIDs": [
+      "deadman_easy",
+      "deadman_hard",
+      "deadman_normal",
+      "deadman_very_hard",
+      "north_birch_hard5",
+      "north_iron_hard5"
+    ]
+  },
+  "templar_zealot": {
+    "nameID": "mob.templar_zealot.name",
+    "character": "templar_zealot",
+    "mapIDs": [
+      "map.death_labyrinth.name",
+      "map.event.waggon.name",
+      "map.hard_birch.name",
+      "map.hard_forest.name",
+      "map.hard_rock.name",
+      "map.iron_mine.name",
+      "map.iron_mine_hard.name",
+      "map.norm_birch.name"
+    ],
+    "locationIDs": [
+      "death_labyrinth",
+      "hard_forest",
+      "hard_rock",
+      "night_stash_dungeon",
+      "north_birch_hard4",
+      "north_birch_hard5",
+      "north_iron_hard4",
+      "north_iron_hard5",
+      "waggon_easy",
+      "waggon_hard",
+      "waggon_normal",
+      "waggon_very_hard"
+    ]
+  },
+  "torturer_dung": {
+    "nameID": "mob.torturer_dung.name",
+    "character": "torturer_dung",
+    "mapIDs": [
+      "map.event.catacomb.name",
+      "map.ruins_02.name"
+    ],
+    "locationIDs": [
+      "catacomb_dungeon_01",
+      "catacomb_dungeon_02",
+      "catacomb_dungeon_03",
+      "catacomb_dungeon_04",
+      "catacomb_dungeon_05",
+      "catacomb_dungeon_final",
+      "catacomb_ground",
+      "dungeon_02_01",
+      "dungeon_02_02",
+      "dungeon_02_03",
+      "ruins_02"
+    ]
+  },
+  "trader": {
+    "nameID": "mob.trader.name",
+    "character": "trader",
+    "mapIDs": [
+      "map.event.trader.name"
+    ],
+    "locationIDs": [
+      "trader"
+    ]
+  },
+  "trader_2": {
+    "nameID": "mob.trader.name",
+    "character": "trader",
+    "mapIDs": [
+      "map.event.trader.name"
+    ],
+    "locationIDs": [
+      "trader"
+    ]
+  },
+  "trader_3": {
+    "nameID": "mob.trader.name",
+    "character": "trader",
+    "mapIDs": [
+      "map.event.trader.name"
+    ],
+    "locationIDs": [
+      "trader"
+    ]
+  },
+  "trader_trainer": {
+    "nameID": "mob.trainer.name",
+    "character": "trainer",
+    "mapIDs": [
+      "map.event.trader.name"
+    ],
+    "locationIDs": [
+      "trader"
+    ]
+  },
+  "turkey": {
+    "nameID": "mob.turkey.name",
+    "character": "turkey",
+    "mapIDs": [
+      "map.easy_forest.name",
+      "map.easy_rock.name",
+      "map.hard_birch.name",
+      "map.hard_forest.name",
+      "map.hard_rock.name",
+      "map.iron_mine.name",
+      "map.iron_mine_hard.name",
+      "map.norm_birch.name",
+      "map.norm_forest.name",
+      "map.norm_rock.name"
+    ],
+    "locationIDs": [
+      "easy_forest",
+      "easy_forest_copy_1",
+      "easy_forest_copy_2",
+      "easy_rock",
+      "easy_rock_copy_1",
+      "easy_rock_copy_2",
+      "hard_forest",
+      "hard_rock",
+      "night_stash_dungeon",
+      "normal_forest",
+      "normal_rock",
+      "north_birch_hard4",
+      "north_birch_hard5",
+      "north_iron_hard4",
+      "north_iron_hard5"
+    ],
+    "events": [
+      "thanksgiving_exchange"
+    ]
+  },
+  "turkey_boss": {
+    "nameID": "mob.turkey_boss.name",
+    "character": "turkey_boss",
+    "mapIDs": [
+      "map.easy_forest.name",
+      "map.easy_rock.name",
+      "map.hard_birch.name",
+      "map.hard_forest.name",
+      "map.hard_rock.name",
+      "map.iron_mine.name",
+      "map.iron_mine_hard.name",
+      "map.norm_birch.name",
+      "map.norm_forest.name",
+      "map.norm_rock.name"
+    ],
+    "locationIDs": [
+      "easy_forest",
+      "easy_forest_copy_1",
+      "easy_forest_copy_2",
+      "easy_rock",
+      "easy_rock_copy_1",
+      "easy_rock_copy_2",
+      "hard_forest",
+      "hard_rock",
+      "night_stash_dungeon",
+      "normal_forest",
+      "normal_rock",
+      "north_birch_hard4",
+      "north_birch_hard5",
+      "north_iron_hard4",
+      "north_iron_hard5"
+    ],
+    "events": [
+      "thanksgiving_exchange"
+    ]
+  },
+  "victim_dung": {
+    "nameID": "mob.victim_dung.name",
+    "character": "victim_dung",
+    "mapIDs": [
+      "map.event.catacomb.name",
+      "map.ruins_02.name",
+      "map.temple.name"
+    ],
+    "locationIDs": [
+      "catacomb_dungeon_01",
+      "catacomb_dungeon_02",
+      "catacomb_dungeon_03",
+      "catacomb_dungeon_04",
+      "catacomb_dungeon_05",
+      "catacomb_dungeon_final",
+      "catacomb_ground",
+      "dungeon_02_01",
+      "dungeon_02_02",
+      "dungeon_02_03",
+      "ruins_02",
+      "temple_dungeon",
+      "temple_ground"
+    ]
+  },
+  "victim_dung_bowls": {
+    "nameID": "mob.victim_dung.name",
+    "character": "victim_dung",
+    "mapIDs": [
+      "map.ruins_02.name"
+    ],
+    "locationIDs": [
+      "dungeon_02_01",
+      "dungeon_02_02",
+      "dungeon_02_03",
+      "ruins_02"
+    ]
+  },
+  "victim_dung_puzzle": {
+    "nameID": "mob.victim_dung.name",
+    "character": "victim_dung",
+    "mapIDs": [
+      "map.ruins_02.name"
+    ],
+    "locationIDs": [
+      "dungeon_02_01",
+      "dungeon_02_02",
+      "dungeon_02_03",
+      "ruins_02"
+    ]
+  },
+  "wagenburg_black_knight": {
+    "nameID": "mob.wagenburg_black_knight.name",
+    "character": "wagenburg_black_knight",
+    "mapIDs": [
+      "map.wagenburg.name"
+    ],
+    "locationIDs": [
+      "wagenburg"
+    ]
+  },
+  "wagenburg_crossbowman": {
+    "nameID": "mob.wagenburg_crossbowman.name",
+    "character": "wagenburg_crossbowman",
+    "mapIDs": [
+      "map.wagenburg.name"
+    ],
+    "locationIDs": [
+      "wagenburg"
+    ]
+  },
+  "wagenburg_dragon_crit": {
+    "nameID": "mob.wagenburg_dragon_crit.name",
+    "character": "wagenburg_dragon_crit",
+    "mapIDs": [
+      "map.wagenburg.name"
+    ],
+    "locationIDs": [
+      "wagenburg"
+    ]
+  },
+  "wagenburg_duelist": {
+    "nameID": "mob.wagenburg_duelist.name",
+    "character": "wagenburg_duelist",
+    "mapIDs": [
+      "map.wagenburg.name"
+    ],
+    "locationIDs": [
+      "wagenburg"
+    ]
+  },
+  "wagenburg_east_champion": {
+    "nameID": "mob.wagenburg_east_champion.name",
+    "character": "wagenburg_east_champion",
+    "mapIDs": [
+      "map.wagenburg.name"
+    ],
+    "locationIDs": [
+      "wagenburg"
+    ]
+  },
+  "wagenburg_gladiator": {
+    "nameID": "mob.wagenburg_gladiator.name",
+    "character": "wagenburg_gladiator",
+    "mapIDs": [
+      "map.wagenburg.name"
+    ],
+    "locationIDs": [
+      "wagenburg"
+    ]
+  },
+  "wagenburg_ice_bowman": {
+    "nameID": "mob.wagenburg_ice_bowman.name",
+    "character": "wagenburg_ice_bowman",
+    "mapIDs": [
+      "map.wagenburg.name"
+    ],
+    "locationIDs": [
+      "wagenburg"
+    ]
+  },
+  "wagenburg_reaper": {
+    "nameID": "mob.wagenburg_reaper.name",
+    "character": "wagenburg_reaper",
+    "mapIDs": [
+      "map.wagenburg.name"
+    ],
+    "locationIDs": [
+      "wagenburg"
+    ]
+  },
+  "wagenburg_warlock": {
+    "nameID": "mob.wagenburg_warlock.name",
+    "character": "wagenburg_warlock",
+    "mapIDs": [
+      "map.wagenburg.name"
+    ],
+    "locationIDs": [
+      "wagenburg"
+    ]
+  },
+  "warlock_lair_necromancer": {
+    "nameID": "mob.warlock_lair_necromancer.name",
+    "character": "warlock_lair_necromancer",
+    "mapIDs": [
+      "map.warlock_lair.name"
+    ],
+    "locationIDs": [
+      "warlock_lair"
+    ]
+  },
+  "warlock_lair_necromancer_hard": {
+    "nameID": "mob.warlock_lair_necromancer_hard.name",
+    "character": "warlock_lair_necromancer_hard",
+    "mapIDs": [
+      "map.warlock_lair.name"
+    ],
+    "locationIDs": [
+      "warlock_lair"
+    ]
+  },
+  "warlock_lair_necromancer_medium": {
+    "nameID": "mob.warlock_lair_necromancer_medium.name",
+    "character": "warlock_lair_necromancer_medium",
+    "mapIDs": [
+      "map.warlock_lair.name"
+    ],
+    "locationIDs": [
+      "warlock_lair"
+    ]
+  },
+  "witch": {
+    "nameID": "mob.witch.name",
+    "character": "witch",
+    "mapIDs": [
+      "map.event.cemetery.name",
+      "map.event.waggon.name",
+      "map.hard_birch.name",
+      "map.hard_forest.name",
+      "map.hard_rock.name",
+      "map.iron_mine.name",
+      "map.iron_mine_hard.name",
+      "map.norm_birch.name",
+      "map.norm_forest.name",
+      "map.norm_rock.name",
+      "map.ruins_01.name"
+    ],
+    "locationIDs": [
+      "cemetery",
+      "dungeon_01_01",
+      "dungeon_01_02",
+      "dungeon_01_03",
+      "hard_forest",
+      "hard_rock",
+      "night_stash_dungeon",
+      "normal_forest",
+      "normal_rock",
+      "north_birch_hard4",
+      "north_birch_hard5",
+      "north_iron_hard4",
+      "north_iron_hard5",
+      "ruins_01",
+      "waggon_easy",
+      "waggon_hard",
+      "waggon_normal",
+      "waggon_very_hard"
+    ]
+  },
+  "wolf": {
+    "nameID": "mob.wolf.name",
+    "character": "wolf",
+    "mapIDs": [
+      "map.death_labyrinth.name",
+      "map.easy_forest.name",
+      "map.easy_rock.name",
+      "map.event.converter.name",
+      "map.event.deadman.name",
+      "map.event.td.chest.name",
+      "map.event.waggon.name",
+      "map.hard_forest.name",
+      "map.hard_rock.name",
+      "map.norm_forest.name",
+      "map.norm_rock.name"
+    ],
+    "locationIDs": [
+      "converter",
+      "deadman_easy",
+      "deadman_hard",
+      "deadman_normal",
+      "deadman_very_hard",
+      "death_labyrinth",
+      "easy_forest",
+      "easy_forest_copy_1",
+      "easy_forest_copy_2",
+      "easy_rock",
+      "easy_rock_copy_1",
+      "easy_rock_copy_2",
+      "hard_forest",
+      "hard_rock",
+      "night_stash_dungeon",
+      "normal_forest",
+      "normal_rock",
+      "td.chest.location",
+      "waggon_easy",
+      "waggon_hard",
+      "waggon_normal",
+      "waggon_very_hard"
+    ]
+  },
+  "wolf_decayed": {
+    "nameID": "mob.wolf_decayed.name",
+    "character": "wolf_decayed",
+    "mapIDs": [
+      "map.boss_01.name",
+      "map.death_labyrinth.name"
+    ],
+    "locationIDs": [
+      "boss_01",
+      "death_labyrinth"
+    ]
+  },
+  "wolf_fenrir": {
+    "nameID": "mob.wolf_fenrir.name",
+    "character": "wolf_fenrir",
+    "mapIDs": [
+      "map.boss_01.name"
+    ],
+    "locationIDs": [
+      "boss_01"
+    ],
+    "events": [
+      "fenrir"
+    ]
+  },
+  "wolf_varg": {
+    "nameID": "mob.wolf_varg.name",
+    "character": "wolf_varg",
+    "mapIDs": [
+      "map.hard_forest.name",
+      "map.hard_rock.name",
+      "map.norm_forest.name",
+      "map.norm_rock.name"
+    ],
+    "locationIDs": [
+      "hard_forest",
+      "hard_rock",
+      "night_stash_dungeon",
+      "normal_forest",
+      "normal_rock"
+    ],
+    "events": [
+      "challenges"
+    ]
+  }
+}

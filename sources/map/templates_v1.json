@@ -1,0 +1,8397 @@
+{
+  "source": "refs_pure(2).json",
+  "key": "templates",
+  "definition": "refs.locations entries referenced by points/events custom_locations, indexed by template ID",
+  "count": 8,
+  "missing_definition_count": 0,
+  "missing_definition_ids": [],
+  "templates": {
+    "farm_forest_easy_01": {
+      "disposable": {
+        "type": "not",
+        "condition": {
+          "type": "ab.is_easy_farm_save_corpse"
+        }
+      },
+      "expired": {
+        "type": "or",
+        "conditions": [
+          {
+            "type": "gte",
+            "first": {
+              "type": "time.now"
+            },
+            "second": {
+              "type": "resource",
+              "resource": "ab.easy_farm_save_corpse_ts",
+              "target": "location"
+            }
+          },
+          {
+            "type": "not",
+            "condition": {
+              "type": "is_player_corpse_on_location",
+              "target": "location"
+            }
+          }
+        ]
+      },
+      "noise": {
+        "a": {
+          "scale": 0.06,
+          "mul": 1,
+          "add": 0
+        },
+        "b": {
+          "scale": 0.12,
+          "mul": 1,
+          "add": 0
+        },
+        "c": {
+          "scale": 0.1,
+          "mul": 8,
+          "add": -7
+        }
+      },
+      "chunk_res": 10,
+      "chunk_scale": 10,
+      "chunks_count_x": 6,
+      "chunks_count_z": 6,
+      "chunk_grid_size": 5,
+      "grid_border": 1,
+      "chunk_border": 1,
+      "leave_border": 2.5,
+      "character_limit": 60,
+      "mines": {
+        "tree_item": 3,
+        "young_tree": 22,
+        "young_tree_dead": 10,
+        "rock_item": 10,
+        "tree_birch": 30,
+        "tree_birch_dead": 5,
+        "rock": 4,
+        "copper": 2,
+        "bush": 20,
+        "berry": 10,
+        "berry_poison": 4
+      },
+      "chests": {
+        "chest_easy_1": {
+          "type": "range",
+          "min": 2,
+          "max": 3
+        },
+        "chest_grave_xmas": "chest_grave_xmas_amount",
+        "chest_grave_halloween": "chest_grave_halloween_amount",
+        "chest_xmas_goblin": "chest_xmas_goblin_amount"
+      },
+      "areas": {
+        "chests": [
+          {
+            "type": "rect",
+            "rect": [
+              8,
+              10,
+              18,
+              -10
+            ]
+          },
+          {
+            "type": "rect",
+            "rect": [
+              -18,
+              18,
+              18,
+              10
+            ]
+          },
+          {
+            "type": "rect",
+            "rect": [
+              -18,
+              10,
+              -8,
+              0
+            ]
+          }
+        ]
+      },
+      "mobs_per_chest": 1,
+      "unique_avatars": {
+        "cursed_martyr": [
+          {
+            "@ref:13": [
+              -1,
+              0,
+              3.75
+            ],
+            "@ref:14": 210
+          }
+        ],
+        "cursed": [
+          {
+            "@ref:13": [
+              9.25,
+              0,
+              13.25
+            ],
+            "@ref:14": 345
+          }
+        ],
+        "bear": [
+          {
+            "@ref:13": [
+              10.85,
+              0,
+              -11.15
+            ],
+            "@ref:14": 145
+          }
+        ]
+      },
+      "decors": {
+        "decor_farm_forest_easy_01": 1
+      },
+      "avatars": {
+        "leper": {
+          "type": "range",
+          "min": 2,
+          "max": 3
+        },
+        "deer": {
+          "type": "range",
+          "min": 2,
+          "max": 4
+        },
+        "wolf": {
+          "type": "range",
+          "min": 6,
+          "max": 8
+        },
+        "turkey": "turkey_count",
+        "turkey_boss": "turkey_boss_count"
+      },
+      "pet_baby": {
+        "avatars": [
+          "pet_wolf_baby_normal"
+        ],
+        "@ref:11": "pet_baby_easy.count"
+      },
+      "spots": {
+        "spot_easy": {
+          "type": "range",
+          "min": 1,
+          "max": 2
+        },
+        "spot_big": {
+          "type": "range",
+          "min": 0,
+          "max": 1
+        }
+      },
+      "active_spots": {
+        "active_spot": 1
+      },
+      "tags": [
+        "trigger_events",
+        "guarded_chests",
+        "central_speech"
+      ],
+      "stats": {
+        "pve_trigger": {
+          "type": "consumable",
+          "period": 90,
+          "maximum": 10000
+        },
+        "pve_counter": {
+          "type": "int"
+        },
+        "pvp_trigger": {
+          "type": "consumable",
+          "period": 150,
+          "maximum": 10000
+        },
+        "pvp_counter": {
+          "type": "int"
+        },
+        "rain_timeout": {
+          "type": "timeout",
+          "runnable": true
+        },
+        "rain_phase": {
+          "type": "int"
+        },
+        "rain_ts_end": {
+          "type": "double"
+        },
+        "servants_spawned": {
+          "type": "int"
+        },
+        "servants_sound_timer": {
+          "type": "timeout",
+          "script": "try_servant_sound_play"
+        },
+        "challenge_mob_spawned": {
+          "type": "int"
+        },
+        "ab.easy_farm_save_corpse_ts": {
+          "type": "double"
+        }
+      },
+      "scripts": {
+        "border": [
+          {
+            "type": "resource.set",
+            "resource": "ab.easy_farm_save_corpse_ts",
+            "target": "location",
+            "@ref:11": 0
+          },
+          1
+        ],
+        "player_died": {
+          "type": "resource.set",
+          "resource": "ab.easy_farm_save_corpse_ts",
+          "target": "location",
+          "@ref:11": {
+            "type": "sum",
+            "amounts": [
+              {
+                "type": "time.now"
+              },
+              3600
+            ]
+          }
+        },
+        "activate": [
+          {
+            "type": "quest.advance",
+            "goal": "location.easy_forest"
+          },
+          "pve.clear",
+          "pvp.clear",
+          "rain_init"
+        ],
+        "enter": [
+          "pvn.clear",
+          "try_set_servant_victims",
+          "schedule_servants_sound"
+        ],
+        "summon_turkey_boss": "try_spawn_turkey_boss",
+        "update": [
+          "rain_tick",
+          "pvn.trigger",
+          "naked.trigger",
+          {
+            "type": "condition",
+            "if": "pve.can",
+            "then": [
+              "pve.trigger",
+              {
+                "type": "probability",
+                "probability": 0.6,
+                "action": [
+                  {
+                    "type": "weight",
+                    "weights": [
+                      {
+                        "weight": 8,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "leper",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pve"
+                        }
+                      },
+                      {
+                        "weight": 5,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "wolf",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pve"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "condition",
+            "if": "pvp.can.easy",
+            "then": [
+              "pvp.trigger",
+              {
+                "type": "probability",
+                "probability": 0.3,
+                "action": [
+                  {
+                    "type": "weight",
+                    "weights": [
+                      {
+                        "weight": 2,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "player_bot_easy_1",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pvp"
+                        }
+                      },
+                      {
+                        "weight": 2,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "player_bot_easy_2",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pvp"
+                        }
+                      },
+                      {
+                        "weight": 2,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "player_bot_easy_3",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pvp"
+                        }
+                      },
+                      {
+                        "weight": 2,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "player_bot_easy_4",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pvp"
+                        }
+                      },
+                      {
+                        "weight": 2,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "player_bot_easy_5",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pvp"
+                        }
+                      },
+                      {
+                        "weight": 2,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "player_bot_easy_6",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pvp"
+                        }
+                      },
+                      {
+                        "weight": 1,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "player_bot_easy_7",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pvp"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "arg.set",
+            "args": {
+              "skulls": 1
+            },
+            "script": "try_spawn_servants"
+          }
+        ]
+      },
+      "points_of_interest": {
+        "interactable_objects_weights": {
+          "sacrifice_altar": 0,
+          "chained_chest_level1": 1,
+          "deer_carcass": 0,
+          "old_well": 5,
+          "none": 0
+        },
+        "corpses": {
+          "@ref:11": 3,
+          "chance": 0.3
+        }
+      },
+      "view": {
+        "layer_0_tex_path": "Prefabs/LocationScreen/Nature/Ground/grass_clan",
+        "layer_0_tex_path_winter": "Prefabs/LocationScreen/Nature/Ground/mud4_winter",
+        "layer_0_scale": [
+          0.25,
+          0.25
+        ],
+        "layer_1_tex_path": "Prefabs/LocationScreen/Nature/Ground/grass_birch",
+        "layer_1_tex_path_winter": "Prefabs/LocationScreen/Nature/Ground/grass0_winter",
+        "layer_1_scale": [
+          0.25,
+          0.25
+        ],
+        "layer_2_tex_path": "Prefabs/LocationScreen/Nature/Ground/grass_iron",
+        "layer_2_scale": [
+          0.25,
+          0.25
+        ],
+        "layer_wet_tex_path": "Prefabs/LocationScreen/Nature/Ground/mud_birch",
+        "layer_wet_scale": [
+          0.25,
+          0.25
+        ],
+        "layer_mix_tex_path": "Prefabs/LocationScreen/Nature/Ground/noise0",
+        "layer_mix_scale": [
+          0.2,
+          0.2
+        ],
+        "grass_tex_path": "Prefabs/LocationScreen/Nature/Ground/grass_set1_birch",
+        "grass_tex_path_winter": "Prefabs/LocationScreen/Nature/Ground/grass_set1_winter",
+        "grass_alpha_path": "Prefabs/LocationScreen/Nature/Ground/grass_set1_alpha",
+        "grass_atlas_tiling": [
+          2,
+          2
+        ],
+        "grass_density": 0.05,
+        "grass_grid_resolution": 30,
+        "grass_scale": [
+          0.4,
+          0.4
+        ],
+        "grass_translate": 0.25,
+        "music_theme": "music_location_normal",
+        "chests_places": {
+          "chest_easy_1": [
+            [
+              1.5,
+              0,
+              -0.43
+            ]
+          ]
+        },
+        "mines_places": {
+          "rock": [
+            [
+              -15.25,
+              0,
+              18
+            ],
+            [
+              -2.58,
+              0,
+              -14.17
+            ],
+            [
+              18.96,
+              0,
+              -14.5
+            ],
+            [
+              18.07,
+              0,
+              -9.48
+            ]
+          ],
+          "berry": [
+            [
+              -9.61,
+              355,
+              12.02
+            ],
+            [
+              -7.59,
+              355,
+              10.96
+            ],
+            [
+              -8.89,
+              355,
+              10.54
+            ],
+            [
+              12.46,
+              96.62,
+              2.47
+            ],
+            [
+              14.04,
+              96.62,
+              4.53
+            ],
+            [
+              -14.92,
+              0,
+              -9.86
+            ],
+            [
+              11.33,
+              300,
+              -12.76
+            ],
+            [
+              9.01,
+              300,
+              -13.65
+            ]
+          ],
+          "berry_poison": [
+            [
+              13.65,
+              96.63,
+              1.86
+            ],
+            [
+              -13.76,
+              0,
+              -8.82
+            ],
+            [
+              9.49,
+              300,
+              -11.92
+            ],
+            [
+              10.4,
+              300,
+              -14.26
+            ]
+          ],
+          "copper": [
+            [
+              -12.1,
+              0,
+              17.33
+            ],
+            [
+              9.29,
+              0,
+              -19
+            ]
+          ],
+          "young_tree": [
+            [
+              -4.619,
+              0,
+              11.79
+            ],
+            [
+              -5.179,
+              0,
+              11.989
+            ],
+            [
+              -4.237,
+              0,
+              12.192
+            ],
+            [
+              -12.7,
+              0,
+              -14.54
+            ],
+            [
+              -11.68,
+              0,
+              -6.362
+            ],
+            [
+              -11.37,
+              0,
+              -7.076
+            ],
+            [
+              -10.65,
+              0,
+              -6.709
+            ],
+            [
+              -11.55,
+              0,
+              -15.52
+            ],
+            [
+              -9.654,
+              0,
+              -14.79
+            ]
+          ],
+          "young_tree_dead": [
+            [
+              12.958,
+              0,
+              7.1448
+            ],
+            [
+              14.249,
+              0,
+              6.0469
+            ],
+            [
+              10.81,
+              0,
+              -1.72
+            ],
+            [
+              11.85,
+              0,
+              -2.42
+            ],
+            [
+              17.304,
+              0,
+              10.804
+            ]
+          ]
+        },
+        "empty_zones": [
+          [
+            -2,
+            -4,
+            4,
+            4
+          ],
+          [
+            -4,
+            -16,
+            4,
+            -8
+          ],
+          [
+            -17,
+            17,
+            -5,
+            30
+          ],
+          [
+            18,
+            -16,
+            25,
+            -8
+          ],
+          [
+            -13,
+            -16,
+            -9,
+            -11.7
+          ],
+          [
+            1,
+            12.2,
+            4,
+            15.3
+          ],
+          [
+            -13,
+            14.5,
+            -9,
+            17
+          ],
+          [
+            8,
+            -22,
+            13,
+            -18
+          ],
+          [
+            -1,
+            -23,
+            3,
+            -20
+          ],
+          [
+            8,
+            -16,
+            13,
+            -10
+          ],
+          [
+            -19.2,
+            -8.2,
+            -16.2,
+            -4
+          ],
+          [
+            -13.4,
+            -8,
+            -9.8,
+            -5.7
+          ],
+          [
+            -15.8,
+            1,
+            -13.2,
+            4
+          ],
+          [
+            13,
+            3,
+            15,
+            9
+          ],
+          [
+            17,
+            9,
+            18,
+            13
+          ],
+          [
+            -10,
+            10,
+            -7,
+            13
+          ],
+          [
+            7.2,
+            16.5,
+            8.8,
+            18
+          ],
+          [
+            10,
+            -4,
+            13,
+            1
+          ],
+          [
+            11.7,
+            0.8,
+            14.4,
+            2.8
+          ],
+          [
+            -30,
+            -30,
+            30,
+            -18
+          ],
+          [
+            -30,
+            -30,
+            -18,
+            30
+          ],
+          [
+            -30,
+            18,
+            30,
+            30
+          ],
+          [
+            18,
+            -30,
+            30,
+            30
+          ],
+          [
+            -20.5,
+            -20.5,
+            -13.5,
+            -13.2
+          ],
+          [
+            -9,
+            -21,
+            -1,
+            -16.1
+          ],
+          [
+            12.2,
+            -20.5,
+            20.5,
+            -15
+          ],
+          [
+            16.2,
+            -2.1,
+            20.5,
+            5.8
+          ],
+          [
+            13.6,
+            13,
+            20.5,
+            20.8
+          ],
+          [
+            -8,
+            16.2,
+            1.5,
+            20.8
+          ],
+          [
+            -20.5,
+            11.8,
+            -13,
+            18
+          ],
+          [
+            -20.5,
+            -4.1,
+            -16.3,
+            3.6
+          ]
+        ],
+        "avatars_zones": [
+          [
+            -10,
+            -10,
+            10,
+            10
+          ],
+          [
+            -1,
+            -20,
+            7,
+            -10
+          ],
+          [
+            10,
+            -11,
+            18,
+            -7
+          ],
+          [
+            10,
+            5.3,
+            13,
+            10
+          ],
+          [
+            2,
+            10,
+            11,
+            14
+          ]
+        ],
+        "avatar_places": {
+          "any": [
+            [
+              -0.6,
+              30,
+              -1.8
+            ],
+            [
+              -3.29,
+              70,
+              -8.86
+            ],
+            [
+              -12.93,
+              130,
+              -6.04
+            ]
+          ]
+        },
+        "decors_places": {
+          "decor_farm_forest_easy_01": [
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        "player_spawn": {
+          "entrance_n": [
+            18.09,
+            225,
+            14.69
+          ],
+          "entrance_ne": [
+            17.64,
+            270,
+            0.05
+          ],
+          "entrance_e": [
+            14.05,
+            335,
+            -17.95
+          ],
+          "entrance_se": [
+            -7.54,
+            0,
+            -17.61
+          ],
+          "entrance_s": [
+            -18,
+            45,
+            -14.64
+          ],
+          "entrance_sw": [
+            -17.68,
+            90,
+            1.68
+          ],
+          "entrance_w": [
+            -14.62,
+            145,
+            15.32
+          ],
+          "entrance_nw": [
+            -1.52,
+            175,
+            17.73
+          ]
+        },
+        "interactable_objects_places": [
+          [
+            10,
+            0,
+            15
+          ]
+        ]
+      },
+      "_source_section": "refs.locations",
+      "_referenced_as": "custom_locations",
+      "_used_by": [
+        {
+          "id": "easy_forest_01",
+          "source_section": "refs.maps.0.points"
+        },
+        {
+          "id": "easy_forest_02",
+          "source_section": "refs.maps.0.points"
+        },
+        {
+          "id": "easy_forest_03",
+          "source_section": "refs.maps.0.points"
+        }
+      ]
+    },
+    "farm_forest_easy_02": {
+      "disposable": {
+        "type": "not",
+        "condition": {
+          "type": "ab.is_easy_farm_save_corpse"
+        }
+      },
+      "expired": {
+        "type": "or",
+        "conditions": [
+          {
+            "type": "gte",
+            "first": {
+              "type": "time.now"
+            },
+            "second": {
+              "type": "resource",
+              "resource": "ab.easy_farm_save_corpse_ts",
+              "target": "location"
+            }
+          },
+          {
+            "type": "not",
+            "condition": {
+              "type": "is_player_corpse_on_location",
+              "target": "location"
+            }
+          }
+        ]
+      },
+      "noise": {
+        "a": {
+          "scale": 0.06,
+          "mul": 1,
+          "add": 0
+        },
+        "b": {
+          "scale": 0.12,
+          "mul": 1,
+          "add": 0
+        },
+        "c": {
+          "scale": 0.1,
+          "mul": 8,
+          "add": -7
+        }
+      },
+      "chunk_res": 10,
+      "chunk_scale": 10,
+      "chunks_count_x": 6,
+      "chunks_count_z": 6,
+      "chunk_grid_size": 5,
+      "grid_border": 1,
+      "chunk_border": 1,
+      "leave_border": 2.5,
+      "character_limit": 60,
+      "mines": {
+        "tree_item": 3,
+        "young_tree": 22,
+        "young_tree_dead": 10,
+        "rock_item": 10,
+        "tree_birch": 30,
+        "tree_birch_dead": 5,
+        "rock": 4,
+        "copper": 2,
+        "bush": 20,
+        "berry": 10,
+        "berry_poison": 4
+      },
+      "chests": {
+        "chest_easy_1": {
+          "type": "range",
+          "min": 2,
+          "max": 3
+        },
+        "chest_grave_xmas": "chest_grave_xmas_amount",
+        "chest_grave_halloween": "chest_grave_halloween_amount",
+        "chest_xmas_goblin": "chest_xmas_goblin_amount"
+      },
+      "areas": {
+        "chests": [
+          {
+            "type": "rect",
+            "rect": [
+              -20,
+              9,
+              20,
+              18
+            ]
+          }
+        ]
+      },
+      "mobs_per_chest": 0,
+      "unique_avatars": {
+        "cursed_martyr": [
+          {
+            "@ref:13": [
+              -0.4,
+              0,
+              9.37
+            ],
+            "@ref:14": 210
+          }
+        ],
+        "cursed": [
+          {
+            "@ref:13": [
+              -0.4,
+              0,
+              1.19
+            ],
+            "@ref:14": 170
+          }
+        ],
+        "bear": [
+          {
+            "@ref:13": [
+              12.73,
+              0,
+              -1.15
+            ],
+            "@ref:14": 70
+          }
+        ],
+        "wolf": [
+          {
+            "@ref:13": [
+              0.5,
+              0,
+              -5.75
+            ],
+            "@ref:14": 60
+          }
+        ]
+      },
+      "decors": {
+        "decor_farm_forest_easy_02": 1
+      },
+      "avatars": {
+        "leper": {
+          "type": "range",
+          "min": 2,
+          "max": 3
+        },
+        "deer": {
+          "type": "range",
+          "min": 2,
+          "max": 4
+        },
+        "wolf": {
+          "type": "range",
+          "min": 5,
+          "max": 7
+        },
+        "turkey": "turkey_count",
+        "turkey_boss": "turkey_boss_count"
+      },
+      "pet_baby": {
+        "avatars": [
+          "pet_wolf_baby_normal"
+        ],
+        "@ref:11": "pet_baby_easy.count"
+      },
+      "spots": {
+        "spot_easy": {
+          "type": "range",
+          "min": 1,
+          "max": 2
+        },
+        "spot_big": {
+          "type": "range",
+          "min": 0,
+          "max": 1
+        }
+      },
+      "active_spots": {
+        "active_spot": 1
+      },
+      "tags": [
+        "trigger_events",
+        "guarded_chests",
+        "central_speech"
+      ],
+      "stats": {
+        "pve_trigger": {
+          "type": "consumable",
+          "period": 90,
+          "maximum": 10000
+        },
+        "pve_counter": {
+          "type": "int"
+        },
+        "pvp_trigger": {
+          "type": "consumable",
+          "period": 150,
+          "maximum": 10000
+        },
+        "pvp_counter": {
+          "type": "int"
+        },
+        "rain_timeout": {
+          "type": "timeout",
+          "runnable": true
+        },
+        "rain_phase": {
+          "type": "int"
+        },
+        "rain_ts_end": {
+          "type": "double"
+        },
+        "servants_spawned": {
+          "type": "int"
+        },
+        "servants_sound_timer": {
+          "type": "timeout",
+          "script": "try_servant_sound_play"
+        },
+        "challenge_mob_spawned": {
+          "type": "int"
+        },
+        "ab.easy_farm_save_corpse_ts": {
+          "type": "double"
+        }
+      },
+      "scripts": {
+        "border": [
+          {
+            "type": "resource.set",
+            "resource": "ab.easy_farm_save_corpse_ts",
+            "target": "location",
+            "@ref:11": 0
+          },
+          1
+        ],
+        "player_died": {
+          "type": "resource.set",
+          "resource": "ab.easy_farm_save_corpse_ts",
+          "target": "location",
+          "@ref:11": {
+            "type": "sum",
+            "amounts": [
+              {
+                "type": "time.now"
+              },
+              3600
+            ]
+          }
+        },
+        "activate": [
+          {
+            "type": "quest.advance",
+            "goal": "location.easy_forest"
+          },
+          "pve.clear",
+          "pvp.clear",
+          "rain_init"
+        ],
+        "enter": [
+          "pvn.clear",
+          "try_set_servant_victims",
+          "schedule_servants_sound"
+        ],
+        "summon_turkey_boss": "try_spawn_turkey_boss",
+        "update": [
+          "rain_tick",
+          "pvn.trigger",
+          "naked.trigger",
+          {
+            "type": "condition",
+            "if": "pve.can",
+            "then": [
+              "pve.trigger",
+              {
+                "type": "probability",
+                "probability": 0.6,
+                "action": [
+                  {
+                    "type": "weight",
+                    "weights": [
+                      {
+                        "weight": 8,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "leper",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pve"
+                        }
+                      },
+                      {
+                        "weight": 5,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "wolf",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pve"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "condition",
+            "if": "pvp.can.easy",
+            "then": [
+              "pvp.trigger",
+              {
+                "type": "probability",
+                "probability": 0.3,
+                "action": [
+                  {
+                    "type": "weight",
+                    "weights": [
+                      {
+                        "weight": 2,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "player_bot_easy_1",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pvp"
+                        }
+                      },
+                      {
+                        "weight": 2,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "player_bot_easy_2",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pvp"
+                        }
+                      },
+                      {
+                        "weight": 2,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "player_bot_easy_3",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pvp"
+                        }
+                      },
+                      {
+                        "weight": 2,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "player_bot_easy_4",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pvp"
+                        }
+                      },
+                      {
+                        "weight": 2,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "player_bot_easy_5",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pvp"
+                        }
+                      },
+                      {
+                        "weight": 2,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "player_bot_easy_6",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pvp"
+                        }
+                      },
+                      {
+                        "weight": 1,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "player_bot_easy_7",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pvp"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "arg.set",
+            "args": {
+              "skulls": 1
+            },
+            "script": "try_spawn_servants"
+          }
+        ]
+      },
+      "points_of_interest": {
+        "interactable_objects_weights": {
+          "sacrifice_altar": 0,
+          "chained_chest_level1": 1,
+          "deer_carcass": 0,
+          "old_well": 5,
+          "none": 0
+        },
+        "corpses": {
+          "@ref:11": 3,
+          "chance": 0.3
+        }
+      },
+      "view": {
+        "music_theme": "music_location_normal",
+        "layer_0_tex_path": "Prefabs/LocationScreen/Nature/Ground/grass_clan",
+        "layer_0_tex_path_winter": "Prefabs/LocationScreen/Nature/Ground/mud4_winter",
+        "layer_0_scale": [
+          0.25,
+          0.25
+        ],
+        "layer_1_tex_path": "Prefabs/LocationScreen/Nature/Ground/grass_birch",
+        "layer_1_tex_path_winter": "Prefabs/LocationScreen/Nature/Ground/grass0_winter",
+        "layer_1_scale": [
+          0.25,
+          0.25
+        ],
+        "layer_2_tex_path": "Prefabs/LocationScreen/Nature/Ground/grass_iron",
+        "layer_2_scale": [
+          0.25,
+          0.25
+        ],
+        "layer_wet_tex_path": "Prefabs/LocationScreen/Nature/Ground/mud_birch",
+        "layer_wet_scale": [
+          0.25,
+          0.25
+        ],
+        "layer_mix_tex_path": "Prefabs/LocationScreen/Nature/Ground/noise0",
+        "layer_mix_scale": [
+          0.2,
+          0.2
+        ],
+        "grass_tex_path": "Prefabs/LocationScreen/Nature/Ground/grass_set1_birch",
+        "grass_tex_path_winter": "Prefabs/LocationScreen/Nature/Ground/grass_set1_winter",
+        "grass_alpha_path": "Prefabs/LocationScreen/Nature/Ground/grass_set1_alpha",
+        "grass_atlas_tiling": [
+          2,
+          2
+        ],
+        "grass_density": 0.05,
+        "grass_grid_resolution": 30,
+        "grass_scale": [
+          0.4,
+          0.4
+        ],
+        "grass_translate": 0.25,
+        "chests_places": {
+          "chest_easy_1": [
+            [
+              15.75,
+              0,
+              -0.43
+            ]
+          ]
+        },
+        "mines_places": {
+          "tree_birch": [
+            [
+              -11.13,
+              0,
+              2.08
+            ],
+            [
+              13.87,
+              0,
+              -10.67
+            ],
+            [
+              -14.38,
+              0,
+              -13.67
+            ],
+            [
+              -11.63,
+              0,
+              -14.92
+            ],
+            [
+              -1.13,
+              0,
+              -14.67
+            ],
+            [
+              -5.15,
+              15,
+              7.95
+            ],
+            [
+              15.37,
+              0,
+              8.33
+            ],
+            [
+              12.87,
+              0,
+              8.08
+            ]
+          ],
+          "rock": [
+            [
+              10.19,
+              0,
+              18.78
+            ],
+            [
+              -7.83,
+              0,
+              -8.67
+            ],
+            [
+              14.71,
+              0,
+              -16.31
+            ],
+            [
+              14.82,
+              0,
+              -17.98
+            ]
+          ],
+          "berry": [
+            [
+              2.13,
+              355,
+              2.3
+            ],
+            [
+              -6.06,
+              295,
+              7.78
+            ],
+            [
+              6.23,
+              355,
+              8.37
+            ],
+            [
+              12.46,
+              96,
+              2.47
+            ],
+            [
+              14.04,
+              45,
+              -1.08
+            ],
+            [
+              -17.86,
+              0,
+              -10.45
+            ],
+            [
+              15.07,
+              300,
+              -4.29
+            ],
+            [
+              5.95,
+              300,
+              -14.43
+            ]
+          ],
+          "berry_poison": [
+            [
+              13.65,
+              96,
+              0.27
+            ],
+            [
+              -16.11,
+              0,
+              2.38
+            ],
+            [
+              2.66,
+              300,
+              -6.94
+            ],
+            [
+              7.29,
+              300,
+              -14.99
+            ]
+          ],
+          "copper": [
+            [
+              -13.5,
+              0,
+              -8.17
+            ],
+            [
+              11.9,
+              0,
+              18.13
+            ]
+          ],
+          "young_tree": [
+            [
+              -3.87,
+              0,
+              16.04
+            ],
+            [
+              -2.26,
+              195,
+              15.39
+            ],
+            [
+              -2.51,
+              195,
+              7.69
+            ],
+            [
+              -10.03,
+              195,
+              7.64
+            ],
+            [
+              -4.55,
+              285,
+              2.62
+            ],
+            [
+              -5.8,
+              255,
+              -15.84
+            ],
+            [
+              -9.5,
+              45,
+              7.77
+            ],
+            [
+              -4.41,
+              135,
+              2.09
+            ],
+            [
+              3.01,
+              135,
+              -14.88
+            ],
+            [
+              4.3,
+              240,
+              -15.17
+            ],
+            [
+              2.58,
+              240,
+              -5.19
+            ],
+            [
+              -16,
+              240,
+              -11
+            ],
+            [
+              -6.4,
+              330,
+              -15.23
+            ]
+          ],
+          "young_tree_dead": [
+            [
+              8.21,
+              0,
+              7.65
+            ],
+            [
+              9.13,
+              180,
+              8.14
+            ],
+            [
+              4.38,
+              180,
+              12.39
+            ],
+            [
+              17.06,
+              210,
+              16.86
+            ],
+            [
+              18.15,
+              30,
+              17.43
+            ]
+          ]
+        },
+        "empty_zones": [
+          [
+            8,
+            16,
+            20,
+            25
+          ],
+          [
+            6.5,
+            -26,
+            16,
+            -14
+          ],
+          [
+            -15,
+            -10,
+            -7,
+            -2.5
+          ],
+          [
+            15,
+            -5,
+            27,
+            2.5
+          ],
+          [
+            -14.5,
+            8,
+            -11.5,
+            12
+          ],
+          [
+            -1.5,
+            -0.5,
+            2,
+            11
+          ],
+          [
+            2,
+            -16,
+            8,
+            -14
+          ],
+          [
+            11.5,
+            -5,
+            15,
+            2.5
+          ],
+          [
+            -7,
+            -18,
+            -4.5,
+            -14
+          ],
+          [
+            -19,
+            -12.5,
+            -15.2,
+            -10
+          ],
+          [
+            -0.5,
+            -7.8,
+            3.5,
+            -4.5
+          ],
+          [
+            -5,
+            13.8,
+            -1,
+            17.2
+          ],
+          [
+            2.3,
+            12,
+            4.7,
+            14
+          ],
+          [
+            -30,
+            1.5,
+            30,
+            9
+          ],
+          [
+            -30,
+            -30,
+            30,
+            -20
+          ],
+          [
+            -30,
+            20,
+            30,
+            30
+          ],
+          [
+            -30,
+            -30,
+            -20,
+            30
+          ],
+          [
+            20,
+            -30,
+            30,
+            30
+          ],
+          [
+            -22,
+            -22,
+            -10.8,
+            -11.8
+          ],
+          [
+            -3,
+            -22,
+            6.5,
+            -13.8
+          ],
+          [
+            12.7,
+            -16,
+            22,
+            -10.3
+          ],
+          [
+            15.2,
+            8.5,
+            21,
+            16.5
+          ],
+          [
+            -5,
+            16.2,
+            3.2,
+            20.1
+          ],
+          [
+            -22.5,
+            14.2,
+            -13.6,
+            20.8
+          ],
+          [
+            -21.5,
+            -6,
+            -13.9,
+            1.5
+          ]
+        ],
+        "avatars_zones": [
+          [
+            -8,
+            -7,
+            20,
+            2
+          ],
+          [
+            -11,
+            -12,
+            7,
+            -4
+          ],
+          [
+            -11,
+            -20,
+            -7,
+            -12
+          ],
+          [
+            7,
+            -10.1,
+            9.7,
+            -6.9
+          ],
+          [
+            -20,
+            8.9,
+            10.5,
+            12.5
+          ],
+          [
+            7.3,
+            12.4,
+            11.7,
+            15.9
+          ],
+          [
+            -8.7,
+            12.4,
+            -2.8,
+            15.9
+          ]
+        ],
+        "avatar_places": {
+          "any": [
+            [
+              7.53,
+              15,
+              -0.88
+            ],
+            [
+              -7.66,
+              40,
+              -3.39
+            ],
+            [
+              -7.66,
+              130,
+              1.86
+            ],
+            [
+              -3.66,
+              60,
+              -3.39
+            ],
+            [
+              4.59,
+              80,
+              -1.64
+            ],
+            [
+              4.59,
+              60,
+              -9.89
+            ],
+            [
+              -5.91,
+              30,
+              -7.39
+            ],
+            [
+              -11.66,
+              90,
+              8.36
+            ],
+            [
+              4.34,
+              110,
+              8.61
+            ],
+            [
+              7.59,
+              0,
+              1.86
+            ],
+            [
+              9.34,
+              150,
+              -6.89
+            ],
+            [
+              -4.66,
+              270,
+              -10.64
+            ],
+            [
+              0.59,
+              320,
+              0.36
+            ],
+            [
+              -8.91,
+              210,
+              -17.39
+            ],
+            [
+              -8.91,
+              190,
+              -13.39
+            ],
+            [
+              -0.41,
+              50,
+              -10.14
+            ],
+            [
+              7.34,
+              70,
+              10.86
+            ],
+            [
+              -8.16,
+              30,
+              10.36
+            ],
+            [
+              -17.91,
+              10,
+              10.11
+            ]
+          ]
+        },
+        "decors_places": {
+          "decor_farm_forest_easy_02": [
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        "player_spawn": {
+          "entrance_n": [
+            17.77,
+            270,
+            10.46
+          ],
+          "entrance_ne": [
+            14.78,
+            330,
+            -13.56
+          ],
+          "entrance_e": [
+            14.76,
+            330,
+            -13.54
+          ],
+          "entrance_se": [
+            -0.34,
+            0,
+            -18.07
+          ],
+          "entrance_s": [
+            -18.1,
+            55,
+            -14.67
+          ],
+          "entrance_sw": [
+            -17.78,
+            90,
+            -0.2
+          ],
+          "entrance_w": [
+            -15.06,
+            145,
+            18.54
+          ],
+          "entrance_nw": [
+            1.19,
+            175,
+            18.55
+          ]
+        },
+        "interactable_objects_places": [
+          [
+            10,
+            0,
+            15
+          ]
+        ]
+      },
+      "chunks": {
+        "line_cliff_01_02": [
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            5,
+            3
+          ]
+        ]
+      },
+      "_source_section": "refs.locations",
+      "_referenced_as": "custom_locations",
+      "_used_by": [
+        {
+          "id": "easy_forest_01",
+          "source_section": "refs.maps.0.points"
+        },
+        {
+          "id": "easy_forest_02",
+          "source_section": "refs.maps.0.points"
+        },
+        {
+          "id": "easy_forest_03",
+          "source_section": "refs.maps.0.points"
+        }
+      ]
+    },
+    "farm_forest_easy_03": {
+      "disposable": {
+        "type": "not",
+        "condition": {
+          "type": "ab.is_easy_farm_save_corpse"
+        }
+      },
+      "expired": {
+        "type": "or",
+        "conditions": [
+          {
+            "type": "gte",
+            "first": {
+              "type": "time.now"
+            },
+            "second": {
+              "type": "resource",
+              "resource": "ab.easy_farm_save_corpse_ts",
+              "target": "location"
+            }
+          },
+          {
+            "type": "not",
+            "condition": {
+              "type": "is_player_corpse_on_location",
+              "target": "location"
+            }
+          }
+        ]
+      },
+      "noise": {
+        "a": {
+          "scale": 0.06,
+          "mul": 1,
+          "add": 0
+        },
+        "b": {
+          "scale": 0.12,
+          "mul": 1,
+          "add": 0
+        },
+        "c": {
+          "scale": 0.1,
+          "mul": 8,
+          "add": -7
+        }
+      },
+      "chunk_res": 10,
+      "chunk_scale": 10,
+      "chunks_count_x": 6,
+      "chunks_count_z": 6,
+      "chunk_grid_size": 5,
+      "grid_border": 1,
+      "chunk_border": 1,
+      "leave_border": 2.5,
+      "character_limit": 60,
+      "mines": {
+        "tree_item": 3,
+        "young_tree": 22,
+        "young_tree_dead": 10,
+        "rock_item": 10,
+        "tree_birch": 30,
+        "tree_birch_dead": 5,
+        "rock": 4,
+        "copper": 2,
+        "bush": 20,
+        "berry": 10,
+        "berry_poison": 4
+      },
+      "chests": {
+        "chest_easy_1": {
+          "type": "range",
+          "min": 2,
+          "max": 3
+        },
+        "chest_grave_xmas": "chest_grave_xmas_amount",
+        "chest_grave_halloween": "chest_grave_halloween_amount",
+        "chest_xmas_goblin": "chest_xmas_goblin_amount"
+      },
+      "areas": {
+        "chests": [
+          {
+            "type": "rect",
+            "rect": [
+              8,
+              10,
+              18,
+              -10
+            ]
+          },
+          {
+            "type": "rect",
+            "rect": [
+              -18,
+              18,
+              18,
+              10
+            ]
+          },
+          {
+            "type": "rect",
+            "rect": [
+              -18,
+              10,
+              -8,
+              0
+            ]
+          }
+        ]
+      },
+      "mobs_per_chest": 0,
+      "unique_avatars": {
+        "cursed_martyr": [
+          {
+            "@ref:13": [
+              7.61,
+              0,
+              -11.28
+            ],
+            "@ref:14": 255
+          }
+        ],
+        "cursed": [
+          {
+            "@ref:13": [
+              7.5,
+              0,
+              11
+            ],
+            "@ref:14": 240
+          }
+        ],
+        "bear": [
+          {
+            "@ref:13": [
+              -8.75,
+              0,
+              10
+            ],
+            "@ref:14": 235
+          }
+        ],
+        "wolf": [
+          {
+            "@ref:13": [
+              9.79,
+              0,
+              8.02
+            ],
+            "@ref:14": 235
+          },
+          {
+            "@ref:13": [
+              -2.46,
+              0,
+              -0.23
+            ],
+            "@ref:14": 235
+          }
+        ]
+      },
+      "decors": {
+        "decor_farm_forest_easy_03": 1
+      },
+      "avatars": {
+        "leper": {
+          "type": "range",
+          "min": 2,
+          "max": 3
+        },
+        "deer": {
+          "type": "range",
+          "min": 2,
+          "max": 4
+        },
+        "wolf": {
+          "type": "range",
+          "min": 4,
+          "max": 6
+        },
+        "turkey": "turkey_count",
+        "turkey_boss": "turkey_boss_count"
+      },
+      "pet_baby": {
+        "avatars": [
+          "pet_wolf_baby_normal"
+        ],
+        "@ref:11": "pet_baby_easy.count"
+      },
+      "spots": {
+        "spot_easy": {
+          "type": "range",
+          "min": 1,
+          "max": 2
+        },
+        "spot_big": {
+          "type": "range",
+          "min": 0,
+          "max": 1
+        }
+      },
+      "active_spots": {
+        "active_spot": 1
+      },
+      "tags": [
+        "trigger_events",
+        "guarded_chests",
+        "central_speech"
+      ],
+      "stats": {
+        "pve_trigger": {
+          "type": "consumable",
+          "period": 90,
+          "maximum": 10000
+        },
+        "pve_counter": {
+          "type": "int"
+        },
+        "pvp_trigger": {
+          "type": "consumable",
+          "period": 150,
+          "maximum": 10000
+        },
+        "pvp_counter": {
+          "type": "int"
+        },
+        "rain_timeout": {
+          "type": "timeout",
+          "runnable": true
+        },
+        "rain_phase": {
+          "type": "int"
+        },
+        "rain_ts_end": {
+          "type": "double"
+        },
+        "servants_spawned": {
+          "type": "int"
+        },
+        "servants_sound_timer": {
+          "type": "timeout",
+          "script": "try_servant_sound_play"
+        },
+        "challenge_mob_spawned": {
+          "type": "int"
+        },
+        "ab.easy_farm_save_corpse_ts": {
+          "type": "double"
+        }
+      },
+      "scripts": {
+        "border": [
+          {
+            "type": "resource.set",
+            "resource": "ab.easy_farm_save_corpse_ts",
+            "target": "location",
+            "@ref:11": 0
+          },
+          1
+        ],
+        "player_died": {
+          "type": "resource.set",
+          "resource": "ab.easy_farm_save_corpse_ts",
+          "target": "location",
+          "@ref:11": {
+            "type": "sum",
+            "amounts": [
+              {
+                "type": "time.now"
+              },
+              3600
+            ]
+          }
+        },
+        "activate": [
+          {
+            "type": "quest.advance",
+            "goal": "location.easy_forest"
+          },
+          "pve.clear",
+          "pvp.clear",
+          "rain_init"
+        ],
+        "enter": [
+          "pvn.clear",
+          "try_set_servant_victims",
+          "schedule_servants_sound"
+        ],
+        "summon_turkey_boss": "try_spawn_turkey_boss",
+        "update": [
+          "rain_tick",
+          "pvn.trigger",
+          "naked.trigger",
+          {
+            "type": "condition",
+            "if": "pve.can",
+            "then": [
+              "pve.trigger",
+              {
+                "type": "probability",
+                "probability": 0.6,
+                "action": [
+                  {
+                    "type": "weight",
+                    "weights": [
+                      {
+                        "weight": 8,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "leper",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pve"
+                        }
+                      },
+                      {
+                        "weight": 5,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "wolf",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pve"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "condition",
+            "if": "pvp.can.easy",
+            "then": [
+              "pvp.trigger",
+              {
+                "type": "probability",
+                "probability": 0.3,
+                "action": [
+                  {
+                    "type": "weight",
+                    "weights": [
+                      {
+                        "weight": 2,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "player_bot_easy_1",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pvp"
+                        }
+                      },
+                      {
+                        "weight": 2,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "player_bot_easy_2",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pvp"
+                        }
+                      },
+                      {
+                        "weight": 2,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "player_bot_easy_3",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pvp"
+                        }
+                      },
+                      {
+                        "weight": 2,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "player_bot_easy_4",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pvp"
+                        }
+                      },
+                      {
+                        "weight": 2,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "player_bot_easy_5",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pvp"
+                        }
+                      },
+                      {
+                        "weight": 2,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "player_bot_easy_6",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pvp"
+                        }
+                      },
+                      {
+                        "weight": 1,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "player_bot_easy_7",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pvp"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "arg.set",
+            "args": {
+              "skulls": 1
+            },
+            "script": "try_spawn_servants"
+          }
+        ]
+      },
+      "points_of_interest": {
+        "interactable_objects_weights": {
+          "sacrifice_altar": 0,
+          "chained_chest_level1": 1,
+          "deer_carcass": 0,
+          "old_well": 5,
+          "none": 0
+        },
+        "corpses": {
+          "@ref:11": 3,
+          "chance": 0.3
+        }
+      },
+      "view": {
+        "music_theme": "music_location_normal",
+        "layer_0_tex_path": "Prefabs/LocationScreen/Nature/Ground/grass_clan",
+        "layer_0_tex_path_winter": "Prefabs/LocationScreen/Nature/Ground/mud4_winter",
+        "layer_0_scale": [
+          0.25,
+          0.25
+        ],
+        "layer_1_tex_path": "Prefabs/LocationScreen/Nature/Ground/grass_birch",
+        "layer_1_tex_path_winter": "Prefabs/LocationScreen/Nature/Ground/grass0_winter",
+        "layer_1_scale": [
+          0.25,
+          0.25
+        ],
+        "layer_2_tex_path": "Prefabs/LocationScreen/Nature/Ground/grass_iron",
+        "layer_2_scale": [
+          0.25,
+          0.25
+        ],
+        "layer_wet_tex_path": "Prefabs/LocationScreen/Nature/Ground/mud_birch",
+        "layer_wet_scale": [
+          0.25,
+          0.25
+        ],
+        "layer_mix_tex_path": "Prefabs/LocationScreen/Nature/Ground/noise0",
+        "layer_mix_scale": [
+          0.2,
+          0.2
+        ],
+        "grass_tex_path": "Prefabs/LocationScreen/Nature/Ground/grass_set1_birch",
+        "grass_tex_path_winter": "Prefabs/LocationScreen/Nature/Ground/grass_set1_winter",
+        "grass_alpha_path": "Prefabs/LocationScreen/Nature/Ground/grass_set1_alpha",
+        "grass_atlas_tiling": [
+          2,
+          2
+        ],
+        "grass_density": 0.05,
+        "grass_grid_resolution": 30,
+        "grass_scale": [
+          0.4,
+          0.4
+        ],
+        "grass_translate": 0.25,
+        "chests_places": {
+          "chest_easy_1": [
+            [
+              6,
+              0,
+              9.82
+            ]
+          ]
+        },
+        "mines_places": {
+          "berry": [
+            [
+              -13.36,
+              355,
+              12.02
+            ],
+            [
+              -11.34,
+              355,
+              12.21
+            ],
+            [
+              -10.64,
+              355,
+              13.79
+            ],
+            [
+              -8.54,
+              95,
+              12.47
+            ],
+            [
+              -11.96,
+              95,
+              10.28
+            ],
+            [
+              -9.73,
+              0,
+              10.72
+            ],
+            [
+              -13.17,
+              300,
+              8.24
+            ],
+            [
+              -9.99,
+              300,
+              8.35
+            ]
+          ],
+          "berry_poison": [
+            [
+              11.15,
+              95,
+              9.36
+            ],
+            [
+              -15.633,
+              0,
+              -13.713
+            ],
+            [
+              13.29,
+              300,
+              -19.48
+            ],
+            [
+              11.9,
+              300,
+              -18.76
+            ]
+          ],
+          "copper": [
+            [
+              -4.85,
+              0,
+              -0.67
+            ],
+            [
+              -6.71,
+              0,
+              -2.14
+            ]
+          ],
+          "bush": [
+            [
+              -8.25,
+              35,
+              7.75
+            ],
+            [
+              14.11,
+              55,
+              11.14
+            ],
+            [
+              10.94,
+              5,
+              -10.51
+            ],
+            [
+              7.11,
+              3,
+              -7.36
+            ],
+            [
+              -15.18,
+              35,
+              -15.047
+            ],
+            [
+              16.61,
+              55,
+              -13.36
+            ],
+            [
+              5.86,
+              0,
+              -6.36
+            ],
+            [
+              8.36,
+              5,
+              -6.36
+            ],
+            [
+              8.926,
+              55,
+              -8.417
+            ],
+            [
+              10.11,
+              35,
+              10.64
+            ],
+            [
+              9.36,
+              5,
+              13.39
+            ],
+            [
+              14.36,
+              355,
+              8.14
+            ],
+            [
+              6.75,
+              35,
+              12.75
+            ],
+            [
+              -10.75,
+              0,
+              9.25
+            ],
+            [
+              -8.5,
+              355,
+              14
+            ],
+            [
+              -9.75,
+              3,
+              12.5
+            ],
+            [
+              -11.5,
+              5,
+              8
+            ],
+            [
+              -13.25,
+              5,
+              10.25
+            ],
+            [
+              -12.75,
+              355,
+              14
+            ],
+            [
+              5,
+              35,
+              -10.75
+            ]
+          ]
+        },
+        "empty_zones": [
+          [
+            5,
+            -23,
+            20,
+            -5.5
+          ],
+          [
+            4,
+            5,
+            16,
+            15.4
+          ],
+          [
+            -14.5,
+            7,
+            -7.5,
+            15
+          ],
+          [
+            -8,
+            -3,
+            -4,
+            2
+          ],
+          [
+            0,
+            -15,
+            5,
+            -10
+          ],
+          [
+            -2.8,
+            -10,
+            1.7,
+            -5
+          ],
+          [
+            -4.8,
+            -5,
+            0,
+            4
+          ],
+          [
+            -6,
+            4,
+            -3,
+            8
+          ],
+          [
+            -10,
+            8,
+            -4,
+            12
+          ],
+          [
+            0,
+            1.5,
+            10,
+            4
+          ],
+          [
+            8,
+            4,
+            11,
+            6
+          ],
+          [
+            -30,
+            -30,
+            30,
+            -20
+          ],
+          [
+            -30,
+            20,
+            30,
+            30
+          ],
+          [
+            -30,
+            -30,
+            -20,
+            30
+          ],
+          [
+            20,
+            -30,
+            30,
+            30
+          ],
+          [
+            -22,
+            -22,
+            -14.5,
+            -12.8
+          ],
+          [
+            -1.5,
+            -22,
+            6.2,
+            -16.6
+          ],
+          [
+            12.5,
+            -20,
+            20,
+            -14.5
+          ],
+          [
+            16.3,
+            -2.8,
+            20.5,
+            4.8
+          ],
+          [
+            14.1,
+            14,
+            20.5,
+            21.2
+          ],
+          [
+            -3.5,
+            16,
+            4.3,
+            20.8
+          ],
+          [
+            -20.5,
+            14.7,
+            -13.4,
+            20.8
+          ],
+          [
+            -20.5,
+            -3.1,
+            -16.3,
+            4.3
+          ]
+        ],
+        "avatars_zones": [
+          [
+            -16.8,
+            -8,
+            -10.7,
+            -4.4
+          ],
+          [
+            -7.8,
+            10.5,
+            -3,
+            15.4
+          ],
+          [
+            -10.8,
+            -20,
+            -6.4,
+            -11
+          ],
+          [
+            -10.8,
+            -11.2,
+            10.4,
+            10.5
+          ]
+        ],
+        "decors_places": {
+          "decor_farm_forest_easy_03": [
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        "player_spawn": {
+          "entrance_n": [
+            18.3,
+            225,
+            15.29
+          ],
+          "entrance_ne": [
+            17.79,
+            270,
+            -1.4
+          ],
+          "entrance_e": [
+            14.53,
+            15,
+            -16.03
+          ],
+          "entrance_se": [
+            0.34,
+            0,
+            -17.8
+          ],
+          "entrance_s": [
+            -18.19,
+            55,
+            -14.52
+          ],
+          "entrance_sw": [
+            -17.56,
+            90,
+            2.58
+          ],
+          "entrance_w": [
+            -14.65,
+            145,
+            18.25
+          ],
+          "entrance_nw": [
+            2.6,
+            180,
+            17.48
+          ]
+        },
+        "interactable_objects_places": [
+          [
+            8,
+            0,
+            -17.5
+          ]
+        ]
+      },
+      "_source_section": "refs.locations",
+      "_referenced_as": "custom_locations",
+      "_used_by": [
+        {
+          "id": "easy_forest_01",
+          "source_section": "refs.maps.0.points"
+        },
+        {
+          "id": "easy_forest_02",
+          "source_section": "refs.maps.0.points"
+        },
+        {
+          "id": "easy_forest_03",
+          "source_section": "refs.maps.0.points"
+        }
+      ]
+    },
+    "farm_forest_normal_01": {
+      "disposable": true,
+      "expired": false,
+      "noise": {
+        "a": {
+          "scale": 0.1,
+          "mul": 1,
+          "add": 0
+        },
+        "b": {
+          "scale": 0.12,
+          "mul": 1,
+          "add": 0
+        },
+        "c": {
+          "scale": 0.1,
+          "mul": 2,
+          "add": -1
+        }
+      },
+      "chunk_res": 10,
+      "chunk_scale": 10,
+      "chunks_count_x": 7,
+      "chunks_count_z": 7,
+      "chunk_grid_size": 5,
+      "grid_border": 1,
+      "chunk_border": 1,
+      "leave_border": 2.5,
+      "character_limit": 80,
+      "mines": {
+        "tree_item": 10,
+        "young_tree": 30,
+        "young_tree_dead": 15,
+        "rock_item": 18,
+        "tree_birch": 35,
+        "tree_birch_dead": 10,
+        "rock": 4,
+        "copper": 5,
+        "bush": 40,
+        "berry": 8,
+        "berry_poison": 8
+      },
+      "chests": {
+        "chest_normal_1": {
+          "type": "range",
+          "min": 3,
+          "max": 4
+        },
+        "chest_grave_xmas": "chest_grave_xmas_amount",
+        "chest_grave_halloween": "chest_grave_halloween_amount",
+        "chest_xmas_goblin": "chest_xmas_goblin_amount"
+      },
+      "areas": {
+        "chests": [
+          {
+            "type": "rect",
+            "rect": [
+              -15,
+              10,
+              20,
+              20
+            ]
+          }
+        ]
+      },
+      "mobs_per_chest": 1,
+      "unique_avatars": {
+        "knight_warrior": [
+          {
+            "@ref:13": [
+              6.05,
+              0,
+              -5.01
+            ],
+            "@ref:14": 225
+          }
+        ]
+      },
+      "decors": {
+        "decor_farm_forest_normal_01": 1
+      },
+      "avatars": {
+        "leper": {
+          "type": "range",
+          "min": 1,
+          "max": 2
+        },
+        "cursed": {
+          "type": "range",
+          "min": 1,
+          "max": 2
+        },
+        "deer": {
+          "type": "range",
+          "min": 3,
+          "max": 5
+        },
+        "wolf": {
+          "type": "range",
+          "min": 3,
+          "max": 5
+        },
+        "bear": {
+          "type": "range",
+          "min": 9,
+          "max": 10
+        },
+        "direwolf": {
+          "type": "range",
+          "min": 4,
+          "max": 5
+        },
+        "turkey": "turkey_count",
+        "turkey_boss": "turkey_boss_count"
+      },
+      "pet_baby": {
+        "avatars": [
+          "pet_wolf_baby_normal",
+          "pet_cat_baby_normal"
+        ],
+        "@ref:11": "pet_baby_normal.count"
+      },
+      "spots": {
+        "spot_norm": {
+          "type": "range",
+          "min": 1,
+          "max": 2
+        },
+        "spot_big": {
+          "type": "range",
+          "min": 0,
+          "max": 1
+        }
+      },
+      "active_spots": {
+        "active_spot": 1
+      },
+      "tags": [
+        "trigger_events",
+        "guarded_chests",
+        "central_speech"
+      ],
+      "stats": {
+        "pve_trigger": {
+          "type": "consumable",
+          "period": 60,
+          "maximum": 10000
+        },
+        "pve_counter": {
+          "type": "int"
+        },
+        "pvp_trigger": {
+          "type": "consumable",
+          "period": 130,
+          "maximum": 10000
+        },
+        "pvp_counter": {
+          "type": "int"
+        },
+        "rain_timeout": {
+          "type": "timeout",
+          "runnable": true
+        },
+        "rain_phase": {
+          "type": "int"
+        },
+        "rain_ts_end": {
+          "type": "double"
+        },
+        "is_enemy_spawned": {
+          "type": "int"
+        },
+        "servants_spawned": {
+          "type": "int"
+        },
+        "servants_sound_timer": {
+          "type": "timeout",
+          "script": "try_servant_sound_play"
+        },
+        "challenge_mob_spawned": {
+          "type": "int"
+        },
+        "xmas_santa_trigger": {
+          "type": "trigger",
+          "period": 50,
+          "maximum": 1,
+          "script": "dispatch.xmas_santa"
+        },
+        "xmas_walkers_trigger": {
+          "type": "trigger",
+          "period": 8,
+          "maximum": 10000,
+          "script": "dispatch.xmas_santa_walkers"
+        }
+      },
+      "scripts": {
+        "activate": [
+          {
+            "type": "quest.advance",
+            "goal": "location.normal_forest"
+          },
+          "pve.clear",
+          "pvp.clear",
+          "rain_init"
+        ],
+        "enter": [
+          "pvn.clear",
+          "try_set_servant_victims",
+          "schedule_servants_sound"
+        ],
+        "summon_turkey_boss": "try_spawn_turkey_boss",
+        "update": [
+          "rain_tick",
+          "pvn.trigger",
+          {
+            "type": "condition",
+            "if": "pve.can",
+            "then": [
+              "pve.trigger",
+              {
+                "type": "probability",
+                "probability": 0.5,
+                "action": [
+                  {
+                    "type": "weight",
+                    "weights": [
+                      {
+                        "weight": 7,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "bear",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pve"
+                        }
+                      },
+                      {
+                        "weight": 7,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "cursed",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pve"
+                        }
+                      },
+                      {
+                        "weight": 6,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "direwolf",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pve"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "condition",
+            "if": "pvp.can",
+            "then": [
+              "pvp.trigger",
+              {
+                "type": "probability",
+                "probability": 0.4,
+                "action": [
+                  {
+                    "type": "weight.filtered",
+                    "weights": [
+                      {
+                        "weight": 6,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "player_bot_normal_1",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pvp"
+                        }
+                      },
+                      {
+                        "weight": 6,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "player_bot_normal_2",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pvp"
+                        }
+                      },
+                      {
+                        "weight": 6,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "player_bot_normal_3",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pvp"
+                        }
+                      },
+                      {
+                        "weight": 6,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "player_bot_normal_4",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pvp"
+                        }
+                      },
+                      {
+                        "weight": 6,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "player_bot_normal_5",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pvp"
+                        }
+                      },
+                      {
+                        "weight": 6,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "player_bot_normal_6",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pvp"
+                        }
+                      },
+                      {
+                        "weight": 3,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "player_bot_normal_7",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pvp"
+                        }
+                      },
+                      {
+                        "weight": 6,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "enemy_bot_tier_1",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pvp"
+                        },
+                        "filter": {
+                          "type": "external",
+                          "script": "enemy_bot.can_spawn"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "arg.set",
+            "args": {
+              "skulls": 2
+            },
+            "script": "try_spawn_servants"
+          }
+        ]
+      },
+      "points_of_interest": {
+        "interactable_objects_weights": {
+          "sacrifice_altar": 1,
+          "chained_chest_level1": 3,
+          "deer_carcass": 0,
+          "old_well": 5,
+          "none": 2
+        },
+        "corpses": {
+          "@ref:11": 3,
+          "chance": 0.3
+        }
+      },
+      "view": {
+        "layer_0_tex_path": "Prefabs/LocationScreen/Nature/Ground/grass_clan",
+        "layer_0_tex_path_winter": "Prefabs/LocationScreen/Nature/Ground/mud4_winter",
+        "layer_0_scale": [
+          0.25,
+          0.25
+        ],
+        "layer_1_tex_path": "Prefabs/LocationScreen/Nature/Ground/grass_birch",
+        "layer_1_tex_path_winter": "Prefabs/LocationScreen/Nature/Ground/grass0_winter",
+        "layer_1_scale": [
+          0.25,
+          0.25
+        ],
+        "layer_2_tex_path": "Prefabs/LocationScreen/Nature/Ground/grass_iron",
+        "layer_2_scale": [
+          0.25,
+          0.25
+        ],
+        "layer_wet_tex_path": "Prefabs/LocationScreen/Nature/Ground/mud_birch",
+        "layer_wet_scale": [
+          0.25,
+          0.25
+        ],
+        "layer_mix_tex_path": "Prefabs/LocationScreen/Nature/Ground/noise0",
+        "layer_mix_scale": [
+          0.2,
+          0.2
+        ],
+        "grass_tex_path": "Prefabs/LocationScreen/Nature/Ground/grass_set1_birch",
+        "grass_tex_path_winter": "Prefabs/LocationScreen/Nature/Ground/grass_set1_winter",
+        "grass_alpha_path": "Prefabs/LocationScreen/Nature/Ground/grass_set1_alpha",
+        "grass_atlas_tiling": [
+          2,
+          2
+        ],
+        "grass_density": 0.05,
+        "grass_grid_resolution": 30,
+        "grass_scale": [
+          0.4,
+          0.4
+        ],
+        "grass_translate": 0.25,
+        "music_theme": "music_location_normal",
+        "decors_places": {
+          "decor_farm_forest_normal_01": [
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        "chests_places": {
+          "chest_normal_1": [
+            [
+              -13.5,
+              0,
+              2.57
+            ]
+          ]
+        },
+        "mines_places": {
+          "young_tree_dead": [
+            [
+              -1.42,
+              0,
+              4.35
+            ],
+            [
+              0.264,
+              30,
+              4.15
+            ],
+            [
+              -8.152,
+              45,
+              -16.83
+            ],
+            [
+              -8.317,
+              140,
+              -17.5
+            ]
+          ],
+          "rock": [
+            [
+              -8.82,
+              45,
+              3.05
+            ],
+            [
+              -15.08,
+              0,
+              8.83
+            ],
+            [
+              3.9,
+              345,
+              12.6
+            ],
+            [
+              2.21,
+              25,
+              11.22
+            ]
+          ],
+          "berry": [
+            [
+              -2.79,
+              355,
+              -20.3
+            ],
+            [
+              -1.49,
+              15,
+              -18.91
+            ],
+            [
+              0.125,
+              355,
+              -0.72
+            ],
+            [
+              -2.85,
+              95,
+              -18.15
+            ],
+            [
+              15.54,
+              95,
+              6.62
+            ],
+            [
+              -10.42,
+              0,
+              -7.11
+            ],
+            [
+              8,
+              300,
+              0.99
+            ],
+            [
+              9.17,
+              50,
+              2.13
+            ]
+          ],
+          "berry_poison": [
+            [
+              6.8,
+              95,
+              5.677
+            ],
+            [
+              -12,
+              15,
+              -7.57
+            ],
+            [
+              15.284,
+              90,
+              8.117
+            ],
+            [
+              -1.4,
+              30,
+              -11.2
+            ],
+            [
+              12.416,
+              60,
+              13.73
+            ]
+          ],
+          "copper": [
+            [
+              4.64,
+              30,
+              -11.23
+            ],
+            [
+              3.75,
+              5,
+              15.02
+            ],
+            [
+              9.54,
+              10,
+              -15.39
+            ]
+          ],
+          "young_tree": [
+            [
+              -4.237,
+              5,
+              15.309
+            ],
+            [
+              -4.797,
+              355,
+              15.5
+            ],
+            [
+              -5.659,
+              10,
+              15.13
+            ],
+            [
+              -7.829,
+              0,
+              14.92
+            ],
+            [
+              -7.039,
+              150,
+              15.189
+            ],
+            [
+              4.658,
+              15,
+              -15.15
+            ],
+            [
+              -15.89,
+              140,
+              -19.34
+            ],
+            [
+              -15.08,
+              10,
+              -19.3
+            ],
+            [
+              -14.36,
+              335,
+              -18.94
+            ],
+            [
+              6.56,
+              340,
+              -15.38
+            ],
+            [
+              16.6,
+              40,
+              1.83
+            ],
+            [
+              15.862,
+              320,
+              2.107
+            ]
+          ],
+          "bush": [
+            [
+              3,
+              15,
+              -6
+            ],
+            [
+              1.5,
+              55,
+              -6.75
+            ],
+            [
+              2.5,
+              0,
+              -7.25
+            ],
+            [
+              -3.5,
+              320,
+              -11.5
+            ],
+            [
+              13.75,
+              350,
+              2.25
+            ],
+            [
+              -18.5,
+              340,
+              -8.75
+            ],
+            [
+              -16.5,
+              30,
+              -7.75
+            ],
+            [
+              -17.5,
+              0,
+              -7.75
+            ],
+            [
+              -1.5,
+              25,
+              10.75
+            ],
+            [
+              -3.25,
+              20,
+              -6.75
+            ],
+            [
+              -0.5,
+              335,
+              9.5
+            ],
+            [
+              15.75,
+              15,
+              -8.5
+            ],
+            [
+              15.5,
+              350,
+              -10.75
+            ],
+            [
+              -5.71,
+              20,
+              14.08
+            ],
+            [
+              -6.96,
+              310,
+              14.08
+            ],
+            [
+              -14.46,
+              35,
+              2.83
+            ],
+            [
+              -11.21,
+              325,
+              -8.67
+            ],
+            [
+              -15.46,
+              5,
+              4.08
+            ],
+            [
+              -4.5,
+              60,
+              -7.5
+            ],
+            [
+              15,
+              65,
+              -2.5
+            ],
+            [
+              7.25,
+              300,
+              -3
+            ],
+            [
+              17,
+              15,
+              -2.75
+            ],
+            [
+              1.25,
+              295,
+              0.75
+            ],
+            [
+              -1,
+              70,
+              -1.5
+            ]
+          ]
+        },
+        "empty_zones": [
+          [
+            -30,
+            -13,
+            0,
+            -6
+          ],
+          [
+            2,
+            -4,
+            30,
+            3
+          ],
+          [
+            -2.3,
+            -8.8,
+            3.7,
+            1.5
+          ],
+          [
+            3,
+            -5.5,
+            6.5,
+            4.5
+          ],
+          [
+            -18,
+            -25,
+            -13,
+            -20
+          ],
+          [
+            4,
+            -16,
+            11,
+            -8
+          ],
+          [
+            18,
+            -11,
+            30,
+            -2
+          ],
+          [
+            1,
+            10.5,
+            4.7,
+            16
+          ],
+          [
+            11,
+            13,
+            17,
+            20
+          ],
+          [
+            -16,
+            2,
+            -8,
+            10
+          ],
+          [
+            -17,
+            -21,
+            -13,
+            -18
+          ],
+          [
+            14,
+            -11,
+            17,
+            -8
+          ],
+          [
+            9,
+            -4.5,
+            14,
+            -1
+          ],
+          [
+            -20,
+            -18,
+            -16,
+            -15
+          ],
+          [
+            -4,
+            -21,
+            0,
+            -18
+          ],
+          [
+            -9,
+            -18,
+            -8,
+            -16
+          ],
+          [
+            -17,
+            11,
+            -15,
+            15
+          ],
+          [
+            -9,
+            13,
+            -4,
+            16
+          ],
+          [
+            14,
+            5.5,
+            17.5,
+            9
+          ],
+          [
+            -3,
+            3,
+            2,
+            5
+          ],
+          [
+            -2,
+            9,
+            0,
+            11
+          ],
+          [
+            7,
+            9,
+            10,
+            11
+          ],
+          [
+            -35,
+            -35,
+            35,
+            -23
+          ],
+          [
+            -35,
+            -35,
+            -23,
+            35
+          ],
+          [
+            -35,
+            23,
+            35,
+            35
+          ],
+          [
+            23,
+            -35,
+            35,
+            35
+          ],
+          [
+            -25.5,
+            -25.5,
+            -17.9,
+            -18
+          ],
+          [
+            -0.6,
+            -25.5,
+            7.4,
+            -20.5
+          ],
+          [
+            18,
+            -25.5,
+            25.5,
+            -18.6
+          ],
+          [
+            21.2,
+            2.5,
+            26,
+            10.3
+          ],
+          [
+            18.1,
+            19,
+            25.5,
+            25.5
+          ],
+          [
+            -5.4,
+            20.9,
+            2.7,
+            25.5
+          ],
+          [
+            -25.5,
+            19,
+            -17.7,
+            25.5
+          ],
+          [
+            -25.5,
+            -6.4,
+            -20.5,
+            2.5
+          ]
+        ],
+        "avatars_zones": [
+          [
+            -16,
+            -16,
+            16,
+            16
+          ],
+          [
+            -16,
+            -25,
+            -6,
+            -16
+          ],
+          [
+            9,
+            -25,
+            12,
+            -16
+          ],
+          [
+            12,
+            -18,
+            14,
+            -16
+          ],
+          [
+            16,
+            -16,
+            23,
+            -4
+          ],
+          [
+            16,
+            11,
+            23,
+            13
+          ],
+          [
+            9,
+            16,
+            16,
+            23
+          ],
+          [
+            -12,
+            16,
+            -6.5,
+            23
+          ],
+          [
+            -14.5,
+            16,
+            -12,
+            18
+          ],
+          [
+            -6.5,
+            16,
+            -4,
+            18
+          ],
+          [
+            -23,
+            8,
+            -16,
+            16
+          ]
+        ],
+        "interactable_objects_places": [
+          [
+            20,
+            0,
+            -14
+          ]
+        ],
+        "player_spawn": {
+          "entrance_n": [
+            23.25,
+            210,
+            20.25
+          ],
+          "entrance_ne": [
+            22.52,
+            270,
+            4.4
+          ],
+          "entrance_e": [
+            19.36,
+            320,
+            -22.84
+          ],
+          "entrance_se": [
+            1.16,
+            0,
+            -22.5
+          ],
+          "entrance_s": [
+            -22.81,
+            40,
+            -19.5
+          ],
+          "entrance_sw": [
+            -22.67,
+            90,
+            0.49
+          ],
+          "entrance_w": [
+            -19.19,
+            145,
+            22.97
+          ],
+          "entrance_nw": [
+            1,
+            180,
+            22.59
+          ]
+        }
+      },
+      "chunks": {
+        "line_river_01_02": [
+          [
+            0,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            6,
+            3
+          ]
+        ],
+        "line_river_02_02": [
+          [
+            1,
+            2
+          ],
+          [
+            4,
+            3
+          ]
+        ],
+        "corner_river_01_01": [
+          [
+            3,
+            2
+          ]
+        ],
+        "corner_river_01_03": [
+          [
+            3,
+            3
+          ]
+        ]
+      },
+      "_source_section": "refs.locations",
+      "_referenced_as": "custom_locations",
+      "_used_by": [
+        {
+          "id": "normal_forest_01",
+          "source_section": "refs.maps.0.points"
+        },
+        {
+          "id": "normal_forest_02",
+          "source_section": "refs.maps.0.points"
+        }
+      ]
+    },
+    "farm_rock_easy_01": {
+      "disposable": {
+        "type": "not",
+        "condition": {
+          "type": "ab.is_easy_farm_save_corpse"
+        }
+      },
+      "expired": {
+        "type": "or",
+        "conditions": [
+          {
+            "type": "gte",
+            "first": {
+              "type": "time.now"
+            },
+            "second": {
+              "type": "resource",
+              "resource": "ab.easy_farm_save_corpse_ts",
+              "target": "location"
+            }
+          },
+          {
+            "type": "not",
+            "condition": {
+              "type": "is_player_corpse_on_location",
+              "target": "location"
+            }
+          }
+        ]
+      },
+      "chunks": {
+        "cornerOut_cliff_02_01": [
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            4
+          ]
+        ],
+        "cornerOut_cliff_01_02": [
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            5
+          ]
+        ],
+        "cornerOut_cliff_02_03": [
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            5
+          ]
+        ],
+        "cornerOut_cliff_01_04": [
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            4
+          ]
+        ]
+      },
+      "noise": {
+        "a": {
+          "scale": 0.1,
+          "mul": 1,
+          "add": -0.2
+        },
+        "b": {
+          "scale": 0.05,
+          "mul": 1,
+          "add": 1
+        },
+        "c": {
+          "scale": 0.1,
+          "mul": 8,
+          "add": -7
+        }
+      },
+      "chunk_res": 10,
+      "chunk_scale": 10,
+      "chunks_count_x": 6,
+      "chunks_count_z": 6,
+      "chunk_grid_size": 5,
+      "grid_border": 1,
+      "chunk_border": 1,
+      "leave_border": 2.5,
+      "character_limit": 60,
+      "mines": {
+        "tree_item": 10,
+        "rock_item": 10,
+        "tree_birch_ginger": 8,
+        "tree_birch_dead": 2,
+        "rock": 25,
+        "copper": 8,
+        "bush": 10,
+        "berry": 10
+      },
+      "chests": {
+        "chest_easy_1": {
+          "type": "range",
+          "min": 2,
+          "max": 3
+        },
+        "chest_grave_xmas": "chest_grave_xmas_amount",
+        "chest_grave_halloween": "chest_grave_halloween_amount",
+        "chest_xmas_goblin": "chest_xmas_goblin_amount"
+      },
+      "areas": {
+        "chests": [
+          {
+            "type": "rect",
+            "rect": [
+              8,
+              10,
+              18,
+              -10
+            ]
+          },
+          {
+            "type": "rect",
+            "rect": [
+              -18,
+              10,
+              18,
+              4
+            ]
+          },
+          {
+            "type": "rect",
+            "rect": [
+              -18,
+              10,
+              -8,
+              0
+            ]
+          }
+        ]
+      },
+      "mobs_per_chest": 1,
+      "decors": {
+        "decor_farm_rock_easy_01": 1
+      },
+      "avatars": {
+        "leper": {
+          "type": "range",
+          "min": 6,
+          "max": 8
+        },
+        "wolf": {
+          "type": "range",
+          "min": 1,
+          "max": 3
+        },
+        "cursed": {
+          "type": "range",
+          "min": 2,
+          "max": 3
+        },
+        "cursed_martyr": 1,
+        "turkey": "turkey_count",
+        "turkey_boss": "turkey_boss_count"
+      },
+      "spots": {
+        "spot_easy": {
+          "type": "range",
+          "min": 1,
+          "max": 2
+        },
+        "spot_big_farm": {
+          "type": "range",
+          "min": 0,
+          "max": 1
+        }
+      },
+      "active_spots": {
+        "active_spot": 1
+      },
+      "pet_baby": {
+        "avatars": [
+          "pet_wolf_baby_normal"
+        ],
+        "@ref:11": "pet_baby_easy.count"
+      },
+      "tags": [
+        "trigger_events",
+        "guarded_chests",
+        "central_speech"
+      ],
+      "stats": {
+        "pve_trigger": {
+          "type": "consumable",
+          "period": 90,
+          "maximum": 10000
+        },
+        "pve_counter": {
+          "type": "int"
+        },
+        "pvp_trigger": {
+          "type": "consumable",
+          "period": 150,
+          "maximum": 10000
+        },
+        "pvp_counter": {
+          "type": "int"
+        },
+        "rain_timeout": {
+          "type": "timeout",
+          "runnable": true
+        },
+        "rain_phase": {
+          "type": "int"
+        },
+        "rain_ts_end": {
+          "type": "double"
+        },
+        "servants_spawned": {
+          "type": "int"
+        },
+        "servants_sound_timer": {
+          "type": "timeout",
+          "script": "try_servant_sound_play"
+        },
+        "challenge_mob_spawned": {
+          "type": "int"
+        },
+        "ab.easy_farm_save_corpse_ts": {
+          "type": "double"
+        }
+      },
+      "scripts": {
+        "border": [
+          {
+            "type": "resource.set",
+            "resource": "ab.easy_farm_save_corpse_ts",
+            "target": "location",
+            "@ref:11": 0
+          },
+          1
+        ],
+        "player_died": {
+          "type": "resource.set",
+          "resource": "ab.easy_farm_save_corpse_ts",
+          "target": "location",
+          "@ref:11": {
+            "type": "sum",
+            "amounts": [
+              {
+                "type": "time.now"
+              },
+              3600
+            ]
+          }
+        },
+        "activate": [
+          {
+            "type": "quest.advance",
+            "goal": "location.easy_rock"
+          },
+          "pve.clear",
+          "pvp.clear",
+          "rain_init"
+        ],
+        "enter": [
+          "pvn.clear",
+          "try_set_servant_victims",
+          "schedule_servants_sound"
+        ],
+        "summon_turkey_boss": "try_spawn_turkey_boss",
+        "update": [
+          "rain_tick",
+          "pvn.trigger",
+          "naked.trigger",
+          {
+            "type": "condition",
+            "if": "pve.can",
+            "then": [
+              "pve.trigger",
+              {
+                "type": "probability",
+                "probability": 0.6,
+                "action": [
+                  {
+                    "type": "weight",
+                    "weights": [
+                      {
+                        "weight": 7,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "leper",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pve"
+                        }
+                      },
+                      {
+                        "weight": 4,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "wolf",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pve"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "condition",
+            "if": "pvp.can.easy",
+            "then": [
+              "pvp.trigger",
+              {
+                "type": "probability",
+                "probability": 0.4,
+                "action": [
+                  {
+                    "type": "weight",
+                    "weights": [
+                      {
+                        "weight": 2,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "player_bot_easy_1",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pvp"
+                        }
+                      },
+                      {
+                        "weight": 2,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "player_bot_easy_2",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pvp"
+                        }
+                      },
+                      {
+                        "weight": 2,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "player_bot_easy_3",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pvp"
+                        }
+                      },
+                      {
+                        "weight": 2,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "player_bot_easy_4",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pvp"
+                        }
+                      },
+                      {
+                        "weight": 2,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "player_bot_easy_5",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pvp"
+                        }
+                      },
+                      {
+                        "weight": 2,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "player_bot_easy_6",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pvp"
+                        }
+                      },
+                      {
+                        "weight": 1,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "player_bot_easy_7",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pvp"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "arg.set",
+            "args": {
+              "skulls": 1
+            },
+            "script": "try_spawn_servants"
+          }
+        ]
+      },
+      "points_of_interest": {
+        "interactable_objects_weights": {
+          "sacrifice_altar": 0,
+          "chained_chest_level1": 1,
+          "deer_carcass": 0,
+          "old_well": 5,
+          "none": 3
+        },
+        "corpses": {
+          "@ref:11": 3,
+          "chance": 0.3
+        }
+      },
+      "view": {
+        "layer_0_tex_path": "Prefabs/LocationScreen/Nature/Ground/rocks_iron",
+        "layer_0_tex_path_winter": "Prefabs/LocationScreen/Nature/Ground/rocks3_winter",
+        "layer_0_scale": [
+          0.25,
+          0.25
+        ],
+        "layer_1_tex_path": "Prefabs/LocationScreen/Nature/Ground/mud2_Dark",
+        "layer_1_tex_path_winter": "Prefabs/LocationScreen/Nature/Ground/mud2_Dark_winter",
+        "layer_1_scale": [
+          0.25,
+          0.25
+        ],
+        "layer_2_tex_path": "Prefabs/LocationScreen/Nature/Ground/mud_iron",
+        "layer_2_scale": [
+          0.2,
+          0.2
+        ],
+        "layer_wet_tex_path": "Prefabs/LocationScreen/Nature/Ground/rocks_birch",
+        "layer_wet_scale": [
+          0.25,
+          0.25
+        ],
+        "layer_mix_tex_path": "Prefabs/LocationScreen/Nature/Ground/noise0",
+        "layer_mix_scale": [
+          0.25,
+          0.25
+        ],
+        "grass_tex_path": "Prefabs/LocationScreen/Nature/Ground/grass_set1_birch",
+        "grass_tex_path_winter": "Prefabs/LocationScreen/Nature/Ground/grass_set1_winter",
+        "grass_alpha_path": "Prefabs/LocationScreen/Nature/Ground/grass_set1_alpha",
+        "grass_atlas_tiling": [
+          2,
+          2
+        ],
+        "grass_grid_resolution": 30,
+        "grass_translate": 0.25,
+        "grass_density": 0,
+        "grass_scale": [
+          0.5,
+          0.5
+        ],
+        "music_theme": "music_location_normal",
+        "chests_places": {
+          "chest_easy_1": [
+            [
+              1.5,
+              0,
+              -0.43
+            ]
+          ]
+        },
+        "mines_places": {
+          "rock": [
+            [
+              -16.25,
+              0,
+              10.5
+            ],
+            [
+              -6.9,
+              0,
+              12.55
+            ],
+            [
+              12,
+              0,
+              17
+            ],
+            [
+              10.25,
+              0,
+              15.25
+            ],
+            [
+              14.25,
+              0,
+              9
+            ],
+            [
+              15.87,
+              0,
+              -13.73
+            ],
+            [
+              8.25,
+              0,
+              -13
+            ],
+            [
+              -8,
+              0,
+              -14.5
+            ],
+            [
+              16,
+              0,
+              -9.5
+            ]
+          ],
+          "berry": [
+            [
+              -12.16,
+              355,
+              7.83
+            ],
+            [
+              -14.9,
+              355,
+              5.34
+            ],
+            [
+              -12.62,
+              355,
+              5.03
+            ],
+            [
+              10.58,
+              96.62,
+              4.67
+            ],
+            [
+              12.06,
+              96.62,
+              5.14
+            ],
+            [
+              -14.84,
+              0,
+              -3.1
+            ],
+            [
+              -1.16,
+              300,
+              -5.74
+            ],
+            [
+              0.11,
+              300,
+              -5.73
+            ]
+          ],
+          "berry_poison": [
+            [
+              -0.49,
+              95,
+              -6.83
+            ],
+            [
+              -15.98,
+              0,
+              -6.12
+            ],
+            [
+              -12.67,
+              300,
+              -4.47
+            ],
+            [
+              -13.45,
+              300,
+              -6.46
+            ]
+          ],
+          "copper": [
+            [
+              12.9,
+              0,
+              15.08
+            ],
+            [
+              15.29,
+              0,
+              -11.89
+            ]
+          ],
+          "tree_birch_ginger": [
+            [
+              -13.47,
+              0,
+              7.37
+            ],
+            [
+              -15.6,
+              0,
+              5.9
+            ],
+            [
+              -13.78,
+              0,
+              5.33
+            ],
+            [
+              -12.52,
+              0,
+              -2.66
+            ],
+            [
+              -14.22,
+              0,
+              -5.19
+            ],
+            [
+              12.32,
+              0,
+              4.05
+            ],
+            [
+              10.4,
+              0,
+              5.88
+            ]
+          ],
+          "tree_birch_dead": [
+            [
+              10.81,
+              0,
+              -1.72
+            ],
+            [
+              11.85,
+              0,
+              -2.42
+            ]
+          ]
+        },
+        "empty_zones": [
+          [
+            -30,
+            -30,
+            30,
+            -18
+          ],
+          [
+            -30,
+            -30,
+            -18,
+            30
+          ],
+          [
+            -30,
+            18,
+            30,
+            30
+          ],
+          [
+            18,
+            -30,
+            30,
+            30
+          ],
+          [
+            -30,
+            -30,
+            -12,
+            -8
+          ],
+          [
+            -20,
+            -8,
+            -12,
+            -1
+          ],
+          [
+            2,
+            -5,
+            10,
+            3
+          ],
+          [
+            -2,
+            -8,
+            1,
+            -5
+          ],
+          [
+            -8,
+            12,
+            8,
+            30
+          ],
+          [
+            13,
+            8,
+            30,
+            16
+          ],
+          [
+            9,
+            14,
+            13,
+            18
+          ],
+          [
+            -8,
+            -30,
+            9,
+            -12
+          ],
+          [
+            14,
+            -14,
+            19,
+            -8.5
+          ],
+          [
+            -9,
+            -1,
+            -4,
+            3
+          ],
+          [
+            -18,
+            4,
+            -11,
+            9
+          ],
+          [
+            9,
+            3,
+            14,
+            7
+          ],
+          [
+            -18,
+            -20,
+            -8,
+            -14
+          ],
+          [
+            -18,
+            -1,
+            -15,
+            4
+          ],
+          [
+            -18,
+            9.5,
+            -15,
+            18
+          ],
+          [
+            13.5,
+            -20,
+            18,
+            -14
+          ],
+          [
+            14.5,
+            -4.5,
+            18,
+            0.5
+          ],
+          [
+            13,
+            14,
+            18,
+            18
+          ]
+        ],
+        "avatars_zones": [
+          [
+            -11,
+            -9,
+            11,
+            12
+          ],
+          [
+            -7,
+            -12,
+            11,
+            -9
+          ],
+          [
+            -11,
+            12,
+            -8,
+            18
+          ],
+          [
+            11,
+            7,
+            13,
+            11
+          ],
+          [
+            14,
+            4,
+            18,
+            8
+          ],
+          [
+            11,
+            -11,
+            14,
+            -7
+          ],
+          [
+            -13,
+            2,
+            -11,
+            4
+          ]
+        ],
+        "avatar_places": {
+          "any": [
+            [
+              2.94,
+              0,
+              -4.03
+            ],
+            [
+              -0.54,
+              0,
+              -6.47
+            ],
+            [
+              -15.59,
+              0,
+              7.44
+            ],
+            [
+              12.84,
+              0,
+              5.93
+            ],
+            [
+              8.82,
+              0,
+              1.65
+            ],
+            [
+              -4.61,
+              0,
+              2.46
+            ],
+            [
+              6.51,
+              0,
+              -12.85
+            ],
+            [
+              14.563,
+              0,
+              -9.79
+            ]
+          ]
+        },
+        "spot_zones": [
+          [
+            -2.25,
+            -0.25,
+            -3,
+            -1.5
+          ]
+        ],
+        "decors_places": {
+          "decor_farm_rock_easy_01": [
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        "player_spawn": {
+          "entrance_n": [
+            15.45,
+            208.211,
+            17.71
+          ],
+          "entrance_ne": [
+            18.34,
+            270,
+            -2.36
+          ],
+          "entrance_e": [
+            15.11,
+            333.2522,
+            -17.5
+          ],
+          "entrance_se": [
+            15.11,
+            333.2522,
+            -17.5
+          ],
+          "entrance_s": [
+            -12.07,
+            77.8,
+            -16.43
+          ],
+          "entrance_sw": [
+            -18.27,
+            90,
+            -2.35
+          ],
+          "entrance_w": [
+            -18.08,
+            107.1842,
+            15.56
+          ],
+          "entrance_nw": [
+            -18.08,
+            107.1842,
+            15.56
+          ]
+        },
+        "interactable_objects_places": [
+          [
+            1,
+            0,
+            3
+          ]
+        ]
+      },
+      "_source_section": "refs.locations",
+      "_referenced_as": "custom_locations",
+      "_used_by": [
+        {
+          "id": "easy_rock_01",
+          "source_section": "refs.maps.0.points"
+        },
+        {
+          "id": "easy_rock_02",
+          "source_section": "refs.maps.0.points"
+        },
+        {
+          "id": "easy_rock_03",
+          "source_section": "refs.maps.0.points"
+        }
+      ]
+    },
+    "farm_rock_easy_02": {
+      "disposable": {
+        "type": "not",
+        "condition": {
+          "type": "ab.is_easy_farm_save_corpse"
+        }
+      },
+      "expired": {
+        "type": "or",
+        "conditions": [
+          {
+            "type": "gte",
+            "first": {
+              "type": "time.now"
+            },
+            "second": {
+              "type": "resource",
+              "resource": "ab.easy_farm_save_corpse_ts",
+              "target": "location"
+            }
+          },
+          {
+            "type": "not",
+            "condition": {
+              "type": "is_player_corpse_on_location",
+              "target": "location"
+            }
+          }
+        ]
+      },
+      "chunks": {
+        "cornerOut_cliff_02_01": [
+          [
+            0,
+            2
+          ]
+        ],
+        "cornerOut_cliff_01_02": [
+          [
+            0,
+            3
+          ]
+        ],
+        "cornerOut_cliff_02_03": [
+          [
+            1,
+            3
+          ]
+        ],
+        "cornerOut_cliff_01_04": [
+          [
+            1,
+            2
+          ]
+        ]
+      },
+      "noise": {
+        "a": {
+          "scale": 0.1,
+          "mul": 1,
+          "add": -0.2
+        },
+        "b": {
+          "scale": 0.05,
+          "mul": 1,
+          "add": 1
+        },
+        "c": {
+          "scale": 0.1,
+          "mul": 8,
+          "add": -7
+        }
+      },
+      "chunk_res": 10,
+      "chunk_scale": 10,
+      "chunks_count_x": 6,
+      "chunks_count_z": 6,
+      "chunk_grid_size": 5,
+      "grid_border": 1,
+      "chunk_border": 1,
+      "leave_border": 2.5,
+      "character_limit": 60,
+      "mines": {
+        "tree_item": 10,
+        "rock_item": 10,
+        "tree_birch_ginger": 8,
+        "tree_birch_dead": 2,
+        "rock": 25,
+        "copper": 8,
+        "bush": 10,
+        "berry": 10
+      },
+      "chests": {
+        "chest_easy_1": {
+          "type": "range",
+          "min": 1,
+          "max": 2
+        },
+        "chest_easy_1_corpse": 1,
+        "chest_grave_xmas": "chest_grave_xmas_amount",
+        "chest_grave_halloween": "chest_grave_halloween_amount",
+        "chest_xmas_goblin": "chest_xmas_goblin_amount"
+      },
+      "areas": {
+        "chests": [
+          {
+            "type": "rect",
+            "rect": [
+              8,
+              10,
+              18,
+              -10
+            ]
+          },
+          {
+            "type": "rect",
+            "rect": [
+              -18,
+              10,
+              18,
+              4
+            ]
+          },
+          {
+            "type": "rect",
+            "rect": [
+              -18,
+              10,
+              -8,
+              0
+            ]
+          }
+        ]
+      },
+      "mobs_per_chest": 1,
+      "unique_avatars": {
+        "wolf": [
+          {
+            "@ref:13": [
+              16,
+              0,
+              14
+            ],
+            "@ref:14": -122
+          }
+        ],
+        "cursed_martyr": [
+          {
+            "@ref:13": [
+              0.07,
+              0,
+              0.22
+            ],
+            "@ref:14": 218
+          }
+        ]
+      },
+      "decors": {
+        "decor_farm_rock_easy_02": 1
+      },
+      "avatars": {
+        "leper": {
+          "type": "range",
+          "min": 6,
+          "max": 8
+        },
+        "wolf": {
+          "type": "range",
+          "min": 0,
+          "max": 2
+        },
+        "cursed": {
+          "type": "range",
+          "min": 2,
+          "max": 3
+        },
+        "turkey": "turkey_count",
+        "turkey_boss": "turkey_boss_count"
+      },
+      "spots": {
+        "spot_easy": {
+          "type": "range",
+          "min": 1,
+          "max": 2
+        },
+        "spot_big_farm": {
+          "type": "range",
+          "min": 0,
+          "max": 1
+        }
+      },
+      "active_spots": {
+        "active_spot": 1
+      },
+      "pet_baby": {
+        "avatars": [
+          "pet_wolf_baby_normal"
+        ],
+        "@ref:11": "pet_baby_easy.count"
+      },
+      "tags": [
+        "trigger_events",
+        "guarded_chests",
+        "central_speech"
+      ],
+      "stats": {
+        "pve_trigger": {
+          "type": "consumable",
+          "period": 90,
+          "maximum": 10000
+        },
+        "pve_counter": {
+          "type": "int"
+        },
+        "pvp_trigger": {
+          "type": "consumable",
+          "period": 150,
+          "maximum": 10000
+        },
+        "pvp_counter": {
+          "type": "int"
+        },
+        "rain_timeout": {
+          "type": "timeout",
+          "runnable": true
+        },
+        "rain_phase": {
+          "type": "int"
+        },
+        "rain_ts_end": {
+          "type": "double"
+        },
+        "servants_spawned": {
+          "type": "int"
+        },
+        "servants_sound_timer": {
+          "type": "timeout",
+          "script": "try_servant_sound_play"
+        },
+        "challenge_mob_spawned": {
+          "type": "int"
+        },
+        "ab.easy_farm_save_corpse_ts": {
+          "type": "double"
+        }
+      },
+      "scripts": {
+        "border": [
+          {
+            "type": "resource.set",
+            "resource": "ab.easy_farm_save_corpse_ts",
+            "target": "location",
+            "@ref:11": 0
+          },
+          1
+        ],
+        "player_died": {
+          "type": "resource.set",
+          "resource": "ab.easy_farm_save_corpse_ts",
+          "target": "location",
+          "@ref:11": {
+            "type": "sum",
+            "amounts": [
+              {
+                "type": "time.now"
+              },
+              3600
+            ]
+          }
+        },
+        "activate": [
+          {
+            "type": "quest.advance",
+            "goal": "location.easy_rock"
+          },
+          "pve.clear",
+          "pvp.clear",
+          "rain_init"
+        ],
+        "enter": [
+          "pvn.clear",
+          "try_set_servant_victims",
+          "schedule_servants_sound"
+        ],
+        "summon_turkey_boss": "try_spawn_turkey_boss",
+        "update": [
+          "rain_tick",
+          "pvn.trigger",
+          "naked.trigger",
+          {
+            "type": "condition",
+            "if": "pve.can",
+            "then": [
+              "pve.trigger",
+              {
+                "type": "probability",
+                "probability": 0.6,
+                "action": [
+                  {
+                    "type": "weight",
+                    "weights": [
+                      {
+                        "weight": 7,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "leper",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pve"
+                        }
+                      },
+                      {
+                        "weight": 4,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "wolf",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pve"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "condition",
+            "if": "pvp.can.easy",
+            "then": [
+              "pvp.trigger",
+              {
+                "type": "probability",
+                "probability": 0.4,
+                "action": [
+                  {
+                    "type": "weight",
+                    "weights": [
+                      {
+                        "weight": 2,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "player_bot_easy_1",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pvp"
+                        }
+                      },
+                      {
+                        "weight": 2,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "player_bot_easy_2",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pvp"
+                        }
+                      },
+                      {
+                        "weight": 2,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "player_bot_easy_3",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pvp"
+                        }
+                      },
+                      {
+                        "weight": 2,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "player_bot_easy_4",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pvp"
+                        }
+                      },
+                      {
+                        "weight": 2,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "player_bot_easy_5",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pvp"
+                        }
+                      },
+                      {
+                        "weight": 2,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "player_bot_easy_6",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pvp"
+                        }
+                      },
+                      {
+                        "weight": 1,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "player_bot_easy_7",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pvp"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "arg.set",
+            "args": {
+              "skulls": 1
+            },
+            "script": "try_spawn_servants"
+          }
+        ]
+      },
+      "points_of_interest": {
+        "interactable_objects_weights": {
+          "sacrifice_altar": 0,
+          "chained_chest_level1": 1,
+          "deer_carcass": 0,
+          "old_well": 5,
+          "none": 3
+        },
+        "corpses": {
+          "@ref:11": 3,
+          "chance": 0.3
+        }
+      },
+      "view": {
+        "layer_0_tex_path": "Prefabs/LocationScreen/Nature/Ground/rocks_iron",
+        "layer_0_tex_path_winter": "Prefabs/LocationScreen/Nature/Ground/rocks3_winter",
+        "layer_0_scale": [
+          0.25,
+          0.25
+        ],
+        "layer_1_tex_path": "Prefabs/LocationScreen/Nature/Ground/mud2_Dark",
+        "layer_1_tex_path_winter": "Prefabs/LocationScreen/Nature/Ground/mud2_Dark_winter",
+        "layer_1_scale": [
+          0.25,
+          0.25
+        ],
+        "layer_2_tex_path": "Prefabs/LocationScreen/Nature/Ground/mud_iron",
+        "layer_2_scale": [
+          0.2,
+          0.2
+        ],
+        "layer_wet_tex_path": "Prefabs/LocationScreen/Nature/Ground/rocks_birch",
+        "layer_wet_scale": [
+          0.25,
+          0.25
+        ],
+        "layer_mix_tex_path": "Prefabs/LocationScreen/Nature/Ground/noise0",
+        "layer_mix_scale": [
+          0.25,
+          0.25
+        ],
+        "grass_tex_path": "Prefabs/LocationScreen/Nature/Ground/grass_set1_birch",
+        "grass_tex_path_winter": "Prefabs/LocationScreen/Nature/Ground/grass_set1_winter",
+        "grass_alpha_path": "Prefabs/LocationScreen/Nature/Ground/grass_set1_alpha",
+        "grass_atlas_tiling": [
+          2,
+          2
+        ],
+        "grass_grid_resolution": 30,
+        "grass_translate": 0.25,
+        "grass_density": 0,
+        "grass_scale": [
+          0.5,
+          0.5
+        ],
+        "music_theme": "music_location_normal",
+        "chests_places": {
+          "chest_easy_1": [
+            [
+              -0.534,
+              0,
+              2.43
+            ]
+          ],
+          "chest_easy_1_corpse": [
+            [
+              18.03,
+              0,
+              15.68
+            ]
+          ]
+        },
+        "mines_places": {
+          "rock": [
+            [
+              -3.77,
+              0,
+              -0.74
+            ],
+            [
+              5.217,
+              0,
+              -0.924
+            ],
+            [
+              10.38,
+              0,
+              17.84
+            ],
+            [
+              7.41,
+              0,
+              18.62
+            ],
+            [
+              15.19,
+              0,
+              8.05
+            ],
+            [
+              11.72,
+              0,
+              -16.73
+            ],
+            [
+              13.92,
+              0,
+              6.83
+            ],
+            [
+              -5.103,
+              0,
+              -15.029
+            ],
+            [
+              10.85,
+              0,
+              -14.84
+            ]
+          ],
+          "berry": [
+            [
+              -15.837,
+              247.9518,
+              13.985
+            ],
+            [
+              -12.446,
+              247.9518,
+              6.063
+            ],
+            [
+              -12.74,
+              247.9518,
+              17.14
+            ],
+            [
+              15.93,
+              96.62,
+              -5.02
+            ],
+            [
+              11.889,
+              96.62,
+              3.921
+            ],
+            [
+              -13.79,
+              0,
+              6.97
+            ],
+            [
+              4.48,
+              300,
+              -15.66
+            ],
+            [
+              5.84,
+              300,
+              -14.32
+            ]
+          ],
+          "copper": [
+            [
+              15.31,
+              0,
+              16.43
+            ],
+            [
+              14.05,
+              0,
+              10.27
+            ],
+            [
+              9.04,
+              0,
+              18.81
+            ],
+            [
+              17.84,
+              0,
+              13.59
+            ]
+          ],
+          "tree_birch_ginger": [
+            [
+              -10.49,
+              0,
+              19
+            ],
+            [
+              -18.91,
+              0,
+              8.54
+            ],
+            [
+              -2.7,
+              10.5,
+              7.2
+            ],
+            [
+              -4.031,
+              10.5,
+              5.645
+            ],
+            [
+              -4.79,
+              0,
+              -16.91
+            ],
+            [
+              4.71,
+              0,
+              7.19
+            ],
+            [
+              -11.22,
+              0,
+              -14.63
+            ],
+            [
+              5.31,
+              0,
+              5.69
+            ]
+          ]
+        },
+        "empty_zones": [
+          [
+            -30,
+            -30,
+            30,
+            -18
+          ],
+          [
+            -30,
+            -30,
+            -18,
+            30
+          ],
+          [
+            -30,
+            18,
+            30,
+            30
+          ],
+          [
+            18,
+            -30,
+            30,
+            30
+          ],
+          [
+            -28,
+            -8,
+            -11.5,
+            8.5
+          ],
+          [
+            -12,
+            -28,
+            -4,
+            -14
+          ],
+          [
+            3.5,
+            -28,
+            13,
+            -13.5
+          ],
+          [
+            13,
+            -8,
+            18,
+            -6
+          ],
+          [
+            11,
+            3,
+            18,
+            7
+          ],
+          [
+            13,
+            7,
+            18,
+            12
+          ],
+          [
+            -5,
+            -2,
+            6,
+            8
+          ],
+          [
+            15,
+            2,
+            18,
+            18
+          ],
+          [
+            3,
+            15,
+            18,
+            18
+          ],
+          [
+            -9,
+            16,
+            -6,
+            18
+          ],
+          [
+            -22,
+            -20,
+            -14,
+            -11
+          ],
+          [
+            -4,
+            -20,
+            3,
+            -14
+          ],
+          [
+            13,
+            -20,
+            20,
+            -12
+          ],
+          [
+            13,
+            -6,
+            23,
+            1
+          ],
+          [
+            -4.2,
+            14,
+            3,
+            23
+          ],
+          [
+            -18,
+            13,
+            -12,
+            23
+          ]
+        ],
+        "avatars_zones": [
+          [
+            -13,
+            -11,
+            12,
+            12
+          ],
+          [
+            -15,
+            -10,
+            -13,
+            -8
+          ],
+          [
+            -18,
+            -9,
+            -15,
+            -8
+          ],
+          [
+            -12,
+            -14,
+            -7,
+            -11
+          ],
+          [
+            4,
+            -13.5,
+            10,
+            -11
+          ],
+          [
+            12,
+            -10,
+            14,
+            -8
+          ],
+          [
+            12,
+            1,
+            14,
+            3
+          ],
+          [
+            12,
+            7,
+            13,
+            12
+          ],
+          [
+            5,
+            12,
+            15,
+            15
+          ],
+          [
+            -9,
+            12,
+            -6,
+            16
+          ],
+          [
+            -18,
+            8.5,
+            -13,
+            11
+          ]
+        ],
+        "avatar_places": {
+          "any": [
+            [
+              -12.21,
+              0,
+              -7.09
+            ],
+            [
+              -12.441,
+              0,
+              7.44
+            ],
+            [
+              6.956,
+              0,
+              15.936
+            ]
+          ]
+        },
+        "spot_zones": [
+          [
+            -7,
+            -5,
+            -6,
+            -4.5
+          ]
+        ],
+        "decors_places": {
+          "decor_farm_rock_easy_02": [
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        "player_spawn": {
+          "entrance_n": [
+            18.46,
+            270,
+            -3.35
+          ],
+          "entrance_ne": [
+            18.46,
+            270,
+            -3.35
+          ],
+          "entrance_e": [
+            15.43,
+            333.4065,
+            -16.77
+          ],
+          "entrance_se": [
+            -1.16,
+            0,
+            -17.58
+          ],
+          "entrance_s": [
+            -18.03,
+            49.71,
+            -15.52
+          ],
+          "entrance_sw": [
+            -18.03,
+            49.71,
+            -15.52
+          ],
+          "entrance_w": [
+            -15.38,
+            119.8025,
+            17.99
+          ],
+          "entrance_nw": [
+            -0.41,
+            180.1358,
+            18.37
+          ]
+        },
+        "interactable_objects_places": [
+          [
+            0,
+            0,
+            -7
+          ]
+        ]
+      },
+      "_source_section": "refs.locations",
+      "_referenced_as": "custom_locations",
+      "_used_by": [
+        {
+          "id": "easy_rock_01",
+          "source_section": "refs.maps.0.points"
+        },
+        {
+          "id": "easy_rock_02",
+          "source_section": "refs.maps.0.points"
+        },
+        {
+          "id": "easy_rock_03",
+          "source_section": "refs.maps.0.points"
+        }
+      ]
+    },
+    "farm_rock_easy_03": {
+      "disposable": {
+        "type": "not",
+        "condition": {
+          "type": "ab.is_easy_farm_save_corpse"
+        }
+      },
+      "expired": {
+        "type": "or",
+        "conditions": [
+          {
+            "type": "gte",
+            "first": {
+              "type": "time.now"
+            },
+            "second": {
+              "type": "resource",
+              "resource": "ab.easy_farm_save_corpse_ts",
+              "target": "location"
+            }
+          },
+          {
+            "type": "not",
+            "condition": {
+              "type": "is_player_corpse_on_location",
+              "target": "location"
+            }
+          }
+        ]
+      },
+      "chunks": {
+        "cornerOut_cliff_02_01": [
+          [
+            0,
+            2
+          ]
+        ],
+        "cornerOut_cliff_01_02": [
+          [
+            0,
+            3
+          ]
+        ],
+        "cornerOut_cliff_02_03": [
+          [
+            1,
+            3
+          ]
+        ],
+        "cornerOut_cliff_01_04": [
+          [
+            1,
+            2
+          ]
+        ]
+      },
+      "noise": {
+        "a": {
+          "scale": 0.1,
+          "mul": 1,
+          "add": -0.2
+        },
+        "b": {
+          "scale": 0.05,
+          "mul": 1,
+          "add": 1
+        },
+        "c": {
+          "scale": 0.1,
+          "mul": 8,
+          "add": -7
+        }
+      },
+      "chunk_res": 10,
+      "chunk_scale": 10,
+      "chunks_count_x": 6,
+      "chunks_count_z": 6,
+      "chunk_grid_size": 5,
+      "grid_border": 1,
+      "chunk_border": 1,
+      "leave_border": 2.5,
+      "character_limit": 60,
+      "mines": {
+        "tree_item": 10,
+        "rock_item": 10,
+        "tree_birch_ginger": 8,
+        "tree_birch_dead": 2,
+        "rock": 25,
+        "copper": 8,
+        "bush": 10,
+        "berry": 10
+      },
+      "chests": {
+        "chest_easy_1": {
+          "type": "range",
+          "min": 2,
+          "max": 3
+        },
+        "chest_grave_xmas": "chest_grave_xmas_amount",
+        "chest_grave_halloween": "chest_grave_halloween_amount",
+        "chest_xmas_goblin": "chest_xmas_goblin_amount"
+      },
+      "areas": {
+        "chests": [
+          {
+            "type": "rect",
+            "rect": [
+              8,
+              10,
+              18,
+              -10
+            ]
+          },
+          {
+            "type": "rect",
+            "rect": [
+              -18,
+              10,
+              18,
+              4
+            ]
+          },
+          {
+            "type": "rect",
+            "rect": [
+              -18,
+              10,
+              -8,
+              0
+            ]
+          }
+        ]
+      },
+      "mobs_per_chest": 1,
+      "unique_avatars": {
+        "cursed_martyr": [
+          {
+            "@ref:13": [
+              -1.74,
+              0,
+              -3.1
+            ],
+            "@ref:14": -142
+          }
+        ]
+      },
+      "decors": {
+        "decor_farm_rock_easy_03": 1
+      },
+      "avatars": {
+        "leper": {
+          "type": "range",
+          "min": 6,
+          "max": 8
+        },
+        "wolf": {
+          "type": "range",
+          "min": 1,
+          "max": 3
+        },
+        "cursed": {
+          "type": "range",
+          "min": 2,
+          "max": 3
+        },
+        "turkey": "turkey_count",
+        "turkey_boss": "turkey_boss_count"
+      },
+      "spots": {
+        "spot_easy": {
+          "type": "range",
+          "min": 1,
+          "max": 2
+        },
+        "spot_big_farm": {
+          "type": "range",
+          "min": 0,
+          "max": 1
+        }
+      },
+      "active_spots": {
+        "active_spot": 1
+      },
+      "pet_baby": {
+        "avatars": [
+          "pet_wolf_baby_normal"
+        ],
+        "@ref:11": "pet_baby_easy.count"
+      },
+      "tags": [
+        "trigger_events",
+        "guarded_chests",
+        "central_speech"
+      ],
+      "stats": {
+        "pve_trigger": {
+          "type": "consumable",
+          "period": 90,
+          "maximum": 10000
+        },
+        "pve_counter": {
+          "type": "int"
+        },
+        "pvp_trigger": {
+          "type": "consumable",
+          "period": 150,
+          "maximum": 10000
+        },
+        "pvp_counter": {
+          "type": "int"
+        },
+        "rain_timeout": {
+          "type": "timeout",
+          "runnable": true
+        },
+        "rain_phase": {
+          "type": "int"
+        },
+        "rain_ts_end": {
+          "type": "double"
+        },
+        "servants_spawned": {
+          "type": "int"
+        },
+        "servants_sound_timer": {
+          "type": "timeout",
+          "script": "try_servant_sound_play"
+        },
+        "challenge_mob_spawned": {
+          "type": "int"
+        },
+        "ab.easy_farm_save_corpse_ts": {
+          "type": "double"
+        }
+      },
+      "scripts": {
+        "border": [
+          {
+            "type": "resource.set",
+            "resource": "ab.easy_farm_save_corpse_ts",
+            "target": "location",
+            "@ref:11": 0
+          },
+          1
+        ],
+        "player_died": {
+          "type": "resource.set",
+          "resource": "ab.easy_farm_save_corpse_ts",
+          "target": "location",
+          "@ref:11": {
+            "type": "sum",
+            "amounts": [
+              {
+                "type": "time.now"
+              },
+              3600
+            ]
+          }
+        },
+        "activate": [
+          {
+            "type": "quest.advance",
+            "goal": "location.easy_rock"
+          },
+          "pve.clear",
+          "pvp.clear",
+          "rain_init"
+        ],
+        "enter": [
+          "pvn.clear",
+          "try_set_servant_victims",
+          "schedule_servants_sound"
+        ],
+        "summon_turkey_boss": "try_spawn_turkey_boss",
+        "update": [
+          "rain_tick",
+          "pvn.trigger",
+          "naked.trigger",
+          {
+            "type": "condition",
+            "if": "pve.can",
+            "then": [
+              "pve.trigger",
+              {
+                "type": "probability",
+                "probability": 0.6,
+                "action": [
+                  {
+                    "type": "weight",
+                    "weights": [
+                      {
+                        "weight": 7,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "leper",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pve"
+                        }
+                      },
+                      {
+                        "weight": 4,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "wolf",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pve"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "condition",
+            "if": "pvp.can.easy",
+            "then": [
+              "pvp.trigger",
+              {
+                "type": "probability",
+                "probability": 0.4,
+                "action": [
+                  {
+                    "type": "weight",
+                    "weights": [
+                      {
+                        "weight": 2,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "player_bot_easy_1",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pvp"
+                        }
+                      },
+                      {
+                        "weight": 2,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "player_bot_easy_2",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pvp"
+                        }
+                      },
+                      {
+                        "weight": 2,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "player_bot_easy_3",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pvp"
+                        }
+                      },
+                      {
+                        "weight": 2,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "player_bot_easy_4",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pvp"
+                        }
+                      },
+                      {
+                        "weight": 2,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "player_bot_easy_5",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pvp"
+                        }
+                      },
+                      {
+                        "weight": 2,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "player_bot_easy_6",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pvp"
+                        }
+                      },
+                      {
+                        "weight": 1,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "player_bot_easy_7",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pvp"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "arg.set",
+            "args": {
+              "skulls": 1
+            },
+            "script": "try_spawn_servants"
+          }
+        ]
+      },
+      "points_of_interest": {
+        "interactable_objects_weights": {
+          "sacrifice_altar": 0,
+          "chained_chest_level1": 1,
+          "deer_carcass": 0,
+          "old_well": 5,
+          "none": 3
+        },
+        "corpses": {
+          "@ref:11": 3,
+          "chance": 0.3
+        }
+      },
+      "view": {
+        "layer_0_tex_path": "Prefabs/LocationScreen/Nature/Ground/rocks_iron",
+        "layer_0_tex_path_winter": "Prefabs/LocationScreen/Nature/Ground/rocks3_winter",
+        "layer_0_scale": [
+          0.25,
+          0.25
+        ],
+        "layer_1_tex_path": "Prefabs/LocationScreen/Nature/Ground/mud2_Dark",
+        "layer_1_tex_path_winter": "Prefabs/LocationScreen/Nature/Ground/mud2_Dark_winter",
+        "layer_1_scale": [
+          0.25,
+          0.25
+        ],
+        "layer_2_tex_path": "Prefabs/LocationScreen/Nature/Ground/mud_iron",
+        "layer_2_scale": [
+          0.2,
+          0.2
+        ],
+        "layer_wet_tex_path": "Prefabs/LocationScreen/Nature/Ground/rocks_birch",
+        "layer_wet_scale": [
+          0.25,
+          0.25
+        ],
+        "layer_mix_tex_path": "Prefabs/LocationScreen/Nature/Ground/noise0",
+        "layer_mix_scale": [
+          0.25,
+          0.25
+        ],
+        "grass_tex_path": "Prefabs/LocationScreen/Nature/Ground/grass_set1_birch",
+        "grass_tex_path_winter": "Prefabs/LocationScreen/Nature/Ground/grass_set1_winter",
+        "grass_alpha_path": "Prefabs/LocationScreen/Nature/Ground/grass_set1_alpha",
+        "grass_atlas_tiling": [
+          2,
+          2
+        ],
+        "grass_grid_resolution": 30,
+        "grass_translate": 0.25,
+        "grass_density": 0,
+        "grass_scale": [
+          0.5,
+          0.5
+        ],
+        "music_theme": "music_location_normal",
+        "chests_places": {
+          "chest_easy_1": [
+            [
+              0.12,
+              0,
+              -0.5
+            ]
+          ]
+        },
+        "mines_places": {
+          "rock": [
+            [
+              -13.96,
+              0,
+              18.76
+            ],
+            [
+              -10.158,
+              0,
+              18.949
+            ],
+            [
+              10.2,
+              0,
+              18.75
+            ],
+            [
+              16.32,
+              0,
+              19.04
+            ],
+            [
+              1.26,
+              0,
+              19.02
+            ],
+            [
+              2.32,
+              0,
+              -11.82
+            ],
+            [
+              13.93,
+              0,
+              -18.81
+            ],
+            [
+              -4.194,
+              0,
+              -18.66
+            ],
+            [
+              -14.24,
+              0,
+              -16.56
+            ],
+            [
+              -14.06,
+              0,
+              -11.14
+            ],
+            [
+              0.01,
+              0,
+              -14.69
+            ]
+          ],
+          "berry": [
+            [
+              -11.826,
+              355,
+              -0.719
+            ],
+            [
+              -2.74,
+              355,
+              0.47
+            ],
+            [
+              -2.46,
+              355,
+              3.4
+            ],
+            [
+              3.131,
+              202.5732,
+              3.713
+            ],
+            [
+              3.34,
+              202.5732,
+              2.38
+            ],
+            [
+              -11.418,
+              0,
+              1.474
+            ],
+            [
+              15.74,
+              269.8835,
+              -7.21
+            ],
+            [
+              16.66,
+              269.8835,
+              -8.92
+            ]
+          ],
+          "copper": [
+            [
+              -1.39,
+              0,
+              15.43
+            ],
+            [
+              2.061,
+              0,
+              13.077
+            ],
+            [
+              -2.1,
+              0,
+              18.962
+            ],
+            [
+              -1.02,
+              0,
+              -19
+            ],
+            [
+              1.62,
+              0,
+              -19.03
+            ],
+            [
+              10.09,
+              0,
+              -18.93
+            ]
+          ],
+          "tree_birch_ginger": [
+            [
+              -13.48,
+              0,
+              7.12
+            ],
+            [
+              -11.25,
+              0,
+              3.54
+            ],
+            [
+              -10.1,
+              0,
+              -0.373
+            ],
+            [
+              -3.138,
+              0,
+              2.118
+            ],
+            [
+              -12.19,
+              0,
+              -5.85
+            ],
+            [
+              10.91,
+              0,
+              3.67
+            ],
+            [
+              16.07,
+              0,
+              7.21
+            ],
+            [
+              3.02,
+              0,
+              -0.06
+            ],
+            [
+              12.61,
+              0,
+              -1.56
+            ]
+          ]
+        },
+        "empty_zones": [
+          [
+            -30,
+            -30,
+            30,
+            -18
+          ],
+          [
+            -30,
+            -30,
+            -18,
+            30
+          ],
+          [
+            -30,
+            18,
+            30,
+            30
+          ],
+          [
+            18,
+            -30,
+            30,
+            30
+          ],
+          [
+            -28,
+            -8,
+            -9,
+            8
+          ],
+          [
+            15,
+            -8,
+            28,
+            8
+          ],
+          [
+            10,
+            0,
+            13,
+            4
+          ],
+          [
+            5,
+            -3,
+            9,
+            1
+          ],
+          [
+            12,
+            -5,
+            15,
+            -1
+          ],
+          [
+            -4,
+            -2,
+            4,
+            4.5
+          ],
+          [
+            -3,
+            -4.5,
+            -0.6,
+            -1
+          ],
+          [
+            1.5,
+            -4,
+            4,
+            -1.8
+          ],
+          [
+            -3.8,
+            -15.4,
+            3.3,
+            -11
+          ],
+          [
+            5.3,
+            -18,
+            7.7,
+            -15
+          ],
+          [
+            11.7,
+            -15.3,
+            16.5,
+            -13.5
+          ],
+          [
+            12.3,
+            12.3,
+            15,
+            15
+          ],
+          [
+            -2.5,
+            11,
+            2.8,
+            16.5
+          ],
+          [
+            -6.5,
+            15.5,
+            -3.8,
+            18
+          ],
+          [
+            3,
+            15,
+            8.5,
+            18
+          ],
+          [
+            -7,
+            -18,
+            -5,
+            -16.8
+          ],
+          [
+            12,
+            -16,
+            20,
+            -8
+          ],
+          [
+            12,
+            8,
+            20,
+            18
+          ],
+          [
+            -23,
+            10.8,
+            -13,
+            18
+          ],
+          [
+            -20,
+            -18,
+            -13,
+            -10
+          ]
+        ],
+        "avatars_zones": [
+          [
+            -11,
+            -18,
+            11,
+            18
+          ],
+          [
+            -13,
+            -10,
+            -11,
+            -8
+          ],
+          [
+            -12,
+            -18,
+            -11,
+            -16
+          ],
+          [
+            -13,
+            8,
+            -11,
+            12
+          ],
+          [
+            -18,
+            8,
+            -13,
+            9.7
+          ],
+          [
+            11,
+            14,
+            12,
+            18
+          ],
+          [
+            11,
+            4,
+            12,
+            8
+          ],
+          [
+            12,
+            4,
+            14,
+            6
+          ],
+          [
+            13,
+            -1,
+            15,
+            4
+          ],
+          [
+            12,
+            -8,
+            15,
+            -5
+          ],
+          [
+            11,
+            -18,
+            12,
+            0
+          ]
+        ],
+        "avatar_places": {
+          "any": [
+            [
+              -11.934,
+              0,
+              -7.17
+            ],
+            [
+              -9.566,
+              0,
+              7.404
+            ],
+            [
+              3.81,
+              0,
+              15.78
+            ],
+            [
+              12.863,
+              0,
+              16.425
+            ],
+            [
+              -1.492,
+              0,
+              3.417
+            ],
+            [
+              15.914,
+              0,
+              -1.558
+            ],
+            [
+              -11.016,
+              0,
+              -2.106
+            ],
+            [
+              11.911,
+              0,
+              -18.974
+            ]
+          ]
+        },
+        "spot_zones": [
+          [
+            -1.25,
+            1,
+            -8,
+            -6.5
+          ]
+        ],
+        "decors_places": {
+          "decor_farm_rock_easy_03": [
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        "player_spawn": {
+          "entrance_n": [
+            17.98,
+            256.5504,
+            11.13
+          ],
+          "entrance_ne": [
+            17.98,
+            256.5504,
+            11.13
+          ],
+          "entrance_e": [
+            18.2,
+            282.67,
+            -14.22
+          ],
+          "entrance_se": [
+            18.2,
+            282.67,
+            -14.22
+          ],
+          "entrance_s": [
+            -18.1,
+            70,
+            -13.55
+          ],
+          "entrance_sw": [
+            -18.1,
+            70,
+            -13.55
+          ],
+          "entrance_w": [
+            -17.85,
+            94.8176,
+            16.17
+          ],
+          "entrance_nw": [
+            -17.85,
+            94.8176,
+            16.17
+          ]
+        },
+        "interactable_objects_places": [
+          [
+            7,
+            0,
+            -1
+          ]
+        ]
+      },
+      "_source_section": "refs.locations",
+      "_referenced_as": "custom_locations",
+      "_used_by": [
+        {
+          "id": "easy_rock_01",
+          "source_section": "refs.maps.0.points"
+        },
+        {
+          "id": "easy_rock_02",
+          "source_section": "refs.maps.0.points"
+        },
+        {
+          "id": "easy_rock_03",
+          "source_section": "refs.maps.0.points"
+        }
+      ]
+    },
+    "farm_rock_normal_01": {
+      "disposable": true,
+      "expired": false,
+      "chunks": {
+        "cornerLineL_cliff_01_02": [
+          [
+            1,
+            4
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        "pit_cliff_01_01": [
+          [
+            0,
+            5
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            6,
+            1
+          ],
+          [
+            5,
+            0
+          ],
+          [
+            6,
+            0
+          ]
+        ],
+        "line_cliff_01_01": [
+          [
+            3,
+            5
+          ],
+          [
+            3,
+            6
+          ]
+        ],
+        "lineHalf_cliff_01_01": [
+          [
+            3,
+            3
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            1,
+            6
+          ]
+        ],
+        "lineHalf_cliff_01_02": [
+          [
+            0,
+            4
+          ]
+        ],
+        "lineHalf_cliff_01_03": [
+          [
+            4,
+            0
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "lineHalf_cliff_01_04": [
+          [
+            5,
+            2
+          ],
+          [
+            6,
+            2
+          ]
+        ],
+        "cornerLineL_cliff_01_01": [
+          [
+            3,
+            4
+          ]
+        ],
+        "cornerOut_cliff_01_01": [
+          [
+            2,
+            2
+          ]
+        ],
+        "cornerLineL_cliff_01_04": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ]
+      },
+      "noise": {
+        "a": {
+          "scale": 0.1,
+          "mul": 1,
+          "add": -0.2
+        },
+        "b": {
+          "scale": 0.05,
+          "mul": 1,
+          "add": 1
+        },
+        "c": {
+          "scale": 0.15,
+          "mul": 3,
+          "add": -2
+        }
+      },
+      "chunk_res": 10,
+      "chunk_scale": 10,
+      "chunks_count_x": 7,
+      "chunks_count_z": 7,
+      "chunk_grid_size": 5,
+      "grid_border": 1,
+      "chunk_border": 1,
+      "leave_border": 2.5,
+      "character_limit": 80,
+      "mines": {
+        "tree_item": 10,
+        "rock_item": 20,
+        "tree_birch_ginger": 6,
+        "tree_birch_dead": 7,
+        "rock": 33,
+        "young_tree_dead": 5,
+        "copper": 20,
+        "bush": 20,
+        "berry": 8,
+        "berry_poison": 8
+      },
+      "chests": {
+        "chest_normal_1": {
+          "type": "range",
+          "min": 3,
+          "max": 4
+        },
+        "chest_grave_xmas": "chest_grave_xmas_amount",
+        "chest_grave_halloween": "chest_grave_halloween_amount",
+        "chest_xmas_goblin": "chest_xmas_goblin_amount"
+      },
+      "areas": {
+        "chests": [
+          {
+            "type": "rect",
+            "rect": [
+              0,
+              -5,
+              18,
+              15
+            ]
+          }
+        ]
+      },
+      "mobs_per_chest": 1,
+      "decors": {
+        "decor_farm_rock_normal_01": 1
+      },
+      "avatars": {
+        "cursed_martyr": {
+          "type": "range",
+          "min": 4,
+          "max": 6
+        },
+        "cursed": {
+          "type": "range",
+          "min": 4,
+          "max": 6
+        },
+        "leper": {
+          "type": "range",
+          "min": 3,
+          "max": 5
+        },
+        "turkey": "turkey_count",
+        "turkey_boss": "turkey_boss_count"
+      },
+      "spots": {
+        "spot_norm": {
+          "type": "range",
+          "min": 1,
+          "max": 2
+        },
+        "spot_big": {
+          "type": "range",
+          "min": 0,
+          "max": 1
+        }
+      },
+      "active_spots": {
+        "active_spot": 1
+      },
+      "pet_baby": {
+        "avatars": [
+          "pet_wolf_baby_normal",
+          "pet_cat_baby_normal"
+        ],
+        "@ref:11": "pet_baby_normal.count"
+      },
+      "tags": [
+        "trigger_events",
+        "guarded_chests",
+        "central_speech"
+      ],
+      "stats": {
+        "pve_trigger": {
+          "type": "consumable",
+          "period": 60,
+          "maximum": 10000
+        },
+        "pve_counter": {
+          "type": "int"
+        },
+        "pvp_trigger": {
+          "type": "consumable",
+          "period": 130,
+          "maximum": 10000
+        },
+        "pvp_counter": {
+          "type": "int"
+        },
+        "rain_timeout": {
+          "type": "timeout",
+          "runnable": true
+        },
+        "rain_phase": {
+          "type": "int"
+        },
+        "rain_ts_end": {
+          "type": "double"
+        },
+        "is_enemy_spawned": {
+          "type": "int"
+        },
+        "servants_spawned": {
+          "type": "int"
+        },
+        "servants_sound_timer": {
+          "type": "timeout",
+          "script": "try_servant_sound_play"
+        },
+        "challenge_mob_spawned": {
+          "type": "int"
+        },
+        "xmas_santa_trigger": {
+          "type": "trigger",
+          "period": 50,
+          "maximum": 1,
+          "script": "dispatch.xmas_santa"
+        },
+        "xmas_walkers_trigger": {
+          "type": "trigger",
+          "period": 8,
+          "maximum": 10000,
+          "script": "dispatch.xmas_santa_walkers"
+        }
+      },
+      "scripts": {
+        "activate": [
+          {
+            "type": "quest.advance",
+            "goal": "location.normal_rock"
+          },
+          "pve.clear",
+          "pvp.clear",
+          "rain_init"
+        ],
+        "enter": [
+          "pvn.clear",
+          "try_set_servant_victims",
+          "schedule_servants_sound"
+        ],
+        "summon_turkey_boss": "try_spawn_turkey_boss",
+        "update": [
+          "rain_tick",
+          "pvn.trigger",
+          {
+            "type": "condition",
+            "if": "pve.can",
+            "then": [
+              "pve.trigger",
+              {
+                "type": "probability",
+                "probability": 0.5,
+                "action": [
+                  {
+                    "type": "weight",
+                    "weights": [
+                      {
+                        "weight": 3,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "leper",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pve"
+                        }
+                      },
+                      {
+                        "weight": 7,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "cursed",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pve"
+                        }
+                      },
+                      {
+                        "weight": 2,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "direwolf",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pve"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "condition",
+            "if": "pvp.can",
+            "then": [
+              "pvp.trigger",
+              {
+                "type": "probability",
+                "probability": 0.4,
+                "action": [
+                  {
+                    "type": "weight.filtered",
+                    "weights": [
+                      {
+                        "weight": 6,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "player_bot_normal_1",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pvp"
+                        }
+                      },
+                      {
+                        "weight": 6,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "player_bot_normal_2",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pvp"
+                        }
+                      },
+                      {
+                        "weight": 6,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "player_bot_normal_3",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pvp"
+                        }
+                      },
+                      {
+                        "weight": 6,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "player_bot_normal_4",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pvp"
+                        }
+                      },
+                      {
+                        "weight": 6,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "player_bot_normal_5",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pvp"
+                        }
+                      },
+                      {
+                        "weight": 6,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "player_bot_normal_6",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pvp"
+                        }
+                      },
+                      {
+                        "weight": 3,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "player_bot_normal_7",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pvp"
+                        }
+                      },
+                      {
+                        "weight": 6,
+                        "action": {
+                          "type": "spawn",
+                          "@ref:12": "enemy_bot_tier_1",
+                          "@ref:13": "out_of_sight",
+                          "radius": 12,
+                          "pin": "pvp"
+                        },
+                        "filter": {
+                          "type": "external",
+                          "script": "enemy_bot.can_spawn"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "arg.set",
+            "args": {
+              "skulls": 2
+            },
+            "script": "try_spawn_servants"
+          }
+        ]
+      },
+      "points_of_interest": {
+        "interactable_objects_weights": {
+          "sacrifice_altar": 1,
+          "chained_chest_level1": 3,
+          "deer_carcass": 0,
+          "old_well": 5,
+          "none": 2
+        },
+        "corpses": {
+          "@ref:11": 3,
+          "chance": 0.3
+        }
+      },
+      "view": {
+        "layer_0_tex_path": "Prefabs/LocationScreen/Nature/Ground/rocks_iron",
+        "layer_0_tex_path_winter": "Prefabs/LocationScreen/Nature/Ground/rocks3_winter",
+        "layer_0_scale": [
+          0.25,
+          0.25
+        ],
+        "layer_1_tex_path": "Prefabs/LocationScreen/Nature/Ground/mud2_Dark",
+        "layer_1_tex_path_winter": "Prefabs/LocationScreen/Nature/Ground/mud2_Dark_winter",
+        "layer_1_scale": [
+          0.25,
+          0.25
+        ],
+        "layer_2_tex_path": "Prefabs/LocationScreen/Nature/Ground/mud_iron",
+        "layer_2_scale": [
+          0.2,
+          0.2
+        ],
+        "layer_wet_tex_path": "Prefabs/LocationScreen/Nature/Ground/rocks_birch",
+        "layer_wet_scale": [
+          0.25,
+          0.25
+        ],
+        "layer_mix_tex_path": "Prefabs/LocationScreen/Nature/Ground/noise0",
+        "layer_mix_scale": [
+          0.25,
+          0.25
+        ],
+        "grass_tex_path": "Prefabs/LocationScreen/Nature/Ground/grass_set1_birch",
+        "grass_tex_path_winter": "Prefabs/LocationScreen/Nature/Ground/grass_set1_winter",
+        "grass_alpha_path": "Prefabs/LocationScreen/Nature/Ground/grass_set1_alpha",
+        "grass_atlas_tiling": [
+          2,
+          2
+        ],
+        "grass_density": 0,
+        "grass_grid_resolution": 30,
+        "grass_scale": [
+          0.5,
+          0.5
+        ],
+        "grass_translate": 0.25,
+        "music_theme": "music_location_normal",
+        "decors_places": {
+          "decor_farm_rock_normal_01": [
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        "empty_zones": [
+          [
+            -35,
+            7,
+            -17,
+            35
+          ],
+          [
+            -35,
+            7,
+            3,
+            13
+          ],
+          [
+            -13,
+            -13,
+            3,
+            13
+          ],
+          [
+            -3,
+            7,
+            3,
+            35
+          ],
+          [
+            7,
+            -35,
+            35,
+            -7
+          ],
+          [
+            13,
+            11,
+            21,
+            20
+          ],
+          [
+            -17,
+            13,
+            -3,
+            25
+          ],
+          [
+            -12,
+            -22,
+            -8,
+            -16
+          ],
+          [
+            -22,
+            -18,
+            -17,
+            -13
+          ],
+          [
+            -22,
+            -11,
+            -16,
+            -4
+          ],
+          [
+            -23,
+            -2,
+            -20,
+            3
+          ],
+          [
+            -17,
+            2,
+            -10,
+            8
+          ],
+          [
+            9,
+            2,
+            13,
+            8
+          ],
+          [
+            16,
+            -4,
+            21,
+            1
+          ],
+          [
+            -1,
+            -20,
+            3,
+            -15
+          ],
+          [
+            3,
+            -23,
+            7,
+            -19
+          ],
+          [
+            1,
+            -14,
+            10,
+            -5
+          ],
+          [
+            -35,
+            -35,
+            -24,
+            35
+          ],
+          [
+            24,
+            -35,
+            35,
+            35
+          ],
+          [
+            -35,
+            24,
+            35,
+            35
+          ],
+          [
+            -35,
+            -35,
+            35,
+            -24
+          ],
+          [
+            -28,
+            -27,
+            -18.5,
+            -18
+          ],
+          [
+            -2,
+            -28,
+            4,
+            -19.5
+          ],
+          [
+            -28,
+            -7,
+            -20,
+            -2
+          ],
+          [
+            -17,
+            20,
+            -12,
+            28
+          ],
+          [
+            3,
+            22,
+            12,
+            28
+          ],
+          [
+            18,
+            17.5,
+            25,
+            28
+          ],
+          [
+            18.5,
+            -2,
+            25,
+            6
+          ]
+        ],
+        "avatars_zones": [
+          [
+            -17,
+            -17,
+            16,
+            16
+          ],
+          [
+            -16,
+            -24,
+            -12,
+            -17
+          ],
+          [
+            -12,
+            -24,
+            -6,
+            -22
+          ],
+          [
+            -8,
+            -24,
+            -6,
+            -17
+          ],
+          [
+            5,
+            -19,
+            7,
+            -17
+          ],
+          [
+            16,
+            -7,
+            19,
+            -5
+          ],
+          [
+            19,
+            -7,
+            24,
+            -6
+          ],
+          [
+            16,
+            7,
+            24,
+            11
+          ],
+          [
+            15,
+            20,
+            16,
+            24
+          ],
+          [
+            3,
+            16,
+            12,
+            17.7
+          ],
+          [
+            -5,
+            16,
+            -3,
+            18
+          ],
+          [
+            -7,
+            18,
+            -3,
+            20
+          ],
+          [
+            -6,
+            20,
+            -4,
+            24
+          ],
+          [
+            -24,
+            3,
+            -19,
+            7
+          ],
+          [
+            -19,
+            1,
+            -17,
+            3
+          ],
+          [
+            -24,
+            -13,
+            -17,
+            -11
+          ]
+        ],
+        "interactable_objects_places": [
+          [
+            5,
+            0,
+            -21
+          ]
+        ],
+        "mines_places": {
+          "tree_birch": [
+            [
+              -13.97,
+              15,
+              3.62
+            ],
+            [
+              9.9,
+              345,
+              3.4
+            ],
+            [
+              -13.78,
+              0,
+              5.33
+            ],
+            [
+              -17.77,
+              330,
+              -6.66
+            ],
+            [
+              -19.47,
+              15,
+              -9.19
+            ],
+            [
+              12.32,
+              345,
+              4.05
+            ],
+            [
+              10.4,
+              240,
+              5.88
+            ]
+          ],
+          "young_tree_dead": [
+            [
+              2.8,
+              0,
+              5.94
+            ]
+          ],
+          "rock": [
+            [
+              -14.2,
+              180,
+              12.49
+            ],
+            [
+              21.25,
+              30,
+              -8
+            ],
+            [
+              20.25,
+              30,
+              11.75
+            ],
+            [
+              -12,
+              30,
+              -12
+            ],
+            [
+              -11.15,
+              0,
+              16.8
+            ],
+            [
+              -11.68,
+              345,
+              1.21
+            ],
+            [
+              -11.93,
+              60,
+              -0.79
+            ],
+            [
+              -21.93,
+              45,
+              -0.79
+            ],
+            [
+              -10.93,
+              45,
+              -20.79
+            ],
+            [
+              1.55,
+              15,
+              0.16
+            ],
+            [
+              -12.21,
+              330,
+              -7.367
+            ],
+            [
+              0,
+              75,
+              -15.75
+            ],
+            [
+              2.26,
+              0,
+              -16.5
+            ],
+            [
+              -6.15,
+              45,
+              17.05
+            ],
+            [
+              19.75,
+              90,
+              -2.5
+            ],
+            [
+              17.5,
+              75,
+              -2.25
+            ],
+            [
+              18,
+              105,
+              0
+            ],
+            [
+              16,
+              0,
+              12
+            ]
+          ],
+          "berry": [
+            [
+              -18.85,
+              295,
+              -10.08
+            ],
+            [
+              -14.9,
+              340,
+              4.84
+            ],
+            [
+              -13.12,
+              310,
+              4.28
+            ],
+            [
+              10.638,
+              65,
+              4.544
+            ],
+            [
+              12.06,
+              111.62,
+              5.14
+            ],
+            [
+              -16.59,
+              0,
+              -7.1
+            ],
+            [
+              10.91,
+              330,
+              3.168
+            ],
+            [
+              12.18,
+              285,
+              3.18
+            ]
+          ],
+          "berry_poison": [
+            [
+              11.08,
+              65,
+              7.078
+            ],
+            [
+              -20.23,
+              15,
+              -7.62
+            ],
+            [
+              -19.17,
+              270,
+              -5.22
+            ],
+            [
+              -18.7,
+              330,
+              -8.21
+            ],
+            [
+              -19.2,
+              330,
+              -16.21
+            ],
+            [
+              -20.2,
+              285,
+              -14.71
+            ],
+            [
+              -18.2,
+              90,
+              -14.96
+            ]
+          ],
+          "copper": [
+            [
+              2.15,
+              345,
+              1.83
+            ],
+            [
+              2.4,
+              75,
+              -1.92
+            ],
+            [
+              18.9,
+              120,
+              -8.17
+            ],
+            [
+              -5.771,
+              45,
+              12.587
+            ],
+            [
+              7.65,
+              210,
+              -20.65
+            ],
+            [
+              7.9,
+              15,
+              -18.42
+            ],
+            [
+              -11.96,
+              270,
+              18.37
+            ],
+            [
+              -17.85,
+              270,
+              18.83
+            ],
+            [
+              -17.37,
+              75,
+              16.96
+            ],
+            [
+              -6.85,
+              120,
+              20.83
+            ],
+            [
+              -12.85,
+              300,
+              16.83
+            ],
+            [
+              -7.35,
+              60,
+              22.83
+            ],
+            [
+              -3.1,
+              135,
+              13.33
+            ],
+            [
+              -2.85,
+              90,
+              22.33
+            ],
+            [
+              -17.85,
+              345,
+              20.83
+            ],
+            [
+              13.15,
+              255,
+              17.33
+            ]
+          ],
+          "bush": [
+            [
+              12.4,
+              45,
+              6.83
+            ],
+            [
+              9.65,
+              330,
+              5.33
+            ],
+            [
+              9.9,
+              15,
+              7.08
+            ],
+            [
+              9.9,
+              270,
+              2.83
+            ],
+            [
+              -20.35,
+              300,
+              -17.42
+            ],
+            [
+              -21.1,
+              15,
+              -13.92
+            ],
+            [
+              -21.35,
+              255,
+              -16.42
+            ],
+            [
+              -18.85,
+              30,
+              -17.17
+            ],
+            [
+              -21.1,
+              60,
+              -9.42
+            ],
+            [
+              -16.85,
+              285,
+              -9.17
+            ],
+            [
+              -15.35,
+              30,
+              3.33
+            ],
+            [
+              -18.85,
+              300,
+              -6.67
+            ],
+            [
+              -17.1,
+              45,
+              -5.17
+            ],
+            [
+              -14.6,
+              315,
+              6.83
+            ],
+            [
+              -13.1,
+              15,
+              3.08
+            ]
+          ]
+        },
+        "chests_places": {
+          "chest_normal_1": [
+            [
+              -9,
+              0,
+              15.32
+            ],
+            [
+              14.5,
+              0,
+              12.82
+            ]
+          ]
+        },
+        "player_spawn": {
+          "entrance_n": [
+            22.41,
+            218.69,
+            19.86
+          ],
+          "entrance_ne": [
+            22.18,
+            278.0541,
+            0.6
+          ],
+          "entrance_e": [
+            0.42,
+            0,
+            -23.82
+          ],
+          "entrance_se": [
+            0.42,
+            0,
+            -23.82
+          ],
+          "entrance_s": [
+            -22.72,
+            52.46941,
+            -20.54
+          ],
+          "entrance_sw": [
+            -23.47,
+            103.4346,
+            -3.7
+          ],
+          "entrance_w": [
+            -15.12,
+            269.7209,
+            22.5
+          ],
+          "entrance_nw": [
+            8.71,
+            180.2208,
+            24.28
+          ]
+        }
+      },
+      "slots_per_chunk": 8,
+      "slots_weight_granularity": 64,
+      "unique_avatars": {
+        "knight_warrior": [
+          {
+            "@ref:13": [
+              5.62,
+              0,
+              -14.7
+            ],
+            "@ref:14": 225
+          },
+          {
+            "@ref:13": [
+              -17.47,
+              0,
+              5.45
+            ],
+            "@ref:14": 210
+          }
+        ],
+        "cursed": [
+          {
+            "@ref:13": [
+              -6.88,
+              0,
+              14.55
+            ],
+            "@ref:14": 225
+          },
+          {
+            "@ref:13": [
+              -15.3,
+              0,
+              -1.45
+            ],
+            "@ref:14": 60
+          },
+          {
+            "@ref:13": [
+              -11.5,
+              0,
+              -14.7
+            ],
+            "@ref:14": 110
+          },
+          {
+            "@ref:13": [
+              -16.2,
+              0,
+              13.8
+            ],
+            "@ref:14": 150
+          }
+        ],
+        "cursed_martyr": [
+          {
+            "@ref:13": [
+              3.7,
+              0,
+              18.5
+            ],
+            "@ref:14": 120
+          },
+          {
+            "@ref:13": [
+              -17.5,
+              0,
+              -10.2
+            ],
+            "@ref:14": 150
+          },
+          {
+            "@ref:13": [
+              -4.1,
+              0,
+              -17.4
+            ],
+            "@ref:14": 240
+          }
+        ],
+        "direwolf": [
+          {
+            "@ref:13": [
+              -13.13,
+              0,
+              -9.2
+            ],
+            "@ref:14": 60
+          }
+        ],
+        "wolf": [
+          {
+            "@ref:13": [
+              -18.21,
+              0,
+              -13.9
+            ],
+            "@ref:14": 75
+          }
+        ],
+        "deer": [
+          {
+            "@ref:13": [
+              -16.88,
+              0,
+              -6.05
+            ],
+            "@ref:14": 225
+          }
+        ]
+      },
+      "_source_section": "refs.locations",
+      "_referenced_as": "custom_locations",
+      "_used_by": [
+        {
+          "id": "normal_rock_01",
+          "source_section": "refs.maps.0.points"
+        },
+        {
+          "id": "normal_rock_02",
+          "source_section": "refs.maps.0.points"
+        }
+      ]
+    }
+  }
+}
